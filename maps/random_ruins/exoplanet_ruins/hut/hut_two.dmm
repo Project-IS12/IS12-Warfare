@@ -1,0 +1,24 @@
+"a" = (/turf/simulated/wall/concrete,/area/mine/explored)
+"b" = (/obj/machinery/wish_granter,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"c" = (/obj/structure/gravemarker/random,/obj/random/loot,/turf/simulated/floor/dirty/indestructable,/area/mine/explored)
+"d" = (/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/structure/closet/crate,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"e" = (/obj/random/junk,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"f" = (/obj/structure/table/marble,/obj/item/weapon/flame/lighter/zippo,/obj/item/weapon/storage/fancy/cigarettes/jerichos,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"i" = (/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"j" = (/obj/structure/inflatable/door,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"l" = (/obj/structure/table/rack,/obj/item/clothing/glasses/eyepatch/hud/medical,/obj/random/loot,/obj/random/loot,/obj/random/hat,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"p" = (/obj/structure/bed/chair/wheelchair,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"q" = (/obj/structure/curtain/black,/turf/simulated/floor/carpet,/area/mine/explored)
+"s" = (/obj/structure/table/marble,/obj/item/device/flashlight/lamp,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"t" = (/obj/structure/table/marble,/obj/item/weapon/paper_bin,/obj/random/handgun,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"u" = (/obj/structure/bed,/obj/item/weapon/bedsheet/rainbow,/obj/random/drinkbottle,/obj/random/trash,/turf/simulated/floor/carpet,/area/mine/explored)
+
+(1,1,1) = {"
+aaaaaaa
+abcleda
+aaiiiia
+jiiiiia
+aipiaqa
+astfaua
+aaaaaaa
+"}

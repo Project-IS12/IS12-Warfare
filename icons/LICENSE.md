@@ -1,0 +1,2 @@
+## Copyright (C) 2020 Interstation12. All rights reserved.
+**All original art assets aren't covered under Goonstation's license (CC BY-NC-SA) or GPL/AGPL. You may not rip the original art assets and use them in your project without consent.**

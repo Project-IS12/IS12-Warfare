@@ -1,0 +1,37 @@
+"a" = (/turf/simulated/floor/exoplanet/water/shallow,/area/mine/explored)
+"b" = (/turf/template_noop,/area/template_noop)
+
+(1,1,1) = {"
+abbbbbbbbbbbbbbbbbbbbbbbbbbaaaaa
+aabbbbbbbbbbbbbbbbbbbbbbbaaaaaaa
+aabbbbbbbbbbbbbbbbbbbbbbaaaaabbb
+aabbbbbbbbbbbbbbbbbbbbbaaabbbbbb
+aabbbbbbbbbbbbbbbbbbbbbaabbbbbbb
+baaabbbbbbbbbbbbbbbbbbbaabbbbbbb
+bbaaaabbbbbbbbbbbbbbbbaaabbbbbbb
+bbbaaabbbbbbbbbbbbbbbaaabbbbbbbb
+bbbbbaabbbbbbbbbbbbbaaaabbbbbbbb
+bbbbbbaabbbbbbbbbbaaaaabbbbbbbbb
+bbbbbbbaaabbbbbbbaaaaabbbbbbbbbb
+bbbbbbbbaaabbbbbaaaabbbbbbbbbbbb
+bbbbbbbbbaaaaaaaaaabbbbbbbbbbbbb
+bbbbbbbbbbaaaaaaabbbbbbbbbbbbbbb
+bbbbbbbbbbbbaaaaabbbbbbbbbbbbbbb
+bbbbbbbbbbbbaaaaabbbbbbbbbbbbbbb
+bbbbbbbbbbbbaaaaaaabbbbbbbbbbbbb
+bbbbbbbbbbbaabbbaaaabbbbbbbbbbbb
+bbbbbbbbbbaaabbbbbaaabbbbbbbbbbb
+bbbbbbbbbbaabbbbbbbaaabbbbbbbbbb
+bbbbbbbbbaaabbbbbbbbaaabbbbbbbbb
+bbbbbbbbbaabbbbbbbbbbbaaabbbbbbb
+bbbbbbbbaabbbbbbbbbbbbbaaabbbbbb
+bbbbbbbaaabbbbbbbbbbbbbbaaabbbbb
+bbbbbbaaabbbbbbbbbbbbbbbbaabbbbb
+bbbbbbaabbbbbbbbbbbbbbbbbbaabbbb
+bbbbaaaabbbbbbbbbbbbbbbbbbbaabbb
+bbbbaaabbbbbbbbbbbbbbbbbbbbbaabb
+bbbaaabbbbbbbbbbbbbbbbbbbbbbbaab
+bbaaabbbbbbbbbbbbbbbbbbbbbbbbaaa
+aaaabbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+"}

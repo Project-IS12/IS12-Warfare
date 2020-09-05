@@ -1,0 +1,30 @@
+html {overflow: auto;};
+body {
+overflow:hidden;
+font-family: Times;
+background-repeat:repeat-x;
+}
+a {text-decoration: none;outline: none;border: none;margin:-1px;}
+a:focus{outline:none;border: none;}
+a:hover {Color:#0d0d0d;background:#505055;outline: none;border: none;text-decoration: none;}
+a.active {text-decoration:none; text-decoration:none; Color:#533333;border: none;}
+a.inactive:hover {text-decoration:none;Color:#0d0d0d;background:#bb0000;border: none;}
+a.active:hover {text-decoration:none;Color:#bb0000;background:#0f0f0f;}
+a.inactive:hover {text-decoration:none; Color:#0d0d0d; background:#bb0000;border: none;}
+a img {     border: 0; }
+TABLE.winto {
+z-index:-1;
+position: absolute;
+top: 12;
+left:14;
+background-position: bottom;
+background-repeat:repeat-x;
+border: 4px dotted #222222;
+/*    border-top:4px double #777777; */
+border-bottom: none;
+border-top: none;
+}
+
+TR {
+border: 0px;
+}

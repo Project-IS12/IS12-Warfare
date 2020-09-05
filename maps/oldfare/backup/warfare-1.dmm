@@ -1,0 +1,98 @@
+"a" = (/obj/structure/dirt_wall,/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"b" = (/turf/simulated/floor/dirty/indestructable,/area/battlefield)
+"c" = (/obj/structure/dirt_wall{icon_state = "dirt_wall"; dir = 1},/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"d" = (/obj/machinery/telecomms/allinone{intercept = 1},/turf/simulated/floor/dirty,/area/hallway)
+"e" = (/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"f" = (/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"g" = (/turf/simulated/wall/concrete,/area/homebase)
+"h" = (/obj/effect/landmark{name = "tdome1"},/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"i" = (/turf/simulated/wall/concrete,/area/battlefield)
+"j" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/indestructable,/area/battlefield)
+"k" = (/obj/structure/dirt_wall{icon_state = "dirt_wall"; dir = 1},/turf/simulated/floor/dirty/indestructable,/area/battlefield)
+"l" = (/obj/effect/landmark/start,/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"m" = (/obj/effect/landmark/test/safe_turf,/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"n" = (/obj/effect/landmark{name = "JoinLate"},/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"o" = (/obj/structure/dirt_wall{icon_state = "dirt_wall"; dir = 8},/turf/simulated/floor/dirty/indestructable,/area/battlefield)
+"p" = (/obj/effect/landmark/start{name = "Red Soldier"},/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"q" = (/obj/effect/landmark/test/space_turf,/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"r" = (/obj/structure/dirt_wall{icon_state = "dirt_wall"; dir = 4},/turf/simulated/floor/dirty/indestructable,/area/battlefield)
+"s" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/indestructable,/area/homebase)
+"t" = (/obj/structure/dirt_wall,/turf/simulated/floor/dirty/indestructable,/area/battlefield)
+
+(1,1,1) = {"
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeffffffffffffffffffffffffffffffffeeeeeee
+eeaaaaaaaaaaaaaaaaaaeeaaaaaaaaaaaaaaaaaaee
+sssssssssssssssssssseessssssssssssssssssss
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbjjjjjjbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbkkkkkkbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobiiiiiibrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobbbbbbbbrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobbbbbbbbrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobibbbbibrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobibbbbibrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobibbbbibrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobibbbbibrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobibbbbibrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobibbbbibrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobbbbbbbbrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobbbbbbbbrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbjobiiiiiibrjbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbttttttbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbjjjjjjbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+sssssssssssssssssssseessssssssssssssssssss
+eecccccccccccccccccceeccccccccccccccccccee
+eeeeeppppppppppppppppppppppppppppppppeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeegggggggggggeegggggggggggeeeeeeeee
+eeeeeeeeegeeeeeeeeegeegeeeeeeeeegeeeeeeeee
+eeeeeeeeegeeeeeeeeegeegeeeeeeeeegeeeeeeeee
+eeeeeeeeegeeeeeeeeegeegeeeeeeeeegeeeeeeeee
+eeeeeeeeegeeeeeeeeegeegeeeeeeeeegeeeeeeeee
+eeeeeeeeegeeeeeeeeegeegeeeeeeeeegeeeeeeeee
+eeeeeeeeegeeeeeeeeegeegeeeeeeeeegeeeeeeeee
+eeeeeeeeegeeeeeeeeegeegeeeeeeeeegeeeeeeeee
+eeeeeeeeegeeeeeeeeegeegeeeeeeeeegeeeeeeeee
+eeeeeeeeegggggggggggeegggggggggggeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+hhhnnneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+hhhnnneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+hhhnnneemqeleeeeeeeeeeeeeeeeeeeeeeeeeeeeed
+"}
