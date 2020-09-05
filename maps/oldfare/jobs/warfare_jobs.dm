@@ -39,6 +39,6 @@
 		default_language = L
 
 /datum/job/assistant
-	title = "literally not a job"
+	title = "REDACTED"
 	total_positions = 0
 	spawn_positions = 0
