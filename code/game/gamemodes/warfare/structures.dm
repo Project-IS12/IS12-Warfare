@@ -137,6 +137,7 @@
 	plane = ABOVE_OBJ_PLANE
 	layer = BASE_ABOVE_OBJ_LAYER
 	anchored = TRUE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /obj/structure/warfare/barricade/concrete_barrier
 	name = "concrete barrier"
@@ -173,7 +174,7 @@
 		if(proj.firer && Adjacent(proj.firer))
 			return TRUE
 
-		if (get_dist(proj.starting, loc) <= 1)
+		if(get_dist(proj.starting, loc) <= 1)
 			return TRUE
 
 		return FALSE
@@ -187,6 +188,12 @@
 	else
 		return TRUE
 
+/obj/structure/warfare/barricade/bullet_act(var/obj/item/projectile/Proj)
+	..()
+	for(var/mob/living/carbon/human/H in loc)
+		if(!H.crouching)
+			H.bullet_act(Proj)
+	playsound(src, "hitwall", 50, TRUE)
 
 //Bullshit snowflake stuff for climbing over it.
 /obj/structure/warfare/barricade/do_climb(var/mob/living/user)
@@ -402,6 +409,11 @@
 		return FALSE
 	return TRUE
 
+
+/obj/structure/anti_tank/concrete_pillar
+	name = "concrete rubble"
+	desc = "A bit of rublle collasped from the ceiling."
+	icon_state = "concrete_pillar"
 
 /obj/item/projectile/bullet/pellet/fragment/landmine
 	damage = 100
