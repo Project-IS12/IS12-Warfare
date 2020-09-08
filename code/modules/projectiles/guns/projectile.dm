@@ -371,9 +371,11 @@
 	update_icon()
 
 //attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
-/obj/item/weapon/gun/projectile/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/weapon/gun/projectile/unload_ammo(mob/user, allow_dump = TRUE, quickunload = FALSE)
 	if(ammo_magazine)
 		user.put_in_hands(ammo_magazine)
+		if(quickunload)//If we're quick unloading it, immediately drop the ammo.
+			user.drop_from_inventory(ammo_magazine)
 		user.visible_message("[user] removes [ammo_magazine] from [src].", "<span class='notice'>You remove [ammo_magazine] from [src].</span>")
 		if(unload_sound)
 			playsound(src.loc, unload_sound, 75, 1)
@@ -423,11 +425,11 @@
 	if(H.incapacitated(INCAPACITATION_STUNNED|INCAPACITATION_KNOCKOUT))
 		return
 
-	switch(over_object.name)
-		if("r_hand")
-			unload_ammo(usr, allow_dump=0)
-		if("l_hand")
-			unload_ammo(usr, allow_dump=0)
+	if(over_object.name == "r_hand" || over_object.name == "l_hand")
+		unload_ammo(usr, allow_dump = FALSE)
+
+	else
+		unload_ammo(usr, allow_dump = FALSE, quickunload = TRUE)
 
 
 /obj/item/weapon/gun/projectile/afterattack(atom/A, mob/living/user)

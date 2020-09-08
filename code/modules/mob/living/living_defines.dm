@@ -64,14 +64,14 @@
 	var/fast_stripper = FALSE //whether or not you can turbostrip
 
 	//This is for the screen. Yes I hate this. Yes I know it needs a refactor. No I don't care at the moment.
-	var/obj/screen/plane_master/human_blur/HB = new
-	var/obj/screen/plane_master/turf_blur/TB = new
-	var/obj/screen/plane_master/wall_blur/WB = new
-	var/obj/screen/plane_master/obj_blur/OB = new
-	var/obj/screen/plane_master/abover_turf_blur/AT = new
-	var/obj/screen/plane_master/lhuman_blur/LB = new
-	var/obj/screen/plane_master/mob_blur/MB = new
-	var/obj/screen/plane_master/above_human_blur/AB = new
-	var/obj/screen/plane_master/effects_blur/EB = new
-	var/obj/screen/plane_master/plating_blur/plating_blur = new
-	var/obj/screen/plane_master/abover_obj_blur/AOB = new
+	var/obj/screen/plane_master/blur/human_blur/HB = new
+	var/obj/screen/plane_master/blur/turf_blur/TB = new
+	var/obj/screen/plane_master/blur/wall_blur/WB = new
+	var/obj/screen/plane_master/blur/obj_blur/OB = new
+	var/obj/screen/plane_master/blur/above_turf_blur/AT = new
+	var/obj/screen/plane_master/blur/lhuman_blur/LB = new
+	var/obj/screen/plane_master/blur/mob_blur/MB = new
+	var/obj/screen/plane_master/blur/above_human_blur/AB = new
+	var/obj/screen/plane_master/blur/effects_blur/EB = new
+	var/obj/screen/plane_master/blur/plating_blur/plating_blur = new
+	var/obj/screen/plane_master/blur/above_obj_blur/AOB = new
