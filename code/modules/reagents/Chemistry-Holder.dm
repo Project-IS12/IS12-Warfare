@@ -4,6 +4,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	var/list/datum/reagent/reagent_list = list()
 	var/total_volume = 0
 	var/maximum_volume = 120
+	var/list/datum/reagent/addiction_list = new/list()
 	var/atom/my_atom = null
 
 /datum/reagents/New(var/maximum_volume = 120, var/atom/my_atom)
