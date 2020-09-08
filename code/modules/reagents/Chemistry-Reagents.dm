@@ -151,7 +151,7 @@
 	if(prob(5))
 		switch(R.name)
 			if("Nicotine")
-				var/message = pick("My mouth is a bit dry...", "A cigarret sure would go down well rigth now")
+				var/message = pick("My mouth is a bit dry...", "A cigarette sure would go down well right now")
 				to_chat(M, "<span class='notice'>[message]</span>")
 	return
 
