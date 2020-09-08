@@ -63,7 +63,7 @@
 		new_reagent.last_addiction_dose = world.timeofday
 		M.reagents.addiction_list.Add(new_reagent)
 	else if(is_type_in_list(src, M.reagents.addiction_list))
-		var/message = pick("I feel better, but for how long?", "Ah.....", "I really needed that")
+		var/message = pick("You feel better, but for how long?", "Ah.....")
 		if(prob(10))
 			to_chat(M, "<span class='notice'>[message]</span>")
 		for(var/A in M.reagents.addiction_list)
