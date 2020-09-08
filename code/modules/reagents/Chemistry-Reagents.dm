@@ -159,7 +159,7 @@
 	var/name = check_name(R.name)
 	clear_events(R.name, M)
 	if(prob(10))
-		var/message = pick("I could use some [name] rigth now!","I am feeling a bit stressed, sure could use some [name]!","I could use some [name] rigth now!")
+		var/message = pick("I could use some [name] right now!","I am feeling a bit stressed, sure could use some [name]!","I could use some [name] right now!")
 		to_chat(M, "<span class='notice'>[message]</span>")
 	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_small)
 	return
