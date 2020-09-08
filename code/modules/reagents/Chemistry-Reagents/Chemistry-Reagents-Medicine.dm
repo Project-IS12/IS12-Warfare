@@ -278,7 +278,6 @@
 
 /datum/reagent/tramadol/morphine
 	name = "Morphine"
-	reagent_addiction_strength = 15
 
 /datum/reagent/tramadol/oxycodone
 	name = "Oxycodone"
