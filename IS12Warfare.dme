@@ -2460,4 +2460,4 @@
 #include "~code\global_init.dm"
 // END_INCLUDE
 
-#include "__non-agpl-warfare/__secret.dme"
+//#include "__non-agpl-warfare/__secret.dme"
