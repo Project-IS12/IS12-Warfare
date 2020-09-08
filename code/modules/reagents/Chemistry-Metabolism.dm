@@ -35,7 +35,7 @@
 							R.addiction_act_stage3(parent,R)
 						if(60 to 80)
 							R.addiction_act_stage4(parent,R)
-						if(60 to 100)
+						if(80 to 100)
 							R.addiction_act_stage5(parent,R)
 					R.last_addiction_dose = world.timeofday
 	update_total()
