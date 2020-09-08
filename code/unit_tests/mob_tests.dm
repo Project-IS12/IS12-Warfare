@@ -9,8 +9,8 @@
  *
  */
 
-#define SUCCESS 1
-#define FAILURE 0
+#define UT_SUCCESS 1
+#define UT_FAILURE 0
 
 //
 // Tests Life() and mob breathing in space.
@@ -65,7 +65,7 @@ datum/unit_test/human_breath/check_result()
 /var/default_mobloc = null
 
 proc/create_test_mob_with_mind(var/turf/mobloc = null, var/mobtype = /mob/living/carbon/human)
-	var/list/test_result = list("result" = FAILURE, "msg"    = "", "mobref" = null)
+	var/list/test_result = list("result" = UT_FAILURE, "msg"    = "", "mobref" = null)
 
 	if(isnull(mobloc))
 		if(!default_mobloc)
@@ -83,7 +83,7 @@ proc/create_test_mob_with_mind(var/turf/mobloc = null, var/mobtype = /mob/living
 
 	H.mind_initialize("TestKey[rand(0,10000)]")
 
-	test_result["result"] = SUCCESS
+	test_result["result"] = UT_SUCCESS
 	test_result["msg"] = "Mob created"
 	test_result["mobref"] = "\ref[H]"
 
@@ -151,7 +151,7 @@ datum/unit_test/mob_damage/start_test()
 	if(isnull(test))
 		fail("Check Runtimed in Mob creation")
 
-	if(test["result"] == FAILURE)
+	if(test["result"] == UT_FAILURE)
 		fail(test["msg"])
 		return 0
 
@@ -529,10 +529,12 @@ datum/unit_test/robot_module_icons/start_test()
 
 	return 1
 
-#undef VULNERABLE
+#undef STANDARD
+#undef ARMORED
+#undef EXTRA_VULNERABLE
 #undef IMMUNE
-#undef SUCCESS
-#undef FAILURE
+#undef UT_SUCCESS
+#undef UT_FAILURE
 
 datum/unit_test/species_base_skin
 	name = "MOB: Species base skin presence"
@@ -581,4 +583,3 @@ datum/unit_test/species_base_skin/start_test()
 		pass("All species had correct skin colour setups.")
 
 	return 1	// return 1 to show we're done and don't want to recheck the result.
-

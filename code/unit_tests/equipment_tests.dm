@@ -1,5 +1,5 @@
-#define SUCCESS 1
-#define FAILURE 0
+#define UT_SUCCESS 1
+#define UT_FAILURE 0
 
 
 datum/unit_test/vision_glasses/
@@ -15,7 +15,7 @@ datum/unit_test/vision_glasses/start_test()
 		if(isnull(test))
 			fail("Check Runtimed in Mob creation")
 
-		if(test["result"] == FAILURE)
+		if(test["result"] == UT_FAILURE)
 			fail(test["msg"])
 			async = 0
 
@@ -32,7 +32,7 @@ datum/unit_test/vision_glasses/start_test()
 datum/unit_test/vision_glasses/check_result()
 
 	if(isnull(H) || H.life_tick < 2)
-		return 0       
+		return 0
 
 	if(isnull(H.glasses))
 		fail("Mob doesn't have glasses on")
@@ -103,6 +103,5 @@ datum/unit_test/storage_capacity_test/start_test()
 
 	return bad_tests
 
-#undef SUCCESS
-#undef FAILURE
-
+#undef UT_SUCCESS
+#undef UT_FAILURE

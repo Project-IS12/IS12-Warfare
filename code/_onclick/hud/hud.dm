@@ -21,8 +21,8 @@
 	var/obj/blur_planemaster/PM = new//This is the z-blur shit. It's HUD related so I put it here.
 	var/obj/blur_planemaster/zmob = new
 	var/obj/blur_planemaster/under = new
-	var/obj/screen/plane_master/bullet_plane/BP = new
-	var/obj/screen/plane_master/ghost_master/gm = new //So ghosts are spooky and blurry.
+	var/obj/screen/plane_master/blur/bullet_plane/BP = new
+	var/obj/screen/plane_master/blur/ghost_master/gm = new //So ghosts are spooky and blurry.
 	//var/obj/screen/plane_master/humanAO/HM = new
 	//var/obj/screen/plane_master/wallAO/WT = new
 	//var/obj/screen/plane_master/objectAO/OB = new
