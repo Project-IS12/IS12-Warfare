@@ -6,8 +6,8 @@
  *
  */
 
-#define FAILURE 0
-#define SUCCESS 1
+#define UT_FAILURE 0
+#define UT_SUCCESS 1
 
 
 /datum/unit_test/apc_area_test
@@ -500,5 +500,5 @@ datum/unit_test/ladder_check/start_test()
 	return 1
 
 
-#undef SUCCESS
-#undef FAILURE
+#undef UT_SUCCESS
+#undef UT_FAILURE

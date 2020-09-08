@@ -221,15 +221,6 @@ What is the naming convention for planes or layers?
 	#define HUD_ITEM_LAYER       2
 	#define HUD_ABOVE_ITEM_LAYER 3
 
-
-
-
-
-
-
-
-#define AMBIENT_OCCLUSION filter(type="drop_shadow", x=0, y=-2, size=4, color="#04080FAA")
-
 //This is difference between highest and lowest visible
 #define PLANE_DIFFERENCE              22
 /image
@@ -259,7 +250,10 @@ What is the naming convention for planes or layers?
 	appearance_flags = PLANE_MASTER
 	plane = OPENSPACE_PLANE
 	screen_loc = "1,1"
-	filters = filter(type = "blur", size = 1)
+
+/obj/blur_planemaster/New()
+	..()
+	filters += filter(type = "blur", size = 1)
 
 //I don't know what the fuck this shit is used for.
 /obj/screen/plane_master
@@ -267,57 +261,54 @@ What is the naming convention for planes or layers?
 	screen_loc = "CENTER,CENTER"
 	globalscreen = 1
 
-/obj/screen/plane_master/ghost_master
+/obj/screen/plane_master/blur
+	var/size = 2
+
+/obj/screen/plane_master/blur/New()
+	..()
+	if (size)
+		filters += filter(type = "blur", size = size)
+
+/obj/screen/plane_master/blur/ghost_master
 	plane = OBSERVER_PLANE
-	filters = filter(type = "blur", size = 1)
+	size = 1
 
-/obj/screen/plane_master/bullet_plane
+/obj/screen/plane_master/blur/bullet_plane
 	plane = BULLET_PLANE
-	filters = filter(type = "blur", size = 1)
+	size = 1
 
-/obj/screen/plane_master/human_blur
+/obj/screen/plane_master/blur/human_blur
 	plane = HUMAN_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/turf_blur
+/obj/screen/plane_master/blur/turf_blur
 	plane = TURF_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/wall_blur
+/obj/screen/plane_master/blur/wall_blur
 	plane = WALL_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/obj_blur
+/obj/screen/plane_master/blur/obj_blur
 	plane = OBJ_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/lhuman_blur
+/obj/screen/plane_master/blur/lhuman_blur
 	plane = LYING_HUMAN_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/mob_blur
+/obj/screen/plane_master/blur/mob_blur
 	plane = MOB_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/above_human_blur
+/obj/screen/plane_master/blur/above_human_blur
 	plane = ABOVE_HUMAN_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/abover_turf_blur
+/obj/screen/plane_master/blur/above_turf_blur
 	plane = ABOVE_TURF_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/abover_obj_blur
+/obj/screen/plane_master/blur/above_obj_blur
 	plane = ABOVE_OBJ_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/plating_blur
+/obj/screen/plane_master/blur/plating_blur
 	plane = PLATING_PLANE
-	filters = filter(type = "blur", size = 2)
 
-/obj/screen/plane_master/effects_blur
+/obj/screen/plane_master/blur/effects_blur
 	plane = EFFECTS_BELOW_LIGHTING_PLANE
-	filters = filter(type = "blur", size = 2)
 
 /obj/screen/plane_master/ghost_dummy
 	// this avoids a bug which means plane masters which have nothing to control get angry and mess with the other plane masters out of spite
@@ -326,31 +317,31 @@ What is the naming convention for planes or layers?
 	plane = OBSERVER_PLANE
 
 GLOBAL_LIST_INIT(ghost_master, list(
-	new /obj/screen/plane_master/ghost_master(),
+	new /obj/screen/plane_master/blur/ghost_master(),
 	new /obj/screen/plane_master/ghost_dummy()
 ))
 
+/obj/screen/plane_master/ao
+	// no vars set, here to make searching easier
 
-/obj/screen/plane_master/humanAO
+/obj/screen/plane_master/ao/New()
+	..()
+	filters += filter(type="drop_shadow", x=0, y=-2, size=4, color="#04080FAA")
+
+/obj/screen/plane_master/ao/human
 	plane = HUMAN_PLANE
-	filters = AMBIENT_OCCLUSION
 
-/obj/screen/plane_master/wallAO
+/obj/screen/plane_master/ao/wall
 	plane = WALL_PLANE
-	filters = AMBIENT_OCCLUSION
 
-/obj/screen/plane_master/objectAO
+/obj/screen/plane_master/ao/object
 	plane = OBJ_PLANE
-	filters = AMBIENT_OCCLUSION
 
-/obj/screen/plane_master/lying_human
+/obj/screen/plane_master/ao/lying_human
 	plane = LYING_HUMAN_PLANE
-	filters = AMBIENT_OCCLUSION
 
-/obj/screen/plane_master/mobAO
+/obj/screen/plane_master/ao/mobao
 	plane = MOB_PLANE
-	filters = AMBIENT_OCCLUSION
-
 
 /obj/screen/plane_master/vision_cone_target
 	name = "vision cone master"
