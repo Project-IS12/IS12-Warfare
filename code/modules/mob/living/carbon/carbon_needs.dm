@@ -1,17 +1,17 @@
 /mob/living/carbon/proc/print_happiness()
 	var/msg = "<span class='info'><div class='examinebox'>"
 	if(real_name)
-		msg += "<span class='info'>My name is <span class='boldannounce'>[real_name]</span>.</span>\n"
+		msg += "<span class='info'>My name is <span class='danger'>[real_name]</span>.</span>\n"
 	if(age)
-		msg += "<span class='info'>I am <span class='boldannounce'>[age]</span> years old.</span>\n"
+		msg += "<span class='info'>I am <span class='danger'>[age]</span> years old.</span>\n"
 	if(squad)
-		msg += "<span class='info'>I'm in <span class='boldannounce'>[squad.name]</span> squad!</span>\n"
+		msg += "<span class='info'>I'm in <span class='danger'>[squad.name]</span> squad!</span>\n"
 	if(social_class)
-		msg +=	"<span class='info'>I am <span class='boldannounce'>[get_social_class()]</span>.</span>\n"
+		msg +=	"<span class='info'>I am <span class='danger'>[get_social_class()]</span>.</span>\n"
 	if(trait)
-		msg += 	"<span class='info'>I am <span class='boldannounce'>[trait.name]</span>. [trait.description]</span>\n"
+		msg += 	"<span class='info'>I am <span class='danger'>[trait.name]</span>. [trait.description]</span>\n"
 	if(quirk)//NOT THE SAME THING AS TRAITS
-		msg += "<span class='info'>Oh lucky, I am also <span class='boldannounce'>[quirk.name]</span>. [quirk.description]</span>\n"
+		msg += "<span class='info'>Oh lucky, I am also <span class='danger'>[quirk.name]</span>. [quirk.description]</span>\n"
 	msg += "<EM>Current feelings:</EM>\n"
 	for(var/i in events)
 		var/datum/happiness_event/event = events[i]
