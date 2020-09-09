@@ -58,13 +58,13 @@
 		if(volume > overdose_threshold)
 			overdose(M, alien)
 	if(prob(reagent_addiction_strength) && !is_type_in_list(src, M.reagents.addiction_list))
-		to_chat(M, "<span class='danger'>You like that feeling, you may want more later...</span>")
+		to_chat(M, "<span class='danger'>You like that feeling. You may want more of that later...</span>")
 		var/datum/reagent/new_reagent = new type()
 		new_reagent.last_addiction_dose = world.timeofday
 		M.reagents.addiction_list.Add(new_reagent)
 	else if(is_type_in_list(src, M.reagents.addiction_list))
 		var/message = pick("You feel better, but for how long?", "Ah.....")
-		if(prob(10))
+		if(prob(1))
 			to_chat(M, "<span class='notice'>[message]</span>")
 		for(var/A in M.reagents.addiction_list)
 			var/datum/reagent/AD = A
