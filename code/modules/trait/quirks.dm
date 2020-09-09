@@ -9,7 +9,7 @@
 /datum/quirk/hypersensitive //Doubles mood values.
 	name = "hypersensitive"
 	description = "I'm more sensitive to good and bad moods than normal."
-/*
+
 /datum/quirk/alcoholic //Starts out addicted to alcohol
 	name = "alcoholic"
 	description = "I need booze to be happy."
@@ -17,7 +17,7 @@
 /datum/quirk/cig_addict //Starts out addicted to nicotine.
 	name = "smoker"
 	description = "I need a smoke every now and then."
-*/
+
 /datum/quirk/brave //Still gets moods, but is not bothered by them.
 	name = "brave"
 	description = "I'm not stressed by combat."

@@ -10,9 +10,9 @@
 #define UT_VACUUM 2                   // Vacume on simulated turfs
 #define UT_NORMAL_COLD 3              // Cold but standard atmosphere.
 
-#define FAILURE 0
-#define SUCCESS 1
-#define SKIP 2
+#define UT_FAILURE 0
+#define UT_SUCCESS 1
+#define UT_SKIP 2
 
 //
 // Generic check for an area.
@@ -30,8 +30,8 @@ datum/unit_test/zas_area_test/start_test()
 		fail("Check Runtimed")
 
 	switch(test["result"])
-		if(SUCCESS) pass(test["msg"])
-		if(SKIP)    skip(test["msg"])
+		if(UT_SUCCESS) pass(test["msg"])
+		if(UT_SKIP)    skip(test["msg"])
 		else        fail(test["msg"])
 	return 1
 
@@ -41,14 +41,14 @@ datum/unit_test/zas_area_test/start_test()
 //	The primary helper proc.
 //
 proc/test_air_in_area(var/test_area, var/expectation = UT_NORMAL)
-	var/test_result = list("result" = FAILURE, "msg"    = "")
+	var/test_result = list("result" = UT_FAILURE, "msg"    = "")
 
 	var/area/A = locate(test_area)
 
 	// BYOND creates an instance of every area, so this can't be !A or !istype(A, test_area)
 	if(!(A.x || A.y || A.z))
 		test_result["msg"] = "Unable to get [test_area]"
-		test_result["result"] = FAILURE
+		test_result["result"] = UT_FAILURE
 		return test_result
 
 	var/list/GM_checked = list()
@@ -94,7 +94,7 @@ proc/test_air_in_area(var/test_area, var/expectation = UT_NORMAL)
 		GM_checked.Add(GM)
 
 	if(GM_checked.len)
-		test_result["result"] = SUCCESS
+		test_result["result"] = UT_SUCCESS
 		test_result["msg"] = "Checked [GM_checked.len] zones"
 	else
 		test_result["msg"] = "No zones checked."
@@ -158,13 +158,13 @@ datum/unit_test/zas_supply_shuttle_moved/check_result()
 			return 1
 
 		switch(test["result"])
-			if(SUCCESS) pass(test["msg"])
-			if(SKIP)    skip(test["msg"])
+			if(UT_SUCCESS) pass(test["msg"])
+			if(UT_SKIP)    skip(test["msg"])
 			else        fail(test["msg"])
 	return 1
 
 #undef UT_NORMAL
 #undef UT_VACUUM
 #undef UT_NORMAL_COLD
-#undef SUCCESS
-#undef FAILURE
+#undef UT_SUCCESS
+#undef UT_FAILURE
