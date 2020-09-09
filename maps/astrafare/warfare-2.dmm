@@ -1,0 +1,450 @@
+"aA" = (/obj/structure/bed/chair,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"aY" = (/obj/structure/sink{dir = 8; pixel_x = -16},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"bj" = (/turf/simulated/wall/r_wall/containment,/area/space)
+"bF" = (/obj/machinery/bodyscanner{dir = 4; icon_state = "body_scanner_0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"bI" = (/turf/simulated/wall/rust,/area/space)
+"bU" = (/obj/effect/floor_decal/turf/aesculapius/mem,/turf/simulated/mineral,/area/warfare/homebase/red)
+"cn" = (/obj/item/ammo_box/ptsd,/turf/simulated/mineral,/area/space)
+"cR" = (/obj/effect/floor_decal/turf/plating,/turf/simulated/mineral,/area/space)
+"du" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"dz" = (/obj/item/bandage_pack,/turf/simulated/mineral,/area/space)
+"dE" = (/obj/structure/landmine,/turf/simulated/mineral,/area/space)
+"ei" = (/obj/machinery/vending/medical{req_access = newlist()},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"es" = (/turf/simulated/mineral,/area/space)
+"fa" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"fc" = (/obj/structure/grille/floorgrille,/turf/simulated/mineral,/area/space)
+"fe" = (/obj/effect/floor_decal/turf/shaft,/turf/simulated/mineral,/area/space)
+"fn" = (/obj/item/weapon/grenade/frag/warfare,/turf/simulated/mineral,/area/space)
+"fz" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 8},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"gc" = (/obj/structure/barbwire,/turf/simulated/mineral,/area/space)
+"gm" = (/obj/structure/table/rack,/obj/item/weapon/storage/firstaid/regular,/obj/item/weapon/storage/firstaid/regular,/obj/item/weapon/storage/firstaid/regular,/obj/item/weapon/storage/firstaid/regular,/obj/structure/table/rack,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"gr" = (/obj/item/device/compass,/turf/simulated/mineral,/area/space)
+"gs" = (/obj/structure/table/steel,/obj/machinery/microwave,/obj/structure/table/steel,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"gu" = (/obj/structure/warfare/barricade/concrete_barrier{dir = 4; icon_state = "concrete_block"},/turf/simulated/mineral,/area/space)
+"gH" = (/obj/structure/crematorium{dir = 1},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"gJ" = (/turf/simulated/floor/dirty/indestructable/lightless,/area/space)
+"gL" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"gN" = (/obj/structure/table/rack,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"gV" = (/obj/structure/closet,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"hk" = (/obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla,/turf/simulated/mineral,/area/space)
+"hl" = (/obj/structure/table/rack,/obj/item/weapon/melee/classic_baton/trench_club,/obj/item/weapon/melee/classic_baton/trench_club,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"hq" = (/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"iP" = (/obj/effect/floor_decal/newcorner/plating,/turf/simulated/mineral,/area/space)
+"jd" = (/obj/structure/sign/medholo,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"jB" = (/obj/item/tourniquet,/turf/simulated/mineral,/area/space)
+"kx" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"kz" = (/obj/structure/girder,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"kB" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ld" = (/obj/structure/table/steel,/obj/item/weapon/storage/firstaid/surgery,/obj/item/weapon/FixOVein,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"lA" = (/obj/item/ammo_box/shotgun,/turf/simulated/mineral,/area/space)
+"lB" = (/obj/item/weapon/storage/fancy/cigarettes/carcinomas,/turf/simulated/mineral,/area/space)
+"lC" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"lE" = (/obj/structure/sign/neon/exit,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"lK" = (/obj/structure/anti_tank,/turf/simulated/mineral,/area/space)
+"lM" = (/obj/effect/floor_decal/newcorner/plating/diagonal,/turf/simulated/mineral,/area/space)
+"lR" = (/obj/structure/sign/neon/cargo,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"lS" = (/turf/simulated/wall/wood,/area/space)
+"mc" = (/obj/structure/poster/red,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"mF" = (/obj/machinery/cooker/oven,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"mY" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8; icon_state = "rwindow"},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"nb" = (/turf/simulated/floor/trench,/area/space)
+"nL" = (/obj/structure/bed/roller,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ou" = (/obj/structure/cargo_pad/bottom_middle,/obj/structure/window/reinforced{dir = 1},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"oz" = (/obj/effect/floor_decal/turf/steel,/turf/simulated/mineral,/area/space)
+"oB" = (/obj/structure/table/rack,/obj/item/weapon/storage/firstaid/fire,/obj/item/weapon/storage/firstaid/fire,/obj/item/weapon/storage/firstaid/fire,/obj/item/weapon/storage/firstaid/fire,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"qc" = (/turf/simulated/floor/tiled/ramp,/area/warfare/homebase/red)
+"qt" = (/turf/simulated/floor/plating/reinforced,/area/space)
+"qY" = (/obj/structure/window/reinforced,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"qZ" = (/obj/effect/floor_decal/turf/bar2,/turf/simulated/mineral,/area/space)
+"re" = (/obj/structure/crematorium,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"rn" = (/obj/machinery/sleeper{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"rs" = (/obj/structure/closet/crate,/obj/item/weapon/reagent_containers/ivbag/blood/AMinus,/obj/item/weapon/reagent_containers/ivbag/blood/AMinus,/obj/item/weapon/reagent_containers/ivbag/blood/APlus,/obj/item/weapon/reagent_containers/ivbag/blood/APlus,/obj/item/weapon/reagent_containers/ivbag/blood/BMinus,/obj/item/weapon/reagent_containers/ivbag/blood/BMinus,/obj/item/weapon/reagent_containers/ivbag/blood/BPlus,/obj/item/weapon/reagent_containers/ivbag/blood/BPlus,/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,/obj/item/weapon/reagent_containers/ivbag/blood/OPlus,/obj/item/weapon/reagent_containers/ivbag/blood/OPlus,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"rE" = (/obj/item/weapon/storage/box/matches,/turf/simulated/mineral,/area/space)
+"rQ" = (/turf/simulated/floor/tiled/ramp{dir = 4},/area/warfare/homebase/red)
+"sj" = (/obj/effect/landmark/start{name = "Red Practitioner"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"sK" = (/obj/effect/landmark/map_data{height = 2},/turf/simulated/mineral,/area/space)
+"te" = (/obj/item/weapon/reagent_containers/food/drinks/bottle/rum,/turf/simulated/mineral,/area/space)
+"tv" = (/obj/effect/floor_decal/newcorner/plating/corner,/turf/simulated/mineral,/area/space)
+"tQ" = (/obj/effect/floor_decal/turf/bar3,/turf/simulated/mineral,/area/space)
+"ur" = (/obj/structure/closet/secure_closet/medical2{req_access = newlist()},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"uQ" = (/obj/structure/sink{pixel_y = 20},/obj/structure/table/steel,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"vy" = (/turf/simulated/wall/voxshuttle,/area/space)
+"vB" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"vM" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"vW" = (/obj/structure/closet/crate/trashcart,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"vX" = (/obj/item/ammo_box/rifle,/turf/simulated/mineral,/area/space)
+"vZ" = (/obj/structure/closet/medical_wall,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"wd" = (/obj/structure/cargo_pad,/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"wf" = (/obj/effect/floor_decal/turf/barnew,/turf/simulated/mineral,/area/space)
+"wh" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ws" = (/obj/machinery/cooker/fryer,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"wy" = (/obj/structure/curtain/black,/turf/simulated/mineral,/area/space)
+"wL" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xc" = (/obj/structure/table/steel,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xd" = (/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 16},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xn" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xs" = (/obj/structure/table/rack,/obj/item/weapon/storage/firstaid/adv,/obj/item/weapon/storage/firstaid/adv,/obj/item/weapon/storage/firstaid/adv,/obj/item/weapon/storage/firstaid/adv,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xS" = (/obj/item/defensive_barrier,/turf/simulated/mineral,/area/space)
+"yg" = (/turf/simulated/floor/trenches,/area/space)
+"yo" = (/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/mineral,/area/space)
+"yz" = (/turf/simulated/floor/plating,/area/space)
+"yE" = (/obj/effect/floor_decal/turf/bar,/turf/simulated/mineral,/area/space)
+"yJ" = (/obj/structure/sign/neon/armory,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"yL" = (/turf/simulated/floor/dirty/indestructable/snow,/area/space)
+"zk" = (/mob/living/simple_animal/hostile/retaliate/rat,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/red)
+"zQ" = (/obj/effect/floor_decal/turf/cafe2,/turf/simulated/mineral,/area/space)
+"zZ" = (/obj/structure/curtain,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"Ae" = (/obj/structure/curtain,/turf/simulated/mineral,/area/space)
+"Am" = (/obj/structure/table/steel,/obj/item/weapon/reagent_containers/food/condiment/small/peppermill,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"AK" = (/obj/effect/wingrille_spawn,/turf/simulated/mineral,/area/space)
+"AU" = (/obj/machinery/optable,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"BR" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 1; icon_state = "door_closed"; name = "Emergency Medical"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"CA" = (/obj/structure/cargo_pad/bottom_right,/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 1},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"CC" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"CE" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"CP" = (/obj/structure/table/steel,/obj/item/weapon/crutches,/obj/item/weapon/crutches,/obj/item/weapon/crutches,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"CX" = (/obj/structure/grille,/turf/simulated/mineral,/area/space)
+"Dq" = (/turf/simulated/floor/tiled,/area/space)
+"Ds" = (/turf/simulated/floor/plating/n2floor,/area/space)
+"Dy" = (/obj/structure/table/rack,/obj/item/weapon/storage/firstaid/toxin,/obj/item/weapon/storage/firstaid/toxin,/obj/item/weapon/storage/firstaid/toxin,/obj/item/weapon/storage/firstaid/toxin,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Eb" = (/turf/simulated/wall/titanium,/area/space)
+"Eo" = (/obj/structure/closet/crate,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Fo" = (/turf/simulated/floor/wood,/area/space)
+"Fu" = (/turf/simulated/floor/greengrid,/area/space)
+"FB" = (/obj/structure/closet/secure_closet/medical1/warfare,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FC" = (/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka,/turf/simulated/mineral,/area/space)
+"FD" = (/obj/structure/girder,/turf/simulated/mineral,/area/space)
+"FL" = (/obj/structure/table/rack,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FN" = (/obj/structure/defensive_barrier{dir = 1},/turf/simulated/mineral,/area/space)
+"FQ" = (/obj/item/mortar_launcher,/turf/simulated/mineral,/area/space)
+"FZ" = (/obj/structure/cargo_pad/bottom_middle,/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Gk" = (/obj/machinery/cooker/candy,/obj/structure/table/steel,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"Gu" = (/obj/effect/floor_decal/turf/aesculapius/mori,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"GP" = (/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/mineral,/area/space)
+"GT" = (/turf/simulated/wall/r_wall,/area/space)
+"GW" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Hg" = (/obj/structure/banner/red/small{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Hj" = (/obj/structure/closet/secure_closet/freezer/fridge,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"HH" = (/obj/structure/crematorium,/obj/structure/crematorium,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"It" = (/obj/item/ammo_magazine/mc9mmt/machinepistol,/turf/simulated/mineral,/area/space)
+"IZ" = (/obj/structure/curtain,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"Je" = (/obj/structure/bed/chair/wheelchair{dir = 1},/obj/structure/bed/chair/wheelchair{dir = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"JD" = (/obj/machinery/door/blast/shutters/open{id = "red"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Kj" = (/obj/machinery/vending/dinnerware,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Ks" = (/obj/effect/floor_decal/turf/splate,/turf/simulated/mineral,/area/space)
+"KM" = (/obj/structure/grille/broken,/turf/simulated/mineral,/area/space)
+"LU" = (/obj/structure/table/woodentable,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"LW" = (/obj/item/instrument/guitar,/turf/simulated/mineral,/area/space)
+"Mn" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Mt" = (/obj/effect/landmark/start{name = "Red Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ML" = (/turf/simulated/floor/tiled/dark,/area/space)
+"Nn" = (/obj/item/weapon/flame/lighter/random,/turf/simulated/mineral,/area/space)
+"Nu" = (/obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey,/turf/simulated/mineral,/area/space)
+"NE" = (/obj/structure/dirt_wall,/obj/structure/dirt_wall,/turf/simulated/mineral,/area/space)
+"NU" = (/obj/effect/floor_decal/turf/cafe,/turf/simulated/mineral,/area/space)
+"NW" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"Oc" = (/obj/effect/floor_decal/newcorner/plating/quarter,/turf/simulated/mineral,/area/space)
+"Of" = (/obj/structure/table/rack/shelf,/turf/simulated/mineral,/area/space)
+"OK" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Pd" = (/obj/item/weapon/flame/candle,/turf/simulated/mineral,/area/space)
+"Pf" = (/obj/item/weapon/gun/projectile/warfare,/turf/simulated/mineral,/area/space)
+"Po" = (/turf/simulated/floor/dirty/fake,/area/space)
+"Px" = (/obj/structure/curtain,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"PL" = (/turf/simulated/mineral,/area/warfare/homebase/red)
+"PP" = (/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Qf" = (/obj/machinery/button/crematorium{id = 2; pixel_y = 32},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"QS" = (/obj/item/weapon/gun/projectile/heavysniper,/turf/simulated/mineral,/area/space)
+"QV" = (/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"Rl" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"RD" = (/obj/machinery/computer/operating,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"RE" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"RG" = (/turf/simulated/wall/elevator,/area/space)
+"RM" = (/obj/item/weapon/gun/projectile/shotgun/doublebarrel,/turf/simulated/mineral,/area/space)
+"RS" = (/turf/simulated/floor/tiled/ramp{dir = 8},/area/warfare/homebase/red)
+"Sc" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8; icon_state = "rwindow"},/obj/structure/window/reinforced{dir = 1},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Sl" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"SB" = (/obj/machinery/body_scanconsole{dir = 4; icon_state = "body_scannerconsole"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"SM" = (/obj/structure/poster/red,/obj/structure/poster/red,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"SX" = (/obj/structure/curtain/medical,/turf/simulated/mineral,/area/space)
+"Tp" = (/obj/structure/cargo_pad/bottom_right,/obj/structure/window/reinforced{dir = 4},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"TI" = (/obj/item/weapon/gun/projectile/automatic/mg08,/turf/simulated/mineral,/area/space)
+"TZ" = (/obj/structure/table/steel,/obj/machinery/cooker/cereal,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Ud" = (/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Uv" = (/obj/item/clothing/mask/gas,/turf/simulated/mineral,/area/space)
+"UA" = (/obj/item/weapon/shovel,/turf/simulated/mineral,/area/space)
+"UU" = (/turf/simulated/floor/dirty/indestructable,/area/space)
+"UX" = (/obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth,/turf/simulated/mineral,/area/space)
+"Vd" = (/obj/structure/bed/chair/wheelchair{dir = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Vf" = (/obj/item/mortar_shell,/turf/simulated/mineral,/area/space)
+"Vk" = (/obj/machinery/kaos/cargo_machine/red,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"We" = (/obj/effect/floor_decal/turf/aesculapius/mento,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"Wj" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/red)
+"Ww" = (/obj/structure/closet/crate/freezer,/obj/item/organ/external/arm/robo_arm,/obj/item/organ/external/arm/robo_arm,/obj/item/organ/external/arm/right/robo_arm,/obj/item/organ/external/arm/right/robo_arm,/obj/item/organ/external/hand/robo_hand,/obj/item/organ/external/hand/robo_hand,/obj/item/organ/external/hand/right/robo_hand,/obj/item/organ/external/hand/right/robo_hand,/obj/item/organ/external/leg/robo_leg,/obj/item/organ/external/leg/right/robo_leg,/obj/item/organ/external/leg/right/robo_leg,/obj/item/organ/external/foot/robo_foot,/obj/item/organ/external/foot/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"WG" = (/obj/structure/anti_tank/concrete_pillar,/turf/simulated/mineral,/area/space)
+"WL" = (/obj/item/weapon/reagent_containers/food/drinks/flask/barflask,/turf/simulated/mineral,/area/space)
+"Xb" = (/obj/machinery/cooker/grill,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Xw" = (/obj/structure/table/steel,/obj/item/weapon/reagent_containers/spray/cleaner/warfare,/obj/item/weapon/reagent_containers/spray/cleaner/warfare,/obj/item/weapon/reagent_containers/spray/cleaner/warfare,/obj/item/weapon/reagent_containers/spray/cleaner/warfare,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Xz" = (/obj/item/weapon/gun/projectile/automatic/machinepistol,/turf/simulated/mineral,/area/space)
+"XP" = (/turf/simulated/wall/concrete,/area/space)
+"XR" = (/obj/structure/iv_drip,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"XU" = (/turf/simulated/open,/area/warfare/homebase/red)
+"XV" = (/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Yh" = (/obj/item/weapon/gun/projectile/automatic/flamer,/turf/simulated/mineral,/area/space)
+"Ys" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"YO" = (/obj/item/weapon/melee/classic_baton/trench_club,/turf/simulated/mineral,/area/space)
+"Zo" = (/obj/item/weapon/wrench,/turf/simulated/mineral,/area/space)
+"ZH" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ZZ" = (/obj/item/weapon/flame/lighter/zippo,/turf/simulated/mineral,/area/space)
+
+(1,1,1) = {"
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesbIbIbIbIeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesbIbIesesbIeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesGTGTGTesesesesbIesesbIbIbIeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesGTesGTesGTesesesesbIbIbIbIeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesGTGTGTGTesesesesesesesesesesesEbEbEbeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesGTGTGTesesesesesesesesesesesesEbesEbEbeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesEbEbEbEbeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesbjesbjbjbjbjeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesbjesesbjesesesesesesesvyvyvyeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesbjesesbjbjbjesesesvyesvyesvyeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesbjbjbjbjesesesesesesesvyvyvyvyeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesRGRGRGeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesRGesRGesRGeseseseseseseseseslSlSlSlSeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesRGesRGRGeseseseseseseseslSeseslSeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesRGRGRGRGeseseseseseseseseslSlSlSlSlSeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseslSesesesesesesesesesesesesesesesesWjWjeseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesWjWjeseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesAewySXeseseseseseseseseseseseseseseseseseseseseseseseseszkWjeseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLWjWjPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLeseseseseseseses
+esesesesesesesesesPLPLPLPLPLPLPLPLPLPLWjPLPLPLPLWjPLPLPLPLPLPLWjWjPLPLPLWjWjPLPLPLPLPLPLPLPLPLPLPLPLPLPLeseseseseseseses
+esPoesyLesesesesesPLPLPLPLWjWjPLPLPLWjWjWjWjWjWjWjWjWjWjPLPLWjWjWjPLPLPLWjWjWjWjWjWjWjWjWjWjPLPLPLPLPLPLeseseseseseseses
+esesesesesesesesesPLPLPLWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjzkWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjPLPLPLeseseseseseseses
+esUUesgJesesesesesPLWjWjWjWjWjWjWjWjWjWjPLPLPLPLPLPLPLWjWjWjWjWjWjWjWjzkWjPLPLJDJDPLPLPLPLPLWjWjWjPLPLPLeseseseseseseses
+esesesesesesesesesPLWjWjPLPLPLPLQVkzQVQVQVQVQVPLPLPLPLPLPLWjWjWjPLPLPLPLPLPLPLPPPPPPvWPLPLPLPLWjWjWjPLPLeseseseseseseses
+esesesesesesesesesWjWjPLPLPLPLPLQVUdRDAUWwUdPLPLbUWeGuQVQVWjWjWjPLPLPLPLPLPLPLPPPPPPvWPLPLPLPLPLWjWjPLPLeseseseseseseses
+esesesesesesesesesWjWjPLPLPLPLPLPLlChqhqUdUdPLeixcxcxceiPLWjWjWjPLPLPLPLPLPLPLPPPPPPPPPLPLPLPLPLWjWjWjPLeseseseseseseses
+esFuesesesAKesesesWjWjPLPLPLPLPLPLldgVUdUdurPLXVXVXVXVXVPLYsXVlEPLQVPLPLPLQVQVlEYsXVQVPLPLPLPLPLWjWjWjPLeseseseseseseses
+esqZtQesesesesesesWjWjPLQVQVPLPLPLQVQVPxvZQVQVXVXVwLhqXVPLXVXVQVPLQVXVXVmcXVXVXVXVXVQVPLPLQVQVPLPLWjWjWjeseseseseseseses
+esyEwfesesesesesesWjWjPLQVXUXURSXVXVXVXVXVFBFBXVxdQVaYXVjdhqXVPLPLQVqYScouCARlhqXVXVRlHgVkHgQVPLPLWjWjWjeseseseseseseses
+esNUzQesesozozesesWjWjPLPLXUXURShqXVhqhqXVXVXVXVhqsjXVXVXVXVXVQVPLQVlRfzwdTpRlXVXVhqRlXVCCXVQVPLWjWjWjWjeseseseseseseses
+esesesesesozozesesWjWjPLPLQVQVQVQVPLPLCPXVXVXVhqhqXVXVXVBRXVhqPLPLPLXVmYFZTpRlXVXVhqRlXVXVhqPLPLWjWjWjWjeseseseseseseses
+escResesesesesesesWjWjPLPLPLQVreQfHHPLXwXVVdJeXVXVSMXVXVjdXVhqPLPLPLXVXVXVhqXVXVXVXVRlXVXVXVPLPLPLWjWjWjeseseseseseseses
+esOctvesesesesesesWjWjWjWjWjQVhqhqUdPLPLXVQVQVXVXVXRXVXVQVXVXVQVPLQVXVXVhqhqXVXVXVXVXVXVhqhqQVPLPLWjWjWjeseseseseseseses
+eslMiPesesXPCXKMesPLWjWjWjWjQVUdhqUdMnXVXVrsQVrnXVhqSBbFQVYsXVQVPLQVQVMnyJMnQVQVYsXVQVQVqcqcQVPLPLPLWjWjeseseseseseseses
+esesesesesesesesesPLWjWjWjWjkzUdUdUdQVDyhqxsPLSlXVnLXVkxQVWjWjPLPLQVEoXVXVXVEoPLWjWjPLQVXUXUQVPLPLPLWjWjeseseseseseseses
+esfcozKsfeqtyzDsesPLWjWjWjPLQVreUdgHQVoBhqgmPLrnXVnLSBbFQVWjWjPLPLQVgNXVFLhqvMQVWjWjPLPLXUXUQVPLPLWjWjWjeseseseseseseses
+esesesFoygnbMLDqesPLPLWjWjPLPLPLQVQVQVnLXVnLPLPLQVQVPLPLQVWjWjPLPLPLgNhqhlXVvMQVWjWjPLPLQVQVPLPLPLPLWjWjeseseseseseseses
+esesesesesesesesesPLPLWjWjPLPLPLPLPLQVQVQVQVPLPLPLPLPLPLPLWjWjPLPLQVFLhqhlXVvMPLWjWjPLPLPLPLPLPLPLPLWjWjeseseseseseseses
+esdENEWGFDguFNgclKPLPLWjWjWjWjPLPLPLPLPLWjWjPLPLWjWjPLWjWjWjWjPLPLPLFLhqhlXVvMPLWjWjWjWjPLPLPLPLPLPLWjWjeseseseseseseses
+esesesesesesxSesesPLPLPLWjWjPLPLPLPLPLWjWjWjWjWjWjWjWjzkWjWjWjPLPLPLXVXVXVXVXVPLPLWjWjWjWjPLPLPLPLWjWjWjeseseseseseseses
+esesesesesesesesesPLPLPLPLPLPLPLPLPLWjWjWjWjWjzkWjWjWjWjWjWjPLPLPLQVQVqcQVqcQVQVPLPLWjWjWjPLPLPLWjWjWjWjeseseseseseseses
+esOfeslBPdNnZZgresPLPLPLPLPLPLPLPLWjWjWjPLPLWjWjWjPLPLPLPLPLPLPLPLPLQVXUQVXUQVPLPLPLPLWjWjPLPLPLWjWjWjPLeseseseseseseses
+esesesdzjBteUvWLesPLPLWjWjWjWjWjWjWjWjPLPLPLWjWjPLPLPLPLPLPLPLPLPLPLQVXUQVXUPLPLPLPLWjWjWjPLPLPLWjWjWjPLeseseseseseseses
+esesesrEhkNuFCUXesPLWjWjWjPLPLPLQVQVQVPLPLPLYsXVPLPLPLPLQVQVPLPLPLPLPLPLQVQVPLPLPLPLWjWjPLPLPLWjWjWjPLPLeseseseseseseses
+esesesesesesesesesWjWjPLPLPLPLgsgLmFXbwsuQQVXVXVgLrQXUXUXVQVPLPLPLPLPLPLPLPLPLPLPLPLWjWjPLPLPLWjWjWjPLPLeseseseseseseses
+esesZoUAYOLWesesWjWjPLPLPLPLmcHjXVXVXVXVXVQVXVXVXVXVXVXVXVXVWjWjWjWjWjWjWjWjWjWjWjWjWjWjPLPLPLPLWjWjPLPLeseseseseseseses
+esesesesesesesesWjWjPLPLPLPLQVxnhqXVGkhqAmQVXVhqXVXVXVhqXVwhWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjPLPLPLWjWjPLPLeseseseseseseses
+esesesesesesesesWjWjPLPLPLPLQVKjXVhqTZXVXVQVXVhqwLrQXUXUXVQVPLPLPLPLWjWjPLPLPLPLPLPLPLPLPLPLPLPLWjWjPLPLeseseseseseseses
+esesVfcnlAvXesesWjWjPLPLPLPLQVQVQVXVQVRlRlQVYsXVQVPLPLPLQVQVQVQVQVQVQVQVPLPLPLPLPLPLPLPLPLPLPLWjWjPLPLPLeseseseseseseses
+esesfnyoItesesesWjWjPLPLOKUdOKQVXVXVXVXVXVXVXVXVXVXVgLXVXVrQXUXUQVXVPxGWQVPLPLPLPLPLPLPLPLWjWjWjWjPLPLPLeseseseseseseses
+esesesesesesesesWjWjPLPLlCUdUdMnXVXVhqXVXVhqXVXVhqXVXVXVhqrQXUXUQVSlQVQVQVPLPLPLPLPLPLPLWjWjWjWjPLPLPLPLeseseseseseseses
+esFQesesesesesesWjWjPLPLOKUdOKQVSlXVaAaAaAMtXVhqaAaAaAXVREQVQVkzQVXVzZduPLPLPLPLPLPLPLWjWjWjPLPLPLPLPLPLeseseseseseseses
+esRMXzPfYhTIesesWjWjPLPLXVXVXVPLXVkBRlRlRlCEXVfaRlRlRlvBXVQVNWhqXVXVQVQVQVWjWjWjWjWjWjWjWjPLPLPLPLPLPLPLeseseseseseseses
+esesesesesQSesesWjWjWjQVOKUdOKPLXVkBRlLURlCEXVkBRlRlRlCEXVIZXVQVaYXVPxduQVWjWjWjWjWjWjWjPLPLPLPLPLPLPLPLeseseseseseseses
+esesGPesesesesesesWjWjQVlCUdUdQVhqXVCCCCCCXVXVXVCCCCCCXVXVPxXVQVaYhqQVQVQVWjWjWjWjWjPLPLPLPLPLPLPLPLPLPLeseseseseseseses
+esesesesesesesesesPLWjkzOKUdOKQVXVXVwLXVXVXVZHXVXVhqwLXVXVQVSlXVXVhqPxGWQVWjWjPLPLPLPLPLPLPLPLPLPLPLPLPLeseseseseseseses
+esesesesesesesesesPLPLQVQVQVQVQVQVmcQVPLPLQVQVQVPLQVQVmcQVPLPLPLPLQVQVQVPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLPLeseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+essKeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+"}
