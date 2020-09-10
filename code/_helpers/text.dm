@@ -184,7 +184,7 @@
  * Text modification
  */
 
-/proc/replace_characters(var/t,var/list/repl_chars)
+/proc/replace_characters(var/t, var/list/repl_chars)
 	for(var/char in repl_chars)
 		t = replacetext(t, char, repl_chars[char])
 	return t
@@ -207,6 +207,15 @@
 		t = "[t] "
 	return t
 
+/proc/add_characters(c, n = 0) //Adds whatever character in 'c' and repeats that process 'n' times then returns text string as "XXXXXXXXXX"
+	. = ""
+	if(length(c) > 1) // if someone ever needs to add more than single character, it shouldn't be hard to edit this proc.
+		return
+	if(n > 25) // should be enough for anything
+		return
+	for(var/i in 1 to n)
+		. += "[c]"
+
 //Returns a string with reserved characters and spaces before the first letter removed
 /proc/trim_left(text)
 	for (var/i = 1 to length(text))
@@ -227,7 +236,7 @@
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
-	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	return uppertext(copytext_char(t, 1, 2)) + copytext_char(t, 2)
 
 //Bolds "shouted" messages.
 /proc/add_shout_append(text)
