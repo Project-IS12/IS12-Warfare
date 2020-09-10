@@ -43,11 +43,11 @@
 	if(!istype(current_location))
 		CRASH("Shuttle \"[name]\" could not find its starting location.")
 
-	if(src.name in shuttle_controller.shuttles)
+	if(src.name in SSshuttles.shuttles)
 		CRASH("A shuttle with the name '[name]' is already defined.")
-	shuttle_controller.shuttles[src.name] = src
+	SSshuttles.shuttles[src.name] = src
 	if(flags & SHUTTLE_FLAGS_PROCESS)
-		shuttle_controller.process_shuttles += src
+		SSshuttles.process_shuttles += src
 	if(flags & SHUTTLE_FLAGS_SUPPLY)
 		if(supply_controller.shuttle)
 			CRASH("A supply shuttle is already defined.")
@@ -56,8 +56,8 @@
 /datum/shuttle/Destroy()
 	current_location = null
 
-	shuttle_controller.shuttles -= src.name
-	shuttle_controller.process_shuttles -= src
+	SSshuttles.shuttles -= src.name
+	SSshuttles.process_shuttles -= src
 	if(supply_controller.shuttle == src)
 		supply_controller.shuttle = null
 
@@ -160,7 +160,7 @@
 				var/turf/TA = GetAbove(TO)
 				if(istype(TA, ceiling_type))
 					TA.ChangeTurf(get_base_turf_by_area(TA), 1, 1)
-	
+
 		for(var/mob/M in A)
 			if(knockdown)
 				if(M.client)
@@ -171,19 +171,19 @@
 						else
 							to_chat(M, "<span class='warning'>The floor lurches beneath you!</span>")
 							shake_camera(M, 10, 1)
-				
+
 				if(ishuman(M))
 					var/mob/living/carbon/human/H = M
 					if(!H.buckled)
 						H.visible_message("<span class='warning'>[M.name] is tossed around by the sudden acceleration!</span>")
 						var/smashsound = pick("sound/effects/gore/smash[rand(1,3)].ogg", "sound/effects/gore/trauma1.ogg")
 						playsound(M, smashsound, 50, 1, -1)
-						H.emote("scream")		
+						H.emote("scream")
 						H.Stun(2)
 						H.Weaken(2)
 						step(H,pick(GLOB.cardinal))//move them
 						H.apply_damage(rand(30) , BRUTE)
-			
+
 			shake_camera(M, 2, 1)
 
 		for(var/obj/structure/cable/C in A)

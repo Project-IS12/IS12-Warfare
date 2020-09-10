@@ -77,7 +77,7 @@
 			data["requests"] = requests
 			data["done"] = done
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnanoui.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "supply.tmpl", name, 1050, 800, state = state)
 		ui.set_auto_update(1)
@@ -154,7 +154,7 @@
 				shuttle.launch(user)
 		else
 			shuttle.launch(user)
-			var/datum/radio_frequency/frequency = radio_controller.return_frequency(1435)
+			var/datum/radio_frequency/frequency = SSradio.return_frequency(1435)
 			if(!frequency)
 				return
 

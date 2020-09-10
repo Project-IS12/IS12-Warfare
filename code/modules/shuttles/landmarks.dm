@@ -45,7 +45,7 @@
 			var/obj/effect/overmap/location = map_sectors["[z]"]
 			if(location && location.docking_codes)
 				docking_controller.docking_codes = location.docking_codes
-	shuttle_controller.register_landmark(tag, src)
+	SSshuttles.register_landmark(tag, src)
 
 /obj/effect/shuttle_landmark/proc/is_valid(var/datum/shuttle/shuttle)
 	if(shuttle.current_location == src)

@@ -1160,7 +1160,7 @@
 		if(wear_id)
 			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
 			if(I)
-				var/datum/job/J = job_master.GetJob(I.GetJobName())
+				var/datum/job/J = SSjobs.GetJob(I.GetJobName())
 				if(J)
 					holder.icon_state = J.hud_icon
 
@@ -1264,10 +1264,10 @@
 	restore_blood()
 	full_prosthetic = null
 	shock_stage = 0
-	if(job_master.GetJobByTitle(job)?.is_blue_team && !(src in SSWarfare.blue.team))
-		SSWarfare.blue.team.Add(src)
-	if(job_master.GetJobByTitle(job)?.is_red_team && !(src in SSWarfare.red.team))
-		SSWarfare.red.team.Add(src)
+	if(SSjobs.GetJobByTitle(job)?.is_blue_team && !(src in SSwarfare.blue.team))
+		SSwarfare.blue.team.Add(src)
+	if(SSjobs.GetJobByTitle(job)?.is_red_team && !(src in SSwarfare.red.team))
+		SSwarfare.red.team.Add(src)
 	..()
 
 /mob/living/carbon/human/reset_view(atom/A)

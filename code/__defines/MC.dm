@@ -1,4 +1,5 @@
 #define MC_TICK_CHECK ( ( TICK_USAGE > Master.current_ticklimit || src.state != SS_RUNNING ) ? pause() : 0 )
+#define GAME_STATE (2 ** (Master.current_runlevel - 1))
 
 #define MC_SPLIT_TICK_INIT(phase_count) var/original_tick_limit = Master.current_ticklimit; var/split_tick_phases = ##phase_count
 #define MC_SPLIT_TICK \
@@ -72,6 +73,9 @@ if(Datum.is_processing) {\
 //	This flag overrides SS_KEEP_TIMING
 #define SS_POST_FIRE_TIMING 64
 
+// Run Shutdown() on server shutdown so the SS can finalize state.
+#define SS_NEEDS_SHUTDOWN 128
+
 // -- SStimer stuff --
 //Don't run if there is an identical unique timer active
 #define TIMER_UNIQUE		0x1
@@ -103,6 +107,11 @@ if(Datum.is_processing) {\
 #define SS_PAUSED 3		//paused by mc_tick_check
 #define SS_SLEEPING 4	//fire() slept.
 #define SS_PAUSING 5 	//in the middle of pausing
+
+// Subsystem init-states, used for the initialization MC panel.
+#define SS_INITSTATE_NONE 0
+#define SS_INITSTATE_STARTED 1
+#define SS_INITSTATE_DONE 2
 
 #define SUBSYSTEM_DEF(X) GLOBAL_REAL(SS##X, /datum/controller/subsystem/##X);\
 /datum/controller/subsystem/##X/New(){\

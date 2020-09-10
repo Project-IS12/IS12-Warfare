@@ -135,11 +135,6 @@
 	// Create robolimbs for chargen.
 	populate_robolimb_list()
 
-	processScheduler = new
-	master_controller = new /datum/controller/game_controller()
-
-	processScheduler.deferSetupFor(/datum/controller/process/ticker)
-	processScheduler.setup()
 	Master.Initialize(10, FALSE)
 
 #ifdef UNIT_TEST
@@ -500,7 +495,7 @@ var/world_topic_spam_protect_time = world.timeofday
 
 		*/
 
-	processScheduler.stop()
+	Master.Shutdown()
 
 	/*
 	if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite

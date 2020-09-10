@@ -39,9 +39,6 @@
 	update_icon()
 
 /turf/simulated/wall/proc/update_air()
-	if(!SSair)
-		return
-
 	for(var/turf/simulated/turf in loc)
 		update_thermal(turf)
 		SSair.mark_for_update(turf)

@@ -116,7 +116,7 @@
 		client.prefs.ShowChoices(src)
 
 	if(href_list["observe"])
-		if(!(initialization_stage&INITIALIZATION_COMPLETE))
+		if(GAME_STATE < RUNLEVEL_LOBBY)
 			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 			return
 
@@ -168,7 +168,7 @@
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
-		var/datum/job/job = job_master.GetJob(href_list["SelectedJob"])
+		var/datum/job/job = SSjobs.GetJob(href_list["SelectedJob"])
 
 		if(!job)
 			to_chat(usr, "<span class='danger'>The job '[href_list["SelectedJob"]]' doesn't exist!</span>")
@@ -340,10 +340,10 @@
 	if(job.is_restricted(client.prefs, src))
 		return
 
-	var/datum/spawnpoint/spawnpoint = job_master.get_spawnpoint_for(client, job.title)
+	var/datum/spawnpoint/spawnpoint = SSjobs.get_spawnpoint_for(client, job.title)
 	var/turf/spawn_turf = pick(spawnpoint.turfs)
 	if(job.latejoin_at_spawnpoints)
-		var/obj/S = job_master.get_roundstart_spawnpoint(job.title)
+		var/obj/S = SSjobs.get_roundstart_spawnpoint(job.title)
 		spawn_turf = get_turf(S)
 	var/radlevel = radiation_repository.get_rads_at_turf(spawn_turf)
 	var/airstatus = FALSE //IsTurfAtmosUnsafe(spawn_turf)
@@ -362,13 +362,13 @@
 			to_chat(src, alert("[job.title] is not available. Please try another."))
 			return 0
 
-	job_master.AssignRole(src, job.title, 1)
+	SSjobs.AssignRole(src, job.title, 1)
 
 	var/mob/living/character = create_character(spawn_turf)	//creates the human and transfers vars and mind
 	if(!character)
 		return 0
 
-	character = job_master.EquipRank(character, job.title, 1)					//equips the human
+	character = SSjobs.EquipRank(character, job.title, 1)					//equips the human
 	equip_custom_items(character)
 
 	// AIs don't need a spawnpoint, they must spawn at an empty core
@@ -393,7 +393,7 @@
 
 	ticker.mode.handle_latejoin(character)
 	GLOB.universe.OnPlayerLatejoin(character)
-	if(job_master.ShouldCreateRecords(job.title))
+	if(SSjobs.ShouldCreateRecords(job.title))
 		if(character.mind.assigned_role != "Cyborg")
 			CreateModularRecord(character)
 			ticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
@@ -442,7 +442,7 @@
 		"Misc"=list("color"="Grey", "jobs"=list())
 		)
 
-	for(var/datum/job/job in job_master.occupations)
+	for(var/datum/job/job in SSjobs.occupations)
 		if(!IsJobAvailable(job))
 			continue
 
@@ -507,7 +507,7 @@
 		chosen_species = all_species[client.prefs.species]
 
 	if(!spawn_turf)
-		var/datum/spawnpoint/spawnpoint = job_master.get_spawnpoint_for(client, get_rank_pref())
+		var/datum/spawnpoint/spawnpoint = SSjobs.get_spawnpoint_for(client, get_rank_pref())
 		spawn_turf = pick(spawnpoint.turfs)
 
 	if(chosen_species)

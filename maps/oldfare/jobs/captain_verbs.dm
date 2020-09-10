@@ -5,12 +5,12 @@
 	if(stat)
 		return
 
-	var/is_blue = job_master.GetJobByTitle(job).is_blue_team
+	var/is_blue = SSjobs.GetJobByTitle(job).is_blue_team
 	var/class = "red_team"
-	var/datum/team/T = SSWarfare.red
+	var/datum/team/T = SSwarfare.red
 	if(is_blue)
 		class = "blue_team"
-		T = SSWarfare.blue
+		T = SSwarfare.blue
 
 	if(T.checkCooldown("Help me!"))
 		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
@@ -32,12 +32,12 @@
 	if(stat)
 		return
 
-	var/is_blue = job_master.GetJobByTitle(job).is_blue_team
+	var/is_blue = SSjobs.GetJobByTitle(job).is_blue_team
 	var/class = "red_team"
-	var/datum/team/T =  SSWarfare.red
+	var/datum/team/T =  SSwarfare.red
 	if(is_blue)
 		class = "blue_team"
-		T = SSWarfare.blue
+		T = SSwarfare.blue
 
 	if(T.checkCooldown("Retreat!"))
 		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
@@ -54,12 +54,12 @@
 	if(stat)
 		return
 
-	var/is_blue = job_master.GetJobByTitle(job).is_blue_team
+	var/is_blue = SSjobs.GetJobByTitle(job).is_blue_team
 	var/class = "red_team"
-	var/datum/team/T =  SSWarfare.red
+	var/datum/team/T =  SSwarfare.red
 	if(is_blue)
 		class = "blue_team"
-		T = SSWarfare.blue
+		T = SSwarfare.blue
 
 	if(T.checkCooldown("Make Announcement!"))
 		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
@@ -97,12 +97,12 @@
 	if(stat)
 		return
 
-	var/is_blue = job_master.GetJobByTitle(job).is_blue_team
+	var/is_blue = SSjobs.GetJobByTitle(job).is_blue_team
 	var/class = "red_team"
-	var/datum/team/T =  SSWarfare.red
+	var/datum/team/T =  SSwarfare.red
 	if(is_blue)
 		class = "blue_team"
-		T = SSWarfare.blue
+		T = SSwarfare.blue
 
 	if(T.checkCooldown("Give Order!"))
 		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
@@ -138,17 +138,17 @@
 	set name = "Check Reinforcements"
 	set category = "Captain"
 
-	var/is_blue = job_master.GetJobByTitle(job).is_blue_team
-	var/datum/team/T =  SSWarfare.red
+	var/is_blue = SSjobs.GetJobByTitle(job).is_blue_team
+	var/datum/team/T =  SSwarfare.red
 	if(is_blue)
-		T = SSWarfare.blue
+		T = SSwarfare.blue
 	if(T.checkCooldown("Check Reinforcements"))
 		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
 		return
 	if(is_blue)
-		to_chat(src, "<span class='bnotice'><font size=4>Reinforcements Left: [SSWarfare.blue.left]</font></span>")
+		to_chat(src, "<span class='bnotice'><font size=4>Reinforcements Left: [SSwarfare.blue.left]</font></span>")
 	else
-		to_chat(src, "<span class='bnotice'><font size=4>Reinforcements Left: [SSWarfare.red.left]</font></span>")
+		to_chat(src, "<span class='bnotice'><font size=4>Reinforcements Left: [SSwarfare.red.left]</font></span>")
 	T.startCooldown("Check Reinforcements")
 
 
@@ -159,12 +159,12 @@
 	if(stat)
 		return
 
-	var/is_blue = job_master.GetJobByTitle(job).is_blue_team
+	var/is_blue = SSjobs.GetJobByTitle(job).is_blue_team
 	var/class = "red_team"
-	var/datum/team/T =  SSWarfare.red
+	var/datum/team/T =  SSwarfare.red
 	if(is_blue)
 		class = "blue_team"
-		T = SSWarfare.blue
+		T = SSwarfare.blue
 
 	switch(alert(src,"This has a long cool down are you sure you wish to use this?", "Cooldown", "Yes", "No"))
 		if("No")

@@ -4,7 +4,7 @@
 /datum/unit_test/jobs_shall_have_a_valid_outfit_type/start_test()
 	var/failed_jobs = 0
 
-	for (var/occ in job_master.occupations)
+	for (var/occ in SSjobs.occupations)
 		var/datum/job/occupation = occ
 		var/decl/hierarchy/outfit/job/outfit = outfit_by_type(occupation.outfit_type)
 		if(!istype(outfit))
@@ -38,7 +38,7 @@
 		log_bad("Sanity Check - Missing HUD icon: hudcentcom")
 		failed_sanity_checks++
 
-	for (var/datum/job/J in job_master.occupations)
+	for (var/datum/job/J in SSjobs.occupations)
 		var/hud_icon_state = J.hud_icon
 		if(!(hud_icon_state in job_huds))
 			log_bad("[J.title] - Missing HUD icon: [hud_icon_state]")
