@@ -13,7 +13,7 @@
 		affecting.w_uniform.add_fingerprint(assailant)
 
 	assailant.put_in_active_hand(src)
-	assailant.do_attack_animation(affecting)
+	//assailant.do_attack_animation(affecting)
 	playsound(affecting.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 	var/obj/O = get_targeted_organ()
 	var/grab_string = O.name
