@@ -404,7 +404,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "trenchaxe"
 	item_state = "trenchaxe"
-	slot_flags = SLOT_BELT
+	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_S_STORE
 	force = 20
 	block_chance = 20
 	sharp = TRUE

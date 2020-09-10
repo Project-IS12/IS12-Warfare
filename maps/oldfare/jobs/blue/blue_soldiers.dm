@@ -364,12 +364,14 @@
 	suit = /obj/item/clothing/suit/fire/blue
 	head = /obj/item/clothing/head/helmet/bluehelmet/fire
 	belt = /obj/item/weapon/gun/projectile/automatic/flamer
+	suit_store = /obj/item/weapon/melee/trench_axe
 	backpack_contents = list(/obj/item/ammo_magazine/flamer = 4, /obj/item/weapon/grenade/smokebomb = 1)
 
 /decl/hierarchy/outfit/job/bluesoldier/sentry
 	l_ear = /obj/item/device/radio/headset/blue_team/all
 	suit = /obj/item/clothing/suit/armor/sentry/blue
 	head = /obj/item/clothing/head/helmet/sentryhelm/blue
+	belt = /obj/item/weapon/melee/trench_axe
 	suit_store = /obj/item/weapon/gun/projectile/automatic/mg08
 	backpack_contents = list(/obj/item/ammo_magazine/box/a556/mg08 = 3, /obj/item/weapon/grenade/smokebomb = 1)
 
