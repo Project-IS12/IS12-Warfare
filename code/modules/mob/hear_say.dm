@@ -64,6 +64,9 @@
 		var/mob/living/carbon/human/H = speaker
 		speaker_name = H.GetVoice()
 
+		if(H.client?.warfare_faction != src.client?.warfare_faction)
+			speaker_name = ageAndGender2Desc(H.age, H.gender)
+
 	if(italics)
 		message = "<i>[capitalize(message)]</i>"
 
@@ -147,8 +150,10 @@
 
 	if(istype(speaker, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = speaker
+
 		if(H.voice)
 			speaker_name = H.voice
+
 
 		if(H.age && H.gender && !H.is_anonymous)//If they have an age and gender, and they're not anonymous.
 			var/ageAndGender
@@ -160,6 +165,9 @@
 			ageAndGender = ageAndGender2Desc(H.age, H.gender)//Get their age and gender
 
 			speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]"//Print it out.
+
+		if(H.client?.warfare_faction != src.client?.warfare_faction)//So if they're not apart of the same warfare faction as us, then we don't know their name.
+			speaker_name = ageAndGender2Desc(H.age, H.gender)
 
 	if(hard_to_hear)
 		speaker_name = "unknown"
