@@ -96,6 +96,7 @@
 	var/obj/item/torch/lighttorch
 
 /obj/structure/torchwall/New()
+	..()
 	if(prob(98))
 		lighttorch = new(src)
 		if(prob(75))
