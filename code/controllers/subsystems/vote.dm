@@ -23,23 +23,33 @@ SUBSYSTEM_DEF(vote)
 	var/auto_add_antag = 0
 
 /datum/controller/subsystem/vote/fire()
-	if (!mode)
+	if(!mode)
 		return
 
-	if (mode == "gamemode" && ticker.current_state >= GAME_STATE_SETTING_UP)
+	// No more change mode votes after the game has started.
+	// 3 is GAME_STATE_PLAYING, but that #define is undefined for some reason
+	if(mode == "gamemode" && ticker.current_state >= GAME_STATE_SETTING_UP)
 		to_world("<b>Voting aborted due to game start.</b>")
+
 		reset()
 		return
 
+	// Calculate how much time is remaining by comparing current time, to time of vote start,
+	// plus vote duration
 	time_remaining = round((started_time + config.vote_period - world.time)/10)
 
-	if (time_remaining < 0)
+	if(time_remaining < 0)
 		result()
-
-		for (var/client/C in voting)
-			C << browse(null, "window=vote;size=450x740")
-
+		for(var/client/C in voting)
+			if(C)
+				C << browse(null,"window=vote;size=450x740")
 		reset()
+	else
+		for(var/client/C in voting)
+			if(C)
+				C << browse(SSvote.interface(C),"window=vote;size=450x740")
+
+		voting.Cut()
 
 /datum/controller/subsystem/vote/proc/autotransfer()
 	initiate_vote("crew_transfer","the server", 1)
@@ -257,12 +267,10 @@ SUBSYSTEM_DEF(vote)
 		world.Reboot()
 
 /datum/controller/subsystem/vote/proc/submit_vote(var/ckey, var/vote, var/weight)
-	if (!mode)
+	if(!mode)
 		return 0
-
 	if(config.vote_no_dead && usr.stat == DEAD && !usr.client.holder)
 		return 0
-
 	if(vote && vote >= 1 && vote <= choices.len)
 		if(current_high_votes[ckey] && (current_high_votes[ckey] == vote || weight == 3))
 			choices[choices[current_high_votes[ckey]]] -= 3
@@ -277,22 +285,17 @@ SUBSYSTEM_DEF(vote)
 			current_low_votes -= ckey
 
 		voted += usr.ckey
-
 		switch(weight)
 			if(3)
 				current_high_votes[ckey] = vote
 				choices[choices[vote]] += 3
-
 			if(2)
 				current_med_votes[ckey] = vote
 				choices[choices[vote]] += 2
-
 			if(1)
 				current_low_votes[ckey] = vote
 				choices[choices[vote]] += 1
-
 		return vote
-	return 0
 
 /datum/controller/subsystem/vote/proc/initiate_vote(var/vote_type, var/initiator_key, var/automatic = 0)
 	if(!mode)

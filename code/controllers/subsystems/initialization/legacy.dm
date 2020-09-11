@@ -5,7 +5,7 @@ SUBSYSTEM_DEF(legacy_init)
 	flags = SS_NO_FIRE
 	init_order = INIT_BAY_LEGACY
 
-/datum/controller/subsystem/Initialize(start_timeofday)
+/datum/controller/subsystem/legacy_init/Initialize(start_timeofday)
 	if (GLOB.using_map.use_overmap)
 		overmap_event_handler.create_events(GLOB.using_map.overmap_z, GLOB.using_map.overmap_size, GLOB.using_map.overmap_event_areas)
 

@@ -798,6 +798,7 @@ var/global/floorIsLava = 0
 		log_admin("[usr.key] has started the game.")
 		message_admins("<font color='blue'>[usr.key] has started the game.</font>")
 		feedback_add_details("admin_verb","SN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		ticker.current_state = GAME_STATE_SETTING_UP
 		return 1
 	else
 		to_chat(usr, "<span class='warning'>Error: Start Now: Game has already started.</span>")

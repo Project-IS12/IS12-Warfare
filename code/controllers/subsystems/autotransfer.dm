@@ -1,11 +1,11 @@
 SUBSYSTEM_DEF(autotransfer)
 	name = "Auto-Transfer"
 	wait = 2 SECONDS
-	flags = SS_KEEP_TIMING | SS_NO_TICK_CHECK | SS_NO_INIT
+	flags = SS_KEEP_TIMING | SS_NO_TICK_CHECK
 
 	var/timerbuffer	// fuck if I know why this is named this
 
-/datum/controller/subsystem/autotransfer/PreInit()
+/datum/controller/subsystem/autotransfer/Initialize()
 	timerbuffer = config.vote_autotransfer_initial
 
 /datum/controller/subsystem/autotransfer/fire()

@@ -35,6 +35,7 @@
 // Subsystems shutdown in the reverse of the order they initialize in
 // The numbers just define the ordering, they are meaningless otherwise.
 
+#define INIT_BAY_LEGACY      21
 #define INIT_ORDER_ASPECTS   20
 #define INIT_ORDER_SKYBOX    19
 #define INIT_ORDER_JOBS      15
@@ -50,6 +51,5 @@
 #define INIT_ORDER_OVERLAY   -6
 #define INIT_ORDER_LIGHTING -20
 #define INIT_OPEN_SPACE    -150
-#define INIT_BAY_LEGACY    -200
 #define INIT_ORDER_TICKER  -205
 #define INIT_ORDER_CHAT    -210 //Should be last to ensure chat remains smooth during init.

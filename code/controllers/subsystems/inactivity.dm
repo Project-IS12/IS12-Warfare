@@ -1,10 +1,9 @@
 SUBSYSTEM_DEF(inactivity)
 	name = "Inactivity"
 	wait = 1 MINUTE
-	flags = SS_NO_TICK_CHECK | SS_NO_INIT
+	flags = SS_NO_TICK_CHECK
 
-/datum/controller/subsystem/inactivity/PreInit()
-	. = ..()
+/datum/controller/subsystem/inactivity/Initialize(start_timeofday)
 	if (!config.kick_inactive)
 		flags |= SS_NO_FIRE
 
