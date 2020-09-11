@@ -137,7 +137,7 @@ Please contact me on #coderbus IRC. ~Carn x
 #define HANDCUFF_LAYER			23
 #define L_HAND_LAYER			24
 #define R_HAND_LAYER			25
-#define FIRE_LAYER				26		//If you're on fire
+#define FIRE_OVERLAY_LAYER				26		//If you're on fire
 #define FLIES_LAYER				27
 #define COLDBREATH_LAYER		28
 #define TARGETED_LAYER			29		//BS12: Layer for the target overlay from weapon targeting system
@@ -690,10 +690,10 @@ var/global/list/damage_icon_parts = list()
 
 
 /mob/living/carbon/human/update_fire(var/update_icons=1)
-	overlays_standing[FIRE_LAYER] = null
+	overlays_standing[FIRE_OVERLAY_LAYER] = null
 	if(on_fire)
 		var/image/standing = overlay_image('icons/mob/OnFire.dmi', "Standing", RESET_COLOR)
-		overlays_standing[FIRE_LAYER] = standing
+		overlays_standing[FIRE_OVERLAY_LAYER] = standing
 	if(update_icons)   update_icons()
 
 /mob/living/carbon/human/proc/add_coldbreath(var/update_icons=1)
@@ -761,7 +761,7 @@ var/global/list/damage_icon_parts = list()
 #undef L_HAND_LAYER
 #undef R_HAND_LAYER
 #undef TARGETED_LAYER
-#undef FIRE_LAYER
+#undef FIRE_OVERLAY_LAYER
 #undef FLIES_LAYER
 #undef COLDBREATH_LAYER
 #undef TOTAL_LAYERS
