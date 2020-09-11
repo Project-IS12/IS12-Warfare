@@ -74,12 +74,10 @@
 //-------------------------------
 /datum/wifi/receiver/New()
 	..()
-	if(SSwireless)
-		SSwireless.add_device(src)
+	SSwireless.add_device(src)
 
 /datum/wifi/receiver/Destroy()
-	if(SSwireless)
-		SSwireless.remove_device(src)
+	SSwireless.remove_device(src)
 	return ..()
 
 //-------------------------------

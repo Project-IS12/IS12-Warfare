@@ -221,11 +221,11 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 				to_chat(H, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 				return
 
-		if(istype(job_master.GetJobByTitle(H.job), /datum/job/fortress) && captured != H.warfare_faction)
+		if(istype(SSjobs.GetJobByTitle(H.job), /datum/job/fortress) && captured != H.warfare_faction)
 			to_chat(H, "<big>I need to stay home!</big>")
 			return FALSE
 
-		if(!SSWarfare.battle_time && captured != H.warfare_faction)//So people can enter their own trenches.
+		if(!SSwarfare.battle_time && captured != H.warfare_faction)//So people can enter their own trenches.
 			to_chat(H, "<big>I am not ready to die yet!</big>")
 			return FALSE
 

@@ -161,7 +161,7 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 	for(var/obj/item/device/pda/P in PDAs)
 		if(P.toff)
 			continue
-		var/datum/job/J = job_master.GetJob(P.ownrank)
+		var/datum/job/J = SSjobs.GetJob(P.ownrank)
 		if(!J)
 			continue
 		if(J.department_flag & department)

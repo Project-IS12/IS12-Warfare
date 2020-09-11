@@ -49,7 +49,7 @@ var/global/datum/controller/gameticker/ticker
 			if(round_progressing)
 				pregame_timeleft--
 
-			if(pregame_timeleft <= 0 || ((initialization_stage & INITIALIZATION_NOW_AND_COMPLETE) == INITIALIZATION_NOW_AND_COMPLETE))
+			if(pregame_timeleft <= 0)
 				current_state = GAME_STATE_SETTING_UP
 				Master.SetRunLevel(RUNLEVEL_SETUP)
 
@@ -68,7 +68,6 @@ var/global/datum/controller/gameticker/ticker
 		if(!runnable_modes.len)
 			current_state = GAME_STATE_PREGAME
 			Master.SetRunLevel(RUNLEVEL_LOBBY)
-			initialization_stage &= ~INITIALIZATION_NOW//Otherwise it will contiously try to start over and over without respecting the timer.
 			to_world("<B>Unable to choose playable game mode.</B> Reverting to pre-game lobby.")
 
 			return 0
@@ -85,15 +84,14 @@ var/global/datum/controller/gameticker/ticker
 	if(!src.mode)
 		current_state = GAME_STATE_PREGAME
 		Master.SetRunLevel(RUNLEVEL_LOBBY)
-		initialization_stage &= ~INITIALIZATION_NOW
 		to_world("<span class='danger'>Serious error in mode setup!</span> Reverting to pre-game lobby.")
 
 		return 0
 
-	job_master.ResetOccupations()
+	SSjobs.ResetOccupations()
 	src.mode.create_antagonists()
 	src.mode.pre_setup()
-	job_master.DivideOccupations() // Apparently important for new antagonist system to register specific job antags properly.
+	SSjobs.DivideOccupations() // Apparently important for new antagonist system to register specific job antags properly.
 
 	var/t = src.mode.startRequirements()
 	if(t)
@@ -103,8 +101,7 @@ var/global/datum/controller/gameticker/ticker
 		Master.SetRunLevel(RUNLEVEL_LOBBY)
 		mode.fail_setup()
 		mode = null
-		job_master.ResetOccupations()
-		initialization_stage &= ~INITIALIZATION_NOW
+		SSjobs.ResetOccupations()
 		return 0
 
 	if(hide_mode)
@@ -128,13 +125,13 @@ var/global/datum/controller/gameticker/ticker
 	collect_minds()
 	equip_characters()
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
-		if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !job_master.ShouldCreateRecords(H.mind.assigned_role))
+		if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !SSjobs.ShouldCreateRecords(H.mind.assigned_role))
 			continue
 		CreateModularRecord(H)
 
 	callHook("roundstart")
 
-	shuttle_controller.initialize_shuttles()
+	SSshuttles.initialize_shuttles()
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
@@ -154,9 +151,6 @@ var/global/datum/controller/gameticker/ticker
 			admins_number++
 	if(admins_number == 0)
 		send2adminirc("Round has started with no admins online.")
-
-
-	processScheduler.start()
 
 	if(config.sql_enabled)
 		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
@@ -293,7 +287,7 @@ var/global/datum/controller/gameticker/ticker
 	for(var/mob/living/carbon/human/player in GLOB.player_list)
 		if(player && player.mind && player.mind.assigned_role)
 			if(!player_is_antag(player.mind, only_offstation_roles = 1))
-				job_master.EquipRank(player, player.mind.assigned_role, 0)
+				SSjobs.EquipRank(player, player.mind.assigned_role, 0)
 				equip_custom_items(player)
 
 
@@ -322,8 +316,8 @@ var/global/datum/controller/gameticker/ticker
 
 		spawn(50)
 			if(config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
-				vote.automap()
-				while(vote.time_remaining)
+				SSvote.automap()
+				while(SSvote.time_remaining)
 					sleep(50)
 
 			callHook("roundend")
@@ -364,7 +358,7 @@ var/global/datum/controller/gameticker/ticker
 		spawn(50)
 			if(!round_end_announced) // Spam Prevention. Now it should announce only once.
 				log_and_message_admins(": All antagonists are deceased or the gamemode has ended.") //Outputs as "Event: All antagonists are deceased or the gamemode has ended."
-			vote.autotransfer()
+			SSvote.autotransfer()
 
 	return 1
 
@@ -458,7 +452,7 @@ var/global/datum/controller/gameticker/ticker
 	mode.declare_completion()//To declare normal completion.
 
 	//Ask the event manager to print round end information
-	GLOB.event_manager.RoundEnd()
+	SSevents.RoundEnd()
 
 	//Print a list of antagonists to the server log
 	var/list/total_antagonists = list()

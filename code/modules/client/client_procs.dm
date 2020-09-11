@@ -240,9 +240,9 @@
 	GLOB.ckey_directory -= ckey
 	GLOB.clients -= src
 	if(warfare_faction == BLUE_TEAM)//remove them from the list if they disconnect, so we don't fuck the list up.
-		SSWarfare.blue.team_clients -= src
+		SSwarfare.blue.team_clients -= src
 	else
-		SSWarfare.red.team_clients -= src
+		SSwarfare.red.team_clients -= src
 	return ..()
 
 /client/Destroy()

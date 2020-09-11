@@ -101,7 +101,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	if(linked.get_speed())
 		data["ETAnext"] = "[round(linked.ETA()/10)] seconds"
-	else	
+	else
 		data["ETAnext"] = "N/A"
 
 	var/list/locations[0]
@@ -116,7 +116,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	data["locations"] = locations
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnanoui.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "helm.tmpl", "[linked.name] Helm Control", 380, 530)
 		ui.set_initial_data(data)
@@ -133,7 +133,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	if (href_list["add"])
 		var/datum/computer_file/data/waypoint/R = new()
 		var/sec_name = input("Input naviation entry name", "New navigation entry", "Sector #[known_sectors.len]") as text
-		if(!CanInteract(usr,state)) 
+		if(!CanInteract(usr,state))
 			return
 		if(!sec_name)
 			sec_name = "Sector #[known_sectors.len]"
@@ -147,10 +147,10 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 				R.fields["y"] = linked.y
 			if("new")
 				var/newx = input("Input new entry x coordinate", "Coordinate input", linked.x) as num
-				if(!CanInteract(usr,state)) 
+				if(!CanInteract(usr,state))
 					return
 				var/newy = input("Input new entry y coordinate", "Coordinate input", linked.y) as num
-				if(!CanInteract(usr,state)) 
+				if(!CanInteract(usr,state))
 					return
 				R.fields["x"] = Clamp(newx, 1, world.maxx)
 				R.fields["y"] = Clamp(newy, 1, world.maxy)
@@ -164,14 +164,14 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	if (href_list["setx"])
 		var/newx = input("Input new destiniation x coordinate", "Coordinate input", dx) as num|null
-		if(!CanInteract(usr,state)) 
+		if(!CanInteract(usr,state))
 			return
 		if (newx)
 			dx = Clamp(newx, 1, world.maxx)
 
 	if (href_list["sety"])
 		var/newy = input("Input new destiniation y coordinate", "Coordinate input", dy) as num|null
-		if(!CanInteract(usr,state)) 
+		if(!CanInteract(usr,state))
 			return
 		if (newy)
 			dy = Clamp(newy, 1, world.maxy)
@@ -235,10 +235,10 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	if(linked.get_speed())
 		data["ETAnext"] = "[round(linked.ETA()/10)] seconds"
-	else	
+	else
 		data["ETAnext"] = "N/A"
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnanoui.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "nav.tmpl", "[linked.name] Navigation Screen", 380, 530)
 		ui.set_initial_data(data)

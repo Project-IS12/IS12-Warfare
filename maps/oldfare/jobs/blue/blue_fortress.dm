@@ -8,7 +8,7 @@
 		H.add_stats(rand(6,10), rand(6,10), rand(6,10))
 		H.add_skills(rand(1, 5), rand(1,5), rand(1,5))
 		H.warfare_faction = BLUE_TEAM
-		SSWarfare.blue.team += H
+		SSwarfare.blue.team += H
 		H.warfare_language_shit(LANGUAGE_BLUE)
 
 /datum/job/fortress/blue/chef

@@ -73,10 +73,10 @@
 	. = ..()
 	if(statpanel("Status"))
 		if(iswarfare())
-			//stat("[BLUE_TEAM] reinforcements:", SSWarfare.blue.left)
-			//stat("[BLUE_TEAM] capture points:", SSWarfare.blue.points)
-			//stat("[RED_TEAM] reinforcements:", SSWarfare.red.left)
-			//stat("[RED_TEAM] capture points:", SSWarfare.red.points)
+			//stat("[BLUE_TEAM] reinforcements:", SSwarfare.blue.left)
+			//stat("[BLUE_TEAM] capture points:", SSwarfare.blue.points)
+			//stat("[RED_TEAM] reinforcements:", SSwarfare.red.left)
+			//stat("[RED_TEAM] capture points:", SSwarfare.red.points)
 
 
 			if(warfare_faction == RED_TEAM)

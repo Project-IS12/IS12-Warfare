@@ -17,7 +17,7 @@
 		H.set_trait(new/datum/trait/hardcore())
 		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
 		//H.add_skills(rand(6, 9), rand(6,9), rand(1,5))
-		SSWarfare.red.team += H
+		SSwarfare.red.team += H
 		if(can_be_in_squad)
 			H.assign_random_squad(RED_TEAM)
 		H.fully_replace_character_name("Pvt. [H.real_name]")

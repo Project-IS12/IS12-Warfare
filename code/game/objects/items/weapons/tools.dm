@@ -255,7 +255,10 @@
 	if(welding)
 		STOP_PROCESSING(SSobj, src)
 
-	QDEL_NULL(tank)
+	if (istype(tank))	// TODO: this is a hack around these causing protolathe init [populate_lathe_recipes] to explode
+		QDEL_NULL(tank)
+	else
+		tank = null
 
 	return ..()
 

@@ -228,7 +228,7 @@
 		for(var/field in to_copy)
 			new_record.set_field(field, random_record.get_field(field))
 
-	var/datum/job/job = job_master.GetJob(new_record.get_job())
+	var/datum/job/job = SSjobs.GetJob(new_record.get_job())
 	if(istype(job) && job.announced)
 		AnnounceArrivalSimple(new_record.get_name(), new_record.get_job(), get_announcement_frequency(job))
 	. = ..()

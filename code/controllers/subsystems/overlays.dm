@@ -1,11 +1,10 @@
-var/datum/controller/subsystem/overlays/SSoverlays
-
-/datum/controller/subsystem/overlays
+SUBSYSTEM_DEF(overlays)
 	name = "Overlay"
-	flags = SS_TICKER//|SS_FIRE_IN_LOBBY
+	flags = SS_TICKER
 	wait = 1
 	priority = SS_PRIORITY_OVERLAY
 	init_order = INIT_ORDER_OVERLAY
+	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 
 	var/list/processing = list()
 
@@ -15,9 +14,6 @@ var/datum/controller/subsystem/overlays/SSoverlays
 
 /datum/controller/subsystem/overlays/stat_entry()
 	..("Ov:[processing.len - (idex - 1)]")
-
-/datum/controller/subsystem/overlays/New()
-	NEW_SS_GLOBAL(SSoverlays)
 
 /datum/controller/subsystem/overlays/Initialize()
 	initialized = TRUE

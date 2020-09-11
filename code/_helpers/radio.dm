@@ -1,7 +1,7 @@
 /*
   HOW IT WORKS
 
-  The radio_controller is a global object maintaining all radio transmissions, think about it as about "ether".
+  SSradio is a global object maintaining all radio transmissions, think about it as about "ether".
   Note that walkie-talkie, intercoms and headsets handle transmission using nonstandard way.
   procs:
 
@@ -181,58 +181,52 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, INQ_FREQ, SEC
 #define TRANSMISSION_RADIO	1
 
 /proc/frequency_span_class(var/frequency)
-	// Antags!
-	if (frequency == RED_FREQ)
-		return "syndradio"
-	if(frequency == RED_ALPHA)
-		return "syndradio"
-	if(frequency == RED_BRAVO)
-		return "syndradio"
-	if(frequency == RED_CHARLIE)
-		return "syndradio"
-	if(frequency == RED_DELTA)
-		return "syndradio"
 
-	if(frequency == BLUE_FREQ)
-		return "comradio"
-	if(frequency == BLUE_ALPHA)
-		return "comradio"
-	if(frequency == BLUE_BRAVO)
-		return "comradio"
-	if(frequency == BLUE_CHARLIE)
-		return "comradio"
-	if(frequency == BLUE_DELTA)
-		return "comradio"
+	switch (frequency)
+		if (RED_FREQ, RED_ALPHA, RED_BRAVO, RED_CHARLIE, RED_DELTA)
+			return "syndradio"
 
-	// centcomm channels (deathsquid and ert)
-	if(frequency in CENT_FREQS)
+		if (BLUE_FREQ, BLUE_ALPHA, BLUE_BRAVO, BLUE_CHARLIE, BLUE_DELTA)
+			return "syndradio"
+
+		if (COMM_FREQ)
+			return "comradio"
+
+		if (AI_FREQ)
+			return "airadio"
+
+		if (SEC_FREQ)
+			return "secradio"
+
+		if (ENG_FREQ)
+			return "engradio"
+
+		if (SCI_FREQ)
+			return "sciradio"
+
+		if (MED_FREQ)
+			return "medradio"
+
+		if (EXP_FREQ)
+			return "EXPradio"
+
+		if (SUP_FREQ)	// cargo/supply
+			return "supradio"
+
+		if (SRV_FREQ)	// service
+			return "srvradio"
+
+		if (ENT_FREQ)	// entertainment
+			return "entradio"
+
+		if (INQ_FREQ)	// inquisition
+			return "inqradio"
+
+
+	if (frequency in CENT_FREQS)
 		return "centradio"
-	// command channel
-	if(frequency == COMM_FREQ)
-		return "comradio"
-	// AI private channel
-	if(frequency == AI_FREQ)
-		return "airadio"
-	// department radio formatting (poorly optimized, ugh)
-	if(frequency == SEC_FREQ)
-		return "secradio"
-	if (frequency == ENG_FREQ)
-		return "engradio"
-	if(frequency == SCI_FREQ)
-		return "sciradio"
-	if(frequency == MED_FREQ)
-		return "medradio"
-	if(frequency == EXP_FREQ) // exploration
-		return "EXPradio"
-	if(frequency == SUP_FREQ) // cargo
-		return "supradio"
-	if(frequency == SRV_FREQ) // service
-		return "srvradio"
-	if(frequency == ENT_FREQ) //entertainment
-		return "entradio"
-	if(frequency == INQ_FREQ)//inquisition
-		return "inqradio"
-	if(frequency in DEPT_FREQS)
+
+	if (frequency in DEPT_FREQS)
 		return "deptradio"
 
 	return "radio"
@@ -255,55 +249,9 @@ var/const/RADIO_SECBOT = "radio_secbot"
 var/const/RADIO_MULEBOT = "radio_mulebot"
 var/const/RADIO_MAGNETS = "radio_magnet"
 
-var/global/datum/controller/radio/radio_controller
-
-/hook/startup/proc/createRadioController()
-	radio_controller = new /datum/controller/radio()
-	return 1
-
 //callback used by objects to react to incoming radio signals
 /obj/proc/receive_signal(datum/signal/signal, receive_method, receive_param)
 	return null
-
-//The global radio controller
-/datum/controller/radio
-	var/list/datum/radio_frequency/frequencies = list()
-
-/datum/controller/radio/proc/add_object(obj/device as obj, var/new_frequency as num, var/filter = null as text|null)
-	var/f_text = num2text(new_frequency)
-	var/datum/radio_frequency/frequency = frequencies[f_text]
-
-	if(!frequency)
-		frequency = new
-		frequency.frequency = new_frequency
-		frequencies[f_text] = frequency
-
-	frequency.add_listener(device, filter)
-	return frequency
-
-/datum/controller/radio/proc/remove_object(obj/device, old_frequency)
-	var/f_text = num2text(old_frequency)
-	var/datum/radio_frequency/frequency = frequencies[f_text]
-
-	if(frequency)
-		frequency.remove_listener(device)
-
-		if(frequency.devices.len == 0)
-			qdel(frequency)
-			frequencies -= f_text
-
-	return 1
-
-/datum/controller/radio/proc/return_frequency(var/new_frequency as num)
-	var/f_text = num2text(new_frequency)
-	var/datum/radio_frequency/frequency = frequencies[f_text]
-
-	if(!frequency)
-		frequency = new
-		frequency.frequency = new_frequency
-		frequencies[f_text] = frequency
-
-	return frequency
 
 /datum/radio_frequency
 	var/frequency as num
