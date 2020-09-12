@@ -41,7 +41,6 @@ var/datum/antagonist/mercenary/mercs
 	var/decl/hierarchy/outfit/mercenary = outfit_by_type(/decl/hierarchy/outfit/mercenary)
 	mercenary.equip(player)
 
-	player.set_trait(new/datum/trait/hardcore())
 	player.add_stats(rand(14,18), rand(10,16), rand(12,18), rand(8,12))
 	player.add_skills(rand(5, 9), rand(4,7), rand(2,5), rand(1,5), rand(1,5))
 

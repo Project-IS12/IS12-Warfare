@@ -14,7 +14,6 @@
 	equip(var/mob/living/carbon/human/H)
 		H.warfare_faction = BLUE_TEAM
 		..()
-		H.set_trait(new/datum/trait/hardcore())
 		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
 		//H.add_skills(rand(6, 9), rand(6,9), rand(1,5))
 		SSwarfare.blue.team += H

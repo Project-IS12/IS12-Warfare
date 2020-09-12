@@ -912,23 +912,6 @@
 	if(stat != DEAD && vomit_score > 25 && prob(10))
 		spawn vomit(1, vomit_score, vomit_score/25)
 
-	//0% chance of playing a scary sound to someone who's in complete darkness
-	/*if(isturf(loc) && rand(1,1000) == 1)
-		var/turf/T = loc
-		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			playsound_local(src,pick(GLOB.scarySounds),50, 1, -1)
-
-
-	if(isturf(loc))
-		var/turf/T = loc
-		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			if(!has_trait(/datum/trait/hardcore))
-				add_event("dark", /datum/happiness_event/dark)
-		else
-			clear_event("dark")
-
-	*/
-
 	var/area/A = get_area(src)
 	if(client && world.time >= client.played + 600)
 		A.play_ambience(src)
