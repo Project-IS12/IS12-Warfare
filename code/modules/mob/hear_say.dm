@@ -167,7 +167,8 @@
 			speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]"//Print it out.
 
 		if(H.warfare_faction != src.warfare_faction)//So if they're not apart of the same warfare faction as us, then we don't know their name.
-			speaker_name = ageAndGender2Desc(H.age, H.gender)
+			jobname = H.get_assignment()
+			speaker_name = "[jobname] [ageAndGender2Desc(H.age, H.gender)]"
 
 	if(hard_to_hear)
 		speaker_name = "unknown"
