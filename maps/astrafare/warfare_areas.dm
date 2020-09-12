@@ -1,4 +1,4 @@
-#define REQUIRED_CAPTURED_ZONES 5 //You gotta hold all four trenches and mid in order to enter the enemies zone.
+	#define REQUIRED_CAPTURED_ZONES 5 //You gotta hold all four trenches and mid in order to enter the enemies zone.
 #define REQUIRED_TRENCH_ZONES 3 //Hold
 
 GLOBAL_LIST_EMPTY(blue_captured_zones) //= list()
