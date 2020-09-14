@@ -385,14 +385,9 @@ h1.alert, h2.alert		{color: #ffffff;}
 .hidden {display: none; visibility: hidden;}
 
 .examinebox {
-    display: inline-block;
-    min-width: 10px;
-    text-align: left;
     border: 1px ridge #151319;
-    padding: 10px;
-    font-size: 15px;
-    vertical-align: middle;
-    background: rgba(40, 40, 40, 0.5);
-    *zoom: 1;
-    *display: inline;
+	background: rgba(40, 40, 40, 0.5);
+	margin: 2px 8px;
+	padding: 8px 12px;
+	max-width: 550px;
 }
