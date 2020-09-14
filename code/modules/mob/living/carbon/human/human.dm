@@ -334,11 +334,15 @@
 	var/id_name = get_id_name("")
 	if(is_anonymous)
 		return "Unknown"
+	else if(face_name == "Unknown" && id_name)
+		return ageAndGender2Desc(age, gender)
 	if(id_name && (id_name != face_name) && face_name != "Unknown")
 		return "[face_name] (as [id_name])"
 	else if(id_name && (id_name != face_name) && face_name == "Unknown")//Hacky af.
 		return id_name
 	return face_name
+
+
 
 //Returns "Unknown" if facially disfigured and real_name if not. Useful for setting name when polyacided or when updating a human's name variable
 //Also used in AI tracking people by face, so added in checks for head coverings like masks and helmets
