@@ -96,9 +96,23 @@
 	if(prob(2))
 		flick("sadness",pain)
 		var/spoopysound = pick('sound/effects/badmood1.ogg','sound/effects/badmood2.ogg','sound/effects/badmood3.ogg','sound/effects/badmood4.ogg')
+		var/actual_message = ""
+		var/msg = rand(1,4)
+		switch(msg)
+			if(1)
+				actual_message = "None of this is real."
+				spoopysound = 'sound/voice/sam/none_of_this_is_real.ogg'
+			if(2)
+				actual_message = "You need to wake up."
+				spoopysound = 'sound/voice/sam/you_need_to_wake_up.ogg'
+			if(3)
+				actual_message = "The blood will never wash away."
+				spoopysound = 'sound/voice/sam/wash_away.ogg'
+			if(4)
+				actual_message = pick("This isn't actually happening.", "I don't want to die anymore.", "GOTTA GET A GRIP!")
+
 		sound_to(src, spoopysound)
-		var/msg = pick("None of this is real.", "This isn't actually happening.", "You need to wake up.", "I don't want to die anymore.", "GOTTA GET A GRIP!")
-		to_chat(src, "<span class='phobia'<big>[msg]</big></span>")
+		to_chat(src, "<span class='phobia'<big>[actual_message]</big></span>")
 
 /mob/living/carbon/proc/handle_happiness()
 	if(happiness > MOOD_LEVEL_SAD4)
