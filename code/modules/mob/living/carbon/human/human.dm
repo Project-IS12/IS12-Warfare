@@ -335,7 +335,7 @@
 	if(is_anonymous)
 		return "Unknown"
 	else if(face_name == "Unknown" && id_name)
-		return ageAndGender2Desc(age, gender)
+		return "[get_assignment()] [ageAndGender2Desc(age, gender)]"
 	if(id_name && (id_name != face_name) && face_name != "Unknown")
 		return "[face_name] (as [id_name])"
 	else if(id_name && (id_name != face_name) && face_name == "Unknown")//Hacky af.
