@@ -187,7 +187,7 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, INQ_FREQ, SEC
 			return "syndradio"
 
 		if (BLUE_FREQ, BLUE_ALPHA, BLUE_BRAVO, BLUE_CHARLIE, BLUE_DELTA)
-			return "syndradio"
+			return "comradio"
 
 		if (COMM_FREQ)
 			return "comradio"
