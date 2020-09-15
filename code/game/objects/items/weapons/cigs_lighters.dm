@@ -103,6 +103,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/weldermes = "USER lights NAME with FLAME"
 	var/ignitermes = "USER lights NAME with FLAME"
 	var/brand
+	var/smoke_effect = 0
 
 /obj/item/clothing/mask/smokable/New()
 	..()
@@ -114,8 +115,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(lit)
 		STOP_PROCESSING(SSobj, src)
 
-/obj/item/clothing/mask/smokable/proc/smoke(amount)
+/obj/item/clothing/mask/smokable/proc/smoke(amount, manual)
 	smoketime -= amount
+	var/smoke_loc = get_turf(src)
 	if(reagents && reagents.total_volume) // check if it has any reagents at all
 		if(ishuman(loc))
 			var/mob/living/carbon/human/C = loc
@@ -123,6 +125,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2) // Most of it is not inhaled... balance reasons.
 		else // else just remove some of the reagents
 			reagents.remove_any(REM)
+
+	if(ishuman(loc))
+		smoke_effect++
+		if(smoke_effect >= 10 || manual)
+			smoke_effect = 0
+			new /obj/effect/effect/cig_smoke(smoke_loc)
 
 /obj/item/clothing/mask/smokable/Process()
 	var/turf/location = get_turf(src)
@@ -215,7 +223,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	slot_flags = SLOT_EARS | SLOT_MASK
 	attack_verb = list("burnt", "singed")
 	type_butt = /obj/item/weapon/cigbutt
-	chem_volume = 5
+	chem_volume = 10
 	smoketime = 300
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to light their NAME with FLAME.</span>"
@@ -373,7 +381,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			return 1
 		H.visible_message("<span class='notice'>[H.name] takes a drag of their [name].</span>")
 		playsound(H, 'sound/effects/inhale.ogg', 50, 0, -1)
-		smoke(5)
+		smoke(12, TRUE)
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		return 1
 	return ..()
 
