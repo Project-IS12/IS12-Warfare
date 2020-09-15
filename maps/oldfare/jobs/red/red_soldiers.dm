@@ -14,10 +14,9 @@
 	equip(var/mob/living/carbon/human/H)
 		H.warfare_faction = RED_TEAM
 		..()
-		H.set_trait(new/datum/trait/hardcore())
 		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
 		//H.add_skills(rand(6, 9), rand(6,9), rand(1,5))
-		SSWarfare.red.team += H
+		SSwarfare.red.team += H
 		if(can_be_in_squad)
 			H.assign_random_squad(RED_TEAM)
 		H.fully_replace_character_name("Pvt. [H.real_name]")
@@ -325,6 +324,7 @@
 	l_ear = /obj/item/device/radio/headset/red_team/all
 	suit = /obj/item/clothing/suit/armor/sentry/red
 	head = /obj/item/clothing/head/helmet/sentryhelm/red
+	belt = /obj/item/weapon/melee/trench_axe
 	suit_store = /obj/item/weapon/gun/projectile/automatic/mg08
 	backpack_contents = list(/obj/item/ammo_magazine/box/a556/mg08 = 3, /obj/item/weapon/grenade/smokebomb = 1)
 
@@ -338,6 +338,7 @@
 	suit = /obj/item/clothing/suit/fire/red
 	head = /obj/item/clothing/head/helmet/redhelmet/fire
 	belt = /obj/item/weapon/gun/projectile/automatic/flamer
+	suit_store = /obj/item/weapon/melee/trench_axe
 	backpack_contents = list(/obj/item/ammo_magazine/flamer = 4, /obj/item/weapon/grenade/smokebomb = 1)
 
 /decl/hierarchy/outfit/job/redsoldier/sniper

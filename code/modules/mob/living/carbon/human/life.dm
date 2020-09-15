@@ -912,23 +912,6 @@
 	if(stat != DEAD && vomit_score > 25 && prob(10))
 		spawn vomit(1, vomit_score, vomit_score/25)
 
-	//0% chance of playing a scary sound to someone who's in complete darkness
-	/*if(isturf(loc) && rand(1,1000) == 1)
-		var/turf/T = loc
-		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			playsound_local(src,pick(GLOB.scarySounds),50, 1, -1)
-
-
-	if(isturf(loc))
-		var/turf/T = loc
-		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			if(!has_trait(/datum/trait/hardcore))
-				add_event("dark", /datum/happiness_event/dark)
-		else
-			clear_event("dark")
-
-	*/
-
 	var/area/A = get_area(src)
 	if(client && world.time >= client.played + 600)
 		A.play_ambience(src)
@@ -1160,7 +1143,7 @@
 		if(wear_id)
 			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
 			if(I)
-				var/datum/job/J = job_master.GetJob(I.GetJobName())
+				var/datum/job/J = SSjobs.GetJob(I.GetJobName())
 				if(J)
 					holder.icon_state = J.hud_icon
 
@@ -1264,10 +1247,10 @@
 	restore_blood()
 	full_prosthetic = null
 	shock_stage = 0
-	if(job_master.GetJobByTitle(job)?.is_blue_team && !(src in SSWarfare.blue.team))
-		SSWarfare.blue.team.Add(src)
-	if(job_master.GetJobByTitle(job)?.is_red_team && !(src in SSWarfare.red.team))
-		SSWarfare.red.team.Add(src)
+	if(SSjobs.GetJobByTitle(job)?.is_blue_team && !(src in SSwarfare.blue.team))
+		SSwarfare.blue.team.Add(src)
+	if(SSjobs.GetJobByTitle(job)?.is_red_team && !(src in SSwarfare.red.team))
+		SSwarfare.red.team.Add(src)
 	..()
 
 /mob/living/carbon/human/reset_view(atom/A)

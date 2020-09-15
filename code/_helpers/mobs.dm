@@ -116,16 +116,18 @@ proc/age2agedescription(age)
 proc/ageAndGender2Desc(age, gender)//Used for the radio
 	if(gender == FEMALE)
 		switch(age)
-			if(0 to 15)			return "Girl"
-			if(15 to 25)		return "Young Woman"
-			if(25 to 60)		return "Woman"
+			if(0 to 17)			return "Girl"
+			if(18 to 29)		return "Young Woman"
+			if(30 to 44)		return "Woman"
+			if(45 to 59)		return "Middle Aged Woman"
 			if(60 to INFINITY)	return "Old Woman"
 			else				return "Unknown"
 	else
 		switch(age)
-			if(0 to 15)			return "Boy"
-			if(15 to 25)		return "Young Man"
-			if(25 to 60)		return "Man"
+			if(0 to 18)			return "Boy"
+			if(18 to 29)		return "Young Man"
+			if(30 to 44)		return "Man"
+			if(45 to 59)		return "Middle Aged Man"
 			if(60 to INFINITY)	return "Old Man"
 			else				return "Unknown"
 

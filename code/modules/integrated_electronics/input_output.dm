@@ -215,8 +215,7 @@
 	set_frequency(new_freq.data)
 
 /obj/item/integrated_circuit/input/signaler/Destroy()
-	if(radio_controller)
-		radio_controller.remove_object(src,frequency)
+	SSradio.remove_object(src,frequency)
 	. = ..()
 
 /obj/item/integrated_circuit/input/signaler/on_data_written()
@@ -239,14 +238,9 @@
 	radio_connection.post_signal(src, create_signal())
 
 /obj/item/integrated_circuit/input/signaler/proc/set_frequency(var/new_frequency)
-	if(!radio_controller)
-		sleep(20)
-	if(!radio_controller)
-		return
-
-	radio_controller.remove_object(src, frequency)
+	SSradio.remove_object(src, frequency)
 	frequency = new_frequency
-	radio_connection = radio_controller.add_object(src, new_frequency, RADIO_CHAT)
+	radio_connection = SSradio.add_object(src, new_frequency, RADIO_CHAT)
 
 /obj/item/integrated_circuit/input/signaler/proc/signal_good(var/datum/signal/signal)
 	if(!signal)
@@ -669,7 +663,7 @@
 		text_output += "\an [name]"
 	else
 		text_output += "\an ["\improper[initial_name]"] labeled '[name]'"
-	text_output += " which is currently [get_pin_data(IC_INPUT, 1) ? "lit <font color=[led_color]>¤</font>" : "unlit."]"
+	text_output += " which is currently [get_pin_data(IC_INPUT, 1) ? "lit <font color=[led_color]>ï¿½</font>" : "unlit."]"
 	to_chat(user,jointext(text_output,null))
 /obj/item/integrated_circuit/output/led/get_topic_data()
 	return list("\An [initial(name)] that is currently [get_pin_data(IC_INPUT, 1) ? "lit" : "unlit."]")

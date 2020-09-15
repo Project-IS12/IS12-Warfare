@@ -18,7 +18,7 @@ proc/send_to_bot(list/params, useapikey = 1)
 	for(var/client/C in GLOB.clients)
 		players++
 
-	var/condition = SSWarfare.complete
+	var/condition = SSwarfare.complete
 	var/victor = findtext(condition, "red") ? "red" : (findtext(condition, "blue") ? "blue" : "draw")
 
 	send_to_bot(list(

@@ -33,7 +33,6 @@
 	update_held_icon()
 
 /obj/item/torch/Process()
-	
 	..()
 /*	//This used to be broken, it's instead being commented out for not really needing to be used at the moment. Warfare doesn't simulate atmos.
 	var/datum/gas_mixture/air = loc.return_air()
@@ -49,6 +48,8 @@
 	//	snuff()
 */
 	if(prob(1)) //Needs playtesting. This seems a little high.
+		if(istype(src.loc, /obj/structure/torchwall))
+			return //Please don't put out torches that are on the walls.
 		visible_message("A rush of wind puts out the torch.")
 		snuff()
 
@@ -60,21 +61,21 @@
 	update_icon()
 	START_PROCESSING(SSprocessing, src)
 	playsound(src, 'sound/items/torch_light.ogg', 50, 0, -1)
-	
+
 
 /obj/item/torch/proc/snuff()
 	lit = FALSE
 	update_icon()
 	STOP_PROCESSING(SSprocessing, src)
 	playsound(src, 'sound/items/torch_snuff.ogg', 50, 0, -1)
-	
+
 
 /obj/item/torch/attack_self(mob/user)
 	..()
 	if(self_lighting == 1)
 		light(user, TRUE)
 		self_lighting = -1
-		return 
+		return
 	if(lit)
 		snuff()
 
@@ -95,6 +96,7 @@
 	var/obj/item/torch/lighttorch
 
 /obj/structure/torchwall/New()
+	..()
 	if(prob(98))
 		lighttorch = new(src)
 		if(prob(75))
@@ -143,6 +145,9 @@
 			if(!T.lit)
 				T.light()
 				update_icon()
+			return
+
+		else if(lighttorch)//To stop you from putting in a torch twice.
 			return
 
 		user.drop_item()

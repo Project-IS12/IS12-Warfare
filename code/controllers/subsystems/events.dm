@@ -1,6 +1,13 @@
-GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
+SUBSYSTEM_DEF(events)
+	// Subsystem stuff.
+	name = "Events"
+	priority = SS_PRIORITY_EVENT
+	init_order = INIT_ORDER_EVENTS
 
-/datum/event_manager
+	var/tmp/list/processing_events = list()
+	var/tmp/pos = EVENT_LEVEL_MUNDANE
+
+	// Event controller stuff.
 	var/window_x = 700
 	var/window_y = 600
 	var/report_at_round_end = 0
@@ -14,20 +21,53 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 	var/list/datum/event/finished_events = list()
 
 	var/list/datum/event/allEvents
-	var/list/datum/event_container/event_containers = list(
-			EVENT_LEVEL_MUNDANE 	= new/datum/event_container/mundane,
-			EVENT_LEVEL_MODERATE	= new/datum/event_container/moderate,
-			EVENT_LEVEL_MAJOR 		= new/datum/event_container/major
-		)
+	var/list/datum/event_container/event_containers
 
 	var/datum/event_meta/new_event = new
 
-/datum/event_manager/New()
-	allEvents = typesof(/datum/event) - /datum/event
+/datum/controller/subsystem/events/Initialize()
+	allEvents = subtypesof(/datum/event)
+	event_containers = list(
+		EVENT_LEVEL_MUNDANE  = new/datum/event_container/mundane,
+		EVENT_LEVEL_MODERATE = new/datum/event_container/moderate,
+		EVENT_LEVEL_MAJOR    = new/datum/event_container/major
+	)
 
-/datum/event_manager/proc/event_complete(var/datum/event/E)
+/datum/controller/subsystem/events/Recover()
+	active_events = SSevents.active_events
+	finished_events = SSevents.finished_events
+	allEvents = SSevents.allEvents
+	event_containers = SSevents.event_containers
+	initialized = SSevents.initialized
+
+/datum/controller/subsystem/events/fire(resumed = FALSE)
+	if (!resumed)
+		processing_events = active_events.Copy()
+		pos = EVENT_LEVEL_MUNDANE
+
+	while (processing_events.len)
+		var/datum/event/E = processing_events[processing_events.len]
+		processing_events.len--
+
+		E.process()
+
+		if (MC_TICK_CHECK)
+			return
+
+	while (pos <= EVENT_LEVEL_MAJOR)
+		var/list/datum/event_container/EC = event_containers[pos]
+		EC.process()
+		pos++
+
+		if (MC_TICK_CHECK)
+			return
+
+/datum/controller/subsystem/events/stat_entry()
+	..("E:[active_events.len]")
+
+/datum/controller/subsystem/events/proc/event_complete(datum/event/E)
 	if(!E.event_meta || !E.severity)	// datum/event is used here and there for random reasons, maintaining "backwards compatibility"
-		log_debug("Event of '[E.type]' with missing meta-data has completed.")
+		log_debug("SSevents: Event of '[E.type]' with missing meta-data has completed.")
 		return
 
 	finished_events += E
@@ -38,13 +78,16 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 	if(EM.add_to_queue)
 		EC.available_events += EM
 
-	log_debug("Event '[EM.name]' has completed at [worldtime2stationtime(world.time)].")
+	log_debug("SSevents: Event '[EM.name]' has completed at [worldtime2stationtime(world.time)].")
 
-/datum/event_manager/proc/delay_events(var/severity, var/delay)
+/datum/controller/subsystem/events/proc/delay_events(severity, delay)
 	var/list/datum/event_container/EC = event_containers[severity]
 	EC.next_event_time += delay
 
-/datum/event_manager/proc/Interact(var/mob/living/user)
+/datum/controller/subsystem/events/proc/Interact(mob/living/user)
+	if (!initialized)
+		user << "<span class='alert'>The [src] subsystem has not initialized yet. Please wait until server init completes before trying to use the Event Manager panel.</span>"
+		return
 
 	var/html = GetInteractWindow()
 
@@ -52,11 +95,11 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 	popup.set_content(html)
 	popup.open()
 
-/datum/event_manager/proc/RoundEnd()
+/datum/controller/subsystem/events/proc/RoundEnd()
 	if(!report_at_round_end)
 		return
 
-	to_world("<br><br><br><font size=3><b>Random Events This Round:</b></font>")
+	world << "<br><br><br><font size=3><b>Random Events This Round:</b></font>"
 	for(var/datum/event/E in active_events|finished_events)
 		var/datum/event_meta/EM = E.event_meta
 		if(EM.name == "Nothing")
@@ -70,9 +113,9 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 			else
 				message += "and ran to completion."
 
-		to_world(message)
+		world << message
 
-/datum/event_manager/proc/GetInteractWindow()
+/datum/controller/subsystem/events/proc/GetInteractWindow()
 	var/html = "<A align='right' href='?src=\ref[src];refresh=1'>Refresh</A>"
 	html += "<A align='right' href='?src=\ref[src];pause_all=[!config.allow_random_events]'>Pause All - [config.allow_random_events ? "Pause" : "Resume"]</A>"
 
@@ -181,10 +224,9 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 
 	return html
 
-/datum/event_manager/Topic(href, href_list)
+/datum/controller/subsystem/events/Topic(href, list/href_list)
 	if(..())
 		return
-
 
 	if(href_list["toggle_report"])
 		report_at_round_end = !report_at_round_end
@@ -274,12 +316,11 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 		var/datum/event_container/EC = locate(href_list["clear"])
 		if(EC.next_event)
 			log_and_message_admins("has dequeued the [severity_to_string[EC.severity]] event '[EC.next_event.name]'.")
-			EC.available_events += EC.next_event
 			EC.next_event = null
 
 	Interact(usr)
 
-/client/proc/forceEvent(var/type in GLOB.event_manager.allEvents)
+/client/proc/forceEvent(var/type in SSevents.allEvents)
 	set name = "Trigger Event (Debug Only)"
 	set category = "Debug"
 
@@ -293,7 +334,9 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 /client/proc/event_manager_panel()
 	set name = "Event Manager Panel"
 	set category = "Admin"
-	if(GLOB.event_manager)
-		GLOB.event_manager.Interact(usr)
+
+	if (!holder)
+		return
+
+	SSevents.Interact(usr)
 	feedback_add_details("admin_verb","EMP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	return

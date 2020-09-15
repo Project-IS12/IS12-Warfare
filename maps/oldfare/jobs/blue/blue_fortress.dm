@@ -6,10 +6,10 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 		H.add_stats(rand(6,10), rand(6,10), rand(6,10))
-		H.add_skills(rand(1, 5), rand(1,5), rand(1,5))
 		H.warfare_faction = BLUE_TEAM
-		SSWarfare.blue.team += H
+		SSwarfare.blue.team += H
 		H.warfare_language_shit(LANGUAGE_BLUE)
+		H.assign_random_quirk()
 
 /datum/job/fortress/blue/chef
 	title = "Blue Chef"
@@ -52,7 +52,6 @@
 		H.set_trait(new/datum/trait/death_tolerant())
 		H.add_stats(rand(8,12), rand(5,8), rand(5,7), rand(10,14))
 		H.say(";[H.real_name] reporting for duty!")
-		//H.add_skills(rand(1,3), rand(1,3), rand(7,10), surgery = rand(8, 10))
 
 /decl/hierarchy/outfit/job/medical/doctor/blue
 	//uniform = /obj/item/clothing/under/blue_uniform

@@ -28,11 +28,11 @@
 	..(newloc)
 	icon_state = "blank"
 	relativewall_neighbours()
-	processing_turfs |= src
+	START_PROCESSING(SSslowprocess, src)
 	generate_splines()
 
 /turf/simulated/wall/Destroy()
-	processing_turfs -= src
+	STOP_PROCESSING(SSslowprocess, src)
 	dismantle_wall(null,null,1)
 	. = ..()
 

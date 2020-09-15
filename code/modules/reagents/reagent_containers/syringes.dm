@@ -153,7 +153,7 @@
 				user.visible_message("<span class='warning'>\The [user] is trying to take a blood sample from [target].</span>")
 
 			user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-			user.do_attack_animation(target)
+			//user.do_attack_animation(target)
 
 			if(!do_mob(user, target, injtime))
 				return
@@ -228,7 +228,7 @@
 			user.visible_message("<span class='warning'>\The [user] is trying to inject [target] with [visible_name]!</span>")
 
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-		user.do_attack_animation(trackTarget)
+		//user.do_attack_animation(trackTarget)
 
 		if(!do_after(user, injtime, trackTarget))
 			return
