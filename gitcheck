@@ -1,0 +1,3 @@
+git checkout master
+git merge --no-ff Project-IS12-master
+git push origin master
