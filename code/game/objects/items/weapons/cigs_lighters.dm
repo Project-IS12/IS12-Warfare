@@ -381,7 +381,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			return 1
 		H.visible_message("<span class='notice'>[H.name] takes a drag of their [name].</span>")
 		playsound(H, 'sound/effects/inhale.ogg', 50, 0, -1)
-		smoke(12, TRUE)
+		smoke(5, TRUE)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		return 1
 	return ..()
