@@ -398,7 +398,7 @@
 				to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 				return
 
-	if(!SSWarfare.battle_time)
+	if(!SSwarfare.battle_time)
 		return FALSE
 	return TRUE
 
@@ -556,7 +556,7 @@
 				to_chat(H, "I'm already arming the device!")
 
 /obj/structure/destruction_computer/proc/kaboom()
-	SSWarfare.end_warfare(faction)//really simple I know.
+	SSwarfare.end_warfare(faction)//really simple I know.
 
 /obj/structure/destruction_computer/red
 	faction = RED_TEAM

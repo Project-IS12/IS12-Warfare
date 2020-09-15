@@ -1,17 +1,17 @@
 /mob/living/carbon/proc/print_happiness()
 	var/msg = "<span class='info'><div class='examinebox'>"
 	if(real_name)
-		msg += "<span class='info'>My name is <span class='boldannounce'>[real_name]</span>.</span>\n"
+		msg += "<span class='info'>My name is <span class='danger'>[real_name]</span>.</span>\n"
 	if(age)
-		msg += "<span class='info'>I am <span class='boldannounce'>[age]</span> years old.</span>\n"
+		msg += "<span class='info'>I am <span class='danger'>[age]</span> years old.</span>\n"
 	if(squad)
-		msg += "<span class='info'>I'm in <span class='boldannounce'>[squad.name]</span> squad!</span>\n"
+		msg += "<span class='info'>I'm in <span class='danger'>[squad.name]</span> squad!</span>\n"
 	if(social_class)
-		msg +=	"<span class='info'>I am <span class='boldannounce'>[get_social_class()]</span>.</span>\n"
+		msg +=	"<span class='info'>I am <span class='danger'>[get_social_class()]</span>.</span>\n"
 	if(trait)
-		msg += 	"<span class='info'>I am <span class='boldannounce'>[trait.name]</span>. [trait.description]</span>\n"
+		msg += 	"<span class='info'>I am <span class='danger'>[trait.name]</span>. [trait.description]</span>\n"
 	if(quirk)//NOT THE SAME THING AS TRAITS
-		msg += "<span class='info'>Oh lucky, I am also <span class='boldannounce'>[quirk.name]</span>. [quirk.description]</span>\n"
+		msg += "<span class='info'>Oh lucky, I am also <span class='danger'>[quirk.name]</span>. [quirk.description]</span>\n"
 	msg += "<EM>Current feelings:</EM>\n"
 	for(var/i in events)
 		var/datum/happiness_event/event = events[i]
@@ -96,9 +96,23 @@
 	if(prob(2))
 		flick("sadness",pain)
 		var/spoopysound = pick('sound/effects/badmood1.ogg','sound/effects/badmood2.ogg','sound/effects/badmood3.ogg','sound/effects/badmood4.ogg')
+		var/actual_message = ""
+		var/msg = rand(1,4)
+		switch(msg)
+			if(1)
+				actual_message = "None of this is real."
+				spoopysound = 'sound/voice/sam/none_of_this_is_real.ogg'
+			if(2)
+				actual_message = "You need to wake up."
+				spoopysound = 'sound/voice/sam/you_need_to_wake_up.ogg'
+			if(3)
+				actual_message = "The blood will never wash away."
+				spoopysound = 'sound/voice/sam/wash_away.ogg'
+			if(4)
+				actual_message = pick("This isn't actually happening.", "I don't want to die anymore.", "GOTTA GET A GRIP!")
+
 		sound_to(src, spoopysound)
-		var/msg = pick("None of this is real.", "This isn't actually happening.", "You need to wake up.", "I don't want to die anymore.", "GOTTA GET A GRIP!")
-		to_chat(src, "<span class='phobia'<big>[msg]</big></span>")
+		to_chat(src, "<span class='phobia'<big>[actual_message]</big></span>")
 
 /mob/living/carbon/proc/handle_happiness()
 	if(happiness > MOOD_LEVEL_SAD4)

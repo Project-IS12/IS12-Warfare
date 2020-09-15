@@ -14,10 +14,9 @@
 	equip(var/mob/living/carbon/human/H)
 		H.warfare_faction = BLUE_TEAM
 		..()
-		H.set_trait(new/datum/trait/hardcore())
 		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
 		//H.add_skills(rand(6, 9), rand(6,9), rand(1,5))
-		SSWarfare.blue.team += H
+		SSwarfare.blue.team += H
 		if(can_be_in_squad)
 			H.assign_random_squad(BLUE_TEAM)
 		H.fully_replace_character_name("Pvt. [H.real_name]")
@@ -364,12 +363,14 @@
 	suit = /obj/item/clothing/suit/fire/blue
 	head = /obj/item/clothing/head/helmet/bluehelmet/fire
 	belt = /obj/item/weapon/gun/projectile/automatic/flamer
+	suit_store = /obj/item/weapon/melee/trench_axe
 	backpack_contents = list(/obj/item/ammo_magazine/flamer = 4, /obj/item/weapon/grenade/smokebomb = 1)
 
 /decl/hierarchy/outfit/job/bluesoldier/sentry
 	l_ear = /obj/item/device/radio/headset/blue_team/all
 	suit = /obj/item/clothing/suit/armor/sentry/blue
 	head = /obj/item/clothing/head/helmet/sentryhelm/blue
+	belt = /obj/item/weapon/melee/trench_axe
 	suit_store = /obj/item/weapon/gun/projectile/automatic/mg08
 	backpack_contents = list(/obj/item/ammo_magazine/box/a556/mg08 = 3, /obj/item/weapon/grenade/smokebomb = 1)
 

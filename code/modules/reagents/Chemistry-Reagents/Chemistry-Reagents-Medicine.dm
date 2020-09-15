@@ -609,7 +609,7 @@
 	overdose = 6
 	scannable = 1
 	data = 0
-	reagent_addiction_strength = 10
+	reagent_addiction_strength = 2
 
 /datum/reagent/nicotine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)

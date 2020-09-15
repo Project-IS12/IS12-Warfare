@@ -223,10 +223,6 @@
 				if(do_after(user, 15, src))
 					if(pulse() == PULSE_NONE)
 						to_chat(user, "<span class='deadsay'>[T.He] [T.has] no pulse.</span>")
-						if(ishuman(user))
-							var/mob/living/carbon/human/H = user
-							if(!H.has_trait(/datum/trait/hardcore) && !H.has_trait(/datum/trait/death_tolerant))
-								H.add_event("dead", /datum/happiness_event/dead)
 					else
 						to_chat(user, "<span class='deadsay'>[T.He] [T.has] a pulse!</span>")
 

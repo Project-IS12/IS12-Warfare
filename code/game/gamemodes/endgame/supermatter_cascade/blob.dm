@@ -16,7 +16,7 @@
 
 /turf/unsimulated/wall/supermatter/New()
 	..()
-	processing_turfs.Add(src)
+	START_PROCESSING(SSslowprocess, src)
 	next_check = world.time + 5 SECONDS
 
 	// Nom.
@@ -24,7 +24,7 @@
 		Consume(A)
 
 /turf/unsimulated/wall/supermatter/Destroy()
-	processing_turfs.Remove(src)
+	STOP_PROCESSING(SSslowprocess, src)
 	..()
 
 /turf/unsimulated/wall/supermatter/process()

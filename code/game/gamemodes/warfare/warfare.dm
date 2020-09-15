@@ -12,15 +12,15 @@
 	auto_recall_shuttle = TRUE //If the shuttle is even somehow called.
 
 /datum/game_mode/warfare/declare_completion()
-	SSWarfare.declare_completion()
+	SSwarfare.declare_completion()
 
 /datum/game_mode/warfare/post_setup()
 	..()
-	SSWarfare.begin_countDown()
+	SSwarfare.begin_countDown()
 
 
 /datum/game_mode/warfare/check_finished()
-	if(SSWarfare.check_completion())
+	if(SSwarfare.check_completion())
 		return TRUE
 	..()
 
@@ -30,27 +30,27 @@
 		return
 	if(is_npc)
 		return
-	if(src in SSWarfare.blue.team)//If in the team.
-		SSWarfare.blue.left--//Take out a life.
-		SSWarfare.blue.team -= src//Remove them from the team.
-	if(src in SSWarfare.red.team)//Same here.
-		SSWarfare.red.left--
-		SSWarfare.red.team -= src
+	if(src in SSwarfare.blue.team)//If in the team.
+		SSwarfare.blue.left--//Take out a life.
+		SSwarfare.blue.team -= src//Remove them from the team.
+	if(src in SSwarfare.red.team)//Same here.
+		SSwarfare.red.left--
+		SSwarfare.red.team -= src
 
 	if(client)
 		client.warfare_deaths++
 
 	// as far as i know there are no immediate jobtype vars in mind or human, so here we go
-	if(job_master?.GetJobByTitle(job)?.type == /datum/job/soldier/red_soldier/captain)
-		for(var/X in SSWarfare.red.team)
+	if(SSjobs?.GetJobByTitle(job)?.type == /datum/job/soldier/red_soldier/captain)
+		for(var/X in SSwarfare.red.team)
 			var/mob/living/carbon/human/H = X
 			H.add_event("captain death", /datum/happiness_event/captain_death)
-	if(job_master?.GetJobByTitle(job)?.type == /datum/job/soldier/blue_soldier/captain)
-		for(var/X in SSWarfare.blue.team)
+	if(SSjobs?.GetJobByTitle(job)?.type == /datum/job/soldier/blue_soldier/captain)
+		for(var/X in SSwarfare.blue.team)
 			var/mob/living/carbon/human/H = X
 			H.add_event("captain death", /datum/happiness_event/captain_death)
-	if(job_master?.GetJobByTitle(job)?.open_when_dead)//When the person dies who has this job, free this role again.
-		job_master.allow_one_more(job)
+	if(SSjobs?.GetJobByTitle(job)?.open_when_dead)//When the person dies who has this job, free this role again.
+		SSjobs.allow_one_more(job)
 
 	if(!GLOB.first_death)
 		GLOB.first_death = real_name

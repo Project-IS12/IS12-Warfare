@@ -259,7 +259,7 @@ datum/signal
 			freq = text2num(freq)
 		newsign.frequency = freq
 
-		var/datum/radio_frequency/connection = radio_controller.return_frequency(freq)
+		var/datum/radio_frequency/connection = SSradio.return_frequency(freq)
 		newsign.data["connection"] = connection
 
 
@@ -272,4 +272,3 @@ datum/signal
 		var/pass = S.relay_information(newsign, /obj/machinery/telecomms/hub)
 		if(!pass)
 			S.relay_information(newsign, /obj/machinery/telecomms/broadcaster) // send this simple message to broadcasters
-

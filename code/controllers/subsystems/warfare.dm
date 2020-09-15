@@ -1,7 +1,5 @@
 #define KOTH_VICTORY_POINTS 500
 
-/var/datum/controller/subsystem/warfare/SSWarfare
-
 /datum/team
 	var/list/team = list()  // members of the team
 	var/list/team_clients = list()
@@ -39,8 +37,6 @@
 /datum/squad/delta
 	name = "Delta"
 
-
-
 /datum/team/proc/startCooldown(var/thingToCoolDown, var/time = 1 MINUTE)
 	cooldown |= thingToCoolDown
 	spawn(time)
@@ -49,7 +45,7 @@
 /datum/team/proc/checkCooldown(var/thingToCheck)
 	return thingToCheck in cooldown
 
-/datum/controller/subsystem/warfare
+SUBSYSTEM_DEF(warfare)
 	name = "Warfare"
 	flags = SS_NO_FIRE
 	wait = 1
@@ -63,7 +59,7 @@
 /datum/controller/subsystem/warfare/Initialize()
 	blue = new /datum/team
 	red = new /datum/team
-	SSWarfare = src
+	SSwarfare = src
 	..()
 
 /datum/controller/subsystem/warfare/proc/end_warfare(var/loser)
@@ -73,7 +69,7 @@
 		blue.nuked = TRUE
 
 /datum/controller/subsystem/warfare/proc/begin_countDown()
-	spawn(config.warfare_start_time MINUTES)
+	spawn(config.warfare_start_time MINUTES)	// :disgust:
 		start_battle()
 
 /datum/controller/subsystem/warfare/proc/start_battle()

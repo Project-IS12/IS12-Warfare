@@ -6,10 +6,10 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 		H.add_stats(rand(6,10), rand(6,10), rand(6,10))
-		H.add_skills(rand(1, 5), rand(1,5), rand(1,5))
 		H.warfare_faction = RED_TEAM
-		SSWarfare.red.team += H
+		SSwarfare.red.team += H
 		H.warfare_language_shit(LANGUAGE_RED)
+		H.assign_random_quirk()
 
 /datum/job/fortress/red/chef
 	title = "Red Chef"
@@ -51,7 +51,6 @@
 		..()
 		H.set_trait(new/datum/trait/death_tolerant())
 		H.add_stats(rand(8,11), rand(5,8), rand(5,7), rand(10,14))
-		//H.add_skills(rand(1,3), rand(1,3), rand(7,10), surgery = rand(8, 10))
 		H.say(";Practitioner reporting for duty!")
 
 /decl/hierarchy/outfit/job/medical/doctor/red

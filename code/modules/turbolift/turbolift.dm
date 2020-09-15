@@ -13,34 +13,36 @@
 	var/tmp/moving_upwards
 	var/tmp/busy
 
+	var/move_timer
+
 /datum/turbolift/proc/emergency_stop()
+	deltimer(move_timer)
+	move_timer = null
 	queued_floors.Cut()
 	target_floor = null
 	open_doors()
 
-/datum/turbolift/proc/doors_are_open(var/datum/turbolift_floor/use_floor = current_floor)
+/datum/turbolift/proc/doors_are_open(datum/turbolift_floor/use_floor = current_floor)
 	for(var/obj/machinery/door/airlock/door in (use_floor ? (doors + use_floor.doors) : doors))
 		if(!door.density)
 			return 1
 	return 0
 
-/datum/turbolift/proc/open_doors(var/datum/turbolift_floor/use_floor = current_floor)
+/datum/turbolift/proc/open_doors(datum/turbolift_floor/use_floor = current_floor)
 	for(var/obj/machinery/door/airlock/door in (use_floor ? (doors + use_floor.doors) : doors))
 		door.command("open")
-	return
 
-/datum/turbolift/proc/close_doors(var/datum/turbolift_floor/use_floor = current_floor)
+/datum/turbolift/proc/close_doors(datum/turbolift_floor/use_floor = current_floor)
 	for(var/obj/machinery/door/airlock/door in (use_floor ? (doors + use_floor.doors) : doors))
 		door.command("close")
-	return
 
-/datum/turbolift/proc/do_move()
-
+/datum/turbolift/proc/do_work()
 	var/current_floor_index = floors.Find(current_floor)
 
 	if(!target_floor)
 		if(!queued_floors || !queued_floors.len)
 			return 0
+
 		target_floor = queued_floors[1]
 		queued_floors -= target_floor
 		if(current_floor_index < floors.Find(target_floor))
@@ -52,7 +54,9 @@
 		if(!doors_closing)
 			close_doors()
 			doors_closing = 1
+			queue_movement()
 			return 1
+
 		else // We failed to close the doors - probably, someone is blocking them; stop trying to move
 			doors_closing = 0
 			open_doors()
@@ -72,16 +76,16 @@
 
 		sleep(15)
 		control_panel_interior.visible_message("<b>The elevator</b> announces, \"[origin.lift_announce_str]\"")
-		sleep(floor_wait_delay)
 
+		queue_movement(floor_wait_delay + move_delay)
 		return 1
 
 	// Work out where we're headed.
 	var/datum/turbolift_floor/next_floor
 	if(moving_upwards)
-		next_floor = floors[current_floor_index+1]
+		next_floor = floors[current_floor_index + 1]
 	else
-		next_floor = floors[current_floor_index-1]
+		next_floor = floors[current_floor_index - 1]
 
 	var/area/turbolift/destination = locate(next_floor.area_ref)
 
@@ -104,15 +108,28 @@
 	current_floor = next_floor
 	control_panel_interior.visible_message("The elevator [moving_upwards ? "rises" : "descends"] smoothly.")
 
+	queue_movement()
 	return 1
 
-/datum/turbolift/proc/queue_move_to(var/datum/turbolift_floor/floor)
+/datum/turbolift/proc/queue_move_to(datum/turbolift_floor/floor)
 	if(!floor || !(floor in floors) || (floor in queued_floors))
 		return // STOP PRESSING THE BUTTON.
 	floor.pending_move(src)
 	queued_floors |= floor
-	turbolift_controller.lift_is_moving(src)
+	queue_movement()
 
 // TODO: dummy machine ('lift mechanism') in powered area for functionality/blackout checks.
 /datum/turbolift/proc/is_functional()
 	return 1
+
+/datum/turbolift/proc/handle_movement()
+	if (!do_work())
+		if (target_floor)
+			target_floor.ext_panel.reset()
+			target_floor = null
+
+/datum/turbolift/proc/queue_movement(delay = move_delay)
+	if (!delay)
+		delay = move_delay
+
+	move_timer = addtimer(CALLBACK(src, .proc/handle_movement), delay, TIMER_STOPPABLE | TIMER_UNIQUE)

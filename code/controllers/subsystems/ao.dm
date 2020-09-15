@@ -1,16 +1,11 @@
-/var/datum/controller/subsystem/ao/SSocclusion
-
-/datum/controller/subsystem/ao
+SUBSYSTEM_DEF(ao)
 	name = "Ambient Occlusion"
-	//flags = SS_FIRE_IN_LOBBY
 	init_order = INIT_ORDER_AO
 	wait = 1
 	priority = SS_PRIORITY_AO
+	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 
 	var/list/queue = list()
-
-/datum/controller/subsystem/ao/New()
-	NEW_SS_GLOBAL(SSocclusion)
 
 /datum/controller/subsystem/ao/stat_entry()
 	..("P:[queue.len]")
