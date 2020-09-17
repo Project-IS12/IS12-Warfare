@@ -86,6 +86,7 @@
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
+		H.assign_random_squad(BLUE_TEAM, "engineer")
 		H.add_stats(rand(15,17), rand(10,16), rand(12,16))
 		H.fully_replace_character_name("Eng. [current_name]")
 		H.say(";Engineer reporting for duty!")

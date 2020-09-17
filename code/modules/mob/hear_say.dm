@@ -156,19 +156,10 @@
 
 
 		if(H.age && H.gender && !H.is_anonymous)//If they have an age and gender, and they're not anonymous.
-			var/ageAndGender
-			jobname = H.get_assignment()
-
-			if(H.get_assignment() == "No id")//If they don't have an ID then we don't know their job.
-				jobname = ""
-
-			ageAndGender = ageAndGender2Desc(H.age, H.gender)//Get their age and gender
-
-			speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]"//Print it out.
+			speaker_name += " \[[ageAndGender2Desc(H.age, H.gender)]\]"//Print it out.
 
 		if(H.warfare_faction != src.warfare_faction)//So if they're not apart of the same warfare faction as us, then we don't know their name.
-			jobname = H.get_assignment()
-			speaker_name = "[jobname] [ageAndGender2Desc(H.age, H.gender)]"
+			speaker_name = "[ageAndGender2Desc(H.age, H.gender)]"
 
 	if(hard_to_hear)
 		speaker_name = "unknown"

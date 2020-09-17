@@ -142,7 +142,13 @@
 			*/
 
 	var/obj/item/weapon/card/id/I = GetIdCard()
-	I.assignment = "[src.squad.name] Squad"
+	var/actual_job = "Soldier"
+	switch(rank)
+		if("medic")
+			actual_job = "Medic"
+		if("engineer")
+			actual_job = "Engineer"
+	I.assignment = "[src.squad.name] Squad [actual_job]"
 
 	to_chat(src, "<b>I am apart of [src.squad.name] Squad</b>")
 

@@ -68,8 +68,6 @@
 		H.assign_random_squad(RED_TEAM, "medic")
 		H.set_trait(new/datum/trait/death_tolerant())
 		H.fully_replace_character_name("Medic [current_name]")
-		//H.add_skills(rand(6, 9), rand(5,7), rand(6,10), surgery = rand(6,10))
-
 		H.say(";Medic reporting for duty!")
 
 
@@ -87,6 +85,7 @@
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
+		H.assign_random_squad(RED_TEAM, "engineer")
 		H.add_stats(rand(15,17), rand(10,16), rand(12,16))
 		H.fully_replace_character_name("Eng. [current_name]")
 		H.say(";Engineer reporting for duty!")
