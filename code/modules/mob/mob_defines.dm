@@ -111,7 +111,7 @@
 	var/a_intent = I_HELP//Living
 	var/defense_intent = I_DODGE//Living. For dodging and parrying.
 	var/m_intent = "run"//Living
-	var/atk_intent = I_DEFENSE//Human
+	var/atk_intent = I_FEINT//Human
 	var/middle_click_intent = null //For doing different things with middle click.
 	var/combat_mode = 0//Living
 	var/using_alt_hud = 0 //For the lunahud.
