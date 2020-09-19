@@ -55,7 +55,6 @@
 "bc" = (/obj/structure/bed/chair{icon_state = "chair_preview"; dir = 4},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "bd" = (/obj/structure/bed/chair{icon_state = "chair_preview"; dir = 8},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "be" = (/obj/structure/closet/secure_closet/freezer/fridge,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
-"bf" = (/obj/machinery/vending/dinnerware,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "bg" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "bh" = (/obj/machinery/cooker/oven,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "bi" = (/obj/machinery/cooker/grill,/obj/structure/torchwall{icon_state = "torchwall0"; dir = 1},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
@@ -148,7 +147,6 @@
 "cR" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/weapon/storage/box/matches,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "cS" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "cT" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/flame/candle,/obj/item/weapon/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"cU" = (/obj/machinery/vending/dinnerware,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "cV" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "cW" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "cX" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/weapon/storage/fancy/cigarettes/carcinomas,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -347,7 +345,7 @@ esaaaaaaaaaaaaaaaaabaIaddKadadayabaJeNaKbSaKaLabalaMabababaNbDadabaNbDadabaNbDac
 esaaaaaaaaaaaaaaaaabadadadadadadabaQadadadadbaabalalabababaRaSbXabaRaSbXabaIcufdabaIcufdabaaaaaaaaes
 esaaaaaaaaaaaaaaaaabadadaVaVadadabaXadaZadadbeabalalabababaSadacabaSadacabbbadaSabbbadaSabaaaaaaaaes
 esaaaaaaaaaaaaaaaaabaIbcaOaObdayabbeadadadadbgabalaMababababardpababarabababarabababarabababaaaaaaes
-esaaaaaaaaaaaaaaaaabadbcaOaObdadabbfadadadadadabalaladadadadadadadadadadadadadadadadadadadabaaaaaaes
+esaaaaaaaaaaaaaaaaabadbcaOaObdadabaKadadadadadabalaladadadadadadadadadadadadadadadadadadadabaaaaaaes
 esaaaaaaaaaaaaaaaaabadbcaOaObdadabbgadbkbhbibjabalalfmadadadadadadadadadadadadadadadadadadabaaaaaaes
 esaaaaaaaaaaaaaaaaabaIadblbladayababadabababababalaMabbmbnaleieialalbPababbmbnaleieialalbqabaaaaaaes
 esaaaaaaaaaaaaaaaaabadadadadadadadadadadadadadadbralabbmbnaleieialalbPababbmbnaleieialalbuabaaaaaaes
@@ -389,7 +387,7 @@ eseseseseseseseseseseseseveveyeyeyeyeyeyeveveyeyeyeyeyeyeveveyeyeyeyeyeyeveveses
 eseseseseseseseseseseseseveveveveveveveveveveyfYfYfYfYeyeveveveveveveveveveveseseseseseseseseseseses
 eseseseseseseseseseseseseveveveveveveveveveveyfYfYfYfYeyeveveveveveveveveveveseseseseseseseseseseses
 esesesesesesesesesesesesfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYeseseseseseseseseseseses
-eseseseseseseseseseseseseyeyeyeyeyeyeyeyeyeyeyeyfYfYeyeyeyeyeyeyeyeyeyeyeyeyeseseseseseseseseseseses
+eseseseseseseseseseseseseyeyeyeyeyeyeyeyeyeyeyeyexexeyeyeyeyeyeyeyeyeyeyeyeyeseseseseseseseseseseses
 esesesesesesesesesesesesgbgbgbgbgbgbgbgbgbgbgbgbgcgcgbgbgbgbgbgbgbgbgbgbgbgbeseseseseseseseseseseses
 esesesesesesesesesesesesaUaUaUaUaUaUaUaUaUaUaUaUaiaiaUaUaUaUaUaUaUaUaUaUaUaUeseseseseseseseseseseses
 esesesesesesesesesesesesaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaieseseseseseseseseseseses
@@ -480,7 +478,7 @@ esesesesesesesesesesesesaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaieses
 esesesesesesesesesesesesaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaieseseseseseseseseseseses
 esesesesesesesesesesesesaUaUaUaUaUaUaUaUaUaUaUaUaiaiaUaUaUaUaUaUaUaUaUaUaUaUeseseseseseseseseseseses
 esesesesesesesesesesesesgbgbgbgbgbgbgbgbgbgbgbgbgcgcgbgbgbgbgbgbgbgbgbgbgbgbeseseseseseseseseseseses
-esesesesesesesesesesesesenenenenenenenenenenenenfXfXeneneneneneneneneneneneneseseseseseseseseseseses
+esesesesesesesesesesesesenenenenenenenenenenenenekekeneneneneneneneneneneneneseseseseseseseseseseses
 esesesesesesesesesesesesfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXeseseseseseseseseseseses
 esesesesesesesesesesesesememememememememememenfXfXfXfXenememememememememememeseseseseseseseseseseses
 esesesesesesesesesesesesememememememememememenfXfXfXfXenememememememememememeseseseseseseseseseseses
@@ -517,7 +515,7 @@ escycycycycycycycycgdmflaWcldjcmcgcnefcobWcocpcgfacqcgfSfTfbegegctciafcgcgfSfTfb
 escycycycycycycycycgclclclcleVclcgczclcAclclcGcgcicicgfSfTcifVfVciciafcgcgfSfTegciciegcidncgcycycyes
 escycycycycycycycycgclclcEcEclcldWcFclclclclcNcgcicicgcHcIcifHfHcicIcJcgcgcHcIcicicicicIcJcgcycycyes
 escycycycycycycycycgckcKcLcLcMcmcgcNclclclclcVcgcicqcgcOcPcicicicicQcRdWcgcReEcicicicicRcTcgcycycyes
-escycycycycycycycydWclcKcLcLcMclcgcUclclclclclcgcicicgcWcRcicicicicXcYcgcgcTeEcicicicicZdacgcycycyes
+escycycycycycycycydWclcKcLcLcMclcgcoclclclclclcgcicicgcWcRcicicicicXcYcgcgcTeEcicicicicZdacgcycycyes
 escycycycycycycycycgclcKcLcLcMclcgcVcldedbdcddcgcicicgdfdgcicicicidgdhcgcgdfdgcicicicidgdhcgcycycyes
 escycycycycycycycycgckcldidiclcmcgcgclcgcgcgcgcgcicqcgcxcicicicicidSdkcgcgdkcicicicicicidScgcycycyes
 escycycycycycycycycgclclclclclclclclclclclclclclcicicgdncicicicicidSdkcgcgdkcicicicicicidScgcycycyes
