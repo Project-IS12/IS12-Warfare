@@ -55,6 +55,7 @@
 "bc" = (/obj/structure/bed/chair{icon_state = "chair_preview"; dir = 4},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "bd" = (/obj/structure/bed/chair{icon_state = "chair_preview"; dir = 8},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "be" = (/obj/structure/closet/secure_closet/freezer/fridge,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"bf" = (/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/capture_point/blue/one)
 "bg" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "bh" = (/obj/machinery/cooker/oven,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "bi" = (/obj/machinery/cooker/grill,/obj/structure/torchwall{icon_state = "torchwall0"; dir = 1},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
@@ -147,6 +148,7 @@
 "cR" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/weapon/storage/box/matches,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "cS" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "cT" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/flame/candle,/obj/item/weapon/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"cU" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/capture_point/blue/one)
 "cV" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "cW" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "cX" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/weapon/storage/fancy/cigarettes/carcinomas,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -309,8 +311,8 @@
 "fY" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/blue/one)
 "fZ" = (/obj/structure/closet/crate,/obj/item/weapon/grenade/frag/warfare,/obj/item/weapon/grenade/frag/warfare,/obj/item/weapon/grenade/frag/warfare,/obj/item/weapon/grenade/frag/warfare,/obj/structure/torchwall{icon_state = "torchwall0"; dir = 4},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "ga" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/blue/two)
-"gb" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/no_mans_land)
-"gc" = (/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/no_mans_land)
+"gb" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/capture_point/red/one)
+"gc" = (/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/capture_point/red/one)
 "gd" = (/obj/structure/closet/crate,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/structure/torchwall{icon_state = "torchwall0"; dir = 8},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "ge" = (/turf/simulated/floor/dirty/tough/fake,/area/warfare/homebase/blue)
 "gf" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/red/two)
@@ -387,8 +389,8 @@ eseseseseseseseseseseseseveveyeyeyeyeyeyeveveyeyeyeyeyeyeveveyeyeyeyeyeyeveveses
 eseseseseseseseseseseseseveveveveveveveveveveyfYfYfYfYeyeveveveveveveveveveveseseseseseseseseseseses
 eseseseseseseseseseseseseveveveveveveveveveveyfYfYfYfYeyeveveveveveveveveveveseseseseseseseseseseses
 esesesesesesesesesesesesfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYfYeseseseseseseseseseseses
-eseseseseseseseseseseseseyeyeyeyeyeyeyeyeyeyeyeyexexeyeyeyeyeyeyeyeyeyeyeyeyeseseseseseseseseseseses
-esesesesesesesesesesesesgbgbgbgbgbgbgbgbgbgbgbgbgcgcgbgbgbgbgbgbgbgbgbgbgbgbeseseseseseseseseseseses
+eseseseseseseseseseseseseyeyeyeyeyeyeyeyeyeyeyeybfbfeyeyeyeyeyeyeyeyeyeyeyeyeseseseseseseseseseseses
+esesesesesesesesesesesescUcUcUcUcUcUcUcUcUcUcUcUbfbfcUcUcUcUcUcUcUcUcUcUcUcUeseseseseseseseseseseses
 esesesesesesesesesesesesaUaUaUaUaUaUaUaUaUaUaUaUaiaiaUaUaUaUaUaUaUaUaUaUaUaUeseseseseseseseseseseses
 esesesesesesesesesesesesaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaieseseseseseseseseseseses
 esesesesesesesesesesesesaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaieseseseseseseseseseseses
@@ -478,7 +480,7 @@ esesesesesesesesesesesesaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaieses
 esesesesesesesesesesesesaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaieseseseseseseseseseseses
 esesesesesesesesesesesesaUaUaUaUaUaUaUaUaUaUaUaUaiaiaUaUaUaUaUaUaUaUaUaUaUaUeseseseseseseseseseseses
 esesesesesesesesesesesesgbgbgbgbgbgbgbgbgbgbgbgbgcgcgbgbgbgbgbgbgbgbgbgbgbgbeseseseseseseseseseseses
-esesesesesesesesesesesesenenenenenenenenenenenenekekeneneneneneneneneneneneneseseseseseseseseseseses
+esesesesesesesesesesesesenenenenenenenenenenenengcgceneneneneneneneneneneneneseseseseseseseseseseses
 esesesesesesesesesesesesfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXeseseseseseseseseseseses
 esesesesesesesesesesesesememememememememememenfXfXfXfXenememememememememememeseseseseseseseseseseses
 esesesesesesesesesesesesememememememememememenfXfXfXfXenememememememememememeseseseseseseseseseseses
