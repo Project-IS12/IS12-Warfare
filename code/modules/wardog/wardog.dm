@@ -32,9 +32,8 @@ proc/send_to_bot(list/params, useapikey = 1)
 	"time" = roundduration2text()
 	))
 
-/*
+
 /hook/startup/proc/roundstartping()
 	send_to_bot(list(
 		"call" = "roundstart"
 	))
-*/
