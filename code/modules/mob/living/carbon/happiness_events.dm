@@ -184,17 +184,17 @@
 	timeout = FALSE
 
 /datum/happiness_event/addiction/withdrawal_medium
-	description = "<span class='danger'>I don't indulge in my addiction, that makes me unhappy!.</span>\n"
+	description = "<span class='danger'>I don't indulge in my addiction, that makes me unhappy!</span>\n"
 	happiness = -5
 	timeout = FALSE
 
 /datum/happiness_event/addiction/withdrawal_large
-	description = "<span class='danger'>I don't indulge in my addiction, that makes me very unhappy!.</span>\n"
+	description = "<span class='danger'>I don't indulge in my addiction, that makes me very unhappy!</span>\n"
 	happiness = -10
 	timeout = FALSE
 
 /datum/happiness_event/addiction/withdrawal_extreme
-	description = "<span class='danger'>I DON'T INDULGE IN MY ADDICTION, MY DAY IS SHIT!!.</span>\n"
+	description = "<span class='danger'>I DON'T INDULGE IN MY ADDICTION, MY DAY IS SHIT!!</span>\n"
 	happiness = -12
 	timeout = FALSE
 
