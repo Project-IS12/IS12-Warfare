@@ -164,7 +164,7 @@
 	if(!client)
 		return
 
-	if(istype(get_active_hand(),/obj/item/weapon/gun))
+	if(istype(get_active_hand(),/obj/item/gun))
 		if(dispersion_mouse_display_number > 0 && dispersion_mouse_display_number < 2)// else
 			client.mouse_pointer_icon = 'icons/effects/standard/standard2.dmi'//'icons/misc/aim.dmi'
 		else if(dispersion_mouse_display_number >= 2 && dispersion_mouse_display_number < 4)
@@ -443,7 +443,7 @@
 	<BR><B>Head(Mask):</B> <A href='?src=\ref[src];item=mask'>[(wear_mask ? wear_mask : "Nothing")]</A>
 	<BR><B>Left Hand:</B> <A href='?src=\ref[src];item=l_hand'>[(l_hand ? l_hand  : "Nothing")]</A>
 	<BR><B>Right Hand:</B> <A href='?src=\ref[src];item=r_hand'>[(r_hand ? r_hand : "Nothing")]</A>
-	<BR><B>Back:</B> <A href='?src=\ref[src];item=back'>[(back ? back : "Nothing")]</A> [((istype(wear_mask, /obj/item/clothing/mask) && istype(back, /obj/item/weapon/tank) && !( internal )) ? text(" <A href='?src=\ref[];item=internal'>Set Internal</A>", src) : "")]
+	<BR><B>Back:</B> <A href='?src=\ref[src];item=back'>[(back ? back : "Nothing")]</A> [((istype(wear_mask, /obj/item/clothing/mask) && istype(back, /obj/item/tank) && !( internal )) ? text(" <A href='?src=\ref[];item=internal'>Set Internal</A>", src) : "")]
 	<BR>[(internal ? text("<A href='?src=\ref[src];item=internal'>Remove Internal</A>") : "")]
 	<BR><A href='?src=\ref[src];item=pockets'>Empty Pockets</A>
 	<BR><A href='?src=\ref[user];refresh=1'>Refresh</A>

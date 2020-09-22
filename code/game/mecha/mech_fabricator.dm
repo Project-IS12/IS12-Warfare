@@ -29,12 +29,12 @@
 	..()
 
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/mechfab(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
-	component_parts += new /obj/item/weapon/stock_parts/micro_laser(src)
-	component_parts += new /obj/item/weapon/stock_parts/console_screen(src)
+	component_parts += new /obj/item/circuitboard/mechfab(src)
+	component_parts += new /obj/item/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/stock_parts/manipulator(src)
+	component_parts += new /obj/item/stock_parts/micro_laser(src)
+	component_parts += new /obj/item/stock_parts/console_screen(src)
 	RefreshParts()
 
 	files = new /datum/research(src) //Setup the research data holder.
@@ -73,13 +73,13 @@
 
 /obj/machinery/mecha_part_fabricator/RefreshParts()
 	res_max_amount = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/M in component_parts)
+	for(var/obj/item/stock_parts/matter_bin/M in component_parts)
 		res_max_amount += M.rating * 100000 // 200k -> 600k
 	var/T = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		T += M.rating
 	mat_efficiency = 1 - (T - 1) / 4 // 1 -> 0.5
-	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts) // Not resetting T is intended; speed is affected by both
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts) // Not resetting T is intended; speed is affected by both
 		T += M.rating
 	speed = T / 2 // 1 -> 3
 

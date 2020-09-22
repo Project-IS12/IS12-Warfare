@@ -19,7 +19,7 @@ var/list/default_material_composition = list("steel" = 0, "glass" = 0, "gold" = 
 
 /obj/machinery/r_n_d/dismantle()
 	for(var/obj/I in component_parts)
-		if(istype(I, /obj/item/weapon/reagent_containers/glass/beaker))
+		if(istype(I, /obj/item/reagent_containers/glass/beaker))
 			reagents.trans_to_obj(I, reagents.total_volume)
 	for(var/f in materials)
 		if(materials[f] >= SHEET_MATERIAL_AMOUNT)

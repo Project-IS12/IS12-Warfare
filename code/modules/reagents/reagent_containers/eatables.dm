@@ -47,7 +47,7 @@ The nutrient quick rundown:
 	at 50, the old value, and see what comes of it. It is easy enough to fix.
 */
 
-/obj/item/weapon/reagent_containers/eatable
+/obj/item/reagent_containers/eatable
 	randpixel = 6
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	possible_transfer_amounts = null
@@ -80,20 +80,20 @@ The nutrient quick rundown:
 
 	var/trash = null //if it spawns garbage (like old food code)
 
-/obj/item/weapon/reagent_containers/eatable/New()
+/obj/item/reagent_containers/eatable/New()
 	..()
 	if(myreagent)
 		reagents.add_reagent(myreagent,myreagent_amt)
 	else
 		qdel(src) // why would you want food with nothing in it??
 
-/obj/item/weapon/reagent_containers/eatable/attack_self(mob/user as mob)
+/obj/item/reagent_containers/eatable/attack_self(mob/user as mob)
 	return
 
 
 //TO DO: check for zone selection mouth, otherwise hit the person with the food.)
 
-/obj/item/weapon/reagent_containers/eatable/attack(mob/M as mob, mob/user as mob, def_zone)
+/obj/item/reagent_containers/eatable/attack(mob/M as mob, mob/user as mob, def_zone)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
@@ -144,12 +144,12 @@ The nutrient quick rundown:
 
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/stomach/gut = H.internal_organs_by_name[BP_STOMACH]
-		var/obj/item/weapon/storage/special/stomach/gutinventory = gut.inventory
+		var/obj/item/storage/special/stomach/gutinventory = gut.inventory
 		//add a food chunk to the stomach
 		if(!gut.inventory.can_be_inserted(src, user, 1))
 			M.visible_message("<span class='notice'>[M] Can't eat anymore of \the [src].</span>","<span class='notice'>You feel too full to eat \the [src].</span>")
 			return
-		var/obj/item/weapon/reagent_containers/eatable/foodchunk/chunk = new /obj/item/weapon/reagent_containers/eatable/foodchunk(gutinventory)
+		var/obj/item/reagent_containers/eatable/foodchunk/chunk = new /obj/item/reagent_containers/eatable/foodchunk(gutinventory)
 		if(reagents.total_volume < myreagent_amt/bitesize)
 			reagents.trans_to(chunk, reagents.total_volume)
 		else
@@ -169,7 +169,7 @@ The nutrient quick rundown:
 
 
 
-/obj/item/weapon/reagent_containers/eatable/examine(mob/user)
+/obj/item/reagent_containers/eatable/examine(mob/user)
 	if(!..(user, 1))
 		return
 	if (bitecount==0)
@@ -177,21 +177,21 @@ The nutrient quick rundown:
 	else
 		to_chat(user, "Something has been eating this!")
 
-/obj/item/weapon/reagent_containers/eatable/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/reagent_containers/eatable/attackby(obj/item/W as obj, mob/user as mob)
 	return
 	//this is for figuing out food with utensils and stuff. I'll figure it out later
 	//for now people eat food with their hands like cretins
 
 
 //not sure why old food has this, it's for cutting shit open that has stuff in it??
-/obj/item/weapon/reagent_containers/eatable/Destroy()
+/obj/item/reagent_containers/eatable/Destroy()
 	if(contents)
 		for(var/atom/movable/something in contents)
 			something.dropInto(loc)
 	. = ..()
 
 //cooking is based on
-/obj/item/weapon/reagent_containers/eatable/proc/Cook(var/type)
+/obj/item/reagent_containers/eatable/proc/Cook(var/type)
 	return
 	//switch(type)
 	//	if(NO_COOKING_METHOD)
@@ -201,7 +201,7 @@ The nutrient quick rundown:
 /*
 food chunk, this gets put in the stomach of the mob which eats the eatable
 */
-/obj/item/weapon/reagent_containers/eatable/foodchunk
+/obj/item/reagent_containers/eatable/foodchunk
 	name		= "Food chunk"
 	desc		= "a small chunk of chewed up food."
 	icon_state	= "badrecipe"

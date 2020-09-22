@@ -11,7 +11,7 @@
 /*
  * Oxygen
  */
-/obj/item/weapon/tank/oxygen
+/obj/item/tank/oxygen
 	name = "oxygen tank"
 	desc = "A tank of oxygen."
 	icon_state = "oxygen"
@@ -19,18 +19,18 @@
 	starting_pressure = list("oxygen" = 6*ONE_ATMOSPHERE)
 	volume = 100
 
-/obj/item/weapon/tank/oxygen/yellow
+/obj/item/tank/oxygen/yellow
 	desc = "A tank of oxygen. This one is yellow."
 	icon_state = "oxygen_f"
 
-/obj/item/weapon/tank/oxygen/red
+/obj/item/tank/oxygen/red
 	desc = "A tank of oxygen. This one is red."
 	icon_state = "oxygen_fr"
 
 /*
  * Anesthetic
  */
-/obj/item/weapon/tank/anesthetic
+/obj/item/tank/anesthetic
 	name = "anesthetic tank"
 	desc = "A tank with an N2O/O2 gas mix."
 	icon_state = "anesthetic"
@@ -41,7 +41,7 @@
 /*
  * Air
  */
-/obj/item/weapon/tank/air
+/obj/item/tank/air
 	name = "air tank"
 	desc = "Mixed anyone?"
 	icon_state = "oxygen"
@@ -51,7 +51,7 @@
 /*
  * Phoron
  */
-/obj/item/weapon/tank/phoron
+/obj/item/tank/phoron
 	name = "phoron tank"
 	desc = "Contains dangerous phoron. Do not inhale. Warning: extremely flammable."
 	icon_state = "phoron"
@@ -63,7 +63,7 @@
 /*
  * Hydrogen
  */
-/obj/item/weapon/tank/hydrogen
+/obj/item/tank/hydrogen
 	name = "hydrogen tank"
 	desc = "Contains hydrogen. Warning: flammable."
 	icon_state = "hydrogen"
@@ -72,10 +72,10 @@
 	slot_flags = null
 	starting_pressure = list("hydrogen" = 3*ONE_ATMOSPHERE)
 
-/obj/item/weapon/tank/hydrogen/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/tank/hydrogen/attackby(obj/item/W as obj, mob/user as mob)
 	..()
-	if (istype(W, /obj/item/weapon/flamethrower))
-		var/obj/item/weapon/flamethrower/F = W
+	if (istype(W, /obj/item/flamethrower))
+		var/obj/item/flamethrower/F = W
 		if (!F.status||F.ptank)	return
 		master = F
 		F.ptank = src
@@ -85,7 +85,7 @@
 /*
  * Emergency Oxygen
  */
-/obj/item/weapon/tank/emergency
+/obj/item/tank/emergency
 	name = "emergency tank"
 	icon_state = "emergency"
 	gauge_icon = "indicator_emergency"
@@ -97,33 +97,33 @@
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	volume = 40 //Tiny. Real life equivalents only have 21 breaths of oxygen in them. They're EMERGENCY tanks anyway -errorage (dangercon 2011)
 
-/obj/item/weapon/tank/emergency/oxygen
+/obj/item/tank/emergency/oxygen
 	name = "emergency oxygen tank"
 	desc = "Used for emergencies. Contains very little oxygen, so try to conserve it until you actually need it."
 	icon_state = "emergency"
 	gauge_icon = "indicator_emergency"
 	starting_pressure = list("oxygen" = 3*ONE_ATMOSPHERE)
 
-/obj/item/weapon/tank/emergency/oxygen/engi
+/obj/item/tank/emergency/oxygen/engi
 	name = "extended-capacity emergency oxygen tank"
 	icon_state = "emergency_engi"
 	volume = 60
 
-/obj/item/weapon/tank/emergency/oxygen/double
+/obj/item/tank/emergency/oxygen/double
 	name = "double emergency oxygen tank"
 	icon_state = "emergency_double"
 	gauge_icon = "indicator_emergency_double"
 	volume = 90
 	w_class = ITEM_SIZE_NORMAL
 
-/obj/item/weapon/tank/emergency/nitrogen
+/obj/item/tank/emergency/nitrogen
 	name = "emergency nitrogen tank"
 	desc = "An emergency air tank hastily painted red and issued to Vox crewmembers."
 	icon_state = "emergency_nitro"
 	gauge_icon = "indicator_emergency"
 	starting_pressure = list("nitrogen" = 3*ONE_ATMOSPHERE)
 
-/obj/item/weapon/tank/emergency/nitrogen/double
+/obj/item/tank/emergency/nitrogen/double
 	name = "double emergency nitrogen tank"
 	icon_state = "emergency_double_nitrogen"
 	gauge_icon = "indicator_emergency_double"
@@ -132,7 +132,7 @@
 /*
  * Nitrogen
  */
-/obj/item/weapon/tank/nitrogen
+/obj/item/tank/nitrogen
 	name = "nitrogen tank"
 	desc = "A tank of nitrogen."
 	icon_state = "oxygen_fr"

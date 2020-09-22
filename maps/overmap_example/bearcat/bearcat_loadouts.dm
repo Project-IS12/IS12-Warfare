@@ -51,11 +51,11 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 	cost = 4
 	sort_category = "Utility"
-	path = /obj/item/weapon/gun/projectile/
+	path = /obj/item/gun/projectile/
 
 /datum/gear/accessory/guns/New()
 	..()
 	var/guns = list()
-	guns["holdout"] = /obj/item/weapon/gun/projectile/pistol
-	guns[".45 gun"] = /obj/item/weapon/gun/projectile/sec
+	guns["holdout"] = /obj/item/gun/projectile/pistol
+	guns[".45 gun"] = /obj/item/gun/projectile/sec
 	gear_tweaks += new/datum/gear_tweak/path(guns)

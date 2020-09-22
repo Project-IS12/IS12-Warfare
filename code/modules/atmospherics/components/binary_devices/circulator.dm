@@ -92,7 +92,7 @@
 			icon_state = "circi-off"
 	return 1
 
-/obj/machinery/atmospherics/binary/circulator/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/atmospherics/binary/circulator/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		anchored = !anchored

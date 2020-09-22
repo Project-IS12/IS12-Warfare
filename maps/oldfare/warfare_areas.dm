@@ -215,8 +215,8 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 			to_chat(H, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")//No you fucking don't.
 			return //Keep that boombox at base asshole.
 
-		if(locate(/obj/item/weapon/storage) in H)//Gotta check storage as well.
-			var/obj/item/weapon/storage/S = locate() in H
+		if(locate(/obj/item/storage) in H)//Gotta check storage as well.
+			var/obj/item/storage/S = locate() in H
 			if(locate(/obj/item/device/boombox) in S)
 				to_chat(H, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 				return

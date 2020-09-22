@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/taser
+/obj/item/gun/energy/taser
 	name = "Mk30 NL"
 	desc = "Low capacity gun used for non-lethal takedowns. Never has ammo when you need it the most."
 	icon_state = "taser"
@@ -14,7 +14,7 @@
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock),
 		)
 	*/
-/obj/item/weapon/gun/energy/taser/carbine
+/obj/item/gun/energy/taser/carbine
 	name = "taser carbine"
 	desc = "The NT Mk44 NL is a high capacity gun used for non-lethal takedowns. It can switch between high and low intensity stun shots."
 	icon_state = "tasercarbine"
@@ -33,18 +33,18 @@
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock/heavy),
 		)
 */
-/obj/item/weapon/gun/energy/taser/mounted
+/obj/item/gun/energy/taser/mounted
 	name = "mounted taser gun"
 	self_recharge = 1
 	use_external_power = 1
 
-/obj/item/weapon/gun/energy/taser/mounted/cyborg
+/obj/item/gun/energy/taser/mounted/cyborg
 	name = "taser gun"
 	max_shots = 6
 	recharge_time = 10 //Time it takes for shots to recharge (in ticks)
 
 
-/obj/item/weapon/gun/energy/stunrevolver
+/obj/item/gun/energy/stunrevolver
 	name = "stun revolver"
 	desc = "A LAEP20 Zeus. Designed by Lawson Arms and produced under the wing of the FTU, several TSCs have been trying to get a hold of the blueprints for half a decade."
 	icon_state = "stunrevolver"
@@ -54,7 +54,7 @@
 	max_shots = 6
 	combustion = 0
 
-/obj/item/weapon/gun/energy/stunrevolver/rifle
+/obj/item/gun/energy/stunrevolver/rifle
 	name = "stun rifle"
 	desc = "A LAEP38 Thor, a vastly oversized variant of the LAEP20 Zeus. Fires overcharged electrodes to take down hostile armored targets without harming them too much."
 	icon_state = "stunrifle"
@@ -69,7 +69,7 @@
 	projectile_type = /obj/item/projectile/energy/electrode/stunshot
 	wielded_item_state = "stunrifle-wielded"
 
-/obj/item/weapon/gun/energy/crossbow
+/obj/item/gun/energy/crossbow
 	name = "mini energy-crossbow"
 	desc = "A weapon favored by many mercenary stealth specialists."
 	icon_state = "crossbow"
@@ -86,7 +86,7 @@
 	charge_meter = 0
 	combustion = 0
 
-/obj/item/weapon/gun/energy/crossbow/largecrossbow
+/obj/item/gun/energy/crossbow/largecrossbow
 	name = "energy crossbow"
 	desc = "A weapon favored by mercenary infiltration teams."
 	w_class = ITEM_SIZE_LARGE

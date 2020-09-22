@@ -19,7 +19,7 @@
 	var/safety = 1
 
 /obj/machinery/sunreactor/emitter/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/weapon/wrench))
+	if(istype(W, /obj/item/wrench))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		if(safety == 1)
 			safety = 0
@@ -480,7 +480,7 @@
 		sleep(1)
 	else if(istype(A,/obj/))
 
-		if (istype(A,/obj/item/weapon/storage/backpack/holding))
+		if (istype(A,/obj/item/storage/backpack/holding))
 			var/dist = max((current_size - 2),1)
 			explosion(src.loc,(dist),(dist*2),(dist*4))
 			return

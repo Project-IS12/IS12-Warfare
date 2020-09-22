@@ -215,7 +215,7 @@
 	open =! open
 	update_icon()
 
-/obj/item/ammo_magazine/box/shotgun/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/ammo_magazine/box/shotgun/attackby(obj/item/W as obj, mob/user as mob)
 	if(!open)
 		return
 	..()

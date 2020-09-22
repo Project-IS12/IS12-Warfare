@@ -26,7 +26,7 @@
 	var/loaded_with = null
 	var/deployed = FALSE
 
-/obj/item/mortar_launcher/attackby(obj/item/weapon/W, mob/user)
+/obj/item/mortar_launcher/attackby(obj/item/W, mob/user)
 	. = ..()
 	if(!istype(W, /obj/item/mortar_shell))
 		return

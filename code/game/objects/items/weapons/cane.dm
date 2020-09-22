@@ -1,4 +1,4 @@
-/obj/item/weapon/cane
+/obj/item/cane
 	name = "cane"
 	desc = "A cane used by a true gentlemen. Or a clown."
 	icon = 'icons/obj/weapons/canesword.dmi'
@@ -11,16 +11,16 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 50)
 	attack_verb = list("bludgeoned", "whacked", "disciplined", "thrashed")
 
-/obj/item/weapon/cane/concealed
+/obj/item/cane/concealed
 	var/concealed_blade
 
-/obj/item/weapon/cane/concealed/New()
+/obj/item/cane/concealed/New()
 	..()
-	var/obj/item/weapon/material/sword/cane/temp_blade = new(src)
+	var/obj/item/material/sword/cane/temp_blade = new(src)
 	concealed_blade = temp_blade
 	temp_blade.attack_self()
 
-/obj/item/weapon/cane/concealed/attack_self(var/mob/user)
+/obj/item/cane/concealed/attack_self(var/mob/user)
 	if(concealed_blade)
 		user.visible_message("<span class='warning'>[user] has unsheathed \a [concealed_blade] from [src]!</span>", "You unsheathe \the [concealed_blade] from [src].")
 		// Calling drop/put in hands to properly call item drop/pickup procs
@@ -35,7 +35,7 @@
 	else
 		..()
 
-/obj/item/weapon/cane/concealed/attackby(var/obj/item/weapon/material/sword/cane/W, var/mob/user)
+/obj/item/cane/concealed/attackby(var/obj/item/material/sword/cane/W, var/mob/user)
 	if(!src.concealed_blade && istype(W))
 		user.visible_message("<span class='warning'>[user] has sheathed \a [W] into [src]!</span>", "You sheathe \the [W] into [src].")
 		playsound(user.loc, 'sound/items/holster_sword1.ogg', 50, 1)
@@ -48,7 +48,7 @@
 	else
 		..()
 
-/obj/item/weapon/cane/concealed/update_icon()
+/obj/item/cane/concealed/update_icon()
 	if(concealed_blade)
 		SetName(initial(name))
 		icon_state = initial(icon_state)
@@ -58,7 +58,7 @@
 		icon_state = "canesword_sheath"
 		item_state = "foldcane"
 
-/obj/item/weapon/material/sword/cane
+/obj/item/material/sword/cane
 	icon = 'icons/obj/weapons/canesword.dmi'
 	icon_state = "cane_sword"
 

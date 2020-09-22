@@ -190,7 +190,7 @@
 	for(var/obj/item/organ/external/child in children)
 		child.show_decay_status(user)
 
-/obj/item/organ/external/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/organ/external/attackby(obj/item/W as obj, mob/user as mob)
 	switch(stage)
 		if(0)
 			if(W.sharp)
@@ -203,7 +203,7 @@
 				stage++
 				return
 		if(2)
-			if(W.sharp || istype(W,/obj/item/weapon/hemostat) || isWirecutter(W))
+			if(W.sharp || istype(W,/obj/item/hemostat) || isWirecutter(W))
 				var/list/organs = get_contents_recursive()
 				if(organs.len)
 					var/obj/item/removing = pick(organs)
@@ -298,8 +298,8 @@
 		for(var/obj/implant in implants)
 			implant.forceMove(owner)
 
-			if(istype(implant, /obj/item/weapon/implant))
-				var/obj/item/weapon/implant/imp_device = implant
+			if(istype(implant, /obj/item/implant))
+				var/obj/item/implant/imp_device = implant
 
 				// we can't use implanted() here since it's often interactive
 				imp_device.imp_in = owner
@@ -391,7 +391,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	// remove embedded objects and drop them on the floor
 	for(var/obj/implanted_object in implants)
-		if(!istype(implanted_object,/obj/item/weapon/implant))	// We don't want to remove REAL implants. Just shrapnel etc.
+		if(!istype(implanted_object,/obj/item/implant))	// We don't want to remove REAL implants. Just shrapnel etc.
 			implanted_object.loc = get_turf(src)
 			implants -= implanted_object
 
@@ -1077,7 +1077,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 /obj/item/organ/external/proc/is_malfunctioning()
 	return ((robotic >= ORGAN_ROBOT) && (brute_dam + burn_dam) >= 10 && prob(brute_dam + burn_dam))
 
-/obj/item/organ/external/proc/embed(var/obj/item/weapon/W, var/silent = 0, var/supplied_message, var/datum/wound/supplied_wound)
+/obj/item/organ/external/proc/embed(var/obj/item/W, var/silent = 0, var/supplied_message, var/datum/wound/supplied_wound)
 	if(!owner || loc != owner)
 		return
 	if(species.species_flags & SPECIES_FLAG_NO_EMBED)
@@ -1132,8 +1132,8 @@ Note that amputating the affected organ does in fact remove the infection from t
 			implant.forceMove(src)
 
 			// let actual implants still inside know they're no longer implanted
-			if(istype(I, /obj/item/weapon/implant))
-				var/obj/item/weapon/implant/imp_device = I
+			if(istype(I, /obj/item/implant))
+				var/obj/item/implant/imp_device = I
 				imp_device.removed(owner)
 		else
 			implants.Remove(implant)
@@ -1330,7 +1330,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if (implants.len)
 		var/unknown_body = 0
 		for(var/I in implants)
-			var/obj/item/weapon/implant/imp = I
+			var/obj/item/implant/imp = I
 			if(istype(imp) && imp.known)
 				. += "[capitalize(imp.name)] implanted"
 			else if(!imp.truly_unknown)

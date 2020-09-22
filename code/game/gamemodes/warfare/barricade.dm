@@ -218,7 +218,7 @@
 /obj/item/defensive_barrier/attackby(obj/item/W, mob/user)
 
 	if(stored_health < stored_max_health && isWelder(W))
-		var/obj/item/weapon/weldingtool/WT = W
+		var/obj/item/weldingtool/WT = W
 		if(!WT.isOn())
 			to_chat(user, SPAN_WARNING("Turn \the [W] on first."))
 			return TRUE

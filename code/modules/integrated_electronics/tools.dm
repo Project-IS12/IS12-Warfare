@@ -193,7 +193,7 @@
 	last_scan = jointext(last_scan,"\n")
 	to_chat(user, last_scan)
 
-/obj/item/weapon/storage/bag/circuits
+/obj/item/storage/bag/circuits
 	name = "circuit kit"
 	desc = "This kit's essential for any circuitry projects."
 	icon = 'icons/obj/electronic_assemblies.dmi'
@@ -203,7 +203,7 @@
 	storage_ui = /datum/storage_ui/tgui
 	allow_quick_empty = FALSE
 
-/obj/item/weapon/storage/bag/circuits/basic/Initialize()
+/obj/item/storage/bag/circuits/basic/Initialize()
 	. = ..()
 	var/list/types_to_spawn = typesof(/obj/item/integrated_circuit/arithmetic,
 		/obj/item/integrated_circuit/logic,
@@ -242,11 +242,11 @@
 	new /obj/item/device/electronic_assembly(src)
 	new /obj/item/device/integrated_electronics/wirer(src)
 	new /obj/item/device/integrated_electronics/debugger(src)
-	new /obj/item/weapon/crowbar(src)
-	new /obj/item/weapon/screwdriver(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/screwdriver(src)
 	make_exact_fit()
 
-/obj/item/weapon/storage/bag/circuits/debug/Initialize()
+/obj/item/storage/bag/circuits/debug/Initialize()
 	. = ..()
 	SetName("[name] - not intended for general use")
 	desc = "[desc] - not intended for general use"
@@ -261,6 +261,6 @@
 	new /obj/item/device/integrated_electronics/wirer(src)
 	new /obj/item/device/integrated_electronics/debugger(src)
 	new /obj/item/device/integrated_electronics/analyzer(src)
-	new /obj/item/weapon/crowbar(src)
-	new /obj/item/weapon/screwdriver(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/screwdriver(src)
 	make_exact_fit()

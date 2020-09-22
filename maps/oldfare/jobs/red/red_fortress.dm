@@ -24,9 +24,9 @@
 		H.add_skills(rand(4,6), rand(0,2), 0, rand(0,3))
 
 /decl/hierarchy/outfit/job/service/chef/red
-	back = /obj/item/weapon/storage/backpack/satchel
+	back = /obj/item/storage/backpack/satchel
 	l_ear = /obj/item/device/radio/headset/syndicate
-	neck = /obj/item/weapon/reagent_containers/food/drinks/canteen
+	neck = /obj/item/reagent_containers/food/drinks/canteen
 
 
 /datum/job/fortress/red/practitioner
@@ -55,16 +55,16 @@
 
 /decl/hierarchy/outfit/job/medical/doctor/red
 	//uniform = /obj/item/clothing/under/red_uniform
-	back = /obj/item/weapon/storage/backpack/satchel/warfare
+	back = /obj/item/storage/backpack/satchel/warfare
 	gloves = /obj/item/clothing/gloves/prac_gloves
 	suit = /obj/item/clothing/suit/prac_arpon
 	mask = /obj/item/clothing/mask/gas/prac_mask
 	shoes = /obj/item/clothing/shoes/prac_boots
 	//head = /obj/item/clothing/head/prac_cap
 	l_ear = /obj/item/device/radio/headset/syndicate
-	neck = /obj/item/weapon/reagent_containers/food/drinks/canteen
-	belt = /obj/item/weapon/storage/belt/medical/full
+	neck = /obj/item/reagent_containers/food/drinks/canteen
+	belt = /obj/item/storage/belt/medical/full
 	pda_type = null
-	id_type = /obj/item/weapon/card/id/dog_tag/red
-	backpack_contents = list(/obj/item/ammo_magazine/handful/revolver = 1, /obj/item/weapon/gun/projectile/revolver/cpt = 1)
-	//backpack_contents = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/blood = 1, /obj/item/weapon/reagent_containers/hypospray/autoinjector/revive = 2, /obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2, /obj/item/weapon/suture = 1, /obj/item/weapon/wirecutters = 1)
+	id_type = /obj/item/card/id/dog_tag/red
+	backpack_contents = list(/obj/item/ammo_magazine/handful/revolver = 1, /obj/item/gun/projectile/revolver/cpt = 1)
+	//backpack_contents = list(/obj/item/reagent_containers/hypospray/autoinjector/blood = 1, /obj/item/reagent_containers/hypospray/autoinjector/revive = 2, /obj/item/reagent_containers/hypospray/autoinjector/pain = 2, /obj/item/suture = 1, /obj/item/wirecutters = 1)

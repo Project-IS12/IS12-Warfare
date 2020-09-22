@@ -141,7 +141,7 @@ datum/objective/anti_revolution/demote
 
 	check_completion()
 		if(target && target.current && istype(target,/mob/living/carbon/human))
-			var/obj/item/weapon/card/id/I = target.current:wear_id
+			var/obj/item/card/id/I = target.current:wear_id
 			if(istype(I, /obj/item/device/pda))
 				var/obj/item/device/pda/P = I
 				I = P.id
@@ -410,36 +410,36 @@ datum/objective/nuclear
 	var/target_name
 
 	var/global/possible_items[] = list(
-		//"the captain's antique laser gun" = /obj/item/weapon/gun/energy/captain,
+		//"the captain's antique laser gun" = /obj/item/gun/energy/captain,
 		//"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,
-		//"an RCD" = /obj/item/weapon/rcd,
-		//"a jetpack" = /obj/item/weapon/tank/jetpack,
+		//"an RCD" = /obj/item/rcd,
+		//"a jetpack" = /obj/item/tank/jetpack,
 		//"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
-		//"a functional AI" = /obj/item/weapon/aicard,
+		//"a functional AI" = /obj/item/aicard,
 		"the magistrate's crown" = /obj/item/clothing/head/crown,
 		"the magistrate's uniform" = /obj/item/clothing/under/rank/magistrate,
 		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		//"the [station_name()] blueprints" = /obj/item/blueprints,
 		//"a nasa voidsuit" = /obj/item/clothing/suit/space/void,
-		//"28 moles of phoron (full tank)" = /obj/item/weapon/tank,
+		//"28 moles of phoron (full tank)" = /obj/item/tank,
 		//"a sample of slime extract" = /obj/item/slime_extract,
-		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
+		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
 		//"a research director's jumpsuit" = /obj/item/clothing/under/rank/research_director,
 		//"a chief engineer's jumpsuit" = /obj/item/clothing/under/rank/chief_engineer,
 		//"a chief medical officer's jumpsuit" = /obj/item/clothing/under/rank/chief_medical_officer,
 		"the headpeackeepers's uniform" = /obj/item/clothing/under/rank/head_of_security,
 		"the overseers's uniform" = /obj/item/clothing/under/rank/head_of_personnel,
-		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
-		"the magistrate's pinpointer" = /obj/item/weapon/pinpointer,
+		"the hypospray" = /obj/item/reagent_containers/hypospray,
+		"the magistrate's pinpointer" = /obj/item/pinpointer,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
 	)
 
 	var/global/possible_items_special[] = list(
-		/*"nuclear authentication disk" = /obj/item/weapon/disk/nuclear,*///Broken with the change to nuke disk making it respawn on z level change.
-		"nuclear gun" = /obj/item/weapon/gun/energy/gun/nuclear,
-		//"diamond drill" = /obj/item/weapon/pickaxe/diamonddrill,
-		//"bag of holding" = /obj/item/weapon/storage/backpack/holding,
-		"hyper-capacity cell" = /obj/item/weapon/cell/hyper,
+		/*"nuclear authentication disk" = /obj/item/disk/nuclear,*///Broken with the change to nuke disk making it respawn on z level change.
+		"nuclear gun" = /obj/item/gun/energy/gun/nuclear,
+		//"diamond drill" = /obj/item/pickaxe/diamonddrill,
+		//"bag of holding" = /obj/item/storage/backpack/holding,
+		"hyper-capacity cell" = /obj/item/cell/hyper,
 		//"10 diamonds" = /obj/item/stack/material/diamond,
 		//"50 gold bars" = /obj/item/stack/material/gold,
 		//"25 refined uranium bars" = /obj/item/stack/material/uranium,
@@ -626,19 +626,19 @@ datum/objective/heist/loot
 				target_amount = 1
 				loot = "a nuclear bomb"
 			if(5)
-				target = /obj/item/weapon/gun
+				target = /obj/item/gun
 				target_amount = 6
 				loot = "six guns"
 			if(6)
-				target = /obj/item/weapon/gun/energy
+				target = /obj/item/gun/energy
 				target_amount = 4
 				loot = "four energy guns"
 			if(7)
-				target = /obj/item/weapon/gun/energy/laser
+				target = /obj/item/gun/energy/laser
 				target_amount = 2
 				loot = "two laser guns"
 			if(8)
-				target = /obj/item/weapon/gun/energy/ionrifle
+				target = /obj/item/gun/energy/ionrifle
 				target_amount = 1
 				loot = "an ion gun"
 

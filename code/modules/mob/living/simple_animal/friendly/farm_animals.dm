@@ -12,7 +12,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/goat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/goat
 	meat_amount = 4
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -73,7 +73,7 @@
 		visible_message("<span class='warning'>[src] gets an evil-looking gleam in their eye.</span>")
 
 /mob/living/simple_animal/hostile/retaliate/goat/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	var/obj/item/weapon/reagent_containers/glass/G = O
+	var/obj/item/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
 		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>")
 		var/transfered = udder.trans_type_to(G, /datum/reagent/drink/milk, rand(5,10))
@@ -114,7 +114,7 @@
 /mob/living/simple_animal/hostile/retaliate/goat/king/death()
 	..()
 	visible_message("<span class='warning'>\The [src] shrieks as the seal on their power breaks and his wool peels off!</span>")
-	new /obj/item/weapon/towel/fleece(src.loc)
+	new /obj/item/towel/fleece(src.loc)
 
 //cow
 /mob/living/simple_animal/cow
@@ -131,7 +131,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/beef
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/beef
 	meat_amount = 6
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -146,7 +146,7 @@
 	..()
 
 /mob/living/simple_animal/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	var/obj/item/weapon/reagent_containers/glass/G = O
+	var/obj/item/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
 		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>")
 		var/transfered = udder.trans_type_to(G, /datum/reagent/drink/milk, rand(5,10))
@@ -192,7 +192,7 @@
 	emote_see = list("pecks at the ground","flaps its tiny wings")
 	speak_chance = 2
 	turns_per_move = 2
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/chicken
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
 	meat_amount = 1
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -233,7 +233,7 @@ var/global/chicken_count = 0
 	emote_see = list("pecks at the ground","flaps its wings viciously")
 	speak_chance = 2
 	turns_per_move = 3
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/chicken
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
 	meat_amount = 2
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -261,8 +261,8 @@ var/global/chicken_count = 0
 	chicken_count -= 1
 
 /mob/living/simple_animal/chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
-		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
+		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")
 			if(!stat && eggsleft < 8)
 				user.visible_message("<span class='notice'>[user] feeds [O] to [name]! It clucks happily.</span>","<span class='notice'>You feed [O] to [name]! It clucks happily.</span>")
@@ -283,22 +283,22 @@ var/global/chicken_count = 0
 	if(!stat && prob(3) && eggsleft > 0)
 		visible_message("[src] [pick("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")]")
 		eggsleft--
-		var/obj/item/weapon/reagent_containers/food/snacks/egg/E = new(get_turf(src))
+		var/obj/item/reagent_containers/food/snacks/egg/E = new(get_turf(src))
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
 		if(chicken_count < MAX_CHICKENS && prob(10))
 			E.amount_grown = 1
 			START_PROCESSING(SSobj, E)
 
-/obj/item/weapon/reagent_containers/food/snacks/egg
+/obj/item/reagent_containers/food/snacks/egg
 	var/amount_grown = 0
 
-/obj/item/weapon/reagent_containers/food/snacks/egg/Destroy()
+/obj/item/reagent_containers/food/snacks/egg/Destroy()
 	if(amount_grown)
 		STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/weapon/reagent_containers/food/snacks/egg/Process()
+/obj/item/reagent_containers/food/snacks/egg/Process()
 	if(isturf(loc))
 		amount_grown += rand(1,2)
 		if(amount_grown >= 100)

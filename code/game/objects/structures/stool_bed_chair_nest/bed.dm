@@ -88,7 +88,7 @@
 				qdel(src)
 				return
 
-/obj/structure/bed/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 		dismantle()
@@ -191,7 +191,7 @@
 /obj/structure/bed/roller/update_icon()
 	return // Doesn't care about material or anything else.
 
-/obj/structure/bed/roller/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/roller/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W) || istype(W,/obj/item/stack) || isWirecutter(W))
 		return
 	else if(istype(W,/obj/item/roller_holder))
@@ -219,7 +219,7 @@
 		R.add_fingerprint(user)
 		qdel(src)
 
-/obj/item/roller/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/roller/attackby(obj/item/W as obj, mob/user as mob)
 
 	if(istype(W,/obj/item/roller_holder))
 		var/obj/item/roller_holder/RH = W

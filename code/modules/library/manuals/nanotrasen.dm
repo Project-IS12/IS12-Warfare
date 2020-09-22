@@ -1,11 +1,11 @@
-/obj/item/weapon/book/manual/nt_regs
+/obj/item/book/manual/nt_regs
 	name = "NanoTrasen Regulations"
 	desc = "A set of corporate guidelines for employees of NanoTrasen."
 	icon_state = "booknanoregs"
 	author = "NanoTrasen"
 	title = "NanoTrasen Regulations"
 
-/obj/item/weapon/book/manual/nt_regs/New()
+/obj/item/book/manual/nt_regs/New()
 	..()
 	dat = {"
 
@@ -20,7 +20,7 @@
 
 		"}
 
-/obj/item/weapon/book/manual/hydroponics_pod_people
+/obj/item/book/manual/hydroponics_pod_people
 	name = "The Diona Harvest - From Seed to Market"
 	icon_state ="bookHydroponicsPodPeople"
 	author = "Farmer John"
@@ -57,7 +57,7 @@
 				</html>
 				"}
 
-/obj/item/weapon/book/manual/research_and_development
+/obj/item/book/manual/research_and_development
 	name = "Research and Development 101"
 	icon_state = "rdbook"
 	author = "Dr. L. Ight"
@@ -125,7 +125,7 @@
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/excavation
+/obj/item/book/manual/excavation
 	name = "Out on the Dig"
 	icon_state = "excavation"
 	author = "Professor Patrick Mason, Curator of the Antiquities Museum on Ichar VII"
@@ -238,7 +238,7 @@
 				</html>
 			"}
 
-/obj/item/weapon/book/manual/mass_spectrometry
+/obj/item/book/manual/mass_spectrometry
 	name = "High Power Mass Spectrometry: A Comprehensive Guide"
 	icon_state = "analysis"
 	author = "Winton Rice, Chief Mass Spectrometry Technician at the Institute of Applied Sciences on Arcadia"
@@ -309,7 +309,7 @@
 				</html>
 			"}
 
-/obj/item/weapon/book/manual/anomaly_spectroscopy
+/obj/item/book/manual/anomaly_spectroscopy
 	name = "Spectroscopy: Analysing the Anomalies of the Cosmos"
 	icon_state = "anomaly"
 	author = "Doctor Martin Boyle, Director Research at the Lower Hydrolian Sector Listening Array"
@@ -334,7 +334,7 @@
 				</body>
 			</html>"}
 
-/obj/item/weapon/book/manual/materials_chemistry_analysis
+/obj/item/book/manual/materials_chemistry_analysis
 	name = "Materials Analysis and the Chemical Implications"
 	icon_state = "chemistry"
 	author = "Jasper Pascal, Senior Lecturer in Materials Analysis at the University of Jol'Nar"
@@ -361,7 +361,7 @@
 				a new element that defies classification. I defy you to classify it without reviving this once great field!
 			"}
 
-/obj/item/weapon/book/manual/anomaly_testing
+/obj/item/book/manual/anomaly_testing
 	name = "Anomalous Materials and Energies"
 	icon_state = "triangulate"
 	author = "Norman York, formerly of the Tyrolion Institute on Titan"
@@ -439,7 +439,7 @@
 				</html>
 			"}
 
-/obj/item/weapon/book/manual/stasis
+/obj/item/book/manual/stasis
 	name = "Cellular Suspension, the New Cryogenics?"
 	icon_state = "stasis"
 	author = "Elvin Schmidt"

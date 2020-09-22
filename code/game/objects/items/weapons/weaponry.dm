@@ -1,4 +1,4 @@
-/obj/item/weapon/nullrod
+/obj/item/nullrod
 	name = "null rod"
 	desc = "A rod of pure obsidian, its very presence disrupts and dampens the powers of paranormal phenomenae."
 	icon_state = "nullrod"
@@ -10,7 +10,7 @@
 	throwforce = 10
 	w_class = ITEM_SIZE_SMALL
 
-/obj/item/weapon/nullrod/attack(mob/M as mob, mob/living/user as mob) //Paste from old-code to decult with a null rod.
+/obj/item/nullrod/attack(mob/M as mob, mob/living/user as mob) //Paste from old-code to decult with a null rod.
 	admin_attack_log(user, M, "Attacked using \a [src]", "Was attacked with \a [src]", "used \a [src] to attack")
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -38,7 +38,7 @@
 
 	..()
 
-/obj/item/weapon/nullrod/afterattack(var/atom/A, var/mob/user, var/proximity)
+/obj/item/nullrod/afterattack(var/atom/A, var/mob/user, var/proximity)
 	if(!proximity)
 		return
 	if(istype(A, /turf/simulated/wall/cult))
@@ -46,7 +46,7 @@
 		user.visible_message("<span class='notice'>\The [user] touches \the [A] with \the [src] and it starts fizzling and shifting.</span>", "<span class='notice'>You touch \the [A] with \the [src] and it starts fizzling and shifting.</span>")
 		W.ChangeTurf(/turf/simulated/wall)
 
-/obj/item/weapon/energy_net
+/obj/item/energy_net
 	name = "energy net"
 	desc = "It's a net made of green energy."
 	icon = 'icons/effects/effects.dmi'
@@ -55,17 +55,17 @@
 	force = 0
 	var/net_type = /obj/effect/energy_net
 
-/obj/item/weapon/energy_net/safari
+/obj/item/energy_net/safari
 	name = "animal net"
 	desc = "An energized net meant to subdue animals."
 	net_type = /obj/effect/energy_net/safari
 
-/obj/item/weapon/energy_net/dropped()
+/obj/item/energy_net/dropped()
 	..()
 	spawn(10)
 		if(src) qdel(src)
 
-/obj/item/weapon/energy_net/throw_impact(atom/hit_atom)
+/obj/item/energy_net/throw_impact(atom/hit_atom)
 	..()
 
 	var/mob/living/M = hit_atom
@@ -208,7 +208,7 @@
 	healthcheck()
 	return
 
-/obj/effect/energy_net/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/effect/energy_net/attackby(obj/item/W as obj, mob/user as mob)
 	health -= W.force
 	healthcheck()
 	..()

@@ -183,7 +183,7 @@
 /mob/living/carbon/human/proc/implant_loyalty(mob/living/carbon/human/M, override = FALSE) // Won't override by default.
 	if(!config.use_loyalty_implants && !override) return // Nuh-uh.
 
-	var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(M)
+	var/obj/item/implant/loyalty/L = new/obj/item/implant/loyalty(M)
 	L.imp_in = M
 	L.implanted = 1
 	var/obj/item/organ/external/affected = M.organs_by_name[BP_HEAD]
@@ -193,7 +193,7 @@
 
 /mob/living/carbon/human/proc/is_loyalty_implanted(mob/living/carbon/human/M)
 	for(var/L in M.contents)
-		if(istype(L, /obj/item/weapon/implant/loyalty))
+		if(istype(L, /obj/item/implant/loyalty))
 			for(var/obj/item/organ/external/O in M.organs)
 				if(L in O.implants)
 					return 1
@@ -243,7 +243,7 @@
 
 	// Do they get an option to set internals?
 	if(istype(wear_mask, /obj/item/clothing/mask) || istype(head, /obj/item/clothing/head/helmet/space))
-		if(istype(back, /obj/item/weapon/tank) || istype(belt, /obj/item/weapon/tank) || istype(s_store, /obj/item/weapon/tank))
+		if(istype(back, /obj/item/tank) || istype(belt, /obj/item/tank) || istype(s_store, /obj/item/tank))
 			dat += "<BR><A href='?src=\ref[src];item=internals'>Toggle internals.</A>"
 
 	var/obj/item/clothing/under/suit = w_uniform
@@ -290,7 +290,7 @@
 		else
 			return pda.ownrank
 	else
-		var/obj/item/weapon/card/id/id = get_idcard()
+		var/obj/item/card/id/id = get_idcard()
 		if(id)
 			return id.rank ? id.rank : if_no_job
 		else
@@ -306,7 +306,7 @@
 		else
 			return pda.ownjob
 	else
-		var/obj/item/weapon/card/id/id = get_idcard()
+		var/obj/item/card/id/id = get_idcard()
 		if(id)
 			return id.assignment ? id.assignment : if_no_job
 		else
@@ -322,7 +322,7 @@
 		else
 			return pda.owner
 	else
-		var/obj/item/weapon/card/id/id = get_idcard()
+		var/obj/item/card/id/id = get_idcard()
 		if(id)
 			return id.registered_name
 		else
@@ -360,14 +360,14 @@
 		var/obj/item/device/pda/P = wear_id
 		return P.owner
 	if(wear_id)
-		var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
+		var/obj/item/card/id/I = wear_id.GetIdCard()
 		if(I)
 			return I.registered_name
 	return
 
 /mob/living/carbon/human/proc/get_job_name()
 	if(wear_id)
-		var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
+		var/obj/item/card/id/I = wear_id.GetIdCard()
 		if(I)
 			return I.assignment
 
@@ -471,7 +471,7 @@
 			var/modified = 0
 			var/perpname = "wot"
 			if(wear_id)
-				var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
+				var/obj/item/card/id/I = wear_id.GetIdCard()
 				if(I)
 					perpname = I.registered_name
 				else
@@ -503,7 +503,7 @@
 			var/read = 0
 
 			if(wear_id)
-				if(istype(wear_id,/obj/item/weapon/card/id))
+				if(istype(wear_id,/obj/item/card/id))
 					perpname = wear_id:registered_name
 				else if(istype(wear_id,/obj/item/device/pda))
 					var/obj/item/device/pda/tempPda = wear_id
@@ -526,7 +526,7 @@
 			var/modified = 0
 
 			if(wear_id)
-				if(istype(wear_id,/obj/item/weapon/card/id))
+				if(istype(wear_id,/obj/item/card/id))
 					perpname = wear_id:registered_name
 				else if(istype(wear_id,/obj/item/device/pda))
 					var/obj/item/device/pda/tempPda = wear_id
@@ -557,7 +557,7 @@
 			var/read = 0
 
 			if(wear_id)
-				if(istype(wear_id,/obj/item/weapon/card/id))
+				if(istype(wear_id,/obj/item/card/id))
 					perpname = wear_id:registered_name
 				else if(istype(wear_id,/obj/item/device/pda))
 					var/obj/item/device/pda/tempPda = wear_id
@@ -966,8 +966,8 @@
 
 	var/list/visible_implants = list()
 	for(var/obj/item/organ/external/organ in src.organs)
-		for(var/obj/item/weapon/O in organ.implants)
-			if(!istype(O,/obj/item/weapon/implant) && (O.w_class > class) && !istype(O,/obj/item/weapon/material/shard/shrapnel))
+		for(var/obj/item/O in organ.implants)
+			if(!istype(O,/obj/item/implant) && (O.w_class > class) && !istype(O,/obj/item/material/shard/shrapnel))
 				visible_implants += O
 
 	return(visible_implants)
@@ -975,7 +975,7 @@
 /mob/living/carbon/human/embedded_needs_process()
 	for(var/obj/item/organ/external/organ in src.organs)
 		for(var/obj/item/O in organ.implants)
-			if(!istype(O, /obj/item/weapon/implant)) //implant type items do not cause embedding effects, see handle_embedded_objects()
+			if(!istype(O, /obj/item/implant)) //implant type items do not cause embedding effects, see handle_embedded_objects()
 				return 1
 	return 0
 
@@ -984,7 +984,7 @@
 		if(organ.splinted)
 			continue
 		for(var/obj/item/O in organ.implants)
-			if(!istype(O,/obj/item/weapon/implant) && O.w_class > 1 && prob(5)) //Moving with things stuck in you could be bad.
+			if(!istype(O,/obj/item/implant) && O.w_class > 1 && prob(5)) //Moving with things stuck in you could be bad.
 				jossle_internal_object(organ, O)
 	var/obj/item/organ/external/groin = src.get_organ(BP_GROIN)
 	if(groin && stomach_contents && stomach_contents.len)
@@ -1463,7 +1463,7 @@
 			return DEVOUR_SLOW
 		else if(src.species.gluttonous & GLUT_ANYTHING) // Eat anything ever
 			return DEVOUR_FAST
-	else if(istype(victim, /obj/item) && !istype(victim, /obj/item/weapon/holder)) //Don't eat holders. They are special.
+	else if(istype(victim, /obj/item) && !istype(victim, /obj/item/holder)) //Don't eat holders. They are special.
 		var/obj/item/I = victim
 		var/cost = I.get_storage_cost()
 		if(cost != ITEM_SIZE_NO_CONTAINER)
@@ -1676,12 +1676,12 @@
 		var/obj/item/I = user.get_inactive_hand()
 		if(I)
 			if(user.atk_intent == I_DUAL && user.combat_mode)
-				if(istype(I, /obj/item/weapon/gun))
+				if(istype(I, /obj/item/gun))
 					I.afterattack(src, user)
 					return
 		/*//This doesn't want to work.
 		//Aiming a gun at someone.
-		var/obj/item/weapon/gun/G = user.get_active_hand()
+		var/obj/item/gun/G = user.get_active_hand()
 		if(G && istype(G))
 			if(ismob(src) && user.aiming)
 				if(src == user.aiming.aiming_at)//If we're already aiming at them, then stop aiming.
@@ -1714,7 +1714,7 @@
 	var/obj/item/I = user.get_inactive_hand()
 	if(I)
 		if(user.atk_intent == I_DUAL && user.combat_mode)
-			if(istype(I, /obj/item/weapon/gun))
+			if(istype(I, /obj/item/gun))
 				I.afterattack(src, user)
 
 
@@ -1726,7 +1726,7 @@
 	if(!zoomed)
 		if(lying)
 			return
-		var/obj/item/weapon/gun/projectile/heavysniper/S = get_active_hand()
+		var/obj/item/gun/projectile/heavysniper/S = get_active_hand()
 		if(istype(S))
 			do_normal_zoom = FALSE
 			S.toggle_scope(src, 2)
@@ -1759,7 +1759,7 @@
 
 
 	else
-		var/obj/item/weapon/gun/projectile/heavysniper/S = get_active_hand()
+		var/obj/item/gun/projectile/heavysniper/S = get_active_hand()
 		if(istype(S))
 			if(S.zoom)//Only do this if we're zoomed in please.
 				do_normal_zoom = FALSE

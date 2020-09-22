@@ -1,4 +1,4 @@
-/obj/item/weapon/fuel_assembly
+/obj/item/fuel_assembly
 	name = "fuel rod assembly"
 	icon = 'icons/obj/machines/power/fusion.dmi'
 	icon_state = "fuel_assembly"
@@ -13,12 +13,12 @@
 	var/radioactivity = 0
 	var/const/initial_amount = 300
 
-/obj/item/weapon/fuel_assembly/New(var/newloc, var/_material, var/_colour)
+/obj/item/fuel_assembly/New(var/newloc, var/_material, var/_colour)
 	fuel_type = _material
 	fuel_colour = _colour
 	..(newloc)
 
-/obj/item/weapon/fuel_assembly/Initialize()
+/obj/item/fuel_assembly/Initialize()
 	. = ..()
 	var/material/material = get_material_by_name(fuel_type)
 	if(istype(material))
@@ -42,28 +42,28 @@
 	overlays += list(I, image(icon, "fuel_assembly_bracket"))
 	rod_quantities[fuel_type] = initial_amount
 
-/obj/item/weapon/fuel_assembly/Process()
+/obj/item/fuel_assembly/Process()
 	if(!radioactivity)
 		return PROCESS_KILL
 
 	if(istype(loc, /turf))
 		radiation_repository.radiate(src, max(1,ceil(radioactivity/30)))
 
-/obj/item/weapon/fuel_assembly/Destroy()
+/obj/item/fuel_assembly/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
 // Mapper shorthand.
-/obj/item/weapon/fuel_assembly/deuterium/New(var/newloc)
+/obj/item/fuel_assembly/deuterium/New(var/newloc)
 	..(newloc, "deuterium")
 
-/obj/item/weapon/fuel_assembly/tritium/New(var/newloc)
+/obj/item/fuel_assembly/tritium/New(var/newloc)
 	..(newloc, "tritium")
 
-/obj/item/weapon/fuel_assembly/phoron/New(var/newloc)
+/obj/item/fuel_assembly/phoron/New(var/newloc)
 	..(newloc, "phoron")
 
-/obj/item/weapon/fuel_assembly/supermatter/New(var/newloc)
+/obj/item/fuel_assembly/supermatter/New(var/newloc)
 	..(newloc, "supermatter")
 
 /obj/item/fuel_assembly/hydrogen/New(var/newloc)
