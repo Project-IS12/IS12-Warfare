@@ -51,7 +51,8 @@
 		..()
 		H.set_trait(new/datum/trait/death_tolerant())
 		H.add_stats(rand(8,12), rand(5,8), rand(5,7), rand(10,14))
-		H.say(";[H.real_name] reporting for duty!")
+		H.fully_replace_character_name("Prac. [current_name]")
+		H.say(";Practitioner reporting for duty!")
 
 /decl/hierarchy/outfit/job/medical/doctor/blue
 	//uniform = /obj/item/clothing/under/blue_uniform
