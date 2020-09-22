@@ -31,7 +31,7 @@ var/list/mining_floors = list()
 	var/next_rock = 0
 	var/archaeo_overlay = ""
 	var/excav_overlay = ""
-	var/obj/item/weapon/last_find
+	var/obj/item/last_find
 	var/datum/artifact_find/artifact_find
 	var/image/ore_overlay
 	var/health = 10
@@ -124,7 +124,7 @@ var/list/mining_floors = list()
 
 	if(istype(AM,/mob/living/silicon/robot))
 		var/mob/living/silicon/robot/R = AM
-		if(istype(R.module_active,/obj/item/weapon/pickaxe))
+		if(istype(R.module_active,/obj/item/pickaxe))
 			attackby(R.module_active,R)
 
 	else if(istype(AM,/obj/mecha))
@@ -151,7 +151,7 @@ var/list/mining_floors = list()
 	update_icon()
 
 //Not even going to touch this pile of spaghetti
-/turf/simulated/mineral/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/turf/simulated/mineral/attackby(obj/item/W as obj, mob/user as mob)
 
 	//if (!(istype(usr, /mob/living/carbon/human) || ticker) && ticker.mode.name != "monkey")
 	//	to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
@@ -175,11 +175,11 @@ var/list/mining_floors = list()
 			to_chat(user, "<span class='notice'>\The [src] has been excavated to a depth of [excavation_level]cm.</span>")
 		return
 
-	if (istype(W, /obj/item/weapon/pickaxe))
+	if (istype(W, /obj/item/pickaxe))
 		if(!istype(user.loc, /turf))
 			return
 
-		var/obj/item/weapon/pickaxe/P = W
+		var/obj/item/pickaxe/P = W
 
 		playsound(user, pick(P.drill_sound), 20, 1)
 
@@ -285,7 +285,7 @@ var/list/mining_floors = list()
 			next_rock += P.excavation_amount
 			while(next_rock > 50)
 				next_rock -= 50
-				var/obj/item/weapon/ore/O = new(src)
+				var/obj/item/ore/O = new(src)
 				geologic_data.UpdateNearbyArtifactInfo(src)
 				O.geologic_data = geologic_data
 
@@ -301,7 +301,7 @@ var/list/mining_floors = list()
 		return
 
 	clear_ore_effects()
-	var/obj/item/weapon/ore/O = new mineral.ore (src)
+	var/obj/item/ore/O = new mineral.ore (src)
 	if(geologic_data && istype(O))
 		geologic_data.UpdateNearbyArtifactInfo(src)
 		O.geologic_data = geologic_data
@@ -360,7 +360,7 @@ var/list/mining_floors = list()
 		var/find = get_archeological_find_by_findtype(F.find_type)
 		new find(src)
 	else
-		var/obj/item/weapon/ore/strangerock/rock = new(src, inside_item_type = F.find_type)
+		var/obj/item/ore/strangerock/rock = new(src, inside_item_type = F.find_type)
 		geologic_data.UpdateNearbyArtifactInfo(src)
 		rock.geologic_data = geologic_data
 
@@ -393,12 +393,12 @@ var/list/mining_floors = list()
 			if(5)
 				var/quantity = rand(1,3)
 				for(var/i=0, i<quantity, i++)
-					new /obj/item/weapon/material/shard(src)
+					new /obj/item/material/shard(src)
 
 			if(6)
 				var/quantity = rand(1,3)
 				for(var/i=0, i<quantity, i++)
-					new /obj/item/weapon/material/shard/phoron(src)
+					new /obj/item/material/shard/phoron(src)
 
 			if(7)
 				var/obj/item/stack/material/uranium/R = new(src)
@@ -470,15 +470,15 @@ var/list/mining_floors = list()
 /turf/simulated/floor/asteroid/is_plating()
 	return !density
 
-/turf/simulated/floor/asteroid/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/turf/simulated/floor/asteroid/attackby(obj/item/W as obj, mob/user as mob)
 	if(!W || !user)
 		return 0
 
 	var/list/usable_tools = list(
-		/obj/item/weapon/shovel,
-		/obj/item/weapon/pickaxe/diamonddrill,
-		/obj/item/weapon/pickaxe/drill,
-		/obj/item/weapon/pickaxe/borgdrill
+		/obj/item/shovel,
+		/obj/item/pickaxe/diamonddrill,
+		/obj/item/pickaxe/drill,
+		/obj/item/pickaxe/borgdrill
 		)
 
 	var/valid_tool
@@ -504,16 +504,16 @@ var/list/mining_floors = list()
 		to_chat(user, "<span class='notice'>You dug a hole.</span>")
 		gets_dug()
 
-	else if(istype(W,/obj/item/weapon/storage/ore))
-		var/obj/item/weapon/storage/ore/S = W
+	else if(istype(W,/obj/item/storage/ore))
+		var/obj/item/storage/ore/S = W
 		if(S.collection_mode)
-			for(var/obj/item/weapon/ore/O in contents)
+			for(var/obj/item/ore/O in contents)
 				O.attackby(W,user)
 				return
-	else if(istype(W,/obj/item/weapon/storage/bag/fossils))
-		var/obj/item/weapon/storage/bag/fossils/S = W
+	else if(istype(W,/obj/item/storage/bag/fossils))
+		var/obj/item/storage/bag/fossils/S = W
 		if(S.collection_mode)
-			for(var/obj/item/weapon/fossil/F in contents)
+			for(var/obj/item/fossil/F in contents)
 				F.attackby(W,user)
 				return
 
@@ -527,7 +527,7 @@ var/list/mining_floors = list()
 		return
 
 	for(var/i=0;i<(rand(3)+2);i++)
-		new/obj/item/weapon/ore/glass(src)
+		new/obj/item/ore/glass(src)
 
 	dug = 1
 	icon_state = "asteroid_dug"
@@ -569,11 +569,11 @@ var/list/mining_floors = list()
 	if(istype(M,/mob/living/silicon/robot))
 		var/mob/living/silicon/robot/R = M
 		if(R.module)
-			if(istype(R.module_state_1,/obj/item/weapon/storage/ore))
+			if(istype(R.module_state_1,/obj/item/storage/ore))
 				attackby(R.module_state_1,R)
-			else if(istype(R.module_state_2,/obj/item/weapon/storage/ore))
+			else if(istype(R.module_state_2,/obj/item/storage/ore))
 				attackby(R.module_state_2,R)
-			else if(istype(R.module_state_3,/obj/item/weapon/storage/ore))
+			else if(istype(R.module_state_3,/obj/item/storage/ore))
 				attackby(R.module_state_3,R)
 			else
 				return

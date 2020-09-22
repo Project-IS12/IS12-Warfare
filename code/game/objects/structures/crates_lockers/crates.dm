@@ -37,10 +37,10 @@ obj/structure/closet/crate
 			devices += A
 		to_chat(user,"There are some wires attached to the lid, connected to [english_list(devices)].")
 
-/obj/structure/closet/crate/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/closet/crate/attackby(obj/item/W as obj, mob/user as mob)
 	if(opened)
 		return ..()
-	else if(istype(W, /obj/item/weapon/packageWrap))
+	else if(istype(W, /obj/item/packageWrap))
 		return
 	else if(istype(W, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/C = W
@@ -113,7 +113,7 @@ obj/structure/closet/crate
 	desc = "A fuel tank crate."
 
 /obj/structure/closet/crate/internals/fuel/WillContain()
-	return list(/obj/item/weapon/tank/hydrogen = 4)
+	return list(/obj/item/tank/hydrogen = 4)
 
 /obj/structure/closet/crate/trashcart
 	name = "trash cart"
@@ -138,8 +138,8 @@ obj/structure/closet/crate
 
 /obj/structure/closet/crate/rcd/WillContain()
 	return list(
-		/obj/item/weapon/rcd_ammo = 3,
-		/obj/item/weapon/rcd
+		/obj/item/rcd_ammo = 3,
+		/obj/item/rcd
 	)
 
 /obj/structure/closet/crate/solar
@@ -148,9 +148,9 @@ obj/structure/closet/crate
 /obj/structure/closet/crate/solar/WillContain()
 	return list(
 		/obj/item/solar_assembly = 14,
-		/obj/item/weapon/circuitboard/solar_control,
-		/obj/item/weapon/tracker_electronics,
-		/obj/item/weapon/paper/solar
+		/obj/item/circuitboard/solar_control,
+		/obj/item/tracker_electronics,
+		/obj/item/paper/solar
 	)
 
 /obj/structure/closet/crate/solar_assembly
@@ -187,7 +187,7 @@ obj/structure/closet/crate
 
 
 /obj/structure/closet/crate/freezer/rations/WillContain()
-	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 4)
+	return list(/obj/item/reagent_containers/food/snacks/liquidfood = 4)
 
 /obj/structure/closet/crate/bin
 	name = "large bin"
@@ -302,11 +302,11 @@ obj/structure/closet/crate
 
 /obj/structure/closet/crate/hydroponics/prespawned/WillContain()
 	return list(
-		/obj/item/weapon/reagent_containers/spray/plantbgone = 2,
-		/obj/item/weapon/material/minihoe = 2,
-		/obj/item/weapon/storage/plants = 2,
-		/obj/item/weapon/material/hatchet = 2,
-		/obj/item/weapon/wirecutters/clippers = 2,
+		/obj/item/reagent_containers/spray/plantbgone = 2,
+		/obj/item/material/minihoe = 2,
+		/obj/item/storage/plants = 2,
+		/obj/item/material/hatchet = 2,
+		/obj/item/wirecutters/clippers = 2,
 		/obj/item/device/analyzer/plant_analyzer = 2
 	)
 
@@ -332,7 +332,7 @@ obj/structure/closet/crate
 	icon_closed = "plasticcrate"
 
 /obj/structure/closet/crate/paper_refill/WillContain()
-	return list(/obj/item/weapon/paper = 30)
+	return list(/obj/item/paper = 30)
 
 /obj/structure/closet/crate/uranium
 	name = "fissibles crate"

@@ -1,5 +1,5 @@
 //Shitty variant of the normal bolt action rifle.
-/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/shitty
+/obj/item/gun/projectile/shotgun/pump/boltaction/shitty
 	name = "\improper Mark I Stormrider"
 	desc = "A scrapped together piece of shit. Prone to jamming, but fires a very powerful round."//"The much, much older brother of the sleeker, better, Mark II. Kind of a piece of shit."
 	icon_state = "boltaction"
@@ -13,20 +13,20 @@
 	empty_icon = "boltaction-e"
 	far_fire_sound = "sniper_fire"
 
-/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/shitty/bayonet
+/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/bayonet
 	name = "\improper Mark I Stormrider"
 	force = 20
 	sharp = 1
 	attack_verb = list ("stabbed", "sliced")
 	hitsound = "stab_sound"
 
-/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/shitty/bayonet/New()
+/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/bayonet/New()
 	..()
 	add_bayonet()
 	desc += " This one has a bayonet."
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/shitty/leverchester
+/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester
 	name = "\improper Mark I Snapper"
 	desc = "The lever action version of the Stormrider. Has all the same benefits and issues."
 	icon_state = "leverchester"
@@ -41,7 +41,7 @@
 
 
 //Paryying.
-/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/handle_shield(mob/living/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+/obj/item/gun/projectile/shotgun/pump/boltaction/handle_shield(mob/living/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(default_sword_parry(user, damage, damage_source, attacker, def_zone, attack_text))
 		return 1
 	return 0
@@ -72,7 +72,7 @@
 
 
 //Shitty shotgun
-/obj/item/weapon/gun/projectile/shotgun/pump/shitty
+/obj/item/gun/projectile/shotgun/pump/shitty
 	name = "\improper WTX Frontier Special"
 	desc = "A common shotgun used in the trenches. It's not the best made and is prone to jamming."
 	icon_state = "winchester"
@@ -84,7 +84,7 @@
 	empty_icon = "winchester-e"
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump/shitty/sawn
+/obj/item/gun/projectile/shotgun/pump/shitty/sawn
 	name = "\improper Sawn Off WTX Frontier Special"
 	desc = "A sawn off version of a common shotgun used in the trenches. It's not the best made and is prone to jamming."
 	icon_state = "sawnchester"
@@ -96,7 +96,7 @@
 	empty_icon = "sawnchester-e"
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump/shitty/sawn/smallshotty
+/obj/item/gun/projectile/shotgun/pump/shitty/sawn/smallshotty
 	name = "\improper WTX Reckoning"
 	desc = "Small looking shotgun that fires a powerful shot."
 	icon_state = "smallshotty"
@@ -105,20 +105,20 @@
 	empty_icon = "smallshotty-e"
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump/shitty/bayonet
+/obj/item/gun/projectile/shotgun/pump/shitty/bayonet
 	force = 20
 	sharp = 1
 	attack_verb = list ("stabbed", "sliced")
 	hitsound = "stab_sound"
 
-/obj/item/weapon/gun/projectile/shotgun/pump/shitty/bayonet/New()
+/obj/item/gun/projectile/shotgun/pump/shitty/bayonet/New()
 	..()
 	add_bayonet()
 	desc += " This one has a bayonet."
 
 
 
-/obj/item/weapon/gun/projectile/automatic/m22/warmonger
+/obj/item/gun/projectile/automatic/m22/warmonger
 	name = "Mk.3 Warmonger"
 	desc = "A semi automatic battle rifle. Fires faster, and more reliably than most of the shitty bolt action rifles the grunts get."
 	icon_state = "autorifle"
@@ -141,7 +141,7 @@
 	gun_type = GUN_SEMIAUTO
 
 
-/obj/item/weapon/gun/projectile/automatic/m22/warmonger/fully_auto
+/obj/item/gun/projectile/automatic/m22/warmonger/fully_auto
 	name = "Mk.5 Warmonger"
 	desc = "A fully automatic battle rifle. Fires faster, and more reliably than the old shitty bolt action rifles from the old war."
 	icon_state = "autorifle-alt"
@@ -167,7 +167,7 @@
 		)
 
 
-/obj/item/weapon/gun/projectile/automatic/m22/warmonger/fully_auto/nemesis
+/obj/item/gun/projectile/automatic/m22/warmonger/fully_auto/nemesis
 	name = "Mk.1 Nemesis"
 	desc = "God, it's fucking ugly, but it does at least kill. Takes Warmonger magazines."
 	icon_state = "bar"
@@ -185,7 +185,7 @@
 	unwielded_unloaded_icon = "bar-e"
 	wielded_unloaded_icon = "bar-wielded-e"
 
-/obj/item/weapon/gun/projectile/automatic/m22/warmonger/m14
+/obj/item/gun/projectile/automatic/m22/warmonger/m14
 	name = "M41 Eclipse"
 	desc = "A semi automatic rifle. It's made out of the leftover scraps from the old war. Fires a powerful round, but only one at a time."
 	icon_state = "semirifle"
@@ -215,7 +215,7 @@
 
 
 
-/obj/item/weapon/gun/projectile/automatic/m22/warmonger/m14/battlerifle
+/obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle
 	name = "Mk.1 Armageddon"
 	desc = "A very powerful semi automatic rifle. Much nicer than whatever scrap those medics are using."
 	icon_state = "battlerifle"
@@ -237,7 +237,7 @@
 	name = "Armageddon magazine"
 
 
-/obj/item/weapon/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
+/obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
 	name = "Mk.1 Armageddon"
 	icon_state = "rsc"
 	item_state = "rsc"
@@ -262,7 +262,7 @@
 	caliber = "763"
 	ammo_type = /obj/item/ammo_casing/brifle
 
-/obj/item/weapon/gun/projectile/automatic/m22/combatrifle
+/obj/item/gun/projectile/automatic/m22/combatrifle
 	name = "Mk. 2 Nightfall"
 	desc = "An advanced post war rifle, this one has different fire modes and relative accuracy!"
 	icon_state = "combatrifle"
@@ -294,7 +294,7 @@
 		)
 
 
-/obj/item/weapon/gun/projectile/automatic/mg08
+/obj/item/gun/projectile/automatic/mg08
 	name = "LMG Harbinger"
 	desc = "Named for the death it brings."
 	//icon = 'icons/obj/gunx35.dmi'
@@ -333,7 +333,7 @@
 	condition = 150 //Enough for one clean mag.
 
 
-/obj/item/weapon/gun/projectile/automatic/gpmg
+/obj/item/gun/projectile/automatic/gpmg
 	name = "GPMG Requiem"
 	desc = "A coveted LMG. Lighter than the Harbingers of the old war, but still just as deadly!"
 	icon_state = "lmg"
@@ -371,7 +371,7 @@
 	firemodes = list()
 	gun_type = GUN_LMG
 
-/obj/item/weapon/gun/projectile/automatic/machinepistol
+/obj/item/gun/projectile/automatic/machinepistol
 	name = "Mk.2 Soulburn SMG"
 	desc = "A prototype SMG. Prone to malfunction but it shoots perty fast."
 	icon_state = "machinepistol"
@@ -395,7 +395,7 @@
 
 	gun_type = GUN_SMG
 
-/obj/item/weapon/gun/projectile/automatic/machinepistol/wooden
+/obj/item/gun/projectile/automatic/machinepistol/wooden
 	name = "Mk.1 Soulburn SMG"
 	desc = "A prototype, protoype SMG. Prone to malfunction but it shoots perty fast."
 	icon_state = "schmeiser"
@@ -409,7 +409,7 @@
 	unwielded_unloaded_icon = "schmeiser-e"
 	wielded_unloaded_icon = "schmeiser-e"
 
-/obj/item/weapon/gun/projectile/automatic/flamer
+/obj/item/gun/projectile/automatic/flamer
 	name = "Mk.1 Scorcher"
 	desc = "Used to shoot flames at people when bullets just won't do."
 	icon_state = "flamer"
@@ -439,7 +439,7 @@
 
 
 
-/obj/item/weapon/gun/projectile/automatic/autoshotty
+/obj/item/gun/projectile/automatic/autoshotty
 	name = "MS Warcrime"
 	desc = "Someone came up with the idea of making a shotgun shoot quickly, and it's dreadful."
 	icon_state = "autoshotty"
@@ -480,7 +480,7 @@
 	multiple_sprites = 1
 
 
-/obj/item/weapon/gun/projectile/warfare
+/obj/item/gun/projectile/warfare
 	name = "Mk.1 Reckoning"
 	icon_state = "handgun"
 	item_state = "handgun"
@@ -492,7 +492,7 @@
 	load_method = MAGAZINE
 	fire_delay = 4
 
-/obj/item/weapon/gun/projectile/warfare/update_icon()//We gotta snowflake this a bit.
+/obj/item/gun/projectile/warfare/update_icon()//We gotta snowflake this a bit.
 	..()
 	if(ammo_magazine)
 		if(ammo_magazine.stored_ammo.len)

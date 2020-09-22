@@ -57,12 +57,12 @@
 	var/charge_mod = 0		//how much charge difference it now costs to shoot. negative means more shots per mag.
 	var/gun_firemode_list_mod = null //what firemodes this attachment allows/adds.
 
-	var/obj/item/weapon/gun/master_gun
+	var/obj/item/gun/master_gun
 
 
 
 
-/obj/item/attachable/proc/Attach(obj/item/weapon/gun/gun_to_attach, mob/user)
+/obj/item/attachable/proc/Attach(obj/item/gun/gun_to_attach, mob/user)
 	if(!istype(gun_to_attach))
 		return //Guns only
 	master_gun = gun_to_attach
@@ -128,7 +128,7 @@
 
 
 
-/obj/item/weapon/gun/proc/update_attachables() //Updates everything. You generally don't need to use this.
+/obj/item/gun/proc/update_attachables() //Updates everything. You generally don't need to use this.
 	//overlays.Cut()
 	if(attachable_offset) //Even if the attachment doesn't exist, we're going to try and remove it.
 		update_overlays(muzzle, "muzzle")
@@ -137,7 +137,7 @@
 		update_overlays(rail, "rail")
 
 
-/obj/item/weapon/gun/proc/update_attachable(attachable) //Updates individually.
+/obj/item/gun/proc/update_attachable(attachable) //Updates individually.
 	if(attachable_offset)
 		switch(attachable)
 			if("muzzle") update_overlays(muzzle, attachable)
@@ -146,7 +146,7 @@
 			if("rail") update_overlays(rail, attachable)
 
 
-/obj/item/weapon/gun/update_overlays(obj/item/attachable/A, slot)
+/obj/item/gun/update_overlays(obj/item/attachable/A, slot)
 	. = ..()
 	var/image/I = attachable_overlays[slot]
 	overlays -= I

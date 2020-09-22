@@ -39,21 +39,21 @@
 	var/weight_sum = 0
 	for(var/obj/item/O in contents)
 		if(!istype(O, /obj/item/organ))
-			if(!istype(O, /obj/item/weapon/storage,))
+			if(!istype(O, /obj/item/storage,))
 				weight_sum += O.weight
-		if(istype(O, /obj/item/weapon/storage))
-			var/obj/item/weapon/storage/ST = O
+		if(istype(O, /obj/item/storage))
+			var/obj/item/storage/ST = O
 			weight_sum += ST.check_my_weight()
 	return weight_sum
 
 //Checks sum weight of /obj/item/ stuff in the backpack, also does loop for other storages in case there is one inside of other//
 
-/obj/item/weapon/storage/proc/check_my_weight()
+/obj/item/storage/proc/check_my_weight()
 	var/weight_sum = 0
 	for(var/obj/item/O in contents)
 		weight_sum += O.weight
-		if(istype(O, /obj/item/weapon/storage))
-			var/obj/item/weapon/storage/ST = O
+		if(istype(O, /obj/item/storage))
+			var/obj/item/storage/ST = O
 			weight_sum += ST.check_my_weight()
 	return weight_sum
 

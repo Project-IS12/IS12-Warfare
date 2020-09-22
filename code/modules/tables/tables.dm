@@ -116,9 +116,9 @@
 				to_chat(user, "<span class='warning'>It looks damaged!</span>")
 			if(0.5 to 1.0)
 				to_chat(user, "<span class='notice'>It has a few scrapes and dents.</span>")
-/obj/structure/table/attackby(obj/item/weapon/W, mob/user)
+/obj/structure/table/attackby(obj/item/W, mob/user)
 
-	if(reinforced && istype(W, /obj/item/weapon/screwdriver))
+	if(reinforced && istype(W, /obj/item/screwdriver))
 		remove_reinforced(W, user)
 		if(!reinforced)
 			update_desc()
@@ -144,7 +144,7 @@
 			return 1
 		else
 			to_chat(user, "<span class='warning'>You don't have enough carpet!</span>")
-	if(!reinforced && !carpeted && material && istype(W, /obj/item/weapon/wrench))
+	if(!reinforced && !carpeted && material && istype(W, /obj/item/wrench))
 		remove_material(W, user)
 		if(!material)
 			update_connections(1)
@@ -155,12 +155,12 @@
 			update_material()
 		return 1
 
-	if(!carpeted && !reinforced && !material && istype(W, /obj/item/weapon/wrench))
+	if(!carpeted && !reinforced && !material && istype(W, /obj/item/wrench))
 		dismantle(W, user)
 		return 1
 
 	if(health < maxhealth && isWelder(W))
-		var/obj/item/weapon/weldingtool/F = W
+		var/obj/item/weldingtool/F = W
 		if(F.welding)
 			to_chat(user, "<span class='notice'>You begin reparing damage to \the [src].</span>")
 			playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
@@ -275,13 +275,13 @@
 	manipulating = 0
 	return null
 
-/obj/structure/table/proc/remove_reinforced(obj/item/weapon/screwdriver/S, mob/user)
+/obj/structure/table/proc/remove_reinforced(obj/item/screwdriver/S, mob/user)
 	reinforced = common_material_remove(user, reinforced, 40, "reinforcements", "screws", 'sound/items/Screwdriver.ogg')
 
-/obj/structure/table/proc/remove_material(obj/item/weapon/wrench/W, mob/user)
+/obj/structure/table/proc/remove_material(obj/item/wrench/W, mob/user)
 	material = common_material_remove(user, material, 20, "plating", "bolts", 'sound/items/Ratchet.ogg')
 
-/obj/structure/table/proc/dismantle(obj/item/weapon/wrench/W, mob/user)
+/obj/structure/table/proc/dismantle(obj/item/wrench/W, mob/user)
 	if(manipulating) return
 	manipulating = 1
 	user.visible_message("<span class='notice'>\The [user] begins dismantling \the [src].</span>",
@@ -296,7 +296,7 @@
 	qdel(src)
 	return
 
-// Returns a list of /obj/item/weapon/material/shard objects that were created as a result of this table's breakage.
+// Returns a list of /obj/item/material/shard objects that were created as a result of this table's breakage.
 // Used for !fun! things such as embedding shards in the faces of tableslammed people.
 
 // The repeated
@@ -306,7 +306,7 @@
 
 /obj/structure/table/proc/break_to_parts(full_return = 0)
 	var/list/shards = list()
-	var/obj/item/weapon/material/shard/S = null
+	var/obj/item/material/shard/S = null
 	if(reinforced)
 		if(reinforced.stack_type && (full_return || prob(20)))
 			reinforced.place_sheet(loc)

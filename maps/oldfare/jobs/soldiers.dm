@@ -141,7 +141,7 @@
 				equip_to_slot_or_del(new /obj/item/device/radio/headset/blue_team/delta(src),slot_l_ear)
 			*/
 
-	var/obj/item/weapon/card/id/I = GetIdCard()
+	var/obj/item/card/id/I = GetIdCard()
 	var/actual_job = "Soldier"
 	switch(rank)
 		if("medic")
@@ -230,7 +230,7 @@
 			else
 				return
 
-	var/obj/item/weapon/card/id/I = GetIdCard()
+	var/obj/item/card/id/I = GetIdCard()
 	I.assignment = "[src.squad.name] Squad"
 
 	to_chat(src, "<b>I am the Squad Leader of [src.squad.name] Squad</b>")

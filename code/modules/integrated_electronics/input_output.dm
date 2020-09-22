@@ -347,7 +347,7 @@
 
 	var/emagged = FALSE
 	var/datum/encrypted_ic_data/scanned_access
-	var/obj/item/weapon/card/id/contained_id
+	var/obj/item/card/id/contained_id
 
 /obj/item/integrated_circuit/input/access_scanner/New()
 	..()
@@ -382,7 +382,7 @@
 /obj/item/integrated_circuit/input/access_scanner/examine(var/mob/user)
 	. = ..()
 	to_chat(user, "An id card is installed into the board.")
-/obj/item/integrated_circuit/input/access_scanner/attackby(var/obj/item/weapon/card/id/id_card, var/mob/user)
+/obj/item/integrated_circuit/input/access_scanner/attackby(var/obj/item/card/id/id_card, var/mob/user)
 	if(!istype(id_card))
 		return ..()
 	if(contained_id)

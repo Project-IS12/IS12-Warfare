@@ -83,8 +83,8 @@
 	add_fingerprint(user)
 	return
 
-/obj/structure/inflatable/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(!istype(W) || istype(W, /obj/item/weapon/inflatable_dispenser)) return
+/obj/structure/inflatable/attackby(obj/item/W as obj, mob/user as mob)
+	if(!istype(W) || istype(W, /obj/item/inflatable_dispenser)) return
 
 	if((W.damtype == BRUTE || W.damtype == BURN) && W.can_puncture())
 		..()
@@ -254,7 +254,7 @@
 		to_chat(user, "<span class='notice'>The inflatable door is too torn to be inflated!</span>")
 		add_fingerprint(user)
 
-/obj/item/weapon/storage/briefcase/inflatable
+/obj/item/storage/briefcase/inflatable
 	name = "inflatable barrier box"
 	desc = "Contains inflatable walls and doors."
 	icon_state = "inf_box"

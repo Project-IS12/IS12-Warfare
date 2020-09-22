@@ -25,7 +25,7 @@
 	dodge_chance = 0 //They're big and bulky, they cannot dodge.
 	bloody = FALSE //No bleeding robots please.
 	delete_after_harvest = FALSE //Also don't delete them after you harvest them.
-	meat_type = /obj/item/weapon/circuitboard
+	meat_type = /obj/item/circuitboard
 
 	var/alert_icon = null
 	var/list/alert_callout = list()
@@ -194,16 +194,16 @@
 	var/obj/O
 
 	//shards
-	O = new /obj/item/weapon/material/shard(src.loc)
+	O = new /obj/item/material/shard(src.loc)
 	step_to(O, get_turf(pick(view(7, src))))
 	if(prob(75))
-		O = new /obj/item/weapon/material/shard(src.loc)
+		O = new /obj/item/material/shard(src.loc)
 		step_to(O, get_turf(pick(view(7, src))))
 	if(prob(50))
-		O = new /obj/item/weapon/material/shard(src.loc)
+		O = new /obj/item/material/shard(src.loc)
 		step_to(O, get_turf(pick(view(7, src))))
 	if(prob(25))
-		O = new /obj/item/weapon/material/shard(src.loc)
+		O = new /obj/item/material/shard(src.loc)
 		step_to(O, get_turf(pick(view(7, src))))
 
 	//rods
@@ -239,7 +239,7 @@
 		return
 
 	//also drop dummy circuit boards deconstructable for research (loot)
-	var/obj/item/weapon/circuitboard/C
+	var/obj/item/circuitboard/C
 
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)

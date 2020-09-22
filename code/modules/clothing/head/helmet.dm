@@ -24,7 +24,7 @@
 
 /obj/item/clothing/head/helmet/attackby(obj/item/I, mob/user)
 	..()
-	if(istype(I, /obj/item/weapon/material/sword/combat_knife))
+	if(istype(I, /obj/item/material/sword/combat_knife))
 		if(engraved)
 			return
 		to_chat(user, "You begin to engrave something on your helmet.")

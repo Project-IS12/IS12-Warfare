@@ -12,8 +12,8 @@
 //allowing to manipulate the container's inventory despite not being on a player
 //or a turf.
 
-/obj/item/weapon/storage/special
-	name = "/obj/item/weapon/storage/special"
+/obj/item/storage/special
+	name = "/obj/item/storage/special"
 	desc = "base storage for storage machines"
 	w_class = ITEM_SIZE_NO_CONTAINER
 	max_w_class = ITEM_SIZE_GARGANTUAN //you prolly want to change this on subclasses.
@@ -21,20 +21,20 @@
 	use_sound = null
 
 //overrides item:Adjacent() so we can drop down one level
-/obj/item/weapon/storage/special/Adjacent(var/atom/neighbor)
+/obj/item/storage/special/Adjacent(var/atom/neighbor)
 	return loc.Adjacent(neighbor)
 
-/obj/item/weapon/storage/special/attack_hand(mob/user as mob)
+/obj/item/storage/special/attack_hand(mob/user as mob)
 	open(user)
 
 //Use this machine as a base class it's pretty simple
 /obj/machinery/storage/
 	name = "/obj/machinery/storage/"
 	desc = "baseclass for storage enabled machines"
-	var/obj/item/weapon/storage/special/inventory
+	var/obj/item/storage/special/inventory
 
 /obj/machinery/storage/New()
-	inventory = new /obj/item/weapon/storage/special()
+	inventory = new /obj/item/storage/special()
 	inventory.loc = src   //VERY IMPORTANT
 	inventory.name = name //Not strictly needed but this affects the text description when players insert items inside the storage.
 

@@ -2,7 +2,7 @@
 //moved these here from code/defines/obj/weapon.dm
 //please preference put stuff where it's easy to find - C
 
-/obj/item/weapon/autopsy_scanner
+/obj/item/autopsy_scanner
 	name = "autopsy scanner"
 	desc = "Used to gather information on wounds."
 	icon = 'icons/obj/autopsy_scanner.dmi'
@@ -37,7 +37,7 @@
 		W.time_inflicted = time_inflicted
 		return W
 
-/obj/item/weapon/autopsy_scanner/proc/add_data(var/obj/item/organ/external/O)
+/obj/item/autopsy_scanner/proc/add_data(var/obj/item/organ/external/O)
 	if(!O.autopsy_data.len) return
 
 	for(var/V in O.autopsy_data)
@@ -71,7 +71,7 @@
 		qdel(D.organs_scanned[O.name])
 		D.organs_scanned[O.name] = W.copy()
 
-/obj/item/weapon/autopsy_scanner/proc/print_data()
+/obj/item/autopsy_scanner/proc/print_data()
 	set category = "Object"
 	set name = "Print Data"
 	if(usr.stat || !(istype(usr,/mob/living/carbon/human)))
@@ -149,7 +149,7 @@
 
 	sleep(10)
 
-	var/obj/item/weapon/paper/P = new(usr.loc)
+	var/obj/item/paper/P = new(usr.loc)
 	P.SetName("Autopsy Data ([target_name])")
 	P.info = "<tt>[scan_data]</tt>"
 	P.icon_state = "paper_words"
@@ -158,12 +158,12 @@
 		// place the item in the usr's hand if possible
 		usr.put_in_hands(P)
 
-/obj/item/weapon/autopsy_scanner/RightClick(mob/user)
+/obj/item/autopsy_scanner/RightClick(mob/user)
 	if(CanPhysicallyInteract(user))
 		if(src == user.get_active_hand())
 			print_data()
 
-/obj/item/weapon/autopsy_scanner/do_surgery(mob/living/carbon/human/M, mob/living/user)
+/obj/item/autopsy_scanner/do_surgery(mob/living/carbon/human/M, mob/living/user)
 	if(!istype(M))
 		return 0
 

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/ionrifle
+/obj/item/gun/energy/ionrifle
 	name = "ion rifle"
 	desc = "The NT Mk60 EW Halicon is a man portable anti-armor weapon designed to disable mechanical threats, produced by NT. Not the best of its type."
 	icon_state = "ionrifle"
@@ -15,10 +15,10 @@
 	wielded_item_state = "ionrifle-wielded"
 	combustion = 0
 
-/obj/item/weapon/gun/energy/ionrifle/emp_act(severity)
+/obj/item/gun/energy/ionrifle/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
 
-/obj/item/weapon/gun/energy/ionrifle/small
+/obj/item/gun/energy/ionrifle/small
 	name = "ion pistol"
 	desc = "The NT Mk72 EW Preston is a personal defense weapon designed to disable mechanical threats."
 	icon_state = "ionpistol"
@@ -32,7 +32,7 @@
 	max_shots = 6
 	projectile_type = /obj/item/projectile/ion/small
 
-/obj/item/weapon/gun/energy/mindflayer
+/obj/item/gun/energy/mindflayer
 	name = "mind flayer"
 	desc = "A custom-built weapon of some kind."
 	icon_state = "xray"
@@ -42,7 +42,7 @@
 
 /* Staves */
 
-/obj/item/weapon/gun/energy/staff
+/obj/item/gun/energy/staff
 	name = "staff of change"
 	desc = "An artefact that spits bolts of coruscating energy which cause the target's very form to reshape itself."
 	icon = 'icons/obj/gun.dmi'
@@ -59,27 +59,27 @@
 	self_recharge = 1
 	charge_meter = 0
 
-/obj/item/weapon/gun/energy/staff/special_check(var/mob/user)
+/obj/item/gun/energy/staff/special_check(var/mob/user)
 	if((user.mind && !wizards.is_antagonist(user.mind)))
 		to_chat(usr, "<span class='warning'>You focus your mind on \the [src], but nothing happens!</span>")
 		return 0
 
 	return ..()
 
-/obj/item/weapon/gun/energy/staff/handle_click_empty(mob/user = null)
+/obj/item/gun/energy/staff/handle_click_empty(mob/user = null)
 	if (user)
 		user.visible_message("*fizzle*", "<span class='danger'>*fizzle*</span>")
 	else
 		src.visible_message("*fizzle*")
 	playsound(src.loc, 'sound/effects/sparks1.ogg', 100, 1)
 
-/obj/item/weapon/gun/energy/staff/animate
+/obj/item/gun/energy/staff/animate
 	name = "staff of animation"
 	desc = "An artefact that spits bolts of life-force which causes objects which are hit by it to animate and come to life! This magic doesn't affect machines."
 	projectile_type = /obj/item/projectile/animate
 	max_shots = 10
 
-obj/item/weapon/gun/energy/staff/focus
+obj/item/gun/energy/staff/focus
 	name = "mental focus"
 	desc = "An artefact that channels the will of the user into destructive bolts of force. If you aren't careful with it, you might poke someone's brain out."
 	icon = 'icons/obj/wizard.dmi'

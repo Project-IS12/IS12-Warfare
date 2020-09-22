@@ -30,7 +30,7 @@
 			H.fov.screen_loc = "1,1"
 
 /obj/structure/dirt_wall/attackby(obj/O as obj, mob/user as mob)
-	if(istype(O, /obj/item/weapon/shovel))
+	if(istype(O, /obj/item/shovel))
 		if(do_after(user, 50))
 			qdel(src)
 
@@ -348,7 +348,7 @@
 	return ..()
 
 /obj/structure/barbwire/attackby(obj/item/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/weapon/wirecutters))
+	if (istype(W, /obj/item/wirecutters))
 		if (anchored)
 			user.visible_message("<span class = 'notice'>\The [user] starts to cut through \the [src] with [W].</span>")
 			if (!do_after(user,30))
@@ -359,7 +359,7 @@
 			qdel(src)
 			return
 
-	else if (istype(W, /obj/item/weapon/material/sword))
+	else if (istype(W, /obj/item/material/sword))
 		if (anchored)
 			user.visible_message("<span class = 'notice'>\The [user] starts to cut through \the [src] with [W].</span>")
 			if (!do_after(user,60))
@@ -392,8 +392,8 @@
 		if(locate(/obj/item/device/boombox) in user)//Locate the boombox.
 			to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")//No you fucking don't.
 			return //Keep that boombox at base asshole.
-		if(locate(/obj/item/weapon/storage) in user)//Gotta check storage as well.
-			var/obj/item/weapon/storage/S = locate() in user
+		if(locate(/obj/item/storage) in user)//Gotta check storage as well.
+			var/obj/item/storage/S = locate() in user
 			if(locate(/obj/item/device/boombox) in S)
 				to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 				return
@@ -459,7 +459,7 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(istype(W, /obj/item/weapon/wirecutters))
+	if(istype(W, /obj/item/wirecutters))
 		if(!can_be_armed)
 			return
 		H.visible_message("<span class='danger'>[H] begins to disarm the landmine...</span>")
@@ -473,7 +473,7 @@
 				update_icon()
 				return
 			blow()
-	if(istype(W, /obj/item/weapon/shovel))
+	if(istype(W, /obj/item/shovel))
 		if(!can_be_armed)
 			H.visible_message("<span class='danger'>[H] begins to dig up the landmine...</span>")
 			playsound(src, 'sound/effects/dig_shovel.ogg', 40, FALSE)

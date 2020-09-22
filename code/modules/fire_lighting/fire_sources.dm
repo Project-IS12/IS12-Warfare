@@ -137,8 +137,8 @@ var/list/fire_sounds = list(
 			qdel(G)
 			return
 
-	if(istype(thing, /obj/item/weapon/reagent_containers))
-		var/obj/item/weapon/reagent_containers/RG = thing
+	if(istype(thing, /obj/item/reagent_containers))
+		var/obj/item/reagent_containers/RG = thing
 		if(RG.is_open_container() && RG.reagents && RG.reagents.total_volume)
 			user.visible_message("<span class='danger'>\The [user] pours the contents of \the [thing] into \the [src]!</span>")
 			for(var/datum/reagent/R in RG.reagents.reagent_list)
@@ -183,8 +183,8 @@ var/list/fire_sounds = list(
 
 	for(var/obj/item/thing in contents)
 
-		if(istype(thing, /obj/item/weapon/paper) || \
-		 istype(thing, /obj/item/weapon/storage/fancy/egg_box ) || \
+		if(istype(thing, /obj/item/paper) || \
+		 istype(thing, /obj/item/storage/fancy/egg_box ) || \
 		 istype(thing, /obj/item/clothing/suit/cardborg) || \
 		 istype(thing, /obj/item/clothing/head/cardborg ) || \
 		 istype(thing, /obj/item/pizzabox ) || \
@@ -193,7 +193,7 @@ var/list/fire_sounds = list(
 			qdel(thing)
 			return 1
 
-		if(istype(thing, /obj/item/weapon/ore/coal))
+		if(istype(thing, /obj/item/ore/coal))
 			fuel += rand(25,50)
 			qdel(thing)
 			return 1
@@ -205,8 +205,8 @@ var/list/fire_sounds = list(
 				wooden_thing.use(1)
 				return 1
 
-		if(istype(thing, /obj/item/weapon/material))
-			var/obj/item/weapon/material/wooden_thing = thing
+		if(istype(thing, /obj/item/material))
+			var/obj/item/material/wooden_thing = thing
 			if(wooden_thing.material.ignition_point <= (T0C+288))
 				fuel += rand(5,12)
 				qdel(wooden_thing)
@@ -216,9 +216,9 @@ var/list/fire_sounds = list(
 /obj/structure/fire_source/proc/accept_fuel(var/obj/item/thing, var/mob/user)
 	var/accepted_fuel
 
-	if(istype(thing, /obj/item/weapon/ore/coal) || \
-	 istype(thing, /obj/item/weapon/paper) || \
-	 istype(thing, /obj/item/weapon/storage/fancy/egg_box ) || \
+	if(istype(thing, /obj/item/ore/coal) || \
+	 istype(thing, /obj/item/paper) || \
+	 istype(thing, /obj/item/storage/fancy/egg_box ) || \
 	 istype(thing, /obj/item/clothing/suit/cardborg) || \
 	 istype(thing, /obj/item/clothing/head/cardborg ) || \
 	 istype(thing, /obj/item/pizzabox ) || \
@@ -228,8 +228,8 @@ var/list/fire_sounds = list(
 		var/obj/item/stack/material/wooden_thing = thing
 		if(wooden_thing.material.ignition_point <= (T0C+288))
 			accepted_fuel = 1
-	else if(istype(thing, /obj/item/weapon/material))
-		var/obj/item/weapon/material/wooden_thing = thing
+	else if(istype(thing, /obj/item/material))
+		var/obj/item/material/wooden_thing = thing
 		if(wooden_thing.material.ignition_point <= (T0C+288))
 			accepted_fuel =1
 	if(accepted_fuel)

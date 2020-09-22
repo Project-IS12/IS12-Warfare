@@ -15,7 +15,7 @@
 	item_state = "bluetag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag/blue)
+	allowed = list (/obj/item/gun/energy/lasertag/blue)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/kaneda
@@ -30,7 +30,7 @@
 	item_state = "redtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag/red)
+	allowed = list (/obj/item/gun/energy/lasertag/red)
 	siemens_coefficient = 3.0
 
 /*
@@ -92,7 +92,7 @@
 	icon_state = "judge"
 	item_state = "judge"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	allowed = list(/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/spacecash)
+	allowed = list(/obj/item/storage/fancy/cigarettes,/obj/item/spacecash)
 	flags_inv = HIDEJUMPSUIT
 
 
@@ -110,7 +110,7 @@
 	item_state = "space_suit_syndicate"
 	desc = "A plastic replica of the syndicate space suit, you'll look just like a real murderous syndicate agent in this! This is a toy, it is not made for use in space!"
 	w_class = ITEM_SIZE_NORMAL
-	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/emergency,/obj/item/toy)
+	allowed = list(/obj/item/device/flashlight,/obj/item/tank/emergency,/obj/item/toy)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
 
@@ -544,5 +544,5 @@
 	icon_state = "coat-church"
 	item_state = "coat-church"
 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	allowed = list(/obj/item/weapon/nullrod, /obj/item/weapon/storage/bible)
+	allowed = list(/obj/item/nullrod, /obj/item/storage/bible)
 	armor = list(melee = 40, bullet = 25, laser = 5, energy = 0, bomb = 0, bio = 0, rad = 0)

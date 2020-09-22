@@ -55,8 +55,8 @@
 		if(locate(/obj/item/device/boombox) in user)//Locate the boombox.
 			to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")//No you fucking don't.
 			return //Keep that boombox at base asshole.
-		if(locate(/obj/item/weapon/storage) in user)//Gotta check storage as well.
-			var/obj/item/weapon/storage/S = locate() in user
+		if(locate(/obj/item/storage) in user)//Gotta check storage as well.
+			var/obj/item/storage/S = locate() in user
 			if(locate(/obj/item/device/boombox) in S)
 				to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 				return
@@ -123,7 +123,7 @@
 						waters += possible_water
 
 /turf/simulated/floor/dirty/attackby(obj/O as obj, mob/living/user as mob)
-	if(istype(O, /obj/item/weapon/shovel))
+	if(istype(O, /obj/item/shovel))
 		if(!user.doing_something)
 			user.doing_something = TRUE
 			if(src.density)
@@ -149,7 +149,7 @@
 /turf/simulated/floor/dirty/RightClick(mob/living/user)
 	if(!CanPhysicallyInteract(user))
 		return
-	var/obj/item/weapon/shovel/S = user.get_active_hand()
+	var/obj/item/shovel/S = user.get_active_hand()
 	if(!istype(S))
 		return
 	if(!can_be_dug)//No escaping to mid early.
@@ -262,8 +262,8 @@
 			if(locate(/obj/item/device/boombox) in user)//Locate the boombox.
 				to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")//No you fucking don't.
 				return //Keep that boombox at base asshole.
-			if(locate(/obj/item/weapon/storage) in user)//Gotta check storage as well.
-				var/obj/item/weapon/storage/S = locate() in user
+			if(locate(/obj/item/storage) in user)//Gotta check storage as well.
+				var/obj/item/storage/S = locate() in user
 				if(locate(/obj/item/device/boombox) in S)
 					to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 					return
@@ -319,8 +319,8 @@
 		qdel(T)
 
 /turf/simulated/floor/exoplanet/water/shallow/attackby(obj/item/O, mob/user)
-	if(istype(O, /obj/item/weapon/reagent_containers))
-		var/obj/item/weapon/reagent_containers/RG = O
+	if(istype(O, /obj/item/reagent_containers))
+		var/obj/item/reagent_containers/RG = O
 		if (istype(RG) && RG.is_open_container())
 			RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 			user.visible_message("<span class='notice'>[user] fills \the [RG] using \the [src].</span>","<span class='notice'>You fill \the [RG] using \the [src].</span>")

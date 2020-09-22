@@ -25,7 +25,7 @@
 	mill()
 		return /obj/item/pipe
 	press()
-		return /obj/item/weapon/crowbar
+		return /obj/item/crowbar
 
 
 /obj/item/glass_bar
@@ -107,8 +107,8 @@
 					return /obj/item/cylinder/four_slot
 			if(4)
 				to_chat(usr, "<span class='notice'>You nick another hole, and the cylinder falls apart.</span>")
-				return /obj/item/weapon/ore/slag
-		return /obj/item/weapon/ore/slag
+				return /obj/item/ore/slag
+		return /obj/item/ore/slag
 
 	press()
 		return /obj/item/wrench_head
@@ -139,7 +139,7 @@
 	desc = "This is reciever."
 	icon_state = "stock"
 
-/obj/item/weapon/gun/projectile/revolver/crafted
+/obj/item/gun/projectile/revolver/crafted
 	max_shells = 0
 	starts_loaded = 0
 	icon_state = "crafted_revolver"
@@ -148,14 +148,14 @@
 	caliber = "38"
 	ammo_type = /obj/item/ammo_casing/c38
 
-/obj/item/weapon/gun/projectile/revolver/crafted/one_chamber
+/obj/item/gun/projectile/revolver/crafted/one_chamber
 	max_shells = 1
 
-/obj/item/weapon/gun/projectile/revolver/crafted/two_chamber
+/obj/item/gun/projectile/revolver/crafted/two_chamber
 	max_shells = 2
 
-/obj/item/weapon/gun/projectile/revolver/crafted/three_chamber
+/obj/item/gun/projectile/revolver/crafted/three_chamber
 	max_shells = 3
 
-/obj/item/weapon/gun/projectile/revolver/crafted/four_chamber
+/obj/item/gun/projectile/revolver/crafted/four_chamber
 	max_shells = 4

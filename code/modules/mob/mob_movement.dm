@@ -322,7 +322,7 @@
 			var/obj/item/organ/external/r_foot = H.get_organ(BP_R_FOOT)
 
 			if(!H.lying && !H.buckled)
-				if(!istype(H.get_hands(), /obj/item/weapon/crutches))
+				if(!istype(H.get_hands(), /obj/item/crutches))
 					if(!l_leg || l_leg.is_stump() || l_leg.is_broken())
 						to_chat(H, "<span class='warning'>You're crippled you can't walk.</span>")
 						H.Weaken(1)

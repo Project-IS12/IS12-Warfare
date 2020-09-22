@@ -49,7 +49,7 @@ t.Fridge
 	var/consume_amount = 0.2 //how many units of the reagents does the mob absorb each absorb_contents() call
 	//consume amount is sent directly to blood, some crazy shit happens with nutrition, check "eatable.dm" for details
 
-	var/obj/item/weapon/storage/special/inventory
+	var/obj/item/storage/special/inventory
 
 	/*
 	the list of acceptable reagents that the stomach accepts, by default nutriments, drinks, and ethanol are okay
@@ -68,12 +68,12 @@ and well. the stomach is where such a thing would end up so you gotta
 cut it out and check it.
 
 */
-/obj/item/weapon/storage/special/stomach
+/obj/item/storage/special/stomach
 	max_w_class = ITEM_SIZE_SMALL
 	storage_slots = 6 //default for a human, change it to be more for other animals or less
 
 /obj/item/organ/internal/stomach/New()
-	inventory = new /obj/item/weapon/storage/special/stomach()
+	inventory = new /obj/item/storage/special/stomach()
 	inventory.loc = src
 	inventory.name = name
 
@@ -103,7 +103,7 @@ Purpose:	This is what's going to cycle through the contents of the stomach
 
 */
 /obj/item/organ/internal/stomach/proc/absorb_contents()
-	for(var/obj/item/weapon/reagent_containers/eatable/F in inventory)
+	for(var/obj/item/reagent_containers/eatable/F in inventory)
 		if(F.reagents.total_volume < consume_amount)
 			F.reagents.trans_to_mob(owner, F.reagents.total_volume, CHEM_BLOOD)
 		//	to_chat(owner, "[F] sent [F.reagents.total_volume] of whats left.")
@@ -116,7 +116,7 @@ Purpose:	This is what's going to cycle through the contents of the stomach
 			if(!B)
 				to_chat(owner, "You feel a weight in your stomach that just wont go away...")
 				return
-			var/obj/item/weapon/storage/special/bowels/I = B.inventory
+			var/obj/item/storage/special/bowels/I = B.inventory
 			if(!I)
 				to_chat(owner, "this shouldn't trigger.")
 				return

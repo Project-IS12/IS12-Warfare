@@ -109,7 +109,7 @@
 	shoes = /obj/item/clothing/shoes/black
 	pda_type = /obj/item/device/pda/captain
 	r_pocket = /obj/item/device/radio
-	id_type = /obj/item/weapon/card/id/gold
+	id_type = /obj/item/card/id/gold
 
 
 /decl/hierarchy/outfit/job/bearcat/captain/post_equip(var/mob/living/carbon/human/H)
@@ -130,9 +130,9 @@
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/workboots
 	pda_type = /obj/item/device/pda/heads/ce
-	l_hand = /obj/item/weapon/wrench
-	belt = /obj/item/weapon/storage/belt/utility/full
-	id_type = /obj/item/weapon/card/id/engineering/head
+	l_hand = /obj/item/wrench
+	belt = /obj/item/storage/belt/utility/full
+	id_type = /obj/item/card/id/engineering/head
 	r_pocket = /obj/item/device/radio
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
@@ -149,7 +149,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	pda_type = /obj/item/device/pda/cargo
-	l_hand = /obj/item/weapon/clipboard
+	l_hand = /obj/item/clipboard
 
 /decl/hierarchy/outfit/job/bearcat/hand
 	name = BEARCAT_OUTFIT_JOB_NAME("Deck Hand")

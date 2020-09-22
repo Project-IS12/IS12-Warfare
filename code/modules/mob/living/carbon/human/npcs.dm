@@ -364,7 +364,7 @@
 
 	is_npc = 1//Make sure their an NPC so they don't attack each other.
 	hand = 0//Make sure one of their hands is active.
-	var/weapon = pick(/obj/item/weapon/crowbar, /obj/item/weapon/melee/classic_baton/trench_club, /obj/item/weapon/melee/classic_baton)
+	var/weapon = pick(/obj/item/crowbar, /obj/item/melee/classic_baton/trench_club, /obj/item/melee/classic_baton)
 	put_in_hands(new weapon)//Give them a weapon.
 	combat_mode = 1//Put them in combat mode.
 	STAT_LEVEL(dex) = 1
@@ -385,7 +385,7 @@
 
 	is_npc = 1//Make sure their an NPC so they don't attack each other.
 	hand = 0//Make sure one of their hands is active.
-	var/weapon = pick(/obj/item/weapon/crowbar, /obj/item/weapon/melee/classic_baton)
+	var/weapon = pick(/obj/item/crowbar, /obj/item/melee/classic_baton)
 	put_in_hands(new weapon)//Give them a weapon.
 	combat_mode = 1//Put them in combat mode.
 	STAT_LEVEL(dex) = 1

@@ -7,7 +7,7 @@
 /*
  * Classic Baton
  */
-/obj/item/weapon/melee/classic_baton
+/obj/item/melee/classic_baton
 	name = "police baton"
 	desc = "A truncheon for beating criminal scum."
 	icon = 'icons/obj/weapons.dmi'
@@ -18,12 +18,12 @@
 	block_chance = 15
 	parry_sounds = list('sound/weapons/blunt_parry1.ogg', 'sound/weapons/blunt_parry2.ogg', 'sound/weapons/blunt_parry3.ogg')
 
-/obj/item/weapon/melee/classic_baton/handle_shield(mob/living/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+/obj/item/melee/classic_baton/handle_shield(mob/living/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(default_sword_parry(user, damage, damage_source, attacker, def_zone, attack_text))
 		return 1
 	return 0
 /*
-/obj/item/weapon/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
+/obj/item/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
 	if ((CLUMSY in user.mutations) && prob(50))
 		to_chat(user, "<span class='warning'>You club yourself over the head.</span>")
 		user.Weaken(3 * force)
@@ -35,7 +35,7 @@
 		return
 	return ..()
 */
-/obj/item/weapon/melee/classic_baton/trench_club
+/obj/item/melee/classic_baton/trench_club
 	name = "trench club"
 	desc = "A truncheon for beating other people in the same trench as you."
 	icon_state = "trench_club1"
@@ -43,12 +43,12 @@
 	force = 25 //These things pack a punch.
 	block_chance = 25
 
-/obj/item/weapon/melee/classic_baton/trench_club/New()
+/obj/item/melee/classic_baton/trench_club/New()
 	..()
 	icon_state = "trench_club[rand(1,3)]"
 
 //Telescopic baton
-/obj/item/weapon/melee/telebaton
+/obj/item/melee/telebaton
 	name = "telescopic baton"
 	desc = "A compact yet rebalanced personal defense weapon. Can be concealed when folded."
 	icon = 'icons/obj/weapons.dmi'
@@ -60,7 +60,7 @@
 	var/on = 0
 
 
-/obj/item/weapon/melee/telebaton/attack_self(mob/user as mob)
+/obj/item/melee/telebaton/attack_self(mob/user as mob)
 	on = !on
 	if(on)
 		user.visible_message("<span class='warning'>With a flick of their wrist, [user] extends their telescopic baton.</span>",\

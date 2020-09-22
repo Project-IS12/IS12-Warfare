@@ -1,4 +1,4 @@
-/obj/item/weapon/grenade/chem_grenade
+/obj/item/grenade/chem_grenade
 	name = "grenade casing"
 	icon_state = "chemg"
 	item_state = "grenade"
@@ -12,7 +12,7 @@
 	var/path = 0
 	var/obj/item/device/assembly_holder/detonator = null
 	var/list/beakers = new/list()
-	var/list/allowed_containers = list(/obj/item/weapon/reagent_containers/glass/beaker, /obj/item/weapon/reagent_containers/glass/bottle)
+	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle)
 	var/affected_area = 3
 
 	New()
@@ -45,7 +45,7 @@
 				var/mob/living/carbon/C = user
 				C.throw_mode_on()
 
-	attackby(obj/item/weapon/W as obj, mob/user as mob)
+	attackby(obj/item/W as obj, mob/user as mob)
 
 		if(istype(W,/obj/item/device/assembly_holder) && (!stage || stage==1) && path != 2)
 			var/obj/item/device/assembly_holder/det = W
@@ -142,7 +142,7 @@
 		if(!stage || stage<2) return
 
 		var/has_reagents = 0
-		for(var/obj/item/weapon/reagent_containers/glass/G in beakers)
+		for(var/obj/item/reagent_containers/glass/G in beakers)
 			if(G.reagents.total_volume) has_reagents = 1
 
 		active = 0
@@ -160,7 +160,7 @@
 
 		playsound(src.loc, 'sound/effects/bamf.ogg', 50, 1)
 
-		for(var/obj/item/weapon/reagent_containers/glass/G in beakers)
+		for(var/obj/item/reagent_containers/glass/G in beakers)
 			G.reagents.trans_to_obj(src, G.reagents.total_volume)
 
 		if(src.reagents.total_volume) //The possible reactions didnt use up all reagents.
@@ -183,15 +183,15 @@
 			qdel(src)	   //correctly before deleting the grenade.
 
 
-/obj/item/weapon/grenade/chem_grenade/large
+/obj/item/grenade/chem_grenade/large
 	name = "large chem grenade"
 	desc = "An oversized grenade that affects a larger area."
 	icon_state = "large_grenade"
-	allowed_containers = list(/obj/item/weapon/reagent_containers/glass)
+	allowed_containers = list(/obj/item/reagent_containers/glass)
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	affected_area = 4
 
-/obj/item/weapon/grenade/chem_grenade/metalfoam
+/obj/item/grenade/chem_grenade/metalfoam
 	name = "metal-foam grenade"
 	desc = "Used for emergency sealing of air breaches."
 	path = 1
@@ -199,8 +199,8 @@
 
 	New()
 		..()
-		var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
-		var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
 		B1.reagents.add_reagent(/datum/reagent/aluminum, 30)
 		B2.reagents.add_reagent(/datum/reagent/foaming_agent, 10)
@@ -212,7 +212,7 @@
 		beakers += B2
 		icon_state = initial(icon_state) +"_locked"
 
-/obj/item/weapon/grenade/chem_grenade/incendiary
+/obj/item/grenade/chem_grenade/incendiary
 	name = "incendiary grenade"
 	desc = "Used for clearing rooms of living things."
 	path = 1
@@ -220,8 +220,8 @@
 
 	New()
 		..()
-		var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
-		var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
 		B1.reagents.add_reagent(/datum/reagent/aluminum, 15)
 		B1.reagents.add_reagent(/datum/reagent/fuel,20)
@@ -235,7 +235,7 @@
 		beakers += B2
 		icon_state = initial(icon_state) +"_locked"
 
-/obj/item/weapon/grenade/chem_grenade/antiweed
+/obj/item/grenade/chem_grenade/antiweed
 	name = "weedkiller grenade"
 	desc = "Used for purging large areas of invasive plant species. Contents under pressure. Do not directly inhale contents."
 	path = 1
@@ -243,8 +243,8 @@
 
 	New()
 		..()
-		var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
-		var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
 		B1.reagents.add_reagent(/datum/reagent/toxin/plantbgone, 25)
 		B1.reagents.add_reagent(/datum/reagent/potassium, 25)
@@ -257,7 +257,7 @@
 		beakers += B2
 		icon_state = "grenade"
 
-/obj/item/weapon/grenade/chem_grenade/cleaner
+/obj/item/grenade/chem_grenade/cleaner
 	name = "cleaner grenade"
 	desc = "BLAM!-brand foaming space cleaner. In a special applicator for rapid cleaning of wide areas."
 	stage = 2
@@ -265,8 +265,8 @@
 
 	New()
 		..()
-		var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
-		var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
 		B1.reagents.add_reagent(/datum/reagent/surfactant, 40)
 		B2.reagents.add_reagent(/datum/reagent/water, 40)
@@ -278,7 +278,7 @@
 		beakers += B2
 		icon_state = initial(icon_state) +"_locked"
 
-/obj/item/weapon/grenade/chem_grenade/teargas
+/obj/item/grenade/chem_grenade/teargas
 	name = "tear gas grenade"
 	desc = "Concentrated Capsaicin. Contents under pressure. Use with caution."
 	stage = 2
@@ -286,8 +286,8 @@
 
 	New()
 		..()
-		var/obj/item/weapon/reagent_containers/glass/beaker/large/B1 = new(src)
-		var/obj/item/weapon/reagent_containers/glass/beaker/large/B2 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/large/B1 = new(src)
+		var/obj/item/reagent_containers/glass/beaker/large/B2 = new(src)
 
 		B1.reagents.add_reagent(/datum/reagent/phosphorus, 40)
 		B1.reagents.add_reagent(/datum/reagent/potassium, 40)

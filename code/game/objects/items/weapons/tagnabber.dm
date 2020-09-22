@@ -1,4 +1,4 @@
-/obj/item/weapon/tagnabber
+/obj/item/tagnabber
 	name = "Tagnabber"
 	desc = "Use this on a downed soldier to remove their dogtag!"
 	icon_state = "nullrod"
@@ -6,12 +6,12 @@
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_NORMAL
 
-/obj/item/weapon/tagnabber/attack(mob/living/M, mob/living/user, target_zone, special)
+/obj/item/tagnabber/attack(mob/living/M, mob/living/user, target_zone, special)
 	. = ..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/weapon/card/id/O = H.get_equipped_item(slot_wear_id)
-		var/obj/item/weapon/storage/S = user.get_equipped_item(slot_back)
+		var/obj/item/card/id/O = H.get_equipped_item(slot_wear_id)
+		var/obj/item/storage/S = user.get_equipped_item(slot_back)
 
 		if(!H.stat)
 			to_chat(user, "<span class='notice'>[H] is conscious, this will take about 5 seconds...</span>")

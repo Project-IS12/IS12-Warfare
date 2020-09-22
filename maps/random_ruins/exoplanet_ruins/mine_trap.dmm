@@ -2,7 +2,7 @@
 "b" = (/obj/structure/landmine,/turf/simulated/floor/dirty/indestructable,/area/mine/explored)
 "c" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/indestructable,/area/mine/explored)
 "d" = (/obj/structure/barbwire,/obj/structure/barbwire,/turf/simulated/floor/dirty/indestructable,/area/mine/explored)
-"e" = (/obj/structure/gravemarker/random,/obj/random/bolt_action,/obj/item/weapon/storage/bag/cash,/turf/simulated/floor/dirty/indestructable,/area/mine/explored)
+"e" = (/obj/structure/gravemarker/random,/obj/random/bolt_action,/obj/item/storage/bag/cash,/turf/simulated/floor/dirty/indestructable,/area/mine/explored)
 
 (1,1,1) = {"
 bbbbbbbbbb

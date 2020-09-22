@@ -1,6 +1,6 @@
 //FLAMETHROWER
 
-/obj/item/weapon/gun/flamer
+/obj/item/gun/flamer
 	name = "\improper M2A4 Fire Thrower"
 	desc = "Flame thrower made to light people you don't like on fire."
 	icon_state = "flamethrower"
@@ -24,7 +24,7 @@
 /atom/proc/flamer_fire_act()
 	return
 */
-/obj/item/weapon/gun/flamer/proc/toggle_flame(mob/user)
+/obj/item/gun/flamer/proc/toggle_flame(mob/user)
 	playsound(user,'sound/weapons/flipblade.ogg', 25, 1)
 	lit = !lit
 	if (lit)
@@ -32,7 +32,7 @@
 	else
 		icon_state = 'flamer'
 
-/obj/item/weapon/gun/flamer/Fire(atom/target, mob/living/user, params, reflex)
+/obj/item/gun/flamer/Fire(atom/target, mob/living/user, params, reflex)
 	set waitfor = 0
 	..()
 	var/turf/curloc = get_turf(user) //In case the target or we are expired.
@@ -47,7 +47,7 @@
 
 /proc/getline2(atom/from_atom, atom/to_atom, exclude_origin=FALSE)
 
-/obj/item/weapon/gun/flamer/proc/unleash_flame(atom/target, mob/living/user)
+/obj/item/gun/flamer/proc/unleash_flame(atom/target, mob/living/user)
 	set waitfor = 0
 	var/burnlevel = 50
 	var/burntime = 40
@@ -74,7 +74,7 @@
 		prev_T = T
 		sleep(1)
 
-/obj/item/weapon/gun/flamer/proc/flame_turf(turf/T, mob/living/user, heat, burn, f_color = "red")
+/obj/item/gun/flamer/proc/flame_turf(turf/T, mob/living/user, heat, burn, f_color = "red")
 	if(!istype(T))
 		return
 
@@ -91,7 +91,7 @@
 		M.adjustFireLoss(rand(burn,(burn*2))) // Make it so its the amount of heat or twice it for the initial blast.
 		to_chat(M, "<span class='danger'>Augh! You are roasted by the flames!")
 
-/obj/item/weapon/gun/flamer/proc/triangular_flame(var/atom/target, var/mob/living/user, var/burntime, var/burnlevel)
+/obj/item/gun/flamer/proc/triangular_flame(var/atom/target, var/mob/living/user, var/burntime, var/burnlevel)
 	set waitfor = 0
 
 	var/unleash_dir = user.dir //don't want the player to turn around mid-unleash to bend the fire.

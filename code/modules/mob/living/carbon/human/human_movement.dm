@@ -110,9 +110,9 @@
 	if(restrained())	return 0
 
 	//Do we have a working jetpack?
-	var/obj/item/weapon/tank/jetpack/thrust
+	var/obj/item/tank/jetpack/thrust
 	if(back)
-		if(istype(back,/obj/item/weapon/tank/jetpack))
+		if(istype(back,/obj/item/tank/jetpack))
 			thrust = back
 
 	if(thrust)

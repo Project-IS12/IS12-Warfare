@@ -79,7 +79,7 @@ var/datum/antagonist/cultist/cult
 	if(!..())
 		return 0
 
-	var/obj/item/weapon/book/tome/T = new(get_turf(player))
+	var/obj/item/book/tome/T = new(get_turf(player))
 	var/list/slots = list (
 		"backpack" = slot_in_backpack,
 		"left pocket" = slot_l_store,
@@ -91,7 +91,7 @@ var/datum/antagonist/cultist/cult
 		player.equip_to_slot(T, slot)
 		if(T.loc == player)
 			break
-	var/obj/item/weapon/storage/S = locate() in player.contents
+	var/obj/item/storage/S = locate() in player.contents
 	if(istype(S))
 		T.forceMove(S)
 
