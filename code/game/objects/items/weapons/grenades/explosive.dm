@@ -20,6 +20,7 @@
 	icon_state = "frggrenade"
 	arm_sound = 'sound/weapons/grenade_arm.ogg'
 	throw_range = 10
+	icon = 'icons/obj/grenade.dmi'
 
 	var/list/fragment_types = list(/obj/item/projectile/bullet/pellet/fragment = 1)
 	var/num_fragments = 72  //total number of fragments produced by the grenade
