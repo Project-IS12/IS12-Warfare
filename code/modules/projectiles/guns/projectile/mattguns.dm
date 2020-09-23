@@ -221,7 +221,10 @@
 	icon_state = "battlerifle"
 	item_state = "battlerifle"
 	wielded_item_state = "battlerifle-wielded"
-	fire_sound = 'sound/weapons/guns/fire/fal_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
+	unload_sound = 'sound/weapons/guns/interact/arm_magout.ogg'
+	reload_sound = 'sound/weapons/guns/interact/arm_magin.ogg'
+	cock_sound = 'sound/weapons/guns/interact/arm_cock.ogg'
 
 	magazine_type = /obj/item/ammo_magazine/a762/m14/battlerifle_mag
 	allowed_magazines = list(/obj/item/ammo_magazine/a762/m14/battlerifle_mag, /obj/item/ammo_magazine/c45rifle/akarabiner)

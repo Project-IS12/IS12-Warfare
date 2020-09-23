@@ -13,7 +13,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/rev_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rev_magin.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/rev_magin.ogg'
-	fire_sound = 'sound/weapons/guns/fire/revolver.ogg'
+	fire_sound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 
 /obj/item/gun/projectile/revolver/cpt
 	name = "Captain's Special"
