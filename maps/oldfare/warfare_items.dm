@@ -145,16 +145,13 @@
 
 /obj/item/clothing/head/helmet/redhelmet/medic
 	icon_state = "redhelmet_medic"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/medic)
 
 /obj/item/clothing/head/helmet/redhelmet/leader
 	icon_state = "redhelmet_leader"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/leader)
 
 /obj/item/clothing/head/helmet/redhelmet/sniper
 	icon_state = "redsniperhelmet"
 	item_state = "redsniperhelmet"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/leader)
 
 
 //Nam shit
@@ -254,16 +251,13 @@
 
 /obj/item/clothing/head/helmet/bluehelmet/medic
 	icon_state = "bluehelmet_medic"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/medic)
 
 /obj/item/clothing/head/helmet/bluehelmet/leader
 	icon_state = "bluehelmet_leader"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/leader)
 
 /obj/item/clothing/head/helmet/bluehelmet/sniper
 	icon_state = "bluesniperhelmet"
 	item_state = "bluesniperhelmet"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/leader)
 
 /obj/item/card/id/dog_tag
 	var/warfare_faction = null
