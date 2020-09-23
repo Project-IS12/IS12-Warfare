@@ -68,6 +68,25 @@
 			else
 				P.attack_mob(M, 0, 100) //otherwise, allow a decent amount of fragments to pass
 
+/obj/item/grenade/fire
+	name = "incendiary grenade"
+	desc = "A military incendiary grenade designed to spread and ignite a vast ammount of highly flammable liquid."
+	icon_state = "fire_grenade"
+	arm_sound = 'sound/weapons/grenade_arm.ogg'
+	throw_range = 10
+
+	var/fire_range = 2 // size of the fire zone
+
+/obj/item/grenade/fire/detonate()
+	..()
+
+	var/turf/O = get_turf(src)
+	if(!O) return
+
+	new /obj/flamer_fire(loc, 8, 6, "red", fire_range)
+
+	qdel(src)
+
 /obj/mortar/frag
 	name = "Mortar"
 	desc = "You'll never see this it just explodes."
