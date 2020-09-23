@@ -2,7 +2,7 @@
 	bulletinsert_sound 	= "shotgun_insert"// sound/weapons/guns/interact/shellinsert1.ogg and 2
 	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	parry_sounds = list('sound/weapons/blunt_parry1.ogg', 'sound/weapons/blunt_parry2.ogg', 'sound/weapons/blunt_parry3.ogg')
-	load_method = SINGLE_CASING|SINGLE_LOAD//|SPEEDLOADER //No more loading straight from boxes anymore.
+	load_method = SINGLE_CASING|SINGLE_LOAD
 	slot_flags = SLOT_BACK|SLOT_S_STORE
 	var/empty_icon = null
 
@@ -159,19 +159,12 @@
 	casingsound = 'sound/weapons/guns/misc/shotgun_fall.ogg'
 	wielded_item_state = "dshotgun1"
 	gun_type = GUN_PISTOL //Now anyone can use it.
-	var/broke_open = FALSE
-
+	one_hand_penalty = 25
 	burst_delay = 0
-	/*
-	firemodes = list(
-		list(mode_name="fire one barrel at a time", burst=1),
-		list(mode_name="fire both barrels at once", burst=2),
-		)
-	*/
+	var/broke_open = FALSE
 
 /obj/item/gun/projectile/shotgun/doublebarrel/update_icon()
 	..()
-	//if(!loaded.len)
 	if(broke_open)
 		icon_state = "dshotgun-e"
 	else
