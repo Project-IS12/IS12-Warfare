@@ -4,10 +4,10 @@
 	selection_color = "#76abb2"
 
 	equip(var/mob/living/carbon/human/H)
-		..()
-		H.add_stats(rand(6,10), rand(6,10), rand(6,10))
 		H.warfare_faction = BLUE_TEAM
+		..()
 		SSwarfare.blue.team += H
+		H.add_stats(rand(6,10), rand(6,10), rand(6,10))
 		H.warfare_language_shit(LANGUAGE_BLUE)
 		H.assign_random_quirk()
 
@@ -55,17 +55,15 @@
 		H.say(";Practitioner reporting for duty!")
 
 /decl/hierarchy/outfit/job/medical/doctor/blue
-	//uniform = /obj/item/clothing/under/blue_uniform
+	uniform = /obj/item/clothing/under/blue_uniform
 	back = /obj/item/storage/backpack/satchel/warfare
 	gloves = /obj/item/clothing/gloves/prac_gloves
 	suit = /obj/item/clothing/suit/prac_arpon
 	mask = /obj/item/clothing/mask/gas/prac_mask
 	shoes = /obj/item/clothing/shoes/prac_boots
-	//head = /obj/item/clothing/head/prac_cap
 	l_ear = /obj/item/device/radio/headset/raider
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	belt = /obj/item/storage/belt/medical/full
 	pda_type = null
 	id_type = /obj/item/card/id/dog_tag/blue
 	backpack_contents = list(/obj/item/ammo_magazine/handful/revolver = 1, /obj/item/gun/projectile/revolver = 1)
-	//backpack_contents = list(/obj/item/reagent_containers/hypospray/autoinjector/blood = 1, /obj/item/reagent_containers/hypospray/autoinjector/revive = 2, /obj/item/reagent_containers/hypospray/autoinjector/pain = 2, /obj/item/suture = 1, /obj/item/wirecutters = 1)

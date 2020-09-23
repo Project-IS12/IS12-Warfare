@@ -4,8 +4,8 @@
 	is_red_team = TRUE
 	selection_color = "#b27676"
 
-	auto_rifle_skill = 10
-	semi_rifle_skill = 7
+	auto_rifle_skill = 10 //This is leftover from coldfare, but we could go back to that one day so better not to mess with it.
+	semi_rifle_skill = 10
 	sniper_skill = 3
 	shotgun_skill = 6
 	lmg_skill = 3
@@ -15,7 +15,6 @@
 		H.warfare_faction = RED_TEAM
 		..()
 		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
-		//H.add_skills(rand(6, 9), rand(6,9), rand(1,5))
 		SSwarfare.red.team += H
 		if(can_be_in_squad)
 			H.assign_random_squad(RED_TEAM)
@@ -35,7 +34,6 @@
 	auto_rifle_skill = 10
 	semi_rifle_skill = 10
 	shotgun_skill = 10
-	//open_when_dead = TRUE
 
 	announced = FALSE
 
@@ -58,7 +56,6 @@
 	surgery_skill = 10
 	engineering_skill = 4
 	auto_rifle_skill = 3
-	semi_rifle_skill = 10
 
 	announced = FALSE
 
@@ -222,7 +219,7 @@
 		H.say(";Scav reporting for duty!")
 
 /decl/hierarchy/outfit/job/redsoldier
-	name = OUTFIT_JOB_NAME("Soldier")
+	name = OUTFIT_JOB_NAME("Red Soldier")
 	head = /obj/item/clothing/head/helmet/redhelmet
 	uniform = /obj/item/clothing/under/red_uniform
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -243,6 +240,11 @@
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester
 		r_pocket = /obj/item/ammo_box/rifle
 		backpack_contents = initial(backpack_contents)
+
+	else if (prob(5))
+		suit_store = /obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
+		r_pocket =  /obj/item/ammo_magazine/a762/rsc
+		backpack_contents = list(/obj/item/ammo_magazine/a762/rsc = 4, /obj/item/grenade/smokebomb = 1)
 
 	else if(prob(25))
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester
@@ -266,15 +268,10 @@
 
 /decl/hierarchy/outfit/job/redsoldier/sgt
 	suit_store = /obj/item/gun/projectile/automatic/m22/warmonger
-	//head = /obj/item/clothing/head/helmet/redhelmet/leader
+	head = /obj/item/clothing/head/helmet/redhelmet/leader
 	r_pocket = /obj/item/ammo_magazine/c45rifle/akarabiner
 
 /decl/hierarchy/outfit/job/redsoldier/sgt/equip()
-	/*
-	if(prob(15))
-		suit_store = /obj/item/gun/projectile/shotgun/pump/shitty/sawn
-		r_pocket = /obj/item/ammo_box/shotgun
-	*/
 	if(prob(25))
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/bayonet
 		r_pocket = /obj/item/ammo_box/rifle
@@ -282,7 +279,7 @@
 	else
 		suit_store = /obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
 		r_pocket =  /obj/item/ammo_magazine/a762/rsc
-		backpack_contents = list(/obj/item/ammo_magazine/a762/rsc = 3, /obj/item/grenade/smokebomb = 1, /obj/item/device/binoculars = 1)
+		backpack_contents = list(/obj/item/ammo_magazine/a762/rsc = 4, /obj/item/grenade/smokebomb = 1, /obj/item/device/binoculars = 1)
 
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/torch/self_lit = 1)
@@ -364,6 +361,7 @@
 	l_pocket = /obj/item/stack/medical/bruise_pack
 	suit_store = /obj/item/gun/projectile/automatic/m22/warmonger
 	gloves = /obj/item/clothing/gloves/latex
+	head = /obj/item/clothing/head/helmet/redhelmet/medic
 
 /decl/hierarchy/outfit/job/redsoldier/medic/equip()
 	if(prob(50))
@@ -394,7 +392,7 @@
 	..()
 
 /decl/hierarchy/outfit/job/redsoldier/scout
-	//suit = /obj/item/clothing/suit/child_coat/red
+	suit = /obj/item/clothing/suit/child_coat/red
 	l_ear = /obj/item/device/radio/headset/red_team/all
 	uniform = /obj/item/clothing/under/child_jumpsuit/warfare/red
 	shoes = /obj/item/clothing/shoes/child_shoes
