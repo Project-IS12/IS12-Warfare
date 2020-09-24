@@ -362,6 +362,7 @@
 	head = /obj/item/clothing/head/helmet/bluehelmet/fire
 	belt = /obj/item/gun/projectile/automatic/flamer
 	suit_store = /obj/item/melee/trench_axe
+	r_pocket = /obj/item/grenade/fire
 	backpack_contents = list(/obj/item/ammo_magazine/flamer = 4, /obj/item/grenade/smokebomb = 1)
 
 /decl/hierarchy/outfit/job/bluesoldier/sentry
