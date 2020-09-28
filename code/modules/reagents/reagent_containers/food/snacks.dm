@@ -3391,3 +3391,29 @@
 	open_can_icon = "pisssardine_open"
 	desc = "A can of the only sort of fish that could live in these waters."
 	trash = /obj/item/trash/warfare_can/sardine
+
+/obj/item/reagent_containers/food/snacks/skewered_rat_meat
+	name = "skewered rat meat"
+	desc = "A gross piece of rat meat on a piece of barbed wire."
+	icon_state = "skewered_rat_meat"
+	filling_color = "#ff1c1c"
+	center_of_mass = "x=16;y=14"
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/nutriment/protein, 9)
+		bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/rat_skewer
+	name = "rat skewer"
+	desc = "Trench culinary art at its finest."
+	icon_state = "rat_skewer"
+	filling_color = "#ff1c1c"
+	center_of_mass = "x=16;y=14"
+
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/nutriment/protein, 14)
+		reagents.add_reagent(/datum/reagent/sodiumchloride, 1)
+		reagents.add_reagent(/datum/reagent/blackpepper, 1)
+		reagents.add_reagent(/datum/reagent/bicaridine = 2)
+		bitesize = 2
