@@ -41,7 +41,7 @@
 
 
 /obj/item/clothing/suit/armor/vest/opvest/norifle
-	allowed = list(/obj/item/device/radio,/obj/item/weapon/reagent_containers/spray/pepper,/obj/item/ammo_magazine,/obj/item/ammo_casing)
+	allowed = list(/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/ammo_magazine,/obj/item/ammo_casing)
 
 /obj/item/clothing/head/helmet/siege
 	name = "seige helmet"

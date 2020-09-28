@@ -52,8 +52,9 @@ SUBSYSTEM_DEF(vote)
 		voting.Cut()
 
 /datum/controller/subsystem/vote/proc/autotransfer()
-	initiate_vote("crew_transfer","the server", 1)
-	log_debug("The server has called a crew transfer vote")
+	return
+	//initiate_vote("crew_transfer","the server", 1)
+	//log_debug("The server has called a crew transfer vote")
 
 /datum/controller/subsystem/vote/proc/autogamemode()
 	return

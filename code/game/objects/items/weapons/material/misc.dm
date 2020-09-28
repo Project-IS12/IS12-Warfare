@@ -1,4 +1,4 @@
-/obj/item/weapon/material/harpoon
+/obj/item/material/harpoon
 	name = "harpoon"
 	sharp = 1
 	edge = 1
@@ -8,7 +8,7 @@
 	force_divisor = 0.3 // 18 with hardness 60 (steel)
 	attack_verb = list("jabbed","stabbed","ripped")
 
-/obj/item/weapon/material/hatchet
+/obj/item/material/hatchet
 	name = "hatchet"
 	desc = "A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood."
 	icon = 'icons/obj/weapons.dmi'
@@ -23,7 +23,7 @@
 	applies_material_colour = 0
 	hitsound = "chop"
 
-/obj/item/weapon/material/hatchet/tacknife
+/obj/item/material/hatchet/tacknife
 	name = "tactical knife"
 	desc = "You'd be killing loads of people if this was Medal of Valor: Heroes of Space."
 	icon = 'icons/obj/weapons.dmi'
@@ -32,24 +32,24 @@
 	attack_verb = list("stabbed", "chopped", "cut")
 	applies_material_colour = 1
 
-/obj/item/weapon/material/hatchet/machete
+/obj/item/material/hatchet/machete
 	name = "machete"
 	desc = "A long, sturdy blade with a rugged handle. Leading the way to cursed treasures since before space travel."
 	icon_state = "machete"
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT
 
-/obj/item/weapon/material/hatchet/machete/Initialize()
+/obj/item/material/hatchet/machete/Initialize()
 	icon_state = "machete[pick("","_red","_blue", "_black", "_olive")]"
 	. = ..()
 
-/obj/item/weapon/material/hatchet/machete/deluxe
+/obj/item/material/hatchet/machete/deluxe
 	name = "deluxe machete"
 	desc = "A fine example of a machete, with a polished blade, wooden handle and a leather cord loop."
 	icon_state = "machetedx"
 	item_state = "machete"
 
-/obj/item/weapon/material/minihoe // -- Numbers
+/obj/item/material/minihoe // -- Numbers
 	name = "mini hoe"
 	desc = "It's used for removing weeds or scratching your back."
 	icon = 'icons/obj/weapons.dmi'
@@ -60,7 +60,7 @@
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("slashed", "sliced", "cut", "clawed")
 
-/obj/item/weapon/material/scythe
+/obj/item/material/scythe
 	icon_state = "scythe0"
 	name = "scythe"
 	desc = "A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow."

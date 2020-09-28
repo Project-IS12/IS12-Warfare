@@ -89,43 +89,48 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		user.unlock_achievement(new/datum/achievement/miss())
 
 	if(special)//We did a special attack, let's apply it's special properties.
-		switch(user.atk_intent)
-			if(I_QUICK)//Faster attack but takes much more stamina.
-				user.visible_message("<span class='combat_success'>[user] performs a quick attack!</span>")
-				user.adjustStaminaLoss(w_class + 6)
-				user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-				apply_speed_delay(-5)
+		if(user.atk_intent == I_QUICK)//Faster attack but takes much more stamina.
+			user.visible_message("<span class='combat_success'>[user] performs a quick attack!</span>")
+			user.adjustStaminaLoss(w_class + 6)
+			user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+			apply_speed_delay(-5)
 
-			if(I_AIMED)//More accurate attack
-				user.visible_message("<span class='combat_success'>[user] performs an aimed attack!</span>")
-				user.adjustStaminaLoss(w_class + 5)
-				user.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
-				apply_speed_delay(5)
+		else if(user.atk_intent == I_AIMED)//More accurate attack
+			user.visible_message("<span class='combat_success'>[user] performs an aimed attack!</span>")
+			user.adjustStaminaLoss(w_class + 5)
+			user.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
+			apply_speed_delay(5)
 
-			if(I_FEINT)//Feint attack that leaves them unable to attack for a few seconds //I_FEINT
-				if(!prob(user.SKILL_LEVEL(melee) * 10))//Add skill check here.
-					user.visible_message("<span class='combat_success'>[user] botches a feint attack!</span>")
-					return 0
-				user.adjustStaminaLoss(w_class + 5)
-				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-				M.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
-				apply_speed_delay(0)
-				user.visible_message("<span class='combat_success'>[user] performs a successful feint attack!</span>")
-				return 0 //We fiented them don't actaully hit them now, we can follow up with another attack.
+		else if(user.atk_intent == I_FEINT)//Feint attack that leaves them unable to attack for a few seconds
+			if(!prob(user.SKILL_LEVEL(melee) * 10))//Add skill check here.
+				user.visible_message("<span class='combat_success'>[user] botches a feint attack!</span>")
+				return 0
+			user.adjustStaminaLoss(w_class + 5)
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+			M.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
+			apply_speed_delay(0)
+			user.visible_message("<span class='combat_success'>[user] performs a successful feint attack!</span>")
+			return 0 //We fiented them don't actaully hit them now, we can follow up with another attack.
 
-			if(I_OFFENSE)//Attack with stronger damage at the cost slightly longer cooldown
-				user.visible_message("<span class='combat_success'>[user] performs a heavy attack!</span>")
-				user.adjustStaminaLoss(w_class + 5)
-				user.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
-				apply_speed_delay(6)
+		else if(user.atk_intent == I_OFFENSE)//Attack with stronger damage at the cost slightly longer cooldown
+			user.visible_message("<span class='combat_success'>[user] performs a heavy attack!</span>")
+			user.adjustStaminaLoss(w_class + 5)
+			user.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
+			apply_speed_delay(6)
 
-			if(I_WEAK)
-				user.visible_message("<span class='combat_success'>[user] performs a weak attack.</span>")
+		else if(user.atk_intent == I_WEAK)
+			user.visible_message("<span class='combat_success'>[user] performs a weak attack.</span>")
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+			apply_speed_delay(0)
 
-			if(I_DUAL)
-				user.visible_message("<span class='combat_success'>[user] attacks with their offhand!</span>")
-				offhand_attack = TRUE
-				apply_speed_delay(3)
+		else if(user.atk_intent == I_DUAL)
+			user.visible_message("<span class='combat_success'>[user] attacks with their offhand!</span>")
+			offhand_attack = TRUE
+			apply_speed_delay(3)
+		else
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+			apply_speed_delay(0)
+
 
 
 	/////////////////////////

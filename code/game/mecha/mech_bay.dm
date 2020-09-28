@@ -20,12 +20,12 @@
 	..()
 	component_parts = list()
 
-	component_parts += new /obj/item/weapon/circuitboard/mech_recharger(src)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor(src)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor(src)
-	component_parts += new /obj/item/weapon/stock_parts/scanning_module(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
+	component_parts += new /obj/item/circuitboard/mech_recharger(src)
+	component_parts += new /obj/item/stock_parts/capacitor(src)
+	component_parts += new /obj/item/stock_parts/capacitor(src)
+	component_parts += new /obj/item/stock_parts/scanning_module(src)
+	component_parts += new /obj/item/stock_parts/manipulator(src)
+	component_parts += new /obj/item/stock_parts/manipulator(src)
 
 	RefreshParts()
 
@@ -45,15 +45,15 @@
 	var/chargerate_multiplier = 0
 	var/chargerate_divisor = 0
 	repair = -5
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/capacitor))
+	for(var/obj/item/stock_parts/P in component_parts)
+		if(istype(P, /obj/item/stock_parts/capacitor))
 			chargerate_multiplier += P.rating
 			chargerate_divisor++
-		if(istype(P, /obj/item/weapon/stock_parts/scanning_module))
+		if(istype(P, /obj/item/stock_parts/scanning_module))
 			chargerate_multiplier += P.rating
 			chargerate_divisor++
 			repair += P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
+		if(istype(P, /obj/item/stock_parts/manipulator))
 			repair += P.rating * 2
 	if(chargerate_multiplier)
 		active_power_usage = base_charge_rate * (chargerate_multiplier / chargerate_divisor)

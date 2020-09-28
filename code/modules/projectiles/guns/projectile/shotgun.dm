@@ -1,12 +1,12 @@
-/obj/item/weapon/gun/projectile/shotgun
+/obj/item/gun/projectile/shotgun
 	bulletinsert_sound 	= "shotgun_insert"// sound/weapons/guns/interact/shellinsert1.ogg and 2
 	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	parry_sounds = list('sound/weapons/blunt_parry1.ogg', 'sound/weapons/blunt_parry2.ogg', 'sound/weapons/blunt_parry3.ogg')
-	load_method = SINGLE_CASING|SINGLE_LOAD//|SPEEDLOADER //No more loading straight from boxes anymore.
+	load_method = SINGLE_CASING|SINGLE_LOAD
 	slot_flags = SLOT_BACK|SLOT_S_STORE
 	var/empty_icon = null
 
-/obj/item/weapon/gun/projectile/shotgun/update_icon()
+/obj/item/gun/projectile/shotgun/update_icon()
 	. = ..()
 	if(empty_icon)
 		if(!chambered && !loaded.len)//If there's an empty icon then use it.
@@ -17,7 +17,7 @@
 			icon_state = initial(icon_state)
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump
+/obj/item/gun/projectile/shotgun/pump
 	name = "shotgun"
 	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
 	icon_state = "shotgun"
@@ -39,12 +39,12 @@
 	wielded_item_state = "wshotgun"
 	gun_type = GUN_SHOTGUN
 
-/obj/item/weapon/gun/projectile/shotgun/pump/New()
+/obj/item/gun/projectile/shotgun/pump/New()
 	..()
 	pump(null, TRUE)//Chamber it when it's created.
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
+/obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(check_for_jam())
 		return 0
 	if(is_jammed)
@@ -54,7 +54,7 @@
 	return null
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump/examine(mob/user, distance)
+/obj/item/gun/projectile/shotgun/pump/examine(mob/user, distance)
 	. = ..()
 	if(chambered)
 		if(chambered.BB)
@@ -64,7 +64,7 @@
 	else
 		to_chat(user, "<span class='danger'>The chamber is <b>EMPTY</b>.")
 
-/obj/item/weapon/gun/projectile/shotgun/pump/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/gun/projectile/shotgun/pump/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/ammo_magazine/box/shotgun))
 		var/obj/item/ammo_magazine/box/shotgun/S = W
 		if(!S.open)
@@ -72,12 +72,12 @@
 	..()
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump/attack_self(mob/living/user as mob)
+/obj/item/gun/projectile/shotgun/pump/attack_self(mob/living/user as mob)
 	if(world.time >= recentpump + 10)
 		pump(user)
 		recentpump = world.time
 
-/obj/item/weapon/gun/projectile/shotgun/pump/proc/pump(mob/M as mob, silent = FALSE)
+/obj/item/gun/projectile/shotgun/pump/proc/pump(mob/M as mob, silent = FALSE)
 	if(is_jammed)
 		if(M)
 			M.visible_message("\The [M] begins to unjam [src].", "You begin to clear the jam of [src]")
@@ -122,7 +122,7 @@
 	if(M)
 		M.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
-/obj/item/weapon/gun/projectile/shotgun/pump/combat
+/obj/item/gun/projectile/shotgun/pump/combat
 	name = "combat shotgun"
 	desc = "Built for close quarters combat, the Hephaestus Industries KS-40 is widely regarded as a weapon of choice for repelling boarders."
 	icon_state = "cshotgun"
@@ -133,7 +133,7 @@
 	one_hand_penalty = 50 //a little heavier than the regular shotgun
 	wielded_item_state = "shotgun-wielded"
 
-/obj/item/weapon/gun/projectile/shotgun/pump/border
+/obj/item/gun/projectile/shotgun/pump/border
 	name = "border shotgun"
 	icon_state = "border"
 	item_state = "cshotgun"
@@ -142,7 +142,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	wielded_item_state = "cshotgun2"
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel
+/obj/item/gun/projectile/shotgun/doublebarrel
 	name = "\improper MS Doom"
 	desc = "Two shots. That's all you'll ever need."
 	icon_state = "dshotgun"
@@ -159,25 +159,18 @@
 	casingsound = 'sound/weapons/guns/misc/shotgun_fall.ogg'
 	wielded_item_state = "dshotgun1"
 	gun_type = GUN_PISTOL //Now anyone can use it.
+	one_hand_penalty = 25
+	burst_delay = 0
 	var/broke_open = FALSE
 
-	burst_delay = 0
-	/*
-	firemodes = list(
-		list(mode_name="fire one barrel at a time", burst=1),
-		list(mode_name="fire both barrels at once", burst=2),
-		)
-	*/
-
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/update_icon()
+/obj/item/gun/projectile/shotgun/doublebarrel/update_icon()
 	..()
-	//if(!loaded.len)
 	if(broke_open)
 		icon_state = "dshotgun-e"
 	else
 		icon_state = "dshotgun"
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/attack_self(mob/user)
+/obj/item/gun/projectile/shotgun/doublebarrel/attack_self(mob/user)
 	. = ..()
 	broke_open = !broke_open
 	playsound(src, 'sound/weapons/guns/interact/shotgun_break.ogg', 50)
@@ -186,7 +179,7 @@
 			unload_ammo(user)
 	update_icon()
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/special_check(mob/user)
+/obj/item/gun/projectile/shotgun/doublebarrel/special_check(mob/user)
 	if(broke_open)
 		to_chat(user, "Close the shotgun first.")
 		return FALSE
@@ -194,20 +187,20 @@
 
 
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/pellet
+/obj/item/gun/projectile/shotgun/doublebarrel/pellet
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/flare
+/obj/item/gun/projectile/shotgun/doublebarrel/flare
 	name = "signal shotgun"
 	desc = "A double-barreled shotgun meant to fire signal flash shells."
 	ammo_type = /obj/item/ammo_casing/shotgun/flash
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/unload_ammo(user, allow_dump)
+/obj/item/gun/projectile/shotgun/doublebarrel/unload_ammo(user, allow_dump)
 	..(user, allow_dump=1)
 
 //this is largely hacky and bad :(	-Pete
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/attackby(var/obj/item/A as obj, mob/user as mob)
-	if(w_class > 3 && (istype(A, /obj/item/weapon/circular_saw) || istype(A, /obj/item/weapon/melee/energy) || istype(A, /obj/item/weapon/gun/energy/plasmacutter)))
+/obj/item/gun/projectile/shotgun/doublebarrel/attackby(var/obj/item/A as obj, mob/user as mob)
+	if(w_class > 3 && (istype(A, /obj/item/circular_saw) || istype(A, /obj/item/melee/energy) || istype(A, /obj/item/gun/energy/plasmacutter)))
 		to_chat(user, "<span class='notice'>You begin to shorten the barrel of \the [src].</span>")
 		if(loaded.len)
 			for(var/i in 1 to max_shells)
@@ -232,7 +225,7 @@
 		..()
 		update_icon()
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn
+/obj/item/gun/projectile/shotgun/doublebarrel/sawn
 	name = "sawn-off shotgun"
 	desc = "Omar's coming!"
 	icon_state = "sawnshotgun"
@@ -244,7 +237,7 @@
 	one_hand_penalty = 0
 
 
-/obj/item/weapon/gun/projectile/shotgun/pump/boltaction
+/obj/item/gun/projectile/shotgun/pump/boltaction
 	name = "\improper Mark II Stormrider" //I used a random rifle generator to come up with that.
 	desc = "This piece of junk looks like something that could have been used 700 years ago"
 	icon_state = "mosin"

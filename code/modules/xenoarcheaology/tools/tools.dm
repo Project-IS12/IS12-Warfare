@@ -26,7 +26,7 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 100)
 	w_class = ITEM_SIZE_SMALL
 
-/obj/item/weapon/storage/bag/fossils
+/obj/item/storage/bag/fossils
 	name = "Fossil Satchel"
 	desc = "Transports delicate fossils in suspension so they don't break during transit."
 	icon = 'icons/obj/mining.dmi'
@@ -36,16 +36,16 @@
 	storage_slots = 50
 	max_storage_space = 200
 	max_w_class = ITEM_SIZE_NORMAL
-	can_hold = list(/obj/item/weapon/fossil)
+	can_hold = list(/obj/item/fossil)
 
-/obj/item/weapon/storage/box/samplebags
+/obj/item/storage/box/samplebags
 	name = "sample bag box"
 	desc = "A box claiming to contain sample bags."
 
-/obj/item/weapon/storage/box/samplebags/New()
+/obj/item/storage/box/samplebags/New()
 	..()
 	for(var/i = 1 to 7)
-		var/obj/item/weapon/evidencebag/S = new(src)
+		var/obj/item/evidencebag/S = new(src)
 		S.SetName("sample bag")
 		S.desc = "a bag for holding research samples."
 
@@ -231,12 +231,12 @@
 	updateSelfDialog()
 
 //Radio beacon locator
-/obj/item/weapon/pinpointer/radio
+/obj/item/pinpointer/radio
 	name = "locator device"
 	desc = "Used to scan and locate signals on a particular frequency."
 	var/tracking_freq = PUB_FREQ
 
-/obj/item/weapon/pinpointer/radio/acquire_target()
+/obj/item/pinpointer/radio/acquire_target()
 	var/turf/T = get_turf(src)
 	var/zlevels = GetConnectedZlevels(T.z)
 	var/cur_dist = world.maxx+world.maxy
@@ -247,10 +247,10 @@
 				cur_dist = check_dist
 				. = weakref(R)
 
-/obj/item/weapon/pinpointer/radio/attack_self(var/mob/user as mob)
+/obj/item/pinpointer/radio/attack_self(var/mob/user as mob)
 	interact(user)
 
-/obj/item/weapon/pinpointer/radio/interact(var/mob/user)
+/obj/item/pinpointer/radio/interact(var/mob/user)
 	var/dat = "<b>Radio frequency tracker</b><br>"
 	dat += {"
 				Tracking: <A href='byond://?src=\ref[src];toggle=1'>[active ? "Enabled" : "Disabled"]</A><BR>
@@ -265,7 +265,7 @@
 	user << browse(dat,"window=locater;size=300x150")
 	onclose(user, "locater")
 
-/obj/item/weapon/pinpointer/radio/OnTopic(user, href_list)
+/obj/item/pinpointer/radio/OnTopic(user, href_list)
 	if(href_list["toggle"])
 		toggle(user)
 		. = TOPIC_REFRESH

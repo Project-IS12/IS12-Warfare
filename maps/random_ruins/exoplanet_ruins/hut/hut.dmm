@@ -12,13 +12,13 @@
 "l" = (/obj/structure/sign/science_1{pixel_y = 32},/turf/simulated/floor/tiled/dark,/area/mine/explored)
 "m" = (/obj/machinery/artifact_scanpad,/turf/simulated/floor/tiled/dark,/area/mine/explored)
 "n" = (/obj/structure/gravemarker/random,/turf/template_noop,/area/template_noop)
-"o" = (/obj/item/weapon/pen/multi,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"o" = (/obj/item/pen/multi,/turf/simulated/floor/tiled/dark,/area/mine/explored)
 "p" = (/obj/structure/bed/chair/wheelchair,/turf/simulated/floor/tiled/dark,/area/mine/explored)
 "q" = (/obj/structure/curtain/black,/turf/simulated/floor/carpet,/area/mine/explored)
 "r" = (/obj/machinery/r_n_d/server,/turf/simulated/floor/tiled/dark,/area/mine/explored)
 "s" = (/obj/structure/table/marble,/obj/item/device/flashlight/lamp,/turf/simulated/floor/tiled/dark,/area/mine/explored)
-"t" = (/obj/structure/table/marble,/obj/item/weapon/paper_bin,/obj/random/handgun,/turf/simulated/floor/tiled/dark,/area/mine/explored)
-"u" = (/obj/structure/bed,/obj/item/weapon/bedsheet/rainbow,/obj/random/drinkbottle,/obj/random/trash,/turf/simulated/floor/carpet,/area/mine/explored)
+"t" = (/obj/structure/table/marble,/obj/item/paper_bin,/obj/random/handgun,/turf/simulated/floor/tiled/dark,/area/mine/explored)
+"u" = (/obj/structure/bed,/obj/item/bedsheet/rainbow,/obj/random/drinkbottle,/obj/random/trash,/turf/simulated/floor/carpet,/area/mine/explored)
 
 (1,1,1) = {"
 bbbbban

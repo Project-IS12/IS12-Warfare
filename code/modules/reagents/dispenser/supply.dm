@@ -22,18 +22,18 @@
 /decl/hierarchy/supply_pack/reagents/alcohol_reagents
 	name = "Bar alcoholic dispenser refill"
 	contains = list(
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/beer,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/kahlua,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/whiskey,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/wine,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/vodka,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/gin,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/rum,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tequila,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/vermouth,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cognac,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ale,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/mead
+			/obj/item/reagent_containers/chem_disp_cartridge/beer,
+			/obj/item/reagent_containers/chem_disp_cartridge/kahlua,
+			/obj/item/reagent_containers/chem_disp_cartridge/whiskey,
+			/obj/item/reagent_containers/chem_disp_cartridge/wine,
+			/obj/item/reagent_containers/chem_disp_cartridge/vodka,
+			/obj/item/reagent_containers/chem_disp_cartridge/gin,
+			/obj/item/reagent_containers/chem_disp_cartridge/rum,
+			/obj/item/reagent_containers/chem_disp_cartridge/tequila,
+			/obj/item/reagent_containers/chem_disp_cartridge/vermouth,
+			/obj/item/reagent_containers/chem_disp_cartridge/cognac,
+			/obj/item/reagent_containers/chem_disp_cartridge/ale,
+			/obj/item/reagent_containers/chem_disp_cartridge/mead
 		)
 	cost = 50
 	containertype = /obj/structure/closet/crate/secure
@@ -43,23 +43,23 @@
 /decl/hierarchy/supply_pack/reagents/softdrink_reagents
 	name = "Bar soft drink dispenser refill"
 	contains = list(
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/water,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ice,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/coffee,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cream,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tea,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/icetea,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cola,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/smw,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dr_gibb,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/spaceup,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tonic,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sodawater,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/lemon_lime,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sugar,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/orange,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/lime,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/watermelon
+			/obj/item/reagent_containers/chem_disp_cartridge/water,
+			/obj/item/reagent_containers/chem_disp_cartridge/ice,
+			/obj/item/reagent_containers/chem_disp_cartridge/coffee,
+			/obj/item/reagent_containers/chem_disp_cartridge/cream,
+			/obj/item/reagent_containers/chem_disp_cartridge/tea,
+			/obj/item/reagent_containers/chem_disp_cartridge/icetea,
+			/obj/item/reagent_containers/chem_disp_cartridge/cola,
+			/obj/item/reagent_containers/chem_disp_cartridge/smw,
+			/obj/item/reagent_containers/chem_disp_cartridge/dr_gibb,
+			/obj/item/reagent_containers/chem_disp_cartridge/spaceup,
+			/obj/item/reagent_containers/chem_disp_cartridge/tonic,
+			/obj/item/reagent_containers/chem_disp_cartridge/sodawater,
+			/obj/item/reagent_containers/chem_disp_cartridge/lemon_lime,
+			/obj/item/reagent_containers/chem_disp_cartridge/sugar,
+			/obj/item/reagent_containers/chem_disp_cartridge/orange,
+			/obj/item/reagent_containers/chem_disp_cartridge/lime,
+			/obj/item/reagent_containers/chem_disp_cartridge/watermelon
 		)
 	cost = 50
 	containertype = /obj/structure/closet/crate
@@ -68,14 +68,14 @@
 /decl/hierarchy/supply_pack/reagents/coffee_reagents
 	name = "Coffee machine dispenser refill"
 	contains = list(
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/coffee,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cafe_latte,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/soy_latte,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/hot_coco,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/milk,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cream,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tea,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ice
+			/obj/item/reagent_containers/chem_disp_cartridge/coffee,
+			/obj/item/reagent_containers/chem_disp_cartridge/cafe_latte,
+			/obj/item/reagent_containers/chem_disp_cartridge/soy_latte,
+			/obj/item/reagent_containers/chem_disp_cartridge/hot_coco,
+			/obj/item/reagent_containers/chem_disp_cartridge/milk,
+			/obj/item/reagent_containers/chem_disp_cartridge/cream,
+			/obj/item/reagent_containers/chem_disp_cartridge/tea,
+			/obj/item/reagent_containers/chem_disp_cartridge/ice
 		)
 	cost = 50
 	containertype = /obj/structure/closet/crate
@@ -85,16 +85,16 @@
 /decl/hierarchy/supply_pack/reagents/dispenser_cartridges
 	name = "Empty dispenser cartridges"
 	contains = list(
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge,
+			/obj/item/reagent_containers/chem_disp_cartridge
 		)
 	cost = 15
 	containertype = /obj/structure/closet/crate
@@ -128,39 +128,39 @@
 
 // Bar-restricted (alcoholic drinks)
 //      Datum path Contents type                                                     Supply pack name             Container name                    Cost  Container access
-SEC_PACK(beer,     /obj/item/weapon/reagent_containers/chem_disp_cartridge/beer,     "Reagent refill - Beer",     "beer reagent cartridge crate",     15, access_bar)
-SEC_PACK(kahlua,   /obj/item/weapon/reagent_containers/chem_disp_cartridge/kahlua,   "Reagent refill - Kahlua",   "kahlua reagent cartridge crate",   15, access_bar)
-SEC_PACK(whiskey,  /obj/item/weapon/reagent_containers/chem_disp_cartridge/whiskey,  "Reagent refill - Whiskey",  "whiskey reagent cartridge crate",  15, access_bar)
-SEC_PACK(wine,     /obj/item/weapon/reagent_containers/chem_disp_cartridge/wine,     "Reagent refill - Wine",     "wine reagent cartridge crate",     15, access_bar)
-SEC_PACK(vodka,    /obj/item/weapon/reagent_containers/chem_disp_cartridge/vodka,    "Reagent refill - Vodka",    "vodka reagent cartridge crate",    15, access_bar)
-SEC_PACK(gin,      /obj/item/weapon/reagent_containers/chem_disp_cartridge/gin,      "Reagent refill - Gin",      "gin reagent cartridge crate",      15, access_bar)
-SEC_PACK(rum,      /obj/item/weapon/reagent_containers/chem_disp_cartridge/rum,      "Reagent refill - Rum",      "rum reagent cartridge crate",      15, access_bar)
-SEC_PACK(tequila,  /obj/item/weapon/reagent_containers/chem_disp_cartridge/tequila,  "Reagent refill - Tequila",  "tequila reagent cartridge crate",  15, access_bar)
-SEC_PACK(vermouth, /obj/item/weapon/reagent_containers/chem_disp_cartridge/vermouth, "Reagent refill - Vermouth", "vermouth reagent cartridge crate", 15, access_bar)
-SEC_PACK(cognac,   /obj/item/weapon/reagent_containers/chem_disp_cartridge/cognac,   "Reagent refill - Cognac",   "cognac reagent cartridge crate",   15, access_bar)
-SEC_PACK(ale,      /obj/item/weapon/reagent_containers/chem_disp_cartridge/ale,      "Reagent refill - Ale",      "ale reagent cartridge crate",      15, access_bar)
-SEC_PACK(mead,     /obj/item/weapon/reagent_containers/chem_disp_cartridge/mead,     "Reagent refill - Mead",     "mead reagent cartridge crate",     15, access_bar)
+SEC_PACK(beer,     /obj/item/reagent_containers/chem_disp_cartridge/beer,     "Reagent refill - Beer",     "beer reagent cartridge crate",     15, access_bar)
+SEC_PACK(kahlua,   /obj/item/reagent_containers/chem_disp_cartridge/kahlua,   "Reagent refill - Kahlua",   "kahlua reagent cartridge crate",   15, access_bar)
+SEC_PACK(whiskey,  /obj/item/reagent_containers/chem_disp_cartridge/whiskey,  "Reagent refill - Whiskey",  "whiskey reagent cartridge crate",  15, access_bar)
+SEC_PACK(wine,     /obj/item/reagent_containers/chem_disp_cartridge/wine,     "Reagent refill - Wine",     "wine reagent cartridge crate",     15, access_bar)
+SEC_PACK(vodka,    /obj/item/reagent_containers/chem_disp_cartridge/vodka,    "Reagent refill - Vodka",    "vodka reagent cartridge crate",    15, access_bar)
+SEC_PACK(gin,      /obj/item/reagent_containers/chem_disp_cartridge/gin,      "Reagent refill - Gin",      "gin reagent cartridge crate",      15, access_bar)
+SEC_PACK(rum,      /obj/item/reagent_containers/chem_disp_cartridge/rum,      "Reagent refill - Rum",      "rum reagent cartridge crate",      15, access_bar)
+SEC_PACK(tequila,  /obj/item/reagent_containers/chem_disp_cartridge/tequila,  "Reagent refill - Tequila",  "tequila reagent cartridge crate",  15, access_bar)
+SEC_PACK(vermouth, /obj/item/reagent_containers/chem_disp_cartridge/vermouth, "Reagent refill - Vermouth", "vermouth reagent cartridge crate", 15, access_bar)
+SEC_PACK(cognac,   /obj/item/reagent_containers/chem_disp_cartridge/cognac,   "Reagent refill - Cognac",   "cognac reagent cartridge crate",   15, access_bar)
+SEC_PACK(ale,      /obj/item/reagent_containers/chem_disp_cartridge/ale,      "Reagent refill - Ale",      "ale reagent cartridge crate",      15, access_bar)
+SEC_PACK(mead,     /obj/item/reagent_containers/chem_disp_cartridge/mead,     "Reagent refill - Mead",     "mead reagent cartridge crate",     15, access_bar)
 
 // Unrestricted (water, sugar, non-alcoholic drinks)
 //  Datum path   Contents type                                                       Supply pack name                        Container name                                          Cost
-PACK(water,      /obj/item/weapon/reagent_containers/chem_disp_cartridge/water,      "Reagent refill - Water",               "water reagent cartridge crate",                         15)
-PACK(sugar,      /obj/item/weapon/reagent_containers/chem_disp_cartridge/sugar,      "Reagent refill - Sugar",               "sugar reagent cartridge crate",                         15)
-PACK(ice,        /obj/item/weapon/reagent_containers/chem_disp_cartridge/ice,        "Reagent refill - Ice",                 "ice reagent cartridge crate",                           15)
-PACK(tea,        /obj/item/weapon/reagent_containers/chem_disp_cartridge/tea,        "Reagent refill - Tea",                 "tea reagent cartridge crate",                           15)
-PACK(icetea,     /obj/item/weapon/reagent_containers/chem_disp_cartridge/icetea,     "Reagent refill - Iced Tea",            "iced tea reagent cartridge crate",                      15)
-PACK(cola,       /obj/item/weapon/reagent_containers/chem_disp_cartridge/cola,       "Reagent refill - Space Cola",          "\improper Space Cola reagent cartridge crate",          15)
-PACK(smw,        /obj/item/weapon/reagent_containers/chem_disp_cartridge/smw,        "Reagent refill - Space Mountain Wind", "\improper Space Mountain Wind reagent cartridge crate", 15)
-PACK(dr_gibb,    /obj/item/weapon/reagent_containers/chem_disp_cartridge/dr_gibb,    "Reagent refill - Dr. Gibb",            "\improper Dr. Gibb reagent cartridge crate",            15)
-PACK(spaceup,    /obj/item/weapon/reagent_containers/chem_disp_cartridge/spaceup,    "Reagent refill - Space-Up",            "\improper Space-Up reagent cartridge crate",            15)
-PACK(tonic,      /obj/item/weapon/reagent_containers/chem_disp_cartridge/tonic,      "Reagent refill - Tonic Water",         "tonic water reagent cartridge crate",                   15)
-PACK(sodawater,  /obj/item/weapon/reagent_containers/chem_disp_cartridge/sodawater,  "Reagent refill - Soda Water",          "soda water reagent cartridge crate",                    15)
-PACK(lemon_lime, /obj/item/weapon/reagent_containers/chem_disp_cartridge/lemon_lime, "Reagent refill - Lemon-Lime Juice",    "lemon-lime juice reagent cartridge crate",              15)
-PACK(orange,     /obj/item/weapon/reagent_containers/chem_disp_cartridge/orange,     "Reagent refill - Orange Juice",        "orange juice reagent cartridge crate",                  15)
-PACK(lime,       /obj/item/weapon/reagent_containers/chem_disp_cartridge/lime,       "Reagent refill - Lime Juice",          "lime juice reagent cartridge crate",                    15)
-PACK(watermelon, /obj/item/weapon/reagent_containers/chem_disp_cartridge/watermelon, "Reagent refill - Watermelon Juice",    "watermelon juice reagent cartridge crate",              15)
-PACK(coffee,     /obj/item/weapon/reagent_containers/chem_disp_cartridge/coffee,     "Reagent refill - Coffee",              "coffee reagent cartridge crate",                        15)
-PACK(cafe_latte, /obj/item/weapon/reagent_containers/chem_disp_cartridge/cafe_latte, "Reagent refill - Cafe Latte",          "cafe latte reagent cartridge crate",                    15)
-PACK(soy_latte,  /obj/item/weapon/reagent_containers/chem_disp_cartridge/soy_latte,  "Reagent refill - Soy Latte",           "soy latte reagent cartridge crate",                     15)
-PACK(hot_coco,   /obj/item/weapon/reagent_containers/chem_disp_cartridge/hot_coco,   "Reagent refill - Hot Coco",            "hot coco reagent cartridge crate",                      15)
-PACK(milk,       /obj/item/weapon/reagent_containers/chem_disp_cartridge/milk,       "Reagent refill - Milk",                "milk reagent cartridge crate",                          15)
-PACK(cream,      /obj/item/weapon/reagent_containers/chem_disp_cartridge/cream,      "Reagent refill - Cream",               "cream reagent cartridge crate",                         15)
+PACK(water,      /obj/item/reagent_containers/chem_disp_cartridge/water,      "Reagent refill - Water",               "water reagent cartridge crate",                         15)
+PACK(sugar,      /obj/item/reagent_containers/chem_disp_cartridge/sugar,      "Reagent refill - Sugar",               "sugar reagent cartridge crate",                         15)
+PACK(ice,        /obj/item/reagent_containers/chem_disp_cartridge/ice,        "Reagent refill - Ice",                 "ice reagent cartridge crate",                           15)
+PACK(tea,        /obj/item/reagent_containers/chem_disp_cartridge/tea,        "Reagent refill - Tea",                 "tea reagent cartridge crate",                           15)
+PACK(icetea,     /obj/item/reagent_containers/chem_disp_cartridge/icetea,     "Reagent refill - Iced Tea",            "iced tea reagent cartridge crate",                      15)
+PACK(cola,       /obj/item/reagent_containers/chem_disp_cartridge/cola,       "Reagent refill - Space Cola",          "\improper Space Cola reagent cartridge crate",          15)
+PACK(smw,        /obj/item/reagent_containers/chem_disp_cartridge/smw,        "Reagent refill - Space Mountain Wind", "\improper Space Mountain Wind reagent cartridge crate", 15)
+PACK(dr_gibb,    /obj/item/reagent_containers/chem_disp_cartridge/dr_gibb,    "Reagent refill - Dr. Gibb",            "\improper Dr. Gibb reagent cartridge crate",            15)
+PACK(spaceup,    /obj/item/reagent_containers/chem_disp_cartridge/spaceup,    "Reagent refill - Space-Up",            "\improper Space-Up reagent cartridge crate",            15)
+PACK(tonic,      /obj/item/reagent_containers/chem_disp_cartridge/tonic,      "Reagent refill - Tonic Water",         "tonic water reagent cartridge crate",                   15)
+PACK(sodawater,  /obj/item/reagent_containers/chem_disp_cartridge/sodawater,  "Reagent refill - Soda Water",          "soda water reagent cartridge crate",                    15)
+PACK(lemon_lime, /obj/item/reagent_containers/chem_disp_cartridge/lemon_lime, "Reagent refill - Lemon-Lime Juice",    "lemon-lime juice reagent cartridge crate",              15)
+PACK(orange,     /obj/item/reagent_containers/chem_disp_cartridge/orange,     "Reagent refill - Orange Juice",        "orange juice reagent cartridge crate",                  15)
+PACK(lime,       /obj/item/reagent_containers/chem_disp_cartridge/lime,       "Reagent refill - Lime Juice",          "lime juice reagent cartridge crate",                    15)
+PACK(watermelon, /obj/item/reagent_containers/chem_disp_cartridge/watermelon, "Reagent refill - Watermelon Juice",    "watermelon juice reagent cartridge crate",              15)
+PACK(coffee,     /obj/item/reagent_containers/chem_disp_cartridge/coffee,     "Reagent refill - Coffee",              "coffee reagent cartridge crate",                        15)
+PACK(cafe_latte, /obj/item/reagent_containers/chem_disp_cartridge/cafe_latte, "Reagent refill - Cafe Latte",          "cafe latte reagent cartridge crate",                    15)
+PACK(soy_latte,  /obj/item/reagent_containers/chem_disp_cartridge/soy_latte,  "Reagent refill - Soy Latte",           "soy latte reagent cartridge crate",                     15)
+PACK(hot_coco,   /obj/item/reagent_containers/chem_disp_cartridge/hot_coco,   "Reagent refill - Hot Coco",            "hot coco reagent cartridge crate",                      15)
+PACK(milk,       /obj/item/reagent_containers/chem_disp_cartridge/milk,       "Reagent refill - Milk",                "milk reagent cartridge crate",                          15)
+PACK(cream,      /obj/item/reagent_containers/chem_disp_cartridge/cream,      "Reagent refill - Cream",               "cream reagent cartridge crate",                         15)

@@ -86,6 +86,8 @@
 	handle_warfare_death()
 	GLOB.total_deaths++
 	handle_hud_list()
+	if(prob(1))
+		sound_to(src, sound('sound/effects/death.ogg', volume = 50))
 
 /mob/living/carbon/human/proc/ChangeToHusk()
 	if(HUSK in mutations)	return

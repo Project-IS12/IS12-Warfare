@@ -12,7 +12,7 @@
 	use_power = 0
 	atom_flags = ATOM_FLAG_CHECKS_BORDER
 	opacity = 0
-	var/obj/item/weapon/airlock_electronics/electronics = null
+	var/obj/item/airlock_electronics/electronics = null
 	explosion_resistance = 5
 	air_properties_vary_with_direction = 1
 
@@ -31,12 +31,12 @@
 		icon_state = "[base_state]open"
 
 /obj/machinery/door/window/proc/shatter(var/display_message = 1)
-	new /obj/item/weapon/material/shard(src.loc)
+	new /obj/item/material/shard(src.loc)
 	var/obj/item/stack/cable_coil/CC = new /obj/item/stack/cable_coil(src.loc)
 	CC.amount = 2
-	var/obj/item/weapon/airlock_electronics/ae
+	var/obj/item/airlock_electronics/ae
 	if(!electronics)
-		ae = new/obj/item/weapon/airlock_electronics( src.loc )
+		ae = new/obj/item/airlock_electronics( src.loc )
 		if(!src.req_access)
 			src.check_access()
 		if(src.req_access.len)
@@ -182,7 +182,7 @@
 			open()
 	..()
 
-/obj/machinery/door/window/attackby(obj/item/weapon/I as obj, mob/user as mob)
+/obj/machinery/door/window/attackby(obj/item/I as obj, mob/user as mob)
 
 	//If it's in the process of opening/closing, ignore the click
 	if (src.operating == 1)
@@ -207,9 +207,9 @@
 			wa.state = "02"
 			wa.update_icon()
 
-			var/obj/item/weapon/airlock_electronics/ae
+			var/obj/item/airlock_electronics/ae
 			if(!electronics)
-				ae = new/obj/item/weapon/airlock_electronics( src.loc )
+				ae = new/obj/item/airlock_electronics( src.loc )
 				if(!src.req_access)
 					src.check_access()
 				if(src.req_access.len)
@@ -228,7 +228,7 @@
 			return
 
 	//If it's a weapon, smash windoor. Unless it's an id card, agent card, ect.. then ignore it (Cards really shouldnt damage a door anyway)
-	if(src.density && istype(I, /obj/item/weapon) && !istype(I, /obj/item/weapon/card))
+	if(src.density && istype(I, /obj/item) && !istype(I, /obj/item/card))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		var/aforce = I.force
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)

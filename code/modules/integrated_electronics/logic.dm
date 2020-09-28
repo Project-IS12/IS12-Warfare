@@ -270,8 +270,8 @@
 		if("unlock")
 			if(!locked)
 				return FALSE
-			var/obj/item/weapon/card/id/I = usr.GetIdCard()
-			if(!istype(I, /obj/item/weapon/card/id))
+			var/obj/item/card/id/I = usr.GetIdCard()
+			if(!istype(I, /obj/item/card/id))
 				to_chat(usr, "<span class='warning'>\The [src] flashes a yellow LED near the ID scanner. Did you misplace your ID?</span>")
 				return FALSE
 			locked = FALSE

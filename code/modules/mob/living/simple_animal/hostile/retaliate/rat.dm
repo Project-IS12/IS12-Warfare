@@ -11,7 +11,7 @@
 	response_help = "pets the"
 	response_disarm = "pushes aside"
 	response_harm = "kicks"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/rat_meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/rat_meat
 	meat_amount = 3
 	speed = 4
 	maxHealth = 10

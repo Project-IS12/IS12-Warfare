@@ -1,6 +1,6 @@
 // The lighting system
 //
-// consists of light fixtures (/obj/machinery/light) and light tube/bulb items (/obj/item/weapon/light)
+// consists of light fixtures (/obj/machinery/light) and light tube/bulb items (/obj/item/light)
 
 
 // status values shared between lighting fixtures and items
@@ -56,7 +56,7 @@
 		if(1) to_chat(user, "It's an empty frame.")
 		if(2) to_chat(user, "It's wired.")
 		if(3) to_chat(user, "The casing is closed.")
-/obj/machinery/light_construct/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/light_construct/attackby(obj/item/W as obj, mob/user as mob)
 	src.add_fingerprint(user)
 	if(isWrench(W))
 		if (src.stage == 1)
@@ -148,12 +148,12 @@
 
 	var/on = 0					// 1 if on, 0 if off
 	var/flickering = 0
-	var/light_type = /obj/item/weapon/light/tube		// the type of light item
+	var/light_type = /obj/item/light/tube		// the type of light item
 	var/construct_type = /obj/machinery/light_construct
 
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 
-	var/obj/item/weapon/light/lightbulb
+	var/obj/item/light/lightbulb
 
 	var/current_mode = null
 
@@ -162,21 +162,21 @@
 	icon_state = "bulb1"
 	base_state = "bulb"
 	desc = "A small lighting fixture."
-	light_type = /obj/item/weapon/light/bulb
+	light_type = /obj/item/light/bulb
 	construct_type = /obj/machinery/light_construct/small
 	idle_power_usage = 1
 	active_power_usage = 10
 
 /obj/machinery/light/small/emergency
-	light_type = /obj/item/weapon/light/bulb/red
+	light_type = /obj/item/light/bulb/red
 
 /obj/machinery/light/small/red
-	light_type = /obj/item/weapon/light/bulb/red
+	light_type = /obj/item/light/bulb/red
 
 /obj/machinery/light/spot
 	name = "spotlight"
 	desc = "A more robust socket for light tubes that demand more power."
-	light_type = /obj/item/weapon/light/tube/large
+	light_type = /obj/item/light/tube/large
 
 // create a new lighting fixture
 /obj/machinery/light/New(atom/newloc, obj/machinery/light_construct/construct = null)
@@ -294,12 +294,12 @@
 			to_chat(user, "[desc] The [fitting] has been smashed.")
 
 /obj/machinery/light/proc/get_fitting_name()
-	var/obj/item/weapon/light/L = light_type
+	var/obj/item/light/L = light_type
 	return initial(L.name)
 
 // attack with item - insert light (if right type), otherwise try to break the light
 
-/obj/machinery/light/proc/insert_bulb(obj/item/weapon/light/L)
+/obj/machinery/light/proc/insert_bulb(obj/item/light/L)
 	L.forceMove(src)
 	lightbulb = L
 
@@ -324,7 +324,7 @@
 			return
 
 	// attempt to insert light
-	if(istype(W, /obj/item/weapon/light))
+	if(istype(W, /obj/item/light))
 		if(lightbulb)
 			to_chat(user, "There is a [get_fitting_name()] already inserted.")
 			return
@@ -355,7 +355,7 @@
 
 	// attempt to stick weapon into light socket
 	else if(!lightbulb)
-		if(istype(W, /obj/item/weapon/screwdriver)) //If it's a screwdriver open it.
+		if(istype(W, /obj/item/screwdriver)) //If it's a screwdriver open it.
 			playsound(src.loc, 'sound/items/Screwdriver.ogg', 75, 1)
 			user.visible_message("[user.name] opens [src]'s casing.", "You open [src]'s casing.", "You hear a noise.")
 			new construct_type(src.loc, src.dir, src)
@@ -515,7 +515,7 @@
 		return
 
 /obj/machinery/light/small/readylight
-	light_type = /obj/item/weapon/light/bulb/red/readylight
+	light_type = /obj/item/light/bulb/red/readylight
 	var/state = 0
 
 /obj/machinery/light/small/readylight/proc/set_state(var/new_state)
@@ -529,7 +529,7 @@
 // can be tube or bulb subtypes
 // will fit into empty /obj/machinery/light of the corresponding type
 
-/obj/item/weapon/light
+/obj/item/light
 	icon = 'icons/obj/lighting.dmi'
 	force = 2
 	throwforce = 5
@@ -547,7 +547,7 @@
 	var/list/lighting_modes = list()
 	var/sound_on
 
-/obj/item/weapon/light/tube
+/obj/item/light/tube
 	name = "light tube"
 	desc = "A replacement light tube."
 	icon_state = "ltube"
@@ -563,13 +563,13 @@
 		)
 	sound_on = 'sound/machines/lightson.ogg'
 
-/obj/item/weapon/light/tube/large
+/obj/item/light/tube/large
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
 	brightness_range = 9
 	brightness_power = 6
 
-/obj/item/weapon/light/bulb
+/obj/item/light/bulb
 	name = "light bulb"
 	desc = "A replacement light bulb."
 	icon_state = "lbulb"
@@ -585,22 +585,22 @@
 		LIGHTMODE_EMERGENCY = list(l_range = 3, l_power = 1, l_color = "#da0205"),
 		)
 
-/obj/item/weapon/light/bulb/red
+/obj/item/light/bulb/red
 	color = "#da0205"
 	brightness_color = "#da0205"
 
-/obj/item/weapon/light/bulb/red/readylight
+/obj/item/light/bulb/red/readylight
 	brightness_range = 5
 	brightness_power = 2
 	lighting_modes = list(
 		LIGHTMODE_READY = list(l_range = 5, l_power = 1, l_color = "#00ff00"),
 		)
 
-/obj/item/weapon/light/throw_impact(atom/hit_atom)
+/obj/item/light/throw_impact(atom/hit_atom)
 	..()
 	shatter()
 
-/obj/item/weapon/light/bulb/fire
+/obj/item/light/bulb/fire
 	name = "fire bulb"
 	desc = "A replacement fire bulb."
 	icon_state = "fbulb"
@@ -611,7 +611,7 @@
 	brightness_power = 4
 
 // update the icon state and description of the light
-/obj/item/weapon/light/update_icon()
+/obj/item/light/update_icon()
 	switch(status)
 		if(LIGHT_OK)
 			icon_state = base_state
@@ -623,16 +623,16 @@
 			icon_state = "[base_state]-broken"
 			desc = "A broken [name]."
 
-/obj/item/weapon/light/New(atom/newloc, obj/machinery/light/fixture = null)
+/obj/item/light/New(atom/newloc, obj/machinery/light/fixture = null)
 	..()
 	update_icon()
 
 // attack bulb/tube with object
 // if a syringe, can inject phoron to make it explode
-/obj/item/weapon/light/attackby(var/obj/item/I, var/mob/user)
+/obj/item/light/attackby(var/obj/item/I, var/mob/user)
 	..()
-	if(istype(I, /obj/item/weapon/reagent_containers/syringe))
-		var/obj/item/weapon/reagent_containers/syringe/S = I
+	if(istype(I, /obj/item/reagent_containers/syringe))
+		var/obj/item/reagent_containers/syringe/S = I
 
 		to_chat(user, "You inject the solution into the [src].")
 
@@ -652,7 +652,7 @@
 // shatter light, unless it was an attempt to put it in a light socket
 // now only shatter if the intent was harm
 
-/obj/item/weapon/light/afterattack(atom/target, mob/user, proximity)
+/obj/item/light/afterattack(atom/target, mob/user, proximity)
 	if(!proximity) return
 	if(istype(target, /obj/machinery/light))
 		return
@@ -661,7 +661,7 @@
 
 	shatter()
 
-/obj/item/weapon/light/proc/shatter()
+/obj/item/light/proc/shatter()
 	if(status == LIGHT_OK || status == LIGHT_BURNED)
 		src.visible_message("<span class='warning'>[name] shatters.</span>","<span class='warning'>You hear a small glass object shatter.</span>")
 		status = LIGHT_BROKEN
@@ -670,7 +670,7 @@
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
 		update_icon()
 
-/obj/item/weapon/light/proc/switch_on()
+/obj/item/light/proc/switch_on()
 	switchcount++
 	if(rigged)
 		log_admin("LOG: Rigged light explosion, last touched by [fingerprintslast]")

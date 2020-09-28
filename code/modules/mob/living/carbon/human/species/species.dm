@@ -86,7 +86,7 @@
 	var/vision_flags = SEE_SELF|SEE_BLACKNESS // Same flags as glasses.
 
 	// Death vars.
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 	var/remains_type = /obj/item/remains/xeno
 	var/gibbed_anim = "gibbed-h"
 	var/dusted_anim = "dust-h"
@@ -251,12 +251,12 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	return sanitizeName(name)
 
 /datum/species/proc/equip_survival_gear(var/mob/living/carbon/human/H,var/extendedtank = 1)
-	if(istype(H.get_equipped_item(slot_back), /obj/item/weapon/storage/backpack))
-		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H.back), slot_in_backpack)
-		else	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
+	if(istype(H.get_equipped_item(slot_back), /obj/item/storage/backpack))
+		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/storage/box/engineer(H.back), slot_in_backpack)
+		else	H.equip_to_slot_or_del(new /obj/item/storage/box/survival(H.back), slot_in_backpack)
 	else
-		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H), slot_r_hand)
-		else	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
+		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/storage/box/engineer(H), slot_r_hand)
+		else	H.equip_to_slot_or_del(new /obj/item/storage/box/survival(H), slot_r_hand)
 
 /datum/species/proc/create_organs(var/mob/living/carbon/human/H) //Handles creation of mob organs.
 
@@ -493,7 +493,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	var/list/holding = list(target.get_active_hand() = 40, target.get_inactive_hand() = 20)
 
 	//See if they have any guns that might go off
-	for(var/obj/item/weapon/gun/W in holding)
+	for(var/obj/item/gun/W in holding)
 		if(W && prob(holding[W]))
 			var/list/turfs = list()
 			for(var/turf/T in view())

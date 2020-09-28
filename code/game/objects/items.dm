@@ -137,8 +137,8 @@
 	var/obj/item/I = get_active_hand()
 	if(!I)
 		return
-	if(istype(I, /obj/item/weapon/gun))
-		var/obj/item/weapon/gun/G = I
+	if(istype(I, /obj/item/gun))
+		var/obj/item/gun/G = I
 		G.toggle_safety(src)
 
 /mob/proc/do_wield()//The proc we actually care about.
@@ -171,7 +171,7 @@
 	user.visible_message("<span class='warning'>[user] lets go of their other hand.")
 	if(unwieldsound)
 		playsound(loc, unwieldsound, 50, 1)
-	var/obj/item/weapon/twohanded/offhand/O = user.get_inactive_hand()
+	var/obj/item/twohanded/offhand/O = user.get_inactive_hand()
 	if(O && istype(O))
 		user.drop_from_inventory(O)
 	return
@@ -198,7 +198,7 @@
 	user.visible_message("<span class='warning'>[user] grabs the [initial(name)] with both hands.")
 	if(wieldsound)
 		playsound(loc, wieldsound, 50, 1)
-	var/obj/item/weapon/twohanded/offhand/O = new(user) ////Let's reserve his other hand~
+	var/obj/item/twohanded/offhand/O = new(user) ////Let's reserve his other hand~
 	O.name = "[name] - offhand"
 	O.desc = "Your second grip on the [name]"
 	O.weight = 0
@@ -251,7 +251,7 @@
 	return FALSE
 
 
-/obj/item/weapon/twohanded/offhand
+/obj/item/twohanded/offhand
 	name = "offhand"
 	icon_state = "offhand"
 	w_class = ITEM_SIZE_NO_CONTAINER
@@ -259,7 +259,7 @@
 	item_flags = ITEM_FLAG_ABSTRACT
 
 
-/obj/item/weapon/twohanded/offhand/RightClick(mob/user)
+/obj/item/twohanded/offhand/RightClick(mob/user)
 	var/obj/item/I = user.get_active_hand()
 	var/obj/item/II = user.get_inactive_hand()
 	if(I)
@@ -272,21 +272,21 @@
 		qdel(src)
 
 
-/obj/item/weapon/twohanded/offhand/unwield()
+/obj/item/twohanded/offhand/unwield()
 	//if(wielded)//Only delete if we're wielded
 	wielded = FALSE
 	loc = null
 	if(!QDELETED(src))
 		qdel(src)
 
-/obj/item/weapon/twohanded/offhand/wield()
+/obj/item/twohanded/offhand/wield()
 	if(wielded)//Only delete if we're wielded
 		wielded = FALSE
 		loc = null
 		if(!QDELETED(src))
 			qdel(src)
 
-/obj/item/weapon/twohanded/offhand/dropped(mob/user)
+/obj/item/twohanded/offhand/dropped(mob/user)
 	..()
 	var/obj/item/I = user.get_active_hand()
 	var/obj/item/II = user.get_inactive_hand()
@@ -354,9 +354,12 @@
 		if(!temp)
 			to_chat(user, "<span class='notice'>You try to use your hand, but realize it is no longer attached!</span>")
 			return
+
+	var/old_loc = src.loc
+
 	src.pickup(user)
-	if (istype(src.loc, /obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = src.loc
+	if (istype(src.loc, /obj/item/storage))
+		var/obj/item/storage/S = src.loc
 		S.remove_from_storage(src)
 
 	src.throwing = 0
@@ -367,6 +370,9 @@
 		if(isliving(src.loc))
 			return
 	if(user.put_in_active_hand(src))
+		if (isturf(old_loc))
+			var/obj/effect/temporary/item_pickup_ghost/ghost = new(old_loc, src)
+			ghost.animate_towards(user)
 		if(randpixel)
 			pixel_x = rand(-randpixel, randpixel)
 			pixel_y = rand(-randpixel/2, randpixel/2)
@@ -377,7 +383,7 @@
 	return
 
 /obj/item/attack_ai(mob/user as mob)
-	if (istype(src.loc, /obj/item/weapon/robot_module))
+	if (istype(src.loc, /obj/item/robot_module))
 		//If the item is part of a cyborg module, equip it
 		if(!isrobot(user))
 			return
@@ -385,9 +391,9 @@
 		R.activate_module(src)
 		R.hud_used.update_robot_modules_display()
 
-/obj/item/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = W
+/obj/item/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/storage))
+		var/obj/item/storage/S = W
 		if(S.use_to_pickup)
 			if(S.collection_mode) //Mode is set to collect all items
 				if(isturf(src.loc))
@@ -426,11 +432,11 @@
 	return
 
 // called when this item is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
-/obj/item/proc/on_exit_storage(obj/item/weapon/storage/S as obj)
+/obj/item/proc/on_exit_storage(obj/item/storage/S as obj)
 	return
 
 // called when this item is added into a storage item, which is passed on as S. The loc variable is already set to the storage item.
-/obj/item/proc/on_enter_storage(obj/item/weapon/storage/S as obj)
+/obj/item/proc/on_enter_storage(obj/item/storage/S as obj)
 	return
 
 // called when "found" in pockets and storage items. Returns 1 if the search should end.
@@ -555,16 +561,16 @@ var/list/global/slot_flags_enumeration = list(
 				if(!disable_warning)
 					to_chat(usr, "<span class='warning'>You somehow have a suit with no defined allowed items for suit storage, stop that.</span>")
 				return 0
-			if( !(istype(src, /obj/item/device/pda) || istype(src, /obj/item/weapon/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
+			if( !(istype(src, /obj/item/device/pda) || istype(src, /obj/item/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
 				return 0
 		*/
 		if(slot_handcuffed)
-			if(!istype(src, /obj/item/weapon/handcuffs))
+			if(!istype(src, /obj/item/handcuffs))
 				return 0
 		if(slot_in_backpack) //used entirely for equipping spawned mobs or at round start
 			var/allow = 0
-			if(H.back && istype(H.back, /obj/item/weapon/storage/backpack))
-				var/obj/item/weapon/storage/backpack/B = H.back
+			if(H.back && istype(H.back, /obj/item/storage/backpack))
+				var/obj/item/storage/backpack/B = H.back
 				if(B.can_be_inserted(src,M,1))
 					allow = 1
 			if(!allow)
@@ -719,7 +725,7 @@ var/list/global/slot_flags_enumeration = list(
 	if (!..())
 		return 0
 
-	if(istype(src, /obj/item/weapon/melee/energy))
+	if(istype(src, /obj/item/melee/energy))
 		return
 
 	//if we haven't made our blood_overlay already

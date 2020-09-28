@@ -23,7 +23,7 @@
 	else
 		to_chat(user, "Error, no route to host.")
 
-/obj/machinery/button/remote/attackby(obj/item/weapon/W, mob/user as mob)
+/obj/machinery/button/remote/attackby(obj/item/W, mob/user as mob)
 	return src.attack_hand(user)
 
 /obj/machinery/button/remote/emag_act(var/remaining_charges, var/mob/user)
@@ -187,8 +187,8 @@
 	desc = null
 	icon_state = "id_swap"
 
-/obj/machinery/button/remote/blast_door/id_scan/attackby(obj/item/weapon/W, mob/user)
-	if(istype(W, /obj/item/weapon/card/id))
+/obj/machinery/button/remote/blast_door/id_scan/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/card/id))
 		if(allowed(usr))
 			if(stat & (NOPOWER|BROKEN))
 				return

@@ -4,10 +4,10 @@
 	selection_color = "#b27676"
 
 	equip(var/mob/living/carbon/human/H)
-		..()
-		H.add_stats(rand(6,10), rand(6,10), rand(6,10))
 		H.warfare_faction = RED_TEAM
+		..()
 		SSwarfare.red.team += H
+		H.add_stats(rand(6,10), rand(6,10), rand(6,10))
 		H.warfare_language_shit(LANGUAGE_RED)
 		H.assign_random_quirk()
 
@@ -24,9 +24,9 @@
 		H.add_skills(rand(4,6), rand(0,2), 0, rand(0,3))
 
 /decl/hierarchy/outfit/job/service/chef/red
-	back = /obj/item/weapon/storage/backpack/satchel
+	back = /obj/item/storage/backpack/satchel
 	l_ear = /obj/item/device/radio/headset/syndicate
-	neck = /obj/item/weapon/reagent_containers/food/drinks/canteen
+	neck = /obj/item/reagent_containers/food/drinks/canteen
 
 
 /datum/job/fortress/red/practitioner
@@ -51,20 +51,19 @@
 		..()
 		H.set_trait(new/datum/trait/death_tolerant())
 		H.add_stats(rand(8,11), rand(5,8), rand(5,7), rand(10,14))
+		H.fully_replace_character_name("Prac. [H.real_name]")
 		H.say(";Practitioner reporting for duty!")
 
 /decl/hierarchy/outfit/job/medical/doctor/red
-	//uniform = /obj/item/clothing/under/red_uniform
-	back = /obj/item/weapon/storage/backpack/satchel/warfare
+	uniform = /obj/item/clothing/under/red_uniform
+	back = /obj/item/storage/backpack/satchel/warfare
 	gloves = /obj/item/clothing/gloves/prac_gloves
 	suit = /obj/item/clothing/suit/prac_arpon
 	mask = /obj/item/clothing/mask/gas/prac_mask
 	shoes = /obj/item/clothing/shoes/prac_boots
-	//head = /obj/item/clothing/head/prac_cap
 	l_ear = /obj/item/device/radio/headset/syndicate
-	neck = /obj/item/weapon/reagent_containers/food/drinks/canteen
-	belt = /obj/item/weapon/storage/belt/medical/full
+	neck = /obj/item/reagent_containers/food/drinks/canteen
+	belt = /obj/item/storage/belt/medical/full
 	pda_type = null
-	id_type = /obj/item/weapon/card/id/dog_tag/red
-	backpack_contents = list(/obj/item/ammo_magazine/handful/revolver = 1, /obj/item/weapon/gun/projectile/revolver/cpt = 1)
-	//backpack_contents = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/blood = 1, /obj/item/weapon/reagent_containers/hypospray/autoinjector/revive = 2, /obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2, /obj/item/weapon/suture = 1, /obj/item/weapon/wirecutters = 1)
+	id_type = /obj/item/card/id/dog_tag/red
+	backpack_contents = list(/obj/item/ammo_magazine/handful/revolver = 1, /obj/item/gun/projectile/revolver = 1)

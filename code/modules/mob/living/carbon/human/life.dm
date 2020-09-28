@@ -1141,7 +1141,7 @@
 		var/image/holder = hud_list[ID_HUD]
 		holder.icon_state = "hudunknown"
 		if(wear_id)
-			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
+			var/obj/item/card/id/I = wear_id.GetIdCard()
 			if(I)
 				var/datum/job/J = SSjobs.GetJob(I.GetJobName())
 				if(J)
@@ -1154,7 +1154,7 @@
 		holder.icon_state = "hudblank"
 		var/perpname = name
 		if(wear_id)
-			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
+			var/obj/item/card/id/I = wear_id.GetIdCard()
 			if(I)
 				perpname = I.registered_name
 
@@ -1183,13 +1183,13 @@
 		holder2.icon_state = "hudblank"
 		holder3.icon_state = "hudblank"
 
-		for(var/obj/item/weapon/implant/I in src)
+		for(var/obj/item/implant/I in src)
 			if(I.implanted)
-				if(istype(I,/obj/item/weapon/implant/tracking))
+				if(istype(I,/obj/item/implant/tracking))
 					holder1.icon_state = "hud_imp_tracking"
-				if(istype(I,/obj/item/weapon/implant/loyalty))
+				if(istype(I,/obj/item/implant/loyalty))
 					holder2.icon_state = "hud_imp_loyal"
-				if(istype(I,/obj/item/weapon/implant/chem))
+				if(istype(I,/obj/item/implant/chem))
 					holder3.icon_state = "hud_imp_chem"
 
 		hud_list[IMPTRACK_HUD] = holder1
@@ -1346,8 +1346,8 @@
 			if(prob(50))
 				vomit()
 
-	for(var/obj/item/weapon/reagent_containers/food/snacks/poo/P in range(5, src))
-		if(istype(P.loc, /obj/machinery/disposal) || istype(P.loc, /obj/item/weapon/storage/bag))
+	for(var/obj/item/reagent_containers/food/snacks/poo/P in range(5, src))
+		if(istype(P.loc, /obj/machinery/disposal) || istype(P.loc, /obj/item/storage/bag))
 			return
 
 		if(prob(1))

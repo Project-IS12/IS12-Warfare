@@ -14,18 +14,18 @@
 	..()
 	sleep(2)
 	if(prob(50))
-		new /obj/item/weapon/storage/backpack/industrial(src)
+		new /obj/item/storage/backpack/industrial(src)
 	else
-		new /obj/item/weapon/storage/backpack/satchel/satchel_eng(src)
+		new /obj/item/storage/backpack/satchel/satchel_eng(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/under/rank/miner(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/shoes/black(src)
 	new /obj/item/device/analyzer(src)
-	new /obj/item/weapon/storage/ore(src)
+	new /obj/item/storage/ore(src)
 	new /obj/item/device/flashlight/lantern(src)
-	new /obj/item/weapon/shovel(src)
-	new /obj/item/weapon/pickaxe(src)
+	new /obj/item/shovel(src)
+	new /obj/item/pickaxe(src)
 	new /obj/item/clothing/glasses/meson(src)
 
 /******************************Lantern*******************************/
@@ -38,7 +38,7 @@
 
 /*****************************Pickaxe********************************/
 
-/obj/item/weapon/pickaxe
+/obj/item/pickaxe
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	name = "pickaxe"
 	desc = "It's a pickaxe. You hit rocks with it. And people with it too if you feel like."
@@ -61,12 +61,12 @@
 
 	var/excavation_amount = 200
 
-/obj/item/weapon/pickaxe/hammer
+/obj/item/pickaxe/hammer
 	name = "sledgehammer"
 	//icon_state = "sledgehammer" Waiting on sprite
 	desc = "A mining hammer made of reinforced metal. You feel like smashing your boss in the face with this."
 
-/obj/item/weapon/pickaxe/silver
+/obj/item/pickaxe/silver
 	name = "silver pickaxe"
 	icon_state = "spickaxe"
 	item_state = "spickaxe"
@@ -74,7 +74,7 @@
 	origin_tech = list(TECH_MATERIAL = 3)
 	desc = "This makes no metallurgic sense."
 
-/obj/item/weapon/pickaxe/drill
+/obj/item/pickaxe/drill
 	name = "advanced mining drill" // Can dig sand as well!
 	icon_state = "handdrill"
 	item_state = "jackhammer"
@@ -83,7 +83,7 @@
 	desc = "Yours is the drill that will pierce through the rock walls."
 	drill_verb = "drilling"
 
-/obj/item/weapon/pickaxe/jackhammer
+/obj/item/pickaxe/jackhammer
 	name = "sonic jackhammer"
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
@@ -92,7 +92,7 @@
 	desc = "Cracks rocks with sonic blasts, perfect for killing cave lizards."
 	drill_verb = "hammering"
 
-/obj/item/weapon/pickaxe/gold
+/obj/item/pickaxe/gold
 	name = "golden pickaxe"
 	icon_state = "gpickaxe"
 	item_state = "gpickaxe"
@@ -101,7 +101,7 @@
 	desc = "This makes no metallurgic sense."
 	drill_verb = "picking"
 
-/obj/item/weapon/pickaxe/diamond
+/obj/item/pickaxe/diamond
 	name = "diamond pickaxe"
 	icon_state = "dpickaxe"
 	item_state = "dpickaxe"
@@ -110,7 +110,7 @@
 	desc = "A pickaxe with a diamond pick head."
 	drill_verb = "picking"
 
-/obj/item/weapon/pickaxe/diamonddrill //When people ask about the badass leader of the mining tools, they are talking about ME!
+/obj/item/pickaxe/diamonddrill //When people ask about the badass leader of the mining tools, they are talking about ME!
 	name = "diamond mining drill"
 	icon_state = "diamonddrill"
 	item_state = "jackhammer"
@@ -119,7 +119,7 @@
 	desc = "Yours is the drill that will pierce the heavens!"
 	drill_verb = "drilling"
 
-/obj/item/weapon/pickaxe/borgdrill
+/obj/item/pickaxe/borgdrill
 	name = "cyborg mining drill"
 	icon_state = "diamonddrill"
 	item_state = "jackhammer"
@@ -129,7 +129,7 @@
 
 /*****************************Shovel********************************/
 
-/obj/item/weapon/shovel
+/obj/item/shovel
 	name = "shovel"
 	desc = "A large tool for digging and moving dirt."
 	icon = 'icons/obj/tools.dmi'
@@ -147,7 +147,7 @@
 	hitsound = "shovel_hit"
 	drop_sound = 'sound/items/shovel_drop.ogg'
 
-/obj/item/weapon/shovel/spade
+/obj/item/shovel/spade
 	name = "spade"
 	desc = "A small tool for digging and moving dirt."
 	icon_state = "spade"
@@ -269,12 +269,12 @@
 
 /**************************Plasma Cutter*****************************/
 
-/obj/item/weapon/gun/energy/plasmacutter/mounted
+/obj/item/gun/energy/plasmacutter/mounted
 	name = "mounted plasma cutter"
 	self_recharge = 1
 	use_external_power = 1
 
-/obj/item/weapon/gun/energy/plasmacutter
+/obj/item/gun/energy/plasmacutter
 	name = "plasma cutter"
 	desc = "A mining tool capable of expelling concentrated plasma bursts. You could use it to cut limbs off of xenos! Or, you know, mine stuff."
 	charge_meter = 0

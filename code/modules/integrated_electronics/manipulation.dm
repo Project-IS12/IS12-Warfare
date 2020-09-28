@@ -210,7 +210,7 @@
 	inputs = list("detonation time")
 	outputs = list()
 	activators = list("prime grenade")
-	var/obj/item/weapon/grenade/attached_grenade
+	var/obj/item/grenade/attached_grenade
 	var/pre_attached_grenade_type
 
 /obj/item/integrated_circuit/manipulation/grenade/New()
@@ -225,7 +225,7 @@
 	detach_grenade()
 	. =..()
 
-/obj/item/integrated_circuit/manipulation/grenade/attackby(var/obj/item/weapon/grenade/G, var/mob/user)
+/obj/item/integrated_circuit/manipulation/grenade/attackby(var/obj/item/grenade/G, var/mob/user)
 	if(istype(G))
 		if(attached_grenade)
 			to_chat(user, "<span class='warning'>There is already a grenade attached!</span>")
@@ -253,7 +253,7 @@
 		log_and_message_admins("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]")
 
 // These procs do not relocate the grenade, that's the callers responsibility
-/obj/item/integrated_circuit/manipulation/grenade/proc/attach_grenade(var/obj/item/weapon/grenade/G)
+/obj/item/integrated_circuit/manipulation/grenade/proc/attach_grenade(var/obj/item/grenade/G)
 	attached_grenade = G
 	GLOB.destroyed_event.register(attached_grenade, src, /obj/item/integrated_circuit/manipulation/grenade/proc/detach_grenade)
 	size += G.w_class
@@ -268,7 +268,7 @@
 	desc = initial(desc)
 
 /obj/item/integrated_circuit/manipulation/grenade/frag
-	pre_attached_grenade_type = /obj/item/weapon/grenade/frag
+	pre_attached_grenade_type = /obj/item/grenade/frag
 
 /obj/item/integrated_circuit/manipulation/bluespace_rift
 	name = "bluespace rift generator"
@@ -371,7 +371,7 @@
 
 
 /obj/item/integrated_circuit/manipulation/ai/attackby(var/obj/item/I, var/mob/user)
-	if(is_type_in_list(I, list(/obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi)))
+	if(is_type_in_list(I, list(/obj/item/aicard, /obj/item/device/paicard, /obj/item/device/mmi)))
 		load_ai(user, I)
 	else return ..()
 

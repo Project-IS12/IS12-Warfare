@@ -31,7 +31,7 @@
 	var/weights = 1
 	var/list/qualifiers = list("with ease", "without any trouble", "with great effort")
 
-/obj/structure/fitness/weightlifter/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/fitness/weightlifter/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Deconstruct.ogg', 75, 1)
 		weights = ((weights) % qualifiers.len) + 1

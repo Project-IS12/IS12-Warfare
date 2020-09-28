@@ -9,7 +9,7 @@
 	clickvol = 30
 	var/mob/living/carbon/human/occupant = null
 	var/list/available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Paracetamol" = /datum/reagent/paracetamol, "Dylovene" = /datum/reagent/dylovene, "Dexalin" = /datum/reagent/dexalin)
-	var/obj/item/weapon/reagent_containers/glass/beaker = null
+	var/obj/item/reagent_containers/glass/beaker = null
 	var/filtering = 0
 	var/pump
 	var/list/stasis_settings = list(1, 2, 5)
@@ -21,7 +21,7 @@
 
 /obj/machinery/sleeper/Initialize()
 	. = ..()
-	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
 	update_icon()
 
 /obj/machinery/sleeper/Process()
@@ -132,7 +132,7 @@
 	return attack_hand(user)
 
 /obj/machinery/sleeper/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	if(istype(I, /obj/item/reagent_containers/glass))
 		add_fingerprint(user)
 		if(!beaker)
 			beaker = I

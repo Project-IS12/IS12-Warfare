@@ -273,7 +273,7 @@
 	ui_interact(user)
 
 
-/obj/machinery/power/smes/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/machinery/power/smes/attackby(var/obj/item/W as obj, var/mob/user as mob)
 
 	if(default_deconstruction_screwdriver(user, W))
 		return
@@ -301,7 +301,7 @@
 		return 0
 
 	if(isWelder(W))
-		var/obj/item/weapon/weldingtool/WT = W
+		var/obj/item/weldingtool/WT = W
 		if(!WT.isOn())
 			to_chat(user, "Turn on \the [WT] first!")
 			return 0

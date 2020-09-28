@@ -111,7 +111,7 @@
 	var/a_intent = I_HELP//Living
 	var/defense_intent = I_DODGE//Living. For dodging and parrying.
 	var/m_intent = "run"//Living
-	var/atk_intent = I_DEFENSE//Human
+	var/atk_intent = I_FEINT//Human
 	var/middle_click_intent = null //For doing different things with middle click.
 	var/combat_mode = 0//Living
 	var/using_alt_hud = 0 //For the lunahud.
@@ -119,8 +119,8 @@
 	var/obj/buckled = null//Living
 	var/obj/item/l_hand = null//Living
 	var/obj/item/r_hand = null//Living
-	var/obj/item/weapon/back = null//Human/Monkey
-	var/obj/item/weapon/storage/s_active = null//Carbon
+	var/obj/item/back = null//Human/Monkey
+	var/obj/item/storage/s_active = null//Carbon
 	var/obj/item/clothing/mask/wear_mask = null//Carbon
 	var/age = 30		//Player's age (pure fluff)
 

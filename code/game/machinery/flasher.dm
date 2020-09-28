@@ -46,7 +46,7 @@
 //		src.sd_SetLuminosity(0)
 
 //Don't want to render prison breaks impossible
-/obj/machinery/flasher/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/flasher/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWirecutter(W))
 		add_fingerprint(user, 0, W)
 		src.disable = !src.disable
@@ -116,7 +116,7 @@
 		if ((M.m_intent != "walk") && (src.anchored))
 			src.flash()
 
-/obj/machinery/flasher/portable/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/flasher/portable/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		add_fingerprint(user)
 		src.anchored = !src.anchored

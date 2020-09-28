@@ -81,8 +81,8 @@
 		else
 			to_chat(user, "<span class='warning'>You need one sheet of glass to replace lights.</span>")
 
-	if(istype(W, /obj/item/weapon/light))
-		var/obj/item/weapon/light/L = W
+	if(istype(W, /obj/item/light))
+		var/obj/item/light/L = W
 		if(L.status == 0) // LIGHT OKAY
 			if(uses < max_uses)
 				AddUses(1)
@@ -137,7 +137,7 @@
 		if(target.lightbulb)
 			target.remove_bulb()
 
-		var/obj/item/weapon/light/L = new target.light_type()
+		var/obj/item/light/L = new target.light_type()
 		L.rigged = emagged
 		target.insert_bulb(L)
 

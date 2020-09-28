@@ -78,9 +78,9 @@
 		step(user.pulling, get_dir(user.pulling.loc, src))
 	return 1
 
-turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = W
+turf/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/storage))
+		var/obj/item/storage/S = W
 		if(S.use_to_pickup && S.collection_mode)
 			S.gather_all(src, user)
 	return ..()
@@ -174,7 +174,7 @@ var/const/enterloopsanity = 100
 					A.HasProximity(thing, 1)
 					if ((thing && A) && (thing.movable_flags & MOVABLE_FLAG_PROXMOVE))
 						thing.HasProximity(A, 1)
-	
+
 	if(ishuman(atom))
 		var/mob/living/carbon/human/H = atom
 		if(has_coldbreath)

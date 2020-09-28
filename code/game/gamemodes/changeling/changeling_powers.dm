@@ -94,7 +94,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 //removes our changeling verbs
 /mob/proc/remove_changeling_powers()
-	if(!mind || !mind.changeling)	
+	if(!mind || !mind.changeling)
 		return
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
@@ -379,7 +379,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	C.dna = chosen_dna.Clone()
 
 	var/list/implants = list()
-	for (var/obj/item/weapon/implant/I in C) //Still preserving implants
+	for (var/obj/item/implant/I in C) //Still preserving implants
 		implants += I
 
 	C.transforming = 1
@@ -419,7 +419,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	O.setOxyLoss(C.getOxyLoss())
 	O.adjustFireLoss(C.getFireLoss())
 	O.set_stat(C.stat)
-	for (var/obj/item/weapon/implant/I in implants)
+	for (var/obj/item/implant/I in implants)
 		I.forceMove(O)
 		I.implanted = O
 

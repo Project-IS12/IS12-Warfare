@@ -62,7 +62,7 @@
 /turf/simulated/floor/trench/RightClick(mob/living/user)
 	if(!CanPhysicallyInteract(user))
 		return
-	var/obj/item/weapon/shovel/S = user.get_active_hand()
+	var/obj/item/shovel/S = user.get_active_hand()
 	if(!istype(S))
 		return
 	if(!user.doing_something)

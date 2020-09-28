@@ -180,7 +180,7 @@
 		else
 			if(alert("Spawn that person a tome?",,"Yes","No")=="Yes")
 				to_chat(M, "<span class='warning'>You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of Nar-Sie. A tome, a message from your new master, appears on the ground.</span>")
-				new /obj/item/weapon/book/tome(M.loc)
+				new /obj/item/book/tome(M.loc)
 			else
 				to_chat(M, "<span class='warning'>You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of Nar-Sie.</span>")
 			var/glimpse=pick("1","2","3","4","5","6","7","8")
@@ -251,14 +251,14 @@
 	if (istype(M, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = M
 		if (H.wear_id)
-			var/obj/item/weapon/card/id/id = H.wear_id
+			var/obj/item/card/id/id = H.wear_id
 			if(istype(H.wear_id, /obj/item/device/pda))
 				var/obj/item/device/pda/pda = H.wear_id
 				id = pda.id
 			id.icon_state = "gold"
 			id.access = get_all_accesses()
 		else
-			var/obj/item/weapon/card/id/id = new/obj/item/weapon/card/id(M);
+			var/obj/item/card/id/id = new/obj/item/card/id(M);
 			id.icon_state = "gold"
 			id.access = get_all_accesses()
 			id.registered_name = H.real_name
@@ -450,7 +450,7 @@
 	for(var/obj/machinery/power/rad_collector/Rad in world)
 		if(Rad.anchored)
 			if(!Rad.P)
-				var/obj/item/weapon/tank/phoron/Phoron = new/obj/item/weapon/tank/phoron(Rad)
+				var/obj/item/tank/phoron/Phoron = new/obj/item/tank/phoron(Rad)
 				Phoron.air_contents.gas["phoron"] = 70
 				Rad.drainratio = 0
 				Rad.P = Phoron
