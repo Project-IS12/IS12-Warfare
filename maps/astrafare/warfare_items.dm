@@ -145,16 +145,13 @@
 
 /obj/item/clothing/head/helmet/redhelmet/medic
 	icon_state = "redhelmet_medic"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/medic)
 
 /obj/item/clothing/head/helmet/redhelmet/leader
 	icon_state = "redhelmet_leader"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/leader)
 
 /obj/item/clothing/head/helmet/redhelmet/sniper
 	icon_state = "redsniperhelmet"
 	item_state = "redsniperhelmet"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/leader)
 
 
 //Nam shit
@@ -254,31 +251,28 @@
 
 /obj/item/clothing/head/helmet/bluehelmet/medic
 	icon_state = "bluehelmet_medic"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/medic)
 
 /obj/item/clothing/head/helmet/bluehelmet/leader
 	icon_state = "bluehelmet_leader"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/leader)
 
 /obj/item/clothing/head/helmet/bluehelmet/sniper
 	icon_state = "bluesniperhelmet"
 	item_state = "bluesniperhelmet"
-//	starting_accessories = list(/obj/item/clothing/accessory/helm_patch/leader)
 
-/obj/item/weapon/card/id/dog_tag
+/obj/item/card/id/dog_tag
 	var/warfare_faction = null
 	icon_state = "dogtag"
 	desc = "A metal dog tag. Functions like an ID."
 
-/obj/item/weapon/card/id/dog_tag/red
+/obj/item/card/id/dog_tag/red
 	warfare_faction = RED_TEAM
 	icon_state = "tagred"
 
-/obj/item/weapon/card/id/dog_tag/blue
+/obj/item/card/id/dog_tag/blue
 	warfare_faction = BLUE_TEAM
 	icon_state = "tagblue"
 
-/obj/item/weapon/card/id/dog_tag/update_name()
+/obj/item/card/id/dog_tag/update_name()
 	var/final_name = "[registered_name]'s Dog Tag"
 	if(military_rank && military_rank.name_short)
 		final_name = military_rank.name_short + " " + final_name
@@ -398,18 +392,23 @@
 		set_frequency(BLUE_DELTA)
 
 
-/obj/item/weapon/melee/trench_axe
+/obj/item/melee/trench_axe
 	name = "trench axe"
 	desc = "Used mainly for murdering those on the enemy side."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "trenchaxe"
 	item_state = "trenchaxe"
-	slot_flags = SLOT_BELT
+	wielded_icon = "trenchaxe-w"
+	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_S_STORE
 	force = 20
 	block_chance = 20
 	sharp = TRUE
 	edge = TRUE
 	hitsound = "slash_sound"
+	drop_sound = 'sound/items/handle/axe_drop.ogg'
+	equipsound = 'sound/items/equip/axe_equip.ogg'
+	grab_sound = 'sound/items/handle/axe_grab.ogg'
+	grab_sound_is_loud = TRUE
 
 
 
@@ -488,7 +487,7 @@
 	overlay_state = "leader_patch_helm"
 
 
-/obj/item/weapon/storage/belt/warfare
+/obj/item/storage/belt/warfare
 	name = "ammo belt"
 	desc = "Great for holding ammo! This one starts with smg ammo."
 	icon_state = "warfare_belt"
@@ -504,12 +503,12 @@
 		new /obj/item/ammo_magazine/mc9mmt/machinepistol(src)
 		new /obj/item/ammo_magazine/mc9mmt/machinepistol(src)
 
-/obj/item/weapon/storage/belt/warfare/chestrig
+/obj/item/storage/belt/warfare/chestrig
 	name = "Chestrig"
 	desc = "Holds ammo. But not much else."
 	icon_state = "chestrig"
 
-/obj/item/weapon/storage/belt/autoshotty
+/obj/item/storage/belt/autoshotty
 	name = "ammo belt"
 	desc = "Great for holding ammo! This one starts with Warcrime ammo."
 	icon_state = "warfare_belt"
@@ -526,20 +525,20 @@
 		new /obj/item/ammo_magazine/autoshotty(src)
 
 
-/obj/item/weapon/storage/belt/autoshotty/chestrig
+/obj/item/storage/belt/autoshotty/chestrig
 	name = "Chestrig"
 	desc = "Holds ammo. But not much else. This one starts with Warcrime ammo."
 	icon_state = "chestrig"
 
-/obj/item/weapon/storage/box/ifak
+/obj/item/storage/box/ifak
 	name = "IFAK"
 	desc = "An Individual First Aid Kit, used to keep you alive until a medic can patch you up proper."
 	icon_state = "ifak"
-	startswith = list(/obj/item/bandage_pack, /obj/item/tourniquet, /obj/item/weapon/reagent_containers/hypospray/autoinjector/morphine)
+	startswith = list(/obj/item/bandage_pack, /obj/item/tourniquet, /obj/item/reagent_containers/hypospray/autoinjector/morphine)
 	w_class = ITEM_SIZE_SMALL
 	max_storage_space = 6
 
-/obj/item/weapon/storage/box/ifak/attack_hand(var/mob/living/carbon/human/user)
+/obj/item/storage/box/ifak/attack_hand(var/mob/living/carbon/human/user)
 	if(!istype(user))
 		..()
 		return

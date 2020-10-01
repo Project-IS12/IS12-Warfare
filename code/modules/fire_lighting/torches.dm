@@ -103,6 +103,12 @@
 			lighttorch.lit = TRUE
 	update_icon()
 
+/obj/structure/torchwall/service/New()
+	..()
+	lighttorch = new(src)
+	lighttorch.lit = TRUE
+	update_icon()
+
 
 /obj/structure/torchwall/Destroy()
 	QDEL_NULL(lighttorch)

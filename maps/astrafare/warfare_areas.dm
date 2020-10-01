@@ -1,4 +1,4 @@
-	#define REQUIRED_CAPTURED_ZONES 5 //You gotta hold all four trenches and mid in order to enter the enemies zone.
+#define REQUIRED_CAPTURED_ZONES 5 //You gotta hold all four trenches and mid in order to enter the enemies zone.
 #define REQUIRED_TRENCH_ZONES 3 //Hold
 
 GLOBAL_LIST_EMPTY(blue_captured_zones) //= list()
@@ -215,17 +215,17 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 			to_chat(H, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")//No you fucking don't.
 			return //Keep that boombox at base asshole.
 
-		if(locate(/obj/item/weapon/storage) in H)//Gotta check storage as well.
-			var/obj/item/weapon/storage/S = locate() in H
+		if(locate(/obj/item/storage) in H)//Gotta check storage as well.
+			var/obj/item/storage/S = locate() in H
 			if(locate(/obj/item/device/boombox) in S)
 				to_chat(H, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 				return
 
-		if(istype(job_master.GetJobByTitle(H.job), /datum/job/fortress) && captured != H.warfare_faction)
+		if(istype(SSjobs.GetJobByTitle(H.job), /datum/job/fortress) && captured != H.warfare_faction)
 			to_chat(H, "<big>I need to stay home!</big>")
 			return FALSE
 
-		if(!SSWarfare.battle_time && captured != H.warfare_faction)//So people can enter their own trenches.
+		if(!SSwarfare.battle_time && captured != H.warfare_faction)//So people can enter their own trenches.
 			to_chat(H, "<big>I am not ready to die yet!</big>")
 			return FALSE
 
@@ -233,6 +233,18 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 		return
 
 	return TRUE
+
+/area/warfare/farawayhome
+	name = "\improper Far Away"
+	icon_state = "start"
+
+/area/warfare/farawayhome/Enter(atom/movable/mover as mob|obj, atom/forget as mob|obj|turf|area)
+	if(!iswarfare())
+		return TRUE
+	if(ishuman(mover))
+		var/mob/living/carbon/human/H = mover
+		to_chat(H, "<big>I CANNOT DISOBEY ORDERS!</big>")
+	return FALSE
 
 /area/warfare/homebase
 	name = "\improper Base"
