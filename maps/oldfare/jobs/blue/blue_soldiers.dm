@@ -246,7 +246,8 @@
 	else if (prob(5))
 		suit_store = /obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
 		r_pocket =  /obj/item/ammo_magazine/a762/rsc
-		backpack_contents = list(/obj/item/ammo_magazine/a762/rsc = 4, /obj/item/grenade/smokebomb = 1)
+		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
+		belt = /obj/item/storage/belt/armageddon
 
 	else if(prob(25))
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester
@@ -263,8 +264,7 @@
 		r_pocket = /obj/item/ammo_box/rifle
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
 	if(aspect_chosen(/datum/aspect/nightfare))
-		backpack_contents += list(/obj/item/torch/self_lit = 1)
-		belt = /obj/item/ammo_box/flares/blue
+		backpack_contents += list(/obj/item/torch/self_lit = 1, /obj/item/ammo_box/flares/blue = 1)
 	..()
 
 
@@ -281,11 +281,11 @@
 	else
 		suit_store = /obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
 		r_pocket =  /obj/item/ammo_magazine/a762/rsc
-		backpack_contents = list(/obj/item/ammo_magazine/a762/rsc = 4, /obj/item/grenade/smokebomb = 1, /obj/item/device/binoculars = 1)
+		backpack_contents = list(/obj/item/grenade/smokebomb = 1, /obj/item/device/binoculars = 1)
+		belt = /obj/item/storage/belt/armageddon)
 
 	if(aspect_chosen(/datum/aspect/nightfare))
-		backpack_contents += list(/obj/item/torch/self_lit = 1)
-		belt = /obj/item/ammo_box/flares/blue
+		backpack_contents += list(/obj/item/torch/self_lit = 1, /obj/item/ammo_box/flares/blue = 1)
 	..()
 
 /decl/hierarchy/outfit/job/bluesoldier/engineer
