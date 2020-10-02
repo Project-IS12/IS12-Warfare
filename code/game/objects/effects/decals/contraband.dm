@@ -183,6 +183,15 @@
 	..()
 	icon_state = pick("red1", "red2", "red3")
 
+/obj/structure/poster/yellow
+	name = "Yellows?"
+	desc = "Wait... I..."
+	icon_state = "yellow1"
+
+/obj/structure/poster/hyshim
+	name = "Have you seen him?"
+	desc = "The criminal. It's him."
+	icon_state = "hysh1"
 
 /obj/structure/poster/blue
 	name = "Blue Propganda"
