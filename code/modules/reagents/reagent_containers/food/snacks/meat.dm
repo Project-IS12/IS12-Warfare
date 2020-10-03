@@ -62,17 +62,3 @@
 /obj/item/reagent_containers/food/snacks/meat/rat_meat
 	name = "rat meat"
 	desc = "It's gross... but sometimes that's as good as you're getting."
-
-/obj/item/reagent_containers/food/snacks/meat/rat_meat/attackby(obj/item/W, mob/user)
-
-	if(istype(W, /obj/item/stack/barbwire))
-		var/obj/item/stack/barbwire/B = W
-		B.amount--
-		if(B.amount==0)
-			qdel(B)
-		new /obj/item/reagent_containers/food/snacks/skewered_rat_meat(src)
-		to_chat(user, "You skewer the rat meat on a piece of barbed wire.")
-		qdel(src)
-		return TRUE
-	else
-		. = ..()
