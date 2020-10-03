@@ -230,6 +230,10 @@ proc/blood_splatter(var/target,var/datum/reagent/blood/source,var/large,var/spra
 	if(!B)
 		B = new decal_type(T)
 
+	if(istype(T, /turf/simulated/wall))
+		B.plane = ABOVE_HUMAN_PLANE
+		B.layer = DECAL_LAYER
+
 	var/obj/effect/decal/cleanable/blood/drip/drop = B
 	if(istype(drop) && drips && drips.len && !large)
 		drop.overlays |= drips

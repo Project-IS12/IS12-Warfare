@@ -1,13 +1,25 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
 
-proc/Intoxicated(phrase)
+/proc/Intoxicated(phrase)
 	phrase = html_decode(phrase)
 	var/leng=length(phrase)
 	var/counter=length(phrase)
 	var/newphrase=""
 	var/newletter=""
+	var/intag = FALSE
 	while(counter>=1)
 		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
+		if(newletter == "<")
+			intag = TRUE
+		else if(newletter == ">")
+			intag = FALSE
+			counter-=1
+			continue
+
+		if(intag)
+			counter-=1
+			continue
+
 		if(rand(1,3)==3)
 			if(lowertext(newletter)=="o")	newletter="u"
 			if(lowertext(newletter)=="s")	newletter="ch"
@@ -20,10 +32,11 @@ proc/Intoxicated(phrase)
 			if(9,10)	newletter="<b>[newletter]</b>"
 			if(11,12)	newletter="<big>[newletter]</big>"
 			if(13)	newletter="<small>[newletter]</small>"
-		newphrase+="[newletter]";counter-=1
-	return newphrase
+		newphrase+="[newletter]"
+		counter-=1
+	return html_encode(newphrase)
 
-proc/NewStutter(phrase,stunned)
+/proc/NewStutter(phrase,stunned)
 	phrase = html_decode(phrase)
 
 	var/list/split_phrase = splittext(phrase," ") //Split it up into words.
@@ -57,12 +70,12 @@ proc/NewStutter(phrase,stunned)
 
 		split_phrase[index] = word
 
-	return sanitize(jointext(split_phrase," "))
+	return sanitize(html_encode(jointext(split_phrase," ")))
 
-proc/Stagger(mob/M,d) //Technically not a filter, but it relates to drunkenness.
+/proc/Stagger(mob/M,d) //Technically not a filter, but it relates to drunkenness.
 	step(M, pick(d,turn(d,90),turn(d,-90)))
 
-proc/Ellipsis(original_msg, chance = 50)
+/proc/Ellipsis(original_msg, chance = 50)
 	if(chance <= 0) return "..."
 	if(chance >= 100) return original_msg
 
@@ -89,7 +102,7 @@ distortion_speed - multiplier for the chance increase.
 distortion - starting distortion.
 english_only - whether to use traditional english letters only (for use in NanoUI)
 */
-proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_speed = 1, distortion = 1, english_only = 0)
+/proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_speed = 1, distortion = 1, english_only = 0)
 	var/datum/language/language
 	if(user)
 		language = user.get_default_language()
@@ -168,5 +181,4 @@ proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_spee
 			capitalize(newletter)
 		new_message += newletter
 		lentext += 1
-	return new_message
-
+	return html_encode(new_message)
