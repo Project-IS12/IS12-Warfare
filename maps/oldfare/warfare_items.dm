@@ -503,6 +503,22 @@
 		new /obj/item/ammo_magazine/mc9mmt/machinepistol(src)
 		new /obj/item/ammo_magazine/mc9mmt/machinepistol(src)
 
+/obj/item/storage/belt/armageddon
+	name = "ammo belt"
+	desc = "Great for holding ammo! This one starts with Armageddon ammo."
+	icon_state = "warfare_belt"
+	item_state = "warfare_belt"
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		)
+
+	New()
+		..()
+		new /obj/item/ammo_magazine/a762/rsc(src)
+		new /obj/item/ammo_magazine/a762/rsc(src)
+		new /obj/item/ammo_magazine/a762/rsc(src)
+		new /obj/item/ammo_magazine/a762/rsc(src)
+
 /obj/item/storage/belt/warfare/chestrig
 	name = "Chestrig"
 	desc = "Holds ammo. But not much else."
