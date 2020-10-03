@@ -19,15 +19,6 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/telebacon
 */
 
-// Trench recipes
-/datum/recipe/rat_skewer
-	reagents = list(/datum/reagent/sodiumchloride = 1, /datum/reagent/blackpepper = 1)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/skewered_rat_meat
-	)
-	result = /obj/item/reagent_containers/food/snacks/rat_skewer
-
-// Classic recipes
 /datum/recipe/friedegg
 	reagents = list(/datum/reagent/sodiumchloride = 1, /datum/reagent/blackpepper = 1)
 	items = list(
