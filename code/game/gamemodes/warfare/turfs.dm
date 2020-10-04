@@ -23,6 +23,10 @@
 	desc = "This dirt doesn't look diggable."
 	can_be_dug = FALSE
 
+/turf/simulated/floor/dirty/tough/lightless/
+	has_light = FALSE
+
+
 /turf/simulated/floor/dirty/tough/fake //Can't be click dragged on.
 	atom_flags = null
 
@@ -97,7 +101,7 @@
 	temperature = T0C - 60
 	//icon_state = pick("snow[rand(1,12)]","snow0")
 	dir = pick(GLOB.alldirs)
-	if(!locate(/obj/effect/lighting_dummy/daylight) in src)
+	if(!(locate(/obj/effect/lighting_dummy/daylight) in src) && has_light)
 		new /obj/effect/lighting_dummy/daylight(src)
 	spawn(1)
 		overlays.Cut()
@@ -210,6 +214,7 @@
 	movement_delay = 3
 	mudpit = 1
 	has_coldbreath = TRUE
+	var/has_light = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /turf/simulated/floor/exoplanet/water/shallow/update_dirt()
@@ -276,9 +281,12 @@
 		var/mob/living/L = A
 		L.ExtinguishMob()
 
+/turf/simulated/floor/exoplanet/water/shallow/lightless
+	has_light = FALSE
+
 /turf/simulated/floor/exoplanet/water/shallow/New()
 	..()
-	if(!locate(/obj/effect/lighting_dummy/daylight) in src)
+	if((!locate(/obj/effect/lighting_dummy/daylight) in src) && has_light)
 		new /obj/effect/lighting_dummy/daylight(src)
 	temperature = T0C - 80
 	for(var/obj/effect/water/bottom/B in src)

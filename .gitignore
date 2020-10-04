@@ -16,6 +16,9 @@ reboot_called
 atupdate
 __pycache__
 
+# ignore IDE custom files
+*.code-workspace
+
 # ignore config, but not subdirs
 !config/*/
 config/*

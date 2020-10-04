@@ -61,6 +61,9 @@
 
 	var/excavation_amount = 200
 
+/obj/item/pickaxe/newpick
+	icon_state = "ospickaxe"
+
 /obj/item/pickaxe/hammer
 	name = "sledgehammer"
 	//icon_state = "sledgehammer" Waiting on sprite

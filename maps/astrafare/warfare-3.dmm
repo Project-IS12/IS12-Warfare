@@ -1,0 +1,75 @@
+"a" = (/turf/space,/area/space)
+"b" = (/obj/structure/lattice,/turf/space,/area/space)
+"c" = (/turf/simulated/wall/r_wall,/area/tcommsat/computer)
+"d" = (/obj/effect/floor_decal/industrial/outline/grey,/obj/machinery/message_server,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"e" = (/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 24},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/effect/floor_decal/industrial/warning{dir = 10},/turf/simulated/floor/plating,/area/tcommsat/computer)
+"f" = (/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/plating,/area/tcommsat/computer)
+"g" = (/obj/machinery/power/terminal{tag = "icon-term (WEST)"; icon_state = "term"; dir = 8},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 6},/obj/machinery/alarm/server{pixel_y = 28},/turf/simulated/floor/plating,/area/tcommsat/computer)
+"h" = (/obj/machinery/telecomms/server/presets/command,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"i" = (/turf/simulated/floor/bluegrid,/area/tcommsat/computer)
+"j" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/bluegrid,/area/tcommsat/computer)
+"k" = (/obj/machinery/telecomms/processor/preset_two,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"l" = (/obj/machinery/telecomms/bus/preset_two,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"m" = (/obj/machinery/telecomms/relay/preset/telecomms,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"n" = (/obj/machinery/telecomms/broadcaster/preset_right,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"o" = (/obj/machinery/telecomms/relay/preset/station,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"p" = (/obj/machinery/telecomms/bus/preset_four,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"q" = (/obj/machinery/telecomms/processor/preset_four,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"r" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/bluegrid,/area/tcommsat/computer)
+"s" = (/obj/machinery/telecomms/hub/preset,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"t" = (/obj/machinery/light{dir = 4; icon_state = "tube1"; tag = ""},/turf/simulated/floor/bluegrid,/area/tcommsat/computer)
+"u" = (/obj/machinery/telecomms/bus/preset_one,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"v" = (/obj/machinery/telecomms/processor/preset_one,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"w" = (/obj/effect/floor_decal/industrial/outline/grey,/obj/machinery/ntnet_relay,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"x" = (/obj/machinery/telecomms/receiver/preset_right,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"y" = (/obj/machinery/bluespacerelay,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"z" = (/obj/machinery/telecomms/processor/preset_three,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"A" = (/obj/machinery/telecomms/bus/preset_three,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"B" = (/obj/machinery/access_button{command = "cycle_interior"; frequency = 1381; master_tag = "telecoms_airlock"; name = "interior access button"; pixel_x = -25; pixel_y = -25; req_access = list(13)},/turf/simulated/floor/bluegrid,/area/tcommsat/computer)
+"C" = (/obj/machinery/telecomms/server/presets/supply,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"D" = (/obj/effect/floor_decal/industrial/outline/grey,/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"E" = (/obj/effect/floor_decal/industrial/outline/grey,/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"F" = (/obj/structure/grille,/obj/effect/wingrille_spawn/reinforced,/turf/simulated/floor/plating,/area/tcommsat/computer)
+"G" = (/obj/machinery/door/airlock/external{frequency = 1381; icon_state = "door_locked"; id_tag = "telecoms_inner"; locked = 1; name = "External Access"; req_access = list(13)},/turf/simulated/floor/plating,/area/tcommsat/computer)
+"H" = (/obj/structure/grille,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/wingrille_spawn/reinforced,/turf/simulated/floor/plating,/area/tcommsat/computer)
+"I" = (/obj/machinery/telecomms/server/presets/engineering,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"J" = (/obj/machinery/telecomms/server/presets/service,/obj/effect/floor_decal/industrial/outline/grey,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"K" = (/obj/machinery/telecomms/server/presets/medical,/obj/effect/floor_decal/industrial/outline/grey,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"L" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 2; frequency = 1381; id_tag = "telecoms_pump"},/obj/machinery/embedded_controller/radio/airlock/airlock_controller{frequency = 1381; id_tag = "telecoms_airlock"; pixel_x = 25; pixel_y = 10; req_access = list(13); tag_airpump = "telecoms_pump"; tag_chamber_sensor = "telecoms_sensor"; tag_exterior_door = "telecoms_outer"; tag_interior_door = "telecoms_inner"},/obj/machinery/airlock_sensor{frequency = 1381; id_tag = "telecoms_sensor"; pixel_x = 25; pixel_y = 0},/turf/simulated/floor/plating,/area/tcommsat/computer)
+"M" = (/obj/machinery/telecomms/server/presets/security,/obj/effect/floor_decal/industrial/outline/grey,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+"N" = (/obj/machinery/telecomms/server/presets/common,/obj/effect/floor_decal/industrial/outline/grey,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/turf/simulated/floor/tiled/dark,/area/tcommsat/computer)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+bbcccccccbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+cccdefghcccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ciiiiijiiicaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+cklminjopqcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+criiisjiitcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+cuvwixjyzAcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ciiiiBjiiicaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+cCDEFGHEDIcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ccJKFLHMNccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}

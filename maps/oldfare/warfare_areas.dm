@@ -263,3 +263,15 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 			to_chat(H, "<big>WE DO NOT CONTROL THE TRENCHES!</big>")
 			return FALSE
 	return TRUE
+
+/area/warfare/farawayhome
+	name = "\improper Far Away"
+	icon_state = "start"
+
+/area/warfare/farawayhome/Enter(atom/movable/mover as mob|obj, atom/forget as mob|obj|turf|area)
+	if(!iswarfare())
+		return TRUE
+	if(ishuman(mover))
+		var/mob/living/carbon/human/H = mover
+		to_chat(H, "<big>I CANNOT DISOBEY ORDERS!</big>")
+	return FALSE
