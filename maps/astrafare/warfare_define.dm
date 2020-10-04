@@ -29,7 +29,7 @@
 	emergency_shuttle_leaving_dock = "The emergency escape shuttle has departed from %dock_name%."
 	emergency_shuttle_called_message = "An emergency escape shuttle has been sent."
 	emergency_shuttle_recall_message = "The emergency shuttle has been recalled"
-	map_lore = "We've been sitting in these trenches for months. No word from central command. The shells keep dropping... there is no way out. Our only hope is to push forth into their trench instead. But we don't have that many men left, if we lose too many it's over for us. We must give it our all if we are to survive this winter."
+	map_lore = "We have been marching through the mountain ravine for more than two seasons. Never ending, tight and dangerous. No one can remember what our target was anymore - something important. Something that could end the War. Yesterday we captured some old complex of unknown origin. Recon returned with the enemy presence confirmation. We have orders to move out at dawn. "
 
 
 

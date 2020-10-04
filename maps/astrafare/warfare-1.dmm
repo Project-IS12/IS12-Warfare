@@ -1,7 +1,7 @@
 "af" = (/obj/structure/stairs/west,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"at" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "aw" = (/turf/simulated/mineral,/area/space)
 "aD" = (/obj/structure/table/rack,/obj/item/defensive_barrier,/obj/item/defensive_barrier,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"aH" = (/obj/structure/bed/chair,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "aO" = (/obj/structure/closet{anchored = 1},/obj/item/bandage_pack,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "aY" = (/obj/item/reagent_containers/food/drinks/canteen,/obj/structure/closet{anchored = 1},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "bb" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -12,15 +12,15 @@
 "bM" = (/turf/simulated/floor/plating,/area/warfare/battlefield/trench_section/underground)
 "bP" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "cb" = (/obj/structure/sign/neon/exit{pixel_y = -32; plane = -6},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
-"cd" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "ci" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "ct" = (/obj/effect/floor_decal/turf/bar2,/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "cu" = (/obj/machinery/shower,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"cA" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "cF" = (/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "cO" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "cP" = (/turf/simulated/mineral,/area/warfare/homebase/blue)
 "cQ" = (/obj/structure/stairs/south,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"cX" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
+"cY" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "cZ" = (/obj/structure/table/rack,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "di" = (/obj/structure/closet{anchored = 1},/obj/item/clothing/mask/gas,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "dj" = (/obj/structure/stairs/east,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
@@ -31,11 +31,10 @@
 "dM" = (/obj/structure/banner/red/small{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "dN" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/carcinomas,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "el" = (/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"ev" = (/obj/structure/curtain,/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/one)
 "eL" = (/turf/simulated/wall/concrete,/area/warfare/battlefield/capture_point/red/two)
 "eS" = (/obj/structure/closet{anchored = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "fh" = (/obj/machinery/optable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
-"fk" = (/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"fk" = (/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "fo" = (/obj/effect/floor_decal/turf/plating,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "fq" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "fs" = (/obj/structure/curtain,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
@@ -44,46 +43,52 @@
 "gb" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "gf" = (/obj/structure/bed,/obj/effect/floor_decal/turf/bar2{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "gt" = (/turf/simulated/mineral/random/high_chance,/area/warfare/battlefield/trench_section/underground)
+"gu" = (/obj/structure/curtain,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"gD" = (/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"gG" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/structure/table/steel,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "gH" = (/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "gJ" = (/obj/structure/poster/hyshim{pixel_x = -32},/turf/simulated/floor/plating,/area/warfare/battlefield/trench_section/underground)
+"gO" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "gP" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "gU" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"gW" = (/obj/structure/curtain,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "gY" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "hf" = (/obj/structure/stairs/north,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "hg" = (/obj/machinery/shower{dir = 4},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "hj" = (/obj/structure/stairs/south,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "hp" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
-"ht" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
 "hu" = (/obj/structure/closet,/obj/item/tourniquet,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "hC" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/obj/item/flame/candle,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "hJ" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"hO" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "ia" = (/obj/machinery/shower{dir = 8; icon_state = "shower"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"ik" = (/obj/structure/table/steel,/obj/machinery/microwave,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "it" = (/obj/structure/table/woodentable,/obj/item/storage/box/matches,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "iA" = (/obj/effect/floor_decal/turf/cafe2,/obj/effect/floor_decal/carpet/blue2{dir = 1},/obj/effect/floor_decal/carpet/blue2{dir = 9},/obj/effect/floor_decal/carpet/blue2,/obj/effect/floor_decal/carpet/blue2{dir = 10},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"iC" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
 "iO" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/effect/floor_decal/turf/bar2{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "iP" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"jd" = (/obj/structure/curtain,/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
+"jj" = (/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "jw" = (/obj/machinery/shower{dir = 1},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "jx" = (/obj/structure/closet,/obj/item/bandage_pack,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "jz" = (/obj/effect/floor_decal/turf/bar2{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"jC" = (/obj/structure/curtain,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "jT" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "kd" = (/obj/effect/floor_decal/turf/plating,/obj/effect/landmark/start{name = "Blue Scavenger"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "kk" = (/obj/structure/table/woodentable,/obj/item/device/cassette/tape1,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "kD" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/red/one)
+"kO" = (/obj/structure/closet/cabinet,/obj/item/reagent_containers/food/drinks/canteen,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "le" = (/obj/structure/table/rack,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "lg" = (/obj/structure/table/woodentable,/obj/item/device/boombox,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "lu" = (/obj/machinery/sleeper{dir = 4},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
+"ly" = (/obj/structure/curtain,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "lC" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
-"lN" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
 "lP" = (/obj/structure/table/rack,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "lU" = (/turf/simulated/floor/plating/n2floor,/area/warfare/homebase/blue)
 "mg" = (/obj/structure/table/steel,/obj/item/storage/firstaid/surgery,/obj/item/FixOVein,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
-"mi" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
 "mn" = (/obj/structure/table/woodentable,/obj/item/device/cassette/tape2,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "mI" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/trench_section/underground)
-"mQ" = (/obj/structure/curtain,/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
 "mR" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"na" = (/obj/structure/closet/cabinet,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "nd" = (/turf/simulated/wall/concrete,/area/warfare/homebase/red)
 "nf" = (/obj/structure/table/woodentable,/obj/item/reagent_containers/food/drinks/canteen,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "ng" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -103,49 +108,54 @@
 "pb" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "ph" = (/obj/effect/landmark/start{name = "Red Medic"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "pp" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"qj" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
+"pG" = (/obj/structure/table/steel,/obj/item/paper/astrafare_lore3,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "ql" = (/obj/structure/table/woodentable,/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/obj/item/storage/box/matches,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"qv" = (/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"qu" = (/obj/structure/bed/chair,/turf/simulated/floor/plating,/area/warfare/battlefield/trench_section/underground)
 "qJ" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "qP" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "qQ" = (/turf/simulated/floor/exoplanet/water/shallow,/area/warfare/battlefield/capture_point/blue/two)
 "qV" = (/obj/effect/floor_decal/turf/bar2{dir = 1},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"qX" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "rn" = (/obj/structure/table/rack,/obj/item/storage/box/matches,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"rp" = (/obj/structure/closet/cabinet,/obj/item/clothing/mask/gas,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "rD" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/trench_section/underground)
-"rS" = (/obj/structure/bed/chair,/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
-"sc" = (/obj/structure/bed,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
+"rM" = (/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
+"rS" = (/obj/structure/curtain,/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/one)
+"sa" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "sm" = (/obj/structure/curtain,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"sr" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "sy" = (/obj/structure/stairs/east,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "sP" = (/turf/simulated/wall/concrete,/area/warfare/battlefield/trench_section/underground)
+"sR" = (/obj/structure/table/steel,/obj/item/reagent_containers/food/condiment/small/peppermill,/obj/item/reagent_containers/food/condiment/small/saltshaker,/obj/item/reagent_containers/food/condiment/small/sugar,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "tf" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"tl" = (/obj/structure/table/steel,/obj/item/flame/candle,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "tm" = (/obj/structure/closet{anchored = 1},/obj/item/grenade/frag/warfare,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "tt" = (/obj/effect/landmark/start{name = "Blue Scavenger"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
-"tu" = (/obj/structure/closet/crate,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "tA" = (/obj/structure/closet{anchored = 1},/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "tH" = (/obj/effect/landmark/start{name = "Blue Flame Trooper"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"tI" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "tN" = (/obj/structure/table/woodentable,/obj/item/reagent_containers/food/drinks/canteen,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "tT" = (/obj/structure/torchwall{pixel_y = 30},/obj/effect/landmark/start{name = "Blue Practitioner"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"tV" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "tW" = (/obj/machinery/sleeper{dir = 8},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
+"uk" = (/obj/structure/toilet{dir = 4; icon_state = "toilet00"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "uE" = (/obj/effect/landmark/start{name = "Blue Flame Trooper"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "uG" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/effect/landmark/start{name = "Blue Flame Trooper"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "uM" = (/obj/effect/landmark/start{name = "Red Practitioner"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "uO" = (/turf/simulated/mineral/random/high_chance,/area/warfare/battlefield/capture_point/red/two)
 "uP" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Blue Flame Trooper"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"va" = (/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
+"uX" = (/obj/structure/table/steel,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "vi" = (/obj/structure/torchwall{pixel_y = 30},/obj/effect/landmark/start{name = "Blue Sniper"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"vn" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
 "vt" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "vu" = (/obj/effect/landmark/start{name = "Blue Scavenger"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"vH" = (/obj/structure/toilet{dir = 4; icon_state = "toilet00"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "vK" = (/obj/effect/landmark/start{name = "Blue Sentry"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"wc" = (/obj/structure/table/woodentable,/obj/item/device/cassette/tape2,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "wi" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/obj/item/flame/candle,/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"wl" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
 "wz" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Blue Sentry"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"wA" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "wI" = (/obj/effect/landmark/start{name = "Blue Sniper"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "wN" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/capture_point/blue/two)
 "wS" = (/obj/effect/landmark/start{name = "Blue Sniper"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"wW" = (/obj/structure/curtain,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
-"wY" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "xk" = (/obj/effect/floor_decal/turf/cafe2,/obj/structure/bed,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "xq" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "xD" = (/obj/structure/closet{anchored = 1},/obj/item/storage/box/matches,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
@@ -153,9 +163,9 @@
 "xH" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/red/two)
 "xM" = (/obj/effect/landmark/start{name = "Blue Squad Leader"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "xO" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Blue Squad Leader"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"xR" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "xU" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "xW" = (/obj/effect/landmark/test/safe_turf,/turf/simulated/mineral,/area/space)
+"xX" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
 "yc" = (/obj/structure/closet{anchored = 1},/obj/item/tourniquet,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "yf" = (/obj/effect/landmark/test/space_turf,/turf/simulated/mineral,/area/space)
 "yj" = (/obj/effect/landmark/start,/turf/simulated/mineral,/area/space)
@@ -183,16 +193,21 @@
 "Ab" = (/obj/structure/stairs/east,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Af" = (/obj/effect/floor_decal/turf/bar2{dir = 8},/obj/effect/landmark/start{name = "Blue Squad Leader"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Aj" = (/obj/structure/curtain,/obj/effect/floor_decal/turf/cafe2,/obj/effect/floor_decal/carpet/blue2{dir = 8},/obj/effect/floor_decal/carpet/blue2{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Ao" = (/obj/structure/table/steel,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "As" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Aw" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
 "Ax" = (/obj/structure/sign/neon/exit{pixel_x = 32; plane = -6},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Az" = (/obj/effect/floor_decal/turf/cafe2,/obj/effect/landmark/start{name = "Blue Captain"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "AD" = (/obj/effect/floor_decal/turf/plating,/obj/effect/floor_decal/turf/plating,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"AI" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/one)
 "AL" = (/obj/structure/closet/crate,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "AP" = (/obj/effect/floor_decal/turf/cafe2,/obj/effect/floor_decal/carpet/blue2{dir = 1},/obj/effect/floor_decal/carpet/blue2,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "AR" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
 "AZ" = (/obj/structure/table/steel,/obj/item/defensive_barrier,/obj/item/defensive_barrier,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Bc" = (/obj/structure/closet,/obj/item/gun/projectile/shotgun/doublebarrel,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/obj/effect/floor_decal/turf/cafe2,/obj/effect/floor_decal/carpet/blue2{dir = 8},/obj/effect/floor_decal/carpet/blue2{dir = 4},/obj/effect/floor_decal/carpet/blue2{dir = 10},/obj/effect/floor_decal/carpet/blue2{dir = 6},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Bh" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "Bk" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
+"Bn" = (/obj/structure/closet/crate,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "Bo" = (/obj/structure/curtain,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "BA" = (/obj/structure/destruction_computer/red,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "BL" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -213,6 +228,7 @@
 "Dc" = (/obj/structure/table/steel,/obj/item/storage/firstaid/surgery,/obj/item/FixOVein,/obj/item/storage/firstaid/surgery,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Dg" = (/obj/effect/floor_decal/turf/cafe2,/obj/effect/floor_decal/carpet/blue2{dir = 8},/obj/effect/floor_decal/carpet/blue2{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Dr" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/carcinomas,/obj/item/flame/candle,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"DE" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
 "DG" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/trench_section/underground)
 "DH" = (/obj/structure/stairs/north,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "DK" = (/obj/effect/floor_decal/turf/cafe2,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -222,28 +238,29 @@
 "Ed" = (/obj/structure/curtain,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "Ek" = (/obj/structure/bed,/turf/simulated/floor/lino,/area/warfare/homebase/red)
 "Em" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Er" = (/obj/structure/bed/chair,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "Ew" = (/obj/structure/stairs/south,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Ey" = (/obj/structure/bed,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"EJ" = (/turf/space,/area/space)
+"EJ" = (/turf/simulated/floor/dirty/fake,/area/space)
 "EW" = (/obj/structure/table/woodentable,/obj/item/storage/firstaid/surgery,/obj/item/flame/candle,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"EY" = (/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "Fc" = (/obj/structure/stairs/south,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "Ff" = (/obj/structure/table/rack,/obj/item/flame/candle,/obj/item/storage/fancy/cigarettes/luckystars,/obj/item/storage/box/matches,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "Fg" = (/obj/machinery/computer/operating,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "Fh" = (/obj/effect/landmark{name = "tdome1"},/turf/simulated/mineral,/area/space)
 "Fi" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
-"Fm" = (/obj/effect/floor_decal/turf/cafe2,/obj/structure/table/woodentable,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Fm" = (/obj/effect/floor_decal/turf/cafe2,/obj/structure/table/woodentable,/obj/item/flame/candle,/obj/item/paper/astrafare_lore3,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Fy" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "FE" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "FQ" = (/turf/simulated/floor/lino,/area/warfare/homebase/red)
 "FZ" = (/obj/effect/landmark/start{name = "Red Captain"},/turf/simulated/floor/lino,/area/warfare/homebase/red)
 "Gi" = (/obj/effect/landmark/start{name = "Red Sniper"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "Gn" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Red Sniper"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "Gx" = (/obj/structure/bed/chair,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"GD" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "GF" = (/obj/machinery/computer/operating,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"GK" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/one)
 "GL" = (/obj/machinery/optable,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "GP" = (/obj/machinery/sleeper{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"GY" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/turf/simulated/floor/lino,/area/warfare/homebase/red)
+"GY" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/obj/item/paper/astrafare_lore3,/turf/simulated/floor/lino,/area/warfare/homebase/red)
 "Hb" = (/obj/effect/landmark/start{name = "Blue Sentry"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "Ho" = (/obj/effect/floor_decal/carpet/red{dir = 4},/obj/effect/floor_decal/carpet/red{dir = 8},/obj/effect/floor_decal/carpet/red{dir = 5},/obj/effect/floor_decal/carpet/red{dir = 9},/turf/simulated/floor/lino,/area/warfare/homebase/red)
 "Hq" = (/obj/item/grenade/frag/warfare,/obj/structure/closet{anchored = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -253,7 +270,7 @@
 "HO" = (/obj/effect/floor_decal/turf/cafe2,/obj/structure/closet/cabinet,/obj/item/shovel,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "HP" = (/obj/item/storage/fancy/cigarettes/carcinomas,/obj/item/flame/lighter/random,/obj/structure/closet{anchored = 1},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "HZ" = (/obj/structure/table/rack,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/fire,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
-"Ia" = (/obj/structure/closet/cabinet,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
+"If" = (/obj/structure/bed/chair,/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
 "In" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Red Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Io" = (/obj/item/bandage_pack,/obj/structure/closet{anchored = 1},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "IG" = (/obj/item/tourniquet,/obj/item/tourniquet,/obj/structure/closet{anchored = 1},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
@@ -283,8 +300,8 @@
 "Ki" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/obj/item/ammo_box/shotgun,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Kj" = (/obj/item/wirecutters,/obj/item/wirecutters,/obj/item/storage/firstaid/regular,/obj/structure/table/rack,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Ko" = (/obj/structure/sign/neon/exit{pixel_y = 32; plane = -6},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"Ks" = (/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "KX" = (/obj/structure/bed,/obj/structure/bed,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Lf" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "Lk" = (/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/structure/closet/crate,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Lu" = (/obj/structure/closet/crate,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/turf/simulated/floor/plating,/area/warfare/homebase/red)
 "Lw" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
@@ -294,13 +311,13 @@
 "LO" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "LS" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "LY" = (/obj/structure/table/rack,/obj/item/storage/belt/medical/full,/obj/item/storage/belt/medical/full,/obj/item/storage/belt/medical/full,/obj/item/storage/belt/medical/full,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Ma" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Mj" = (/obj/effect/landmark/start{name = "Red Flame Trooper"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "Mv" = (/obj/structure/table/woodentable,/obj/item/device/cassette/tape3,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Mx" = (/obj/structure/bed,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "ME" = (/obj/structure/stairs/east,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "MJ" = (/obj/structure/table/rack,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "MN" = (/obj/structure/table/woodentable,/obj/item/device/cassette/tape1,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"MQ" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
 "Nd" = (/obj/machinery/optable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "Ne" = (/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Nh" = (/obj/structure/closet/crate,/obj/item/plastique,/obj/item/plastique,/obj/item/plastique,/obj/item/crowbar,/obj/item/crowbar,/obj/item/crowbar,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -315,10 +332,8 @@
 "NK" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Red Flame Trooper"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "NR" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "NW" = (/obj/structure/sign/neon/exit,/turf/simulated/mineral,/area/warfare/homebase/red)
-"Ob" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Oc" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "Oh" = (/obj/structure/table/rack,/obj/item/defensive_barrier,/obj/item/defensive_barrier,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
-"Oj" = (/obj/structure/toilet{dir = 4; icon_state = "toilet00"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "Ok" = (/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "Ol" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Oy" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -338,10 +353,12 @@
 "PV" = (/obj/machinery/sleeper{dir = 8},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "PW" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Qd" = (/obj/item/wirecutters,/obj/item/wirecutters,/obj/item/storage/firstaid/regular,/obj/structure/table/rack,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Qe" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
 "Qh" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "Qn" = (/obj/structure/closet/crate,/obj/item/plastique,/obj/item/plastique,/obj/item/plastique,/obj/item/crowbar,/obj/item/crowbar,/obj/item/crowbar,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Qu" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/obj/item/flame/candle,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "QB" = (/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"QD" = (/obj/structure/bed,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "QE" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "QG" = (/obj/machinery/sleeper{dir = 4},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "QH" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/obj/item/flame/candle,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
@@ -382,12 +399,11 @@
 "Tt" = (/obj/structure/table/rack,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "TH" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "TL" = (/obj/structure/bed/chair,/obj/effect/landmark/start{name = "Red Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"TM" = (/obj/structure/toilet{dir = 4; icon_state = "toilet00"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "TN" = (/obj/structure/table/rack,/obj/item/tourniquet,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "TR" = (/obj/structure/table/rack,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Uj" = (/obj/structure/table/rack,/obj/item/storage/belt/medical/full,/obj/item/storage/belt/medical/full,/obj/item/storage/belt/medical/full,/obj/item/storage/belt/medical/full,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
-"Uk" = (/obj/structure/closet/crate,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Uq" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Us" = (/obj/structure/curtain,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "Ux" = (/obj/effect/floor_decal/turf/plating,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "UB" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/plating,/area/warfare/homebase/red)
 "UE" = (/obj/item/ammo_box/rifle,/obj/structure/closet{anchored = 1},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
@@ -401,15 +417,14 @@
 "Vq" = (/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/structure/closet/crate,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Vv" = (/obj/structure/curtain,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "Vx" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"VF" = (/obj/structure/table/woodentable,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "VH" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/blue/one)
 "VS" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"VY" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Wd" = (/obj/structure/table/steel,/obj/item/storage/firstaid/surgery,/obj/item/FixOVein,/obj/item/storage/firstaid/surgery,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Wl" = (/obj/structure/table/woodentable,/obj/item/instrument/guitar,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Wn" = (/obj/structure/sign/neon/exit{pixel_y = 32; plane = -6},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Wo" = (/obj/structure/bed,/obj/effect/floor_decal/turf/bar2{dir = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Wu" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"Wx" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "WA" = (/obj/structure/closet{anchored = 1},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "WH" = (/obj/effect/landmark/start{name = "Blue Engineer"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "WU" = (/obj/machinery/shower,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
@@ -417,18 +432,18 @@
 "Xf" = (/obj/structure/bed/chair,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "Xh" = (/obj/machinery/computer/operating,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Xj" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Xk" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "Xl" = (/obj/structure/stairs/east,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "Xn" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Xp" = (/obj/structure/closet/crate,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/obj/item/grenade/frag/warfare,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "Xt" = (/obj/structure/table/rack,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "XD" = (/obj/structure/closet/crate,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "XP" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/obj/item/storage/box/matches,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "XQ" = (/obj/effect/landmark/start{name = "Blue Practitioner"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "XR" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"XV" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "XX" = (/obj/item/storage/fancy/cigarettes/luckystars,/obj/structure/closet{anchored = 1},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Yj" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/structure/bed/chair,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "Yp" = (/turf/simulated/floor/plating/n2floor,/area/warfare/homebase/red)
-"Yq" = (/obj/structure/table/woodentable,/obj/item/device/cassette/tape2,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"Yt" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "Yu" = (/obj/effect/landmark/start{name = "Blue Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Yx" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "YB" = (/obj/structure/table/rack,/obj/item/storage/firstaid/toxin,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
@@ -439,7 +454,6 @@
 "YM" = (/obj/effect/floor_decal/turf/bar2{dir = 8},/obj/effect/landmark/start{name = "Blue Practitioner"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "YO" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "YT" = (/obj/item/tourniquet,/obj/structure/closet{anchored = 1},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
-"YW" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "Zc" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "Ze" = (/obj/structure/table/rack,/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Zf" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/plating,/area/warfare/battlefield/trench_section/underground)
@@ -450,11 +464,11 @@
 "Zt" = (/obj/item/ammo_box/rifle,/obj/structure/closet{anchored = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Zw" = (/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "ZB" = (/obj/machinery/optable,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"ZD" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/blue/one)
 "ZE" = (/turf/simulated/wall/concrete,/area/warfare/battlefield/capture_point/blue/two)
 "ZH" = (/obj/structure/table/woodentable,/obj/item/instrument/guitar,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "ZM" = (/obj/structure/closet,/obj/item/bandage_pack,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "ZP" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/obj/item/storage/fancy/cigarettes/carcinomas,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ZQ" = (/obj/structure/table/steel,/obj/random/canned_food,/obj/item/flame/candle,/turf/simulated/floor/plating,/area/warfare/battlefield/trench_section/underground)
 "ZR" = (/obj/effect/landmark/start{name = "Red Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "ZX" = (/turf/simulated/floor/exoplanet/water/shallow/lightless,/area/warfare/homebase/red)
 
@@ -509,72 +523,72 @@ awcPcPcPcPcPcPcPcPcPcPzTrDrDrDzTzTZEZEZEZEZEZEZEcPcPcPcPcPlUcPcPcPcPcPcPZEZEZEZE
 awawawawawawawawawawawzTrDrDrDNnNnZEQhQhSPNdFgZENnNnNnNnNnQhQhNnNnNnNnNnZESPNdFgQhTtZENnzTrDrDzTzTawawawawawawawawawawaw
 awawawawawawawawawawawrDrDrDrDNnNnZEFiQhQhQhSYZENnNnhfNnNnQhSYNnhfhfhfNnZEFiQhQhQhSYZENnzTrDrDzTzTawawawawawawawawawawaw
 awawawawawawawawawawawrDrDrDrDNnNnZEQGQhQhcZSHNnNnNnwNhfNnQhQhNnwNwNwNNnZEcZSHQhQhPVZENnzTrDrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTrDrDNnNnZEZEZEBoZEZENnhfhfwNwNNnQhvaNnNnwNwNwNZEZEZEBoZEZEZENnzTrDrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTrDrDrDNnNnwNwNwNwNwNwNwNwNwNwNNnNnQhvaNnNnNnwNqQwNwNwNwNwNwNwNNnzTrDrDrDzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTrDrDNnNnZEZEZEBoZEZENnhfhfwNwNNnQhfkNnNnwNwNwNZEZEZEBoZEZEZENnzTrDrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTrDrDrDNnNnwNwNwNwNwNwNwNwNwNwNNnNnQhfkNnNnNnwNqQwNwNwNwNwNwNwNNnzTrDrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTrDrDNnNnqQqQwNwNwNwNwNwNwNwNZEQhQhQhQhSYZEwNwNwNwNwNwNwNwNqQNnzTrDrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTrDrDrDrDNnNnqQqQwNqQwNwNqQqQwNQhQhQhQhQhQhQhwNqQwNqQqQwNqQwNqQwNzTzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawrDrDrDrDrDnRwNwNwNwNqQqQwNwNwNwNZEFiQhQhQhQhZEwNqQwNwNwNwNqQqQqQwNrDrDrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTrDrDrDNnNnNnNnwNwNwNwNwNwNwNwNZEQhQhQhNnNnZEwNwNwNNnNnwNwNwNwNNnzTzTrDrDzTawawawawawawawawawawaw
-awawawawawawawawawawawrDrDrDzTNnNnNnwNwNwNwNNnNnwNwNwNNnNnvavaNnNnwNwNwNhjNnNnNnwNwNwNNnzTzTrDrDzTawawawawawawawawawawaw
+awawawawawawawawawawawrDrDrDzTNnNnNnwNwNwNwNNnNnwNwNwNNnNnfkfkNnNnwNwNwNhjNnNnNnwNwNwNNnzTzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTrDrDzTNnZEZEZEQhZEZEZENnhjwNwNwNNnNnNnNnwNwNwNwNNnNnZEZEZEQhZEZEZEzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTrDrDzTNnZEcOQhQhQhcOZENnNnhjhjhjNnNnNnNnNnhjhjhjNnNnZEcOQhQhQhcOZEzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTrDzTNnZEFiQhQhQhSYZENnNnNnNnNnNnNnNnNnNnNnNnNnNnNnZEFiQhQhQhSYZEzTrDrDzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTNnZEQhxRtuXVQhZENnNnNnNnNnNnNnNnNnNnNnNnNnNnNnZEQhxRtuXVQhZEzTrDrDzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTNnZEQhsaBnsrQhZENnNnNnNnNnNnNnNnNnNnNnNnNnNnNnZEQhsaBnsrQhZEzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTzTzTzTZEZEZEZEzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTZEZEZEZEZEZEZEzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTUGmImIdjzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTrDrDrDrDrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTUGUGbMdjzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTrDrDrDrDrDzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTZfbMzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTmIUGzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTbMbMUGbMUGbMbMbMUGzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTmIbMUGbMDGmImIUGUGzTzTVHVHVHRRaHrSbEVHVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTrDrDzTzTzTzTzTbMbMzTzTVHVHVHhtfkfkRRVHVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTrDrDrDzTzTzTzTzTbMbMzTzTVHVHVHhththtRRVHVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTmIbMUGbMDGmImIUGUGzTzTVHVHVHRRErIfbEVHVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTrDrDzTzTzTzTzTbMbMzTzTVHVHVHxXgDgDRRVHVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTrDrDrDzTzTzTzTzTbMbMzTzTVHVHVHxXxXxXRRVHVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTrDrDrDrDzTzTzTzTzTUGUGzTzTVHVHVHVHSaRRVHVHVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawrDrDrDrDrDzTzTzTzTzTmIbMzTzTVHVHzEhtRRhtRRMEVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawrDrDrDrDzTzTzTzTzTzTmIbMzTzTVHVHzERRRRhtRRMEVHVHzTzTzTzTzTzTzTmImIzTmImImIzTawawawawawawawawawawaw
-awawawawawawawawawawawrDrDrDzTzTzTzTzTzTzTUGbMzTzTVHVHVHVHRRhtVHVHVHVHzTzTzTzTzTzTzTmImIzTmIzTrDzTawawawawawawawawawawaw
+awawawawawawawawawawawrDrDrDrDrDzTzTzTzTzTmIbMzTzTVHVHzExXRRxXRRMEVHVHzTzTzTzTzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawrDrDrDrDzTzTzTzTzTzTmIbMzTzTVHVHzERRRRxXRRMEVHVHzTzTzTzTzTzTzTmImIzTmImImIzTawawawawawawawawawawaw
+awawawawawawawawawawawrDrDrDzTzTzTzTzTzTzTUGbMzTzTVHVHVHVHRRxXVHVHVHVHzTzTzTzTzTzTzTmImIzTmIzTrDzTawawawawawawawawawawaw
 awawawawawawawawawawawrDrDrDzTzTzTzTzTzTzTgJUGzTzTVHVHVHVHRRnHVHVHVHVHzTzTzTzTzTmImImImImImIzTrDzTawawawawawawawawawawaw
-awawawawawawawawawawawzTrDrDrDzTzTzTzTzTzTbMBkzTzTVHVHTMwWhtRRmQlNVHVHzTzTzTzTzTrDzTzTmIsPsPzTrDzTawawawawawawawawawawaw
-awawawawawawawawawawawzTrDrDrDzTzTzTzTzTzTbMmIzTzTVHVHVHVHZDRRVHVHVHVHzTzTzTzTzTrDzTzTmImIsPzTmIzTawawawawawawawawawawaw
-awawawawawawawawawawawzTrDrDrDrDzTzTzTzTzTUGmIzTzTVHVHTMwWRRRRmQwYVHVHzTzTzTzTzTmIzTsPmImIsPzTmIzTawawawawawawawawawawaw
+awawawawawawawawawawawzTrDrDrDzTzTzTzTzTzTbMBkzTzTVHVHukUsxXRRjdDEVHVHzTzTzTzTzTrDzTzTmIsPsPzTrDzTawawawawawawawawawawaw
+awawawawawawawawawawawzTrDrDrDzTzTzTzTzTzTbMmIzTzTVHVHVHVHQeRRVHVHVHVHzTzTzTzTzTrDzTzTmImIsPzTmIzTawawawawawawawawawawaw
+awawawawawawawawawawawzTrDrDrDrDzTzTzTzTzTUGmIzTzTVHVHukUsRRRRjdcYVHVHzTzTzTzTzTmIzTsPmImIsPzTmIzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTrDrDrDzTzTzTzTzTbMmIzTzTVHVHVHVHVHVHVHVHVHVHzTzTzTzTzTmImIsPmImIsPrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTrDrDrDrDrDrDrDbMUGzTzTVHVHVHVHVHVHVHVHVHVHzTzTzTzTzTzTrDrDmImIrDrDzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTrDrDrDrDrDrDbMbMzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTrDsPmIrDsPmIzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTmIbMzTzTzTsPsPsPsPsPzTzTzTzTzTzTzTzTzTzTrDsPmImIsPrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTmIbMzTzTzTsPsclCIasPzTzTzTzTzTzTzTzTzTzTmIsPmImIsPrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTzTzTzTzTzTsPbMbMsPzTzTsPKsKsGDsPzTzTzTzTzTzTzTzTzTzTmIrDrDmIrDrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTmInQnQmIzTzTsPpbUGsPsPsPsPKsKsKssPzTzTzTzTzTzTzTzTzTzTmIzTrDmIzTmIzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTrDrDrDrDzTzTsPUGUGsPUGUGsPsPWxsPsPsPsPsPsPsPzTzTzTzTzTmIzTrDmIzTmIzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTmImImImIrDmIzTsPLwUGUGbMUGUGUGUGUGUGsPscKsIasPzTzTzTzTzTmIzTmImIzTmIzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTmIsPrDrDsPrDzTsPUGUGbMbMUGUGbMUGbMUGsPKsKscdsPzTzTzTzTzTmImIrDrDrDrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTmIsPmIrDsPrDzTsPFcFcsPsPLwUGbMsPbMUGsPKsKsKssPzTzTzTmImImIsPmImIsPrDmImIawawawawawawawawawawaw
-awawawawawawawawawawawzTzTrDmImIrDmIrDzTsPzTzTsPsPUGUGUGsPUGUGWxKsKsKssPzTzTzTrDsPsPsPmImIsPsPsPrDawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTmIbMzTzTzTsPQDlCnasPzTzTzTzTzTzTzTzTzTzTmIsPmImIsPrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTzTzTzTzTzTsPbMbMsPzTzTsPEYEYhOsPzTzTzTzTzTzTzTzTzTzTmIrDrDmIrDrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTmInQnQmIzTzTsPpbUGsPsPsPsPtlEYEYsPzTzTzTzTzTzTzTzTzTzTmIzTrDmIzTmIzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTrDrDrDrDzTzTsPUGUGsPiksRsPsPgOsPsPsPsPsPsPsPzTzTzTzTzTmIzTrDmIzTmIzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTmImImImIrDmIzTsPLwUGUGbMUGUGUGUGUGUGsPQDEYkOsPzTzTzTzTzTmIzTmImIzTmIzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTmIsPrDrDsPrDzTsPUGUGbMbMUGUGbMUGbMUGsPEYEYFysPzTzTzTzTzTmImIrDrDrDrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTmIsPmIrDsPrDzTsPFcFcsPsPYjUGqusPbMUGsPEYEYEYsPzTzTzTmImImIsPmImIsPrDmImIawawawawawawawawawawaw
+awawawawawawawawawawawzTzTrDmImIrDmIrDzTsPzTzTsPsPuXAouXsPUGUGgOEYEYpGsPzTzTzTrDsPsPsPmImIsPsPsPrDawawawawawawawawawawaw
 awawawawawawawawawawawzTzTrDzTmIrDzTmIzTzTzTzTzTsPsPsPsPsPUGUGsPsPsPsPsPzTzTzTrDrDrDmIrDrDrDrDmIrDawawawawawawawawawawaw
-awawawawawawawawawawawzTzTrDzTmImIzTmIzTzTzTzTzTsPIaKsIasPbMoJsPKsKsIasPzTzTzTzTzTmIzTrDmIzTrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawrDmImImImIrDrDrDrDrDzTzTzTsPscKsscsPbMUGsPKsKscdsPzTzTzTzTzTrDzTmImIzTmIzTzTawawawawawawawawawawaw
-awawawawawawawawawawawmIsPsPsPmImIsPsPsPmIzTzTzTsPYtKsKsWxUGUGWxKsKsscsPsPzTzTsPzTrDrDrDmImImIzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTrDzTmImIzTmIzTzTzTzTzTsPnatlkOsPbMoJsPtlEYrpsPzTzTzTzTzTmIzTrDmIzTrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawrDmImImImIrDrDrDrDrDzTzTzTsPQDEYQDsPbMUGsPEYEYFysPzTzTzTzTzTrDzTmImIzTmIzTzTawawawawawawawawawawaw
+awawawawawawawawawawawmIsPsPsPmImIsPsPsPmIzTzTzTsPcAEYEYgOUGUGgOEYEYQDsPsPzTzTsPzTrDrDrDmImImIzTzTawawawawawawawawawawaw
 awawawawawawawawawawawmIrDrDsPmImIsPmImImIzTzTzTsPsPsPsPsPUGUGsPsPsPsPsPsPPbPbsPzTrDsPmImIsPrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTrDrDrDmImIrDzTzTzTzTzTsPIasccdsPUGbMbMbMUGUGUGUGUGUGsPzTrDsPmImIsPrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTmIzTrDmIzTrDzTzTzTzTzTsPYtKsKsWxUGUGUGUGUGUGUGbMbMBksPzTmImIrDrDrDrDzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTmIzTmImIzTrDzTzTzTzTzTsPIascKssPsPLwUGUGUGsPsPsPUGUGsPzTzTmImImImIzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTmIzTmImIzTrDzTzTzTzTzTsPsPsPsPsPsPUGbMbMUGsPzTsPpbUGsPzTzTmIPpPpmIzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTrDrDrDmImIrDzTzTzTzTzTsPrpQDFysPUGbMbMbMUGUGUGUGUGUGsPzTrDsPmImIsPrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTmIzTrDmIzTrDzTzTzTzTzTsPgGEYEYgOUGUGUGUGUGUGUGbMbMBksPzTmImIrDrDrDrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTmIzTmImIzTrDzTzTzTzTzTsPnaQDEYsPsPLwUGUGUGsPsPsPUGUGsPzTzTmImImImIzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTmIzTmImIzTrDzTzTzTzTzTsPsPsPsPsPsPtIZQZQBhsPzTsPpbUGsPzTzTmIPpPpmIzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTrDrDrDmIrDrDzTzTzTzTzTzTzTzTzTzTsPsPsPsPsPsPzTsPUGUGsPzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTmIsPrDmIsPmIzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTbMmIzTzTzTzTzTzTzTzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTmIsPrDmIsPmIzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTbMmIrDrDrDzTzTzTzTzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTmIsPmImIsPmIzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTbMbMrDrDrDrDrDzTzTzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTmImImIrDmImIzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTmIbMzTrDrDrDrDzTrDzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTmImIsPmIrDsPmIrDzTzTzTzTzTzTzTkDkDkDkDkDkDkDkDzTzTbMbMzTzTrDrDrDrDrDzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTmIzTsPmIrDsPzTrDzTzTzTzTzTzTzTkDOjevGKOcjCYWkDzTzTbMUGzTzTzTrDrDrDrDrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTmIzTsPmIrDsPzTrDzTzTzTzTzTzTzTkDvHrSAIOcguLfkDzTzTbMUGzTzTzTrDrDrDrDrDzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTrDzTsPmImIzTzTrDzTzTzTzTzTzTzTkDkDkDIXOckDkDkDzTzTUGUGzTzTzTzTrDrDrDrDrDzTawawawawawawawawawawaw
-awawawawawawawawawawawzTrDzTsPsPmIzTzTrDzTzTzTzTzTzTzTkDOjjCOcGKjCYWkDzTzTZfbMzTzTzTzTrDrDrDrDrDzTawawawawawawawawawawaw
-awawawawawawawawawawawzTmIzTrDmImImImImIzTzTzTzTzTzTzTkDkDkDOcGKkDkDkDzTzTmIyuzTzTzTzTzTrDrDrDrDzTawawawawawawawawawawaw
+awawawawawawawawawawawzTrDzTsPsPmIzTzTrDzTzTzTzTzTzTzTkDvHguOcAIguLfkDzTzTZfbMzTzTzTzTrDrDrDrDrDzTawawawawawawawawawawaw
+awawawawawawawawawawawzTmIzTrDmImImImImIzTzTzTzTzTzTzTkDkDkDOcAIkDkDkDzTzTmIyuzTzTzTzTzTrDrDrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTmIzTrDzTmImIzTzTzTzTzTzTzTzTzTkDkDkDOcgbkDkDkDzTzTmIbMzTzTzTzTzTrDrDrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTrDrDrDzTmImIzTzTzTzTzTzTzTzTzTkDafOcOcOcOcXlkDzTzTmIbMzTzTzTzTzTrDrDrDrDzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTkDafOcGKOcOcXlkDzTzTUGUGzTzTzTzTzTrDrDrDzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTkDafOcAIOcOcXlkDzTzTUGUGzTzTzTzTzTrDrDrDzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTkDkDkDIXOckDkDkDzTzTbMbMzTzTzTzTzTrDrDzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTkDkDOcOcOcGKkDkDzTzTbMmIzTzTzTzTzTrDrDzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTzTzTzTzTzTgtgtgtgtzTzTzTkDkDGKqvqvGKkDkDzTzTUGmIzTzTzTzTzTrDrDzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTzTzTzTzTzTgtrDrDgtgtzTzTkDkDOctVtVgbkDkDzTzTUGmIUGUGbMbMbMUGUGzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTzTkDkDOcOcOcAIkDkDzTzTbMmIzTzTzTzTzTrDrDzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTzTzTzTzTzTgtgtgtgtzTzTzTkDkDAIjjjjAIkDkDzTzTUGmIzTzTzTzTzTrDrDzTzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTzTzTzTzTzTgtrDrDgtgtzTzTkDkDOcXkXkgbkDkDzTzTUGmIUGUGbMbMbMUGUGzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTgtgtzTzTgtgtrDrDgtgtzTzTzTzTzTzTzTzTzTzTzTUGbMbMUGUGUGUGmIbMzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTgtgtgtzTzTgtgtrDrDgtgtgtgtgtzTzTzTzTzTzTzTzTzTzTzTzTzTzTmISpzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTgtgtgtgtrDgtgtzTgtgtrDrDrDgtrDrDgtgtgtgtgtgtgtgtzTzTzTzTzTzTzTmIUGzTzTzTawawawawawawawawawawaw
@@ -583,19 +597,19 @@ awawawawawawawawawawawzTzTgtrDrDrDrDrDgtrDrDrDrDrDrDrDrDgtgtrDrDrDrDrDrDrDrDrDrD
 awawawawawawawawawawawzTzTgtrDrDrDrDrDrDrDrDrDgtgtgtgtgtgtgtgtgtgtgtrDrDrDrDrDrDgtzTzTzTzTzTzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTgtgtgtrDrDrDrDrDrDrDuOxHxHxHxHxHxHxHxHxHxHxHxHgtgtrDrDrDgtgtgtgtgtzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTgtzTzTgtgtgtrDrDrDrDuOxHxHXhfhmgxHUYUYxHXhfhmgxHzTgtrDrDrDrDrDgtrDgtzTzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTgtzTzTzTzTgtgtrDrDrDuOxHvtmimiUYxHqjUYxHUYUYxUxHzTgtgtgtgtrDrDrDrDgtgtzTzTawawawawawawawawawawaw
-awawawawawawawawawawawzTgtgtgtzTzTgtrDrDrDuOxHxHlPxHluUYgWmiUYgWUYtWxHxHzTzTzTzTgtgtrDrDrDrDgtgtzTawawawawawawawawawawaw
-awawawawawawawawawawawzTgtrDgtgtgtgtrDrDrDuOxHxHxHxHUYUYeLUYUYeLUYmicXxHxHxHxHxHxHxHrDuOrDrDrDgtzTawawawawawawawawawawaw
-awawawawawawawawawawawzTgtrDrDrDrDgtrDrDrDuOxHLKLKxHleTReLUYmieLlPleTRxHxHxHLKLKxHxHxHuOrDrDrDgtzTawawawawawawawawawawaw
-awawawawawawawawawawawzTgtgtrDrDrDrDrDrDgtuOxHUYUYxHxHeLeLUYmieLeLxHxHxHxHxHUYUYUYVFxHuOrDrDrDgtzTawawawawawawawawawawaw
-awawawawawawawawawawawzTgtgtgtgtrDrDrDrDrDrDmiUYUYUYUYUYUYUYmiUYmimimiUYxHxHnPUYmimixHuOrDrDgtgtzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTgtgtgtrDrDrDrDUYUYMQmimimiUYVFObUYUYUYmiUYxHxHxHxHUYmixHuOrDrDrDgtzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTgtgtgtrDrDrDgtxHUYUYxHxHxHUYUYxHxHUYmixHUYUYxHxHmimiUYUYrDrDrDrDrDgtgtawawawawawawawawawawaw
-awawawawawawawawawawawzTzTgtgtrDrDrDrDgtgtxHEwEwxHxHxHqjUYxHxHUYmixHEwEwxHxHmiUYUYUYrDrDrDuOrDrDgtawawawawawawawawawawaw
-awawawawawawawawawawawzTzTgtrDrDrDrDrDgtzTxHxHxHxHxHxHmiUYxHxHUYmixHxHxHxHxHmixUxHxHxHxHxHxHrDrDgtawawawawawawawawawawaw
-awawawawawawawawawawawzTzTgtrDrDrDrDgtgtzTxHxHOlUkUYeLUYUYUYUYUYmiUYVFVFUYUYUYUYeLUYOlUkxHxHrDrDgtawawawawawawawawawawaw
-awawawawawawawawawawawzTzTgtrDrDrDgtgtzTzTxHciUYUYUYgWUYVFObUYUYUYUYnPUYmimimiUYgWmimiUYPWxHgtrDgtawawawawawawawawawawaw
-awawawawawawawawawawawzTgtgtgtgtgtgtzTzTzTxHxHwAqXUYxHxHxHxHxHmiUYxHxHxHxHxHxHxHxHUYqXwAxHxHgtgtgtawawawawawawawawawawaw
+awawawawawawawawawawawzTgtzTzTzTzTgtgtrDrDrDuOxHvtAwAwUYxHwlUYxHUYUYxUxHzTgtgtgtgtrDrDrDrDgtgtzTzTawawawawawawawawawawaw
+awawawawawawawawawawawzTgtgtgtzTzTgtrDrDrDuOxHxHlPxHluUYlyAwUYlyUYtWxHxHzTzTzTzTgtgtrDrDrDrDgtgtzTawawawawawawawawawawaw
+awawawawawawawawawawawzTgtrDgtgtgtgtrDrDrDuOxHxHxHxHUYUYeLUYUYeLUYAwvnxHxHxHxHxHxHxHrDuOrDrDrDgtzTawawawawawawawawawawaw
+awawawawawawawawawawawzTgtrDrDrDrDgtrDrDrDuOxHLKLKxHleTReLUYAweLlPleTRxHxHxHLKLKxHxHxHuOrDrDrDgtzTawawawawawawawawawawaw
+awawawawawawawawawawawzTgtgtrDrDrDrDrDrDgtuOxHUYUYxHxHeLeLUYAweLeLxHxHxHxHxHUYUYUYrMxHuOrDrDrDgtzTawawawawawawawawawawaw
+awawawawawawawawawawawzTgtgtgtgtrDrDrDrDrDrDAwUYUYUYUYUYUYUYAwUYAwAwAwUYxHxHnPUYAwAwxHuOrDrDgtgtzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTgtgtgtrDrDrDrDUYUYiCAwAwAwUYrMatUYUYUYAwUYxHxHxHxHUYAwxHuOrDrDrDgtzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTgtgtgtrDrDrDgtxHUYUYxHxHxHUYUYxHxHUYAwxHUYUYxHxHAwAwUYUYrDrDrDrDrDgtgtawawawawawawawawawawaw
+awawawawawawawawawawawzTzTgtgtrDrDrDrDgtgtxHEwEwxHxHxHwlUYxHxHUYAwxHEwEwxHxHAwUYUYUYrDrDrDuOrDrDgtawawawawawawawawawawaw
+awawawawawawawawawawawzTzTgtrDrDrDrDrDgtzTxHxHxHxHxHxHAwUYxHxHUYAwxHxHxHxHxHAwxUxHxHxHxHxHxHrDrDgtawawawawawawawawawawaw
+awawawawawawawawawawawzTzTgtrDrDrDrDgtgtzTxHxHOlXpUYeLUYUYUYUYUYAwUYrMrMUYUYUYUYeLUYOlXpxHxHrDrDgtawawawawawawawawawawaw
+awawawawawawawawawawawzTzTgtrDrDrDgtgtzTzTxHciUYUYUYlyUYrMatUYUYUYUYnPUYAwAwAwUYlyAwAwUYPWxHgtrDgtawawawawawawawawawawaw
+awawawawawawawawawawawzTgtgtgtgtgtgtzTzTzTxHxHVYMaUYxHxHxHxHxHAwUYxHxHxHxHxHxHxHxHUYMaVYxHxHgtgtgtawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTxHxHxHxHxHxHxHxHxHxHUYUYxHxHxHxHxHxHxHxHxHxHxHxHxHzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawawawawawawawawawawawawawawawawawawawawawYpawawawawawawawawawawawawawawawawawawawawawawawawawawawaw
 awTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqYpYpYpYpYpYpTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqaw
@@ -619,7 +633,7 @@ awTqTqTqTqTqTqHPZwTqZwHZTqTqelZwTqGizmMxTqTqTqTqTqTqTqMxIoMxIGMxZwMxTqTqTqelINIO
 awTqTqTqTqTqTqTqTqTqTqTqTqTqelTqTqMxTqTqTqTqTqTqTqTqTqJRJVJVJVJVJVJVTqTqTqAselelelHETqTqAselTqTqJXKaJEndZwelJJTqTqTqTqaw
 awTqTqTqTqTqTqTqTqMxXXMxTqTqHETqTqTqTqTqTqTqTqTqKbKgTqTqEyKhEyKiKXZwTqTqTqLkLuelelelLSelelelelLSFQFQJEndTqTqEyTqTqTqTqaw
 awTqTqTqTqTqTqYpYpMjZwMjZwTqelTqTqTqTqTqTqTqTqTqelMvMNTqTqelNeelelelTqTqTqTqTqTqTqTqTqTqTqTqTqTqNmNsNwNxNFTqTqTqTqTqTqaw
-awTqTqTqTqTqTqYpTqNKZwZwZwEdelTqTqTqTqTqTqTqTqTqAsNRYqelTqTqEyzVBLTqTqDHNWDHTqTqTqAselelelelBLTqTqTqTqTqTqTqTqTqTqTqTqaw
+awTqTqTqTqTqTqYpTqNKZwZwZwEdelTqTqTqTqTqTqTqTqTqAsNRwcelTqTqEyzVBLTqTqDHNWDHTqTqTqAselelelelBLTqTqTqTqTqTqTqTqTqTqTqTqaw
 awTqTqTqTqTqTqfoTqMxZwMjTqTqelelTqOhOhOhTqTqOyONZwZwelOWPdTqTqelzVLSelelelelelLSelelzVelZwZwZwelTqTqTqMxPgMxTqTqTqTqTqaw
 awTqTqTqTqZXZXfoTqTqzmKXTqTqzVelTqzbZwZwTqTqTqelelZwZwelelPzTqPIelndQdzVQnelQdndndQuQEelelzVzVelelTqTqQHQLyBTqTqTqTqTqaw
 awTqTqTqZXZXZXfoTqTqTqTqTqTqzVelEdZwZwQTTqTqTqelHETqQUelelNRTqQWRpTqQdzVRqelQdTqTqTqTqTqTqTqTqelzVTqTqTqEdTqTqTqTqTqTqaw
