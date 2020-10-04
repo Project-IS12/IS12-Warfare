@@ -105,7 +105,8 @@
 
 /obj/structure/torchwall/service/New()
 	..()
-	lighttorch = new(src)
+	if(!locate(lighttorch) in src)
+		lighttorch = new(src)
 	lighttorch.lit = TRUE
 	update_icon()
 
