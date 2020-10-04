@@ -200,7 +200,7 @@ var/list/global/organ_rel_size = list(
 	n = length(n)
 	var/p = null
 	p = 1
-	var/intag = 0
+	var/intag = FALSE
 	while(p <= n)
 		var/char = copytext(te, p, p + 1)
 		if (char == "<") //let's try to not break tags
@@ -212,16 +212,32 @@ var/list/global/organ_rel_size = list(
 		if (char == ">")
 			intag = !intag
 		p++
-	return t
+	return html_encode(t)
 
-proc/slur(phrase)
+/proc/slur(phrase)
 	phrase = html_decode(phrase)
 	var/leng=length(phrase)
 	var/counter=length(phrase)
 	var/newphrase=""
 	var/newletter=""
+	var/intag = FALSE
 	while(counter>=1)
 		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
+		//This is stupid code but it should work
+		//if we detect a < we are in a tag
+		//while in a tag we dont modify speech and keep looping until
+		//we reach >
+		if(newletter == "<")
+			intag = TRUE
+		else if(newletter == ">")
+			intag = FALSE
+			counter-=1
+			continue
+
+		if(intag)
+			counter-=1
+			continue
+
 		if(rand(1,3)==3)
 			if(lowertext(newletter)=="o")	newletter="u"
 			if(lowertext(newletter)=="s")	newletter="ch"
@@ -234,8 +250,10 @@ proc/slur(phrase)
 			if(9,10)	newletter="<b>[newletter]</b>"
 			if(11,12)	newletter="<big>[newletter]</big>"
 			if(13)	newletter="<small>[newletter]</small>"
-		newphrase+="[newletter]";counter-=1
-	return newphrase
+		newphrase+="[newletter]"
+
+		counter-=1
+	return html_encode(newphrase)
 
 /proc/stutter(n)
 	var/te = html_decode(n)
@@ -243,8 +261,21 @@ proc/slur(phrase)
 	n = length(n)//length of the entire word
 	var/p = null
 	p = 1//1 is the start of any word
+	var/intag = FALSE
 	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
 		var/n_letter = copytext(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
+
+		if(n_letter == "<")
+			intag = TRUE
+		else if(n_letter == ">")
+			intag = FALSE
+			p++
+			continue
+
+		if(intag)
+			p++
+			continue
+
 		if (prob(80) && (ckey(n_letter) in list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z")))
 			if (prob(10))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
@@ -258,10 +289,10 @@ proc/slur(phrase)
 						n_letter = text("[n_letter]-[n_letter]")
 		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
 		p++//for each letter p is increased to find where the next letter will be.
-	return sanitize(t)
+	return html_encode(t)
 
 
-proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
+/proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
 	/* Turn text into complete gibberish! */
 	var/returntext = ""
 	for(var/i = 1, i <= length(t), i++)
@@ -287,7 +318,7 @@ proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 fo
 	message = prob(intensity) ? replacetext(message, "ck", "gh") : message
 	message = prob(intensity) ? replacetext(message, "c", "gh") : message
 	message = prob(intensity) ? replacetext(message, "k", "gh") : message
-	return message
+	return html_encode(message)
 
 /proc/tongueless(message)
 	message = html_decode(message)
@@ -306,7 +337,7 @@ proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 fo
 	message = replacetext(message, "x", "a")
 	message = replacetext(message, "y", "a")
 	message = replacetext(message, "z", "h")
-	return message
+	return html_encode(message)
 
 //Shake the camera of the person viewing the mob SO REAL!
 /proc/shake_camera(mob/M, duration, strength=1)
