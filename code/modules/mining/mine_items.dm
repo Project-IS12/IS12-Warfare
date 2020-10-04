@@ -61,7 +61,7 @@
 
 	var/excavation_amount = 200
 
-obj/item/pickaxe/newpick
+/obj/item/pickaxe/newpick
 	icon_state = "ospickaxe"
 
 /obj/item/pickaxe/hammer
