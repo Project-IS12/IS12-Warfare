@@ -1,6 +1,5 @@
 #if !defined(using_map_DATUM)
 	#include "../oldfare/warfare_areas.dm"
-	#include "warfare_shuttles.dm"
 	#include "warfare_unit_testing.dm"
 	#include "jobs/captain_verbs.dm"
 	#include "jobs/warfare_jobs.dm"
