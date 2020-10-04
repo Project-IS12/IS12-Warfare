@@ -401,6 +401,11 @@
 		else
 			AnnounceCyborg(character, job, spawnpoint.msg)
 	log_and_message_admins("has joined the round as [character.mind.assigned_role].", character)
+	spawn(10)//Enough time that our area is loaded in.
+		var/area/Area = get_area(character)
+		if(isarea(Area))
+			Area.change_zone_ambience(character)
+
 	qdel(src)
 
 

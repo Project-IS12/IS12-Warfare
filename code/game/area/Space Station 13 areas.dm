@@ -50,7 +50,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/list/all_doors = null		//Added by Strumpetplaya - Alarm Change - Contains a list of doors adjacent to this area
 	var/air_doors_activated = 0
 	var/list/ambience = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg')
-	var/music = "sound/music/station_ambience.ogg"
+	var/music = 'sound/music/station_ambience.ogg'
 	var/sound_env = STANDARD_STATION
 	var/list/forced_ambience = null
 	var/turf/base_turf //The base turf type of the area, which can be used to override the z-level's base turf
@@ -73,7 +73,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = 0
 	area_flags = AREA_FLAG_EXTERNAL
 	//ambience = list('sound/ambience/ambispace.ogg','sound/music/title2.ogg','sound/music/space.ogg','sound/music/main.ogg','sound/music/traitor.ogg')
-	music = "sound/music/space_ambience.ogg"
+	music = 'sound/music/space_ambience.ogg'
+
 /area/space/update_icon()
 	return
 

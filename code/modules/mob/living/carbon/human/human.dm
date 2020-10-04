@@ -46,8 +46,6 @@
 	bladder = rand(0,100)
 	bowels = rand(0, 100)
 	overlay_fullscreen("fademob", /obj/screen/fullscreen/fadeoutok)
-	//spawn(41)
-	//	clear_fullscreen("fademob")
 
 	if(dna)
 		dna.ready_dna(src)
@@ -60,7 +58,6 @@
 		var/obj/structure/bed/padded/B = locate() in T
 		if(B)
 			B.buckle_mob(src)
-
 
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src
