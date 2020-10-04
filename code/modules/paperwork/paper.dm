@@ -460,7 +460,7 @@ obj/item/paper/astrafare_lore2
 
 obj/item/paper/astrafare_lore3
 	name = "The Letter"
-	info = "To Head of Project ''Getaway''<br>From Director of Mt. Clear Sky, Director of Ward Eye Station, Major Aelou.<br>671 - 4 - 1 - 45<br><br>''Omen'' is down. Something destroyed it from the outside. We are to abandon current position soon since the Second SO Company can’t sabotage and deceive our enemies from this place any more. We have 1 Stage left to track any valuable pieces. Our hope is that this task gets properly succeeded by First or Second Department of ''Getaway''. <br><br>Let us all end this misery."
+	info = "To Head of Project ''Getaway''<br>From Director of Mt. Clear Sky, Director of Ward Eye Station, Major Aelou.<br>671 - 4 - 1 - 45<br><br>''Omen'' is down. Something destroyed it from the outside. We are to abandon current position soon since the Second SO Company can't sabotage and deceive our enemies from this place any more. We have 1 Stage left to track any valuable pieces. Our hope is that this task gets properly succeeded by First or Second Department of ''Getaway''. <br><br>Let us all end this misery."
 
 obj/item/paper/astrafare_lore4
 	name = "CAT Printout"
