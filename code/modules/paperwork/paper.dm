@@ -450,7 +450,7 @@
 	..()
 	icon_state = "workvisa" //Has to be here or it'll assume default paper sprites.
 
-obj/item/paper/astrafare_lore1
+/obj/item/paper/astrafare_lore1
 	name = "AAS Printout"
 	info = "<b><large>Automated Announcement System</large></b><br>Last Event: 671 - 4 - 2 - 49 24:38<br>Date of Printout: 671 - 4 - 2 - 49 24:38<br><br><i>Output for 5 last events.</i><br><br><b>AXIS 49</b><br>19:25 ADMIN ANNOUNCEMENT: All personnel, proceed to evacuation zone 2 immediately.<br>19:31 SF CLEAR SKY: Station admin logged off. <br>20:01 MC ANNOUNCEMENT: To all PLs. This is Command. Abandon current task. Escort the science and intelligence personnel of ''Ward Eye'' and ''Clear Sky'' through the escape tunnels. <br>20:12 GARRISON: Station admin logged off.<br>24:38 Critical Failure of S-E Systems. All devices transferred to their analogue source of energy. Printing out last state of the system.<br><br><b>GENERAL STATE: LET US ALL END THIS MISERY.</b>"
 
