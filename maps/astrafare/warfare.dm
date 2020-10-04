@@ -8,7 +8,7 @@
 	#include "jobs/blue/blue_soldiers.dm"
 	#include "jobs/red/red_fortress.dm"
 	#include "jobs/red/red_soldiers.dm"
-	#include "warfare_items.dm"
+	#include "../oldfare/warfare_items.dm"
 	#include "../shared/items/clothing.dm"
 	#include "../shared/items/cards_ids.dm"
 
