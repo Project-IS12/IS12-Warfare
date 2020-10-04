@@ -34,14 +34,6 @@ GLOBAL_LIST_INIT(background_music, list(
 	'sound/music/trench_bgm.ogg',
 	'sound/music/space_ambience.ogg',
 	'sound/music/station_ambience.ogg',
-	'sound/music/boombox1.ogg',
-	'sound/music/boombox3.ogg',
-	'sound/music/boombox4.ogg',
-	'sound/music/boombox5.ogg',
-	'sound/music/boombox6.ogg',
-	'sound/music/boombox7.ogg',
-	'sound/music/boombox8.ogg',
-	'sound/music/boombox9.ogg',
 
 ))
 
