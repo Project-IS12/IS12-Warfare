@@ -371,6 +371,33 @@
 				qdel(src)
 				return
 
+/obj/structure/telearray
+	name = "Telescope Array"
+	desc = "It's a part of this strange device. Was that a goal of our expedition?"
+	icon = 'icons/obj/warfare.dmi'
+	anchored = TRUE
+	density = TRUE
+	plane = ABOVE_OBJ_PLANE
+	layer = BASE_MOB_LAYER
+
+/obj/structure/telearray/lowleft
+	icon_state = "telearray_ll"
+
+/obj/structure/telearray/lowright
+	icon_state = "telearray_lr"
+
+/obj/structure/telearray/centreleft
+	icon_state = "telearray_cl"
+
+/obj/structure/telearray/centreright
+	icon_state = "telearray_cr"
+
+/obj/structure/telearray/upperleft
+	icon_state = "telearray_ul"
+
+/obj/structure/telearray/upperright
+	icon_state = "telearray_ur"
+
 /obj/structure/anti_tank
 	name = "metal barricade"
 	desc = "Usually found in no man\'s land IN YOUR FUCKING WAY. It's dense enough to block bullets, don't even try to fucking shoot over it."
@@ -381,7 +408,6 @@
 	plane = ABOVE_OBJ_PLANE
 	layer = BASE_MOB_LAYER
 	atom_flags = ATOM_FLAG_CLIMBABLE
-
 
 /obj/structure/anti_tank/can_climb(var/mob/living/user, post_climb_check=0)
 	if(!iswarfare())
