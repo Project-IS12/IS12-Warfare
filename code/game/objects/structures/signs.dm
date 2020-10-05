@@ -4,6 +4,7 @@
 	opacity = 0
 	density = 0
 	layer = ABOVE_WINDOW_LAYER
+	plane = ABOVE_HUMAN_PLANE
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/structure/sign/ex_act(severity)
