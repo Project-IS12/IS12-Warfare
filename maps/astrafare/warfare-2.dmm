@@ -9,7 +9,6 @@
 "aV" = (/turf/simulated/mineral,/area/warfare/homebase/blue)
 "aX" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "aY" = (/obj/structure/sink{dir = 8; pixel_x = -8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"bj" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/centreleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "bp" = (/turf/simulated/floor/trench,/area/warfare/battlefield/no_mans_land)
 "bw" = (/obj/structure/table/steel,/obj/item/reagent_containers/food/condiment/small/peppermill,/obj/item/reagent_containers/food/condiment/small/saltshaker,/obj/item/reagent_containers/food/condiment/small/sugar,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "bx" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/effect/floor_decal/turf/coldroom,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -117,7 +116,6 @@
 "mn" = (/obj/structure/window/reinforced,/turf/simulated/floor/tiled/ramp{dir = 4; icon_state = "ramptop"},/area/warfare/homebase/blue)
 "mr" = (/obj/structure/table/steel,/obj/item/shovel,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "mv" = (/obj/structure/closet/secure_closet/freezer/fridge,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"mB" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/lowleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "mD" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "mH" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/farawayhome)
 "mN" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2; name = "Emergency Medical"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -184,6 +182,7 @@
 "vj" = (/obj/structure/bed/roller,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "vr" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "vs" = (/obj/structure/table/steel,/obj/effect/floor_decal/newcorner/blue/solid,/obj/machinery/cooker/candy,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"vt" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/centreleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "vC" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "vE" = (/obj/structure/bed/chair,/obj/effect/landmark/start{name = "Red Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "vH" = (/obj/structure/table/woodentable,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
@@ -204,6 +203,7 @@
 "xk" = (/turf/simulated/floor/plating,/area/warfare/battlefield/capture_point/mid)
 "xn" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/effect/floor_decal/turf/coldroom,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "xs" = (/obj/structure/table/steel,/obj/item/storage/firstaid/surgery,/obj/item/FixOVein,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"xG" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/centreright,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "xJ" = (/obj/effect/floor_decal/turf/bar2,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "xL" = (/obj/structure/table/rack,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "xT" = (/obj/effect/floor_decal/turf/plate,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -342,7 +342,6 @@
 "Ng" = (/obj/structure/table/woodentable,/obj/structure/sign/neon/cargo{pixel_y = -32; plane = -6},/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Nk" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/no_mans_land)
 "Nt" = (/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
-"Nv" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/centreright,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "NB" = (/obj/structure/torchwall/service{pixel_y = 32},/turf/simulated/open,/area/warfare/battlefield/capture_point/red/two)
 "NV" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Of" = (/obj/structure/closet/crate,/obj/item/reagent_containers/ivbag/blood/AMinus,/obj/item/reagent_containers/ivbag/blood/AMinus,/obj/item/reagent_containers/ivbag/blood/APlus,/obj/item/reagent_containers/ivbag/blood/APlus,/obj/item/reagent_containers/ivbag/blood/BMinus,/obj/item/reagent_containers/ivbag/blood/BMinus,/obj/item/reagent_containers/ivbag/blood/BPlus,/obj/item/reagent_containers/ivbag/blood/BPlus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OPlus,/obj/item/reagent_containers/ivbag/blood/OPlus,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -367,6 +366,7 @@
 "PN" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "PR" = (/obj/structure/closet/crate,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "PT" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/no_mans_land)
+"Qa" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/lowleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "Qo" = (/obj/structure/defensive_barrier,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "Qy" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/mid)
 "QF" = (/turf/simulated/open,/area/warfare/battlefield/capture_point/red/one)
@@ -531,8 +531,8 @@ esesesesesesesesesesesesesesesesesqYqYqYQyHYHYQyqYKJKJhuVslxlxVsgIKJKJqYqYqYqYqY
 esesesesesesesesesesesesesesesesesPTPTPTQyHYHYQyKJKJFnZtlxGplylxlxcdKJKJqYqYqYqYPTPTPTeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesPTPTPTKJQyOmlxQyKJlxWrlxlxWrWrWrWrjuFaKJKJKJKJKJKJPTPTPTeseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesNkPTPTKJgTWrWrVrKJgTWrlxlxQTDxlxlxlxVrKJlxfXWVlxKJPTPTuneseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesPTPTPTlulxWrlxlxlulxPdPKlxbjNvlxmrFnlxlulxWrlxlxluPTPTPTeseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesPTPTPTKJlxWVHTlxKJgTWrlxlxmBaMxklxWrVrKJgTWrlxVrKJPTPTPTeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesPTPTPTlulxWrlxlxlulxPdPKlxvtxGlxmrFnlxlulxWrlxlxluPTPTPTeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesPTPTPTKJlxWVHTlxKJgTWrlxlxQaaMxklxWrVrKJgTWrlxVrKJPTPTPTeseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesNkPTPTKJKJKJKJKJKJlyYrlxWrlxlxlxlxRJGpKJQylxgCQyKJPTuneseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesPTPTPTPTqYqYqYqYKJKJsllxlxGpTClxlxjyKJKJQyHYHYQyPTPTPTeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYKJKJOmrFWrWrrFgCKJKJqYQyHYHYQyqYqYqYeseseseseseseseseseseseseseseseses
