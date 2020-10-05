@@ -240,6 +240,7 @@
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester
 		r_pocket = /obj/item/ammo_box/rifle
 		backpack_contents = initial(backpack_contents)
+		belt = null
 
 	else if (prob(5))
 		suit_store = /obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
@@ -251,16 +252,19 @@
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester
 		r_pocket = /obj/item/ammo_box/rifle
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
+		belt = null
 
 	else if(prob(50))
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/bayonet
 		r_pocket = /obj/item/ammo_box/rifle
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
+		belt = null
 
 	else
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty
 		r_pocket = /obj/item/ammo_box/rifle
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
+		belt = null
 
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/torch/self_lit = 1, /obj/item/ammo_box/flares = 1)
@@ -276,6 +280,7 @@
 		suit_store = /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/bayonet
 		r_pocket = /obj/item/ammo_box/rifle
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1, /obj/item/device/binoculars = 1)
+		belt = null
 	else
 		suit_store = /obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
 		r_pocket =  /obj/item/ammo_magazine/a762/rsc
