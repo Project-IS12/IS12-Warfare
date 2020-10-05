@@ -29,7 +29,7 @@
 	emergency_shuttle_leaving_dock = "The emergency escape shuttle has departed from %dock_name%."
 	emergency_shuttle_called_message = "An emergency escape shuttle has been sent."
 	emergency_shuttle_recall_message = "The emergency shuttle has been recalled"
-	map_lore = "We have been marching through the mountain ravine for more than two seasons. Never ending, tight and dangerous. No one can remember what our target was anymore - something important. Something that could end the War. Yesterday we captured some old complex of unknown origin. Recon returned with the enemy presence confirmation. We have orders to move out at dawn. "
+	map_lore = "We have been marching through the mountain ravine for more than two seasons. Never ending, tight and dangerous. No one can remember what our target was anymore - something important. Something that could end the War. Yesterday we captured old complex of unknown origin. Recon returned with confirmed enemy presence. We have orders to move out at dawn."
 
 
 
