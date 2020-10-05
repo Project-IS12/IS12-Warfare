@@ -8,7 +8,7 @@
 /obj/item/paper
 	name = "sheet of paper"
 	gender = NEUTER
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/warfare.dmi'
 	icon_state = "paper"
 	item_state = "paper"
 	randpixel = 8
