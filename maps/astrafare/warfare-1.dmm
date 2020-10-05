@@ -203,7 +203,7 @@
 "Aw" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/two)
 "Ax" = (/obj/structure/sign/neon/exit{pixel_x = 32; plane = -6},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Az" = (/obj/effect/floor_decal/turf/cafe2,/obj/effect/landmark/start{name = "Blue Captain"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"AD" = (/obj/effect/floor_decal/turf/plating,/obj/effect/floor_decal/turf/plating,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"AD" = (/obj/structure/torchwall/service{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "AI" = (/turf/simulated/floor/dirty/tough/lightless,/area/warfare/battlefield/capture_point/red/one)
 "AL" = (/obj/structure/closet/crate,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "AP" = (/obj/effect/floor_decal/turf/cafe2,/obj/effect/floor_decal/carpet/blue2{dir = 1},/obj/effect/floor_decal/carpet/blue2,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -295,7 +295,7 @@
 "JH" = (/obj/structure/curtain,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "JJ" = (/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "JM" = (/obj/effect/floor_decal/turf/cafe2,/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"JR" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"JR" = (/obj/effect/landmark/start{name = "Red Engineer"},/obj/structure/torchwall/service{dir = 4},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "JV" = (/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "JW" = (/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "JX" = (/obj/structure/table/woodentable,/obj/item/reagent_containers/food/drinks/bottle/rum,/turf/simulated/floor/lino,/area/warfare/homebase/red)
@@ -337,7 +337,7 @@
 "Nx" = (/obj/structure/curtain,/obj/effect/floor_decal/carpet/red{dir = 1},/obj/effect/floor_decal/carpet/red,/turf/simulated/floor/lino,/area/warfare/homebase/red)
 "NE" = (/obj/structure/table/woodentable,/obj/item/device/cassette/tape3,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "NF" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/effect/floor_decal/carpet/red{dir = 1},/obj/effect/floor_decal/carpet/red,/obj/effect/floor_decal/carpet/red{dir = 6},/obj/effect/floor_decal/carpet/red{dir = 5},/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/lino,/area/warfare/homebase/red)
-"NK" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Red Flame Trooper"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"NK" = (/obj/effect/landmark/start{name = "Red Flame Trooper"},/obj/structure/torchwall/service{dir = 4},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "NR" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "NW" = (/obj/structure/sign/neon/exit,/turf/simulated/mineral,/area/warfare/homebase/red)
 "Oc" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
@@ -454,7 +454,7 @@
 "Yj" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/structure/bed/chair,/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "Yp" = (/turf/simulated/floor/plating/n2floor,/area/warfare/homebase/red)
 "Yu" = (/obj/effect/landmark/start{name = "Blue Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"Yx" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Yx" = (/obj/structure/torchwall/service{dir = 4},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "YB" = (/obj/structure/table/rack,/obj/item/storage/firstaid/toxin,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "YC" = (/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
 "YH" = (/obj/machinery/shower{dir = 8; icon_state = "shower"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
@@ -506,7 +506,7 @@ awcPcPcPcPcPcPcPLOcFnsxFxFcFnCcFxFxFxFjzngcFcFcFcFcFsycPSSbbSSBTSSQBSScPcPSSfTSS
 awcPcPcPcPcPcPcPdFcPPAXRxFPAcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPcPtHxFuEnsxFxFcPcPcPcPcPlUcPcPcPcPcPcPcPcPcPcPaw
 awcPcPcPcPcPcPcPcFcPPAcFTHPAcPcPcPcPlUlUlUlUlUcPSStmSScPcPcPcPcPcPcPcPcPcPOzuGuPPAdFcFcPSSviSScPlUcPcPcPcPcPcPcPcPcPcPaw
 awcPcPcPcPcPcPcPnscPPAxFcFPAcPcPcPcPlUcPcPcPlUcPvuxFttjzttcPcPcPcPcPcPcPcPwixFSSPAxFcFPAhJwIxDlUlUcPcPcPcPcPcPcPcPcPcPaw
-awcPcPcPcPcPcPdNxMduPAxFxFPAychCOzcPlUcPcPcPlUcPSSyGcFjzSScPzvcPcPcPcPcPcPcPsmcPcPxFcFnswIjzzHcPcPcPcPcPcPcPcPcPcPcPcPaw
+awcPcPcPcPcPcPdNxMduPAxFxFPAychCOzcPlUcPcPcPlUcPSSyGcFjzSScPzvcPcPcPcPcPcPcPcPcPcPxFcFnswIjzzHcPcPcPcPcPcPcPcPcPcPcPcPaw
 awcPcPcPcPcPcPxDxFxFnsxFcFnscFxFAfcPlUcPcPcPlUcPcPcPnscPcPcPAjcPcPcPcPcPcPSSvKwzPAxFTHPAOzwSSScPcPcPcPcPcPcPcPcPcPcPcPaw
 awcPcPcPcPcPcPxFRVgYPAdFcFPAxMxFTHcPlUcPcPcPlUPAxkAziAAPAPCiDgcPcPcPcPcPcPxqcFSSPAcFcFPAPAnscPcPcPcPcPcPcPcPcPcPcPcPcPaw
 awcPcPcPcPcPcPZcxOSSPALOcFPAziDrbwcPUxcPcPdFcFPADKzjzjDMFmzjzBcPcPcPcPcPcPHbRVHbsmxFxFcPxFxFxFcFHwcPcPcPcPcPcPcPcPcPcPaw
@@ -630,17 +630,17 @@ awTqTqTqTqTqTqTqTqTquMMxTqTqZwTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqZXZXZXZX
 awTqTqTqTqTqTqTqTqzbZwZwZwEdZwEdZwZwZwZwzcTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqZXfofoZXTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqaw
 awTqTqTqTqTqTqTqTqXXZwzmTqTqZwTqTqTqZwznTqTqTqTqTqTqTqTqTqTqfoYpYpYpYpfofofofozAfofofofofoYpYpYpYpYpTqTqTqTqTqTqTqTqTqaw
 awTqTqTqTqTqTqTqTqTqTqTqTqelelelzVTqzWuMMxTqTqTqTqTqTqTqTqTqfoTqTqTqTqTqTqZXfofoZXTqTqTqTqTqTqTqTqYpTqTqTqTqTqTqTqTqTqaw
-awTqTqTqTqTqTqTqTqTqelelelelzVAbTqTqTqTqTqTqTqTqTqTqTqTqTqTqfoTqTqTqTqTqTqZXZXZXZXTqTqTqTqTqTqTqTqYpTqTqTqTqTqTqTqTqTqaw
+awTqTqTqTqTqTqTqelzVelelelelzVAbTqTqTqTqTqTqTqTqTqTqTqTqTqTqfoTqTqTqTqTqTqZXZXZXZXTqTqTqTqTqTqTqTqYpTqTqTqTqTqTqTqTqTqaw
 awTqTqTqTqTqTqelelzVzVelTqAselAbTqTqTqTqTqTqTqTqTqTqTqZXZXZXfoZXZXTqTqTqTqZXTqTqTqTqTqTqTqTqTqTqTqYpTqTqTqTqTqTqTqTqTqaw
-awTqTqTqTqTqTqTqZwTqTqTqTqelelAxTqTqTqTqTqTqTqTqTqTqTqZXZXfofofoZXZXTqTqTqTqTqTqTqTqARdMAZBAdMBLTqYpTqTqTqTqTqTqTqTqTqaw
-awTqTqTqTqTqTqZwZwZwZwZwTqzVzVTqTqTqTqTqTqTqTqTqTqTqZXZXZXzAfofoZXTqTqTqTqTqTqelelelelelBOelelelzVelTqTqTqTqTqTqTqTqTqaw
-awTqTqTqTqTqTqMxphTqphMxTqTqelzVTqTqTqTqTqTqTqTqTqTqTqZXTqTqfoTqTqTqTqTqTqTqTqzVndndCdelelzVelCpTqelTqTqTqTqTqTqTqTqTqaw
-awTqTqTqTqTqTqCuZwCCZwCMTqTqelelTqTqTqTqTqTqTqTqTqTqTqTqTqTqfoTqTqCPCPCSTqTqTqelndTqTqTqTqTqTqTqTqndndTqTqTqTqTqTqTqTqaw
-awTqTqTqTqTqTqMxphZwphMxTqTqelTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqYpTqTqelelelTqCZDbelelDcndndDHDHndndDSDXEkndEyTqTqTqTqTqTqaw
-awTqTqTqTqTqTqYBZwTqZwEWTqTqzVTqTqMxFfMxTqTqTqTqTqTqTqTqTqTqYpTqTqARzVelJHzVelelzVelndndelelndndFQFQFZndBOBOEyTqTqTqTqaw
+awTqTqTqTqTqTqTqEdTqTqTqTqelelAxTqTqTqTqTqTqTqTqTqTqTqZXZXfofofoZXZXTqTqTqTqTqTqTqTqARdMAZBAdMBLTqYpTqTqTqTqTqTqTqTqTqaw
+awTqTqTqTqTqTqZwZwZwZwZwTqzVzVTqTqTqTqTqTqTqTqTqTqTqZXZXZXzAfofoZXTqTqTqTqTqTqelelelelelBOelelelzVADTqTqTqTqTqTqTqTqTqaw
+awTqTqTqTqTqTqMxphTqphMxTqelelzVTqTqTqTqTqTqTqTqTqTqTqZXTqTqfoTqTqTqTqTqTqTqTqzVndndCdelelzVelCpTqelTqTqTqTqTqTqTqTqTqaw
+awTqTqTqTqTqTqCuZwCCZwCMTqzVelelTqTqTqTqTqTqTqTqTqTqTqTqTqTqfoTqTqCPCPCSTqTqTqelndTqTqTqTqTqTqTqTqndndTqTqTqTqTqTqTqTqaw
+awTqTqTqTqTqTqMxphZwphMxTqzVelTqTqTqTqTqTqTqTqTqTqTqTqTqTqTqYpTqTqelelelTqCZDbelelDcndndDHDHndndDSDXEkndEyTqTqTqTqTqTqaw
+awTqTqTqTqTqTqYBZwTqZwEWTqelzVTqTqMxFfMxTqTqTqTqTqTqTqTqTqTqYpTqTqARzVelJHzVelelzVelndndelelndndFQFQFZndBOBOEyTqTqTqTqaw
 awTqTqTqTqTqTqMxphCCphMxTqTqzVZwEdGiGiGnTqTqTqTqTqTqTqTqTqTqYpTqTqTqTqTqTqzVGFGLGPelndelelelelndGYFQHondHqZwHETqTqTqTqaw
 awTqTqTqTqTqTqHPZwTqZwHZTqTqelZwTqGizmMxTqTqTqTqTqTqTqMxIoMxIGMxZwMxTqTqTqelINIOITelndJkelzVJondJAJCJEJHZwJJEyTqTqTqTqaw
-awTqTqTqTqTqTqTqTqTqTqTqTqTqelTqTqMxTqTqTqTqTqTqTqTqTqJRJVJVJVJVJVJVTqTqTqAselelelHETqTqAselTqTqJXKaJEndZwelJJTqTqTqTqaw
+awTqTqTqTqTqTqTqTqTqEdTqTqTqelTqTqMxTqTqTqTqTqTqTqTqTqJRJVJVJVJVJVJVTqTqTqAselelelHETqTqAselTqTqJXKaJEndZwelJJTqTqTqTqaw
 awTqTqTqTqTqTqTqTqMxXXMxTqTqHETqTqTqTqTqTqTqTqTqKbKgTqTqEyKhEyKiKXZwTqTqTqLkLuelelelLSelelelelLSFQFQJEndTqTqEyTqTqTqTqaw
 awTqTqTqTqTqTqYpYpMjZwMjZwTqelTqTqTqTqTqTqTqTqTqelMvMNTqTqelNeelelelTqTqTqTqTqTqTqTqTqTqTqTqTqTqNmNsNwNxNFTqTqTqTqTqTqaw
 awTqTqTqTqTqTqYpTqNKZwZwZwEdelTqTqTqTqTqTqTqTqTqAsNRwcelTqTqEyzVBLTqTqDHNWDHTqTqTqAselelelelBLTqTqTqTqTqTqTqTqTqTqTqTqaw
@@ -651,7 +651,7 @@ awTqTqTqZXZXfofofoTqMxRGMxTqTqelTqTqTqTqTqTqelZwelWnelZwZwelTqTqTqTqSfSjSoSTSfTq
 awTqTqTqTqZXzAfofoTqTsTsTsZwEdelSjzVzVzVelelelZwelzVelZwelelZwZwHETqTqTqTqTqTqTqJVypNeNeJVNeTqZwzVTqTqTqEdTqTqTqTqTqTqaw
 awTqTqTqZXZXZXfoTqTqzbIoMxTqTqTqTqelelelTqTqTLSjelTqQUelelSjZwTqelelelelelelelndZwTqTNMxUqMxTqZwUBTqTqUEQLULTqTqTqTqTqaw
 awTqTqTqZXZXTqfoTqMxTsTqTqTqTqTqTqTqTqTqTqTqVaTqelelelTLelTqTqTqndndndndndAsndndJHTqndndndndndZwelndTqMxVfMxTqTqTqTqTqaw
-awTqTqTqTqTqTqYpTqTqTqTqZXADfoZXTqTqTqTqTqTqTqTqVvTqOyWlTqTqQUWnWuzVzVelelelzVzVelelZwZwZwelzVelelndTqTqTqTqTqTqTqTqTqaw
+awTqTqTqTqTqTqYpTqTqTqTqZXfofoZXTqTqTqTqTqTqTqTqVvTqOyWlTqTqQUWnWuzVzVelelelzVzVelelZwZwZwelzVelelndTqTqTqTqTqTqTqTqTqaw
 awTqTqTqTqTqTqYpYpYpfofofofofofofofoYpYpYpWAWUWYWYTqTqTqTqTqQUelelzVelTqelZwndndelSjXjVaXnelzVelXPndTqTqTqTqTqTqTqTqTqaw
 awTqTqTqTqTqTqTqTqTqTqTqZXfofoZXZXTqTqTqTqYxWYYCWYWYYHTqTqTqndndelelTqTqZwZwndTqEdTqTqndndndndndndndTqTqTqTqTqTqTqTqTqaw
 awTqTqTqTqTqTqTqTqTqTqZXZXZXZXZXZXTqTqTqTqYKWYYLWYYOYTTqZlEyndndndndTqTqJHndndMxZnZwZwTNMxTqTqTqTqTqTqTqTqTqTqTqTqTqTqaw

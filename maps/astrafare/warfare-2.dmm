@@ -259,6 +259,7 @@
 "Fy" = (/obj/structure/window/reinforced,/turf/simulated/open,/area/warfare/homebase/blue)
 "FA" = (/obj/effect/floor_decal/turf/aesculapius/mem,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "FB" = (/obj/structure/closet/secure_closet/medical1/warfare,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FC" = (/obj/structure/table/rack,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "FF" = (/obj/effect/floor_decal/turf/aesculapius/mento,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "FH" = (/obj/effect/floor_decal/turf/aesculapius/mori,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "FI" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -465,7 +466,7 @@ esesesesesesesesaVEGEGEGaVaVaVaVomvrJEtWuTJEomvHomomvIvQaVJEomvRvTomomomomJEwdjn
 esesesesesesesesaVEGEGEGaVaVaVaVkunVJEjvuTomomjVJEJEomcwaVxJomovxZomJEJEJEdKomoKybAgyfyvuTEGEGEGEGEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVeSeSmYomomJEomomomomlBlLdkomdKyDJEomomomomyFkxyJzVomomEDAgAgFpuTEGEGEGEGEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVeSeSmYhGJEJEJEcbomkxmnFyGhJEJEHaJEommNomomHeIEIYJjomomEDAgAgnKaVaVaVaVaVEGEGEGeseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVkunVomnYuTJsJEomomomomcwaVophGovoEomJEJEJEhGomoKuTMqrkrsuTAgJEMuaVEGEGEGeseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVaVkuFComnYuTJsJEomomomomcwaVophGovoEomJEJEJEhGomoKuTMqrkrsuTAgJEMuaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVomvrJExLuTJEJEumsWvfNgOqaVRhomvRVmomomomomomXSjnZouTaVaVuTVgYcrAaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVvrkxxLaVkuJEumuVvfaVaVaVouomuTaVvjomvWomomomomomombHomAgAgeRAgaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGEGEGEGEGaVaVYnxLaVomomZvZKRyaVaVZQZQZQZQaVaVkuvWomkxomtjomomomomsOAgYcyXaVEGEGEGeseseseseseseses
