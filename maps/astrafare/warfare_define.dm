@@ -20,7 +20,7 @@
 	player_levels = list(1,2)
 
 	allowed_spawns = list("Arrivals Shuttle")
-	base_turf_by_z = list("1" = /turf/simulated/floor/dirty, "2" = /turf/simulated/floor/dirty, "3" = /turf/simulated/floor/dirty)
+	base_turf_by_z = list("1" = /turf/simulated/floor/dirty/tough/lightless, "2" = /turf/simulated/floor/dirty, "3" = /turf/simulated/floor/dirty)
 	shuttle_docked_message = "The shuttle has docked."
 	shuttle_leaving_dock = "The shuttle has departed from home dock."
 	shuttle_called_message = "A scheduled transfer shuttle has been sent."
