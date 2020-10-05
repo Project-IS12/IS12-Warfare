@@ -242,7 +242,10 @@
 	if(ishuman(A))
 		var/mob/living/carbon/human/L = A
 		var/turf/Above = GetAbove(src)
+		if(L.isChild() || L.job == "Red Sniper" || L.job == "Blue Sniper") // No species for manlets, oversight?
+			return 1
 		if(!L.resting && !istype(Above, /turf/simulated/open))
+			to_chat(L, "This passage is too low. I need to lie down.")
 			return 0
 		return 1
 
