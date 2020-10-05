@@ -627,3 +627,11 @@
 		user.doing_something = FALSE
 	else
 		to_chat(user, "You're already trying to suture them.")
+
+
+/obj/item/grenade_dud
+	name = "Dud"
+	desc = "This grenade doesn't look like it'll function properly. Might make a decent club?"
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "stick0"
+	force = 10
