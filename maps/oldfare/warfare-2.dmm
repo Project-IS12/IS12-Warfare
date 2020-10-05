@@ -193,7 +193,7 @@
 "dK" = (/obj/structure/poster/blue{pixel_y = 32},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "dL" = (/obj/structure/closet/secure_closet/medical2{req_access = newlist()},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "dM" = (/obj/structure/closet/medical_wall,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
-"dN" = (/obj/structure/sign/medholo{plane = -6},/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"dN" = (/obj/structure/sign/medholo,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
 "dO" = (/obj/structure/table/rack,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "dP" = (/obj/structure/table/rack,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "dQ" = (/obj/structure/table/rack,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
