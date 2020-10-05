@@ -45,6 +45,11 @@
 	name = "trench"
 	movement_delay = 0.5
 	has_coldbreath = TRUE
+	var/can_be_dug = TRUE
+
+/turf/simulated/floor/trench/fake
+	atom_flags = null
+	can_be_dug = FALSE
 
 /turf/simulated/floor/trench/ex_act(severity)
 	return
@@ -64,6 +69,8 @@
 		return
 	var/obj/item/shovel/S = user.get_active_hand()
 	if(!istype(S))
+		return
+	if(!can_be_dug)//No escaping to mid early.
 		return
 	if(!user.doing_something)
 		user.doing_something = TRUE

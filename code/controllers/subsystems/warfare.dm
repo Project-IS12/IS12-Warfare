@@ -78,8 +78,10 @@ SUBSYSTEM_DEF(warfare)
 	battle_time = TRUE
 	to_world("<big>I AM READY TO DIE NOW!</big>")
 	sound_to(world, 'sound/effects/ready_to_die.ogg')//Sound notifying them.
-	for(var/turf/simulated/floor/dirty/fake/F in world)
+	for(var/turf/simulated/floor/dirty/fake/F in world)//Make all the fake dirt into real dirt.
 		F.ChangeTurf(/turf/simulated/floor/dirty)
+	for(var/turf/simulated/floor/trench/fake/T in world)//Make all the fake trenches into real ones.
+		T.ChangeTurf(/turf/simulated/floor/trench)
 
 /datum/controller/subsystem/warfare/proc/check_completion()
 	if(red.left <= 0)
