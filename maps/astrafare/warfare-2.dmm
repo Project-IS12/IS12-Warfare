@@ -127,6 +127,7 @@
 "nf" = (/obj/machinery/bodyscanner,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "nl" = (/obj/effect/floor_decal/turf/plate,/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "nC" = (/obj/structure/closet{anchored = 1},/obj/item/grenade_dud,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"nH" = (/obj/structure/closet/crate,/obj/item/crowbar,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
 "nI" = (/mob/living/simple_animal/hostile/retaliate/rat,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue)
 "nK" = (/obj/structure/closet/crate/freezer,/obj/item/organ/external/arm/robo_arm,/obj/item/organ/external/arm/robo_arm,/obj/item/organ/external/arm/right/robo_arm,/obj/item/organ/external/arm/right/robo_arm,/obj/item/organ/external/hand/robo_hand,/obj/item/organ/external/hand/robo_hand,/obj/item/organ/external/hand/right/robo_hand,/obj/item/organ/external/hand/right/robo_hand,/obj/item/organ/external/leg/robo_leg,/obj/item/organ/external/leg/right/robo_leg,/obj/item/organ/external/leg/right/robo_leg,/obj/item/organ/external/foot/robo_foot,/obj/item/organ/external/foot/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "nO" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -404,6 +405,7 @@
 "Ui" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/red/two)
 "Uv" = (/turf/simulated/open,/area/warfare/battlefield/trench_section/underground)
 "US" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/blue/two)
+"Va" = (/obj/structure/closet/crate,/obj/item/crowbar,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
 "Vc" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/trench_section/underground)
 "Vd" = (/obj/structure/bed/chair/wheelchair{dir = 1},/obj/effect/landmark/start{name = "Red Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Ve" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
@@ -507,7 +509,7 @@ esesesesesesesesesesesesesesesesesesesesesesVGVcVcVGVGVGVGVGVGVGVGVGVGVGVGVGVGVG
 esesesesesesesesesesesesesesesjDjDjDjDjDjDjDkpunvCkpkpkpkpkpkpkpkpkpkpkpkpkpkpxVxVxVxVeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesjDzfzfvCvCvCvCALvCvCvCvCzfzfjDjDzfzfvCvCvCvCALvCvCxVxVxVeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesjDzfzfvCuwvCvCvCvCvCvCvCzfzfjDjDzfzfvCvCvCvCvCJJvCxVxVxVeseseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesjDjDjDjDjDjDjDjDvCvCvCjDjDjDjDjDjDjDjDvCvCvCjDjDxVxVxVxVeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesjDjDjDjDjDjDjDjDvCVavCjDjDjDjDjDjDjDjDvCVavCjDjDxVxVxVxVeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesesesesjDKnvCNkjDkpkpkpkpkpkpjDKnvCNkjDkpxVxVxVxVxVeseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesesesesjDvCvCvCjDkpkpkpkpkpkpjDvCvCvCjDkpxVxVxVxVxVeseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesesesesjDOZjDOZjDkpkpkpkpkpkpjDOZjDOZjDkpCLCLxVxVxVeseseseseseseseseseseseseseseses
@@ -560,7 +562,7 @@ esesesesesesesesesesesesesesesesescvcvPTPTPTPTPTPTPTPTqYqYqYPTPTPTPTqYqYqYqYqYqY
 esesesesesesesesesesesesesesesesesPgcvcvcvPTQoQoQoPTPTPTPTPTPTQoQoPTPTPTPTPTPTPTeseseseseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesPgPgPgcvcvQoQoQoQFTLQFTLQFQFQoQoQFTLQFTLQFQoeseseseseseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesPgPgPgPgPgQoViWtWtWtWtWtWtQFQoQoQFWtWtWtXhQoeseseseseseseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesesPgPgPgPgPgQFWtWtQFWtWtWtWtQFQoQoQFWtWtWtWtQFeseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesPgPgPgPgPgQFWtnHQFWtWtWtWtQFQoQoQFWtWtWtnHQFeseseseseseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesPgPgPgPgQFQFQFQFWtXhQFQFQFQFQFQFViWtQFQFQFQFBbBbBbBbBbeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesPgPgPgWtWtWtWtWtWtWtXGXGQFQFXGXGWtWtWtWtWtWtVcVcUvUvBbeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesPgPgPgWtYcWtifWtWtWtXGXGQFQFXGXGWtWtWtifWtWtKGVcUvUvBbeseseseseseseseseseseseseseses

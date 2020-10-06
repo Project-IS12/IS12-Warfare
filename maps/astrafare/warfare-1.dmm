@@ -100,6 +100,7 @@
 "ng" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "ni" = (/obj/structure/table/rack,/obj/item/storage/box/matches,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
 "ns" = (/obj/structure/curtain,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"nt" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/trenches,/area/warfare/battlefield/trench_section/underground)
 "nw" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "nC" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "nH" = (/obj/structure/stairs/east,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
@@ -370,6 +371,7 @@
 "Qh" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/two)
 "Qn" = (/obj/structure/closet/crate,/obj/item/plastique,/obj/item/plastique,/obj/item/plastique,/obj/item/crowbar,/obj/item/crowbar,/obj/item/crowbar,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Qu" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/obj/item/flame/candle,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Qy" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/two)
 "QB" = (/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "QD" = (/obj/structure/bed,/turf/simulated/floor/tiled/dark,/area/warfare/battlefield/trench_section/underground)
 "QE" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -549,7 +551,7 @@ awawawawawawawawawawawrDrDrDzTNnNnNnwNwNwNwNNnNnwNwNwNNnNnQhQhNnNnwNwNwNhjNnNnNn
 awawawawawawawawawawawzTrDrDzTzTsPsPsPmIsPsPsPNnhjwNwNwNNnmImINnwNwNwNwNNnNnsPsPsPmIsPsPsPzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTrDrDzTzTsPcOmImImIcOsPNnNnhjhjhjNngbmINnNnhjhjhjNnNnsPcOmImImIcOsPzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTrDzTzTsPgbmImImIgusPrDNnNnNnNnNnmImINnNnNnNnNnNnNnsPgbmImImIgusPzTrDrDzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTzTzTsPmIsaBnsrmIsPrDrDrDNnNnNnmImINnNnNnNnNnNnNnsPmIsaBnsrmIsPzTrDrDzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTzTzTsPmIsaBnsrntsPrDrDrDNnNnNnmImINnNnNnNnNnNnNnsPntsaBnsrmIsPzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTzTzTzTsPsPsPsPrDrDrDIfIfIfIfIfIfIfIfrDrDrDzTsPsPsPsPsPsPsPzTrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTUGmImIdjzTzTzTrDrDrDjdzTVHlulPIflPIfnHVHzTnRrDzTzTzTzTrDrDrDrDrDrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTUGUGbMdjzTzTzTrDrDrDzTzTVHluIfIflPIfnHVHzTrDrDrDrDrDrDrDrDrDrDrDrDrDzTawawawawawawawawawawaw
@@ -623,7 +625,7 @@ awawawawawawawawawawawzTzTzTzTzTzTzTrDrDrDrDUYUYiCAwAwAwUYrMatUYUYUYAwUYxHxHxHxH
 awawawawawawawawawawawzTzTzTzTzTzTrDrDrDzTxHUYUYxHxHxHUYUYxHxHUYAwxHUYUYxHxHAwAwUYUYrDrDrDrDrDzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTrDrDrDrDzTzTxHEwEwxHxHxHwlUYxHxHUYAwxHEwEwxHxHAwUYUYAwrDrDrDxHrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTrDrDrDrDrDzTzTxHxHxHxHxHxHAwUYxHxHUYAwxHxHxHxHxHAwxUxHxHxHxHxHxHrDrDzTawawawawawawawawawawaw
-awawawawawawawawawawawzTzTzTrDrDrDrDzTzTzTxHxHOlXpUYeLUYUYUYUYUYAwUYXNrMUYUYUYUYeLUYOlXpxHxHrDrDzTawawawawawawawawawawaw
+awawawawawawawawawawawzTzTzTrDrDrDrDzTzTzTxHxHOlXpQyeLUYUYUYUYUYAwUYXNrMUYUYUYUYeLQyOlXpxHxHrDrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTrDrDrDzTzTzTzTxHciUYUYUYlyUYKlVpUYUYUYUYnPUYAwAwAwUYlyAwAwUYPWxHzTrDzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTxHxHVYMaUYxHxHxHxHxHAwUYxHxHxHxHxHxHxHxHUYMaVYxHxHzTzTzTawawawawawawawawawawaw
 awawawawawawawawawawawzTzTzTzTzTzTzTzTzTzTxHxHxHxHxHxHxHxHxHxHUYUYxHxHxHxHxHxHxHxHxHxHxHxHxHzTzTzTawawawawawawawawawawaw
