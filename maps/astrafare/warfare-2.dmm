@@ -1,3 +1,5 @@
+"aa" = (/obj/structure/grille,/obj/structure/window_frame,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"ab" = (/obj/structure/sign/medholo{plane = -6},/obj/structure/grille,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "al" = (/obj/structure/torchwall/service{dir = 8},/turf/simulated/open,/area/warfare/battlefield/capture_point/blue/two)
 "am" = (/obj/structure/toilet{dir = 4; icon_state = "toilet00"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
 "av" = (/obj/structure/curtain,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
@@ -137,7 +139,6 @@
 "oo" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/red/two)
 "op" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "ou" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"ov" = (/obj/structure/window/basic{dir = 9},/obj/structure/sign/medholo{plane = -6},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "oE" = (/obj/structure/bed/chair/wheelchair{dir = 4},/obj/effect/landmark/start{name = "Blue Practitioner"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "oK" = (/obj/structure/sink{dir = 4; pixel_x = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "oP" = (/obj/machinery/cooker/oven,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
@@ -191,7 +192,6 @@
 "vH" = (/obj/structure/table/woodentable,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "vI" = (/obj/machinery/button/remote/blast_door/lever{id = "blue"; pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "vQ" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
-"vR" = (/obj/structure/window/basic{dir = 9},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "vT" = (/obj/structure/bed/roller,/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "vW" = (/obj/structure/table/steel,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "wa" = (/obj/structure/curtain,/turf/simulated/floor/plating,/area/warfare/homebase/red)
@@ -472,12 +472,12 @@ esesesesesesesesaVEGEGEGaVaVaVaVaVaVaVaVuTouomuTaVaVaVaVaVbLbLbLbLbLaVaVaVaVaVaV
 esesesesesesesesaVEGEGEGaVaVaVaVaVaVaVuTuTJEomuTaVaVaVaVbLbLbLbLbLuTuTaVptqEaTtaaVaVaVEGEGEGEGmHDoEGEGeseseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVaVbHtbaVkxomtltutBaVaVZQZQZQZQuTuTkuvWomomkxtFaVaVaVaVaVEGEGmHDoEGEGeseseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVtRdKtWaVopomukuEcwaVaVaVouomuTuTvjomvWomomomcwuTaVaVaVuTEGEGeseseseseseseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVomvrJEtWuTJEomvHomomvIvQaVJEomvRvTomomomombpwdjnuTwlwtxsuTEGEGeseseseseseseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVkunVJEjvuTomomjVJEJEomcwaVxJomovxZomJEJEJEdKomoKybAgyfyvuTEGEGEGEGEGEGEGeseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVaVomvrJEtWuTJEomvHomomvIvQaVJEomaavTomomomombpwdjnuTwlwtxsuTEGEGeseseseseseseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVaVkunVJEjvuTomomjVJEJEomcwaVxJomabxZomJEJEJEdKomoKybAgyfyvuTEGEGEGEGEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVeSeSmYomomJEomomomomlBlLdkomdKyDJEomomomomyFkxyJzVomomEDAgAgFpuTEGEGEGEGEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVeSeSmYhGJEJEJEcbomkxmnFyGhJEJEHaJEommNomomHeIEIYJjomomEDAgAgnKaVaVaVaVaVEGEGEGeseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVkuLpomnYuTJsJEomomomomcwaVophGovoEomJEJEJEhGomoKuTMqrkrsuTdBJEMuaVEGEGEGeseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVomvrJExLuTJEJEumsWvfNgOqaVRhomvRVmomomomomhjXSjnZouTaVaVuTVgJEjlaVEGEGEGeseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVaVkuLpomnYuTJsJEomomomomcwaVophGaboEomJEJEJEhGomoKuTMqrkrsuTdBJEMuaVEGEGEGeseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVaVomvrJExLuTJEJEumsWvfNgOqaVRhomaaVmomomomomhjXSjnZouTaVaVuTVgJEjlaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVvrkxxLaVkuJEumuVvfaVaVaVouomuTaVvjomvWomomomomomombHomAgAgeRAgaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGEGEGEGEGaVaVYnxLaVomomZvZKRyaVaVZQZQZQZQaVaVkuvWomkxomtjomomomomsOAgJEyXaVEGEGEGeseseseseseseses
 esesesesesesesesaVaVEGEGEGEGEGEGEGaVaVaVaVomomaVaVaVaVRUbLbLnIbLRUaVaVaVGHqEVenfaVljljaVuTVgJEjlaVEGEGEGeseseseseseseses
