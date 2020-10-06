@@ -396,7 +396,6 @@
 "SR" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Tb" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Th" = (/obj/effect/floor_decal/turf/cafe,/obj/effect/floor_decal/industrial/warning_red,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
-"Tp" = (/obj/structure/table/rack,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/random/canned_food,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Tq" = (/obj/structure/table/rack,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "TC" = (/obj/structure/table/steel,/obj/structure/table/steel,/obj/item/grenade_dud,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "TL" = (/obj/structure/defensive_barrier{dir = 1},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
@@ -601,7 +600,7 @@ esesesesesesVxstmHEGEGEGEGEGQVlCNtUdNVXVXVOfQVOzXVTQOXPaQVFIXVPLPLQVQVNVQVNVQVQV
 esesesesVxVxVxstmHEGEGEGEGEGQVUdUdUdQVPrTQPtPLSlBYPwBYPNQVYsYsPLPLQVPRXVXVXVPRPLYsYsPLQVJLJLQVPLPLPLVxVxeseseseseseseses
 esesesVxVxVxVxstmHEGEGEGEGPLQVRkRoRkQVRqGRRrPLOzXVPwOXPaQVWjWjPLPLQVRsXVRtTQREQVWjWjPLPLJLJLQVPLPLVxVxVxeseseseseseseses
 esVxVxVxVxVxVxstesesesEGEGPLPLPLQVQVQVPwnOPwPLPLQVQVPLPLQVWjWjPLPLPLSwTQSQXVTbQVWjWjPLPLQVQVPLPLPLPLVxVxeseseseseseseses
-esVxVxVxVxVxVxesesesesEGEGPLPLPLPLPLQVQVQVQVPLPLPLPLPLPLPLWjWjPLPLQVTpTQTqXVREPLWjWjPLPLPLPLPLPLPLPLVxVxeseseseseseseses
+esVxVxVxVxVxVxesesesesEGEGPLPLPLPLPLQVQVQVQVPLPLPLPLPLPLPLWjWjPLPLQVRtTQTqXVREPLWjWjPLPLPLPLPLPLPLPLVxVxeseseseseseseses
 esesVxVxVxVxesesesesesEGEGEGEGPLPLPLPLPLEGEGPLPLWjWjPLWjWjWjWjPLPLPLRtTQTqXVREPLWjWjWjWjPLPLPLPLPLPLVxVxeseseseseseseses
 esesVxVxVxesesesesesesPLEGEGPLPLPLPLPLEGEGEGWjWjWjWjWjhaWjWjWjPLPLPLXVXVXVXVXVPLPLWjWjWjWjPLPLPLPLVxVxVxeseseseseseseses
 esVxVxVxVxesesesesesesPLPLPLPLPLPLPLEGEGEGEGWjhaWjWjWjWjWjWjPLPLPLQVQVPpQVPpQVQVPLPLWjWjWjPLPLPLVxVxVxVxeseseseseseseses
