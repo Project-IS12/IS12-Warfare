@@ -26,8 +26,10 @@
 /turf/simulated/floor/dirty/tough/lightless/
 	has_light = FALSE
 
-
 /turf/simulated/floor/dirty/tough/fake //Can't be click dragged on.
+	atom_flags = null
+
+/turf/simulated/floor/dirty/tough/lightless/fake 
 	atom_flags = null
 
 /turf/simulated/floor/dirty/tough/ex_act(severity)//Can't be blown up.
