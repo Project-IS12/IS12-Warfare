@@ -11,6 +11,7 @@
 "aV" = (/turf/simulated/mineral,/area/warfare/homebase/blue)
 "aX" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "aY" = (/obj/structure/sink{dir = 8; pixel_x = -8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"bn" = (/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "bp" = (/obj/structure/closet/secure_closet/medical1/warfare,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "bw" = (/obj/structure/table/steel,/obj/item/reagent_containers/food/condiment/small/peppermill,/obj/item/reagent_containers/food/condiment/small/saltshaker,/obj/item/reagent_containers/food/condiment/small/sugar,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "bx" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/effect/floor_decal/turf/coldroom,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -273,6 +274,7 @@
 "FA" = (/obj/effect/floor_decal/turf/aesculapius/mem,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "FB" = (/obj/structure/closet/secure_closet/medical1/warfare,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "FF" = (/obj/effect/floor_decal/turf/aesculapius/mento,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FG" = (/obj/structure/poster/yellow{pixel_x = 32},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "FH" = (/obj/effect/floor_decal/turf/aesculapius/mori,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "FI" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "FK" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/turf/simulated/floor/plating,/area/warfare/homebase/red)
@@ -540,11 +542,19 @@ esesesesesesesesesesesesesesesUvUvesqYqYqYqYqYqYqYqYqYKJCjlxlxnCKJqYqYqYqYqYqYqY
 esesesesesesesesesesesesesesesesesesqYqYQyQyQyQyqYqYKJKJKJrilxKJKJKJqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesqYqYqYQyUvUvQyqYKJKJhuVslxlxVsgIKJKJqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYqYqYQyUvUvQyKJKJFnZtlxGpGplxlxcdKJKJqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseses
+<<<<<<< HEAD
 esesesesesesesesesesesesesesesesqYqYqYKJQyHYqrQyKJlxWrlxlxWrWrWrWrjuFaKJKJKJKJKJKJqYqYqYqYeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYqYKJgTWrWrVrKJgTWrlxlxQTDxlxlxlxVrKJlxfXWVlxKJqYqYqYqYeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYIJlulxWrlxlxlulxPdPKlxvtxGlxmrFnlxlulxWrlxlxluIJqYqYqYeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYqYKJlxWVHTlxKJgTWrlxlxQaaMxklxWrVrKJgTWrlxVrKJqYqYqYqYeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYqYKJKJKJKJKJKJlyYrlxWrlxlxlxlxRJGpKJQyqrUqQyKJqYqYqYeseseseseseseseseseseseseseseses
+=======
+esesesesesesesesesesesesesesesesqYqYqYKJQyHYbnQyKJlxWrlxlxWrWrWrWrjuFaKJKJKJKJKJKJqYqYqYqYeseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYKJgTWrWrVrKJgTWrlxlxQTDxlxlxlxVrKJlxfXWVlxKJqYqYqYqYeseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYIJlulxWrlxlxlulxPdPKlxvtxGlxmrFnlxlulxWrlxlxluIJqYqYqYeseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYKJlxWVHTlxKJgTWrlxlxQaaMxklxWrVrKJgTWrlxVrKJqYqYqYqYeseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYKJKJKJKJKJKJlyYrlxWrlxlxlxlxRJGpKJQybnFGQyKJqYqYqYeseseseseseseseseseseseseseseses
+>>>>>>> 959cbcc... Critical map fixes.
 esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYKJKJsllxlxGpTClxlxjyKJKJQyUvUvQyqYqYqYqYeseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYKJKJOmrFWrWrrFgCKJKJqYQyUvUvQyqYqYqYeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYKJKJKJzklxKJKJKJqYqYQyQyQyQyqYqYeseseseseseseseseseseseseseseseseses
