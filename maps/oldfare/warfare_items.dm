@@ -137,6 +137,30 @@
 	item_state = "redoffcap"
 	warfare_team = RED_TEAM
 
+/obj/item/clothing/head/redcoat/redgarrisoncap
+	name = "Red Garrison Cap"
+	icon_state = "redgarrisoncap"
+	item_state = "redgarrisoncap"
+	warfare_team = RED_TEAM
+
+/obj/item/clothing/head/redcoat/redsargecap
+	name = "Red Garrison Cap"
+	icon_state = "redsargecap"
+	item_state = "redsargecap"
+	warfare_team = RED_TEAM
+
+/obj/item/clothing/head/redcoat/redmedicalcap
+	name = "Red Garrison Cap"
+	icon_state = "redmedicalcap"
+	item_state = "redmedicalcap"
+	warfare_team = RED_TEAM
+
+/obj/item/clothing/head/redcoat/rednursehat
+	name = "Red Nurse Hat"
+	icon_state = "rednursehat"
+	item_state = "rednursehat"
+	warfare_team = RED_TEAM
+
 /obj/item/clothing/head/helmet/redhelmet
 	name = "Red's Helmet"
 	desc = "Sometimes protects your head from bullets and blows."
@@ -240,6 +264,30 @@
 	desc = "Fit for an officer of just your ranking. And nothing more."
 	icon_state = "blueoffcap"
 	item_state = "blueoffcap"
+	warfare_team = BLUE_TEAM
+
+/obj/item/clothing/head/bluecoat/bluegarrisoncap
+	name = "Blue Garrison Cap"
+	icon_state = "bluegarrisoncap"
+	item_state = "bluegarrisoncap"
+	warfare_team = BLUE_TEAM
+
+/obj/item/clothing/head/bluecoat/bluesargecap
+	name = "Blue Garrison Cap"
+	icon_state = "bluesargecap"
+	item_state = "bluesargecap"
+	warfare_team = BLUE_TEAM
+
+/obj/item/clothing/head/bluecoat/bluemedicalcap
+	name = "Blue Garrison Cap"
+	icon_state = "bluemedicalcap"
+	item_state = "bluemedicalcap"
+	warfare_team = BLUE_TEAM
+
+/obj/item/clothing/head/bluecoat/bluenursehat
+	name = "Blue Nurse Hat"
+	icon_state = "bluenursehat"
+	item_state = "bluenursehat"
 	warfare_team = BLUE_TEAM
 
 //Helmets
