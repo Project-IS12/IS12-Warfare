@@ -40,6 +40,10 @@
 		var/obj/item/flame/candle/C = W
 		if(C.lit)
 			light()
+	else if(istype(W, /obj/item/torch))
+		var/obj/item/torch/C = W
+		if(C.lit)
+			light()
 
 
 /obj/item/flame/candle/proc/light(var/flavor_text = "<span class='notice'>\The [usr] lights the [name].</span>")
