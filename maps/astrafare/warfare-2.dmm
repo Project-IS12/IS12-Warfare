@@ -145,6 +145,7 @@
 "pf" = (/obj/structure/sink{pixel_y = 20},/obj/structure/table/steel,/obj/item/reagent_containers/food/drinks/bottle/gin,/obj/item/reagent_containers/food/drinks/bottle/cognac,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "pt" = (/obj/machinery/sleeper{dir = 1; icon_state = "sleeper_0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "pI" = (/obj/machinery/cooker/fryer,/obj/effect/floor_decal/newcorner/red/solid,/obj/structure/poster/red{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"pR" = (/obj/structure/table/rack,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "qE" = (/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "qY" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/no_mans_land)
 "rf" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
@@ -437,6 +438,7 @@
 "Yn" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Yr" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "Ys" = (/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"YA" = (/obj/structure/table/rack,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Zo" = (/obj/structure/closet/medical_wall,/turf/simulated/wall/concrete,/area/warfare/homebase/blue)
 "Zt" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "Zv" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8},/obj/effect/landmark/blue_cargo,/obj/structure/window/reinforced,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -472,12 +474,12 @@ esesesesesesesesaVEGEGEGaVaVaVaVaVaVaVaVuTouomuTaVaVaVaVaVbLbLbLbLbLaVaVaVaVaVaV
 esesesesesesesesaVEGEGEGaVaVaVaVaVaVaVuTuTJEomuTaVaVaVaVbLbLbLbLbLuTuTaVptqEaTtaaVaVaVEGEGEGEGmHDoEGEGeseseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVaVbHtbaVkxomtltutBaVaVZQZQZQZQuTuTkuvWomomkxtFaVaVaVaVaVEGEGmHDoEGEGeseseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVtRdKtWaVopomukuEcwaVaVaVouomuTuTvjomvWomomomcwuTaVaVaVuTEGEGeseseseseseseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVomvrJEtWuTJEomvHomomvIvQaVJEomaavTomomomombpwdjnuTwlwtxsuTEGEGeseseseseseseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVomomvrJEtWuTJEomvHomomvIvQaVJEomaavTomomomombpwdjnuTwlwtxsuTEGEGeseseseseseseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVkunVJEjvuTomomjVJEJEomcwaVxJomabxZomJEJEJEdKomoKybAgyfyvuTEGEGEGEGEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVeSeSmYomomJEomomomomlBlLdkomdKyDJEomomomomyFkxyJzVomomEDAgAgFpuTEGEGEGEGEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVeSeSmYhGJEJEJEcbomkxmnFyGhJEJEHaJEommNomomHeIEIYJjomomEDAgAgnKaVaVaVaVaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVkuLpomnYuTJsJEomomomomcwaVophGaboEomJEJEJEhGomoKuTMqrkrsuTdBJEMuaVEGEGEGeseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVomvrJExLuTJEJEumsWvfNgOqaVRhomaaVmomomomomhjXSjnZouTaVaVuTVgJEjlaVEGEGEGeseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVpRomvrJExLuTJEJEumsWvfNgOqaVRhomaaVmomomomomhjXSjnZouTaVaVuTVgJEjlaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVvrkxxLaVkuJEumuVvfaVaVaVouomuTaVvjomvWomomomomomombHomAgAgeRAgaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGEGEGEGEGaVaVYnxLaVomomZvZKRyaVaVZQZQZQZQaVaVkuvWomkxomtjomomomomsOAgJEyXaVEGEGEGeseseseseseseses
 esesesesesesesesaVaVEGEGEGEGEGEGEGaVaVaVaVomomaVaVaVaVRUbLbLnIbLRUaVaVaVGHqEVenfaVljljaVuTVgJEjlaVEGEGEGeseseseseseseses
@@ -602,7 +604,7 @@ esesesVxVxVxVxstmHEGEGEGEGPLQVRkRoRkQVRqGRRrPLOzXVPwOXPaQVWjWjPLPLQVRsXVRtTQREQV
 esVxVxVxVxVxVxstesesesEGEGPLPLPLQVQVQVPwnOPwPLPLQVQVPLPLQVWjWjPLPLPLSwTQSQXVTbQVWjWjPLPLQVQVPLPLPLPLVxVxeseseseseseseses
 esVxVxVxVxVxVxesesesesEGEGPLPLPLPLPLQVQVQVQVPLPLPLPLPLPLPLWjWjPLPLQVRtTQTqXVREPLWjWjPLPLPLPLPLPLPLPLVxVxeseseseseseseses
 esesVxVxVxVxesesesesesEGEGEGEGPLPLPLPLPLEGEGPLPLWjWjPLWjWjWjWjPLPLPLRtTQTqXVREPLWjWjWjWjPLPLPLPLPLPLVxVxeseseseseseseses
-esesVxVxVxesesesesesesPLEGEGPLPLPLPLPLEGEGEGWjWjWjWjWjhaWjWjWjPLPLPLXVXVXVXVXVPLPLWjWjWjWjPLPLPLPLVxVxVxeseseseseseseses
+esesVxVxVxesesesesesesPLEGEGPLPLPLPLPLEGEGEGWjWjWjWjWjhaWjWjWjPLPLPLXVXVXVXVYAPLPLWjWjWjWjPLPLPLPLVxVxVxeseseseseseseses
 esVxVxVxVxesesesesesesPLPLPLPLPLPLPLEGEGEGEGWjhaWjWjWjWjWjWjPLPLPLQVQVPpQVPpQVQVPLPLWjWjWjPLPLPLVxVxVxVxeseseseseseseses
 esesVxVxVxesesesesesEGEGEGEGEGEGEGEGEGEGPLPLWjWjWjPLPLPLPLPLPLPLPLPLQVJLQVJLQVPLPLPLPLWjWjPLPLPLVxVxVxeseseseseseseseses
 esesVxVxVxVxesesesEGEGEGEGEGEGEGEGEGEGPLPLQVYsYsQVPLPLPLPLPLPLPLPLPLQVJLQVJLPLPLPLPLWjWjWjPLPLPLVxVxVxeseseseseseseseses
