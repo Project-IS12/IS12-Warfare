@@ -145,6 +145,8 @@
 "pf" = (/obj/structure/sink{pixel_y = 20},/obj/structure/table/steel,/obj/item/reagent_containers/food/drinks/bottle/gin,/obj/item/reagent_containers/food/drinks/bottle/cognac,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "pt" = (/obj/machinery/sleeper{dir = 1; icon_state = "sleeper_0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "pI" = (/obj/machinery/cooker/fryer,/obj/effect/floor_decal/newcorner/red/solid,/obj/structure/poster/red{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"pR" = (/obj/structure/table/rack,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"qr" = (/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "qE" = (/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "qY" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/no_mans_land)
 "rf" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
@@ -177,7 +179,7 @@
 "uk" = (/obj/structure/table/woodentable,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "um" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8},/obj/effect/landmark/blue_cargo,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
 "un" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
-"uw" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 1},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"uw" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 1},/turf/simulated/floor/trenches,/area/warfare/battlefield/trench_section/underground)
 "uE" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Scavenger"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "uT" = (/turf/simulated/wall/concrete,/area/warfare/homebase/blue)
 "uV" = (/obj/structure/cargo_pad,/obj/effect/landmark/blue_cargo,/obj/effect/floor_decal/turf/bar2{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -297,7 +299,7 @@
 "HH" = (/obj/structure/cargo_pad/bottom_right,/obj/effect/landmark/red_cargo,/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "HK" = (/obj/structure/table/woodentable,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/plating,/area/warfare/homebase/red)
 "HT" = (/obj/structure/table/steel,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
-"HY" = (/turf/simulated/open,/area/warfare/battlefield/capture_point/mid)
+"HY" = (/obj/structure/poster/yellow{pixel_x = -32},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "Ih" = (/obj/structure/banner/red/small{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "IC" = (/obj/machinery/kaos/cargo_machine/red,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "IE" = (/obj/effect/floor_decal/turf/bar2,/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -372,7 +374,7 @@
 "PT" = (/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/no_mans_land)
 "Qa" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/lowleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "Qo" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/red/one)
-"Qy" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/mid)
+"Qy" = (/turf/simulated/mineral,/area/warfare/battlefield/trench_section/underground)
 "QF" = (/turf/simulated/wall/concrete,/area/warfare/battlefield/capture_point/red/one)
 "QT" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/upperleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "QV" = (/turf/simulated/wall/concrete,/area/warfare/homebase/red)
@@ -402,6 +404,7 @@
 "TQ" = (/turf/simulated/floor/plating,/area/warfare/homebase/red)
 "Ud" = (/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
 "Ui" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/red/two)
+"Uq" = (/obj/structure/poster/yellow{pixel_x = 32},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
 "Uv" = (/turf/simulated/open,/area/warfare/battlefield/trench_section/underground)
 "US" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/blue/two)
 "Va" = (/obj/structure/closet/crate,/obj/item/crowbar,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
@@ -437,6 +440,7 @@
 "Yn" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
 "Yr" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "Ys" = (/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"YA" = (/obj/structure/table/rack,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
 "Zo" = (/obj/structure/closet/medical_wall,/turf/simulated/wall/concrete,/area/warfare/homebase/blue)
 "Zt" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
 "Zv" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8},/obj/effect/landmark/blue_cargo,/obj/structure/window/reinforced,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
@@ -472,12 +476,12 @@ esesesesesesesesaVEGEGEGaVaVaVaVaVaVaVaVuTouomuTaVaVaVaVaVbLbLbLbLbLaVaVaVaVaVaV
 esesesesesesesesaVEGEGEGaVaVaVaVaVaVaVuTuTJEomuTaVaVaVaVbLbLbLbLbLuTuTaVptqEaTtaaVaVaVEGEGEGEGmHDoEGEGeseseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVaVbHtbaVkxomtltutBaVaVZQZQZQZQuTuTkuvWomomkxtFaVaVaVaVaVEGEGmHDoEGEGeseseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVtRdKtWaVopomukuEcwaVaVaVouomuTuTvjomvWomomomcwuTaVaVaVuTEGEGeseseseseseseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVomvrJEtWuTJEomvHomomvIvQaVJEomaavTomomomombpwdjnuTwlwtxsuTEGEGeseseseseseseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVomomvrJEtWuTJEomvHomomvIvQaVJEomaavTomomomombpwdjnuTwlwtxsuTEGEGeseseseseseseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVkunVJEjvuTomomjVJEJEomcwaVxJomabxZomJEJEJEdKomoKybAgyfyvuTEGEGEGEGEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVeSeSmYomomJEomomomomlBlLdkomdKyDJEomomomomyFkxyJzVomomEDAgAgFpuTEGEGEGEGEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVeSeSmYhGJEJEJEcbomkxmnFyGhJEJEHaJEommNomomHeIEIYJjomomEDAgAgnKaVaVaVaVaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVkuLpomnYuTJsJEomomomomcwaVophGaboEomJEJEJEhGomoKuTMqrkrsuTdBJEMuaVEGEGEGeseseseseseseses
-esesesesesesesesaVEGEGEGaVaVaVaVomvrJExLuTJEJEumsWvfNgOqaVRhomaaVmomomomomhjXSjnZouTaVaVuTVgJEjlaVEGEGEGeseseseseseseses
+esesesesesesesesaVEGEGEGaVaVaVpRomvrJExLuTJEJEumsWvfNgOqaVRhomaaVmomomomomhjXSjnZouTaVaVuTVgJEjlaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGaVaVaVaVaVvrkxxLaVkuJEumuVvfaVaVaVouomuTaVvjomvWomomomomomombHomAgAgeRAgaVEGEGEGeseseseseseseses
 esesesesesesesesaVEGEGEGEGEGEGEGaVaVYnxLaVomomZvZKRyaVaVZQZQZQZQaVaVkuvWomkxomtjomomomomsOAgJEyXaVEGEGEGeseseseseseseses
 esesesesesesesesaVaVEGEGEGEGEGEGEGaVaVaVaVomomaVaVaVaVRUbLbLnIbLRUaVaVaVGHqEVenfaVljljaVuTVgJEjlaVEGEGEGeseseseseseseses
@@ -505,10 +509,10 @@ esesesesesesesesesesesesesesesesesVGVGVGVGVGVGOtLhLhLhalesesesesepLhLhLhVGVGVGVG
 esesesesesesesesesesesesesesesesesesesesesVGVGVGVGLhLhLhesesesesesLhLhLhVGVGVGVGVGeseseseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesesesVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGeseseseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesesesesVGVcVcVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGeseseseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesjDjDjDjDjDjDjDkpunvCkpkpkpkpkpkpkpkpkpkpkpkpkpkpxVxVxVxVeseseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesjDzfzfvCvCvCvCALvCvCvCvCzfzfjDjDzfzfvCvCvCvCALvCvCxVxVxVeseseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesjDzfzfvCuwvCvCvCvCvCvCvCzfzfjDjDzfzfvCvCvCvCvCJJvCxVxVxVeseseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesjDjDjDjDjDjDjDjDvCVavCjDjDjDjDjDjDjDjDvCVavCjDjDxVxVxVxVeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesBbBbBbBbBbjDjDkpunvCkpkpkpkpkpkpkpkpkpkpkpkpkpkpxVxVxVxVeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesBbUvUvVcVcvCvCALvCvCvCvCzfzfjDjDzfzfvCvCvCvCALvCvCxVxVxVeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesBbUvUvVcuwvCvCvCvCvCvCvCzfzfjDjDzfzfvCvCvCvCvCJJvCxVxVxVeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesBbBbBbBbBbjDjDjDvCVavCjDjDjDjDjDjDjDjDvCVavCjDjDxVxVxVxVeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesesesesjDKnvCNkjDkpkpkpkpkpkpjDKnvCNkjDkpxVxVxVxVxVeseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesesesesjDvCvCvCjDkpkpkpkpkpkpjDvCvCvCjDkpxVxVxVxVxVeseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesesesesjDOZjDOZjDkpkpkpkpkpkpjDOZjDOZjDkpCLCLxVxVxVeseseseseseseseseseseseseseseses
@@ -531,15 +535,15 @@ esesesesesesesesesesesesesesesEYEYesqYqYqYqYqYqYqYqYqYKJlxlxlxWrKJqYqYqYqYqYqYqY
 esesesesesesesesesesesesesesesUvUvesqYqYqYqYqYqYqYqYqYKJgTWrWrVrKJqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesUvUvesqYqYqYqYqYqYqYqYqYKJCjlxlxnCKJqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesqYqYQyQyQyQyqYqYKJKJKJrilxKJKJKJqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesesqYqYqYQyHYHYQyqYKJKJhuVslxlxVsgIKJKJqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesqYqYqYqYQyHYHYQyKJKJFnZtlxGpGplxlxcdKJKJqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesqYqYqYKJQyOmlxQyKJlxWrlxlxWrWrWrWrjuFaKJKJKJKJKJKJqYqYqYqYeseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesqYqYqYQyUvUvQyqYKJKJhuVslxlxVsgIKJKJqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYQyUvUvQyKJKJFnZtlxGpGplxlxcdKJKJqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYKJQyHYqrQyKJlxWrlxlxWrWrWrWrjuFaKJKJKJKJKJKJqYqYqYqYeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYqYKJgTWrWrVrKJgTWrlxlxQTDxlxlxlxVrKJlxfXWVlxKJqYqYqYqYeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYIJlulxWrlxlxlulxPdPKlxvtxGlxmrFnlxlulxWrlxlxluIJqYqYqYeseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesqYqYqYKJlxWVHTlxKJgTWrlxlxQaaMxklxWrVrKJgTWrlxVrKJqYqYqYqYeseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesqYqYqYKJKJKJKJKJKJlyYrlxWrlxlxlxlxRJGpKJQylxgCQyKJqYqYqYeseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYKJKJsllxlxGpTClxlxjyKJKJQyHYHYQyqYqYqYqYeseseseseseseseseseseseseseseses
-esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYKJKJOmrFWrWrrFgCKJKJqYQyHYHYQyqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYKJKJKJKJKJKJlyYrlxWrlxlxlxlxRJGpKJQyqrUqQyKJqYqYqYeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYKJKJsllxlxGpTClxlxjyKJKJQyUvUvQyqYqYqYqYeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYKJKJOmrFWrWrrFgCKJKJqYQyUvUvQyqYqYqYeseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYKJKJKJzklxKJKJKJqYqYQyQyQyQyqYqYeseseseseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYKJnClxWrCjKJqYqYqYqYqYqYqYqYqYesUvUveseseseseseseseseseseseseseses
 esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYKJgTWrWryhKJqYqYqYqYqYqYqYqYqYesUvUveseseseseseseseseseseseseseses
@@ -602,7 +606,7 @@ esesesVxVxVxVxstmHEGEGEGEGPLQVRkRoRkQVRqGRRrPLOzXVPwOXPaQVWjWjPLPLQVRsXVRtTQREQV
 esVxVxVxVxVxVxstesesesEGEGPLPLPLQVQVQVPwnOPwPLPLQVQVPLPLQVWjWjPLPLPLSwTQSQXVTbQVWjWjPLPLQVQVPLPLPLPLVxVxeseseseseseseses
 esVxVxVxVxVxVxesesesesEGEGPLPLPLPLPLQVQVQVQVPLPLPLPLPLPLPLWjWjPLPLQVRtTQTqXVREPLWjWjPLPLPLPLPLPLPLPLVxVxeseseseseseseses
 esesVxVxVxVxesesesesesEGEGEGEGPLPLPLPLPLEGEGPLPLWjWjPLWjWjWjWjPLPLPLRtTQTqXVREPLWjWjWjWjPLPLPLPLPLPLVxVxeseseseseseseses
-esesVxVxVxesesesesesesPLEGEGPLPLPLPLPLEGEGEGWjWjWjWjWjhaWjWjWjPLPLPLXVXVXVXVXVPLPLWjWjWjWjPLPLPLPLVxVxVxeseseseseseseses
+esesVxVxVxesesesesesesPLEGEGPLPLPLPLPLEGEGEGWjWjWjWjWjhaWjWjWjPLPLPLXVXVXVXVYAPLPLWjWjWjWjPLPLPLPLVxVxVxeseseseseseseses
 esVxVxVxVxesesesesesesPLPLPLPLPLPLPLEGEGEGEGWjhaWjWjWjWjWjWjPLPLPLQVQVPpQVPpQVQVPLPLWjWjWjPLPLPLVxVxVxVxeseseseseseseses
 esesVxVxVxesesesesesEGEGEGEGEGEGEGEGEGEGPLPLWjWjWjPLPLPLPLPLPLPLPLPLQVJLQVJLQVPLPLPLPLWjWjPLPLPLVxVxVxeseseseseseseseses
 esesVxVxVxVxesesesEGEGEGEGEGEGEGEGEGEGPLPLQVYsYsQVPLPLPLPLPLPLPLPLPLQVJLQVJLPLPLPLPLWjWjWjPLPLPLVxVxVxeseseseseseseseses
