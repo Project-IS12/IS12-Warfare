@@ -51,6 +51,9 @@
 	atom_flags = null
 	can_be_dug = FALSE
 
+/turf/simulated/floor/trench/tough
+	can_be_dug = FALSE
+
 /turf/simulated/floor/trench/ex_act(severity)
 	return
 
