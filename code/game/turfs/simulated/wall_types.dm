@@ -17,6 +17,10 @@
 	plane = ABOVE_HUMAN_PLANE
 	integrity = 500 //Tough bois
 
+/turf/simulated/wall/concrete/strong
+	desc = "Looks more stronger than a paper."
+	integrity = 7500
+
 /turf/simulated/wall/rust
 	desc = "An old rusty wall. It's definitely seen better days."
 	icon_state = "rust0"
