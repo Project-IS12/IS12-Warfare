@@ -18,7 +18,7 @@
 	integrity = 500 //Tough bois
 
 /turf/simulated/wall/concrete/strong
-	desc = "Looks more stronger than a paper."
+	desc = "Looks much stronger than a paper sheet."
 	integrity = 7500
 
 /turf/simulated/wall/rust
