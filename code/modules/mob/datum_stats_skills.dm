@@ -231,10 +231,10 @@
 	var/sum = stats + skills * 2 + modifier
 
 	if(chem_effects[CE_PAINKILLER] > 100)//Being high on pain pills will fuck up your rolls.
-		sum += 5
+		sum -= 5
 
 	if(is_hellbanned())//Being hellbanned fucks with you.
-		sum += 5
+		sum -= 5
 
 	if(dice <= sum)
 		if(dice <= sum - crit || dice <= 4)

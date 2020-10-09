@@ -192,7 +192,7 @@ meteor_act
 		to_chat(user, "<span class='danger'>They are missing that limb!</span>")
 		return null
 
-	if(user.statscheck(skills = user.SKILL_LEVEL(melee)) == CRIT_FAILURE || (prob(25) && is_hellbanned()))
+	if(user.statscheck(skills = user.SKILL_LEVEL(melee)) == CRIT_FAILURE || (prob(50) && is_hellbanned()))
 		user.resolve_critical_miss(I)
 		return null
 
