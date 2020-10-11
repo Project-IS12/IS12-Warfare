@@ -69,7 +69,7 @@
 #define I_PARRY		"parry"
 //atk intents
 #define I_DEFENSE	"defense"
-#define I_OFFENSE	"offense"
+#define I_STRONG	"strong"
 #define I_QUICK		"quick"
 #define I_AIMED		"aimed"
 #define I_GUARD 	"guard"

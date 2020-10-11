@@ -121,7 +121,7 @@
 					if(54 to 60)
 						current_intent = I_DEFENSE
 					if(61 to 67)
-						current_intent = I_OFFENSE
+						current_intent = I_STRONG
 					if(68 to 74)
 						current_intent = I_QUICK
 					if(75 to 81)
@@ -148,8 +148,8 @@
 			usr.atk_intent = I_DUAL
 			icon_state = "dual"
 			to_chat(usr, "<span class='combat_success'>Right click to melee attack with the item in your offhand. You will be less accurate though.</span>")
-		if(I_OFFENSE)
-			usr.atk_intent = I_OFFENSE
+		if(I_STRONG)
+			usr.atk_intent = I_STRONG
 			icon_state = "strong"
 			to_chat(usr, "<span class='combat_success'>Right click to perform a strong attack. You will hit for maximum damage, but the attack is slow, and costs stamina.</span>")
 		if(I_QUICK)
@@ -479,24 +479,6 @@
 				else
 					E.defense_intent = I_PARRY
 					E.combat_intent_icon.icon_state = "parry"
-		/*
-		//atk_intents here:
-		if("quick")
-			usr.atk_intent = I_QUICK
-			usr.hud_used.atk_intent.icon_state = "quick"
-
-		if("aimed")
-			usr.atk_intent = I_AIMED
-			usr.hud_used.atk_intent.icon_state = "aimed"
-
-		if("defense")
-			usr.atk_intent = I_DEFENSE
-			usr.hud_used.atk_intent.icon_state = "defense"
-
-		if("offense")
-			usr.atk_intent = I_OFFENSE
-			usr.hud_used.atk_intent.icon_state = "offense"
-		*/
 
 		if("fixeye")
 			usr.face_direction()
