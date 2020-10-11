@@ -110,6 +110,9 @@ avoid code duplication. This includes items that may sometimes act as a standard
 			M.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
 			apply_speed_delay(0)
 			user.visible_message("<span class='combat_success'>[user] performs a successful feint attack!</span>")
+			if(M.atk_intent == I_DEFENSE)
+				if(M.combat_mode)
+					M.item_disarm()
 			return 0 //We fiented them don't actaully hit them now, we can follow up with another attack.
 
 		else if(user.atk_intent == I_STRONG)//Attack with stronger damage at the cost slightly longer cooldown

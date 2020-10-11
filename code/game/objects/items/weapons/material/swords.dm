@@ -69,6 +69,10 @@
 	user.drop_from_inventory(src)
 	throw_at(get_edge_target_turf(src, pick(GLOB.alldirs)), rand(1,3), throw_speed)//Throw that sheesh away
 
+/mob/proc/item_disarm()
+	var/obj/item/I = get_active_hand()
+	if(I)
+		I.disarm(src)
 
 
 /obj/item/material/sword/attack_self(mob/user)
