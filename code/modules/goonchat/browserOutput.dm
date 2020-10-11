@@ -149,7 +149,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		return
 
 	if(cookie != "none")
-		var/regex/crashy_thingy = new("(\\\[ *){5}")
+		var/regex/crashy_thingy = regex("^\\s*(\[\\\[\\{\\}\\\]\]\\s*){5,}")
 		if(crashy_thingy.Find(cookie))
 			log_and_message_admins("[key_name(src.owner)] tried to crash the server using at least 5 \"\[\" in a row")
 			return
