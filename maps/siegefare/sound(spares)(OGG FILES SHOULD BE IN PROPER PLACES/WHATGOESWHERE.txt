@@ -1,0 +1,5 @@
+siege(folder) -> .../sound/
+
+attacksiren + redcharge will go when invis wall is set up
+
+ignore the gun sounds for now
