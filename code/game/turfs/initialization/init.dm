@@ -51,7 +51,10 @@
 	else if(prob(5))
 		new /obj/structure/anti_tank(T)
 
-	else if(prob(5))
+	else if(prob(5))//Please no landmines under dirt mounds thank you.
+		for(var/obj/structure/object in T.contents)
+			if(object)
+				return
 		new /obj/structure/landmine(T)
 
 
@@ -74,7 +77,10 @@
 	else if(prob(5))
 		new /obj/structure/anti_tank(T)
 
-	else if(prob(5))
+	else if(prob(5))//Please no landmines under dirt mounds thank you.
+		for(var/obj/structure/object in T.contents)
+			if(object)
+				return
 		new /obj/structure/landmine(T)
 
 
