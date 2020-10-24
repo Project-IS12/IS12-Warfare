@@ -940,8 +940,10 @@ default behaviour is:
 /mob/living/proc/toggle_crouch()
 	if(lying)//No crouching while you're lying down please.
 		return
-	crouching = !crouching
-	if(crouching)
+	if(!crouching)
+		if(!do_after(5))
+			return
+		crouching = TRUE
 		to_chat(src, "<span class='binfo'>You crouch low.")
 		if(istype(loc, /turf/simulated/floor/trench))
 			pixel_y = -12
@@ -949,6 +951,9 @@ default behaviour is:
 			do_zoom()
 
 	else
+		if(!do_after(5))
+			return
+		crouching = FALSE
 		to_chat(src, "<span class='binfo'>You stand up.")
 		if(istype(loc, /turf/simulated/floor/trench))
 			pixel_y = -8
