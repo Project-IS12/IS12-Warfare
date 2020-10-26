@@ -163,7 +163,7 @@
 				message += "I am <b>[skillnumtodesc(S.level)]</b> at [S.name].\n"
 			else
 				message += "<small>I have no knowledge of [S.name].</small>\n"
-	message += "<big><b>General Skills:</b></big>\n"
+	message += "<big><b>Gun Skills:</b></big>\n"
 	for(var/type in skill_copy)
 		var/datum/skill/S = skill_copy[type]
 		if(S.category == "Gun Skills")
