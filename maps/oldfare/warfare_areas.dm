@@ -29,12 +29,13 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 	var/captured = null
 	turf_initializer = /decl/turf_initializer/oldfare
 	var/can_pre_enter = FALSE
+	forced_ambience = list('sound/effects/siegestorm.ogg')
 
 /area/warfare/battlefield/trench_section//So they can cross atop their trench section.
 	can_pre_enter = TRUE
 
 /area/warfare/battlefield/trench_section/underground//So it doesn't spawn random shit underground.
-	forced_ambience = null
+	forced_ambience = list('sound/effects/siegestorm-indoor.ogg')
 	turf_initializer = null
 
 
@@ -44,6 +45,7 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 		L.clear_fullscreen("fog")
 		L.clear_fullscreen("ash")
 		L.clear_fullscreen("fallout")
+		L.clear_fullscreen("rain")
 
 /area/warfare/battlefield/no_mans_land
 	name = "\improper No Man\'s Land"
@@ -58,13 +60,7 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 		L.overlay_fullscreen("fog", /obj/screen/fullscreen/fog)
 		L.overlay_fullscreen("fallout", /obj/screen/fullscreen/fallout)
 		L.overlay_fullscreen("ash", /obj/screen/fullscreen/storm)
-
-/area/warfare/battlefield/Exited(mob/living/L, area/A)
-	. = ..()
-	if(istype(L) && !istype(A, /area/warfare/battlefield))
-		L.clear_fullscreen("fog")
-		L.clear_fullscreen("ash")
-		L.clear_fullscreen("fallout")
+		L.overlay_fullscreen("rain", /obj/screen/fullscreen/siegestorm)
 
 /area/warfare/battlefield/capture_point
 	name = "\improper Capture Point"
@@ -238,6 +234,15 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 	name = "\improper Base"
 	icon_state = "start"
 	requires_power = FALSE
+	forced_ambience = null
+
+/area/warfare/homebase/Entered(mob/living/L, area/A)
+	. = ..()
+	if(istype(L) && !istype(A, /area/warfare/battlefield))
+		L.clear_fullscreen("fog")
+		L.clear_fullscreen("ash")
+		L.clear_fullscreen("fallout")
+		L.clear_fullscreen("rain")
 
 /area/warfare/homebase/red
 	name = "\improper Red Base"
