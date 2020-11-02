@@ -81,6 +81,11 @@
 
 /obj/item/torch/attackby(obj/item/W, mob/user)
 	..()
+	if(lit && istype(W, /obj/item/clothing/mask/smokable/cigarette))
+		var/obj/item/clothing/mask/smokable/cigarette/C = W
+		if(!C.lit)
+			C.light()
+			to_chat(user, "You light the cigarette with the torch.")
 	if(isflamesource(W))
 		light()
 
@@ -160,6 +165,16 @@
 		user.drop_item()
 		insert_torch(W)
 		src.add_fingerprint(user)
+
+	// attempt to light a cigarette on the torch
+	if(istype(W, /obj/item/clothing/mask/smokable/cigarette))
+		if(lighttorch && lighttorch.lit)
+			var/obj/item/clothing/mask/smokable/cigarette/C = W
+			if(!C.lit)
+				C.light()
+				to_chat(user, "You light the cigarette with the torch.")
+				update_icon()
+			return
 
 	update_icon()
 
