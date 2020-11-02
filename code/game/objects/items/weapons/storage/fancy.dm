@@ -116,8 +116,8 @@
 //CIG PACK//
 ////////////
 /obj/item/storage/fancy/cigarettes
-	name = "pack of Smokey Boys"
-	desc = "A ubiquitous brand of cigarettes. As mild and flavorless as it gets."
+	name = "pack of Tannhauser Gates"
+	desc = "Know one really knows who Tannhauser Gate was, or why he sold cigarettes."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cigpacket"
 	item_state = "cigpacket"
@@ -215,8 +215,8 @@
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette/menthol = 6)
 
 /obj/item/storage/fancy/cigarettes/carcinomas
-	name = "pack of Tannhauser Gates"
-	desc = "Know one really knows who Tannhauser Gate was, or why he sold cigarettes."
+	name = "pack of Smokey Boys"
+	desc = "A ubiquitous brand of cigarettes. As mild and flavorless as it gets."
 	icon_state = "CApacket"
 	item_state = "Dpacket"
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette/carcinomas = 6)
