@@ -175,12 +175,6 @@
 				to_chat(user, "You light the cigarette with the torch.")
 				update_icon()
 			return
-		else if(!lighttorch)
-			to_chat(user, "There's no torch there, you fool.")
-			return
-		else if(!lighttorch.lit)
-			to_chat(user, "The torch isn't lit, you fool.")
-			return
 
 	update_icon()
 
