@@ -206,7 +206,7 @@
 	icon = 'icons/effects/weather.dmi'
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "siege_storm"
-	alpha = 60
+	alpha = 40
 
 /obj/screen/fullscreen/siegefog //!@!SIEGEFARE!@!
 	icon = 'icons/effects/weather.dmi'

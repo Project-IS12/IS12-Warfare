@@ -12,6 +12,7 @@
 	var/has_light = TRUE
 	var/can_generate_water = TRUE
 	var/can_be_dug = TRUE
+	var/atom/movable/rain
 
 /turf/simulated/floor/dirty/fake
 	atom_flags = null
@@ -29,7 +30,7 @@
 /turf/simulated/floor/dirty/tough/fake //Can't be click dragged on.
 	atom_flags = null
 
-/turf/simulated/floor/dirty/tough/lightless/fake 
+/turf/simulated/floor/dirty/tough/lightless/fake
 	atom_flags = null
 
 /turf/simulated/floor/dirty/tough/ex_act(severity)//Can't be blown up.
@@ -98,6 +99,18 @@
 	icon_state = pick("snow[rand(1,12)]","snow0")
 	..()
 
+/turf/simulated/floor/dirty/update_icon()
+	rain = new()
+	rain.alpha = 60
+	rain.mouse_opacity = 0
+	rain.icon = 'icons/effects/weather.dmi'
+	rain.icon_state = "siege_storm"
+	rain.plane = ABOVE_OBJ_PLANE
+	rain.layer = ABOVE_HUMAN_LAYER
+
+	vis_contents += rain
+
+
 /turf/simulated/floor/dirty/New()
 	..()
 	temperature = T0C - 60
@@ -107,6 +120,7 @@
 		new /obj/effect/lighting_dummy/daylight(src)
 	spawn(1)
 		overlays.Cut()
+		update_icon()
 	if(loc.type != /area/warfare/battlefield/no_mans_land) // no base puddles
 		return
 	if(!can_generate_water)//This type can't generate water so don't bother.
@@ -127,6 +141,11 @@
 							return
 						possible_water.ChangeTurf(/turf/simulated/floor/exoplanet/water/shallow)
 						waters += possible_water
+
+/turf/simulated/floor/dirty/Destroy()
+	vis_contents -= rain
+	qdel(rain)
+	. = ..()
 
 /turf/simulated/floor/dirty/attackby(obj/O as obj, mob/living/user as mob)
 	if(istype(O, /obj/item/shovel))
@@ -218,6 +237,7 @@
 	has_coldbreath = TRUE
 	var/has_light = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
+	var/atom/movable/rain
 
 /turf/simulated/floor/exoplanet/water/shallow/update_dirt()
 	return
@@ -305,6 +325,12 @@
 		for(var/turf/simulated/floor/exoplanet/water/shallow/T in range(1))
 			T.update_icon()
 
+
+/turf/simulated/floor/exoplanet/water/shallow/Destroy()
+	vis_contents -= rain
+	qdel(rain)
+	. = ..()
+
 /turf/simulated/floor/exoplanet/water/shallow/update_icon()
 
 	overlays.Cut()
@@ -320,6 +346,15 @@
 			overlays += water_side
 		var/image/wave_overlay = image('icons/obj/warfare.dmi', "waves")
 		overlays += wave_overlay
+	rain = new()
+	rain.alpha = 60
+	rain.mouse_opacity = 0
+	rain.icon = 'icons/effects/weather.dmi'
+	rain.icon_state = "siege_storm"
+	rain.plane = ABOVE_OBJ_PLANE
+	rain.layer = ABOVE_HUMAN_LAYER
+
+	vis_contents += rain
 
 /turf/simulated/floor/exoplanet/water/shallow/Destroy()
 	. = ..()

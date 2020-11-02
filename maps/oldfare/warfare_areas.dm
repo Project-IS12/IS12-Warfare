@@ -234,7 +234,6 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 	name = "\improper Base"
 	icon_state = "start"
 	requires_power = FALSE
-	forced_ambience = null
 
 /area/warfare/homebase/Entered(mob/living/L, area/A)
 	. = ..()
@@ -247,6 +246,13 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 /area/warfare/homebase/red
 	name = "\improper Red Base"
 	icon_state = "security"
+	forced_ambience = null
+
+/area/warfare/homebase/red/foyer
+	forced_ambience = list('sound/effects/siegestorm-indoor.ogg')
+
+/area/warfare/homebase/red/outside
+	forced_ambience = list('sound/effects/siegestorm.ogg')
 
 /area/warfare/homebase/red/Enter(atom/movable/AM)
 	if(ishuman(AM))
@@ -260,6 +266,13 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 /area/warfare/homebase/blue
 	name = "\improper Blue Base"
 	icon_state = "showroom"
+	forced_ambience = null
+
+/area/warfare/homebase/blue/foyer
+	forced_ambience = list('sound/effects/siegestorm-indoor.ogg')
+
+/area/warfare/homebase/blue/outside
+	forced_ambience = list('sound/effects/siegestorm.ogg')
 
 /area/warfare/homebase/blue/Enter(atom/movable/AM)
 	if(ishuman(AM))

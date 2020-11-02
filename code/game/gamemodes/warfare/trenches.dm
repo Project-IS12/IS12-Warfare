@@ -4,6 +4,8 @@
 	icon_state = "wood0"
 	can_smooth = TRUE
 	movement_delay = 0.5
+	var/atom/movable/rain
+	var/is_underground = FALSE
 
 /obj/structure/trench_wall
 	name = "trench wall"
@@ -24,19 +26,29 @@
 	return
 
 
+/turf/simulated/floor/trenches/underground
+	is_underground = TRUE
+
+
 /turf/simulated/floor/trenches/Initialize()
 	. = ..()
 	relativewall_neighbours()
-/*	spawn(5)
-		update_icon()
+	if(!is_underground)
+		rain = new()
+		rain.alpha = 60
+		rain.mouse_opacity = 0
+		rain.icon = 'icons/effects/weather.dmi'
+		rain.icon_state = "siege_storm"
+		rain.plane = ABOVE_OBJ_PLANE
+		rain.layer = ABOVE_HUMAN_LAYER
 
-/turf/simulated/floor/trenches/update_icon()
-	overlays.Cut()
-	var/image/snow_overlay = image('icons/obj/warfare.dmi', "snow_1", dir = pick(GLOB.alldirs))
-	snow_overlay.plane = ABOVE_TURF_PLANE
-	overlays += snow_overlay
-	//snow_overlay.turf_decal_layerise()
-*/
+		vis_contents += rain
+
+
+/turf/simulated/floor/trenches/Destroy()
+	vis_contents -= rain
+	qdel(rain)
+	. = ..()
 
 
 /turf/simulated/floor/trench
@@ -46,6 +58,7 @@
 	movement_delay = 0.5
 	has_coldbreath = TRUE
 	var/can_be_dug = TRUE
+	var/atom/movable/rain
 
 /turf/simulated/floor/trench/fake
 	atom_flags = null
@@ -66,6 +79,12 @@
 		new /obj/effect/lighting_dummy/daylight(src)
 	dir = pick(GLOB.alldirs)
 	update_icon()
+
+/turf/simulated/floor/trench/Destroy()
+	vis_contents -= rain
+	qdel(rain)
+	. = ..()
+
 
 /turf/simulated/floor/trench/RightClick(mob/living/user)
 	if(!CanPhysicallyInteract(user))
@@ -130,6 +149,15 @@
 
 /turf/simulated/floor/trench/update_icon()
 	update_trench_shit()
+	rain = new()
+	rain.alpha = 60
+	rain.mouse_opacity = 0
+	rain.icon = 'icons/effects/weather.dmi'
+	rain.icon_state = "siege_storm"
+	rain.plane = ABOVE_OBJ_PLANE
+	rain.layer = ABOVE_HUMAN_LAYER
+
+	vis_contents += rain
 
 
 /turf/simulated/floor/proc/update_trench_shit()
