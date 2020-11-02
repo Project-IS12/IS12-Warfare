@@ -136,6 +136,9 @@
 	icon_state = "redoffcap"
 	item_state = "redoffcap"
 	warfare_team = RED_TEAM
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	body_parts_covered = HEAD
 
 /obj/item/clothing/head/redcoat/redgarrisoncap
 	name = "Red Garrison Cap"
@@ -265,6 +268,9 @@
 	icon_state = "blueoffcap"
 	item_state = "blueoffcap"
 	warfare_team = BLUE_TEAM
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	body_parts_covered = HEAD
 
 /obj/item/clothing/head/bluecoat/bluegarrisoncap
 	name = "Blue Garrison Cap"
