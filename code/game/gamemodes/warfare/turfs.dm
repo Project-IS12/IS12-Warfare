@@ -12,7 +12,6 @@
 	var/has_light = TRUE
 	var/can_generate_water = TRUE
 	var/can_be_dug = TRUE
-	var/atom/movable/rain
 
 /turf/simulated/floor/dirty/fake
 	atom_flags = null
@@ -100,14 +99,6 @@
 	..()
 
 /turf/simulated/floor/dirty/update_icon()
-	rain = new()
-	rain.alpha = 60
-	rain.mouse_opacity = 0
-	rain.icon = 'icons/effects/weather.dmi'
-	rain.icon_state = "siege_storm"
-	rain.plane = ABOVE_OBJ_PLANE
-	rain.layer = ABOVE_HUMAN_LAYER
-
 	vis_contents += rain
 
 
@@ -120,6 +111,7 @@
 		new /obj/effect/lighting_dummy/daylight(src)
 	spawn(1)
 		overlays.Cut()
+		vis_contents.Cut()
 		update_icon()
 	if(loc.type != /area/warfare/battlefield/no_mans_land) // no base puddles
 		return
@@ -143,7 +135,7 @@
 						waters += possible_water
 
 /turf/simulated/floor/dirty/Destroy()
-	vis_contents -= rain
+	vis_contents.Cut()
 	qdel(rain)
 	. = ..()
 
@@ -237,7 +229,6 @@
 	has_coldbreath = TRUE
 	var/has_light = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
-	var/atom/movable/rain
 
 /turf/simulated/floor/exoplanet/water/shallow/update_dirt()
 	return
@@ -327,7 +318,7 @@
 
 
 /turf/simulated/floor/exoplanet/water/shallow/Destroy()
-	vis_contents -= rain
+	vis_contents.Cut()
 	qdel(rain)
 	. = ..()
 
@@ -346,13 +337,6 @@
 			overlays += water_side
 		var/image/wave_overlay = image('icons/obj/warfare.dmi', "waves")
 		overlays += wave_overlay
-	rain = new()
-	rain.alpha = 60
-	rain.mouse_opacity = 0
-	rain.icon = 'icons/effects/weather.dmi'
-	rain.icon_state = "siege_storm"
-	rain.plane = ABOVE_OBJ_PLANE
-	rain.layer = ABOVE_HUMAN_LAYER
 
 	vis_contents += rain
 

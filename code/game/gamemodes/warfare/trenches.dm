@@ -4,8 +4,6 @@
 	icon_state = "wood0"
 	can_smooth = TRUE
 	movement_delay = 0.5
-	var/atom/movable/rain
-	var/is_underground = FALSE
 
 /obj/structure/trench_wall
 	name = "trench wall"
@@ -34,19 +32,11 @@
 	. = ..()
 	relativewall_neighbours()
 	if(!is_underground)
-		rain = new()
-		rain.alpha = 60
-		rain.mouse_opacity = 0
-		rain.icon = 'icons/effects/weather.dmi'
-		rain.icon_state = "siege_storm"
-		rain.plane = ABOVE_OBJ_PLANE
-		rain.layer = ABOVE_HUMAN_LAYER
-
 		vis_contents += rain
 
 
 /turf/simulated/floor/trenches/Destroy()
-	vis_contents -= rain
+	vis_contents.Cut()
 	qdel(rain)
 	. = ..()
 
@@ -58,7 +48,6 @@
 	movement_delay = 0.5
 	has_coldbreath = TRUE
 	var/can_be_dug = TRUE
-	var/atom/movable/rain
 
 /turf/simulated/floor/trench/fake
 	atom_flags = null
@@ -81,7 +70,7 @@
 	update_icon()
 
 /turf/simulated/floor/trench/Destroy()
-	vis_contents -= rain
+	vis_contents.Cut()
 	qdel(rain)
 	. = ..()
 
@@ -123,14 +112,18 @@
 
 
 /turf/simulated/floor/proc/update_trench_layers()
-	overlays.Cut()
+	vis_contents.Cut()
 	for(var/direction in GLOB.cardinal)
 		var/turf/turf_to_check = get_step(src,direction)
 		if(istype(turf_to_check, /turf/simulated/floor/trench))
 			continue
 		if(istype(turf_to_check, /turf/space) || istype(turf_to_check, /turf/simulated/floor) || istype(turf_to_check, /turf/simulated/floor/exoplanet/water/shallow) || istype(turf_to_check, /turf/simulated/wall))
-			var/image/trench_side = image('icons/obj/warfare.dmi', "trench_side", dir = turn(direction, 180))
-			trench_side.turf_decal_layerise()
+			var/atom/movable/trench_side = new()
+			trench_side.icon = 'icons/obj/warfare.dmi'
+			trench_side.icon_state = "trench_side"
+			trench_side.dir = turn(direction, 180)
+			trench_side.mouse_opacity = 0
+			//trench_side.turf_decal_layerise()
 			switch(direction)
 				if(NORTH)
 					trench_side.pixel_y += ((world.icon_size) - 22)
@@ -145,10 +138,12 @@
 					trench_side.pixel_x -= (world.icon_size)
 					trench_side.plane = ABOVE_OBJ_PLANE
 					trench_side.layer = BASE_MOB_LAYER
-			overlays += trench_side
+			vis_contents += trench_side
+			vis_contents += rain
 
 /turf/simulated/floor/trench/update_icon()
 	update_trench_shit()
+	/*
 	rain = new()
 	rain.alpha = 60
 	rain.mouse_opacity = 0
@@ -158,7 +153,7 @@
 	rain.layer = ABOVE_HUMAN_LAYER
 
 	vis_contents += rain
-
+	*/
 
 /turf/simulated/floor/proc/update_trench_shit()
 	for(var/direction in GLOB.cardinal)

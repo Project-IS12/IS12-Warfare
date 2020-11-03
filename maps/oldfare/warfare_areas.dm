@@ -45,7 +45,7 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 		L.clear_fullscreen("fog")
 		L.clear_fullscreen("ash")
 		L.clear_fullscreen("fallout")
-		L.clear_fullscreen("rain")
+		//L.clear_fullscreen("rain")
 
 /area/warfare/battlefield/no_mans_land
 	name = "\improper No Man\'s Land"
@@ -60,7 +60,7 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 		L.overlay_fullscreen("fog", /obj/screen/fullscreen/fog)
 		L.overlay_fullscreen("fallout", /obj/screen/fullscreen/fallout)
 		L.overlay_fullscreen("ash", /obj/screen/fullscreen/storm)
-		L.overlay_fullscreen("rain", /obj/screen/fullscreen/siegestorm)
+		//L.overlay_fullscreen("rain", /obj/screen/fullscreen/siegestorm)
 
 /area/warfare/battlefield/capture_point
 	name = "\improper Capture Point"
@@ -241,7 +241,7 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 		L.clear_fullscreen("fog")
 		L.clear_fullscreen("ash")
 		L.clear_fullscreen("fallout")
-		L.clear_fullscreen("rain")
+		//L.clear_fullscreen("rain")
 
 /area/warfare/homebase/red
 	name = "\improper Red Base"
