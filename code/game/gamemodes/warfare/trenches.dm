@@ -123,7 +123,6 @@
 			trench_side.icon_state = "trench_side"
 			trench_side.dir = turn(direction, 180)
 			trench_side.mouse_opacity = 0
-			//trench_side.turf_decal_layerise()
 			switch(direction)
 				if(NORTH)
 					trench_side.pixel_y += ((world.icon_size) - 22)
@@ -139,21 +138,10 @@
 					trench_side.plane = ABOVE_OBJ_PLANE
 					trench_side.layer = BASE_MOB_LAYER
 			vis_contents += trench_side
-			vis_contents += rain
+	vis_contents += rain
 
 /turf/simulated/floor/trench/update_icon()
 	update_trench_shit()
-	/*
-	rain = new()
-	rain.alpha = 60
-	rain.mouse_opacity = 0
-	rain.icon = 'icons/effects/weather.dmi'
-	rain.icon_state = "siege_storm"
-	rain.plane = ABOVE_OBJ_PLANE
-	rain.layer = ABOVE_HUMAN_LAYER
-
-	vis_contents += rain
-	*/
 
 /turf/simulated/floor/proc/update_trench_shit()
 	for(var/direction in GLOB.cardinal)
