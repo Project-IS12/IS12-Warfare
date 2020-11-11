@@ -203,10 +203,14 @@ meteor_act
 		visible_message("<span class='danger'>[user] [I.get_attack_name()] [src]'s [affecting.name] with the [I], but it does no damage!")
 		return null
 
-	if(hit_zone == BP_CHEST || hit_zone == BP_MOUTH || hit_zone == BP_THROAT || hit_zone == BP_HEAD)//If we're lying and we're trying to aim high, we won't be able to hit.
+	//if(hit_zone == BP_CHEST || hit_zone == BP_MOUTH || hit_zone == BP_THROAT || hit_zone == BP_HEAD)//If we're lying and we're trying to aim high, we won't be able to hit.
 		if(user.lying && !src.lying)
 			to_chat(user, "<span class='notice'><b>I can't reach their [affecting.name]!</span></b>")
 			return null
+		
+	if(user.lying && !src.lying)//Can't hit mobs when laying down.
+		to_chat(user, "<span class='notice'><b>I can't hit people when I'm lying down!</span></b>")
+		return null
 
 	return hit_zone
 
