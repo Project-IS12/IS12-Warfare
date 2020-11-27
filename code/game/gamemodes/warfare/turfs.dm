@@ -98,10 +98,6 @@
 	icon_state = pick("snow[rand(1,12)]","snow0")
 	..()
 
-/turf/simulated/floor/dirty/update_icon()
-	vis_contents += rain
-
-
 /turf/simulated/floor/dirty/New()
 	..()
 	temperature = T0C - 60
@@ -133,11 +129,6 @@
 							return
 						possible_water.ChangeTurf(/turf/simulated/floor/exoplanet/water/shallow)
 						waters += possible_water
-
-/turf/simulated/floor/dirty/Destroy()
-	vis_contents.Cut()
-	qdel(rain)
-	. = ..()
 
 /turf/simulated/floor/dirty/attackby(obj/O as obj, mob/living/user as mob)
 	if(istype(O, /obj/item/shovel))
@@ -316,12 +307,6 @@
 		for(var/turf/simulated/floor/exoplanet/water/shallow/T in range(1))
 			T.update_icon()
 
-
-/turf/simulated/floor/exoplanet/water/shallow/Destroy()
-	vis_contents.Cut()
-	qdel(rain)
-	. = ..()
-
 /turf/simulated/floor/exoplanet/water/shallow/update_icon()
 
 	overlays.Cut()
@@ -337,8 +322,6 @@
 			overlays += water_side
 		var/image/wave_overlay = image('icons/obj/warfare.dmi', "waves")
 		overlays += wave_overlay
-
-	vis_contents += rain
 
 /turf/simulated/floor/exoplanet/water/shallow/Destroy()
 	. = ..()

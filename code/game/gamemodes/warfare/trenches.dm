@@ -31,14 +31,7 @@
 /turf/simulated/floor/trenches/Initialize()
 	. = ..()
 	relativewall_neighbours()
-	if(!is_underground)
-		vis_contents += rain
 
-
-/turf/simulated/floor/trenches/Destroy()
-	vis_contents.Cut()
-	qdel(rain)
-	. = ..()
 
 
 /turf/simulated/floor/trench
@@ -68,11 +61,6 @@
 		new /obj/effect/lighting_dummy/daylight(src)
 	dir = pick(GLOB.alldirs)
 	update_icon()
-
-/turf/simulated/floor/trench/Destroy()
-	vis_contents.Cut()
-	qdel(rain)
-	. = ..()
 
 
 /turf/simulated/floor/trench/RightClick(mob/living/user)
@@ -138,7 +126,6 @@
 					trench_side.plane = ABOVE_OBJ_PLANE
 					trench_side.layer = BASE_MOB_LAYER
 			vis_contents += trench_side
-	vis_contents += rain
 
 /turf/simulated/floor/trench/update_icon()
 	update_trench_shit()

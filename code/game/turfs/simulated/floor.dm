@@ -23,7 +23,6 @@
 	thermal_conductivity = 0.040
 	heat_capacity = 10000
 	var/lava = 0
-	var/atom/movable/rain
 	var/is_underground = FALSE
 
 /turf/simulated/floor/is_plating()
@@ -39,13 +38,6 @@
 	if(floortype)
 		set_flooring(get_flooring_data(floortype))
 	generate_splines()
-	rain = new()
-	rain.alpha = 60
-	rain.mouse_opacity = 0
-	rain.icon = 'icons/effects/weather.dmi'
-	rain.icon_state = "siege_storm"
-	rain.plane = ABOVE_OBJ_PLANE
-	rain.layer = ABOVE_HUMAN_LAYER
 
 /turf/simulated/floor/proc/set_flooring(var/decl/flooring/newflooring)
 	make_plating(defer_icon_update = 1)
