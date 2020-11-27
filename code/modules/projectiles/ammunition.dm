@@ -38,6 +38,7 @@
 		pixel_y = rand(-randpixel, randpixel)
 
 	update_icon()
+	mouse_opacity = 0
 
 /obj/item/ammo_casing/proc/leave_residue()
 	var/mob/living/carbon/human/H

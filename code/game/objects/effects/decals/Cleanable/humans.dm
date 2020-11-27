@@ -21,6 +21,7 @@ var/global/list/image/splatter_cache=list()
 	var/amount = 5
 	var/drytime
 	appearance_flags = NO_CLIENT_COLOR
+	mouse_opacity = 0
 
 /obj/effect/decal/cleanable/blood/reveal_blood()
 	if(!fluorescent)
@@ -258,3 +259,4 @@ var/global/list/image/splatter_cache=list()
 	var/list/existing_dirs = list()
 	blood_DNA = list()
 	appearance_flags = NO_CLIENT_COLOR
+	mouse_opacity = 0
