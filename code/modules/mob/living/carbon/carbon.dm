@@ -164,7 +164,9 @@
 	if(!client)
 		return
 
-	if(istype(get_active_hand(),/obj/item/gun))
+	var/obj/item/gun/G = get_active_hand()
+
+	if(istype(G) && !G.safety)
 		if(dispersion_mouse_display_number > 0 && dispersion_mouse_display_number < 2)// else
 			client.mouse_pointer_icon = 'icons/effects/standard/standard2.dmi'//'icons/misc/aim.dmi'
 		else if(dispersion_mouse_display_number >= 2 && dispersion_mouse_display_number < 4)

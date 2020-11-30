@@ -573,6 +573,7 @@
 		to_chat(user, "<span class='notice'>The safety is off.</span>")
 
 
+
 /obj/item/gun/proc/switch_firemodes()
 	if(firemodes.len <= 1)
 		return null
@@ -607,6 +608,10 @@
 		safety = !safety
 		playsound(user, 'sound/items/safety.ogg', 50, 1)
 		to_chat(user, "<span class='notice'>You toggle the safety [safety ? "on":"off"].</span>")
+		if(!safety)
+			user.update_aim_icon()
+		else
+			user.client.mouse_pointer_icon = null
 
 /obj/item/gun/AltClick(mob/user)
 	if(user.incapacitated(INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_KNOCKOUT))
@@ -706,9 +711,8 @@
 //A cool pointer for your gun.
 /obj/item/gun/pickup(mob/user)
 	if(user.client)
-		user.client.mouse_pointer_icon = 'icons/effects/standard/standard1.dmi'
-	//	user.update_aim_icon()
-	//	user.client.mouse_pointer_icon = 'icons/misc/aim.dmi'
+		if(!safety)
+			user.client.mouse_pointer_icon = 'icons/effects/standard/standard1.dmi'
 	update_icon()
 	..()
 /obj/item/gun/dropped(mob/user)

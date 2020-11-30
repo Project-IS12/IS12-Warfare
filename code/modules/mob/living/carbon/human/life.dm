@@ -83,6 +83,8 @@
 		//Updates the number of stored chemicals for powers
 		handle_changeling()
 
+		update_aim_icon() //Update your aim icon first, because it's more important than that other dumb shit below it.
+
 		//Organs and blood
 		handle_organs()
 
@@ -95,8 +97,6 @@
 		handle_medical_side_effects()
 
 		handle_diagonostic_signs()
-
-		update_aim_icon()
 
 		handle_warfare_life()
 
