@@ -485,6 +485,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if(admin_ghosted)//aghosts can always respawn if they like
 		return TRUE
+	
+	if(issiegefare())
+		if(RED_TEAM)
+			return TRUE
 	/*
 	if(mind && mind.current && mind.current.stat != DEAD && can_reenter_corpse == CORPSE_CAN_REENTER)
 		if(feedback)
@@ -509,6 +513,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			if(GLOB.blue_captured_zones.len < 1)
 				to_chat(src, "We control no trenches, we cannot respawn.")
 				return FALSE
+		
+	if(issiegefare())
+		respawn_time = 0.5
 
 	if(!client.holder && respawn_time && timeofdeath && timedifference < respawn_time MINUTES)
 		var/timedifference_text = time2text(respawn_time MINUTES - timedifference,"mm:ss")
