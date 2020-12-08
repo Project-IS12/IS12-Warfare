@@ -26,20 +26,19 @@ var/siegewall = FALSE
     return (istype(ticker.mode, /datum/game_mode/siegefare) || master_mode=="siegefare")
 
 /datum/game_mode/siegefare/proc/start_siege_countdown()
-	spawn(10 MINUTES)
+	spawn(8 MINUTES)
 		open_siegewall()
 
 /datum/game_mode/siegefare/proc/open_siegewall()
 	siegewall = TRUE
 	to_world("<big>FIGHT OR DIE!</big>")
-	sound_to(world, 'sound/effects/attacksiren.ogg')
 	sound_to(world, 'sound/effects/redcharge.ogg')
-	spawn(4 MINUTES)
+	spawn(3 MINUTES)
 		close_siegewall()
 
 /datum/game_mode/siegefare/proc/close_siegewall()
 	siegewall = FALSE
-	to_world("<big>The fighting dies down!</big>")
+	to_world("<big>The fighting starts to die down!</big>")
 	sound_to(world, 'sound/effects/ready_to_die.ogg')
-	spawn(4 MINUTES)
+	spawn(5 MINUTES)
 		open_siegewall()
