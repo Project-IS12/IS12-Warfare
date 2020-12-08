@@ -27,7 +27,9 @@ var/siegewall = FALSE
 
 /datum/game_mode/siegefare/proc/start_siege_countdown()
 	spawn(8 MINUTES)
-		open_siegewall()
+		open_siegewall()		
+			spawn(32 MINUTES)
+				SSwarfare.end_warfare(RED_TEAM)
 
 /datum/game_mode/siegefare/proc/open_siegewall()
 	siegewall = TRUE
@@ -39,6 +41,5 @@ var/siegewall = FALSE
 /datum/game_mode/siegefare/proc/close_siegewall()
 	siegewall = FALSE
 	to_world("<big>The fighting starts to die down!</big>")
-	sound_to(world, 'sound/effects/ready_to_die.ogg')
 	spawn(5 MINUTES)
 		open_siegewall()
