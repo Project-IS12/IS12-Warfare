@@ -307,12 +307,10 @@
 	if(job.no_late_join) return 0
 	if(job.is_red_team)//Can't join the team if they have more people on their side.
 		if(client?.warfare_faction != RED_TEAM)
-			if(!"admin")
-				return 0
+			return 0
 	if(job.is_blue_team)
 		if(client?.warfare_faction != BLUE_TEAM)
-			if(!"admin")
-				return 0
+			return 0
 
 	return 1
 
