@@ -28,8 +28,8 @@ var/siegewall = FALSE
 /datum/game_mode/siegefare/proc/start_siege_countdown()
 	spawn(8 MINUTES)
 		open_siegewall()		
-			spawn(32 MINUTES)
-				SSwarfare.end_warfare(RED_TEAM)
+		spawn(32 MINUTES)
+			SSwarfare.end_warfare(RED_TEAM)
 
 /datum/game_mode/siegefare/proc/open_siegewall()
 	siegewall = TRUE
