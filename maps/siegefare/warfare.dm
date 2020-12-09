@@ -15,7 +15,7 @@
 	#include "casualties-1.dmm"
 	#include "casualties-2.dmm"
 
-	#include "../../code/modules/lobby_music/generic_songs.dm"
+	#include "../../code/modules/lobby_music/siegefare_songs.dm"
 
 	#define using_map_DATUM /datum/map/warfare
 #elif !defined(MAP_OVERRIDE)
