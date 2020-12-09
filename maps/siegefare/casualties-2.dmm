@@ -5,7 +5,6 @@
 "cx" = (/turf/simulated/floor/tiled/ramp{dir = 8},/area/warfare)
 "fq" = (/obj/structure/dirt_wall,/obj/structure/dirt_wall,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue/outside)
 "gN" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/dirty/indestructable,/area/warfare)
-"jd" = (/obj/structure/defensive_barrier,/obj/item/reagent_containers/food/drinks/bottle/gin,/turf/simulated/floor/holofloor/tiled,/area/warfare)
 "kh" = (/turf/simulated/floor/holofloor/tiled,/area/warfare)
 "kA" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/dirty/tough,/area/warfare/battlefield/trench_section)
 "kQ" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/indestructable,/area/warfare)
@@ -46,7 +45,6 @@
 "HB" = (/obj/structure/poster/blue,/turf/simulated/wall/concrete/strong,/area/warfare)
 "HD" = (/turf/simulated/floor/trenches,/area/warfare/homebase/blue/outside)
 "HO" = (/obj/structure/defensive_barrier,/turf/simulated/floor/holofloor/tiled,/area/warfare/homebase/blue/outside)
-"Iu" = (/obj/item/reagent_containers/food/drinks/bottle/vodka,/turf/simulated/floor/tiled,/area/warfare)
 "IR" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/dirty/tough,/area/warfare)
 "Jt" = (/obj/structure/defensive_barrier,/turf/simulated/floor/holofloor/tiled,/area/warfare)
 "KG" = (/obj/structure/bed,/turf/simulated/floor/trench,/area/warfare)
@@ -58,7 +56,6 @@
 "Rf" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/trench,/area/warfare)
 "Ss" = (/obj/structure/sign/redcross,/turf/simulated/wall/concrete/strong,/area/warfare)
 "UK" = (/obj/structure/torchwall{dir = 8},/turf/simulated/open,/area/warfare/homebase/blue/outside)
-"UP" = (/obj/item/reagent_containers/food/drinks/bottle/gin,/turf/simulated/floor/holofloor/tiled,/area/warfare)
 "Vc" = (/obj/structure/defensive_barrier,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue/outside)
 "Vx" = (/obj/structure/landmine,/turf/simulated/floor/dirty/indestructable,/area/warfare)
 "Xd" = (/turf/simulated/floor/dirty/tough,/area/warfare)
@@ -128,8 +125,8 @@ HaHaHaHaqNyqyqyqwwyqyqyqwwyqyqyqyqwwwwwwwwyqyqyqyqyqyqyqyqyqyqyqwwwwwwwwyqyqyqyq
 HaHaHaHaqNkQkQkQpukQkQkQpukQkQkQkQpupupukQkQkQkQkQkQkQkQkQkQkQkQkQpupupukQkQkQkQpukQkQkQpukQkQkQqNHaHaHaHa
 HaHaHaHaqNZcZcZcZcZcZcZcZcZcZcZcZcZckhZcZcZcZcZcZcZcZcZcZcZcZcZcZcZckhZcZcZcZcZcZcZcZcZcZcZcZcZcqNHaHaHaHa
 HaHaHaHaqNZcZcZcZcZcZcZcZcZcZcZcZcZckhZcZcZcZcZcZcZcZcZcZcZcZcZcZcZckhZcZcZcZcZcZcZcZcZcZcZcZcZcqNHaHaHaHa
-HaHaHaHaqNAmUPRfZcYoHBAjZcAmUPRfZcvAwwwgZcZcAmUPRfYoHBAjAmUPRfZcZcvAwwwgZcAmUPRfZcYoHBAjZcAmUPRfqNHaHaHaHa
-HaHaHaHaqNAmjdRfZcZcJtZcZcAmjdRfZcvAwwwgZcZcAmjdRfZcJtZcAmjdRfZcZcvAwwwgZcAmjdRfZcZcJtZcZcAmjdRfqNHaHaHaHa
+HaHaHaHaqNAmkhRfZcYoHBAjZcAmkhRfZcvAwwwgZcZcAmkhRfYoHBAjAmkhRfZcZcvAwwwgZcAmkhRfZcYoHBAjZcAmkhRfqNHaHaHaHa
+HaHaHaHaqNAmJtRfZcZcJtZcZcAmJtRfZcvAwwwgZcZcAmJtRfZcJtZcAmJtRfZcZcvAwwwgZcAmJtRfZcZcJtZcZcAmJtRfqNHaHaHaHa
 HaHaHaHaqNyqyqyqyqyqyqyqyqyqyqyqyqpuwwpuyqyqyqyqyqyqyqyqyqyqyqyqyqpuwwpuyqyqyqyqyqyqyqyqyqyqyqyqqNHaHaHaHa
 HaHaHaHaqNkQkQkQkQkQkQkQkQkQkQkQZcyqpuyqZckQkQkQkQkQkQkQkQkQkQkQZcyqpuyqZckQkQkQkQkQkQkQkQkQkQkQqNHaHaHaHa
 HaHaHaHaqNwwVxwwVxwwVxwwVxwwVxkQkQZcyqZckQkQVxwwVxwwVxwwVxwwVxkQkQZcyqZckQkQVxwwVxwwVxwwVxwwVxwwqNHaHaHaHa
@@ -154,8 +151,8 @@ HaHaHaHaHaCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCmCm
 HaHaHaHaqNNNNNNNNNNNNNNNNNNNNNNNNNNNXdNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNXdNNNNNNNNNNNNNNNNNNNNNNNNNNqNHaHaHaHa
 HaHaHaHaqNZcZcZcZcZcZcZcZcZcZcZcZcZcKXZcZcZcZcZcZcZcZcZcZcZcZcZcZcZcKXZcZcZcZcZcZcZcZcZcZcZcZcZcqNHaHaHaHa
 HaHaHaHaqNZcZcYoAsAjZcZcZcYoAsAjZcZcKXZcZcYoAsAjZcYoapAjZcYoAsAjZcZcKXZcZcYoAsAjZcZcZcYoAsAjZcZcqNHaHaHaHa
-HaHaHaHaqNZcZcAmIuRfZcZcZcAmIuRfZcZcKXZcZcAmIuRfZcAmIuRfZcAmIuRfZcZcKXZcZcAmIuRfZcZcZcAmIuRfZcZcqNHaHaHaHa
-HaHaHaHaqNZcZcAmIuRfZcZcZcAmIuRfZcZcKXZcZcAmIuRfZcAmIuRfZcAmIuRfZcZcKXZcZcAmIuRfZcZcZcAmIuRfZcZcqNHaHaHaHa
+HaHaHaHaqNZcZcAmKXRfZcZcZcAmKXRfZcZcKXZcZcAmKXRfZcAmKXRfZcAmKXRfZcZcKXZcZcAmKXRfZcZcZcAmKXRfZcZcqNHaHaHaHa
+HaHaHaHaqNZcZcAmKXRfZcZcZcAmKXRfZcZcKXZcZcAmKXRfZcAmKXRfZcAmKXRfZcZcKXZcZcAmKXRfZcZcZcAmKXRfZcZcqNHaHaHaHa
 HaHaHaHaqNZcZcZcZcZcZcZcZcZcZcZcZcZcKXZcZcZcZcZcZcZcZcZcZcZcZcZcZcZcKXZcZcZcZcZcZcZcZcZcZcZcZcZcqNHaHaHaHa
 HaHaHaHaqNXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdZVZVZVZVqNHaHaHaHa
 HaHaHaHaqNZVZVZVZVXdbYxcIRXdXdZVZVZVZVZVZVZVZVZVZVXdXdXdZVZVZVZVZVZVZVZVZVZVXdXdbYSsIRXdZVZVZVZVqNHaHaHaHa
