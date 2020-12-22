@@ -30,6 +30,8 @@
 	var/spread_range = 7 //leave as is, for some reason setting this higher makes the spread pattern have gaps close to the epicenter
 
 /obj/item/grenade/frag/attack_self(mob/user as mob)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		return
 	if(aspect_chosen(/datum/aspect/no_guns))//No grenades in slappers only please.
 		to_chat(user, "The pin seems stuck, it won't go off.")
 		return

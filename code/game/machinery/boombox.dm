@@ -136,3 +136,8 @@
 	a_side = pick('sound/music/boombox7.ogg', 'sound/music/boombox8.ogg')
 	b_side = pick('sound/music/boombox9.ogg', 'sound/music/boombox10.ogg')
 	sound_inside = a_side
+
+/obj/item/device/cassette/tape/rare
+	name = "rare trenchmas tape"
+	a_side = 'sound/music/drip.ogg'
+	b_side = 'sound/music/drip.ogg'

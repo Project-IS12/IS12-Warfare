@@ -120,6 +120,8 @@
 			if(ticker.current_state == GAME_STATE_FINISHED)
 				to_chat(M, "<span class='warning'>The battle is over! There is no need to fight!</span>")
 				return
+			if(aspect_chosen(/datum/aspect/trenchmas))
+				return
 			//All this shit is for surgery
 			/*
 			if(istype(H))
@@ -194,6 +196,9 @@
 		if(I_HURT)
 			if(ticker.current_state == GAME_STATE_FINISHED)
 				to_chat(M, "<span class='warning'>The battle is over! There is no need to fight!</span>")
+				return
+			if(aspect_chosen(/datum/aspect/trenchmas))
+				to_chat(M, "<span class='warning'>It's Trenchmas! It is not a time to fight!</span>")
 				return
 			if(H.warfare_faction)
 				if(H.warfare_faction == src.warfare_faction && src.stat != DEAD)

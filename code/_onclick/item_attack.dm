@@ -71,6 +71,11 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if(ticker.current_state == GAME_STATE_FINISHED)
 		to_chat(user, "<span class='warning'>The battle is over! There is no need to fight!</span>")
 		return 0
+
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		to_chat(user, "<span class='warning'>It's trenchmas! There is no reason to fight!</span>")
+		return 0
+
 	if(M == user && user.a_intent != I_HURT)
 		return 0
 

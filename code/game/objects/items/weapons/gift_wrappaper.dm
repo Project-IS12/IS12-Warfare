@@ -112,10 +112,9 @@
 	desc = "A wrapped item."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "gift3"
-	var/size = 3.0
 	var/obj/item/gift = null
 	item_state = "gift"
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/gift/New(newloc, obj/item/wrapped = null)
 	..(newloc)
@@ -136,8 +135,11 @@
 /obj/item/gift/attack_self(mob/user as mob)
 	user.drop_item()
 	if(src.gift)
-		user.put_in_active_hand(gift)
-		src.gift.add_fingerprint(user)
+		playsound(src, 'sound/items/poster_ripped.ogg', 100)
+		var/obj/item/A = new gift(get_turf(user))
+		user.put_in_active_hand(A)
+		A.add_fingerprint(user)
+		user.visible_message("<span class='bnotice'>[user] tears open the present!</pan>")
 	else
 		to_chat(user, "<span class='warning'>The gift was empty!</span>")
 	qdel(src)
@@ -208,3 +210,17 @@
 			to_chat(user, "<span class='warning'>You need more paper.</span>")
 	else
 		to_chat(user, "They are moving around too much. A straightjacket would help.")
+
+
+/obj/item/gift/warfare
+	var/list/possible_gifts = list(/obj/item/clothing/shoes/timbs, /obj/item/grenade/frag/warfare, /obj/item/device/multitool, /obj/item/reagent_containers/food/drinks/bottle/wine, /obj/item/storage/fancy/cigarettes/jerichos)
+
+/obj/item/gift/warfare/New()
+	if(prob(1))
+		gift = /obj/item/device/cassette/tape/rare
+	else if(prob(1))
+		gift = /obj/item/device/boombox
+	else
+		gift = pick(possible_gifts)
+	..()
+

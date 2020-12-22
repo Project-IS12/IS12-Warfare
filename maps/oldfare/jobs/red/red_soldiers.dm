@@ -268,6 +268,8 @@
 
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/torch/self_lit = 1, /obj/item/ammo_box/flares = 1)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		backpack_contents += list(/obj/item/gift/warfare = 1)
 	..()
 
 /decl/hierarchy/outfit/job/redsoldier/sgt
@@ -289,6 +291,8 @@
 
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/torch/self_lit = 1, /obj/item/ammo_box/flares = 1)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		backpack_contents += list(/obj/item/gift/warfare = 1)
 	..()
 
 
@@ -318,6 +322,8 @@
 
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/ammo_box/flares = 1, /obj/item/torch/self_lit = 1)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		backpack_contents += list(/obj/item/gift/warfare = 1)
 	..()
 
 
@@ -332,6 +338,8 @@
 /decl/hierarchy/outfit/job/redsoldier/sentry/equip()
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/ammo_box/flares = 1, /obj/item/torch/self_lit = 1)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		backpack_contents += list(/obj/item/gift/warfare = 1)
 	..()
 
 /decl/hierarchy/outfit/job/redsoldier/flamer
@@ -359,6 +367,8 @@
 		belt = /obj/item/gun/projectile/revolver
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/ammo_box/flares = 1, /obj/item/torch/self_lit = 1)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		backpack_contents += list(/obj/item/gift/warfare = 1)
 	..()
 
 /decl/hierarchy/outfit/job/redsoldier/medic
@@ -381,6 +391,8 @@
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/ammo_box/flares = 1, /obj/item/torch/self_lit = 1)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		backpack_contents += list(/obj/item/gift/warfare = 1)
 	..()
 
 /decl/hierarchy/outfit/job/redsoldier/leader
@@ -395,6 +407,8 @@
 /decl/hierarchy/outfit/job/redsoldier/leader/equip()
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/ammo_box/flares = 1 , /obj/item/torch/self_lit = 1)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		backpack_contents += list(/obj/item/gift/warfare = 1)
 	..()
 
 /decl/hierarchy/outfit/job/redsoldier/scout
@@ -409,4 +423,6 @@
 /decl/hierarchy/outfit/job/redsoldier/scout/equip()
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/ammo_box/flares = 1 , /obj/item/torch/self_lit = 1)
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		backpack_contents += list(/obj/item/gift/warfare = 1)
 	..()

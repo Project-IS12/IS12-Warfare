@@ -601,6 +601,9 @@ meteor_act
 		to_chat(user, "<span class='warning'>The battle is over! There is no need to fight!</span>")
 		return
 
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		return
+
 	var/hit_zone = user.zone_sel.selecting
 	var/too_high_message = "You can't reach that high."
 	var/obj/item/organ/external/affecting = get_organ(hit_zone)

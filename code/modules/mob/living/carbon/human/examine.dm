@@ -6,7 +6,10 @@
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				if(H.warfare_faction != src.warfare_faction)
-					to_chat(user, "<span class='warning'><big><b>THEY ARE THE ENEMY! KILL THEM!</b></big></span>")
+					if(aspect_chosen(/datum/aspect/trenchmas))
+						to_chat(user, "<span class='warning'><big><b>THEY ARE A FRIEND! HUG THEM!</b></big></span>")
+					else
+						to_chat(user, "<span class='warning'><big><b>THEY ARE THE ENEMY! KILL THEM!</b></big></span>")
 
 			if(crouching)
 				to_chat(user, "<span class='warning'>They are crouching!</span>")
@@ -71,7 +74,10 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.warfare_faction != src.warfare_faction)
-			msg += "<span class='warning'><big><b>THEY ARE THE ENEMY! KILL THEM!</b></big></span>\n"
+			if(aspect_chosen(/datum/aspect/trenchmas))
+				msg += "<span class='warning'><big><b>THEY ARE A FRIEND! HUG THEM!</b></big></span>\n"
+			else
+				msg += "<span class='warning'><big><b>THEY ARE THE ENEMY! KILL THEM!</b></big></span>\n"
 
 		if(H != src)
 			if(H.warfare_faction == src.warfare_faction)

@@ -214,6 +214,9 @@
 		to_chat(user, "<span class='warning'>The battle is over! There is no need to shoot!</span>")
 		return
 
+	if(aspect_chosen(/datum/aspect/trenchmas))
+		return
+
 	add_fingerprint(user)
 
 	if(!special_check(user))
