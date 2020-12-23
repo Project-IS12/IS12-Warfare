@@ -246,7 +246,8 @@
 	return list(/obj/item/reagent_containers/food/snacks/warfare,
 				/obj/item/reagent_containers/food/snacks/warfare/flower,
 				/obj/item/reagent_containers/food/snacks/warfare/rat,
-				/obj/item/reagent_containers/food/snacks/warfare/sardine)
+				/obj/item/reagent_containers/food/snacks/warfare/sardine,
+				/obj/item/reagent_containers/food/snacks/warfare/milk)
 
 /obj/random/bolt_action
 	name = "Bolt Action Rifle"
