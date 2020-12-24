@@ -15,7 +15,7 @@
 	#include "../shared/items/cards_ids.dm"
 
 	#include "warfare-1.dmm"
-	#include "warfare-christmas.dmm"
+	#include "warfare-2.dmm"
 
 	#include "../../code/modules/lobby_music/generic_songs.dm"
 
