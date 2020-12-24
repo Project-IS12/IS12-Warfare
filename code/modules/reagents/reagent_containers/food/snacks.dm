@@ -3396,7 +3396,7 @@
 	name = "\improper canned roachmilk"
 	icon_state = "cmilk"
 	open_can_icon = "cmilk_open"
-	desc = "Not only does it come from giant cockroaches, but it's also lumpy and spoiled."
+	desc = "Not only does it come from cockroaches, but it's also lumpy and spoiled."
 	trash = /obj/item/trash/warfare_can/milk
 
 /obj/item/reagent_containers/food/snacks/skewered_rat_meat
