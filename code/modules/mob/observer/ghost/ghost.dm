@@ -485,6 +485,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if(admin_ghosted)//aghosts can always respawn if they like
 		return TRUE
+	
+	if(issiegefare() && client.warfare_faction == RED_TEAM)
+		return TRUE
+		
+	if(issiegefare())
+		respawn_time = 0.5
+	
 	/*
 	if(mind && mind.current && mind.current.stat != DEAD && can_reenter_corpse == CORPSE_CAN_REENTER)
 		if(feedback)
