@@ -114,6 +114,7 @@
 			switch(direction)
 				if(NORTH)
 					trench_side.pixel_y += ((world.icon_size) - 22)
+					trench_side.layer = BELOW_OBJ_LAYER
 				if(SOUTH)
 					trench_side.pixel_y -= ((world.icon_size) - 16)
 					trench_side.plane = ABOVE_OBJ_PLANE
