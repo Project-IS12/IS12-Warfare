@@ -282,6 +282,15 @@
 	src.add_fingerprint(user)
 	return
 
+/obj/item/storage/AltClick(mob/user)
+	if(user.incapacitated())
+		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
+		return
+	if(!in_range(src, user))
+		return
+	else
+		src.open(user)
+
 /obj/item/storage/proc/gather_all(var/turf/T, var/mob/user)
 	var/success = 0
 	var/failure = 0
