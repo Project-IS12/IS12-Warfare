@@ -85,12 +85,12 @@
 		if(istype(W, /obj/item/clothing/mask/smokable/cigarette))
 			var/obj/item/clothing/mask/smokable/cigarette/C = W
 			C.light()
-			to_chat(user, "You light the [C] with the [src].")
+			to_chat(user, "You light [C] with [src].")
 			return
 		if(istype(W, /obj/item/flame/candle))
 			var/obj/item/flame/candle/C = W
 			C.light()
-			to_chat(user, "You light the [C] with the [src].")
+			to_chat(user, "You light [C] with [src].")
 			return
 	if(isflamesource(W))
 		light()
@@ -176,12 +176,12 @@
 	if(istype(W, /obj/item/clothing/mask/smokable/cigarette))
 		var/obj/item/clothing/mask/smokable/cigarette/C = W
 		C.light()
-		to_chat(user, "You light the [C] with the [src].")
+		to_chat(user, "You light [C] with [src].")
 		return
 	if(istype(W, /obj/item/flame/candle))
 		var/obj/item/flame/candle/C = W
 		C.light()
-		to_chat(user, "You light the [C] with the [src].")
+		to_chat(user, "You light [C] with [src].")
 		return
 
 	update_icon()
