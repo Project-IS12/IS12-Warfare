@@ -81,11 +81,17 @@
 
 /obj/item/torch/attackby(obj/item/W, mob/user)
 	..()
-	if(lit && istype(W, /obj/item/clothing/mask/smokable/cigarette))
-		var/obj/item/clothing/mask/smokable/cigarette/C = W
-		if(!C.lit)
+	if(src.lit)
+		if(istype(W, /obj/item/clothing/mask/smokable/cigarette))
+			var/obj/item/clothing/mask/smokable/cigarette/C = W
 			C.light()
-			to_chat(user, "You light the cigarette with the torch.")
+			to_chat(user, "You light the [C] with the [src].")
+			return
+		if(istype(W, /obj/item/flame/candle))
+			var/obj/item/flame/candle/C = W
+			C.light()
+			to_chat(user, "You light the [C] with the [src].")
+			return
 	if(isflamesource(W))
 		light()
 
@@ -166,15 +172,17 @@
 		insert_torch(W)
 		src.add_fingerprint(user)
 
-	// attempt to light a cigarette on the torch
+	// attempt to light a cigarette or candle on the torch
 	if(istype(W, /obj/item/clothing/mask/smokable/cigarette))
-		if(lighttorch && lighttorch.lit)
-			var/obj/item/clothing/mask/smokable/cigarette/C = W
-			if(!C.lit)
-				C.light()
-				to_chat(user, "You light the cigarette with the torch.")
-				update_icon()
-			return
+		var/obj/item/clothing/mask/smokable/cigarette/C = W
+		C.light()
+		to_chat(user, "You light the [C] with the [src].")
+		return
+	if(istype(W, /obj/item/flame/candle))
+		var/obj/item/flame/candle/C = W
+		C.light()
+		to_chat(user, "You light the [C] with the [src].")
+		return
 
 	update_icon()
 
