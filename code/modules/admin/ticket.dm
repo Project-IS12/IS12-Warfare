@@ -30,8 +30,8 @@ var/list/ticket_panels = list()
 	src.status = TICKET_CLOSED
 	src.closed_by = closed_by
 
-	to_chat(client_by_ckey(src.owner.ckey), "<span class='notice'><b>Your ticket has been closed by [closed_by.ckey].</b></span>")
-	message_staff("<span class='notice'><b>[src.owner.key_name(0)]</b>'s ticket has been closed by <b>[closed_by.key_name(0)]</b>.</span>")
+	to_chat(client_by_ckey(src.owner.ckey), SPAN_NOTICE("<b>Your ticket has been closed by [closed_by.ckey].</b>"))
+	message_staff(SPAN_NOTICE("<b>[src.owner.key_name(0)]</b>'s ticket has been closed by <b>[closed_by.key_name(0)]</b>."))
 	send2adminirc("[src.owner.key_name(0)]'s ticket has been closed by [closed_by.key_name(0)].")
 
 	update_ticket_panels()
@@ -51,9 +51,9 @@ var/list/ticket_panels = list()
 	assigned_admins |= assigned_admin
 	src.status = TICKET_ASSIGNED
 
-	message_staff("<span class='notice'><b>[assigned_admin.key_name(0)]</b> has assigned themself to <b>[src.owner.key_name(0)]'s</b> ticket.</span>")
+	message_staff(SPAN_NOTICE("<b>[assigned_admin.key_name(0)]</b> has assigned themself to <b>[src.owner.key_name(0)]'s</b> ticket."))
 	send2adminirc("[assigned_admin.key_name(0)] has assigned themself to [src.owner.key_name(0)]'s ticket.")
-	to_chat(client_by_ckey(src.owner.ckey), "<span class='notice'><b>[assigned_admin.ckey] has added themself to your ticket and should respond shortly. Thanks for your patience!</b></span>")
+	to_chat(client_by_ckey(src.owner.ckey), SPAN_NOTICE("<b>[assigned_admin.ckey] has added themself to your ticket and should respond shortly. Thanks for your patience!</b>"))
 
 	update_ticket_panels()
 
@@ -211,7 +211,7 @@ proc/get_open_ticket_by_client(var/datum/client_lite/owner)
 						usr.client.cmd_admin_pm(admin_client, ticket = ticket)
 						break
 				if(!admin_found)
-					to_chat(usr, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so please be patient!</span>")
+					to_chat(usr, SPAN_WARNING("Error: Private-Message: Client not found. They may have lost connection, so please be patient!"))
 			else
 				usr.client.adminhelp(input(usr,"", "adminhelp \"text\"") as text)
 

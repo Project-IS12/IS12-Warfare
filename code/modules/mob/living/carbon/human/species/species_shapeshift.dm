@@ -89,7 +89,7 @@ var/list/wrapped_species_by_ref = list()
 
 	last_special = world.time + 10
 
-	visible_message("<span class='notice'>\The [src]'s form contorts subtly.</span>")
+	visible_message(SPAN_NOTICE("\The [src]'s form contorts subtly."))
 	if(species.get_hair_styles())
 		var/new_hair = input("Select a hairstyle.", "Shapeshifter Hair") as null|anything in species.get_hair_styles()
 		change_hair(new_hair ? new_hair : "Bald")
@@ -111,7 +111,7 @@ var/list/wrapped_species_by_ref = list()
 	if(!new_gender)
 		return
 
-	visible_message("<span class='notice'>\The [src]'s form contorts subtly.</span>")
+	visible_message(SPAN_NOTICE("\The [src]'s form contorts subtly."))
 	change_gender(new_gender)
 
 /mob/living/carbon/human/proc/shapeshifter_select_shape()

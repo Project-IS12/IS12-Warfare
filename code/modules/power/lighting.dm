@@ -253,7 +253,7 @@
 		return
 	if(!(status == LIGHT_OK||status == LIGHT_BURNED))
 		return
-	visible_message("<span class='danger'>[user] smashes the light!</span>")
+	visible_message(SPAN_DANGER("[user] smashes the light!"))
 	attack_animation(user)
 	broken()
 	return 1
@@ -344,7 +344,7 @@
 
 		if(prob(1 + W.force * 5))
 
-			user.visible_message("<span class='warning'>[user.name] smashed the light!</span>", "<span class='warning'>You smash the light!</span>", "You hear a tinkle of breaking glass")
+			user.visible_message(SPAN_WARNING("[user.name] smashed the light!"), SPAN_WARNING("You smash the light!"), "You hear a tinkle of breaking glass")
 			if(on && (W.obj_flags & OBJ_FLAG_CONDUCTIBLE))
 				if (prob(12))
 					electrocute_mob(user, get_area(src), src, 0.3)
@@ -409,7 +409,7 @@
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species.can_shred(H))
-			visible_message("<span class='warning'>[user.name] smashed the light!</span>", 3, "You hear a tinkle of breaking glass")
+			visible_message(SPAN_WARNING("[user.name] smashed the light!"), 3, "You hear a tinkle of breaking glass")
 			broken()
 			return
 
@@ -663,7 +663,7 @@
 
 /obj/item/light/proc/shatter()
 	if(status == LIGHT_OK || status == LIGHT_BURNED)
-		src.visible_message("<span class='warning'>[name] shatters.</span>","<span class='warning'>You hear a small glass object shatter.</span>")
+		src.visible_message(SPAN_WARNING("[name] shatters."),SPAN_WARNING("You hear a small glass object shatter."))
 		status = LIGHT_BROKEN
 		force = 5
 		sharp = 1

@@ -115,7 +115,7 @@
 	. = ..()
 	if(!emagged)
 		if(user)
-			to_chat(user, "<span class='notice'>You short out [src]'s threat identificator.</span>")
+			to_chat(user, SPAN_NOTICE("You short out [src]'s threat identificator."))
 			ignore_list |= user
 		emagged = 2
 		return 1
@@ -212,7 +212,7 @@
 	flick(attack_state, src)
 
 /mob/living/bot/secbot/explode()
-	visible_message("<span class='warning'>[src] blows apart!</span>")
+	visible_message(SPAN_WARNING("[src] blows apart!"))
 	var/turf/Tsec = get_turf(src)
 
 	var/obj/item/secbot_assembly/Sa = new /obj/item/secbot_assembly(Tsec)

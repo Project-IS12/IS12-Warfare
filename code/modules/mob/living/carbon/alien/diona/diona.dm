@@ -28,9 +28,9 @@
 /mob/living/carbon/alien/diona/examine(mob/user)
 	. = ..()
 	if(holding_item)
-		to_chat(user, "<span class='notice'>It is holding \icon[holding_item] \a [holding_item].</span>")
+		to_chat(user, SPAN_NOTICE("It is holding \icon[holding_item] \a [holding_item]."))
 	if(hat)
-		to_chat(user, "<span class='notice'>It is wearing \icon[hat] \a [hat].</span>")
+		to_chat(user, SPAN_NOTICE("It is wearing \icon[hat] \a [hat]."))
 
 /mob/living/carbon/alien/diona/drop_from_inventory(var/obj/item/W, var/atom/Target = null)
 	. = ..()
@@ -78,7 +78,7 @@
 	if(holding_item || hat)
 		drop_item()
 	else
-		to_chat(usr, "<span class='warning'>You have nothing to drop.</span>")
+		to_chat(usr, SPAN_WARNING("You have nothing to drop."))
 
 /mob/living/carbon/alien/diona/UnarmedAttack(atom/A)
 	if(wear_hat(A))
@@ -94,7 +94,7 @@
 /mob/living/carbon/alien/diona/proc/collect(var/obj/item/collecting)
 	collecting.forceMove(src)
 	holding_item = collecting
-	visible_message("<span class='notice'>\The [src] engulfs \the [holding_item].</span>")
+	visible_message(SPAN_NOTICE("\The [src] engulfs \the [holding_item]."))
 
 	// This means dionaea can hoover up beakers as a kind of impromptu chem disposal
 	// technique, so long as they're okay with the reagents reacting inside them.
@@ -111,11 +111,11 @@
 
 /mob/living/carbon/alien/diona/drop_item()
 	if(holding_item)
-		visible_message("<span class='notice'>\The [src] regurgitates \the [holding_item].</span>")
+		visible_message(SPAN_NOTICE("\The [src] regurgitates \the [holding_item]."))
 		holding_item.forceMove(get_turf(src))
 		holding_item = null
 	else if(hat)
-		visible_message("<span class='notice'>\The [src] wriggles out from under \the [hat].</span>")
+		visible_message(SPAN_NOTICE("\The [src] wriggles out from under \the [hat]."))
 		hat.forceMove(get_turf(src))
 		hat = null
 		update_icons()

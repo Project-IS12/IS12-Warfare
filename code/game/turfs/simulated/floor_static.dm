@@ -29,7 +29,7 @@
 
 /turf/simulated/floor/fixed/alium/attackby(var/obj/item/C, var/mob/user)
 	if(isCrowbar(C))
-		to_chat(user, "<span class='notice'>There aren't any openings big enough to pry it away...</span>")
+		to_chat(user, SPAN_NOTICE("There aren't any openings big enough to pry it away..."))
 		return
 	return ..()
 

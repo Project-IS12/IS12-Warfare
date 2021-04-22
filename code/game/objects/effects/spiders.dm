@@ -66,7 +66,7 @@
 		return 1
 	else if(istype(mover, /mob/living))
 		if(prob(50))
-			to_chat(mover, "<span class='warning'>You get stuck in \the [src] for a moment.</span>")
+			to_chat(mover, SPAN_WARNING("You get stuck in \the [src] for a moment."))
 			return 0
 	else if(istype(mover, /obj/item/projectile))
 		return prob(30)
@@ -219,7 +219,7 @@
 							return
 
 						if(prob(50))
-							src.visible_message("<span class='notice'>You hear something squeezing through the ventilation ducts.</span>",2)
+							src.visible_message(SPAN_NOTICE("You hear something squeezing through the ventilation ducts."),2)
 						sleep(travel_time)
 
 						if(!exit_vent || exit_vent.welded)
@@ -276,9 +276,9 @@
 			O.owner.apply_damage(1, TOX, O.organ_tag)
 			if(world.time > last_itch + 30 SECONDS)
 				last_itch = world.time
-				to_chat(O.owner, "<span class='notice'>Your [O.name] itches...</span>")
+				to_chat(O.owner, SPAN_NOTICE("Your [O.name] itches..."))
 	else if(prob(1))
-		src.visible_message("<span class='notice'>\The [src] skitters.</span>")
+		src.visible_message(SPAN_NOTICE("\The [src] skitters."))
 
 	if(amount_grown > 0)
 		amount_grown += rand(0,2)
@@ -302,7 +302,7 @@
 		icon_state = pick("cocoon1","cocoon2","cocoon3")
 
 /obj/effect/spider/cocoon/Destroy()
-	src.visible_message("<span class='warning'>\The [src] splits open.</span>")
+	src.visible_message(SPAN_WARNING("\The [src] splits open."))
 	for(var/atom/movable/A in contents)
 		A.dropInto(loc)
 	return ..()

@@ -37,7 +37,7 @@
 			h_user.drop_from_inventory(src)
 			h_user.drop_from_inventory(bundle)
 			h_user.put_in_hands(bundle)
-		to_chat(user, "<span class='notice'>You add [src.worth] credits worth of money to the bundles.<br>It holds [bundle.worth] credits now.</span>")
+		to_chat(user, SPAN_NOTICE("You add [src.worth] credits worth of money to the bundles.<br>It holds [bundle.worth] credits now."))
 		qdel(src)
 
 
@@ -180,4 +180,4 @@ proc/spawn_money(var/sum, spawnloc, mob/living/carbon/human/human_user as mob)
 /obj/item/spacecash/ewallet/examine(mob/user)
 	. = ..(user)
 	if (!(user in view(2)) && user!=src.loc) return
-	to_chat(user, "<span class='notice'>Charge card's owner: [src.owner_name]. credits remaining: [src.worth].</span>")
+	to_chat(user, SPAN_NOTICE("Charge card's owner: [src.owner_name]. credits remaining: [src.worth]."))

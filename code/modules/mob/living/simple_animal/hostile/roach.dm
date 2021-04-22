@@ -43,7 +43,7 @@
 	if(istype(L))
 		if(prob(5))
 			L.Weaken(3)
-			L.visible_message("<span class='danger'>\the [src] knocks down \the [L]!</span>")
+			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
 
 /mob/living/simple_animal/hostile/retaliate/roach/tank
 	name = "Panzer Roach"
@@ -112,7 +112,7 @@
 	var/datum/effect/effect/system/smoke_spread/chem/S = new
 	S.attach(location)
 	S.set_up(src.reagents, src.reagents.total_volume, 0, location)
-	src.visible_message("<span class='danger'>\the [src] secrete strange vapors!</span>")
+	src.visible_message(SPAN_DANGER("\the [src] secrete strange vapors!"))
 	spawn(0)
 		S.start()
 	reagents.clear_reagents()

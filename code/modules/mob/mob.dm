@@ -236,7 +236,7 @@
 	set category = "IC"
 
 	if((is_blind(src) || usr.stat) && !isobserver(src))
-		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
+		to_chat(src, SPAN_NOTICE("Something is there but you can't see it."))
 		return 1
 
 	face_atom(A)
@@ -363,9 +363,9 @@
 	if (flavor_text && flavor_text != "")
 		var/msg = replacetext(flavor_text, "\n", " ")
 		if(length(msg) <= 40)
-			return "<span class='notice'>[msg]</span>"
+			return SPAN_NOTICE("[msg]")
 		else
-			return "<span class='notice'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
+			return SPAN_NOTICE("[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a>")
 
 /*
 /mob/verb/help()
@@ -408,7 +408,7 @@
 	set category = "OOC"
 
 	if(GAME_STATE < RUNLEVEL_LOBBY)
-		to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
+		to_chat(src, SPAN_WARNING("Please wait for server initialization to complete..."))
 		return
 
 	return
@@ -540,22 +540,22 @@
 		return
 
 	if (AM.anchored)
-		to_chat(src, "<span class='warning'>It won't budge!</span>")
+		to_chat(src, SPAN_WARNING("It won't budge!"))
 		return
 
 	var/mob/M = AM
 	if(ismob(AM))
 
 		if(!can_pull_mobs || !can_pull_size)
-			to_chat(src, "<span class='warning'>It won't budge!</span>")
+			to_chat(src, SPAN_WARNING("It won't budge!"))
 			return
 
 		if((mob_size < M.mob_size) && (can_pull_mobs != MOB_PULL_LARGER))
-			to_chat(src, "<span class='warning'>It won't budge!</span>")
+			to_chat(src, SPAN_WARNING("It won't budge!"))
 			return
 
 		if((mob_size == M.mob_size) && (can_pull_mobs == MOB_PULL_SMALLER))
-			to_chat(src, "<span class='warning'>It won't budge!</span>")
+			to_chat(src, SPAN_WARNING("It won't budge!"))
 			return
 
 		// If your size is larger than theirs and you have some
@@ -570,7 +570,7 @@
 	else if(isobj(AM))
 		var/obj/I = AM
 		if(!can_pull_size || can_pull_size < I.w_class)
-			to_chat(src, "<span class='warning'>It won't budge!</span>")
+			to_chat(src, SPAN_WARNING("It won't budge!"))
 			return
 
 	if(pulling)
@@ -933,18 +933,18 @@ mob/proc/yank_out_object()
 	var/obj/item/selection = input("What do you want to yank out?", "Embedded objects") in valid_objects
 
 	if(self)
-		to_chat(src, "<span class='warning'>You attempt to get a good grip on [selection] in your body.</span>")
+		to_chat(src, SPAN_WARNING("You attempt to get a good grip on [selection] in your body."))
 	else
-		to_chat(U, "<span class='warning'>You attempt to get a good grip on [selection] in [S]'s body.</span>")
+		to_chat(U, SPAN_WARNING("You attempt to get a good grip on [selection] in [S]'s body."))
 	if(!do_mob(U, S, 30))
 		return
 	if(!selection || !S || !U)
 		return
 
 	if(self)
-		visible_message("<span class='warning'><b>[src] rips [selection] out of their body.</b></span>","<span class='warning'><b>You rip [selection] out of your body.</b></span>")
+		visible_message(SPAN_WARNING("<b>[src] rips [selection] out of their body.</b>"),SPAN_WARNING("<b>You rip [selection] out of your body.</b>"))
 	else
-		visible_message("<span class='warning'><b>[usr] rips [selection] out of [src]'s body.</b></span>","<span class='warning'><b>[usr] rips [selection] out of your body.</b></span>")
+		visible_message(SPAN_WARNING("<b>[usr] rips [selection] out of [src]'s body.</b>"),SPAN_WARNING("<b>[usr] rips [selection] out of your body.</b>"))
 	valid_objects = get_visible_implants(0)
 	if(valid_objects.len == 1) //Yanking out last object - removing verb.
 		src.verbs -= /mob/proc/yank_out_object

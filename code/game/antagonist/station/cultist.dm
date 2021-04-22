@@ -98,10 +98,10 @@ var/datum/antagonist/cultist/cult
 /datum/antagonist/cultist/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
 	if(!..())
 		return 0
-	to_chat(player.current, "<span class='danger'>An unfamiliar white light flashes through your mind, cleansing the taint of the dark-one and the memories of your time as his servant with it.</span>")
+	to_chat(player.current, SPAN_DANGER("An unfamiliar white light flashes through your mind, cleansing the taint of the dark-one and the memories of your time as his servant with it."))
 	player.memory = ""
 	if(show_message)
-		player.current.visible_message("<span class='notice'>[player.current] looks like they just reverted to their old faith!</span>")
+		player.current.visible_message(SPAN_NOTICE("[player.current] looks like they just reverted to their old faith!"))
 	remove_cult_magic(player.current)
 	remove_cultiness(CULTINESS_PER_CULTIST)
 

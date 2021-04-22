@@ -74,9 +74,9 @@
 /obj/item/computer_hardware/examine(var/mob/user)
 	. = ..()
 	if(damage > damage_failure)
-		to_chat(user, "<span class='danger'>It seems to be severely damaged!</span>")
+		to_chat(user, SPAN_DANGER("It seems to be severely damaged!"))
 	else if(damage > damage_malfunction)
-		to_chat(user, "<span class='notice'>It seems to be damaged!</span>")
+		to_chat(user, SPAN_NOTICE("It seems to be damaged!"))
 	else if(damage)
 		to_chat(user, "It seems to be slightly damaged.")
 

@@ -40,7 +40,7 @@
 /obj/structure/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
 	if(!breakable || !damage || !wallbreaker)
 		return 0
-	visible_message("<span class='danger'>[user] [attack_verb] the [src] apart!</span>")
+	visible_message(SPAN_DANGER("[user] [attack_verb] the [src] apart!"))
 	attack_animation(user)
 	spawn(1) qdel(src)
 	return 1

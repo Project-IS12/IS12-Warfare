@@ -39,9 +39,9 @@
 /obj/item/gun/magnetic/railgun/show_ammo(var/mob/user)
 	var/obj/item/rcd_ammo/ammo = loaded
 	if (ammo)
-		to_chat(user, "<span class='notice'>There are [ammo.remaining] shot\s remaining in \the [loaded].</span>")
+		to_chat(user, SPAN_NOTICE("There are [ammo.remaining] shot\s remaining in \the [loaded]."))
 	else
-		to_chat(user, "<span class='notice'>There is nothing loaded.</span>")
+		to_chat(user, SPAN_NOTICE("There is nothing loaded."))
 
 /obj/item/gun/magnetic/railgun/check_ammo()
 	var/obj/item/rcd_ammo/ammo = loaded
@@ -58,7 +58,7 @@
 /obj/item/gun/magnetic/railgun/proc/out_of_ammo()
 	qdel(loaded)
 	loaded = null
-	visible_message("<span class='warning'>\The [src] beeps and ejects its empty cartridge.</span>")
+	visible_message(SPAN_WARNING("\The [src] beeps and ejects its empty cartridge."))
 
 /obj/item/gun/magnetic/railgun/automatic // Adminspawn only, this shit is absurd.
 	name = "\improper RHR accelerator"
@@ -83,7 +83,7 @@
 /obj/item/gun/magnetic/railgun/automatic/examine(var/mob/user)
 	. = ..(user,1)
 	if(.)
-		to_chat(user, "<span class='notice'>Someone has scratched <i>Ultima Ratio Regum</i> onto the side of the barrel.</span>")
+		to_chat(user, SPAN_NOTICE("Someone has scratched <i>Ultima Ratio Regum</i> onto the side of the barrel."))
 
 /obj/item/gun/magnetic/railgun/flechette
 	name = "flechette gun"
@@ -107,4 +107,4 @@
 		)
 
 /obj/item/gun/magnetic/railgun/flechette/out_of_ammo()
-	visible_message("<span class='warning'>\The [src] beeps to indicate the magazine is empty.</span>")
+	visible_message(SPAN_WARNING("\The [src] beeps to indicate the magazine is empty."))

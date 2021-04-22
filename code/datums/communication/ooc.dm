@@ -14,7 +14,7 @@
 
 	if(!C.holder)
 		if(!config.dooc_allowed && (C.mob.stat == DEAD))
-			to_chat(C, "<span class='danger'>[name] for dead mobs has been turned off.</span>")
+			to_chat(C, SPAN_DANGER("[name] for dead mobs has been turned off."))
 			return FALSE
 		if(findtext(message, "byond://"))
 			to_chat(C, "<B>Advertising other servers is not allowed.</B>")

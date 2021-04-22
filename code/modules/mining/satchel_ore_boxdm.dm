@@ -22,7 +22,7 @@
 				S.remove_from_storage(O, src, 0) //This will move the item to this item's contents
 			else
 				S.remove_from_storage(O, src, 1)
-		to_chat(user, "<span class='notice'>You empty the satchel into the box.</span>")
+		to_chat(user, SPAN_NOTICE("You empty the satchel into the box."))
 
 	update_ore_count()
 
@@ -71,7 +71,7 @@
 	set src in view(1)
 
 	if(!istype(usr, /mob/living/carbon/human)) //Only living, intelligent creatures with hands can empty ore boxes.
-		to_chat(usr, "<span class='warning'>You are physically incapable of emptying the ore box.</span>")
+		to_chat(usr, SPAN_WARNING("You are physically incapable of emptying the ore box."))
 		return
 
 	if( usr.stat || usr.restrained() )
@@ -84,13 +84,13 @@
 	add_fingerprint(usr)
 
 	if(contents.len < 1)
-		to_chat(usr, "<span class='warning'>The ore box is empty</span>")
+		to_chat(usr, SPAN_WARNING("The ore box is empty"))
 		return
 
 	for (var/obj/item/ore/O in contents)
 		contents -= O
 		O.loc = src.loc
-	to_chat(usr, "<span class='notice'>You empty the ore box</span>")
+	to_chat(usr, SPAN_NOTICE("You empty the ore box"))
 
 	return
 

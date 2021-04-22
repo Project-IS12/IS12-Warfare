@@ -19,7 +19,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 		to_chat(src, "You cannot leave your host in your current state.")
 
 	if(docile)
-		to_chat(src, "<span class='notice'>You are feeling far too docile to do that.</span>")
+		to_chat(src, SPAN_NOTICE("You are feeling far too docile to do that."))
 		return
 
 	if(!host || !src) return
@@ -40,8 +40,8 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 		to_chat(src, "You wiggle out of [host]'s ear and plop to the ground.")
 		if(host.mind)
 			if(!host.stat)
-				to_chat(host, "<span class='danger'>Something slimy wiggles out of your ear and plops to the ground!</span>")
-			to_chat(host, "<span class='danger'>As though waking from a dream, you shake off the insidious mind control of the brain worm. Your thoughts are your own again.</span>")
+				to_chat(host, SPAN_DANGER("Something slimy wiggles out of your ear and plops to the ground!"))
+			to_chat(host, SPAN_DANGER("As though waking from a dream, you shake off the insidious mind control of the brain worm. Your thoughts are your own again."))
 
 		detatch()
 		leave_host()
@@ -152,7 +152,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 		to_chat(src, "You cannot do that in your current state.")
 
 	if(docile)
-		to_chat(src, "<span class='notice'>You are feeling far too docile to do that.</span>")
+		to_chat(src, SPAN_NOTICE("You are feeling far too docile to do that."))
 		return
 
 
@@ -220,7 +220,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 		to_chat(src, "You cannot secrete chemicals in your current state.")
 
 	if(docile)
-		to_chat(src, "<span class='notice'>You are feeling far too docile to do that.</span>")
+		to_chat(src, SPAN_NOTICE("You are feeling far too docile to do that."))
 		return
 
 	if(chemicals < 50)
@@ -231,7 +231,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 	if(!chem || chemicals < 50 || !host || controlling || !src || stat) //Sanity check.
 		return
 
-	to_chat(src, "<span class='danger'>You squirt a measure of [chem] from your reservoirs into \the [host]'s bloodstream.</span>")
+	to_chat(src, SPAN_DANGER("You squirt a measure of [chem] from your reservoirs into \the [host]'s bloodstream."))
 	host.reagents.add_reagent(GLOB.borer_reagent_types_by_name[chem], 10)
 	chemicals -= 50
 
@@ -269,7 +269,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 		to_chat(src, "You cannot infest someone who is already infested!")
 		return
 
-	to_chat(src, "<span class='warning'>You focus your psychic lance on [M] and freeze their limbs with a wave of terrible dread.</span>")
+	to_chat(src, SPAN_WARNING("You focus your psychic lance on [M] and freeze their limbs with a wave of terrible dread."))
 	to_chat(M, "<span class='wanring'>You feel a creeping, horrible sense of dread come over you, freezing your limbs and setting your heart racing.</span>")
 	M.Weaken(10)
 
@@ -289,7 +289,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 		return
 
 	if(docile)
-		to_chat(src, "<span class='notice'>You are feeling far too docile to do that.</span>")
+		to_chat(src, SPAN_NOTICE("You are feeling far too docile to do that."))
 		return
 
 	to_chat(src, "You begin delicately adjusting your connection to the host brain...")
@@ -300,8 +300,8 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 			return
 		else
 
-			to_chat(src, "<span class='danger'>You plunge your probosci deep into the cortex of the host brain, interfacing directly with their nervous system.</span>")
-			to_chat(host, "<span class='danger'>You feel a strange shifting sensation behind your eyes as an alien consciousness displaces yours.</span>")
+			to_chat(src, SPAN_DANGER("You plunge your probosci deep into the cortex of the host brain, interfacing directly with their nervous system."))
+			to_chat(host, SPAN_DANGER("You feel a strange shifting sensation behind your eyes as an alien consciousness displaces yours."))
 			host.add_language("Cortical Link")
 
 			// host -> brain
@@ -355,7 +355,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 		return
 
 	verbs -= /mob/living/carbon/human/proc/jumpstart
-	visible_message("<span class='warning'>With a hideous, rattling moan, [src] shudders back to life!</span>")
+	visible_message(SPAN_WARNING("With a hideous, rattling moan, [src] shudders back to life!"))
 
 	rejuvenate()
 	restore_blood()

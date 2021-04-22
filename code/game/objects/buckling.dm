@@ -63,14 +63,14 @@
 
 /obj/proc/user_buckle_mob(mob/living/M, mob/user, silent)
 	if(!ticker) //why do we need to check this?
-		to_chat(user, "<span class='warning'>You can't buckle anyone in before the game starts.</span>")
+		to_chat(user, SPAN_WARNING("You can't buckle anyone in before the game starts."))
 		return 0
 	if(!user.Adjacent(M) || user.restrained() || user.stat || istype(user, /mob/living/silicon/pai))
 		return 0
 	if(M == buckled_mob)
 		return 0
 	if(istype(M, /mob/living/carbon/slime))
-		to_chat(user, "<span class='warning'>The [M] is too squishy to buckle in.</span>")
+		to_chat(user, SPAN_WARNING("The [M] is too squishy to buckle in."))
 		return 0
 
 	add_fingerprint(user)
@@ -85,28 +85,28 @@
 		if(!silent)
 			if(M == user)
 				M.visible_message(\
-					"<span class='notice'>[M.name] sits on [src].</span>",\
-					"<span class='notice'>You sit on [src].</span>",\
-					"<span class='notice'>You hear metal clanking.</span>")
+					SPAN_NOTICE("[M.name] sits on [src]."),\
+					SPAN_NOTICE("You sit on [src]."),\
+					SPAN_NOTICE("You hear metal clanking."))
 			else
 				M.visible_message(\
-					"<span class='danger'>[M.name] is sat onto [src] by [user.name]!</span>",\
-					"<span class='danger'>You are sat onto [src] by [user.name]!</span>",\
-					"<span class='notice'>You hear metal clanking.</span>")
+					SPAN_DANGER("[M.name] is sat onto [src] by [user.name]!"),\
+					SPAN_DANGER("You are sat onto [src] by [user.name]!"),\
+					SPAN_NOTICE("You hear metal clanking."))
 
 /obj/proc/user_unbuckle_mob(mob/user)
 	var/mob/living/M = unbuckle_mob()
 	if(M)
 		if(M != user)
 			M.visible_message(\
-				"<span class='notice'>[M.name] was helped up by [user.name]!</span>",\
-				"<span class='notice'>You were helped up from [src] by [user.name].</span>",\
-				"<span class='notice'>You hear metal clanking.</span>")
+				SPAN_NOTICE("[M.name] was helped up by [user.name]!"),\
+				SPAN_NOTICE("You were helped up from [src] by [user.name]."),\
+				SPAN_NOTICE("You hear metal clanking."))
 		else
 			M.visible_message(\
-				"<span class='notice'>[M.name] rises from [src]!</span>",\
-				"<span class='notice'>You rise from [src].</span>",\
-				"<span class='notice'>You hear metal clanking.</span>")
+				SPAN_NOTICE("[M.name] rises from [src]!"),\
+				SPAN_NOTICE("You rise from [src]."),\
+				SPAN_NOTICE("You hear metal clanking."))
 		add_fingerprint(user)
 	return M
 

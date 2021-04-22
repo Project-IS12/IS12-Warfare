@@ -113,21 +113,21 @@
 	else if(isWrench(W))
 		if(connected_port)
 			disconnect()
-			to_chat(user, "<span class='notice'>You disconnect \the [src] from the port.</span>")
+			to_chat(user, SPAN_NOTICE("You disconnect \the [src] from the port."))
 			update_icon()
 			return
 		else
 			var/obj/machinery/atmospherics/portables_connector/possible_port = locate(/obj/machinery/atmospherics/portables_connector/) in loc
 			if(possible_port)
 				if(connect(possible_port))
-					to_chat(user, "<span class='notice'>You connect \the [src] to the port.</span>")
+					to_chat(user, SPAN_NOTICE("You connect \the [src] to the port."))
 					update_icon()
 					return
 				else
-					to_chat(user, "<span class='notice'>\The [src] failed to connect to the port.</span>")
+					to_chat(user, SPAN_NOTICE("\The [src] failed to connect to the port."))
 					return
 			else
-				to_chat(user, "<span class='notice'>Nothing happens.</span>")
+				to_chat(user, SPAN_NOTICE("Nothing happens."))
 				return
 
 	else if (istype(W, /obj/item/device/analyzer))
@@ -163,16 +163,16 @@
 		C.add_fingerprint(user)
 		cell = C
 		C.forceMove(src)
-		user.visible_message("<span class='notice'>[user] opens the panel on [src] and inserts [C].</span>", "<span class='notice'>You open the panel on [src] and insert [C].</span>")
+		user.visible_message(SPAN_NOTICE("[user] opens the panel on [src] and inserts [C]."), SPAN_NOTICE("You open the panel on [src] and insert [C]."))
 		power_change()
 		return
 
 	if(isScrewdriver(I))
 		if(!cell)
-			to_chat(user, "<span class='warning'>There is no power cell installed.</span>")
+			to_chat(user, SPAN_WARNING("There is no power cell installed."))
 			return
 
-		user.visible_message("<span class='notice'>[user] opens the panel on [src] and removes [cell].</span>", "<span class='notice'>You open the panel on [src] and remove [cell].</span>")
+		user.visible_message(SPAN_NOTICE("[user] opens the panel on [src] and removes [cell]."), SPAN_NOTICE("You open the panel on [src] and remove [cell]."))
 		cell.add_fingerprint(user)
 		cell.dropInto(loc)
 		cell = null

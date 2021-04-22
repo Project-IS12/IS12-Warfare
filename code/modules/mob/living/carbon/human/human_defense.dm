@@ -181,7 +181,7 @@ meteor_act
 		return null
 
 	if(!hit_zone)
-		visible_message("<span class='danger'>\The [user] misses [src] with \the [I]!</span>")
+		visible_message(SPAN_DANGER("\The [user] misses [src] with \the [I]!"))
 		return null
 
 	if(check_shields(I.force, I, user, target_zone, "the [I.name]"))
@@ -189,7 +189,7 @@ meteor_act
 
 	var/obj/item/organ/external/affecting = get_organ(hit_zone)
 	if (!affecting || affecting.is_stump())
-		to_chat(user, "<span class='danger'>They are missing that limb!</span>")
+		to_chat(user, SPAN_DANGER("They are missing that limb!"))
 		return null
 
 	if(user.statscheck(skills = user.SKILL_LEVEL(melee)) == CRIT_FAILURE || (prob(50) && is_hellbanned()))
@@ -232,7 +232,7 @@ meteor_act
 		visible_message("<span class='danger'>[user] aimed for [src]\'s [aimed.name], but [I.get_attack_name()] \his [organ_hit] instead.</span> <span class='combat_success'>[(blocked < 20 && blocked > 1)  ? "Slight damage was done." : ""]</span>")
 
 	else if(blocked < 20 && blocked > 1)//This is ugly and it doesn't work.
-		visible_message("<span class='danger'>[user] [I.get_attack_name()] [src]\'s [organ_hit] with the [I.name]!<span class='danger'> <span class='combat_success'>Slight damage was done.</span>")
+		visible_message(SPAN_DANGER("[user] [I.get_attack_name()] [src]\'s [organ_hit] with the [I.name]!<span class='danger'> <span class='combat_success'>Slight damage was done."))
 
 	else
 		visible_message("<span class='danger'>[user] [I.get_attack_name()] [src]\'s [organ_hit] with the [I.name]!<span class='danger'>")
@@ -271,14 +271,14 @@ meteor_act
 	if(I.sharp && prob(I.sharpness * 2) && !(affecting.status & ORGAN_ARTERY_CUT))
 		affecting.sever_artery()
 		if(affecting.artery_name == "carotid artery")
-			src.visible_message("<span class='danger'>[user] slices [src]'s throat!</span>")
+			src.visible_message(SPAN_DANGER("[user] slices [src]'s throat!"))
 		else
-			src.visible_message("<span class='danger'>[user] slices open [src]'s [affecting.artery_name] artery!</span>")
+			src.visible_message(SPAN_DANGER("[user] slices open [src]'s [affecting.artery_name] artery!"))
 
 	//Next tendon, which disables the limb, but does not remove it, making it easier to fix, and less lethal, than losing it.
 	else if(I.sharp && (I.sharpness * 2) && !(affecting.status & ORGAN_TENDON_CUT) && affecting.has_tendon)//Yes this is the same exactly probability again. But I'm running it seperate because I don't want the two to be exclusive.
 		affecting.sever_tendon()
-		src.visible_message("<span class='danger'>[user] slices open [src]'s [affecting.tendon_name] tendon!</span>")
+		src.visible_message(SPAN_DANGER("[user] slices open [src]'s [affecting.tendon_name] tendon!"))
 
 	//Finally if we pass all that, we cut the limb off. This should reduce the number of one hit sword kills.
 	else if(I.sharp && I.edge)
@@ -289,7 +289,7 @@ meteor_act
 
 	if(I.damtype == BRUTE && !I.edge && prob(I.force * (hit_zone == BP_MOUTH ? 6 : 0)) && O)//Knocking out teeth.
 		if(O.knock_out_teeth(get_dir(user, src), round(rand(28, 38) * ((I.force*1.5)/100))))
-			src.visible_message("<span class='danger'>[src]'s teeth sail off in an arc!</span>", \
+			src.visible_message(SPAN_DANGER("[src]'s teeth sail off in an arc!"), \
 								"<span class='userdanger'>[src]'s teeth sail off in an arc!</span>")
 
 	else if((I.damtype == BRUTE || I.damtype == PAIN) && prob(25 + (effective_force * 2)))//Knocking them out.
@@ -297,12 +297,12 @@ meteor_act
 			if(headcheck(hit_zone))
 				//Harder to score a stun but if you do it lasts a bit longer
 				if(prob(effective_force))
-					visible_message("<span class='danger'>[src] [species.knockout_message]</span>")
+					visible_message(SPAN_DANGER("[src] [species.knockout_message]"))
 					apply_effect(20, PARALYZE, blocked)
 			else
 				//Easier to score a stun but lasts less time
 				if(prob(effective_force + 10))
-					visible_message("<span class='danger'>[src] has been knocked down!</span>")
+					visible_message(SPAN_DANGER("[src] has been knocked down!"))
 					apply_effect(6, WEAKEN, blocked)
 		//Apply blood
 		attack_bloody(I, user, effective_force, hit_zone)
@@ -420,12 +420,12 @@ meteor_act
 /mob/living/carbon/human/emag_act(var/remaining_charges, mob/user, var/emag_source)
 	var/obj/item/organ/external/affecting = get_organ(user.zone_sel.selecting)
 	if(!affecting || !(affecting.robotic >= ORGAN_ROBOT))
-		to_chat(user, "<span class='warning'>That limb isn't robotic.</span>")
+		to_chat(user, SPAN_WARNING("That limb isn't robotic."))
 		return -1
 	if(affecting.sabotaged)
-		to_chat(user, "<span class='warning'>[src]'s [affecting.name] is already sabotaged!</span>")
+		to_chat(user, SPAN_WARNING("[src]'s [affecting.name] is already sabotaged!"))
 		return -1
-	to_chat(user, "<span class='notice'>You sneakily slide [emag_source] into the dataport on [src]'s [affecting.name] and short out the safeties.</span>")
+	to_chat(user, SPAN_NOTICE("You sneakily slide [emag_source] into the dataport on [src]'s [affecting.name] and short out the safeties."))
 	affecting.sabotaged = 1
 	return 1
 
@@ -438,7 +438,7 @@ meteor_act
 			if(canmove && !restrained())
 				if(isturf(O.loc))
 					put_in_active_hand(O)
-					visible_message("<span class='warning'>[src] catches [O]!</span>")
+					visible_message(SPAN_WARNING("[src] catches [O]!"))
 					throw_mode_off()
 					return
 
@@ -467,7 +467,7 @@ meteor_act
 				return
 
 		if(!zone)
-			visible_message("<span class='notice'>\The [O] misses [src] narrowly!</span>")
+			visible_message(SPAN_NOTICE("\The [O] misses [src] narrowly!"))
 			playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1)
 			return
 
@@ -477,7 +477,7 @@ meteor_act
 		var/hit_area = affecting.name
 		//var/datum/wound/created_wound
 
-		src.visible_message("<span class='warning'>\The [src] has been hit in the [hit_area] by \the [O].</span>")
+		src.visible_message(SPAN_WARNING("\The [src] has been hit in the [hit_area] by \the [O]."))
 		var/armor = run_armor_check(affecting, "melee", O.armor_penetration, "Your armor has protected your [hit_area].", "Your armor has softened hit to your [hit_area].") //I guess "melee" is the best fit here
 		if(armor < 100)
 			var/damage_flags = O.damage_flags()
@@ -501,7 +501,7 @@ meteor_act
 		if(O.throw_source && momentum >= THROWNOBJ_KNOCKBACK_SPEED)
 			var/dir = get_dir(O.throw_source, src)
 
-			visible_message("<span class='warning'>\The [src] staggers under the impact!</span>","<span class='warning'>You stagger under the impact!</span>")
+			visible_message(SPAN_WARNING("\The [src] staggers under the impact!"),SPAN_WARNING("You stagger under the impact!"))
 			src.throw_at(get_edge_target_turf(src,dir),1,momentum)
 
 			if(!O || !src) return
@@ -511,7 +511,7 @@ meteor_act
 
 				if(T)
 					src.loc = T
-					visible_message("<span class='warning'>[src] is pinned to the wall by [O]!</span>","<span class='warning'>You are pinned to the wall by [O]!</span>")
+					visible_message(SPAN_WARNING("[src] is pinned to the wall by [O]!"),SPAN_WARNING("You are pinned to the wall by [O]!"))
 					src.anchored = 1
 					src.pinned += O
 
@@ -598,7 +598,7 @@ meteor_act
 		return
 
 	if(ticker.current_state == GAME_STATE_FINISHED)
-		to_chat(user, "<span class='warning'>The battle is over! There is no need to fight!</span>")
+		to_chat(user, SPAN_WARNING("The battle is over! There is no need to fight!"))
 		return
 
 	if(aspect_chosen(/datum/aspect/trenchmas))
@@ -608,7 +608,7 @@ meteor_act
 	var/too_high_message = "You can't reach that high."
 	var/obj/item/organ/external/affecting = get_organ(hit_zone)
 	if(!affecting || affecting.is_stump())
-		to_chat(user, "<span class='danger'>They are missing that limb!</span>")
+		to_chat(user, SPAN_DANGER("They are missing that limb!"))
 		return
 
 	if(ishuman(user))
@@ -668,28 +668,28 @@ meteor_act
 	var/result = rand(1,3)
 
 	if(!I)
-		visible_message("<span class='danger'>[src] punches themself in the face!</span>")
+		visible_message(SPAN_DANGER("[src] punches themself in the face!"))
 		attack_hand(src)
 		return
 
 	switch(result)
 		if(1)//They drop their weapon.
-			visible_message("<span class='danger'><big>CRITICAL FAILURE!</big></span>")
+			visible_message(SPAN_DANGER("<big>CRITICAL FAILURE!</big>"))
 			I.disarm(src)
 			return
 		if(2)
-			visible_message("<span class='danger'><big>CRITICAL FAILURE! [src] botches the attack, stumbles, and falls!</big></span>")
+			visible_message(SPAN_DANGER("<big>CRITICAL FAILURE! [src] botches the attack, stumbles, and falls!</big>"))
 			playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1)
 			KnockDown()
 			return
 		if(3)
-			visible_message("<span class='danger'><big>CRITICAL FAILURE! [src] botches the attack and hits themself!</big></span>")
+			visible_message(SPAN_DANGER("<big>CRITICAL FAILURE! [src] botches the attack and hits themself!</big>"))
 			I.attack(src, src, zone_sel)
 			apply_damage(rand(5,10), BRUTE)
 
 
 /mob/living/proc/resolve_critical_miss_unarmed()
-	visible_message("<span class='danger'>[src] punches themself in the face!</span>")
+	visible_message(SPAN_DANGER("[src] punches themself in the face!"))
 	attack_hand(src)
 	return
 
@@ -698,18 +698,18 @@ meteor_act
 
 	switch(result)
 		if(1)
-			visible_message("<span class='danger'><big>CRITICAL HIT! IT MUST BE PAINFUL</big></span>")
+			visible_message(SPAN_DANGER("<big>CRITICAL HIT! IT MUST BE PAINFUL</big>"))
 			apply_damage(rand(5,10), BRUTE)
 			return
 
 		if(2)
-			visible_message("<span class='danger'><big>CRITICAL HIT! [src] is stunned!</big></span>")
+			visible_message(SPAN_DANGER("<big>CRITICAL HIT! [src] is stunned!</big>"))
 			Weaken(1)
 			Stun(3)
 			return
 
 		if(3)
-			visible_message("<span class='danger'><big>CRITICAL HIT! [src] is knocked unconcious by the blow!</big></span>")
+			visible_message(SPAN_DANGER("<big>CRITICAL HIT! [src] is knocked unconcious by the blow!</big>"))
 			apply_effect(10, PARALYZE)
 			return
 

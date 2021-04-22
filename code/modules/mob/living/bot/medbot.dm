@@ -70,7 +70,7 @@
 		return
 
 	icon_state = "medibots"
-	visible_message("<span class='warning'>[src] is trying to inject [H]!</span>")
+	visible_message(SPAN_WARNING("[src] is trying to inject [H]!"))
 	if(declare_treatment)
 		var/area/location = get_area(src)
 		broadcast_medical_hud_message("[src] is treating <b>[H]</b> in <b>[location]</b>", src)
@@ -81,7 +81,7 @@
 			reagent_glass.reagents.trans_to_mob(H, injection_amount, CHEM_BLOOD)
 		else
 			H.reagents.add_reagent(t, injection_amount)
-		visible_message("<span class='warning'>[src] injects [H] with the syringe!</span>")
+		visible_message(SPAN_WARNING("[src] injects [H] with the syringe!"))
 	busy = 0
 	update_icons()
 
@@ -97,16 +97,16 @@
 /mob/living/bot/medbot/attackby(var/obj/item/O, var/mob/user)
 	if(istype(O, /obj/item/reagent_containers/glass))
 		if(locked)
-			to_chat(user, "<span class='notice'>You cannot insert a beaker because the panel is locked.</span>")
+			to_chat(user, SPAN_NOTICE("You cannot insert a beaker because the panel is locked."))
 			return
 		if(!isnull(reagent_glass))
-			to_chat(user, "<span class='notice'>There is already a beaker loaded.</span>")
+			to_chat(user, SPAN_NOTICE("There is already a beaker loaded."))
 			return
 
 		user.drop_item()
 		O.loc = src
 		reagent_glass = O
-		to_chat(user, "<span class='notice'>You insert [O].</span>")
+		to_chat(user, SPAN_NOTICE("You insert [O]."))
 		return
 	else
 		..()
@@ -171,7 +171,7 @@
 						reagent_glass.dropInto(src.loc)
 						reagent_glass = null
 					else
-						to_chat(user, "<span class='notice'>You cannot eject the beaker because the panel is locked.</span>")
+						to_chat(user, SPAN_NOTICE("You cannot eject the beaker because the panel is locked."))
 			if("togglevoice")
 				if(!locked || issilicon(user))
 					vocal = !vocal
@@ -189,9 +189,9 @@
 	. = ..()
 	if(!emagged)
 		if(user)
-			to_chat(user, "<span class='warning'>You short out [src]'s reagent synthesis circuits.</span>")
+			to_chat(user, SPAN_WARNING("You short out [src]'s reagent synthesis circuits."))
 			ignore_list |= user
-		visible_message("<span class='warning'>[src] buzzes oddly!</span>")
+		visible_message(SPAN_WARNING("[src] buzzes oddly!"))
 		flick("medibot_spark", src)
 		target = null
 		busy = 0
@@ -202,7 +202,7 @@
 
 /mob/living/bot/medbot/explode()
 	on = 0
-	visible_message("<span class='danger'>[src] blows apart!</span>")
+	visible_message(SPAN_DANGER("[src] blows apart!"))
 	var/turf/Tsec = get_turf(src)
 
 	new /obj/item/storage/firstaid(Tsec)
@@ -258,7 +258,7 @@
 		return
 
 	if(contents.len >= 1)
-		to_chat(user, "<span class='notice'>You need to empty [src] out first.</span>")
+		to_chat(user, SPAN_NOTICE("You need to empty [src] out first."))
 		return
 
 	var/obj/item/firstaid_arm_assembly/A = new /obj/item/firstaid_arm_assembly
@@ -271,7 +271,7 @@
 
 	qdel(S)
 	user.put_in_hands(A)
-	to_chat(user, "<span class='notice'>You add the robot arm to the first aid kit.</span>")
+	to_chat(user, SPAN_NOTICE("You add the robot arm to the first aid kit."))
 	user.drop_from_inventory(src)
 	qdel(src)
 
@@ -307,7 +307,7 @@
 					user.drop_item()
 					qdel(W)
 					build_step++
-					to_chat(user, "<span class='notice'>You add the health sensor to [src].</span>")
+					to_chat(user, SPAN_NOTICE("You add the health sensor to [src]."))
 					SetName("First aid/robot arm/health analyzer assembly")
 					overlays += image('icons/obj/aibots.dmi', "na_scanner")
 
@@ -315,7 +315,7 @@
 				if(isprox(W))
 					user.drop_item()
 					qdel(W)
-					to_chat(user, "<span class='notice'>You complete the Medibot! Beep boop.</span>")
+					to_chat(user, SPAN_NOTICE("You complete the Medibot! Beep boop."))
 					var/turf/T = get_turf(src)
 					var/mob/living/bot/medbot/S = new /mob/living/bot/medbot(T)
 					S.skin = skin

@@ -166,16 +166,16 @@
 				if(M.client)
 					spawn(0)
 						if(M.buckled)
-							to_chat(M, "<span class='warning'>Sudden acceleration presses you into your chair!</span>")
+							to_chat(M, SPAN_WARNING("Sudden acceleration presses you into your chair!"))
 							shake_camera(M, 3, 1)
 						else
-							to_chat(M, "<span class='warning'>The floor lurches beneath you!</span>")
+							to_chat(M, SPAN_WARNING("The floor lurches beneath you!"))
 							shake_camera(M, 10, 1)
 
 				if(ishuman(M))
 					var/mob/living/carbon/human/H = M
 					if(!H.buckled)
-						H.visible_message("<span class='warning'>[M.name] is tossed around by the sudden acceleration!</span>")
+						H.visible_message(SPAN_WARNING("[M.name] is tossed around by the sudden acceleration!"))
 						var/smashsound = pick("sound/effects/gore/smash[rand(1,3)].ogg", "sound/effects/gore/trauma1.ogg")
 						playsound(M, smashsound, 50, 1, -1)
 						H.emote("scream")

@@ -41,7 +41,7 @@
 		return
 
 	if(!allowed(user) && (wires & 1))
-		to_chat(user, "<span class='warning'>Access Denied</span>")
+		to_chat(user, SPAN_WARNING("Access Denied"))
 		flick("[initial(icon_state)]-denied",src)
 		return
 
@@ -176,7 +176,7 @@
 	if(..())
 		return
 	if(stat & (NOPOWER|BROKEN))
-		to_chat(user, "<span class='warning'>[src] is not moving</span>")
+		to_chat(user, SPAN_WARNING("[src] is not moving"))
 		return
 	trigger(user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -192,12 +192,12 @@
 		if(allowed(usr))
 			if(stat & (NOPOWER|BROKEN))
 				return
-			to_chat(user, "<span class='notice'>You used your id in [src]</span>")
+			to_chat(user, SPAN_NOTICE("You used your id in [src]"))
 			playsound(src.loc, 'sound/effects/card_swipe.ogg', 70, 1)
 			trigger(user)
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		else
-			to_chat(user, "<span class='warning'>[src] flashes with red color!</span>")
+			to_chat(user, SPAN_WARNING("[src] flashes with red color!"))
 			playsound(src.loc, 'sound/effects/card_swipe.ogg', 70, 1)
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 

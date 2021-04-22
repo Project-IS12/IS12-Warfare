@@ -16,7 +16,7 @@
 		if(H.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(!temp || (!temp.is_usable() && !M.nabbing))
-			to_chat(H, "<span class='warning'>You can't use your hand.</span>")
+			to_chat(H, SPAN_WARNING("You can't use your hand."))
 			return
 
 	..()
@@ -30,7 +30,7 @@
 			var/damage = rand(0, 9)
 			if(!damage)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-				visible_message("<span class='danger'>\The [H] has attempted to punch \the [src]!</span>")
+				visible_message(SPAN_DANGER("\The [H] has attempted to punch \the [src]!"))
 				return 0
 			var/obj/item/organ/external/affecting = get_organ(ran_zone(H.zone_sel.selecting))
 			var/armor_block = run_armor_check(affecting, "melee")
@@ -40,11 +40,11 @@
 
 			playsound(loc, "punch", 40, 1, -1)
 
-			visible_message("<span class='danger'>[H] has punched \the [src]!</span>")
+			visible_message(SPAN_DANGER("[H] has punched \the [src]!"))
 
 			apply_damage(damage, PAIN, affecting, armor_block)
 			if(damage >= 9)
-				visible_message("<span class='danger'>[H] has weakened \the [src]!</span>")
+				visible_message(SPAN_DANGER("[H] has weakened \the [src]!"))
 				apply_effect(4, WEAKEN, armor_block)
 
 			return
@@ -71,12 +71,12 @@
 				spawn(30)
 					cpr_time = 1
 
-				H.visible_message("<span class='notice'>\The [H] is trying to perform CPR on \the [src].</span>")
+				H.visible_message(SPAN_NOTICE("\The [H] is trying to perform CPR on \the [src]."))
 
 				if(!do_after(H, 30, src))
 					return
 
-				H.visible_message("<span class='notice'>\The [H] performs CPR on \the [src]!</span>")
+				H.visible_message(SPAN_NOTICE("\The [H] performs CPR on \the [src]!"))
 				//if(prob(5))
 				//	var/obj/item/organ/external/chest = get_organ(BP_CHEST)
 				//	if(chest)
@@ -89,19 +89,19 @@
 						resuscitate()
 
 					if(!H.check_has_mouth())
-						to_chat(H, "<span class='warning'>You don't have a mouth, you cannot do mouth-to-mouth resustication!</span>")
+						to_chat(H, SPAN_WARNING("You don't have a mouth, you cannot do mouth-to-mouth resustication!"))
 						return
 					if(!check_has_mouth())
-						to_chat(H, "<span class='warning'>They don't have a mouth, you cannot do mouth-to-mouth resustication!</span>")
+						to_chat(H, SPAN_WARNING("They don't have a mouth, you cannot do mouth-to-mouth resustication!"))
 						return
 					if((H.head && (H.head.body_parts_covered & FACE)) || (H.wear_mask && (H.wear_mask.body_parts_covered & FACE)))
-						to_chat(H, "<span class='warning'>You need to remove your mouth covering for mouth-to-mouth resustication!</span>")
+						to_chat(H, SPAN_WARNING("You need to remove your mouth covering for mouth-to-mouth resustication!"))
 						return 0
 					if((head && (head.body_parts_covered & FACE)) || (wear_mask && (wear_mask.body_parts_covered & FACE)))
-						to_chat(H, "<span class='warning'>You need to remove \the [src]'s mouth covering for mouth-to-mouth resustication!</span>")
+						to_chat(H, SPAN_WARNING("You need to remove \the [src]'s mouth covering for mouth-to-mouth resustication!"))
 						return 0
 					//if (!H.internal_organs_by_name[H.species.breathing_organ])
-					//	to_chat(H, "<span class='danger'>You need lungs for mouth-to-mouth resustication!</span>")
+					//	to_chat(H, SPAN_DANGER("You need lungs for mouth-to-mouth resustication!"))
 					//	return
 					if(!need_breathe())
 						return
@@ -110,7 +110,7 @@
 						var/datum/gas_mixture/breath = H.get_breath_from_environment()
 						var/fail = L.handle_breath(breath, 1)
 						if(!fail)
-							to_chat(src, "<span class='notice'>You feel a breath of fresh air enter your lungs. It feels good.</span>")
+							to_chat(src, SPAN_NOTICE("You feel a breath of fresh air enter your lungs. It feels good."))
 
 			else if(!(M == src && apply_pressure(M, M.zone_sel.selecting)))
 				help_shake_act(M)
@@ -118,7 +118,7 @@
 
 		if(I_GRAB)
 			if(ticker.current_state == GAME_STATE_FINISHED)
-				to_chat(M, "<span class='warning'>The battle is over! There is no need to fight!</span>")
+				to_chat(M, SPAN_WARNING("The battle is over! There is no need to fight!"))
 				return
 			if(aspect_chosen(/datum/aspect/trenchmas))
 				return
@@ -147,7 +147,7 @@
 							return
 			*/
 			//Back to your normal insane
-			visible_message("<span class='danger'>[M] attempted to grab \the [src]!</span>")
+			visible_message(SPAN_DANGER("[M] attempted to grab \the [src]!"))
 			if(attempt_dodge())
 				return
 
@@ -195,10 +195,10 @@
 
 		if(I_HURT)
 			if(ticker.current_state == GAME_STATE_FINISHED)
-				to_chat(M, "<span class='warning'>The battle is over! There is no need to fight!</span>")
+				to_chat(M, SPAN_WARNING("The battle is over! There is no need to fight!"))
 				return
 			if(aspect_chosen(/datum/aspect/trenchmas))
-				to_chat(M, "<span class='warning'>It's Trenchmas! It is not a time to fight!</span>")
+				to_chat(M, SPAN_WARNING("It's Trenchmas! It is not a time to fight!"))
 				return
 			if(H.warfare_faction)
 				if(H.warfare_faction == src.warfare_faction && src.stat != DEAD)
@@ -227,13 +227,13 @@
 			if(!attack)
 				return 0
 			if(world.time < H.last_attack + attack.delay)
-				to_chat(H, "<span class='notice'>You can't attack again so soon.</span>")
+				to_chat(H, SPAN_NOTICE("You can't attack again so soon."))
 				return 0
 			else
 				H.last_attack = world.time
 
 			if(!affecting || affecting.is_stump())
-				to_chat(M, "<span class='danger'>They are missing that limb!</span>")
+				to_chat(M, SPAN_DANGER("They are missing that limb!"))
 				return 1
 
 			switch(src.a_intent)
@@ -300,7 +300,7 @@
 			if(!istype(src, /mob/living/carbon/human/machine) && istype(affecting, /obj/item/organ/external/head) && prob(hitcheck * (hit_zone == BP_MOUTH ? 5 : 1))) //MUCH higher chance to knock out teeth if you aim for mouth
 				var/obj/item/organ/external/head/U = affecting
 				if(U.knock_out_teeth(get_dir(H, src), round(rand(28, 38) * ((hitcheck*2)/100))))
-					src.visible_message("<span class='danger'>[src]'s teeth sail off in an arc!</span>", \
+					src.visible_message(SPAN_DANGER("[src]'s teeth sail off in an arc!"), \
 										"<span class='userdanger'>[src]'s teeth sail off in an arc!</span>")
 
 			if(!miss_type && block)
@@ -311,7 +311,7 @@
 			if(!attack_message)
 				attack.show_attack(H, src, hit_zone, rand_damage)
 			else
-				H.visible_message("<span class='danger'>[attack_message]</span>")
+				H.visible_message(SPAN_DANGER("[attack_message]"))
 
 			playsound(loc, ((miss_type) ? (miss_type == 1 ? attack.miss_sound : 'sound/weapons/thudswoosh.ogg') : attack.attack_sound), 25, 1, -1)
 			admin_attack_log(H, src, "[miss_type ? (miss_type == 1 ? "Has missed" : "Was blocked by") : "Has [pick(attack.attack_verb)]"] their victim.", "[miss_type ? (miss_type == 1 ? "Missed" : "Blocked") : "[pick(attack.attack_verb)]"] their attacker", "[miss_type ? (miss_type == 1 ? "has missed" : "was blocked by") : "has [pick(attack.attack_verb)]"]")
@@ -370,7 +370,7 @@
 		return
 
 	admin_attack_log(user, src, "Attacked their victim", "Was attacked", "has [attack_message]")
-	src.visible_message("<span class='danger'>[user] has [attack_message] [src]!</span>")
+	src.visible_message(SPAN_DANGER("[user] has [attack_message] [src]!"))
 
 
 	apply_damage(damage, damtype, affecting, armor_block)
@@ -382,21 +382,21 @@
 /mob/living/carbon/human/proc/break_all_grabs(mob/living/carbon/user)
 	var/success = 0
 	if(pulling)
-		visible_message("<span class='danger'>[user] has broken [src]'s grip on [pulling]!</span>")
+		visible_message(SPAN_DANGER("[user] has broken [src]'s grip on [pulling]!"))
 		success = 1
 		stop_pulling()
 
 	if(istype(l_hand, /obj/item/grab))
 		var/obj/item/grab/lgrab = l_hand
 		if(lgrab.affecting)
-			visible_message("<span class='danger'>[user] has broken [src]'s grip on [lgrab.affecting]!</span>")
+			visible_message(SPAN_DANGER("[user] has broken [src]'s grip on [lgrab.affecting]!"))
 			success = 1
 		spawn(1)
 			qdel(lgrab)
 	if(istype(r_hand, /obj/item/grab))
 		var/obj/item/grab/rgrab = r_hand
 		if(rgrab.affecting)
-			visible_message("<span class='danger'>[user] has broken [src]'s grip on [rgrab.affecting]!</span>")
+			visible_message(SPAN_DANGER("[user] has broken [src]'s grip on [rgrab.affecting]!"))
 			success = 1
 		spawn(1)
 			qdel(rgrab)

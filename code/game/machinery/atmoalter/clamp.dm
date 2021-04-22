@@ -119,9 +119,9 @@
 		return
 
 	if(open && over_object == usr && Adjacent(usr))
-		to_chat(usr, "<span class='notice'>You begin to remove \the [src]...</span>")
+		to_chat(usr, SPAN_NOTICE("You begin to remove \the [src]..."))
 		if (do_after(usr, 30, src))
-			to_chat(usr, "<span class='notice'>You have removed \the [src].</span>")
+			to_chat(usr, SPAN_NOTICE("You have removed \the [src]."))
 			var/obj/item/clamp/C = new/obj/item/clamp(src.loc)
 			C.forceMove(usr.loc)
 			if(ishuman(usr))
@@ -129,7 +129,7 @@
 			qdel(src)
 			return
 	else
-		to_chat(usr, "<span class='warning'>You can't remove \the [src] while it's active!</span>")
+		to_chat(usr, SPAN_WARNING("You can't remove \the [src] while it's active!"))
 
 /obj/item/clamp
 	name = "stasis clamp"
@@ -143,9 +143,9 @@
 		return
 
 	if (istype(A, /obj/machinery/atmospherics/pipe/simple))
-		to_chat(user, "<span class='notice'>You begin to attach \the [src] to \the [A]...</span>")
+		to_chat(user, SPAN_NOTICE("You begin to attach \the [src] to \the [A]..."))
 		if (do_after(user, 30, src))
-			to_chat(user, "<span class='notice'>You have attached \the [src] to \the [A].</span>")
+			to_chat(user, SPAN_NOTICE("You have attached \the [src] to \the [A]."))
 			new/obj/machinery/clamp(A.loc, A)
 			user.drop_from_inventory(src)
 			qdel(src)

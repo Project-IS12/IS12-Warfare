@@ -87,13 +87,13 @@
 				var/obj/item/card/id/I = usr.get_active_hand()
 				I = I ? I.GetIdCard() : null
 				if(!istype(I, /obj/item/card/id))
-					to_chat(usr, "<span class='warning'>[\src] flashes a yellow LED near the ID scanner. Did you remember to scan your ID or PDA?</span>")
+					to_chat(usr, SPAN_WARNING("[\src] flashes a yellow LED near the ID scanner. Did you remember to scan your ID or PDA?"))
 					return TRUE
 				if (check_access(I))
 					locked = 0
 					last_configurator = I.registered_name
 				else
-					to_chat(usr, "<span class='warning'>[\src] flashes a red LED near the ID scanner, indicating your access has been denied.</span>")
+					to_chat(usr, SPAN_WARNING("[\src] flashes a red LED near the ID scanner, indicating your access has been denied."))
 					return TRUE
 		if("lock")
 			if(!lockable)

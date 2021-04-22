@@ -44,18 +44,18 @@
 		return
 
 	if(istype(W, /obj/item/stack/tile))
-		to_chat(user, "<span class='notice'>\The [W] successfully loaded.</span>")
+		to_chat(user, SPAN_NOTICE("\The [W] successfully loaded."))
 		user.drop_item(T)
 		TakeTile(T)
 		return
 
 	if(isCrowbar(W))
 		if(!length(contents))
-			to_chat(user, "<span class='notice'>\The [src] is empty.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] is empty."))
 		else
 			var/obj/item/stack/tile/E = input("Choose remove tile type.", "Tiles") as null|anything in contents
 			if(E)
-				to_chat(user, "<span class='notice'>You remove the [E] from /the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You remove the [E] from /the [src]."))
 				E.loc = src.loc
 				T = null
 		return

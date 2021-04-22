@@ -90,7 +90,7 @@
 	if (!is_on())
 		return 0
 	if(!check_fuel())
-		audible_message(src,"<span class='warning'>[src] coughs once and goes silent!</span>")
+		audible_message(src,SPAN_WARNING("[src] coughs once and goes silent!"))
 		on = !on
 		return 0
 	var/exhaust_dir = reverse_direction(dir)

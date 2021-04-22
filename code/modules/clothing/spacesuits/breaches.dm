@@ -182,7 +182,7 @@
 			return
 
 		if(istype(src.loc,/mob/living))
-			to_chat(user, "<span class='warning'>How do you intend to patch a hardsuit while someone is wearing it?</span>")
+			to_chat(user, SPAN_WARNING("How do you intend to patch a hardsuit while someone is wearing it?"))
 			return
 
 		if(!damage || !burn_damage)
@@ -198,7 +198,7 @@
 	else if(isWelder(W))
 
 		if(istype(src.loc,/mob/living))
-			to_chat(user, "<span class='warning'>How do you intend to patch a hardsuit while someone is wearing it?</span>")
+			to_chat(user, SPAN_WARNING("How do you intend to patch a hardsuit while someone is wearing it?"))
 			return
 
 		if (!damage || ! brute_damage)
@@ -207,7 +207,7 @@
 
 		var/obj/item/weldingtool/WT = W
 		if(!WT.remove_fuel(5))
-			to_chat(user, "<span class='warning'>You need more welding fuel to repair this suit.</span>")
+			to_chat(user, SPAN_WARNING("You need more welding fuel to repair this suit."))
 			return
 
 		repair_breaches(BRUTE, 3, user)
@@ -219,4 +219,4 @@
 	. = ..(user)
 	if(can_breach && breaches && breaches.len)
 		for(var/datum/breach/B in breaches)
-			to_chat(user, "<span class='danger'>It has \a [B.descriptor].</span>")
+			to_chat(user, SPAN_DANGER("It has \a [B.descriptor]."))

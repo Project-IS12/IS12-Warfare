@@ -93,9 +93,9 @@
 				investigate_log("turned <font color='green'>on</font> by [user.key]","singulo")
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>The controls are locked!</span>")
+			to_chat(user, SPAN_WARNING("The controls are locked!"))
 	else
-		to_chat(user, "<span class='warning'>\The [src] needs to be firmly secured to the floor first.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] needs to be firmly secured to the floor first."))
 		return 1
 
 
@@ -168,7 +168,7 @@
 					"You hear a ratchet")
 				src.anchored = 0
 			if(2)
-				to_chat(user, "<span class='warning'>\The [src] needs to be unwelded from the floor.</span>")
+				to_chat(user, SPAN_WARNING("\The [src] needs to be unwelded from the floor."))
 		return
 
 	if(isWelder(W))
@@ -178,7 +178,7 @@
 			return
 		switch(state)
 			if(0)
-				to_chat(user, "<span class='warning'>\The [src] needs to be wrenched to the floor.</span>")
+				to_chat(user, SPAN_WARNING("\The [src] needs to be wrenched to the floor."))
 			if(1)
 				if (WT.remove_fuel(0,user))
 					playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
@@ -191,7 +191,7 @@
 						to_chat(user, "You weld [src] to the floor.")
 						connect_to_network()
 				else
-					to_chat(user, "<span class='warning'>You need more welding fuel to complete this task.</span>")
+					to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
 			if(2)
 				if (WT.remove_fuel(0,user))
 					playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
@@ -204,18 +204,18 @@
 						to_chat(user, "You cut [src] free from the floor.")
 						disconnect_from_network()
 				else
-					to_chat(user, "<span class='warning'>You need more welding fuel to complete this task.</span>")
+					to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
 		return
 
 	if(istype(W, /obj/item/card/id) || istype(W, /obj/item/device/pda))
 		if(emagged)
-			to_chat(user, "<span class='warning'>The lock seems to be broken.</span>")
+			to_chat(user, SPAN_WARNING("The lock seems to be broken."))
 			return
 		if(src.allowed(user))
 			src.locked = !src.locked
 			to_chat(user, "The controls are now [src.locked ? "locked." : "unlocked."]")
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, SPAN_WARNING("Access denied."))
 		return
 	..()
 	return
@@ -224,7 +224,7 @@
 	if(!emagged)
 		locked = 0
 		emagged = 1
-		user.visible_message("[user.name] emags [src].","<span class='warning'>You short out the lock.</span>")
+		user.visible_message("[user.name] emags [src].",SPAN_WARNING("You short out the lock."))
 		return 1
 
 /obj/machinery/power/emitter/proc/get_initial_fire_delay()

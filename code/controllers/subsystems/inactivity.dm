@@ -13,5 +13,5 @@ SUBSYSTEM_DEF(inactivity)
 			if(!C.holder && C.is_afk(config.kick_inactive MINUTES))
 				if(!isobserver(C.mob))
 					log_access("AFK: [key_name(C)]")
-					to_chat(C, "<SPAN CLASS='warning'>You have been inactive for more than [config.kick_inactive] minute\s and have been disconnected.</SPAN>")
+					to_chat(C, SPAN_WARNING("You have been inactive for more than [config.kick_inactive] minute\s and have been disconnected."))
 					del C	// no point qdeling a client

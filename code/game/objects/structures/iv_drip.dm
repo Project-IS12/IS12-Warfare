@@ -141,7 +141,7 @@
 	set src in view(1)
 
 	if(!istype(usr, /mob/living))
-		to_chat(usr, "<span class='warning'>You can't do that.</span>")
+		to_chat(usr, SPAN_WARNING("You can't do that."))
 		return
 
 	if(usr.incapacitated())
@@ -161,10 +161,10 @@
 
 	if(beaker)
 		if(beaker.reagents && beaker.reagents.total_volume)
-			to_chat(usr, "<span class='notice'>Attached is \a [beaker] with [beaker.reagents.total_volume] units of liquid.</span>")
+			to_chat(usr, SPAN_NOTICE("Attached is \a [beaker] with [beaker.reagents.total_volume] units of liquid."))
 		else
-			to_chat(usr, "<span class='notice'>Attached is an empty [beaker].</span>")
+			to_chat(usr, SPAN_NOTICE("Attached is an empty [beaker]."))
 	else
-		to_chat(usr, "<span class='notice'>No chemicals are attached.</span>")
+		to_chat(usr, SPAN_NOTICE("No chemicals are attached."))
 
 	to_chat(usr, "<span class='notice'>[attached ? attached : "No one"] is hooked up to it.</span>")

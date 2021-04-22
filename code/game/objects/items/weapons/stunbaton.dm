@@ -72,25 +72,25 @@
 // Addition made by Techhead0, thanks for fullfilling the todo!
 /obj/item/melee/baton/proc/examine_cell(mob/user)
 	if(bcell)
-		to_chat(user, "<span class='notice'>The baton is [round(bcell.percent())]% charged.</span>")
+		to_chat(user, SPAN_NOTICE("The baton is [round(bcell.percent())]% charged."))
 	if(!bcell)
-		to_chat(user, "<span class='warning'>The baton does not have a power source installed.</span>")
+		to_chat(user, SPAN_WARNING("The baton does not have a power source installed."))
 
 /obj/item/melee/baton/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/cell/device))
 		if(!bcell && user.unEquip(W))
 			W.forceMove(src)
 			bcell = W
-			to_chat(user, "<span class='notice'>You install a cell into the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You install a cell into the [src]."))
 			update_icon()
 		else
-			to_chat(user, "<span class='notice'>[src] already has a cell.</span>")
+			to_chat(user, SPAN_NOTICE("[src] already has a cell."))
 	else if(isScrewdriver(W))
 		if(bcell)
 			bcell.update_icon()
 			bcell.dropInto(loc)
 			bcell = null
-			to_chat(user, "<span class='notice'>You remove the cell from the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You remove the cell from the [src]."))
 			status = 0
 			update_icon()
 	else
@@ -109,9 +109,9 @@
 	else
 		change_status(0)
 		if(!bcell)
-			to_chat(user, "<span class='warning'>[src] does not have a power source!</span>")
+			to_chat(user, SPAN_WARNING("[src] does not have a power source!"))
 		else
-			to_chat(user,  "<span class='warning'>[src] is out of charge.</span>")
+			to_chat(user,  SPAN_WARNING("[src] is out of charge."))
 
 // Proc to -actually- change the status, and update the icons as well.
 // Also exists to ease "helpful" admin-abuse in case an bug prevents attack_self
@@ -123,7 +123,7 @@
 
 /obj/item/melee/baton/attack(mob/M, mob/user)
 	if(status && (CLUMSY in user.mutations) && prob(50))
-		to_chat(user, "<span class='danger'>You accidentally hit yourself with the [src]!</span>")
+		to_chat(user, SPAN_DANGER("You accidentally hit yourself with the [src]!"))
 		user.Weaken(30)
 		deductcharge(hitcost)
 		return
@@ -154,14 +154,14 @@
 		//we can't really extract the actual hit zone from ..(), unfortunately. Just act like they attacked the area they intended to.
 	else if(!status)
 		if(affecting)
-			target.visible_message("<span class='warning'>[target] has been prodded in the [affecting.name] with [src] by [user]. Luckily it was off.</span>")
+			target.visible_message(SPAN_WARNING("[target] has been prodded in the [affecting.name] with [src] by [user]. Luckily it was off."))
 		else
-			target.visible_message("<span class='warning'>[target] has been prodded with [src] by [user]. Luckily it was off.</span>")
+			target.visible_message(SPAN_WARNING("[target] has been prodded with [src] by [user]. Luckily it was off."))
 	else
 		if(affecting)
-			target.visible_message("<span class='danger'>[target] has been prodded in the [affecting.name] with [src] by [user]!</span>")
+			target.visible_message(SPAN_DANGER("[target] has been prodded in the [affecting.name] with [src] by [user]!"))
 		else
-			target.visible_message("<span class='danger'>[target] has been prodded with [src] by [user]!</span>")
+			target.visible_message(SPAN_DANGER("[target] has been prodded with [src] by [user]!"))
 		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 
 	//stun effects
@@ -189,7 +189,7 @@
 
 // Addition made by Techhead0, thanks for fullfilling the todo!
 /obj/item/melee/baton/robot/examine_cell(mob/user)
-	to_chat(user, "<span class='notice'>The baton is running off an external power supply.</span>")
+	to_chat(user, SPAN_NOTICE("The baton is running off an external power supply."))
 
 // Override proc for the stun baton module, found in PC Security synthetics
 // Refactored to fix #14470 - old proc defination increased the hitcost beyond
@@ -201,7 +201,7 @@
 	if (R)
 		return ..()
 	else	// Stop pretending and get out of your cardborg suit, human.
-		to_chat(user, "<span class='warning'>You don't seem to be able interacting with this by yourself..</span>")
+		to_chat(user, SPAN_WARNING("You don't seem to be able interacting with this by yourself.."))
 		add_fingerprint(user)
 	return 0
 

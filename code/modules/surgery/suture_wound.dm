@@ -35,11 +35,11 @@
 			// Close it up to a point that it can be bandaged and heal naturally!
 			W.heal_damage(rand(10,20)+10)
 			if(W.damage >= W.autoheal_cutoff)
-				user.visible_message("<span class='notice'>\The [user] partially closes a wound on [target]'s [affected.name] with \the [tool].</span>", \
-				"<span class='notice'>You partially close a wound on [target]'s [affected.name] with \the [tool].</span>")
+				user.visible_message(SPAN_NOTICE("\The [user] partially closes a wound on [target]'s [affected.name] with \the [tool]."), \
+				SPAN_NOTICE("You partially close a wound on [target]'s [affected.name] with \the [tool]."))
 			else
-				user.visible_message("<span class='notice'>\The [user] closes a wound on [target]'s [affected.name] with \the [tool].</span>", \
-				"<span class='notice'>You close a wound on [target]'s [affected.name] with \the [tool].</span>")
+				user.visible_message(SPAN_NOTICE("\The [user] closes a wound on [target]'s [affected.name] with \the [tool]."), \
+				SPAN_NOTICE("You close a wound on [target]'s [affected.name] with \the [tool]."))
 				if(!W.damage)
 					affected.wounds -= W
 					qdel(W)

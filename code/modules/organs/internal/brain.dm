@@ -80,7 +80,7 @@
 	if(H.mind)
 		H.mind.transfer_to(brainmob)
 
-	to_chat(brainmob, "<span class='notice'>You feel slightly disoriented. That's normal when you're just \a [initial(src.name)].</span>")
+	to_chat(brainmob, SPAN_NOTICE("You feel slightly disoriented. That's normal when you're just \a [initial(src.name)]."))
 	callHook("debrain", list(brainmob))
 
 /obj/item/organ/internal/brain/examine(mob/user) // -- TLE
@@ -156,8 +156,8 @@
 		if(owner.paralysis < 1) // Skip it if we're already down.
 
 			if((owner.disabilities & EPILEPSY) && prob(1))
-				to_chat(owner, "<span class='warning'>You have a seizure!</span>")
-				owner.visible_message("<span class='danger'>\The [owner] starts having a seizure!</span>")
+				to_chat(owner, SPAN_WARNING("You have a seizure!"))
+				owner.visible_message(SPAN_DANGER("\The [owner] starts having a seizure!"))
 				owner.Paralyse(10)
 				owner.make_jittery(1000)
 			else if((owner.disabilities & TOURETTES) && prob(10))
@@ -175,14 +175,14 @@
 				if(damage > 0 && prob(1))
 					owner.custom_pain("Your head feels numb and painful.",10)
 				if(is_bruised() && prob(1) && owner.eye_blurry <= 0)
-					to_chat(owner, "<span class='warning'>It becomes hard to see for some reason.</span>")
+					to_chat(owner, SPAN_WARNING("It becomes hard to see for some reason."))
 					owner.eye_blurry = 10
 				if(is_broken() && prob(1) && owner.get_active_hand())
-					to_chat(owner, "<span class='danger'>Your hand won't respond properly, and you drop what you are holding!</span>")
+					to_chat(owner, SPAN_DANGER("Your hand won't respond properly, and you drop what you are holding!"))
 					owner.drop_item()
 				if((damage >= (max_damage * 0.75)))
 					if(!owner.lying)
-						to_chat(owner, "<span class='danger'>You black out!</span>")
+						to_chat(owner, SPAN_DANGER("You black out!"))
 					owner.Paralyse(10)
 
 		// Brain damage from low oxygenation or lack of blood.

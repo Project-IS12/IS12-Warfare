@@ -57,7 +57,7 @@
 /obj/item/torch/proc/light(var/mob/user, var/manually_lit = FALSE)//This doesn't seem to update the icon appropiately, not idea why.
 	lit = TRUE
 	if(manually_lit && self_lighting == 1)
-		user.visible_message("<span class='notice'>\The [user] rips the lighting sheath off their [src].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] rips the lighting sheath off their [src]."))
 	update_icon()
 	START_PROCESSING(SSprocessing, src)
 	playsound(src, 'sound/items/torch_light.ogg', 50, 0, -1)

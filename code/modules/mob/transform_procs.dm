@@ -216,7 +216,7 @@
 	var/mobpath = input("Which type of mob should [src] turn into?", "Choose a type") in mobtypes
 
 	if(!safe_animal(mobpath))
-		to_chat(usr, "<span class='warning'>Sorry but this mob type is currently unavailable.</span>")
+		to_chat(usr, SPAN_WARNING("Sorry but this mob type is currently unavailable."))
 		return
 
 	if(transforming)
@@ -250,7 +250,7 @@
 	var/mobpath = input("Which type of mob should [src] turn into?", "Choose a type") in mobtypes
 
 	if(!safe_animal(mobpath))
-		to_chat(usr, "<span class='warning'>Sorry but this mob type is currently unavailable.</span>")
+		to_chat(usr, SPAN_WARNING("Sorry but this mob type is currently unavailable."))
 		return
 
 	var/mob/new_mob = new mobpath(src.loc)
@@ -317,7 +317,7 @@
 /mob/living/carbon/human/proc/zombieze()
 	ChangeToHusk()
 	mutations |= CLUMSY //cause zombie
-	src.visible_message("<span class='danger'>\The [src]'s flesh decays before your very eyes!</span>", "<span class='danger'>Your entire body is ripe with pain as it is consumed down to flesh and bones. You... hunger. Not only for flesh, but to spread your disease.</span>")
+	src.visible_message(SPAN_DANGER("\The [src]'s flesh decays before your very eyes!"), SPAN_DANGER("Your entire body is ripe with pain as it is consumed down to flesh and bones. You... hunger. Not only for flesh, but to spread your disease."))
 	if(src.mind)
 		src.mind.special_role = "Zombie"
 	log_admin("[key_name(src)] has transformed into a zombie!")

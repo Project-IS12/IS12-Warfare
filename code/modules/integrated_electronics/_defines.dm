@@ -99,7 +99,7 @@
 	var/mob/M = usr
 	var/input = sanitizeSafe(input("What do you want to name the circuit?", "Rename", src.name) as null|text, MAX_NAME_LEN)
 	if(src && input && input != name && CanInteract(M, GLOB.physical_state))
-		to_chat(M, "<span class='notice'>The circuit '[src.name]' is now labeled '[input]'.</span>")
+		to_chat(M, SPAN_NOTICE("The circuit '[src.name]' is now labeled '[input]'."))
 		name = input
 		interact(M)
 
@@ -254,7 +254,7 @@
 			if(pin)
 				debugger.write_data(pin, usr)
 		else
-			to_chat(usr, "<span class='warning'>You can't do a whole lot without the proper tools.</span>")
+			to_chat(usr, SPAN_WARNING("You can't do a whole lot without the proper tools."))
 		. = 1
 
 	else if(href_list["refresh"])
@@ -274,9 +274,9 @@
 			disconnect_all()
 			dropInto(loc)
 			playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
-			to_chat(usr, "<span class='notice'>You pop \the [src] out of the case, and slide it out.</span>")
+			to_chat(usr, SPAN_NOTICE("You pop \the [src] out of the case, and slide it out."))
 		else
-			to_chat(usr, "<span class='warning'>You need a screwdriver to remove components.</span>")
+			to_chat(usr, SPAN_WARNING("You need a screwdriver to remove components."))
 		interact_with_assembly(usr)
 		. = IC_TOPIC_REFRESH
 
@@ -326,24 +326,24 @@
 
 /datum/integrated_io/proc/link_io(var/datum/integrated_io/io, var/mob/user)
 	if(src == io)
-		to_chat(user, "<span class='warning'>Wiring \the [io.holder]'s [io.name] into itself is rather pointless.</span>")
+		to_chat(user, SPAN_WARNING("Wiring \the [io.holder]'s [io.name] into itself is rather pointless."))
 		return FALSE
 
 	if(io_type != io.io_type)
-		to_chat(user, "<span class='warning'>Those two types of channels are incompatable. The first is \a [io_type], while the second is \a [io.io_type].</span>")
+		to_chat(user, SPAN_WARNING("Those two types of channels are incompatable. The first is \a [io_type], while the second is \a [io.io_type]."))
 		return FALSE
 
 	var/io_assembly = get_assembly(io.holder.loc)
 	if(!io_assembly) // Separating null assembly and same assembly checks to be extra sure wiring cannot happen in weird situations
-		to_chat(user, "<span class='warning'>\The [io.holder] must be in an assembly for wiring to be possible.</span>")
+		to_chat(user, SPAN_WARNING("\The [io.holder] must be in an assembly for wiring to be possible."))
 		return FALSE
 
 	if((holder != io.holder) && get_assembly(holder.loc) != get_assembly(io.holder.loc)) // This test is only necessary if we belong to different holders
-		to_chat(user, "<span class='warning'>The circuits must be in the same assembly for wiring to be possible.</span>")
+		to_chat(user, SPAN_WARNING("The circuits must be in the same assembly for wiring to be possible."))
 		return FALSE
 
 	if(io in linked) // NOTE: We don't return here on failure, make sure to add any additional checks above this line
-		to_chat(user, "<span class='warning'>These pins are already wired.</span>")
+		to_chat(user, SPAN_WARNING("These pins are already wired."))
 		. = FALSE
 	else
 		. = TRUE

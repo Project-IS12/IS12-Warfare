@@ -7,12 +7,12 @@
 				var/mob/living/carbon/human/H = user
 				if(H.warfare_faction != src.warfare_faction)
 					if(aspect_chosen(/datum/aspect/trenchmas))
-						to_chat(user, "<span class='warning'><big><b>THEY ARE A FRIEND! HUG THEM!</b></big></span>")
+						to_chat(user, SPAN_WARNING("<big><b>THEY ARE A FRIEND! HUG THEM!</b></big>"))
 					else
-						to_chat(user, "<span class='warning'><big><b>THEY ARE THE ENEMY! KILL THEM!</b></big></span>")
+						to_chat(user, SPAN_WARNING("<big><b>THEY ARE THE ENEMY! KILL THEM!</b></big>"))
 
 			if(crouching)
-				to_chat(user, "<span class='warning'>They are crouching!</span>")
+				to_chat(user, SPAN_WARNING("They are crouching!"))
 			to_chat(user, "<span class='info'>It's too far away to see clearly.</span>")
 			return
 
@@ -259,13 +259,13 @@
 	var/mhealth = (getBruteLoss() + getFireLoss())//How injured they look. Not not nescessarily how hurt they actually are.
 
 	if(mhealth >= 25 && mhealth < 50)//Is the person a little hurt?
-		msg += "<span class='warning'><b>[T.He] looks somewhat injured.\n</b></span>"
+		msg += SPAN_WARNING("<b>[T.He] looks somewhat injured.\n</b>")
 
 	if(mhealth >= 50 && mhealth < 75)//Hurt.
 		msg += "<span class='warning'><b>[T.He] looks injured.</b></span>\n"
 
 	if(mhealth >= 75)//Or incredibly hurt.
-		msg += "<span class='warning'><b>[T.He] looks incredibly injured.</b>\n</span>"
+		msg += SPAN_WARNING("<b>[T.He] looks incredibly injured.</b>\n")
 
 	var/list/wound_flavor_text = list()
 	var/applying_pressure = ""

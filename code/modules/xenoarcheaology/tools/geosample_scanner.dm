@@ -65,7 +65,7 @@
 
 /obj/machinery/radiocarbon_spectrometer/attackby(var/obj/I as obj, var/mob/user as mob)
 	if(scanning)
-		to_chat(user, "<span class='warning'>You can't do that while [src] is scanning!</span>")
+		to_chat(user, SPAN_WARNING("You can't do that while [src] is scanning!"))
 	else
 		if(istype(I, /obj/item/stack/nanopaste))
 			var/choice = alert("What do you want to do with the nanopaste?","Radiometric Scanner","Scan nanopaste","Fix seal integrity")
@@ -234,7 +234,7 @@
 			//emergency stop if seal integrity reaches 0
 			if(scanner_seal_integrity <= 0 || (scanner_temperature >= 1273 && !rad_shield))
 				stop_scanning()
-				src.visible_message("<span class='notice'>\icon[src] buzzes unhappily. It has failed mid-scan!</span>", 2)
+				src.visible_message(SPAN_NOTICE("\icon[src] buzzes unhappily. It has failed mid-scan!"), 2)
 
 			if(prob(5))
 				src.visible_message("<span class='notice'>\icon[src] [pick("whirrs","chuffs","clicks")][pick(" excitedly"," energetically"," busily")].</span>", 2)
@@ -261,7 +261,7 @@
 		used_coolant = 0
 
 /obj/machinery/radiocarbon_spectrometer/proc/complete_scan()
-	src.visible_message("<span class='notice'>\icon[src] makes an insistent chime.</span>", 2)
+	src.visible_message(SPAN_NOTICE("\icon[src] makes an insistent chime."), 2)
 
 	if(scanned_item)
 		//create report
@@ -333,11 +333,11 @@
 					scanner_progress = 0
 					scanning = 1
 					t_left_radspike = pick(5,10,15)
-					to_chat(user, "<span class='notice'>Scan initiated.</span>")
+					to_chat(user, SPAN_NOTICE("Scan initiated."))
 				else
-					to_chat(user, "<span class='warning'>Could not initiate scan, seal requires replacing.</span>")
+					to_chat(user, SPAN_WARNING("Could not initiate scan, seal requires replacing."))
 			else
-				to_chat(user, "<span class='warning'>Insert an item to scan.</span>")
+				to_chat(user, SPAN_WARNING("Insert an item to scan."))
 		. = TOPIC_REFRESH
 
 	else if(href_list["maserWavelength"])

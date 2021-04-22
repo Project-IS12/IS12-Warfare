@@ -112,13 +112,13 @@
 		return
 
 	if(power_supply)
-		to_chat(user, "<span class='warning'>[src] already has a power cell loaded.</span>")//already a power cell here
+		to_chat(user, SPAN_WARNING("[src] already has a power cell loaded."))//already a power cell here
 		return
 
 	user.remove_from_mob(A)
 	A.loc = src
 	power_supply = A
-	user.visible_message("[user] inserts [A] into [src].", "<span class='notice'>You insert [A] into [src].</span>")
+	user.visible_message("[user] inserts [A] into [src].", SPAN_NOTICE("You insert [A] into [src]."))
 	playsound(src, 'sound/weapons/guns/interact/mag_load.ogg', 100)
 	update_icon()
 
@@ -126,7 +126,7 @@
 /obj/item/gun/energy/unload_ammo(mob/user, var/allow_dump=1)
 	if(power_supply)
 		playsound(src, 'sound/weapons/guns/interact/mag_unload.ogg', 100)
-		user.visible_message("[user] removes the power cell from [src].", "<span class='notice'>You remove the power cell from [src].</span>")
+		user.visible_message("[user] removes the power cell from [src].", SPAN_NOTICE("You remove the power cell from [src]."))
 		user.put_in_hands(power_supply)
 		power_supply.update_icon()
 		power_supply = null

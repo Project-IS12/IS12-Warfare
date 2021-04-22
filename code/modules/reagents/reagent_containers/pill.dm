@@ -25,7 +25,7 @@
 		if(!M.can_eat(src))
 			return
 
-		to_chat(M, "<span class='notice'>You swallow \the [src].</span>")
+		to_chat(M, SPAN_NOTICE("You swallow \the [src]."))
 		M.drop_from_inventory(src) //icon update
 		if(reagents.total_volume)
 			reagents.trans_to_mob(M, reagents.total_volume, CHEM_INGEST)
@@ -37,12 +37,12 @@
 		if(!M.can_force_feed(user, src))
 			return
 
-		user.visible_message("<span class='warning'>[user] attempts to force [M] to swallow \the [src].</span>")
+		user.visible_message(SPAN_WARNING("[user] attempts to force [M] to swallow \the [src]."))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		if(!do_mob(user, M))
 			return
 		user.drop_from_inventory(src) //icon update
-		user.visible_message("<span class='warning'>[user] forces [M] to swallow \the [src].</span>")
+		user.visible_message(SPAN_WARNING("[user] forces [M] to swallow \the [src]."))
 		var/contained = reagentlist()
 		admin_attack_log(user, M, "Fed the victim with [name] (Reagents: [contained])", "Was fed [src] (Reagents: [contained])", "used [src] (Reagents: [contained]) to feed")
 		if(reagents.total_volume)
@@ -58,14 +58,14 @@
 
 	if(target.is_open_container() && target.reagents)
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='notice'>[target] is empty. Can't dissolve \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("[target] is empty. Can't dissolve \the [src]."))
 			return
-		to_chat(user, "<span class='notice'>You dissolve \the [src] in [target].</span>")
+		to_chat(user, SPAN_NOTICE("You dissolve \the [src] in [target]."))
 
 		admin_attacker_log(user, "spiked \a [target] with a pill. Reagents: [reagentlist()]")
 		reagents.trans_to(target, reagents.total_volume)
 		for(var/mob/O in viewers(2, user))
-			O.show_message("<span class='warning'>[user] puts something in \the [target].</span>", 1)
+			O.show_message(SPAN_WARNING("[user] puts something in \the [target]."), 1)
 		qdel(src)
 	return
 

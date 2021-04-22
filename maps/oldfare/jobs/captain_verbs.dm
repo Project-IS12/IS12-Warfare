@@ -13,7 +13,7 @@
 		T = SSwarfare.blue
 
 	if(T.checkCooldown("Help me!"))
-		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
+		to_chat(src, SPAN_NOTICE("I can't overuse this!"))
 		return
 
 	for(var/mob/living/carbon/human/H in T.team)
@@ -40,7 +40,7 @@
 		T = SSwarfare.blue
 
 	if(T.checkCooldown("Retreat!"))
-		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
+		to_chat(src, SPAN_NOTICE("I can't overuse this!"))
 		return
 
 	to_chat(T.team, "<h1><span class='[class]'>Your Captain has ordered a retreat!</span></h1>")
@@ -62,7 +62,7 @@
 		T = SSwarfare.blue
 
 	if(T.checkCooldown("Make Announcement!"))
-		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
+		to_chat(src, SPAN_NOTICE("I can't overuse this!"))
 		return
 
 	var/announcement = sanitize(input(src, "What would you like to announce?", "Announcement"))
@@ -105,7 +105,7 @@
 		T = SSwarfare.blue
 
 	if(T.checkCooldown("Give Order!"))
-		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
+		to_chat(src, SPAN_NOTICE("I can't overuse this!"))
 		return
 
 	var/announcement = input(src, "What would you like to command?", "Give Order")
@@ -143,7 +143,7 @@
 	if(is_blue)
 		T = SSwarfare.blue
 	if(T.checkCooldown("Check Reinforcements"))
-		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
+		to_chat(src, SPAN_NOTICE("I can't overuse this!"))
 		return
 	if(is_blue)
 		to_chat(src, "<span class='bnotice'><font size=4>Reinforcements Left: [SSwarfare.blue.left]</font></span>")
@@ -172,7 +172,7 @@
 			return
 
 	if(T.checkCooldown("Morale Boost"))
-		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
+		to_chat(src, SPAN_NOTICE("I can't overuse this!"))
 		return
 
 	for(var/mob/living/carbon/human/H in T.team)

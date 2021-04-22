@@ -55,22 +55,22 @@
 		if(istype(H))
 			for(var/obj/item/clothing/C in list(H.head,H.wear_mask,H.glasses))
 				if(istype(C) && (C.body_parts_covered & EYES))
-					to_chat(user, "<span class='warning'>You're going to need to remove [C] first.</span>")
+					to_chat(user, SPAN_WARNING("You're going to need to remove [C] first."))
 					return
 
 			var/obj/item/organ/vision
 			if(!H.species.vision_organ || !H.should_have_organ(H.species.vision_organ))
-				to_chat(user, "<span class='warning'>You can't find anything on [H] to direct [src] into!</span>")
+				to_chat(user, SPAN_WARNING("You can't find anything on [H] to direct [src] into!"))
 				return
 
 			vision = H.internal_organs_by_name[H.species.vision_organ]
 			if(!vision)
 				vision = H.species.has_organ[H.species.vision_organ]
-				to_chat(user, "<span class='warning'>\The [H] is missing \his [initial(vision.name)]!</span>")
+				to_chat(user, SPAN_WARNING("\The [H] is missing \his [initial(vision.name)]!"))
 				return
 
-			user.visible_message("<span class='notice'>\The [user] directs [src] into [M]'s [vision.name].</span>", \
-								 "<span class='notice'>You direct [src] into [M]'s [vision.name].</span>")
+			user.visible_message(SPAN_NOTICE("\The [user] directs [src] into [M]'s [vision.name]."), \
+								 SPAN_NOTICE("You direct [src] into [M]'s [vision.name]."))
 
 			inspect_vision(vision, user)
 
@@ -88,25 +88,25 @@
 	if(vision.robotic < ORGAN_ROBOT )
 
 		if(vision.owner.stat == DEAD || H.blinded)	//mob is dead or fully blind
-			to_chat(user, "<span class='warning'>\The [H]'s pupils do not react to the light!</span>")
+			to_chat(user, SPAN_WARNING("\The [H]'s pupils do not react to the light!"))
 			return
 		if(XRAY in H.mutations)
-			to_chat(user, "<span class='notice'>\The [H]'s pupils give an eerie glow!</span>")
+			to_chat(user, SPAN_NOTICE("\The [H]'s pupils give an eerie glow!"))
 		if(vision.damage)
-			to_chat(user, "<span class='warning'>There's visible damage to [H]'s [vision.name]!</span>")
+			to_chat(user, SPAN_WARNING("There's visible damage to [H]'s [vision.name]!"))
 		else if(H.eye_blurry)
-			to_chat(user, "<span class='notice'>\The [H]'s pupils react slower than normally.</span>")
+			to_chat(user, SPAN_NOTICE("\The [H]'s pupils react slower than normally."))
 		if(H.getBrainLoss() > 15)
-			to_chat(user, "<span class='notice'>There's visible lag between left and right pupils' reactions.</span>")
+			to_chat(user, SPAN_NOTICE("There's visible lag between left and right pupils' reactions."))
 
 		var/list/pinpoint = list(/datum/reagent/tramadol/oxycodone=1,/datum/reagent/tramadol=5)
 		var/list/dilating = list(/datum/reagent/space_drugs=5,/datum/reagent/mindbreaker=1,/datum/reagent/adrenaline=1)
 		if(H.reagents.has_any_reagent(pinpoint) || H.ingested.has_any_reagent(pinpoint))
-			to_chat(user, "<span class='notice'>\The [H]'s pupils are already pinpoint and cannot narrow any more.</span>")
+			to_chat(user, SPAN_NOTICE("\The [H]'s pupils are already pinpoint and cannot narrow any more."))
 		else if(H.shock_stage >= 30 || H.reagents.has_any_reagent(dilating) || H.ingested.has_any_reagent(dilating))
-			to_chat(user, "<span class='notice'>\The [H]'s pupils narrow slightly, but are still very dilated.</span>")
+			to_chat(user, SPAN_NOTICE("\The [H]'s pupils narrow slightly, but are still very dilated."))
 		else
-			to_chat(user, "<span class='notice'>\The [H]'s pupils narrow.</span>")
+			to_chat(user, SPAN_NOTICE("\The [H]'s pupils narrow."))
 
 	//if someone wants to implement inspecting robot eyes here would be the place to do it.
 
@@ -218,7 +218,7 @@
 
 /obj/item/device/flashlight/flare/attack_self(mob/user)
 	if(turn_on(user))
-		user.visible_message("<span class='notice'>\The [user] activates \the [src].</span>", "<span class='notice'>You pull the cord on the flare, activating it!</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] activates \the [src]."), SPAN_NOTICE("You pull the cord on the flare, activating it!"))
 		playsound(src.loc, activation_sound, 75, 1)//IT HAS AN ACTIVATION SOUND BUT NO ..() GOOD JOB BAY REALLY DID A GOOD ONE HERE
 
 
@@ -227,7 +227,7 @@
 		return FALSE
 	if(!fuel)
 		if(user)
-			to_chat(user, "<span class='notice'>It's out of fuel.</span>")
+			to_chat(user, SPAN_NOTICE("It's out of fuel."))
 		return FALSE
 	on = TRUE
 	force = on_damage
@@ -294,15 +294,15 @@
 /obj/item/device/flashlight/glowstick/attack_self(mob/user)
 
 	if(!fuel)
-		to_chat(user,"<span class='notice'>\The [src] is spent.</span>")
+		to_chat(user,SPAN_NOTICE("\The [src] is spent."))
 		return
 	if(on)
-		to_chat(user,"<span class='notice'>\The [src] is already lit.</span>")
+		to_chat(user,SPAN_NOTICE("\The [src] is already lit."))
 		return
 
 	. = ..()
 	if(.)
-		user.visible_message("<span class='notice'>[user] cracks and shakes the glowstick.</span>", "<span class='notice'>You crack and shake the glowstick, turning it on!</span>")
+		user.visible_message(SPAN_NOTICE("[user] cracks and shakes the glowstick."), SPAN_NOTICE("You crack and shake the glowstick, turning it on!"))
 		START_PROCESSING(SSobj, src)
 
 /obj/item/device/flashlight/glowstick/red

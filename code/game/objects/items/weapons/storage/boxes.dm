@@ -54,7 +54,7 @@
 	if ( !found )	// User is too far away
 		return
 	// Now make the cardboard
-	to_chat(user, "<span class='notice'>You fold [src] flat.</span>")
+	to_chat(user, SPAN_NOTICE("You fold [src] flat."))
 	if(ispath(foldable, /obj/item/stack))
 		var/stack_amt = max(2**(w_class - 3), 1)
 		new src.foldable(get_turf(src), stack_amt)
@@ -358,7 +358,7 @@
 
 	attackby(obj/item/flame/match/W as obj, mob/user as mob)
 		if(istype(W) && !W.lit && !W.burnt)
-			user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
+			user.visible_message(SPAN_NOTICE("[user] strikes the match on the matchbox."))
 			if(prob(50))
 				playsound(src.loc, 'sound/items/matchstick_hit.ogg', 60, 1, -4)
 				return

@@ -32,7 +32,7 @@
 				if (owner.nutrition > 100)
 					owner.vomit()
 				else
-					to_chat(owner, "<span class='danger'>You gag as you want to throw up, but there's nothing in your stomach!</span>")
+					to_chat(owner, SPAN_DANGER("You gag as you want to throw up, but there's nothing in your stomach!"))
 					owner.Weaken(10)
 		if(inflamed > 600)
 			if(prob(1))

@@ -10,7 +10,7 @@
 		return
 
 	if(incapacitated(INCAPACITATION_DISABLED) || buckled || pinned.len)
-		to_chat(src, "<span class='warning'>You cannot tackle in your current state.</span>")
+		to_chat(src, SPAN_WARNING("You cannot tackle in your current state."))
 		return
 
 	var/list/choices = list()
@@ -30,7 +30,7 @@
 		return
 
 	if(incapacitated(INCAPACITATION_DISABLED) || buckled || pinned.len)
-		to_chat(src, "<span class='warning'>You cannot tackle in your current state.</span>")
+		to_chat(src, SPAN_WARNING("You cannot tackle in your current state."))
 		return
 
 	last_special = world.time + 50
@@ -38,9 +38,9 @@
 	playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 	T.Weaken(rand(1,3))
 	if(prob(75))
-		visible_message("<span class='danger'>\The [src] has tackled down [T]!</span>")
+		visible_message(SPAN_DANGER("\The [src] has tackled down [T]!"))
 	else
-		visible_message("<span class='danger'>\The [src] tried to tackle down [T]!</span>")
+		visible_message(SPAN_DANGER("\The [src] tried to tackle down [T]!"))
 		src.Weaken(rand(2,4)) //failure, you both get knocked down
 
 /mob/living/carbon/human/proc/leap()
@@ -52,7 +52,7 @@
 		return
 
 	if(incapacitated(INCAPACITATION_DISABLED) || buckled || pinned.len)
-		to_chat(src, "<span class='warning'>You cannot leap in your current state.</span>")
+		to_chat(src, SPAN_WARNING("You cannot leap in your current state."))
 		return
 
 	var/list/choices = list()
@@ -72,7 +72,7 @@
 		return
 
 	if(incapacitated(INCAPACITATION_DISABLED) || buckled || pinned.len || stance_damage >= 4)
-		to_chat(src, "<span class='warning'>You cannot leap in your current state.</span>")
+		to_chat(src, SPAN_WARNING("You cannot leap in your current state."))
 		return
 
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 50, 1)
@@ -80,7 +80,7 @@
 	last_special = world.time + (17.5 SECONDS)
 	status_flags |= LEAPING
 
-	src.visible_message("<span class='danger'>\The [src] leaps at [T]!</span>")
+	src.visible_message(SPAN_DANGER("\The [src] leaps at [T]!"))
 	src.throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src)
 
 	sleep(5)
@@ -88,13 +88,13 @@
 	if(status_flags & LEAPING) status_flags &= ~LEAPING
 
 	if(!src.Adjacent(T))
-		to_chat(src, "<span class='warning'>You miss!</span>")
+		to_chat(src, SPAN_WARNING("You miss!"))
 		return
 
 	T.Weaken(3)
 
 	if(src.make_grab(src, T))
-		src.visible_message("<span class='warning'><b>\The [src]</b> seizes [T]!</span>")
+		src.visible_message(SPAN_WARNING("<b>\The [src]</b> seizes [T]!"))
 
 /mob/living/carbon/human/proc/commune()
 	set category = "Abilities"
@@ -119,18 +119,18 @@
 	var/mob/M = targets[target]
 
 	if(isghost(M) || M.stat == DEAD)
-		to_chat(src, "<span class='warning'>Not even a [src.species.name] can speak to the dead.</span>")
+		to_chat(src, SPAN_WARNING("Not even a [src.species.name] can speak to the dead."))
 		return
 
 	log_say("[key_name(src)] communed to [key_name(M)]: [text]")
 
-	to_chat(M, "<span class='notice'>Like lead slabs crashing into the ocean, alien thoughts drop into your mind: <i>[text]</i></span>")
+	to_chat(M, SPAN_NOTICE("Like lead slabs crashing into the ocean, alien thoughts drop into your mind: <i>[text]</i>"))
 	if(istype(M,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = M
 		if(H.species.name == src.species.name)
 			return
 		if(prob(75))
-			to_chat(H, "<span class='warning'>Your nose begins to bleed...</span>")
+			to_chat(H, SPAN_WARNING("Your nose begins to bleed..."))
 			H.drip(1)
 
 /mob/living/carbon/human/proc/regurgitate()
@@ -143,7 +143,7 @@
 			if(M in stomach_contents)
 				stomach_contents.Remove(M)
 				M.forceMove(loc)
-		src.visible_message("<span class='danger'>[src] hurls out the contents of their stomach!</span>")
+		src.visible_message(SPAN_DANGER("[src] hurls out the contents of their stomach!"))
 	return
 
 /mob/living/carbon/human/proc/psychic_whisper(mob/M as mob in oview())
@@ -163,22 +163,22 @@
 		return FALSE
 
 	if(last_special > world.time)
-		to_chat(src, "<span class='warning'>It is too soon to make another nab attempt.</span>")
+		to_chat(src, SPAN_WARNING("It is too soon to make another nab attempt."))
 		return FALSE
 
 	if(incapacitated())
-		to_chat(src, "<span class='warning'>You cannot nab in your current state.</span>")
+		to_chat(src, SPAN_WARNING("You cannot nab in your current state."))
 		return FALSE
 
 	if(!is_cloaked() || pulling_punches)
-		to_chat(src, "<span class='warning'>You can only nab people when you are well hidden and ready to hunt.</span>")
+		to_chat(src, SPAN_WARNING("You can only nab people when you are well hidden and ready to hunt."))
 		return FALSE
 
 	if(target)
 		if(!istype(target) || issilicon(target))
 			return FALSE
 		if(!Adjacent(target))
-			to_chat(src, "<span class='warning'>\The [target] has to be adjacent to you.</span>")
+			to_chat(src, SPAN_WARNING("\The [target] has to be adjacent to you."))
 			return FALSE
 
 	return TRUE
@@ -205,14 +205,14 @@
 
 	if(l_hand) unEquip(l_hand)
 	if(r_hand) unEquip(r_hand)
-	to_chat(src, "<span class='warning'>You drop everything as you spring out to nab someone!.</span>")
+	to_chat(src, SPAN_WARNING("You drop everything as you spring out to nab someone!."))
 
 	playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 	remove_cloaking_source(species)
 
 	if(prob(90) && src.make_grab(src, T, GRAB_NAB_SPECIAL))
 		T.Weaken(rand(1,3))
-		visible_message("<span class='danger'>\The [src] suddenly lunges out and grabs \the [T]!</span>")
+		visible_message(SPAN_DANGER("\The [src] suddenly lunges out and grabs \the [T]!"))
 		LAssailant = src
 
 		src.do_attack_animation(T)
@@ -220,7 +220,7 @@
 		return 1
 
 	else
-		visible_message("<span class='danger'>\The [src] suddenly lunges out, almost grabbing \the [T]!</span>")
+		visible_message(SPAN_DANGER("\The [src] suddenly lunges out, almost grabbing \the [T]!"))
 
 /mob/living/carbon/human/proc/active_camo()
 	set category = "Abilities"
@@ -240,7 +240,7 @@
 
 	if(stat) return
 
-	to_chat(src, "<span class='notice'>You begin to adjust the fluids in your arms, dropping everything and getting ready to swap which set you're using.</span>")
+	to_chat(src, SPAN_NOTICE("You begin to adjust the fluids in your arms, dropping everything and getting ready to swap which set you're using."))
 	var/hidden = is_cloaked()
 	if(!hidden)
 		visible_message("[src] shifts \his arms.")
@@ -255,19 +255,19 @@
 
 		if(pulling_punches)
 			current_grab_type = all_grabobjects[GRAB_NORMAL]
-			to_chat(src, "<span class='notice'>You relax your hunting arms, lowering the pressure and folding them tight to your thorax.\
-			You reach out with your manipulation arms, ready to use complex items.</span>")
+			to_chat(src, SPAN_NOTICE("You relax your hunting arms, lowering the pressure and folding them tight to your thorax.\
+			You reach out with your manipulation arms, ready to use complex items."))
 			if(!hidden)
-				visible_message("<span class='notice'>[src] seems to relax as \he folds \his massive curved arms to \his thorax and reaches out \
-				with \his small handlike limbs.</span>")
+				visible_message(SPAN_NOTICE("[src] seems to relax as \he folds \his massive curved arms to \his thorax and reaches out \
+				with \his small handlike limbs."))
 		else
 			current_grab_type = all_grabobjects[GRAB_NAB]
-			to_chat(src, "<span class='notice'>You pull in your manipulation arms, dropping any items and unfolding your massive hunting arms in preparation of grabbing prey.</span>")
+			to_chat(src, SPAN_NOTICE("You pull in your manipulation arms, dropping any items and unfolding your massive hunting arms in preparation of grabbing prey."))
 			if(!hidden)
-				visible_message("<span class='warning'>[src] tenses as \he brings \his smaller arms in close to \his body. \His two massive spiked arms reach \
-				out. \He looks ready to attack.</span>")
+				visible_message(SPAN_WARNING("[src] tenses as \he brings \his smaller arms in close to \his body. \His two massive spiked arms reach \
+				out. \He looks ready to attack."))
 	else
-		to_chat(src, "<span class='notice'>You stop adjusting your arms and don't switch between them.</span>")
+		to_chat(src, SPAN_NOTICE("You stop adjusting your arms and don't switch between them."))
 
 /mob/living/carbon/human/proc/change_colour()
 	set category = "Abilities"
@@ -283,19 +283,19 @@
 	set desc = "Toggle between scary or not."
 
 	if(stat)
-		to_chat(src, "<span class='warning'>You can't do a threat display in your current state.</span>")
+		to_chat(src, SPAN_WARNING("You can't do a threat display in your current state."))
 		return
 
 	switch(skin_state)
 		if(SKIN_NORMAL)
 			if(pulling_punches)
-				to_chat(src, "<span class='warning'>You must be in your hunting stance to do a threat display.</span>")
+				to_chat(src, SPAN_WARNING("You must be in your hunting stance to do a threat display."))
 				return
 			var/message = alert("Would you like to show a scary message?",,"Cancel","Yes", "No")
 			switch(message)
 				if("Yes")
-					visible_message("<span class='warning'>[src]'s skin shifts to a deep red colour with dark chevrons running down in an almost hypnotic \
-						pattern. Standing tall, \he strikes, sharp spikes aimed at those threatening \him, claws whooshing through the air past them.</span>")
+					visible_message(SPAN_WARNING("[src]'s skin shifts to a deep red colour with dark chevrons running down in an almost hypnotic \
+						pattern. Standing tall, \he strikes, sharp spikes aimed at those threatening \him, claws whooshing through the air past them."))
 				if("Cancel")
 					return
 			playsound(src, 'sound/effects/angrybug.ogg', 60, 0)

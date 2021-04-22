@@ -24,13 +24,13 @@
 /obj/item/device/boombox/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/device/cassette))
 		if(casseta)
-			to_chat(user, "<span class='warning'>There is already cassette inside.</span>")
+			to_chat(user, SPAN_WARNING("There is already cassette inside."))
 			return
 		if(!user.unEquip(I))
 			return
 		I.forceMove(src)
 		casseta = I
-		visible_message("<span class='notice'>[user] insert cassette into [src].</span>")
+		visible_message(SPAN_NOTICE("[user] insert cassette into [src]."))
 		playsound(get_turf(src), 'sound/machines/bominside.ogg', 50, 1)
 		return
 	..()
@@ -56,12 +56,12 @@
 	if(usr.incapacitated())
 		return
 	if(!casseta)
-		to_chat(usr, "<span class='warning'>There is no cassette inside.</span>")
+		to_chat(usr, SPAN_WARNING("There is no cassette inside."))
 		return
 
 	if(playing)
 		StopPlaying()
-	visible_message("<span class='notice'>[usr] ejects cassette from [src].</span>")
+	visible_message(SPAN_NOTICE("[usr] ejects cassette from [src]."))
 	playsound(get_turf(src), 'sound/machines/bominside.ogg', 50, 1)
 	usr.put_in_hands(casseta)
 	casseta = null

@@ -96,8 +96,8 @@ var/global/datum/matchmaker/matchmaker = new()
 	return 1
 
 /datum/relation/proc/sever()
-	to_chat(holder.current,"<span class='warning'>Your connection with [other.holder] is no more.</span>")
-	to_chat(other.holder.current,"<span class='warning'>Your connection with [holder] is no more.</span>")
+	to_chat(holder.current,SPAN_WARNING("Your connection with [other.holder] is no more."))
+	to_chat(other.holder.current,SPAN_WARNING("Your connection with [holder] is no more."))
 	other.other = null
 	matchmaker.relations -= other
 	matchmaker.relations -= src
@@ -108,11 +108,11 @@ var/global/datum/matchmaker/matchmaker = new()
 //Finalizes and propagates info if both sides are done.
 /datum/relation/proc/finalize()
 	finalized = 1
-	to_chat(holder.current,"<span class='warning'>You have finalized a connection with [other.holder].</span>")
-	to_chat(other.holder.current,"<span class='warning'>[holder] has finalized a connection with you.</span>")
+	to_chat(holder.current,SPAN_WARNING("You have finalized a connection with [other.holder]."))
+	to_chat(other.holder.current,SPAN_WARNING("[holder] has finalized a connection with you."))
 	if(other && other.finalized)
-		to_chat(holder.current,"<span class='warning'>Your connection with [other.holder] is now confirmed!</span>")
-		to_chat(other.holder.current,"<span class='warning'>Your connection with [holder] is now confirmed!</span>")
+		to_chat(holder.current,SPAN_WARNING("Your connection with [other.holder] is now confirmed!"))
+		to_chat(other.holder.current,SPAN_WARNING("Your connection with [holder] is now confirmed!"))
 		var/list/candidates = filter_list(GLOB.player_list, /mob/living/carbon/human)
 		candidates -= holder.current
 		candidates -= other.holder.current

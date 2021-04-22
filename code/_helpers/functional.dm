@@ -27,22 +27,22 @@
 /proc/is_atom_predicate(var/value, var/feedback_receiver)
 	. = isatom(value)
 	if(!. && feedback_receiver)
-		to_chat(feedback_receiver, "<span class='warning'>Value must be an atom.</span>")
+		to_chat(feedback_receiver, SPAN_WARNING("Value must be an atom."))
 
 /proc/is_num_predicate(var/value, var/feedback_receiver)
 	. = isnum(value)
 	if(!. && feedback_receiver)
-		to_chat(feedback_receiver, "<span class='warning'>Value must be a numeral.</span>")
+		to_chat(feedback_receiver, SPAN_WARNING("Value must be a numeral."))
 
 /proc/is_text_predicate(var/value, var/feedback_receiver)
 	. = !value || istext(value)
 	if(!. && feedback_receiver)
-		to_chat(feedback_receiver, "<span class='warning'>Value must be a text.</span>")
+		to_chat(feedback_receiver, SPAN_WARNING("Value must be a text."))
 
 /proc/is_dir_predicate(var/value, var/feedback_receiver)
 	. = (value in GLOB.alldirs)
 	if(!. && feedback_receiver)
-		to_chat(feedback_receiver, "<span class='warning'>Value must be a direction.</span>")
+		to_chat(feedback_receiver, SPAN_WARNING("Value must be a direction."))
 
 /proc/can_locate(var/atom/container, var/container_thing)
 	return (locate(container_thing) in container)

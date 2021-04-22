@@ -9,19 +9,19 @@
 	if(flooring)
 		if(isCrowbar(C) && user.a_intent == I_GRAB)
 			if(broken || burnt)
-				to_chat(user, "<span class='notice'>You start to pry the [flooring.descriptor].</span>")
+				to_chat(user, SPAN_NOTICE("You start to pry the [flooring.descriptor]."))
 				if(do_after(user, 4 SECONDS))
-					to_chat(user, "<span class='notice'>You remove the broken [flooring.descriptor].</span>")
+					to_chat(user, SPAN_NOTICE("You remove the broken [flooring.descriptor]."))
 					ChangeTurf(/turf/simulated/floor/plating)
 			else if(flooring.flags & TURF_IS_FRAGILE)
-				to_chat(user, "<span class='notice'>You start to pry the [flooring.descriptor].</span>")
+				to_chat(user, SPAN_NOTICE("You start to pry the [flooring.descriptor]."))
 				if(do_after(user, 4 SECONDS))
-					to_chat(user, "<span class='danger'>You forcefully pry off the [flooring.descriptor], destroying them in the process.</span>")
+					to_chat(user, SPAN_DANGER("You forcefully pry off the [flooring.descriptor], destroying them in the process."))
 					ChangeTurf(/turf/simulated/floor/plating)
 			else if(flooring.flags & TURF_REMOVE_CROWBAR)
-				to_chat(user, "<span class='notice'>You start to pry the [flooring.descriptor].</span>")
+				to_chat(user, SPAN_NOTICE("You start to pry the [flooring.descriptor]."))
 				if(do_after(user, 4 SECONDS))
-					to_chat(user, "<span class='notice'>You lever off the [flooring.descriptor].</span>")
+					to_chat(user, SPAN_NOTICE("You lever off the [flooring.descriptor]."))
 					ChangeTurf(/turf/simulated/floor/plating)
 					new /obj/item/stack/tile/floor(src)
 			else
@@ -31,28 +31,28 @@
 		else if(isScrewdriver(C) && (flooring.flags & TURF_REMOVE_SCREWDRIVER))
 			if(broken || burnt)
 				return
-			to_chat(user, "<span class='notice'>You unscrew and remove the [flooring.descriptor].</span>")
+			to_chat(user, SPAN_NOTICE("You unscrew and remove the [flooring.descriptor]."))
 			ChangeTurf(/turf/simulated/floor/plating)
 			playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
 			return
 		else if(isWrench(C) && (flooring.flags & TURF_REMOVE_WRENCH))
-			to_chat(user, "<span class='notice'>You unwrench and remove the [flooring.descriptor].</span>")
+			to_chat(user, SPAN_NOTICE("You unwrench and remove the [flooring.descriptor]."))
 			ChangeTurf(/turf/simulated/floor/plating)
 			playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
 			return
 		else if(istype(C, /obj/item/shovel) && (flooring.flags & TURF_REMOVE_SHOVEL))
-			to_chat(user, "<span class='notice'>You shovel off the [flooring.descriptor].</span>")
+			to_chat(user, SPAN_NOTICE("You shovel off the [flooring.descriptor]."))
 			ChangeTurf(/turf/simulated/floor/plating)
 			playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
 			return
 		else if(isCoil(C))
-			to_chat(user, "<span class='warning'>You must remove the [flooring.descriptor] first.</span>")
+			to_chat(user, SPAN_WARNING("You must remove the [flooring.descriptor] first."))
 			return
 	else
 
 		if(istype(C, /obj/item/stack))
 			if(broken || burnt)
-				to_chat(user, "<span class='warning'>This section is too damaged to support anything. Use a welder to fix the damage.</span>")
+				to_chat(user, SPAN_WARNING("This section is too damaged to support anything. Use a welder to fix the damage."))
 				return
 			//first check, catwalk? Else let flooring do its thing
 			if(locate(/obj/structure/catwalk, src))
@@ -76,7 +76,7 @@
 				return
 			// Do we have enough?
 			if(use_flooring.build_cost && S.get_amount() < use_flooring.build_cost)
-				to_chat(user, "<span class='warning'>You require at least [use_flooring.build_cost] [S.name] to complete the [use_flooring.descriptor].</span>")
+				to_chat(user, SPAN_WARNING("You require at least [use_flooring.build_cost] [S.name] to complete the [use_flooring.descriptor]."))
 				return
 			// Stay still and focus...
 			if(use_flooring.build_time && !do_after(user, use_flooring.build_time, src))
@@ -91,17 +91,17 @@
 		else if(isCrowbar(C))
 			if(broken || burnt)
 				playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
-				visible_message("<span class='notice'>[user] has begun prying off the damaged plating.</span>")
+				visible_message(SPAN_NOTICE("[user] has begun prying off the damaged plating."))
 				var/turf/T = GetBelow(src)
 				if(T)
-					T.visible_message("<span class='warning'>The ceiling above looks as if it's being pried off.</span>")
+					T.visible_message(SPAN_WARNING("The ceiling above looks as if it's being pried off."))
 				if(do_after(user, 10 SECONDS))
-					visible_message("<span class='warning'>[user] has pried off the damaged plating.</span>")
+					visible_message(SPAN_WARNING("[user] has pried off the damaged plating."))
 					new /obj/item/stack/tile/floor(src)
 					src.ReplaceWithLattice()
 					playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
 					if(T)
-						T.visible_message("<span class='danger'>The ceiling above has been pried off!</span>")
+						T.visible_message(SPAN_DANGER("The ceiling above has been pried off!"))
 			else
 				return
 			return
@@ -110,26 +110,26 @@
 			if(welder.isOn() && (is_plating()))
 				if(broken || burnt)
 					if(welder.isOn())
-						to_chat(user, "<span class='notice'>You fix some dents on the broken plating.</span>")
+						to_chat(user, SPAN_NOTICE("You fix some dents on the broken plating."))
 						playsound(src, 'sound/items/Welder.ogg', 80, 1)
 						icon_state = "plating"
 						burnt = null
 						broken = null
 					else
-						to_chat(user, "<span class='warning'>You need more welding fuel to complete this task.</span>")
+						to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
 					return
 				else
 					if(welder.isOn())
 						playsound(src, 'sound/items/Welder.ogg', 80, 1)
-						visible_message("<span class='notice'>[user] has started melting the plating's reinforcements!</span>")
+						visible_message(SPAN_NOTICE("[user] has started melting the plating's reinforcements!"))
 						if(do_after(user, 5 SECONDS) && welder.isOn())
-							visible_message("<span class='warning'>[user] has melted the plating's reinforcements! It should be possible to pry it off.</span>")
+							visible_message(SPAN_WARNING("[user] has melted the plating's reinforcements! It should be possible to pry it off."))
 							playsound(src, 'sound/items/Welder.ogg', 80, 1)
 							burnt = 1
 							remove_decals()
 							update_icon()
 					else
-						to_chat(user, "<span class='warning'>You need more welding fuel to complete this task.</span>")
+						to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
 					return
 
 
@@ -147,7 +147,7 @@
 		playsound(src, 'sound/items/Welder.ogg', 80, 1)
 		visible_message("<span class='alium'>The acid has started melting \the [name]'s reinforcements!</span>")
 		if(T)
-			T.audible_message("<span class='warning'>A strange sizzling noise eminates from the ceiling.</span>")
+			T.audible_message(SPAN_WARNING("A strange sizzling noise eminates from the ceiling."))
 		burnt = 1
 		remove_decals()
 		update_icon()
@@ -158,15 +158,15 @@
 			playsound(src, 'sound/items/Welder.ogg', 80, 1)
 
 			if(T)
-				T.visible_message("<span class='warning'>A strange substance drips from the ceiling, dropping below with a sizzle.</span>")
+				T.visible_message(SPAN_WARNING("A strange substance drips from the ceiling, dropping below with a sizzle."))
 			acid_melted++
 		else
-			visible_message("<span class='danger'>The acid melts the plating away into nothing!</span>")
+			visible_message(SPAN_DANGER("The acid melts the plating away into nothing!"))
 			new /obj/item/stack/tile/floor(src)
 			src.ReplaceWithLattice()
 			playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
 			if(T)
-				T.visible_message("<span class='danger'>The ceiling above melts away!</span>")
+				T.visible_message(SPAN_DANGER("The ceiling above melts away!"))
 			. = TRUE
 			qdel(src)
 	else
@@ -174,9 +174,9 @@
 
 /turf/simulated/floor/can_build_cable(var/mob/user)
 	if(!is_plating() || flooring)
-		to_chat(user, "<span class='warning'>Removing the tiling first.</span>")
+		to_chat(user, SPAN_WARNING("Removing the tiling first."))
 		return 0
 	if(broken || burnt)
-		to_chat(user, "<span class='warning'>This section is too damaged to support anything. Use a welder to fix the damage.</span>")
+		to_chat(user, SPAN_WARNING("This section is too damaged to support anything. Use a welder to fix the damage."))
 		return 0
 	return 1

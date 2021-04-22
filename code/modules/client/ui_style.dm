@@ -21,7 +21,7 @@
 	set desc = "Configure your user interface"
 	
 	if(!ishuman(usr))
-		to_chat(usr, "<span class='warning'>You must be human to use this verb.</span>")
+		to_chat(usr, SPAN_WARNING("You must be human to use this verb."))
 		return
 	if(usr.using_alt_hud)
 		return

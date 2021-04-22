@@ -422,7 +422,7 @@
 							//We've determined the best container now we set it as our internals
 
 							if(best)
-								to_chat(C, "<span class='notice'>You are now running on internals from [tankcheck[best]] [from] your [nicename[best]].</span>")
+								to_chat(C, SPAN_NOTICE("You are now running on internals from [tankcheck[best]] [from] your [nicename[best]]."))
 								playsound(C, 'sound/effects/internals.ogg', 50, 0)
 								C.internal = tankcheck[best]
 

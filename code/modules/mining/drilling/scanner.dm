@@ -72,7 +72,7 @@
 	if(new_data)
 		survey_data += new_data
 		playsound(loc, 'sound/machines/ping.ogg', 40, 1)
-		to_chat(user,"<span class='notice'>New survey data stored - [new_data] GEP.</span>")
+		to_chat(user,SPAN_NOTICE("New survey data stored - [new_data] GEP."))
 
 /obj/item/mining_scanner/verb/get_data()
 	set category = "Object"
@@ -85,9 +85,9 @@
 	if(M.incapacitated())
 		return
 	if(!survey_data)
-		to_chat(M,"<span class='warning'>There is no survey data stored on [src].</span>")
+		to_chat(M,SPAN_WARNING("There is no survey data stored on [src]."))
 		return
-	visible_message("<span class='notice'>[src] records [survey_data] GEP worth of the data on the disk and spits it out.</span>")
+	visible_message(SPAN_NOTICE("[src] records [survey_data] GEP worth of the data on the disk and spits it out."))
 	var/obj/item/disk/survey/D = new(get_turf(src))
 	D.data = survey_data
 	survey_data = 0

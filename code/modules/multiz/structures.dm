@@ -76,10 +76,10 @@
 		else
 			target_ladder = target_up
 	if(!target_ladder)
-		to_chat(M, "<span class='notice'>There is nothing here!Try to climb in other direction</span>")
+		to_chat(M, SPAN_NOTICE("There is nothing here!Try to climb in other direction"))
 		return
 	if(!M.Move(get_turf(src)))
-		to_chat(M, "<span class='notice'>You fail to reach \the [src].</span>")
+		to_chat(M, SPAN_NOTICE("You fail to reach \the [src]."))
 		return
 
 	var/direction_climb = target_ladder == target_up ? "up" : "down"
@@ -88,11 +88,11 @@
 		G.adjust_position()
 
 
-	M.visible_message("<span class='notice'>\The [M] begins climbing [direction_climb] \the [src]!</span>",
+	M.visible_message(SPAN_NOTICE("\The [M] begins climbing [direction_climb] \the [src]!"),
 	"You begin climbing [direction_climb] \the [src]!",
 	"You hear the grunting and clanging of a metal ladder being used.")
 
-	target_ladder.audible_message("<span class='notice'>You hear something coming [direction_climb] \the [src]</span>")
+	target_ladder.audible_message(SPAN_NOTICE("You hear something coming [direction_climb] \the [src]"))
 
 	if(do_after(M, climb_time, src))
 		climbLadder(M, target_ladder)
@@ -114,7 +114,7 @@
 
 /obj/structure/ladder/proc/getTargetLadder(var/mob/M)
 	if((!target_up && !target_down) || (target_up && !istype(target_up.loc, /turf) || (target_down && !istype(target_down.loc,/turf))))
-		to_chat(M, "<span class='notice'>\The [src] is incomplete and can't be climbed.</span>")
+		to_chat(M, SPAN_NOTICE("\The [src] is incomplete and can't be climbed."))
 		return
 	if(target_down && target_up)
 		var/direction = alert(M,"Do you want to go up or down?", "Ladder", "Up", "Down", "Cancel")
@@ -135,21 +135,21 @@
 
 /mob/proc/may_climb_ladders(var/ladder)
 	if(!Adjacent(ladder))
-		to_chat(src, "<span class='warning'>You need to be next to \the [ladder] to start climbing.</span>")
+		to_chat(src, SPAN_WARNING("You need to be next to \the [ladder] to start climbing."))
 		return FALSE
 	if(incapacitated())
-		to_chat(src, "<span class='warning'>You are physically unable to climb \the [ladder].</span>")
+		to_chat(src, SPAN_WARNING("You are physically unable to climb \the [ladder]."))
 		return FALSE
 
 	var/carry_count = 0
 	for(var/obj/item/grab/G in src)
 		if(!G.ladder_carry())
-			to_chat(src, "<span class='warning'>You can't carry [G.affecting] up \the [ladder].</span>")
+			to_chat(src, SPAN_WARNING("You can't carry [G.affecting] up \the [ladder]."))
 			return FALSE
 		else
 			carry_count++
 	if(carry_count > 1)
-		to_chat(src, "<span class='warning'>You can't carry more than one person up \the [ladder].</span>")
+		to_chat(src, SPAN_WARNING("You can't carry more than one person up \the [ladder]."))
 		return FALSE
 
 	return TRUE
@@ -161,7 +161,7 @@
 	var/turf/T = get_turf(target_ladder)
 	for(var/atom/A in T)
 		if(!A.CanPass(M, M.loc, 1.5, 0))
-			to_chat(M, "<span class='notice'>\The [A] is blocking \the [src].</span>")
+			to_chat(M, SPAN_NOTICE("\The [A] is blocking \the [src]."))
 			return FALSE
 	playsound(src, pick(climbsounds), 50)
 	playsound(target_ladder, pick(climbsounds), 50)
@@ -215,7 +215,7 @@
 				if(L.pulling)
 					L.pulling.forceMove(source)
 		else
-			to_chat(A, "<span class='warning'>Something blocks the path.</span>")
+			to_chat(A, SPAN_WARNING("Something blocks the path."))
 		return 0
 	return 1
 

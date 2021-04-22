@@ -58,14 +58,14 @@
 		if(volume > overdose_threshold)
 			overdose(M, alien)
 	if(prob(reagent_addiction_strength) && !is_type_in_list(src, M.reagents.addiction_list))
-		to_chat(M, "<span class='danger'>You like that feeling. You may want more of that later...</span>")
+		to_chat(M, SPAN_DANGER("You like that feeling. You may want more of that later..."))
 		var/datum/reagent/new_reagent = new type()
 		new_reagent.last_addiction_dose = world.timeofday
 		M.reagents.addiction_list.Add(new_reagent)
 	else if(is_type_in_list(src, M.reagents.addiction_list))
 		var/message = pick("You feel better, but for how long?", "Ah.....")
 		if(prob(1))
-			to_chat(M, "<span class='notice'>[message]</span>")
+			to_chat(M, SPAN_NOTICE("[message]"))
 		for(var/A in M.reagents.addiction_list)
 			var/datum/reagent/AD = A
 			if(AD && istype(AD, src))
@@ -152,7 +152,7 @@
 		switch(R.name)
 			if("Nicotine")
 				var/message = pick("My mouth is a bit dry...", "A cigarette sure would go down well right now")
-				to_chat(M, "<span class='notice'>[message]</span>")
+				to_chat(M, SPAN_NOTICE("[message]"))
 	return
 
 /datum/reagent/proc/addiction_act_stage2(var/mob/living/carbon/M, var/datum/reagent/R)
@@ -160,7 +160,7 @@
 	clear_events(R.name, M)
 	if(prob(10))
 		var/message = pick("I could use some [name] right now!","I am feeling a bit stressed, sure could use some [name]!","I could use some [name] right now!")
-		to_chat(M, "<span class='notice'>[message]</span>")
+		to_chat(M, SPAN_NOTICE("[message]"))
 	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_small)
 	return
 /datum/reagent/proc/addiction_act_stage3(var/mob/living/carbon/M, var/datum/reagent/R)
@@ -168,7 +168,7 @@
 	clear_events(R.name, M)
 	if(prob(10))
 		var/message = pick("I really could use some [name] right now!","I am feeling a bit stressed, sure could use some [name]!","I should use some [name]")
-		to_chat(M, "<span class='notice'>[message]</span>")
+		to_chat(M, SPAN_NOTICE("[message]"))
 	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_medium)
 	return
 
@@ -177,7 +177,7 @@
 	clear_events(R.name, M)
 	if(prob(10))
 		var/message = pick("I really should use some [name] right now!","I am stressed, I need to use some [name]!","I should use some [name]")
-		to_chat(M, "<span class='notice'>[message]</span>")
+		to_chat(M, SPAN_NOTICE("[message]"))
 	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_large)
 	return
 /datum/reagent/proc/addiction_act_stage5(var/mob/living/carbon/M, var/datum/reagent/R)
@@ -185,7 +185,7 @@
 	clear_events(R.name, M)
 	if(prob(10))
 		var/message = pick("I need to use some [name] right now!","I am stressed, I need to use some [name] RIGHT NOW!","I REALLY NEED SOME [name]")
-		to_chat(M, "<span class='notice'>[message]</span>")
+		to_chat(M, SPAN_NOTICE("[message]"))
 	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_extreme)
 	return
 

@@ -33,11 +33,11 @@
 
 /datum/grab/normal/aggressive/can_upgrade(var/obj/item/grab/G)
 	if(!(G.target_zone in list(BP_CHEST, BP_HEAD)))
-		to_chat(G.assailant, "<span class='warning'>You need to be grabbing their torso or head for this!</span>")
+		to_chat(G.assailant, SPAN_WARNING("You need to be grabbing their torso or head for this!"))
 		return FALSE
 	var/obj/item/clothing/C = G.affecting.head
 	if(istype(C)) //hardsuit helmets etc
 		if((C.item_flags & ITEM_FLAG_STOPPRESSUREDAMAGE) && C.armor["melee"] > 20)
-			to_chat(G.assailant, "<span class='warning'>\The [C] is in the way!</span>")
+			to_chat(G.assailant, SPAN_WARNING("\The [C] is in the way!"))
 			return FALSE
 	return TRUE

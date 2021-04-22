@@ -629,7 +629,7 @@
 /obj/item/bandage_pack/attack_self(mob/user)
 	. = ..()
 	if(used)
-		to_chat(user, "<span class='warning'>This one is used up already.</span>")
+		to_chat(user, SPAN_WARNING("This one is used up already."))
 		return
 
 	var/obj/item/stack/medical/bruise_pack/BP = new(get_turf(src))
@@ -669,8 +669,8 @@
 		if(affected.status & ORGAN_ARTERY_CUT)//Fix arteries.
 			user.visible_message("<span class='notice'>[user] to apply the tourniquet to their [affected.name].")
 			if(do_mob(user, H, (backwards_skill_scale(user.SKILL_LEVEL(medical)) * 5)))
-				user.visible_message("<span class='notice'>[user] has patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name].</span>", \
-				"<span class='notice'>You have patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name].</span>")
+				user.visible_message(SPAN_NOTICE("[user] has patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name]."), \
+				SPAN_NOTICE("You have patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name]."))
 				affected.status &= ~ORGAN_ARTERY_CUT
 				playsound(src, 'sound/items/tourniquet.ogg', 70, FALSE)
 				qdel(src)

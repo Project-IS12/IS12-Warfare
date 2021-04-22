@@ -92,7 +92,7 @@
 	if(!chambered && !loaded.len)//If there's an empty icon then use it.
 		pumpsound = null
 		if(M)
-			to_chat(M, "<span class='warning'>It's empty.</span>")
+			to_chat(M, SPAN_WARNING("It's empty."))
 		return
 
 	if(chambered && loaded.len)
@@ -201,11 +201,11 @@
 //this is largely hacky and bad :(	-Pete
 /obj/item/gun/projectile/shotgun/doublebarrel/attackby(var/obj/item/A as obj, mob/user as mob)
 	if(w_class > 3 && (istype(A, /obj/item/circular_saw) || istype(A, /obj/item/melee/energy) || istype(A, /obj/item/gun/energy/plasmacutter)))
-		to_chat(user, "<span class='notice'>You begin to shorten the barrel of \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You begin to shorten the barrel of \the [src]."))
 		if(loaded.len)
 			for(var/i in 1 to max_shells)
 				Fire(user, user)	//will this work? //it will. we call it twice, for twice the FUN
-			user.visible_message("<span class='danger'>The shotgun goes off!</span>", "<span class='danger'>The shotgun goes off in your face!</span>")
+			user.visible_message(SPAN_DANGER("The shotgun goes off!"), SPAN_DANGER("The shotgun goes off in your face!"))
 			return
 		if(do_after(user, 30, src))	//SHIT IS STEALTHY EYYYYY
 			icon_state = "sawnshotgun"
@@ -218,7 +218,7 @@
 			slot_flags |= (SLOT_BELT|SLOT_HOLSTER) //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally) - or in a holster, why not.
 			SetName("sawn-off shotgun")
 			desc = "Omar's coming!"
-			to_chat(user, "<span class='warning'>You shorten the barrel of \the [src]!</span>")
+			to_chat(user, SPAN_WARNING("You shorten the barrel of \the [src]!"))
 	else
 		if(!broke_open)
 			return

@@ -69,7 +69,7 @@
 	if(in_range(user, src) || isghost(user))
 		show_content(usr)
 	else
-		to_chat(user, "<span class='notice'>You have to go closer if you want to read it.</span>")
+		to_chat(user, SPAN_NOTICE("You have to go closer if you want to read it."))
 
 /obj/item/paper/proc/show_content(mob/user, forceshow)
 	var/can_read = (istype(user, /mob/living/carbon/human) || isghost(user) || istype(user, /mob/living/silicon)) || forceshow
@@ -85,7 +85,7 @@
 	set src in usr
 
 	if((CLUMSY in usr.mutations) && prob(50))
-		to_chat(usr, "<span class='warning'>You cut yourself on the paper.</span>")
+		to_chat(usr, SPAN_WARNING("You cut yourself on the paper."))
 		return
 	var/n_name = sanitizeSafe(input(usr, "What would you like to label the paper?", "Paper Labelling", null)  as text, MAX_NAME_LEN)
 
@@ -97,7 +97,7 @@
 /obj/item/paper/attack_self(mob/living/user as mob)
 	if(user.a_intent == I_HURT)
 		if(icon_state == "scrap")
-			user.show_message("<span class='warning'>\The [src] is already crumpled.</span>")
+			user.show_message(SPAN_WARNING("\The [src] is already crumpled."))
 			return
 		//crumple dat paper
 		info = stars(info,85)
@@ -117,23 +117,23 @@
 
 /obj/item/paper/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(user.zone_sel.selecting == BP_EYES)
-		user.visible_message("<span class='notice'>You show the paper to [M]. </span>", \
-			"<span class='notice'> [user] holds up a paper and shows it to [M]. </span>")
+		user.visible_message(SPAN_NOTICE("You show the paper to [M]. "), \
+			SPAN_NOTICE(" [user] holds up a paper and shows it to [M]. "))
 		M.examinate(src)
 
 	else if(user.zone_sel.selecting == BP_MOUTH) // lipstick wiping
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(H == user)
-				to_chat(user, "<span class='notice'>You wipe off the lipstick with [src].</span>")
+				to_chat(user, SPAN_NOTICE("You wipe off the lipstick with [src]."))
 				H.lip_style = null
 				H.update_body()
 			else
-				user.visible_message("<span class='warning'>[user] begins to wipe [H]'s lipstick off with \the [src].</span>", \
-								 	 "<span class='notice'>You begin to wipe off [H]'s lipstick.</span>")
+				user.visible_message(SPAN_WARNING("[user] begins to wipe [H]'s lipstick off with \the [src]."), \
+								 	 SPAN_NOTICE("You begin to wipe off [H]'s lipstick."))
 				if(do_after(user, 10, H) && do_after(H, 10, needhand = 0))	//user needs to keep their active hand, H does not.
-					user.visible_message("<span class='notice'>[user] wipes [H]'s lipstick off with \the [src].</span>", \
-										 "<span class='notice'>You wipe off [H]'s lipstick.</span>")
+					user.visible_message(SPAN_NOTICE("[user] wipes [H]'s lipstick off with \the [src]."), \
+										 SPAN_NOTICE("You wipe off [H]'s lipstick."))
 					H.lip_style = null
 					H.update_body()
 
@@ -257,7 +257,7 @@
 				qdel(src)
 
 			else
-				to_chat(user, "<span class='warning'>You must hold \the [P] steady to burn \the [src].</span>")
+				to_chat(user, SPAN_WARNING("You must hold \the [P] steady to burn \the [src]."))
 
 
 /obj/item/paper/Topic(href, href_list)
@@ -295,7 +295,7 @@
 
 
 		if(fields > MAX_FIELDS)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
-			to_chat(usr, "<span class='warning'>Too many fields. Sorry, you can't do this.</span>")
+			to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
 			fields = last_fields_value
 			return
 
@@ -327,7 +327,7 @@
 		if (istype(P, /obj/item/paper/carbon))
 			var/obj/item/paper/carbon/C = P
 			if (!C.iscopy && !C.copied)
-				to_chat(user, "<span class='notice'>Take off the carbon copy first.</span>")
+				to_chat(user, SPAN_NOTICE("Take off the carbon copy first."))
 				add_fingerprint(user)
 				return
 		var/obj/item/paper_bundle/B = new(src.loc)
@@ -350,7 +350,7 @@
 
 	else if(istype(P, /obj/item/pen))
 		if(icon_state == "scrap")
-			to_chat(usr, "<span class='warning'>\The [src] is too crumpled to write on.</span>")
+			to_chat(usr, SPAN_WARNING("\The [src] is too crumpled to write on."))
 			return
 
 		var/obj/item/pen/robopen/RP = P
@@ -382,7 +382,7 @@
 
 		if(istype(P, /obj/item/stamp/clown))
 			if(!clown)
-				to_chat(user, "<span class='notice'>You are totally unable to use the stamp. HONK!</span>")
+				to_chat(user, SPAN_NOTICE("You are totally unable to use the stamp. HONK!"))
 				return
 
 		if(!ico)
@@ -395,7 +395,7 @@
 		stamped += P.type
 		overlays += stampoverlay
 
-		to_chat(user, "<span class='notice'>You stamp the paper with your [P.name].</span>")
+		to_chat(user, SPAN_NOTICE("You stamp the paper with your [P.name]."))
 
 	else if(istype(P, /obj/item/flame))
 		burnpaper(P, user)

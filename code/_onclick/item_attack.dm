@@ -50,7 +50,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if(user == src && src.a_intent == I_DISARM && src.zone_sel.selecting == "mouth")
 		var/obj/item/blocked = src.check_mouth_coverage()
 		if(blocked)
-			to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
+			to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 			return 1
 		else if(devour(I))
 			return 1
@@ -69,11 +69,11 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if(!force || (item_flags & ITEM_FLAG_NO_BLUDGEON))
 		return 0
 	if(ticker.current_state == GAME_STATE_FINISHED)
-		to_chat(user, "<span class='warning'>The battle is over! There is no need to fight!</span>")
+		to_chat(user, SPAN_WARNING("The battle is over! There is no need to fight!"))
 		return 0
 
 	if(aspect_chosen(/datum/aspect/trenchmas))
-		to_chat(user, "<span class='warning'>It's trenchmas! There is no reason to fight!</span>")
+		to_chat(user, SPAN_WARNING("It's trenchmas! There is no reason to fight!"))
 		return 0
 
 	if(M == user && user.a_intent != I_HURT)
@@ -84,7 +84,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 	if(world.time <= next_attack_time)
 		if(world.time % 3) //to prevent spam
-			to_chat(user, "<span class='warning'>The [src] is not ready to attack again!</span>")
+			to_chat(user, SPAN_WARNING("The [src] is not ready to attack again!"))
 		return 0
 
 	if(!user.combat_mode)
@@ -176,7 +176,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 			if(offhand_hit_zone)
 				I.apply_hit_effect(M, user, offhand_hit_zone, special)
 		else
-			visible_message("<span class='warning'>[user] has nothing in their offhand to attack with!</span>")
+			visible_message(SPAN_WARNING("[user] has nothing in their offhand to attack with!"))
 
 	else
 		var/hit_zone = M.resolve_item_attack(src, user, target_zone, special)

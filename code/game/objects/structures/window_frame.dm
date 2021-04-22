@@ -24,10 +24,10 @@
 	. = ..(user)
 
 	if(health == maxhealth)
-		to_chat(user, "<span class='notice'>It looks intact.</span>")
+		to_chat(user, SPAN_NOTICE("It looks intact."))
 	else
 		if(health <= HALF_HEALTH)
-			to_chat(user, "<span class='notice'>It has a lots of cracks.</span>")
+			to_chat(user, SPAN_NOTICE("It has a lots of cracks."))
 
 /obj/structure/window_frame/proc/take_damage(var/damage = 0,  var/sound_effect = 1)
 	if(!glass)
@@ -85,7 +85,7 @@
 
 /obj/structure/window_frame/hitby(AM as mob|obj)
 	..()
-	visible_message("<span class='danger'>[src] was hit by [AM].</span>")
+	visible_message(SPAN_DANGER("[src] was hit by [AM]."))
 	var/tforce = 0
 	if(ismob(AM)) // All mobs have a multiplier and a size according to mob_defines.dm
 		var/mob/I = AM
@@ -96,14 +96,14 @@
 	take_damage(tforce)
 
 /obj/structure/window_frame/attack_tk(mob/user as mob)
-	user.visible_message("<span class='notice'>Something knocks on [src].</span>")
+	user.visible_message(SPAN_NOTICE("Something knocks on [src]."))
 	playsound(loc, 'sound/effects/Glasshit.ogg', 50, 1)
 
 /obj/structure/window_frame/attack_hand(mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!glass)
 		if(shattered)
-			to_chat(usr,"<span class='notice'>You clear broken glass from the frame.</span>")
+			to_chat(usr,SPAN_NOTICE("You clear broken glass from the frame."))
 			var/obj/item/material/shard/S = new
 			usr.put_in_hands(S)
 			shattered = 0
@@ -117,8 +117,8 @@
 				attack_generic(H,25)
 				return
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 80, 1)
-		usr.visible_message("<span class='danger'>\The [usr] bangs against \the [src]!</span>",
-							"<span class='danger'>You bang against \the [src]!</span>",
+		usr.visible_message(SPAN_DANGER("\The [usr] bangs against \the [src]!"),
+							SPAN_DANGER("You bang against \the [src]!"),
 							"You hear a banging sound.")
 	else
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 80, 1)
@@ -133,10 +133,10 @@
 	if(!damage)
 		return
 	if(damage >= 10)
-		visible_message("<span class='danger'>[user] smashes into [src]!</span>")
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
 		take_damage(damage)
 	else
-		visible_message("<span class='notice'>\The [user] bonks \the [src] harmlessly.</span>")
+		visible_message(SPAN_NOTICE("\The [user] bonks \the [src] harmlessly."))
 	return 1
 
 /obj/structure/window_frame/attackby(var/obj/item/W, var/mob/user)
@@ -154,13 +154,13 @@
 				return
 		else
 			if(shattered)
-				to_chat(usr,"<span class='notice'>I need to remove shards first.</span>")
+				to_chat(usr,SPAN_NOTICE("I need to remove shards first."))
 			if(glass)
-				to_chat(usr,"<span class='notice'>There is glass already.</span>")
+				to_chat(usr,SPAN_NOTICE("There is glass already."))
 			return
 
 	if(istype(W, /obj/item/stack/material/glass))
-		to_chat(usr,"<span class='notice'>It doesn't fit the frame.</span>")
+		to_chat(usr,SPAN_NOTICE("It doesn't fit the frame."))
 
 	if(W.item_flags & ITEM_FLAG_NO_BLUDGEON)
 		return

@@ -447,11 +447,11 @@ var/list/admin_verbs_mentor = list(
 	if(holder && mob)
 		if(mob.invisibility == INVISIBILITY_OBSERVER)
 			mob.set_invisibility(initial(mob.invisibility))
-			to_chat(mob, "<span class='danger'>Invisimin off. Invisibility reset.</span>")
+			to_chat(mob, SPAN_DANGER("Invisimin off. Invisibility reset."))
 			mob.alpha = max(mob.alpha + 100, 255)
 		else
 			mob.set_invisibility(INVISIBILITY_OBSERVER)
-			to_chat(mob, "<span class='notice'>Invisimin on. You are now as invisible as a ghost.</span>")
+			to_chat(mob, SPAN_NOTICE("Invisimin on. You are now as invisible as a ghost."))
 			mob.alpha = max(mob.alpha - 100, 0)
 
 
@@ -799,7 +799,7 @@ var/list/admin_verbs_mentor = list(
 	var/mob/living/carbon/human/M = input("Select mob.", "Edit Appearance") as null|anything in GLOB.human_mob_list
 
 	if(!istype(M, /mob/living/carbon/human))
-		to_chat(usr, "<span class='warning'>You can only do this to humans!</span>")
+		to_chat(usr, SPAN_WARNING("You can only do this to humans!"))
 		return
 	switch(alert("Are you sure you wish to edit this mob's appearance? Skrell, Unathi, Vox and Tajaran can result in unintended consequences.",,"Yes","No"))
 		if("No")
@@ -915,8 +915,8 @@ var/list/admin_verbs_mentor = list(
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
-	to_chat(T, "<span class='notice'><b><font size=3>Man up and deal with it.</font></b></span>")
-	to_chat(T, "<span class='notice'>Move on.</span>")
+	to_chat(T, SPAN_NOTICE("<b><font size=3>Man up and deal with it.</font></b>"))
+	to_chat(T, SPAN_NOTICE("Move on."))
 
 	log_and_message_admins("told [key_name(T)] to man up and deal with it.")
 

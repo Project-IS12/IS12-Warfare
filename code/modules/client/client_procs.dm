@@ -62,7 +62,7 @@
 
 	if(href_list["irc_msg"])
 		if(!holder && received_irc_pm < world.time - 6000) //Worse they can do is spam IRC for 10 minutes
-			to_chat(usr, "<span class='warning'>You are no longer able to use this, it's been more then 10 minutes since an admin on IRC has responded to you</span>")
+			to_chat(usr, SPAN_WARNING("You are no longer able to use this, it's been more then 10 minutes since an admin on IRC has responded to you"))
 			return
 		if(mute_irc)
 			to_chat(usr, "<span class='warning'You cannot use this as your client has been muted from sending messages to the admins on IRC</span>")
@@ -142,8 +142,8 @@
 	else src.preload_rsc = 1 // If config.resource_urls is not set, preload like normal.
 
 	if(byond_version < DM_VERSION)
-		to_chat(src, "<span class='warning'>You are running an older version of BYOND than the server and may experience issues.</span>")
-		to_chat(src, "<span class='warning'>It is recommended that you update to at least [DM_VERSION] at http://www.byond.com/download/.</span>")
+		to_chat(src, SPAN_WARNING("You are running an older version of BYOND than the server and may experience issues."))
+		to_chat(src, SPAN_WARNING("It is recommended that you update to at least [DM_VERSION] at http://www.byond.com/download/."))
 	GLOB.clients += src
 	GLOB.ckey_directory[ckey] = src
 

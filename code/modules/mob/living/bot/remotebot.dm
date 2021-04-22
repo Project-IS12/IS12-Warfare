@@ -21,12 +21,12 @@
 /mob/living/bot/remotebot/examine(mob/user)
 	. = ..(user)
 	if(holding)
-		to_chat(user, "<span class='notice'>It is holding \the \icon[holding] [holding].</span>")
+		to_chat(user, SPAN_NOTICE("It is holding \the \icon[holding] [holding]."))
 
 /mob/living/bot/remotebot/explode()
 	on = 0
 	new /obj/effect/decal/cleanable/blood/oil(get_turf(src.loc))
-	visible_message("<span class='danger'>[src] blows apart!</span>")
+	visible_message(SPAN_DANGER("[src] blows apart!"))
 	if(controller)
 		controller.bot = null
 		controller = null
@@ -43,7 +43,7 @@
 /mob/living/bot/remotebot/attackby(var/obj/item/I, var/mob/living/user)
 	if(istype(I, /obj/item/device/bot_controller) && !controller)
 		user.visible_message("\The [user] waves \the [I] over \the [src].")
-		to_chat(user, "<span class='notice'>You link \the [src] to \the [I].</span>")
+		to_chat(user, SPAN_NOTICE("You link \the [src] to \the [I]."))
 		var/obj/item/device/bot_controller/B = I
 		B.bot = src
 		controller = B

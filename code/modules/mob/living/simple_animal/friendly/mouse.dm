@@ -84,7 +84,7 @@
 	if( ishuman(AM) )
 		if(!stat)
 			var/mob/M = AM
-			to_chat(M, "<span class='warning'>\icon[src] Squeek!</span>")
+			to_chat(M, SPAN_WARNING("\icon[src] Squeek!"))
 			sound_to(M, 'sound/effects/mousesqueek.ogg')
 	..()
 

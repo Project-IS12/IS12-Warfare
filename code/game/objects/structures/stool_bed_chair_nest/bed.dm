@@ -131,7 +131,7 @@
 	else if(istype(W, /obj/item/grab))
 		var/obj/item/grab/G = W
 		var/mob/living/affecting = G.affecting
-		user.visible_message("<span class='notice'>[user] attempts to buckle [affecting] into \the [src]!</span>")
+		user.visible_message(SPAN_NOTICE("[user] attempts to buckle [affecting] into \the [src]!"))
 		if(do_after(user, 20, src))
 			if(user_buckle_mob(affecting, user))
 				qdel(W)
@@ -224,7 +224,7 @@
 	if(istype(W,/obj/item/roller_holder))
 		var/obj/item/roller_holder/RH = W
 		if(!RH.held)
-			to_chat(user, "<span class='notice'>You collect the roller bed.</span>")
+			to_chat(user, SPAN_NOTICE("You collect the roller bed."))
 			src.forceMove(RH)
 			RH.held = src
 			return
@@ -245,10 +245,10 @@
 /obj/item/roller_holder/attack_self(mob/user as mob)
 
 	if(!held)
-		to_chat(user, "<span class='notice'>The rack is empty.</span>")
+		to_chat(user, SPAN_NOTICE("The rack is empty."))
 		return
 
-	to_chat(user, "<span class='notice'>You deploy the roller bed.</span>")
+	to_chat(user, SPAN_NOTICE("You deploy the roller bed."))
 	var/obj/structure/bed/roller/R = new /obj/structure/bed/roller(user.loc)
 	R.add_fingerprint(user)
 	qdel(held)

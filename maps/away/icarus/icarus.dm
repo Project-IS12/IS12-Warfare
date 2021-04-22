@@ -68,14 +68,14 @@ obj/structure/icarus/broken_cryo
 obj/structure/icarus/broken_cryo/attack_hand(mob/user)
 	..()
 	if (closed)
-		to_chat(user, "<span class='notice'>You tug at the glass but can't open it with your hands alone.</span>")
+		to_chat(user, SPAN_NOTICE("You tug at the glass but can't open it with your hands alone."))
 	else
-		to_chat(user, "<span class='notice'>The glass is already open.</span>")
+		to_chat(user, SPAN_NOTICE("The glass is already open."))
 
 
 /obj/structure/icarus/broken_cryo/attackby(obj/item/W as obj, mob/user as mob)
 	if (busy)
-		to_chat(user, "<span class='notice'>Someone else is attempting to open this.</span>")
+		to_chat(user, SPAN_NOTICE("Someone else is attempting to open this."))
 		return
 	if (closed)
 		if (isCrowbar(W))
@@ -91,7 +91,7 @@ obj/structure/icarus/broken_cryo/attack_hand(mob/user)
 			var/obj/dead = new /obj/item/icarus/dead_personnel(loc)
 			dead.dir = src.dir//skeleton is oriented as cryo
 	else
-		to_chat(user, "<span class='notice'>The glass cover is already open.</span>")
+		to_chat(user, SPAN_NOTICE("The glass cover is already open."))
 
 /obj/item/icarus/dead_personnel
 	name = "partial skeleton remains"

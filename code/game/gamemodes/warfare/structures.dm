@@ -50,7 +50,7 @@
 	playsound(src, "hitwall", 50, TRUE)
 	health -= rand(10, 25)
 	if(health <= 0)
-		visible_message("<span class='danger'>The [src] crumbles!</span>")
+		visible_message(SPAN_DANGER("The [src] crumbles!"))
 		qdel(src)
 
 /obj/structure/dirt_wall/ex_act(severity)
@@ -93,7 +93,7 @@
 	if(!can_climb(user))
 		return
 
-	usr.visible_message("<span class='warning'>[user] starts climbing onto \the [src]!</span>")
+	usr.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
 	climbers |= user
 
 	if(!do_after(user,(issmall(user) ? 20 : 34)))
@@ -105,7 +105,7 @@
 		return
 
 	if(!neighbor_turf_passable())
-		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
+		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
 		climbers -= user
 		return
 
@@ -114,7 +114,7 @@
 	else
 		usr.forceMove(get_turf(src))
 
-	usr.visible_message("<span class='warning'>[user] climbed over \the [src]!</span>")
+	usr.visible_message(SPAN_WARNING("[user] climbed over \the [src]!"))
 	climbers -= user
 
 /obj/structure/dirt_wall/can_climb(var/mob/living/user, post_climb_check=0)
@@ -122,7 +122,7 @@
 		return FALSE
 
 	if (!user.Adjacent(src))
-		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
+		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
 		return FALSE
 
 	return TRUE
@@ -193,7 +193,7 @@
 	if(!can_climb(user))
 		return
 
-	user.visible_message("<span class='warning'>[user] starts climbing onto \the [src]!</span>")
+	user.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
 	climbers |= user
 
 	if(!do_after(user,(issmall(user) ? 20 : 30)))
@@ -205,7 +205,7 @@
 		return
 
 	if(!neighbor_turf_passable())
-		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
+		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
 		climbers -= user
 		return
 
@@ -214,7 +214,7 @@
 	else
 		user.forceMove(get_turf(src))
 
-	user.visible_message("<span class='warning'>[user] climbed over \the [src]!</span>")
+	user.visible_message(SPAN_WARNING("[user] climbed over \the [src]!"))
 	climbers -= user
 
 /obj/structure/warfare/barricade/can_climb(var/mob/living/user, post_climb_check=0)
@@ -222,7 +222,7 @@
 		return FALSE
 
 	if (!user.Adjacent(src))
-		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
+		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
 		return FALSE
 
 	return TRUE
@@ -332,7 +332,7 @@
 		var/mob/M = AM
 		if (ishuman(M))
 			if(prob(50))
-				M.visible_message("<span class='danger'>[M] struggle to free themselves from the barbed wire!</span>")
+				M.visible_message(SPAN_DANGER("[M] struggle to free themselves from the barbed wire!"))
 				var/mob/living/carbon/human/H = M
 				playsound(loc, "stab_sound", 50, TRUE)
 				var/obj/item/organ/external/affecting = H.get_organ(pick("l_foot", "r_foot", "l_leg", "r_leg"))
@@ -343,7 +343,7 @@
 				H.updatehealth()
 				return FALSE
 			else
-				M.visible_message("<span class='danger'>[M] frees themself from the barbed wire!</span>")
+				M.visible_message(SPAN_DANGER("[M] frees themself from the barbed wire!"))
 				return TRUE
 	return ..()
 
@@ -488,7 +488,7 @@
 	if(istype(W, /obj/item/wirecutters))
 		if(!can_be_armed)
 			return
-		H.visible_message("<span class='danger'>[H] begins to disarm the landmine...</span>")
+		H.visible_message(SPAN_DANGER("[H] begins to disarm the landmine..."))
 		if(do_after(user,50))
 			if(H.statscheck(skills = H.SKILL_LEVEL(engineering)) >= SUCCESS)
 				armed = FALSE
@@ -501,7 +501,7 @@
 			blow()
 	if(istype(W, /obj/item/shovel))
 		if(!can_be_armed)
-			H.visible_message("<span class='danger'>[H] begins to dig up the landmine...</span>")
+			H.visible_message(SPAN_DANGER("[H] begins to dig up the landmine..."))
 			playsound(src, 'sound/effects/dig_shovel.ogg', 40, FALSE)
 			if(do_after(user,50))
 				to_chat(H, "You successfully dig up the [src]")
@@ -514,7 +514,7 @@
 		if(H.isChild())//Kids don't set off landmines.
 			return
 		if(!M.throwing && !armed && can_be_armed)
-			to_chat(M, "<span class='danger'>You hear a sickening click!</span>")
+			to_chat(M, SPAN_DANGER("You hear a sickening click!"))
 			playsound(src, 'sound/effects/mine_arm.ogg', 100, FALSE)
 			armed = TRUE
 

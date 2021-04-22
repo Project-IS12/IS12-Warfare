@@ -130,11 +130,11 @@
 	if(!istype(W) || W.item_flags & ITEM_FLAG_NO_BLUDGEON) return
 
 	if(istype(W, /obj/item/screwdriver))
-		to_chat(user, ("<span class='notice'>It's a holowindow, you can't unfasten it!</span>"))
+		to_chat(user, (SPAN_NOTICE("It's a holowindow, you can't unfasten it!")))
 	else if(istype(W, /obj/item/crowbar) && reinf && state <= 1)
-		to_chat(user, ("<span class='notice'>It's a holowindow, you can't pry it!</span>"))
+		to_chat(user, (SPAN_NOTICE("It's a holowindow, you can't pry it!")))
 	else if(istype(W, /obj/item/wrench) && !anchored && (!state || !reinf))
-		to_chat(user, ("<span class='notice'>It's a holowindow, you can't dismantle it!</span>"))
+		to_chat(user, (SPAN_NOTICE("It's a holowindow, you can't dismantle it!")))
 	else
 		if(W.damtype == BRUTE || W.damtype == BURN)
 			hit(W.force)
@@ -168,7 +168,7 @@
 	if(src.density && istype(I, /obj/item) && !istype(I, /obj/item/card))
 		var/aforce = I.force
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
-		visible_message("<span class='danger'>\The [src] was hit by \the [I].</span>")
+		visible_message(SPAN_DANGER("\The [src] was hit by \the [I]."))
 		if(I.damtype == BRUTE || I.damtype == BURN)
 			take_damage(aforce)
 		return
@@ -200,7 +200,7 @@
 
 /obj/structure/bed/chair/holochair/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/wrench))
-		to_chat(user, ("<span class='notice'>It's a holochair, you can't dismantle it!</span>"))
+		to_chat(user, (SPAN_NOTICE("It's a holochair, you can't dismantle it!")))
 	return
 
 /obj/item/holo
@@ -230,7 +230,7 @@
 
 /obj/item/holo/esword/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(active && default_parry_check(user, attacker, damage_source) && prob(50))
-		user.visible_message("<span class='danger'>\The [user] parries [attack_text] with \the [src]!</span>")
+		user.visible_message(SPAN_DANGER("\The [user] parries [attack_text] with \the [src]!"))
 
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, user.loc)
@@ -249,13 +249,13 @@
 		icon_state = "sword[item_color]"
 		w_class = ITEM_SIZE_HUGE
 		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>[src] is now active.</span>")
+		to_chat(user, SPAN_NOTICE("[src] is now active."))
 	else
 		force = 3
 		icon_state = "sword0"
 		w_class = ITEM_SIZE_SMALL
 		playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>[src] can now be concealed.</span>")
+		to_chat(user, SPAN_NOTICE("[src] can now be concealed."))
 
 	update_held_icon()
 
@@ -288,9 +288,9 @@
 			return
 		if(prob(50))
 			I.loc = src.loc
-			visible_message("<span class='notice'>Swish! \the [I] lands in \the [src].</span>", 3)
+			visible_message(SPAN_NOTICE("Swish! \the [I] lands in \the [src]."), 3)
 		else
-			visible_message("<span class='warning'>\The [I] bounces off of \the [src]'s rim!</span>", 3)
+			visible_message(SPAN_WARNING("\The [I] bounces off of \the [src]'s rim!"), 3)
 		return 0
 	else
 		return ..(mover, target, height, air_group)

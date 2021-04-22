@@ -48,7 +48,7 @@
 		return FALSE
 
 	if (!user.Adjacent(src))
-		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
+		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
 		return FALSE
 
 	return TRUE
@@ -67,7 +67,7 @@
 				to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 				return
 
-	user.visible_message("<span class='warning'>[user] starts climbing onto \the [src]!</span>")
+	user.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
 	climbers |= user
 
 	if(!can_climb(user))
@@ -79,7 +79,7 @@
 		return
 
 	user.forceMove(get_turf(src))
-	user.visible_message("<span class='warning'>[user] climbed onto \the [src]!</span>")
+	user.visible_message(SPAN_WARNING("[user] climbed onto \the [src]!"))
 	climbers -= user
 
 /turf/simulated/floor/dirty/MouseDrop_T(mob/target, mob/user)
@@ -240,7 +240,7 @@
 		return FALSE
 
 	if (!user.Adjacent(src))
-		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
+		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
 		return FALSE
 
 	return TRUE
@@ -249,7 +249,7 @@
 	if(!can_climb(user))
 		return
 
-	user.visible_message("<span class='warning'>[user] starts climbing onto \the [src]!</span>")
+	user.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
 	climbers |= user
 
 	if(!can_climb(user))
@@ -261,7 +261,7 @@
 		return
 
 	user.forceMove(get_turf(src))
-	user.visible_message("<span class='warning'>[user] climbed onto \the [src]!</span>")
+	user.visible_message(SPAN_WARNING("[user] climbed onto \the [src]!"))
 	climbers -= user
 
 /turf/simulated/floor/exoplanet/water/shallow/MouseDrop_T(mob/target, mob/user)
@@ -335,7 +335,7 @@
 		var/obj/item/reagent_containers/RG = O
 		if (istype(RG) && RG.is_open_container())
 			RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-			user.visible_message("<span class='notice'>[user] fills \the [RG] using \the [src].</span>","<span class='notice'>You fill \the [RG] using \the [src].</span>")
+			user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
 			return 1
 
 	if (istype(O, /obj/item/stack/duckboard))

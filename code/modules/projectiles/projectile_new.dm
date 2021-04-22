@@ -552,7 +552,7 @@
 					if(original != target_mob)//We weren't shooting at them, so whizz past.
 						do_normal_check = FALSE
 						result = PROJECTILE_FORCE_MISS
-						to_chat(target_mob, "<span class='danger'>BULLETS WHIZZ PAST MY HEAD!</span>")
+						to_chat(target_mob, SPAN_DANGER("BULLETS WHIZZ PAST MY HEAD!"))
 						target_mob.overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 5)
 						shake_camera(target_mob, 3, 2)//More supression effects.
 						target_mob.recoil += 15 //Make them innacurate for a tick when being supressed.
@@ -563,7 +563,7 @@
 						if(target_mob.lying || target_mob.crouching)//If the target is lying or crouching the bullets whizz right past them.
 							do_normal_check = FALSE
 							result = PROJECTILE_FORCE_MISS
-							to_chat(target_mob, "<span class='danger'>BULLETS WHIZZ PAST MY HEAD!</span>")
+							to_chat(target_mob, SPAN_DANGER("BULLETS WHIZZ PAST MY HEAD!"))
 							target_mob.overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 5)
 							shake_camera(target_mob, 3, 2)//More supression effects.
 							target_mob.recoil += 15 //Make them innacurate for a tick when being supressed.
@@ -578,7 +578,7 @@
 					if(firer && firer.lying) //We are lying down.
 						do_normal_check = FALSE
 						result = PROJECTILE_FORCE_MISS //We cannot hit them. Because being able to lie down and shoot them is fucking stupid.
-						to_chat(firer, "<span class='warning'>I cannot hit them lying down like this.</span>")
+						to_chat(firer, SPAN_WARNING("I cannot hit them lying down like this."))
 
 			if(do_normal_check)
 				result = target_mob.bullet_act(src, def_zone)//this returns mob's armor_check and another - see modules/mob/living/living_defense.dm
@@ -586,7 +586,7 @@
 	if(result == PROJECTILE_FORCE_MISS)
 		if(!silenced)
 			var/missound = "sound/weapons/guns/misc/miss[rand(1,4)].ogg"
-			target_mob.visible_message("<span class='notice'>\The [src] misses [target_mob] narrowly!</span>")
+			target_mob.visible_message(SPAN_NOTICE("\The [src] misses [target_mob] narrowly!"))
 			playsound(target_mob, missound, 60, 1)
 			target_mob.overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 5)
 			shake_camera(target_mob, 3, 2)//More supression effects.
@@ -606,9 +606,9 @@
 				firer.unlock_achievement(new/datum/achievement/headshot())
 
 	if(silenced)
-		to_chat(target_mob, "<span class='danger'>You've been hit in the [parse_zone(def_zone)] by \the [src]!</span>")
+		to_chat(target_mob, SPAN_DANGER("You've been hit in the [parse_zone(def_zone)] by \the [src]!"))
 	else
-		target_mob.visible_message("<span class='danger'>\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
+		target_mob.visible_message(SPAN_DANGER("\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!"))//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
 	playsound(target_mob, pick(mob_hit_sound), 40, 1)
 	//admin logs
 	if(!no_attack_log)
@@ -662,7 +662,7 @@
 			//if they have a neck grab on someone, that person gets hit instead
 			var/obj/item/grab/G = locate() in M
 			if(G)
-				visible_message("<span class='danger'>\The [M] uses [G.affecting] as a shield!</span>")
+				visible_message(SPAN_DANGER("\The [M] uses [G.affecting] as a shield!"))
 				if(Bump(G.affecting))
 					return //If Collide() returns 0 (keep going) then we continue on to attack M.
 

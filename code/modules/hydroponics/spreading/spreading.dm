@@ -20,7 +20,7 @@
 
 			log_and_message_admins("Spacevines spawned in \the [get_area(T)]", location = T)
 			return
-		log_and_message_admins("<span class='notice'>Event: Spacevines failed to find a viable turf.</span>")
+		log_and_message_admins(SPAN_NOTICE("Event: Spacevines failed to find a viable turf."))
 
 /obj/effect/dead_plant
 	anchored = 1
@@ -86,7 +86,7 @@
 	. = ..()
 
 	if(!plant_controller)
-		log_error("<span class='danger'>Plant controller does not exist and [src] requires it. Aborting.</span>")
+		log_error(SPAN_DANGER("Plant controller does not exist and [src] requires it. Aborting."))
 		return INITIALIZE_HINT_QDEL
 	if(!istype(seed))
 		seed = plant_controller.seeds[DEFAULT_SEED]
@@ -224,13 +224,13 @@
 
 	if(isWirecutter(W) || istype(W, /obj/item/scalpel))
 		if(sampled)
-			to_chat(user, "<span class='warning'>You cannot take another sample from \the [src].</span>")
+			to_chat(user, SPAN_WARNING("You cannot take another sample from \the [src]."))
 			return
 		if(!is_mature())
-			to_chat(user, "<span class='warning'>\The [src] is not mature enough to yield a sample yet.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is not mature enough to yield a sample yet."))
 			return
 		if(!seed)
-			to_chat(user, "<span class='warning'>There is nothing to take a sample from.</span>")
+			to_chat(user, SPAN_WARNING("There is nothing to take a sample from."))
 			return
 		seed.harvest(user,0,1)
 		health -= (rand(3,5)*5)

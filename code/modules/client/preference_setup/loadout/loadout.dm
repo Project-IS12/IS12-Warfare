@@ -335,7 +335,7 @@ var/list/gear_datums = list()
 	var/obj/item/item = spawn_item(H, metadata)
 
 	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1, force = 1))
-		to_chat(H, "<span class='notice'>Equipping you with \the [item]!</span>")
+		to_chat(H, SPAN_NOTICE("Equipping you with \the [item]!"))
 		return TRUE
 
 	return FALSE
@@ -345,12 +345,12 @@ var/list/gear_datums = list()
 
 	var/atom/placed_in = H.equip_to_storage(item)
 	if(placed_in)
-		to_chat(H, "<span class='notice'>Placing \the [item] in your [placed_in.name]!</span>")
+		to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
 	else if(H.equip_to_appropriate_slot(item))
-		to_chat(H, "<span class='notice'>Placing \the [item] in your inventory!</span>")
+		to_chat(H, SPAN_NOTICE("Placing \the [item] in your inventory!"))
 	else if(H.put_in_hands(item))
-		to_chat(H, "<span class='notice'>Placing \the [item] in your hands!</span>")
+		to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
 	else
-		to_chat(H, "<span class='danger'>Dropping \the [item] on the ground!</span>")
+		to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))
 		item.forceMove(get_turf(H))
 		item.add_fingerprint(H)

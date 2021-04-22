@@ -18,21 +18,21 @@
 	//if(user != M)
 	if(M.mind && M.mind.learned_spells)
 		M.silence_spells(300) //30 seconds
-		to_chat(M, "<span class='danger'>You've been silenced!</span>")
+		to_chat(M, SPAN_DANGER("You've been silenced!"))
 		return
 
 	if (!(istype(user, /mob/living/carbon/human) || ticker) && ticker.mode.name != "monkey")
-		to_chat(user, "<span class='danger'>You don't have the dexterity to do this!</span>")
+		to_chat(user, SPAN_DANGER("You don't have the dexterity to do this!"))
 		return
 
 	if ((CLUMSY in user.mutations) && prob(50))
-		to_chat(user, "<span class='danger'>The rod slips out of your hand and hits your head.</span>")
+		to_chat(user, SPAN_DANGER("The rod slips out of your hand and hits your head."))
 		user.take_organ_damage(10)
 		user.Paralyse(20)
 		return
 
 	if(cult && iscultist(M))
-		M.visible_message("<span class='notice'>\The [user] waves \the [src] over \the [M]'s head.</span>")
+		M.visible_message(SPAN_NOTICE("\The [user] waves \the [src] over \the [M]'s head."))
 		cult.offer_uncult(M)
 		return
 
@@ -43,7 +43,7 @@
 		return
 	if(istype(A, /turf/simulated/wall/cult))
 		var/turf/simulated/wall/cult/W = A
-		user.visible_message("<span class='notice'>\The [user] touches \the [A] with \the [src] and it starts fizzling and shifting.</span>", "<span class='notice'>You touch \the [A] with \the [src] and it starts fizzling and shifting.</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] touches \the [A] with \the [src] and it starts fizzling and shifting."), SPAN_NOTICE("You touch \the [A] with \the [src] and it starts fizzling and shifting."))
 		W.ChangeTurf(/turf/simulated/wall)
 
 /obj/item/energy_net
@@ -167,16 +167,16 @@
 		layer = ABOVE_HUMAN_LAYER
 		visible_message("\The [M] was caught in [src]!")
 	else
-		to_chat(M,"<span class='warning'>You are free of the net!</span>")
+		to_chat(M,SPAN_WARNING("You are free of the net!"))
 		reset_plane_and_layer()
 
 /obj/effect/energy_net/proc/healthcheck()
 	if(health <=0)
 		set_density(0)
 		if(countdown <= 0)
-			visible_message("<span class='warning'>\The [src] fades away!</span>")
+			visible_message(SPAN_WARNING("\The [src] fades away!"))
 		else
-			visible_message("<span class='danger'>\The [src] is torn apart!</span>")
+			visible_message(SPAN_DANGER("\The [src] is torn apart!"))
 		qdel(src)
 
 /obj/effect/energy_net/bullet_act(var/obj/item/projectile/Proj)
@@ -203,7 +203,7 @@
 	else
 		health -= rand(5,8)
 
-	to_chat(H,"<span class='danger'>You claw at the energy net.</span>")
+	to_chat(H,SPAN_DANGER("You claw at the energy net."))
 
 	healthcheck()
 	return
@@ -219,8 +219,8 @@ obj/effect/energy_net/user_unbuckle_mob(mob/user)
 
 /obj/effect/energy_net/proc/escape_net(mob/user as mob)
 	visible_message(
-		"<span class='danger'>\The [user] attempts to free themselves from \the [src]!</span>",
-		"<span class='warning'>You attempt to free yourself from \the [src]!</span>"
+		SPAN_DANGER("\The [user] attempts to free themselves from \the [src]!"),
+		SPAN_WARNING("You attempt to free yourself from \the [src]!")
 		)
 	if(do_after(user, rand(min_free_time, max_free_time), src, incapacitation_flags = INCAPACITATION_DISABLED))
 		health = 0

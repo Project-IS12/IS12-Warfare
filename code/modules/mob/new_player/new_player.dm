@@ -117,7 +117,7 @@
 
 	if(href_list["observe"])
 		if(GAME_STATE < RUNLEVEL_LOBBY)
-			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
+			to_chat(src, SPAN_WARNING("Please wait for server initialization to complete..."))
 			return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
@@ -132,10 +132,10 @@
 			close_spawn_windows()
 			var/obj/O = locate("landmark*Observer-Start")
 			if(istype(O))
-				to_chat(src, "<span class='notice'>Now teleporting.</span>")
+				to_chat(src, SPAN_NOTICE("Now teleporting."))
 				observer.forceMove(O.loc)
 			else
-				to_chat(src, "<span class='danger'>Could not locate an observer spawn point. Use the Teleport verb to jump to the map.</span>")
+				to_chat(src, SPAN_DANGER("Could not locate an observer spawn point. Use the Teleport verb to jump to the map."))
 			observer.timeofdeath = world.time // Set the time of death so that the respawn timer works correctly.
 
 			if(isnull(client.holder))
@@ -160,7 +160,7 @@
 	if(href_list["late_join"])
 
 		if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
-			to_chat(usr, "<span class='warning'>The round is either not ready, or has already finished...</span>")
+			to_chat(usr, SPAN_WARNING("The round is either not ready, or has already finished..."))
 			return
 		LateChoices() //show the latejoin job selection menu
 
@@ -179,14 +179,14 @@
 			var/mob/living/carbon/human/C = X
 			var/char_name = client.prefs.real_name
 			if(char_name == C.real_name)
-				to_chat(usr, "<span class='notice'>There is a character that already exists with the same name - <b>[C.real_name]</b>, please join with a different one.</span>")
+				to_chat(usr, SPAN_NOTICE("There is a character that already exists with the same name - <b>[C.real_name]</b>, please join with a different one."))
 				return
 
 		if(!config.enter_allowed)
-			to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+			to_chat(usr, SPAN_NOTICE("There is an administrative lock on entering the game!"))
 			return
 		if(ticker && ticker.mode && ticker.mode.explosion_in_progress)
-			to_chat(usr, "<span class='danger'>The [station_name()] is currently exploding. Joining would go poorly.</span>")
+			to_chat(usr, SPAN_DANGER("The [station_name()] is currently exploding. Joining would go poorly."))
 			return
 
 		var/datum/species/S = all_species[client.prefs.species]
@@ -326,10 +326,10 @@
 	if(src != usr)
 		return 0
 	if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
-		to_chat(usr, "<span class='warning'>The round is either not ready, or has already finished...</span>")
+		to_chat(usr, SPAN_WARNING("The round is either not ready, or has already finished..."))
 		return 0
 	if(!config.enter_allowed)
-		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+		to_chat(usr, SPAN_NOTICE("There is an administrative lock on entering the game!"))
 		return 0
 
 	if(!IsJobAvailable(job))

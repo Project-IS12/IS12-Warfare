@@ -72,7 +72,7 @@
 
 /obj/item/implant/imprinting/removed()
 	if(brainwashing)
-		to_chat(imp_in,"<span class='notice'>You are no longer so sure of those beliefs you've had...</span>")
+		to_chat(imp_in,SPAN_NOTICE("You are no longer so sure of those beliefs you've had..."))
 	..()
 	STOP_PROCESSING(SSobj, src)
 

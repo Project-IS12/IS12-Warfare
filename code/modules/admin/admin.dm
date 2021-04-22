@@ -670,7 +670,7 @@ var/global/floorIsLava = 0
 	if(confirm == "Cancel")
 		return
 	if(confirm == "Yes")
-		to_world("<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
+		to_world(SPAN_DANGER("Restarting world!</span> <span class='notice'>Initiated by [usr.key]!"))
 		log_admin("[key_name(usr)] initiated a reboot.")
 
 		feedback_set_details("end_error","admin reboot - by [usr.key]")
@@ -801,7 +801,7 @@ var/global/floorIsLava = 0
 		ticker.current_state = GAME_STATE_SETTING_UP
 		return 1
 	else
-		to_chat(usr, "<span class='warning'>Error: Start Now: Game has already started.</span>")
+		to_chat(usr, SPAN_WARNING("Error: Start Now: Game has already started."))
 		return 0
 
 /datum/admins/proc/toggleenter()
@@ -917,7 +917,7 @@ var/global/floorIsLava = 0
 	if(!usr.client.holder)	return
 	if( alert("Reboot server?",,"Yes","No") == "No")
 		return
-	to_world("<span class='danger'>Rebooting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
+	to_world(SPAN_DANGER("Rebooting world!</span> <span class='notice'>Initiated by [usr.key]!"))
 	log_admin("[key_name(usr)] initiated an immediate reboot.")
 
 	feedback_set_details("end_error","immediate admin reboot - by [usr.key]")
@@ -1453,7 +1453,7 @@ datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
 
 
 	if(destination.recievefax(P))
-		to_chat(src.owner, "<span class='notice'>Message reply to transmitted successfully.</span>")
+		to_chat(src.owner, SPAN_NOTICE("Message reply to transmitted successfully."))
 		if(P.sender) // sent as a reply
 			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
 			for(var/client/C in GLOB.admins)
@@ -1466,7 +1466,7 @@ datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
 					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 
 	else
-		to_chat(src.owner, "<span class='warning'>Message reply failed.</span>")
+		to_chat(src.owner, SPAN_WARNING("Message reply failed."))
 
 	spawn(100)
 		qdel(P)

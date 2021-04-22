@@ -41,7 +41,7 @@
 
 /obj/item/warflare/attack_self(mob/user)
 	if(turn_on(user))
-		user.visible_message("<span class='notice'>\The [user] activates \the [src].</span>", "<span class='notice'>FFFFFFSHHSHSHSHSHSHHH</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] activates \the [src]."), SPAN_NOTICE("FFFFFFSHHSHSHSHSHSHHH"))
 		playsound(src.loc, activation_sound, 75, 1)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
@@ -53,7 +53,7 @@
 		return FALSE
 	if(used)
 		if(user)
-			to_chat(user, "<span class='notice'>It's out of fuel.</span>")
+			to_chat(user, SPAN_NOTICE("It's out of fuel."))
 		return FALSE
 	on = TRUE
 	update_icon()

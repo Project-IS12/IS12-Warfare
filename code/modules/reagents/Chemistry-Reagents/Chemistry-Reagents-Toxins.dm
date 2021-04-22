@@ -241,7 +241,7 @@
 		if(locate(/obj/effect/overlay/wallrot) in W)
 			for(var/obj/effect/overlay/wallrot/E in W)
 				qdel(E)
-			W.visible_message("<span class='notice'>The fungi are completely dissolved by the solution!</span>")
+			W.visible_message(SPAN_NOTICE("The fungi are completely dissolved by the solution!"))
 
 /datum/reagent/toxin/plantbgone/touch_obj(var/obj/O, var/volume)
 	if(istype(O, /obj/effect/vine))
@@ -334,7 +334,7 @@
 	if(alien == IS_DIONA)
 		return
 	if(prob(10))
-		to_chat(M, "<span class='danger'>Your insides are burning!</span>")
+		to_chat(M, SPAN_DANGER("Your insides are burning!"))
 		M.adjustToxLoss(rand(100, 300) * removed)
 	else if(prob(40))
 		M.heal_organ_damage(25 * removed, 0)
@@ -576,7 +576,7 @@
 	if(!meatchunks.len)
 		return
 	var/obj/item/organ/external/O = pick(meatchunks)
-	to_chat(H, "<span class='danger'>Your [O.name]'s flesh mutates rapidly!</span>")
+	to_chat(H, SPAN_DANGER("Your [O.name]'s flesh mutates rapidly!"))
 	meatchunks = list(O) | O.children
 	for(var/obj/item/organ/external/E in meatchunks)
 		E.species = all_species[SPECIES_PROMETHEAN]
@@ -592,7 +592,7 @@
 		E.update_icon(1)
 	O.max_damage = 15
 	if(prob(10))
-		to_chat(H, "<span class='danger'>Your slimy [O.name]'s plops off!</span>")
+		to_chat(H, SPAN_DANGER("Your slimy [O.name]'s plops off!"))
 		O.droplimb()
 	H.update_body()
 
@@ -606,7 +606,7 @@
 /datum/reagent/aslimetoxin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed) // TODO: check if there's similar code anywhere else
 	if(M.transforming)
 		return
-	to_chat(M, "<span class='danger'>Your flesh rapidly mutates!</span>")
+	to_chat(M, SPAN_DANGER("Your flesh rapidly mutates!"))
 	M.transforming = 1
 	M.canmove = 0
 	M.icon = null
@@ -653,7 +653,7 @@
 	if(alien == IS_SKRELL)	//skrell can't have hair unless you hack it in, also to prevent tentacles from falling off
 		return
 	M.species.set_default_hair(M)
-	to_chat(M, "<span class='warning'>Your feel a chill, your skin feels lighter..</span>")
+	to_chat(M, SPAN_WARNING("Your feel a chill, your skin feels lighter.."))
 	remove_self(volume)
 
 /datum/reagent/toxin/corrupting
@@ -673,9 +673,9 @@
 	..()
 	if(prob(5))
 		if(M.chem_doses[type] < 15)
-			to_chat(M, "<span class='warning'>You feel funny...</span>")
+			to_chat(M, SPAN_WARNING("You feel funny..."))
 		else
-			to_chat(M, "<span class='danger'>You feel like you could die at any moment!</span>")
+			to_chat(M, SPAN_DANGER("You feel like you could die at any moment!"))
 
 /datum/reagent/toxin/corrupting/overdose(var/mob/living/carbon/M, var/alien)
 	if(istype(M, /mob/living/carbon/human))

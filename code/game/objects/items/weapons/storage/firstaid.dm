@@ -166,23 +166,23 @@
 
 /obj/item/storage/pill_bottle/attack_self(mob/living/user)
 	if(user.get_inactive_hand())
-		to_chat(user, "<span class='notice'>You need an empty hand to take something out.</span>")
+		to_chat(user, SPAN_NOTICE("You need an empty hand to take something out."))
 		return
 	if(contents.len)
 		var/obj/item/I = contents[1]
 		if(!remove_from_storage(I,user))
 			return
 		if(user.put_in_inactive_hand(I))
-			to_chat(user, "<span class='notice'>You take \the [I] out of \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You take \the [I] out of \the [src]."))
 			playsound(user, use_sound, 100)
 			if(iscarbon(user))
 				var/mob/living/carbon/C = user
 				C.swap_hand()
 		else
 			I.dropInto(loc)
-			to_chat(user, "<span class='notice'>You fumble around with \the [src] and drop \the [I] on the floor.</span>")
+			to_chat(user, SPAN_NOTICE("You fumble around with \the [src] and drop \the [I] on the floor."))
 	else
-		to_chat(user, "<span class='warning'>\The [src] is empty.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is empty."))
 
 /obj/item/storage/pill_bottle/antitox
 	name = "bottle of Dylovene pills"

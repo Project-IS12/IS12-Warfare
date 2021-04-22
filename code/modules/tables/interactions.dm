@@ -50,7 +50,7 @@
 		//prevent tables with 1 health left from stopping bullets outright
 		return PROJECTILE_CONTINUE //the projectile destroyed the table, so it gets to keep going
 
-	visible_message("<span class='warning'>\The [P] hits [src]!</span>")
+	visible_message(SPAN_WARNING("\The [P] hits [src]!"))
 	return 0
 
 /obj/structure/table/CheckExit(atom/movable/O as mob|obj, target as turf)
@@ -85,16 +85,16 @@
 		if (istype(G.affecting, /mob/living/carbon/human))
 			var/obj/occupied = turf_is_crowded()
 			if(occupied)
-				to_chat(user, "<span class='danger'>There's \a [occupied] in the way.</span>")
+				to_chat(user, SPAN_DANGER("There's \a [occupied] in the way."))
 				return
 
 			if(G.force_danger())
 				G.affecting.forceMove(src.loc)
 				G.affecting.Weaken(rand(2,5))
-				visible_message("<span class='danger'>[G.assailant] puts [G.affecting] on \the [src].</span>")
+				visible_message(SPAN_DANGER("[G.assailant] puts [G.affecting] on \the [src]."))
 				qdel(W)
 			else
-				to_chat(user, "<span class='danger'>You need a better grip to do that!</span>")
+				to_chat(user, SPAN_DANGER("You need a better grip to do that!"))
 			return
 
 	// Handle dismantling or placing things on the table from here on.
@@ -110,12 +110,12 @@
 		spark_system.start()
 		playsound(src.loc, 'sound/weapons/blade1.ogg', 50, 1)
 		playsound(src.loc, "sparks", 50, 1)
-		user.visible_message("<span class='danger'>\The [src] was sliced apart by [user]!</span>")
+		user.visible_message(SPAN_DANGER("\The [src] was sliced apart by [user]!"))
 		break_to_parts()
 		return
 
 	if(can_plate && !material)
-		to_chat(user, "<span class='warning'>There's nothing to put \the [W] on! Try adding plating to \the [src] first.</span>")
+		to_chat(user, SPAN_WARNING("There's nothing to put \the [W] on! Try adding plating to \the [src] first."))
 		return
 
 	// Placing stuff on tables

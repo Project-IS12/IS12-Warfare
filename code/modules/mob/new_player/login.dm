@@ -36,7 +36,7 @@
 	my_client = client
 	set_sight(sight|SEE_TURFS)
 	GLOB.player_list |= src
-	message_admins("<span class='notice'>Login: [key], id:[computer_id], ip:[client.address]</span>")
+	message_admins(SPAN_NOTICE("Login: [key], id:[computer_id], ip:[client.address]"))
 
 	new_player_panel()
 	if(client)

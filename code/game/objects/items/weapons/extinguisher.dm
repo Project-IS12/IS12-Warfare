@@ -56,13 +56,13 @@
 		if(src.safety || (world.time < src.last_use + 20)) // We still catch help intent to not randomly attack people
 			return
 		if(src.reagents.total_volume < 1)
-			to_chat(user, "<span class='notice'>\The [src] is empty.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] is empty."))
 			return
 
 		src.last_use = world.time
 		reagents.splash(M, min(reagents.total_volume, spray_amount))
 
-		user.visible_message("<span class='notice'>\The [user] sprays \the [M] with \the [src].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] sprays \the [M] with \the [src]."))
 		playsound(src.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
 
 		return 1 // No afterattack
@@ -92,13 +92,13 @@
 	if( istype(target, /obj/structure/reagent_dispensers/watertank) && flag)
 		var/obj/o = target
 		var/amount = o.reagents.trans_to_obj(src, 500)
-		to_chat(user, "<span class='notice'>You fill [src] with [amount] units of the contents of [target].</span>")
+		to_chat(user, SPAN_NOTICE("You fill [src] with [amount] units of the contents of [target]."))
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
 
 	if (!safety)
 		if (src.reagents.total_volume < 1)
-			to_chat(usr, "<span class='notice'>\The [src] is empty.</span>")
+			to_chat(usr, SPAN_NOTICE("\The [src] is empty."))
 			return
 
 		if (world.time < src.last_use + 20)

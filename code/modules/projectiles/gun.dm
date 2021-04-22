@@ -148,7 +148,7 @@
 
 	var/mob/living/M = user
 	if(HULK in M.mutations)
-		to_chat(M, "<span class='danger'>Your fingers are much too large for the trigger guard!</span>")
+		to_chat(M, SPAN_DANGER("Your fingers are much too large for the trigger guard!"))
 		return 0
 	if((CLUMSY in M.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
@@ -156,20 +156,20 @@
 			if(process_projectile(P, user, user, pick(BP_L_FOOT, BP_R_FOOT)))
 				handle_post_fire(user, user)
 				user.visible_message(
-					"<span class='danger'>\The [user] shoots \himself in the foot with \the [src]!</span>",
-					"<span class='danger'>You shoot yourself in the foot with \the [src]!</span>"
+					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
+					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
 					)
 				M.drop_item()
 		else
 			handle_click_empty(user)
 		return 0
 	if(safety)
-		to_chat(user, "<span class='danger'>The gun's safety is on!</span>")
+		to_chat(user, SPAN_DANGER("The gun's safety is on!"))
 		handle_click_empty(user)
 		return 0
 
 	if(broken)
-		to_chat(user, "<span class='danger'>The gun is broken!</span>")
+		to_chat(user, SPAN_DANGER("The gun is broken!"))
 		handle_click_empty(user)
 		return 0
 
@@ -211,7 +211,7 @@
 
 
 	if(ticker.current_state == GAME_STATE_FINISHED)
-		to_chat(user, "<span class='warning'>The battle is over! There is no need to shoot!</span>")
+		to_chat(user, SPAN_WARNING("The battle is over! There is no need to shoot!"))
 		return
 
 	if(aspect_chosen(/datum/aspect/trenchmas))
@@ -224,7 +224,7 @@
 
 	if(world.time < next_fire_time)
 		if (world.time % 3) //to prevent spam
-			to_chat(user, "<span class='warning'>[src] is not ready to fire again!</span>")
+			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
 		return
 
 	var/shoot_time = (burst - 1)* burst_delay
@@ -290,13 +290,13 @@
 /obj/item/gun/proc/handle_click_empty(mob/user)
 	if(is_jammed)
 		if(user)
-			user.visible_message("*jam jam*", "<span class='danger'>*jam*</span>")
+			user.visible_message("*jam jam*", SPAN_DANGER("*jam*"))
 		else
 			src.visible_message("*jam jam*")
 		playsound(src.loc, 'sound/effects/jam.ogg', 50, 1)
 	else
 		if(user)
-			user.visible_message("*click click*", "<span class='danger'>*click*</span>")
+			user.visible_message("*click click*", SPAN_DANGER("*click*"))
 		else
 			src.visible_message("*click click*")
 		playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
@@ -317,7 +317,7 @@
 		else
 			user.visible_message(
 				"<span class='danger'>\The [user] fires \the [src][pointblank ? " point blank at \the [target]":""]!</span>",
-				"<span class='danger'>You fire \the [src]!</span>",
+				SPAN_DANGER("You fire \the [src]!"),
 				"You hear a [fire_sound_text]!"
 				)
 		*/
@@ -327,13 +327,13 @@
 			switch(one_hand_penalty)
 				if(1)
 					if(prob(50)) //don't need to tell them every single time
-						to_chat(user, "<span class='warning'>Your aim wavers slightly.</span>")
+						to_chat(user, SPAN_WARNING("Your aim wavers slightly."))
 				if(2)
-					to_chat(user, "<span class='warning'>Your aim wavers as you fire \the [src] with just one hand.</span>")
+					to_chat(user, SPAN_WARNING("Your aim wavers as you fire \the [src] with just one hand."))
 				if(3)
-					to_chat(user, "<span class='warning'>You have trouble keeping \the [src] on target with just one hand.</span>")
+					to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target with just one hand."))
 				if(4 to INFINITY)
-					to_chat(user, "<span class='warning'>You struggle to keep \the [src] on target with just one hand!</span>")
+					to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target with just one hand!"))
 
 	if(screen_shake)
 		spawn()
@@ -509,9 +509,9 @@
 	var/mob/living/carbon/human/M = user
 
 	mouthshoot = 1
-	M.visible_message("<span class='danger'>[user] sticks their gun in their mouth, ready to pull the trigger...</span>")
+	M.visible_message(SPAN_DANGER("[user] sticks their gun in their mouth, ready to pull the trigger..."))
 	if(!do_after(user, 40, progress=0))
-		M.visible_message("<span class='notice'>[user] decided life was worth living</span>")
+		M.visible_message(SPAN_NOTICE("[user] decided life was worth living"))
 		mouthshoot = 0
 		return
 	var/obj/item/projectile/in_chamber = consume_next_projectile()
@@ -571,9 +571,9 @@
 		var/datum/firemode/current_mode = firemodes[sel_mode]
 		to_chat(user, "The fire selector is set to [current_mode.name].")
 	if(safety)
-		to_chat(user, "<span class='notice'>The safety is on.</span>")
+		to_chat(user, SPAN_NOTICE("The safety is on."))
 	else
-		to_chat(user, "<span class='notice'>The safety is off.</span>")
+		to_chat(user, SPAN_NOTICE("The safety is off."))
 
 
 
@@ -593,7 +593,7 @@
 	var/datum/firemode/new_mode = switch_firemodes(user)
 	if(new_mode)
 		playsound(src.loc, 'sound/weapons/guns/interact/selector.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>\The [src] is now set to [new_mode.name].</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
 
 //Gun safety
 /obj/item/gun/RightClick(mob/user)
@@ -631,7 +631,7 @@
 		repair_speed = 20
 	if(condition <= allowed_condition)
 		if(!H.doing_something)//No spamming repairs
-			H.visible_message("<span class='notice'>[H] starts to repair their weapon.</span>")
+			H.visible_message(SPAN_NOTICE("[H] starts to repair their weapon."))
 			H.doing_something = TRUE
 			if(do_after(H, repair_speed, src))//Instead of failing if their not skilled, just make it slow.
 				H.doing_something = FALSE
@@ -640,7 +640,7 @@
 				if(condition > 100)//If it's greater than 100
 					condition = 100
 			else
-				H.visible_message("<span class='warning'>[H] fails to repair their weapon.</span>")
+				H.visible_message(SPAN_WARNING("[H] fails to repair their weapon."))
 				H.doing_something = FALSE
 			update_icon()
 
@@ -648,7 +648,7 @@
 
 /obj/item/gun/proc/check_gun_safety(mob/user)//Used in inventory.dm to see whether or not you fucking shoot someone when you drop your gun on the ground.
 	if(!safety && prob(10))
-		user.visible_message("<span class='warning'>[src] goes off!</span>")
+		user.visible_message(SPAN_WARNING("[src] goes off!"))
 		var/list/targets = list(user)
 		targets += trange(2, src)
 		afterattack(pick(targets), user)

@@ -10,16 +10,16 @@
 		return
 	var/mob/M = C.mob ? C.mob.get_looc_mob() : null
 	if(!M)
-		to_chat(C, "<span class='danger'>You cannot use [name] without a mob.</span>")
+		to_chat(C, SPAN_DANGER("You cannot use [name] without a mob."))
 		return FALSE
 	if(!get_turf(M))
-		to_chat(C, "<span class='danger'>You cannot use [name] while in nullspace.</span>")
+		to_chat(C, SPAN_DANGER("You cannot use [name] while in nullspace."))
 		return FALSE
 	if(isobserver(M))
-		to_chat(C, "<span class='danger'>You cannot communicate from beyond the grave.</span>")
+		to_chat(C, SPAN_DANGER("You cannot communicate from beyond the grave."))
 		return FALSE
 	if(M.stat == DEAD)
-		to_chat(C, "<span class='danger'>You cannot communicate from beyond the grave.</span>")
+		to_chat(C, SPAN_DANGER("You cannot communicate from beyond the grave."))
 		return FALSE
 
 /decl/communication_channel/ooc/looc/do_communicate(var/client/C, var/message)

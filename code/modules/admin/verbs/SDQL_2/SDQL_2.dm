@@ -26,7 +26,7 @@
 	set category = "Debug"
 
 	if(!check_rights(R_DEBUG))  // Shouldn't happen... but just to be safe.
-		message_admins("<span class='warning'>ERROR: Non-admin [usr.key] attempted to execute the following SDQL query: [query_text]</span>")
+		message_admins(SPAN_WARNING("ERROR: Non-admin [usr.key] attempted to execute the following SDQL query: [query_text]"))
 		log_admin("Non-admin [usr.key] attempted to execute the following SDQL query: [query_text]!")
 		return
 
@@ -142,9 +142,9 @@
 
 							CHECK_TICK
 
-			to_chat(usr, "<span class='notice'>Query executed on [objs.len] object\s.</span>")
+			to_chat(usr, SPAN_NOTICE("Query executed on [objs.len] object\s."))
 	catch(var/exception/e)
-		to_chat(usr, "<span class='danger'>An exception has occured during the execution of your query and your query has been aborted.</span>")
+		to_chat(usr, SPAN_DANGER("An exception has occured during the execution of your query and your query has been aborted."))
 		to_chat(usr, "exception name: [e.name]")
 		to_chat(usr, "file/line: [e.file]/[e.line]")
 		return
@@ -171,7 +171,7 @@
 				querys[querys_pos] = parsed_tree
 				querys_pos++
 			else //There was an error so don't run anything, and tell the user which query has errored.
-				to_chat(usr, "<span class='danger'>Parsing error on [querys_pos]\th query. Nothing was executed.</span>")
+				to_chat(usr, SPAN_DANGER("Parsing error on [querys_pos]\th query. Nothing was executed."))
 				return list()
 			query_tree = list()
 			do_parse = 0
@@ -306,7 +306,7 @@
 				if("or", "||")
 					result = (result || val)
 				else
-					to_chat(usr, "<span class='warning'>SDQL2: Unknown op [op]</span>")
+					to_chat(usr, SPAN_WARNING("SDQL2: Unknown op [op]"))
 					result = null
 		else
 			result = val
@@ -380,11 +380,11 @@
 
 	else if (expression [start] == "{" && long)
 		if (lowertext(copytext(expression[start + 1], 1, 3)) != "0x")
-			to_chat(usr, "<span class='danger'>Invalid pointer syntax: [expression[start + 1]]</span>")
+			to_chat(usr, SPAN_DANGER("Invalid pointer syntax: [expression[start + 1]]"))
 			return null
 		v = locate("\[[expression[start + 1]]]")
 		if (!v)
-			to_chat(usr, "<span class='danger'>Invalid pointer: [expression[start + 1]]</span>")
+			to_chat(usr, SPAN_DANGER("Invalid pointer: [expression[start + 1]]"))
 			return null
 		start++
 
@@ -424,7 +424,7 @@
 			var/list/L = v
 			var/index = SDQL_expression(source, expression[start + 2])
 			if (isnum(index) && (!IsInteger(index) || L.len < index))
-				to_chat(usr, "<span class='danger'>Invalid list index: [index]</span>")
+				to_chat(usr, SPAN_DANGER("Invalid list index: [index]"))
 				return null
 
 			return L[index]

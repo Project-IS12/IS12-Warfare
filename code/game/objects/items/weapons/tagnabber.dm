@@ -14,30 +14,30 @@
 		var/obj/item/storage/S = user.get_equipped_item(slot_back)
 
 		if(!H.stat)
-			to_chat(user, "<span class='notice'>[H] is conscious, this will take about 5 seconds...</span>")
+			to_chat(user, SPAN_NOTICE("[H] is conscious, this will take about 5 seconds..."))
 			if(!do_after(user, 5 SECONDS, H))
-				to_chat(user, "<span class='notice'>You couldn't grab anything!</span>")
+				to_chat(user, SPAN_NOTICE("You couldn't grab anything!"))
 				return
 
 		if(O && istype(O))  // if there is a dog tag
 			if(S && istype(S))  // if there is a backpack
 				if(S.can_be_inserted(O, user))  // if the backpack can take the dog tag
 					S.handle_item_insertion(O)
-					user.visible_message("<span class='notice'>\The [user] extracts \the [O] from \the [M] and puts it in \the [S]</span>")
+					user.visible_message(SPAN_NOTICE("\The [user] extracts \the [O] from \the [M] and puts it in \the [S]"))
 
 				else if(user.put_in_any_hand_if_possible(O))  // if it cant, try to put it in hands
-					user.visible_message("<span class='notice'>\The [user] extracts \the [O] from \the [M] and places it in their hand.</span>")
+					user.visible_message(SPAN_NOTICE("\The [user] extracts \the [O] from \the [M] and places it in their hand."))
 
 				else  // no free hands
-					to_chat(user, "<span class='notice'>There is a [O] but you have no backpack or hand to put it!</span>")
+					to_chat(user, SPAN_NOTICE("There is a [O] but you have no backpack or hand to put it!"))
 
 			else if(user.put_in_any_hand_if_possible(O))  // if no backpack, try to put in hands
-				user.visible_message("<span class='notice'>\The [user] extracts \the [O] from \the [M] and places it in their hand.</span>")
+				user.visible_message(SPAN_NOTICE("\The [user] extracts \the [O] from \the [M] and places it in their hand."))
 
 			else  // if no free hands
-				to_chat(user, "<span class='notice'>There is a [O] but you have no backpack or hand to put it!</span>")
+				to_chat(user, SPAN_NOTICE("There is a [O] but you have no backpack or hand to put it!"))
 
 		else  // if theres no dog tag
-			to_chat(user, "<span class='notice'>\The [H] has nothing to take!</span>")
+			to_chat(user, SPAN_NOTICE("\The [H] has nothing to take!"))
 
 

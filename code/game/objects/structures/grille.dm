@@ -143,23 +143,23 @@
 					else
 						dir_to_set = 4
 			else
-				to_chat(user, "<span class='notice'>You can't reach.</span>")
+				to_chat(user, SPAN_NOTICE("You can't reach."))
 				return //Only works for cardinal direcitons, diagonals aren't supposed to work like this.
 		for(var/obj/structure/window/WINDOW in loc)
 			if(WINDOW.dir == dir_to_set)
-				to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")
+				to_chat(user, SPAN_NOTICE("There is already a window facing this way there."))
 				return
-		to_chat(user, "<span class='notice'>You start placing the window.</span>")
+		to_chat(user, SPAN_NOTICE("You start placing the window."))
 		if(do_after(user,20,src))
 			for(var/obj/structure/window/WINDOW in loc)
 				if(WINDOW.dir == dir_to_set)//checking this for a 2nd time to check if a window was made while we were waiting.
-					to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")
+					to_chat(user, SPAN_NOTICE("There is already a window facing this way there."))
 					return
 
 			var/wtype = ST.material.created_window
 			if (ST.use(1))
 				var/obj/structure/window/WD = new wtype(loc, dir_to_set, 1)
-				to_chat(user, "<span class='notice'>You place the [WD] on [src].</span>")
+				to_chat(user, SPAN_NOTICE("You place the [WD] on [src]."))
 				WD.update_icon()
 		return
 //window placing end
@@ -227,7 +227,7 @@
 	..()
 
 /obj/structure/grille/attack_generic(var/mob/user, var/damage, var/attack_verb)
-	visible_message("<span class='danger'>[user] [attack_verb] the [src]!</span>")
+	visible_message(SPAN_DANGER("[user] [attack_verb] the [src]!"))
 	attack_animation(user)
 	health -= damage
 	spawn(1) healthcheck()

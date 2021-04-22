@@ -67,13 +67,13 @@
 	if(istype(W, /obj/item/rcd_ammo))
 		var/obj/item/rcd_ammo/cartridge = W
 		if((stored_matter + cartridge.remaining) > 30)
-			to_chat(user, "<span class='notice'>The RCD can't hold that many additional matter-units.</span>")
+			to_chat(user, SPAN_NOTICE("The RCD can't hold that many additional matter-units."))
 			return
 		stored_matter += cartridge.remaining
 		user.drop_from_inventory(W)
 		qdel(W)
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>The RCD now holds [stored_matter]/[max_stored_matter] matter-units.</span>")
+		to_chat(user, SPAN_NOTICE("The RCD now holds [stored_matter]/[max_stored_matter] matter-units."))
 		return
 	..()
 
@@ -81,7 +81,7 @@
 	//Change the mode
 	work_id++
 	work_mode = next_in_list(work_mode, work_modes)
-	to_chat(user, "<span class='notice'>Changed mode to '[work_mode]'</span>")
+	to_chat(user, SPAN_NOTICE("Changed mode to '[work_mode]'"))
 	playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
 	if(prob(20)) src.spark_system.start()
 
@@ -114,7 +114,7 @@
 /obj/item/rcd_ammo/examine(var/mob/user)
 	. = ..(user,1)
 	if(.)
-		to_chat(user, "<span class='notice'>It has [remaining] unit\s of matter left.</span>")
+		to_chat(user, SPAN_NOTICE("It has [remaining] unit\s of matter left."))
 
 /obj/item/rcd_ammo/large
 	name = "high-capacity matter cartridge"
@@ -166,7 +166,7 @@
 		if(!rcdm.can_handle_work(rcd, target))
 			continue
 		if(!rcd.useResource(rcdm.cost, user))
-			to_chat(user, "<span class='warning'>Insufficient resources.</span>")
+			to_chat(user, SPAN_WARNING("Insufficient resources."))
 			return FALSE
 
 		playsound(get_turf(user), 'sound/machines/click.ogg', 50, 1)
@@ -203,10 +203,10 @@
 	var/message
 	if(work_type)
 		var/atom/work = work_type
-		message = "<span class='notice'>You begin constructing \a [initial(work.name)].</span>"
+		message = SPAN_NOTICE("You begin constructing \a [initial(work.name)].")
 	else
-		message = "<span class='notice'>You begin construction.</span>"
-	user.visible_message("<span class='notice'>\The [user] uses \a [rcd] to construct something.</span>", message)
+		message = SPAN_NOTICE("You begin construction.")
+	user.visible_message(SPAN_NOTICE("\The [user] uses \a [rcd] to construct something."), message)
 
 /*
 	Airlock construction
@@ -250,7 +250,7 @@
 	name = "Deconstruction"
 
 /decl/hierarchy/rcd_mode/deconstruction/work_message(var/atom/target, var/mob/user, var/rcd)
-	user.visible_message("<span class='warning'>\The [user] is using \a [rcd] to deconstruct \the [target]!</span>", "<span class='warning'>You are deconstructing \the [target]!</span>")
+	user.visible_message(SPAN_WARNING("\The [user] is using \a [rcd] to deconstruct \the [target]!"), SPAN_WARNING("You are deconstructing \the [target]!"))
 
 /decl/hierarchy/rcd_mode/deconstruction/airlock
 	cost = 10

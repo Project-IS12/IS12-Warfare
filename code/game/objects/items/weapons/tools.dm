@@ -148,12 +148,12 @@
 		var/mob/living/carbon/human/H = C
 		var/obj/item/organ/external/head/O = locate() in H.organs
 		if(!O || !O.get_teeth())
-			to_chat(user, "<span class='notice'>[H] doesn't have any teeth left!</span>")
+			to_chat(user, SPAN_NOTICE("[H] doesn't have any teeth left!"))
 			return
 		if(!user.doing_something)
 			user.doing_something = 1
-			H.visible_message("<span class='danger'>[user] tries to tear off [H]'s tooth with [src]!</span>",
-								"<span class='danger'>[user] tries to tear off your tooth with [src]!</span>")
+			H.visible_message(SPAN_DANGER("[user] tries to tear off [H]'s tooth with [src]!"),
+								SPAN_DANGER("[user] tries to tear off your tooth with [src]!"))
 			if(do_after(user, 50))
 				if(!O || !O.get_teeth()) return
 				var/obj/item/stack/teeth/E = pick(O.teeth_list)
@@ -162,8 +162,8 @@
 				E.use(1)
 				T.add_blood(H)
 				E.zero_amount() //Try to delete the teeth
-				H.visible_message("<span class='danger'>[user] tears off [H]'s tooth with [src]!</span>",
-								"<span class='danger'>[user] tears off your tooth with [src]!</span>")
+				H.visible_message(SPAN_DANGER("[user] tears off [H]'s tooth with [src]!"),
+								SPAN_DANGER("[user] tears off your tooth with [src]!"))
 
 				H.apply_damage(rand(1, 3), BRUTE, O)
 				H.custom_pain("[pick("OH GOD YOUR MOUTH HURTS SO BAD!", "OH GOD WHY!", "OH GOD YOUR MOUTH!")]", 100, affecting = O)
@@ -173,11 +173,11 @@
 
 				user.doing_something = 0
 			else
-				to_chat(user, "<span class='notice'>Your attempt to pull out a tooth fails...</span>")
+				to_chat(user, SPAN_NOTICE("Your attempt to pull out a tooth fails..."))
 				user.doing_something = 0
 				return
 		else
-			to_chat(user, "<span class='notice'>You are already trying to pull out a tooth!</span>")
+			to_chat(user, SPAN_NOTICE("You are already trying to pull out a tooth!"))
 		return
 
 	//..()
@@ -288,15 +288,15 @@
 
 /obj/item/weldingtool/attackby(obj/item/W as obj, mob/user as mob)
 	if(welding)
-		to_chat(user, "<span class='danger'>Stop welding first!</span>")
+		to_chat(user, SPAN_DANGER("Stop welding first!"))
 		return
 
 	if(isScrewdriver(W))
 		status = !status
 		if(status)
-			to_chat(user, "<span class='notice'>You secure the welder.</span>")
+			to_chat(user, SPAN_NOTICE("You secure the welder."))
 		else
-			to_chat(user, "<span class='notice'>The welder can now be attached and modified.</span>")
+			to_chat(user, SPAN_NOTICE("The welder can now be attached and modified."))
 		src.add_fingerprint(user)
 		return
 
@@ -350,7 +350,7 @@
 			else
 				to_chat(user, "\The [tank] can't be removed.")
 		else
-			to_chat(user, "<span class='danger'>Stop welding first!</span>")
+			to_chat(user, SPAN_DANGER("Stop welding first!"))
 
 	else
 		..()
@@ -368,7 +368,7 @@
 			to_chat(user, "\The [src] has no tank attached!")
 			return
 		O.reagents.trans_to_obj(tank, tank.max_fuel)
-		to_chat(user, "<span class='notice'>You refuel \the [tank].</span>")
+		to_chat(user, SPAN_NOTICE("You refuel \the [tank]."))
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
 	if (src.welding)
@@ -402,7 +402,7 @@
 		return 1
 	else
 		if(M)
-			to_chat(M, "<span class='notice'>You need more welding fuel to complete this task.</span>")
+			to_chat(M, SPAN_NOTICE("You need more welding fuel to complete this task."))
 		return 0
 
 /obj/item/weldingtool/proc/burn_fuel(var/amount)
@@ -465,8 +465,8 @@
 	if(set_welding && !welding)
 		if (get_fuel() > 0)
 			if(M)
-				to_chat(M, "<span class='notice'>You switch the [src] on.</span>")
-				M.visible_message("<span class='danger'>\The [src] turns on.</span>")
+				to_chat(M, SPAN_NOTICE("You switch the [src] on."))
+				M.visible_message(SPAN_DANGER("\The [src] turns on."))
 				playsound(M, 'sound/items/welderactivate.ogg', 100)
 			src.force = 15
 			src.damtype = "fire"
@@ -475,14 +475,14 @@
 			START_PROCESSING(SSobj, src)
 		else
 			if(M)
-				to_chat(M, "<span class='notice'>You need more welding fuel to complete this task.</span>")
+				to_chat(M, SPAN_NOTICE("You need more welding fuel to complete this task."))
 			return
 	//Otherwise
 	else if(!set_welding && welding)
 		STOP_PROCESSING(SSobj, src)
 		if(M)
-			to_chat(M, "<span class='notice'>You switch \the [src] off.</span>")
-			M.visible_message("<span class='warning'>\The [src] turns off.</span>")
+			to_chat(M, SPAN_NOTICE("You switch \the [src] off."))
+			M.visible_message(SPAN_WARNING("\The [src] turns off."))
 			playsound(M, 'sound/items/welderdeactivate.ogg', 100)
 		src.force = 3
 		src.damtype = "brute"
@@ -501,30 +501,30 @@
 		var/safety = H.eyecheck()
 		switch(safety)
 			if(FLASH_PROTECTION_MODERATE)
-				to_chat(H, "<span class='warning'>Your eyes sting a little.</span>")
+				to_chat(H, SPAN_WARNING("Your eyes sting a little."))
 				//E.damage += rand(1, 2)
 				//if(E.damage > 12)
 				H.eye_blurry += rand(3,6)
 			if(FLASH_PROTECTION_NONE)
-				to_chat(H, "<span class='warning'>Your eyes burn.</span>")
+				to_chat(H, SPAN_WARNING("Your eyes burn."))
 				H.eye_blurry += rand(4,10)
 				//E.damage += rand(2, 4)
 				//if(E.damage > 10)
 				//	E.damage += rand(4,10)
 			if(FLASH_PROTECTION_REDUCED)
-				to_chat(H, "<span class='danger'>Your equipment intensifies the welder's glow. Your eyes itch and burn severely.</span>")
+				to_chat(H, SPAN_DANGER("Your equipment intensifies the welder's glow. Your eyes itch and burn severely."))
 				H.eye_blurry += rand(12,20)
 				//E.damage += rand(12, 16)
 		/*
 		if(safety<FLASH_PROTECTION_MAJOR)
 			if(E.damage > 10)
-				to_chat(user, "<span class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
+				to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
 
 			if (E.damage >= E.min_broken_damage)
-				to_chat(H, "<span class='danger'>You go blind!</span>")
+				to_chat(H, SPAN_DANGER("You go blind!"))
 				H.sdisabilities |= BLIND
 			else if (E.damage >= E.min_bruised_damage)
-				to_chat(H, "<span class='danger'>You go blind!</span>")
+				to_chat(H, SPAN_DANGER("You go blind!"))
 				H.eye_blind = 5
 				H.eye_blurry = 5
 				H.disabilities |= NEARSIGHTED
@@ -550,7 +550,7 @@
 	if(!proximity) return
 	if (istype(O, /obj/structure/reagent_dispensers/fueltank) && get_dist(src,O) <= 1)
 		O.reagents.trans_to_obj(src, max_fuel)
-		to_chat(user, "<span class='notice'>You refuel \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You refuel \the [src]."))
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
 
@@ -645,7 +645,7 @@
 			return ..()
 
 		if(!welding)
-			to_chat(user, "<span class='warning'>You'll need to turn [src] on to patch the damage on [M]'s [S.name]!</span>")
+			to_chat(user, SPAN_WARNING("You'll need to turn [src] on to patch the damage on [M]'s [S.name]!"))
 			return 1
 
 		if(S.robo_repair(15, BRUTE, "some dents", src, user))

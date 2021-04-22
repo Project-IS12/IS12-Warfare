@@ -108,8 +108,8 @@
 /obj/item/circuitboard/camera/emag_act(var/remaining_charges, var/mob/user)
 	if(network)
 		authorised = 1
-		to_chat(user, "<span class='notice'>You authorised the circuit network!</span>")
+		to_chat(user, SPAN_NOTICE("You authorised the circuit network!"))
 		updateDialog()
 		return 1
 	else
-		to_chat(user, "<span class='warning'>You must select a camera network circuit!</span>")
+		to_chat(user, SPAN_WARNING("You must select a camera network circuit!"))

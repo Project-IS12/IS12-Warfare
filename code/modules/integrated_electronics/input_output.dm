@@ -20,7 +20,7 @@
 
 /obj/item/integrated_circuit/input/button/OnICTopic(href_list, user)
 	if(href_list["press"])
-		to_chat(user, "<span class='notice'>You press the button labeled '[src.name]'.</span>")
+		to_chat(user, SPAN_NOTICE("You press the button labeled '[src.name]'."))
 		activate_pin(1)
 		return IC_TOPIC_REFRESH
 
@@ -375,7 +375,7 @@
 /obj/item/integrated_circuit/input/access_scanner/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged && remaining_charges > 0)
 		emagged = TRUE
-		to_chat(user, "<span class='warning'>You scramble the board's access protection logic.</span>")
+		to_chat(user, SPAN_WARNING("You scramble the board's access protection logic."))
 		return 1
 	return ..()
 
@@ -391,11 +391,11 @@
 		id_card.forceMove(src)
 		contained_id = id_card
 		scanned_access.data = json_encode(contained_id.GetAccess())
-		user.visible_message("<span class='notice'>\The [user] installs an id card into the board.</span>", "<span class='notice'>You install the id card into the board.</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] installs an id card into the board."), SPAN_NOTICE("You install the id card into the board."))
 
 /obj/item/integrated_circuit/input/access_scanner/attack_self(var/mob/user)
 	if(contained_id)
-		user.visible_message("<span class='notice'>\The [user] removes an id card from the board.</span>", "<span class='notice'>You remove the id card from the board.</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] removes an id card from the board."), SPAN_NOTICE("You remove the id card from the board."))
 		contained_id.dropInto(loc)
 		user.put_in_any_hand_if_possible(contained_id)
 		contained_id = null

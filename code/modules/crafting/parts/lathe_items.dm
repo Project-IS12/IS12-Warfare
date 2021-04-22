@@ -106,7 +106,7 @@
 				if (user.statscheck(skills = user.SKILL_LEVEL(engineering), mod = -6) >= SUCCESS)
 					return /obj/item/cylinder/four_slot
 			if(4)
-				to_chat(usr, "<span class='notice'>You nick another hole, and the cylinder falls apart.</span>")
+				to_chat(usr, SPAN_NOTICE("You nick another hole, and the cylinder falls apart."))
 				return /obj/item/ore/slag
 		return /obj/item/ore/slag
 

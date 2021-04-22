@@ -105,7 +105,7 @@ var/list/fire_sounds = list(
 		return
 	lit = FIRE_DEAD
 	playsound(get_turf(src), 'sound/misc/firehiss.ogg', 75, 1)
-	visible_message("<span class='danger'>\The [src] goes out!</span>")
+	visible_message(SPAN_DANGER("\The [src] goes out!"))
 	GLOB.processing_objects -= src
 	update_icon()
 	return
@@ -118,10 +118,10 @@ var/list/fire_sounds = list(
 	removing.forceMove(get_turf(user))
 	user.put_in_hands(removing)
 	if(lit == FIRE_LIT)
-		visible_message("<span class='danger'>\The [user] hastily fishes \the [removing] out of \the [src]!</span>")
+		visible_message(SPAN_DANGER("\The [user] hastily fishes \the [removing] out of \the [src]!"))
 		burn(user)
 	else
-		visible_message("<span class='notice'>\The [user] removes \the [removing] from \the [src].</span>")
+		visible_message(SPAN_NOTICE("\The [user] removes \the [removing] from \the [src]."))
 
 /obj/structure/fire_source/attackby(var/obj/item/thing, var/mob/user)
 
@@ -131,7 +131,7 @@ var/list/fire_sounds = list(
 		if(G.affecting)
 			G.affecting.forceMove(get_turf(src))
 			G.affecting.Weaken(5)
-			visible_message("<span class='danger'>\The [user] hurls \the [G.affecting] onto \the [src]!</span>")
+			visible_message(SPAN_DANGER("\The [user] hurls \the [G.affecting] onto \the [src]!"))
 			burn(G.affecting)
 			user.unEquip(G)
 			qdel(G)
@@ -140,7 +140,7 @@ var/list/fire_sounds = list(
 	if(istype(thing, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/RG = thing
 		if(RG.is_open_container() && RG.reagents && RG.reagents.total_volume)
-			user.visible_message("<span class='danger'>\The [user] pours the contents of \the [thing] into \the [src]!</span>")
+			user.visible_message(SPAN_DANGER("\The [user] pours the contents of \the [thing] into \the [src]!"))
 			for(var/datum/reagent/R in RG.reagents.reagent_list)
 
 				// Hardcode this for now.
@@ -156,7 +156,7 @@ var/list/fire_sounds = list(
 			return
 
 	if(isflamesource(thing) && lit != FIRE_LIT)
-		visible_message("<span class='notice'>\The [user] attempts to light \the [src] with \the [thing]...</span>")
+		visible_message(SPAN_NOTICE("\The [user] attempts to light \the [src] with \the [thing]..."))
 		light()
 		return
 
@@ -171,7 +171,7 @@ var/list/fire_sounds = list(
 	if((!fuel || fuel <= 0) && !process_fuel())
 		return
 	lit = FIRE_LIT
-	visible_message("<span class='danger'>\The [src] catches alight!</span>")
+	visible_message(SPAN_DANGER("\The [src] catches alight!"))
 	GLOB.processing_objects |= src
 	process()
 	return
@@ -234,9 +234,9 @@ var/list/fire_sounds = list(
 			accepted_fuel =1
 	if(accepted_fuel)
 		if(lit == FIRE_LIT)
-			user.visible_message("<span class='notice'>\The [user] feeds \the [thing] into \the [src].</span>")
+			user.visible_message(SPAN_NOTICE("\The [user] feeds \the [thing] into \the [src]."))
 		else
-			user.visible_message("<span class='notice'>\The [user] places \the [thing] into \the [src].</span>")
+			user.visible_message(SPAN_NOTICE("\The [user] places \the [thing] into \the [src]."))
 		user.unEquip(thing)
 		thing.forceMove(src)
 		update_icon()
@@ -309,6 +309,6 @@ var/list/fire_sounds = list(
 		overlays += fire_cache[cache_key]
 
 /obj/structure/fire_source/proc/burn(var/mob/living/victim)
-	to_chat(victim, "<span class='danger'>You are burned by \the [src]!</span>")
+	to_chat(victim, SPAN_DANGER("You are burned by \the [src]!"))
 	victim.IgniteMob()
 	victim.apply_damage(rand(10,20), BURN)

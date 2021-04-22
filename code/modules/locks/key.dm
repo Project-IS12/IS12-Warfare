@@ -22,9 +22,9 @@
 /obj/item/key/soap/get_data(var/mob/user)
 	uses--
 	if(uses == 1)
-		to_chat(user, "<span class='warning'>\The [src] is going to break soon!</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is going to break soon!"))
 	else if(uses <= 0)
 		user.drop_item(src)
-		to_chat(user, "<span class='warning'>\The [src] crumbles in your hands.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] crumbles in your hands."))
 		qdel(src)
 	return ..()

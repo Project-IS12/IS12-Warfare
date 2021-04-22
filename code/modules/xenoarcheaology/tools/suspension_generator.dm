@@ -80,7 +80,7 @@
 				if(anchored)
 					activate()
 				else
-					to_chat(user, "<span class='warning'>You are unable to activate [src] until it is properly secured on the ground.</span>")
+					to_chat(user, SPAN_WARNING("You are unable to activate [src] until it is properly secured on the ground."))
 		else
 			deactivate()
 		. = TOPIC_REFRESH
@@ -93,7 +93,7 @@
 			if(attempt_unlock(I, user))
 				to_chat(user, "<span class='info'>You insert [I], the console flashes \'<i>Access granted.</i>\'</span>")
 			else
-				to_chat(user, "<span class='warning'>You insert [I], the console flashes \'<i>Access denied.</i>\'</span>")
+				to_chat(user, SPAN_WARNING("You insert [I], the console flashes \'<i>Access denied.</i>\'"))
 		. = TOPIC_REFRESH
 	else if(href_list["ejectcard"])
 		if(auth_card)
@@ -143,11 +143,11 @@
 			else
 				desc = "It has stubby legs bolted up against it's body for stabilising."
 		else
-			to_chat(user, "<span class='warning'>You are unable to secure [src] while it is active!</span>")
+			to_chat(user, SPAN_WARNING("You are unable to secure [src] while it is active!"))
 	else if (istype(W, /obj/item/cell))
 		if(panel_open)
 			if(cell)
-				to_chat(user, "<span class='warning'>There is a power cell already installed.</span>")
+				to_chat(user, SPAN_WARNING("There is a power cell already installed."))
 			else
 				user.drop_item()
 				W.forceMove(src)
@@ -160,9 +160,9 @@
 			if(attempt_unlock(I, user))
 				to_chat(user, "<span class='info'>You swipe [I], the console flashes \'<i>Access granted.</i>\'</span>")
 			else
-				to_chat(user, "<span class='warning'>You swipe [I], console flashes \'<i>Access denied.</i>\'</span>")
+				to_chat(user, SPAN_WARNING("You swipe [I], console flashes \'<i>Access denied.</i>\'"))
 		else
-			to_chat(user, "<span class='warning'>Remove [auth_card] first.</span>")
+			to_chat(user, SPAN_WARNING("Remove [auth_card] first."))
 
 /obj/machinery/suspension_gen/proc/attempt_unlock(var/obj/item/card/C, var/mob/user)
 	if(!panel_open)
@@ -185,10 +185,10 @@
 
 	for(var/mob/living/M in T)
 		M.weakened += 5
-		M.visible_message("<span class='notice'>\icon[M] [M] begins to float in the air!</span>","You feel tingly and light, but it is difficult to move.")
+		M.visible_message(SPAN_NOTICE("\icon[M] [M] begins to float in the air!"),"You feel tingly and light, but it is difficult to move.")
 
 	suspension_field = new(T)
-	src.visible_message("<span class='notice'>\icon[src] [src] activates with a low hum.</span>")
+	src.visible_message(SPAN_NOTICE("\icon[src] [src] activates with a low hum."))
 	icon_state = "suspension3"
 
 	for(var/obj/item/I in T)
@@ -213,7 +213,7 @@
 		to_chat(M, "<span class='info'>You no longer feel like floating.</span>")
 		M.weakened = min(M.weakened, 3)
 
-	src.visible_message("<span class='notice'>\icon[src] [src] deactivates with a gentle shudder.</span>")
+	src.visible_message(SPAN_NOTICE("\icon[src] [src] deactivates with a gentle shudder."))
 	qdel(suspension_field)
 	suspension_field = null
 	icon_state = "suspension2"
@@ -228,7 +228,7 @@
 	set category = "Object"
 
 	if(anchored)
-		to_chat(usr, "<span class='warning'>You cannot rotate [src], it has been firmly fixed to the floor.</span>")
+		to_chat(usr, SPAN_WARNING("You cannot rotate [src], it has been firmly fixed to the floor."))
 	else
 		set_dir(turn(dir, 90))
 
@@ -238,7 +238,7 @@
 	set category = "Object"
 
 	if(anchored)
-		to_chat(usr, "<span class='warning'>You cannot rotate [src], it has been firmly fixed to the floor.</span>")
+		to_chat(usr, SPAN_WARNING("You cannot rotate [src], it has been firmly fixed to the floor."))
 	else
 		set_dir(turn(dir, -90))
 

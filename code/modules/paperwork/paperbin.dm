@@ -23,10 +23,10 @@
 				if (H.hand)
 					temp = H.organs_by_name[BP_L_HAND]
 				if(temp && !temp.is_usable())
-					to_chat(user, "<span class='notice'>You try to move your [temp.name], but cannot!</span>")
+					to_chat(user, SPAN_NOTICE("You try to move your [temp.name], but cannot!"))
 					return
 
-				to_chat(user, "<span class='notice'>You pick up the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You pick up the [src]."))
 				user.put_in_hands(src)
 
 	return
@@ -38,7 +38,7 @@
 		if (H.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(temp && !temp.is_usable())
-			to_chat(user, "<span class='notice'>You try to move your [temp.name], but cannot!</span>")
+			to_chat(user, SPAN_NOTICE("You try to move your [temp.name], but cannot!"))
 			return
 	var/response = ""
 	if(!papers.len > 0)
@@ -68,9 +68,9 @@
 
 		P.loc = user.loc
 		user.put_in_hands(P)
-		to_chat(user, "<span class='notice'>You take [P] out of the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You take [P] out of the [src]."))
 	else
-		to_chat(user, "<span class='notice'>[src] is empty!</span>")
+		to_chat(user, SPAN_NOTICE("[src] is empty!"))
 
 	add_fingerprint(user)
 	return
@@ -80,12 +80,12 @@
 	if(istype(i, /obj/item/paper))
 		user.drop_item()
 		i.forceMove(src)
-		to_chat(user, "<span class='notice'>You put [i] in [src].</span>")
+		to_chat(user, SPAN_NOTICE("You put [i] in [src]."))
 		papers.Add(i)
 		update_icon()
 		amount++
 	else if(istype(i, /obj/item/paper_bundle))
-		to_chat(user, "<span class='notice'>You loosen \the [i] and add its papers into \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You loosen \the [i] and add its papers into \the [src]."))
 		var/was_there_a_photo = 0
 		for(var/obj/item/bundleitem in i) //loop through items in bundle
 			if(istype(bundleitem, /obj/item/paper)) //if item is paper, add into the bin
@@ -99,7 +99,7 @@
 		user.drop_from_inventory(i)
 		qdel(i)
 		if(was_there_a_photo)
-			to_chat(user, "<span class='notice'>The photo cannot go into \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("The photo cannot go into \the [src]."))
 	return
 
 
@@ -109,7 +109,7 @@
 		if(amount)
 			to_chat(user, "<span class='notice'>There " + (amount > 1 ? "are [amount] papers" : "is one paper") + " in the bin.</span>")
 		else
-			to_chat(user, "<span class='notice'>There are no papers in the bin.</span>")
+			to_chat(user, SPAN_NOTICE("There are no papers in the bin."))
 	return
 
 

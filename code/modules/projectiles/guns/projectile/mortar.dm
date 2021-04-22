@@ -40,7 +40,7 @@
 	loaded_with = M.mortar_type
 	loaded = TRUE
 	playsound(src, 'sound/weapons/mortar_load.ogg', 100, FALSE)
-	user.visible_message("<span class='danger'>[user] loads the [src] with \the [W]!</span>")
+	user.visible_message(SPAN_DANGER("[user] loads the [src] with \the [W]!"))
 	qdel(W)
 	update_icon()
 
@@ -57,20 +57,20 @@
 /obj/item/mortar_launcher/afterattack(atom/A, mob/living/user)
 	..()
 	if(!deployed)//Can't fire.
-		to_chat(user, "<span class='danger'>I can't fire it if it's not deployed.</span>")
+		to_chat(user, SPAN_DANGER("I can't fire it if it's not deployed."))
 		return
 	if(!loaded)//Nothing to fire.
-		to_chat(user, "<span class='danger'>It's not loaded.</span>")
+		to_chat(user, SPAN_DANGER("It's not loaded."))
 		return
 	if(istype(user.loc, /turf/simulated/floor/tiled))
-		to_chat(user, "<span class='danger'>I can't use this indoors.</span>")
+		to_chat(user, SPAN_DANGER("I can't use this indoors."))
 		return
 	if(!user.zoomed)
-		to_chat(user, "<span class='danger'>I must zoom into the distance to get a good shot in on.</span>")
+		to_chat(user, SPAN_DANGER("I must zoom into the distance to get a good shot in on."))
 		return
 	var/obj/item/I = user.get_inactive_hand()
 	if(I)
-		to_chat(user, "<span class='danger'>I need a free hand for this.</span>")
+		to_chat(user, SPAN_DANGER("I need a free hand for this."))
 		return
 	log_and_message_admins("[user] has fired a mortar at [A]!", user)
 	launch_mortar(A, user, loaded_with)
@@ -78,7 +78,7 @@
 
 
 /obj/item/mortar_launcher/proc/launch_mortar(atom/A, mob/living/user, var/mortar_type)
-	user.visible_message("<span class='danger'>[user] fires the [src]!</span>")
+	user.visible_message(SPAN_DANGER("[user] fires the [src]!"))
 	playsound(src, 'sound/weapons/mortar_fire.ogg', 100, FALSE)
 	spawn(35)
 		drop_mortar(get_turf(A),mortar_type)

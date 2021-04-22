@@ -36,15 +36,15 @@
 
 /datum/surgery_step/fix_tendon/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	user.visible_message("<span class='notice'>[user] has reattached the [affected.tendon_name] in [target]'s [affected.name] with \the [tool].</span>", \
-		"<span class='notice'>You have reattached the [affected.tendon_name] in [target]'s [affected.name] with \the [tool].</span>")
+	user.visible_message(SPAN_NOTICE("[user] has reattached the [affected.tendon_name] in [target]'s [affected.name] with \the [tool]."), \
+		SPAN_NOTICE("You have reattached the [affected.tendon_name] in [target]'s [affected.name] with \the [tool]."))
 	affected.status &= ~ORGAN_TENDON_CUT
 	affected.update_damages()
 
 /datum/surgery_step/fix_tendon/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	user.visible_message("<span class='warning'>[user]'s hand slips, smearing [tool] in the incision in [target]'s [affected.name]!</span>" , \
-	"<span class='warning'>Your hand slips, smearing [tool] in the incision in [target]'s [affected.name]!</span>")
+	user.visible_message(SPAN_WARNING("[user]'s hand slips, smearing [tool] in the incision in [target]'s [affected.name]!") , \
+	SPAN_WARNING("Your hand slips, smearing [tool] in the incision in [target]'s [affected.name]!"))
 	affected.take_damage(5, used_weapon = tool)
 
 //////////////////////////////////////////////////////////////////
@@ -81,15 +81,15 @@
 
 /datum/surgery_step/fix_vein/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	user.visible_message("<span class='notice'>[user] has patched the [affected.artery_name] in [target]'s [affected.name] with \the [tool].</span>", \
-		"<span class='notice'>You have patched the [affected.artery_name] in [target]'s [affected.name] with \the [tool].</span>")
+	user.visible_message(SPAN_NOTICE("[user] has patched the [affected.artery_name] in [target]'s [affected.name] with \the [tool]."), \
+		SPAN_NOTICE("You have patched the [affected.artery_name] in [target]'s [affected.name] with \the [tool]."))
 	affected.status &= ~ORGAN_ARTERY_CUT
 	affected.update_damages()
 
 /datum/surgery_step/fix_vein/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	user.visible_message("<span class='warning'>[user]'s hand slips, smearing [tool] in the incision in [target]'s [affected.name]!</span>" , \
-	"<span class='warning'>Your hand slips, smearing [tool] in the incision in [target]'s [affected.name]!</span>")
+	user.visible_message(SPAN_WARNING("[user]'s hand slips, smearing [tool] in the incision in [target]'s [affected.name]!") , \
+	SPAN_WARNING("Your hand slips, smearing [tool] in the incision in [target]'s [affected.name]!"))
 	affected.take_damage(5, used_weapon = tool)
 
 //////////////////////////////////////////////////////////////////
@@ -129,7 +129,7 @@
 		return 0
 	var/datum/reagent/ethanol/booze = locate() in container.reagents.reagent_list
 	if(istype(booze) && booze.strength >= 40)
-		to_chat(user, "<span class='warning'>[booze] is too weak, you need something of higher proof for this...</span>")
+		to_chat(user, SPAN_WARNING("[booze] is too weak, you need something of higher proof for this..."))
 		return 0
 	if(!istype(booze) && !container.reagents.has_reagent(/datum/reagent/sterilizine))
 		return 0
@@ -158,7 +158,7 @@
 	var/trans = temp_reagents.trans_to_mob(target, temp_reagents.total_volume, CHEM_BLOOD) //technically it's contact, but the reagents are being applied to internal tissue
 	if (trans > 0)
 		user.visible_message("<span class='notice'>[user] rubs [target]'s [affected.name] down with \the [tool]'s contents</span>.", \
-			"<span class='notice'>You rub [target]'s [affected.name] down with \the [tool]'s contents.</span>")
+			SPAN_NOTICE("You rub [target]'s [affected.name] down with \the [tool]'s contents."))
 	qdel(temp_reagents)
 	qdel(temp_holder)
 
@@ -172,7 +172,7 @@
 
 	container.reagents.trans_to_mob(target, container.amount_per_transfer_from_this, CHEM_BLOOD)
 
-	user.visible_message("<span class='warning'>[user]'s hand slips, spilling \the [tool]'s contents over the [target]'s [affected.name]!</span>" , \
-	"<span class='warning'>Your hand slips, spilling \the [tool]'s contents over the [target]'s [affected.name]!</span>")
+	user.visible_message(SPAN_WARNING("[user]'s hand slips, spilling \the [tool]'s contents over the [target]'s [affected.name]!") , \
+	SPAN_WARNING("Your hand slips, spilling \the [tool]'s contents over the [target]'s [affected.name]!"))
 	affected.disinfect()
 

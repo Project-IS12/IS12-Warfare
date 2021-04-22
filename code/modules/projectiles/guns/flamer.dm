@@ -213,7 +213,7 @@ obj/flamer_fire/proc/make_more_fire(var/T, var/f_level, var/b_level, var/fcolor,
 			M.IgniteMob()
 
 		M.adjustFireLoss(round(burnlevel*0.5)) //This makes fire stronk.
-		to_chat(M, "<span class='danger'>You are burned!</span>")
+		to_chat(M, SPAN_DANGER("You are burned!"))
 
 
 /obj/flamer_fire/proc/updateicon()
@@ -254,7 +254,7 @@ obj/flamer_fire/proc/make_more_fire(var/T, var/f_level, var/b_level, var/fcolor,
 				continue
 		I.adjust_fire_stacks(burnlevel) //If i stand in the fire i deserve all of this. Also Napalm stacks quickly.
 		if(prob(firelevel)) I.IgniteMob()
-		I.show_message(text("<span class='warning'>You are burned!</span>"),1)
+		I.show_message(text(SPAN_WARNING("You are burned!")),1)
 /* //Uncomment when you decide to make this proc do something.
 	for(var/obj/O in loc)
 		O.flamer_fire_act()

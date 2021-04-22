@@ -247,13 +247,13 @@
 			if(!isSynthetic())
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
 					radiation -= 5 * RADIATION_SPEED_COEFFICIENT
-					to_chat(src, "<span class='warning'>You feel weak.</span>")
+					to_chat(src, SPAN_WARNING("You feel weak."))
 					Weaken(3)
 					if(!lying)
 						emote("collapse")
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT) && species.get_bodytype(src) == SPECIES_HUMAN) //apes go bald
 					if((h_style != "Bald" || f_style != "Shaved" ))
-						to_chat(src, "<span class='warning'>Your hair falls out.</span>")
+						to_chat(src, SPAN_WARNING("Your hair falls out."))
 						h_style = "Bald"
 						f_style = "Shaved"
 						update_hair()
@@ -265,7 +265,7 @@
 				if(prob(5))
 					take_overall_damage(0, 5 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Radiation Burns")
 				if(prob(1))
-					to_chat(src, "<span class='warning'>You feel strange!</span>")
+					to_chat(src, SPAN_WARNING("You feel strange!"))
 					adjustCloneLoss(5 * RADIATION_SPEED_COEFFICIENT)
 					emote("gasp")
 					gasp_sound()
@@ -592,7 +592,7 @@
 
 		if(get_shock() >= species.total_health)
 			if(!stat)
-				src.visible_message("<span class='warning'><B>[src]</B> gives into the pain!</span>")
+				src.visible_message(SPAN_WARNING("<B>[src]</B> gives into the pain!"))
 				agony_scream()
 			Paralyse(10)
 
@@ -640,7 +640,7 @@
 			eye_blurry = max(2, eye_blurry)
 			if (drowsyness > 10 && (prob(5) || drowsyness >= 60))
 				if(stat == CONSCIOUS)
-					to_chat(src, "<span class='notice'>You are about to fall asleep...</span>")
+					to_chat(src, SPAN_NOTICE("You are about to fall asleep..."))
 				Sleeping(5)
 
 		confused = max(0, confused - 1)
@@ -663,7 +663,7 @@
 		if(stasis_value > 1 && drowsyness < stasis_value * 5)
 			drowsyness += min(stasis_value, 3)
 			if(!stat && prob(1))
-				to_chat(src, "<span class='notice'>You feel slow and sluggish...</span>")
+				to_chat(src, SPAN_NOTICE("You feel slow and sluggish..."))
 
 		CheckStamina()
 
@@ -962,14 +962,14 @@
 				if(prob(3)) //3% chance of a tiny amount of oxygen damage (1-10)
 
 					adjustOxyLoss(rand(1,10))
-					to_chat(src, "<span class='danger'>[pick(hunger_phrases)]</span>")
+					to_chat(src, SPAN_DANGER("[pick(hunger_phrases)]"))
 
 				else if(prob(5)) //5% chance of being weakened
 
 					eye_blurry += 10
 					Weaken(10)
 					adjustOxyLoss(rand(1,15))
-					to_chat(src, "<span class='danger'>You're starving! The lack of strength makes you black out for a few moments...</span>")
+					to_chat(src, SPAN_DANGER("You're starving! The lack of strength makes you black out for a few moments..."))
 
 			if(STARVATION_NEARDEATH to STARVATION_WEAKNESS) //5-30, 5% chance of weakening and 1-230 oxygen damage. 5% chance of a seizure. 10% chance of dropping item
 				if(sleeping) return
@@ -977,20 +977,20 @@
 				if(prob(5))
 
 					adjustOxyLoss(rand(1,20))
-					to_chat(src, "<span class='danger'>You're starving. You feel your life force slowly leaving your body...</span>")
+					to_chat(src, SPAN_DANGER("You're starving. You feel your life force slowly leaving your body..."))
 					eye_blurry += 20
 					if(weakened < 1) Weaken(20)
 
 				else if(paralysis<1 && prob(5)) //Mini seizure (25% duration and strength of a normal seizure)
 
-					visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", \
-							"<span class='warning'>You have a seizure!</span>")
+					visible_message(SPAN_DANGER("\The [src] starts having a seizure!"), \
+							SPAN_WARNING("You have a seizure!"))
 					Paralyse(5)
 					adjustOxyLoss(rand(1,25))
 					eye_blurry += 20
 
 			if(-INFINITY to STARVATION_NEARDEATH) //Fuck the whole body up at this point
-				to_chat(src, "<span class='danger'>You are dying from starvation!</span>")
+				to_chat(src, SPAN_DANGER("You are dying from starvation!"))
 				adjustToxLoss(STARVATION_TOX_DAMAGE)
 				adjustOxyLoss(STARVATION_OXY_DAMAGE)
 				adjustBrainLoss(STARVATION_BRAIN_DAMAGE)

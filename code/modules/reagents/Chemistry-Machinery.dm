@@ -45,7 +45,7 @@
 
 	if(istype(B, /obj/item/reagent_containers/glass))
 		if(B.w_class >= ITEM_SIZE_NORMAL)
-			to_chat(user, "<span class='warning'>This container is too big for this machine!</span>")
+			to_chat(user, SPAN_WARNING("This container is too big for this machine!"))
 			return 1
 		if(src.beaker)
 			to_chat(user, "A beaker is already loaded into the machine.")
@@ -344,7 +344,7 @@
 		istype(O,/obj/item/reagent_containers/food/drinks/glass2) || \
 		istype(O,/obj/item/reagent_containers/food/drinks/shaker))
 		if(O.w_class >= ITEM_SIZE_NORMAL)
-			to_chat(user, "<span class='warning'>This container is too big for this machine!</span>")
+			to_chat(user, SPAN_WARNING("This container is too big for this machine!"))
 			return 1
 		if (beaker)
 			return 1

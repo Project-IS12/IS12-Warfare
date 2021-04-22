@@ -59,7 +59,7 @@
 	// Make sure our user is still holding us
 	if(user && user.get_active_hand() == src)
 		if(user.a_intent == I_HELP) //don't shoot if we're on help intent
-			to_chat(user, "<span class='warning'>You refrain from firing \the [src] as your intent is set to help.</span>")
+			to_chat(user, SPAN_WARNING("You refrain from firing \the [src] as your intent is set to help."))
 			return
 		var/turf/target_turf = get_turf(target)
 		if(target_turf)
@@ -101,7 +101,7 @@
 
 	if(istype(W,/obj/item/tank/hydrogen))
 		if(ptank)
-			to_chat(user, "<span class='notice'>There appears to already be a hydrogen tank loaded in [src]!</span>")
+			to_chat(user, SPAN_NOTICE("There appears to already be a hydrogen tank loaded in [src]!"))
 			return
 		user.drop_item()
 		ptank = W
@@ -121,7 +121,7 @@
 	if(user.stat || user.restrained() || user.lying)	return
 	user.set_machine(src)
 	if(!ptank)
-		to_chat(user, "<span class='notice'>Attach a hydrogen tank first!</span>")
+		to_chat(user, SPAN_NOTICE("Attach a hydrogen tank first!"))
 		return
 	var/dat = text("<TT><B>Flamethrower (<A HREF='?src=\ref[src];light=1'>[lit ? "<font color='red'>Lit</font>" : "Unlit"]</a>)</B><BR>\n Tank Pressure: [ptank.air_contents.return_pressure()]<BR>\nAmount to throw: <A HREF='?src=\ref[src];amount=-100'>-</A> <A HREF='?src=\ref[src];amount=-10'>-</A> <A HREF='?src=\ref[src];amount=-1'>-</A> [throw_amount] <A HREF='?src=\ref[src];amount=1'>+</A> <A HREF='?src=\ref[src];amount=10'>+</A> <A HREF='?src=\ref[src];amount=100'>+</A><BR>\n<A HREF='?src=\ref[src];remove=1'>Remove hydrogen tank</A> - <A HREF='?src=\ref[src];close=1'>Close</A></TT>")
 	user << browse(dat, "window=flamethrower;size=600x300")

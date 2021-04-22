@@ -181,19 +181,19 @@
 					bowels += 15
 			if(400 to 450)
 				if(prob(5))
-					to_chat(src, "<span class='danger'>You really need to use the restroom!</span>")
+					to_chat(src, SPAN_DANGER("You really need to use the restroom!"))
 					bowels += 15
 			if(450 to 500)
 				if(prob(2))
 					handle_shit()
 				else if(prob(10))
-					to_chat(src, "<span class='danger'>You're about to shit yourself!</span>")
+					to_chat(src, SPAN_DANGER("You're about to shit yourself!"))
 					bowels += 25
 			if(500 to 550)
 				if(prob(15))
 					handle_shit()
 				else if(prob(30))
-					to_chat(src, "<span class='danger'>OH MY GOD YOU HAVE TO SHIT!</span>")
+					to_chat(src, SPAN_DANGER("OH MY GOD YOU HAVE TO SHIT!"))
 					bowels += 35
 			if(550 to INFINITY)
 				handle_shit()
@@ -206,19 +206,19 @@
 					bladder += 15
 			if(250 to 400)
 				if(prob(5))
-					to_chat(src, "<span class='danger'>You really need to use the restroom!</span>")
+					to_chat(src, SPAN_DANGER("You really need to use the restroom!"))
 					bladder += 15
 			if(400 to 500)
 				if(prob(2))
 					handle_piss()
 				else if(prob(10))
-					to_chat(src, "<span class='danger'>You're about to piss yourself!</span>")
+					to_chat(src, SPAN_DANGER("You're about to piss yourself!"))
 					bladder += 25
 			if(500 to 550)
 				if(prob(15))
 					handle_piss()
 				else if(prob(30))
-					to_chat(src, "<span class='danger'>OH MY GOD YOU HAVE TO PEE!</span>")
+					to_chat(src, SPAN_DANGER("OH MY GOD YOU HAVE TO PEE!"))
 					bladder += 35
 			if(550 to INFINITY)
 				handle_piss()
@@ -242,7 +242,7 @@
 
 		//Poo on the face.
 		else if(M != src && M.lying)//Can only shit on them if they're lying down.
-			message = "<span class='danger'><b>[src]</b> shits right on <b>[M]</b>'s face!</span>"
+			message = SPAN_DANGER("<b>[src]</b> shits right on <b>[M]</b>'s face!")
 			M.reagents.add_reagent(/datum/reagent/poo, 10)
 			M.unlock_achievement(new/datum/achievement/shit_on())
 

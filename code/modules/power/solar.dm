@@ -63,14 +63,14 @@ var/list/solars_list = list()
 
 	if(isCrowbar(W))
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-		user.visible_message("<span class='notice'>[user] begins to take the glass off the solar panel.</span>")
+		user.visible_message(SPAN_NOTICE("[user] begins to take the glass off the solar panel."))
 		if(do_after(user, 50,src))
 			var/obj/item/solar_assembly/S = locate() in src
 			if(S)
 				S.loc = src.loc
 				S.give_glass()
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
-			user.visible_message("<span class='notice'>[user] takes the glass off the solar panel.</span>")
+			user.visible_message(SPAN_NOTICE("[user] takes the glass off the solar panel."))
 			qdel(src)
 		return
 	else if (W)
@@ -231,13 +231,13 @@ var/list/solars_list = list()
 			pixel_x = 0
 			pixel_y = 0
 			pixel_z = 0
-			user.visible_message("<span class='notice'>[user] wrenches the solar assembly into place.</span>")
+			user.visible_message(SPAN_NOTICE("[user] wrenches the solar assembly into place."))
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 			return 1
 	else
 		if(isWrench(W))
 			anchored = 0
-			user.visible_message("<span class='notice'>[user] unwrenches the solar assembly from it's place.</span>")
+			user.visible_message(SPAN_NOTICE("[user] unwrenches the solar assembly from it's place."))
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 			return 1
 
@@ -246,13 +246,13 @@ var/list/solars_list = list()
 			if(S.use(2))
 				glass_type = W.type
 				playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-				user.visible_message("<span class='notice'>[user] places the glass on the solar assembly.</span>")
+				user.visible_message(SPAN_NOTICE("[user] places the glass on the solar assembly."))
 				if(tracker)
 					new /obj/machinery/power/tracker(get_turf(src), src)
 				else
 					new /obj/machinery/power/solar(get_turf(src), src)
 			else
-				to_chat(user, "<span class='warning'>You need two sheets of glass to put them into a solar panel.</span>")
+				to_chat(user, SPAN_WARNING("You need two sheets of glass to put them into a solar panel."))
 				return
 			return 1
 
@@ -261,13 +261,13 @@ var/list/solars_list = list()
 			tracker = 1
 			user.drop_item()
 			qdel(W)
-			user.visible_message("<span class='notice'>[user] inserts the electronics into the solar assembly.</span>")
+			user.visible_message(SPAN_NOTICE("[user] inserts the electronics into the solar assembly."))
 			return 1
 	else
 		if(isCrowbar(W))
 			new /obj/item/tracker_electronics(src.loc)
 			tracker = 0
-			user.visible_message("<span class='notice'>[user] takes out the electronics from the solar assembly.</span>")
+			user.visible_message(SPAN_NOTICE("[user] takes out the electronics from the solar assembly."))
 			return 1
 	..()
 
@@ -407,7 +407,7 @@ var/list/solars_list = list()
 		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 		if(do_after(user, 20,src))
 			if (src.stat & BROKEN)
-				to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
+				to_chat(user, SPAN_NOTICE("The broken glass falls out."))
 				var/obj/structure/computerframe/A = new /obj/structure/computerframe( src.loc )
 				new /obj/item/material/shard( src.loc )
 				var/obj/item/circuitboard/solar_control/M = new /obj/item/circuitboard/solar_control( A )
@@ -419,7 +419,7 @@ var/list/solars_list = list()
 				A.anchored = 1
 				qdel(src)
 			else
-				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
+				to_chat(user, SPAN_NOTICE("You disconnect the monitor."))
 				var/obj/structure/computerframe/A = new /obj/structure/computerframe( src.loc )
 				var/obj/item/circuitboard/solar_control/M = new /obj/item/circuitboard/solar_control( A )
 				for (var/obj/C in src)

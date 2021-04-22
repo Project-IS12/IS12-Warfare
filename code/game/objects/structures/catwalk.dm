@@ -61,7 +61,7 @@
 		var/obj/item/weldingtool/WT = C
 		if(WT.remove_fuel(0, user))
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
-			to_chat(user, "<span class='notice'>Slicing catwalk joints ...</span>")
+			to_chat(user, SPAN_NOTICE("Slicing catwalk joints ..."))
 			new /obj/item/stack/rods(src.loc)
 			new /obj/item/stack/rods(src.loc)
 			//Lattice would delete itself, but let's save ourselves a new obj

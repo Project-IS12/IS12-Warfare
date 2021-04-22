@@ -11,7 +11,7 @@
 	var/dat = ""
 	var/turf/spot = get_step(src, dir)
 	if(!spot.Adjacent(src))
-		src << "<span class='warning'>You need more space to work.</span>"
+		src << SPAN_WARNING("You need more space to work.")
 		return
 	for(var/name in crafting_recipes)
 		var/datum/crafting_recipe/R = crafting_recipes[name]
@@ -32,7 +32,7 @@
 				dat += english_list(tools)
 			dat += ".<br>"
 	if(!dat)
-		src << "<span class='notice'>You can't think of anything you can make with what you have in here.</span>"
+		src << SPAN_NOTICE("You can't think of anything you can make with what you have in here.")
 		return
 	var/datum/browser/popup = new(src, "craft", "Craft", 300, 300)
 	popup.set_content(dat)
@@ -109,16 +109,16 @@
 /datum/crafting_recipe/proc/make(var/mob/user, var/turf/spot)
 	if(!can_make(user,spot))
 		return 0
-	user << "<span class='notice'>You start making \a [name].</span>"
+	user << SPAN_NOTICE("You start making \a [name].")
 	if(do_after(user, time))
 		if(!can_make(user,spot))
-			user << "<span class='warning'>You are missing some things to make \a [name].</span>"
+			user << SPAN_WARNING("You are missing some things to make \a [name].")
 			return 0
 		use_ingridients(spot.contents + user.contents)
 		if(prob(base_chance))  //Add whatever skill bonuses here
 			for(var/T in result)
 				for(var/i = 1 to result[T])
 					new T(spot)
-			user << "<span class='notice'>You make \a [name].</span>"
+			user << SPAN_NOTICE("You make \a [name].")
 		else
-			user << "<span class='warning'>You've failed to make \a [name].</span>"
+			user << SPAN_WARNING("You've failed to make \a [name].")

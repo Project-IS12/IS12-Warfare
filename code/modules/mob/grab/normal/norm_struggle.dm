@@ -31,7 +31,7 @@
 	var/mob/living/carbon/human/assailant = G.assailant
 
 	if(affecting.incapacitated() || affecting.a_intent == I_HELP)
-		affecting.visible_message("<span class='warning'>[affecting] isn't prepared to fight back as [assailant] tightens \his grip!</span>")
+		affecting.visible_message(SPAN_WARNING("[affecting] isn't prepared to fight back as [assailant] tightens \his grip!"))
 		done_struggle = TRUE
 		G.upgrade(TRUE)
 
@@ -40,11 +40,11 @@
 	var/mob/living/carbon/human/assailant = G.assailant
 
 	if(affecting.incapacitated() || affecting.a_intent == I_HELP)
-		affecting.visible_message("<span class='warning'>[affecting] isn't prepared to fight back as [assailant] tightens \his grip!</span>")
+		affecting.visible_message(SPAN_WARNING("[affecting] isn't prepared to fight back as [assailant] tightens \his grip!"))
 		done_struggle = TRUE
 		G.upgrade(TRUE)
 	else
-		affecting.visible_message("<span class='warning'>[affecting] struggles against [assailant]!</span>")
+		affecting.visible_message(SPAN_WARNING("[affecting] struggles against [assailant]!"))
 		spawn(10)
 			handle_resist(G)
 		if(do_after(assailant, upgrade_cooldown, G, can_move = 1))
@@ -57,15 +57,15 @@
 	return done_struggle
 
 /datum/grab/normal/struggle/on_hit_disarm(var/obj/item/grab/normal/G)
-	to_chat(G.assailant, "<span class='warning'>Your grip isn't strong enough to pin.</span>")
+	to_chat(G.assailant, SPAN_WARNING("Your grip isn't strong enough to pin."))
 	return 0
 
 /datum/grab/normal/struggle/on_hit_grab(var/obj/item/grab/normal/G)
-	to_chat(G.assailant, "<span class='warning'>Your grip isn't strong enough to jointlock.</span>")
+	to_chat(G.assailant, SPAN_WARNING("Your grip isn't strong enough to jointlock."))
 	return 0
 
 /datum/grab/normal/struggle/on_hit_harm(var/obj/item/grab/normal/G)
-	to_chat(G.assailant, "<span class='warning'>Your grip isn't strong enough to dislocate.</span>")
+	to_chat(G.assailant, SPAN_WARNING("Your grip isn't strong enough to dislocate."))
 	return 0
 
 /datum/grab/normal/struggle/resolve_openhand_attack(var/obj/item/grab/G)

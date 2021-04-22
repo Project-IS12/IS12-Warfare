@@ -20,7 +20,7 @@
 	if (src.uses < 1)	return 0
 	if (emote == "pale")
 		src.uses--
-		to_chat(source, "<span class='notice'>You feel a sudden surge of energy!</span>")
+		to_chat(source, SPAN_NOTICE("You feel a sudden surge of energy!"))
 		source.SetStunned(0)
 		source.SetWeakened(0)
 		source.SetParalysis(0)

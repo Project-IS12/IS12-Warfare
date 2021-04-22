@@ -88,14 +88,14 @@
 	var/turf/T = get_turf(src)
 	if(broken_icon)
 		playsound(src, "shatter", 70, 1)
-		T.visible_message("<span class='danger'>\The [src] breaks!</span>")
+		T.visible_message(SPAN_DANGER("\The [src] breaks!"))
 		icon = 'icons/obj/items/broken_weapons.dmi'
 		icon_state = broken_icon
 		force = 0
 
 
 	else
-		T.visible_message("<span class='danger'>\The [src] [material.destruction_desc]!</span>")
+		T.visible_message(SPAN_DANGER("\The [src] [material.destruction_desc]!"))
 		if(istype(loc, /mob/living))
 			var/mob/living/M = loc
 			M.drop_from_inventory(src)

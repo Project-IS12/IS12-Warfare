@@ -111,8 +111,8 @@
 	return 0
 
 /datum/species/xenos/hug(var/mob/living/carbon/human/H,var/mob/living/target)
-	H.visible_message("<span class='notice'>[H] caresses [target] with countless prickling, needle-like legs.</span>", \
-					"<span class='notice'>You caress [target] with countless prickling, needle-like legs.</span>")
+	H.visible_message(SPAN_NOTICE("[H] caresses [target] with countless prickling, needle-like legs."), \
+					SPAN_NOTICE("You caress [target] with countless prickling, needle-like legs."))
 
 /datum/species/xenos/handle_post_spawn(var/mob/living/carbon/human/H)
 

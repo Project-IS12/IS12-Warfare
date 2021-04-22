@@ -327,12 +327,12 @@ var/global/datum/controller/gameticker/ticker
 				else
 					feedback_set_details("end_proper","universe destroyed")
 				if(!delay_end)
-					to_world("<span class='notice'><b>Rebooting due to destruction of [station_name()] in [restart_timeout/10] seconds</b></span>")
+					to_world(SPAN_NOTICE("<b>Rebooting due to destruction of [station_name()] in [restart_timeout/10] seconds</b>"))
 
 			else
 				feedback_set_details("end_proper","proper completion")
 				if(!delay_end)
-					to_world("<span class='notice'><b>Restarting in [restart_timeout/10] seconds</b></span>")
+					to_world(SPAN_NOTICE("<b>Restarting in [restart_timeout/10] seconds</b>"))
 
 			if(blackbox)
 				blackbox.save_all_data_to_sql()
@@ -344,9 +344,9 @@ var/global/datum/controller/gameticker/ticker
 				if(!delay_end)
 					world.Reboot()
 				else if(!delay_notified)
-					to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
+					to_world(SPAN_NOTICE("<b>An admin has delayed the round end</b>"))
 			else if(!delay_notified)
-				to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
+				to_world(SPAN_NOTICE("<b>An admin has delayed the round end</b>"))
 
 
 	else if (mode_finished)

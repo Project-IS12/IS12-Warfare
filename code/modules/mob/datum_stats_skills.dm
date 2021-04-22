@@ -136,14 +136,14 @@
 //Leveling up a skill
 /datum/skill/proc/give_xp(var/amount, var/mob/user)
 	xp += amount
-	to_chat(user, "<span class='notice'>I have learned more about [src.name]!</span>")
+	to_chat(user, SPAN_NOTICE("I have learned more about [src.name]!"))
 	attempt_level_up(user)
 
 
 /datum/skill/proc/attempt_level_up(var/mob/user)
 	if(xp == level_up_req)
 		level++
-		to_chat(user,"<span class='notice'>My level of knowledge about [src.name] has increased!</span>")
+		to_chat(user,SPAN_NOTICE("My level of knowledge about [src.name] has increased!"))
 
 
 /proc/cmp_skill_level(datum/skill/A, datum/skill/B)

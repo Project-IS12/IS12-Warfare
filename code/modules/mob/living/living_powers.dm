@@ -11,9 +11,9 @@
 
 	hiding = !hiding
 	if(hiding)
-		to_chat(src, "<span class='notice'>You are now hiding.</span>")
+		to_chat(src, SPAN_NOTICE("You are now hiding."))
 	else
-		to_chat(src, "<span class='notice'>You have stopped hiding.</span>")
+		to_chat(src, SPAN_NOTICE("You have stopped hiding."))
 	reset_layer()
 
 /mob/living/proc/breath_death()
@@ -50,7 +50,7 @@
 
 	last_special = world.time + 50
 
-	src.visible_message("<span class='danger'>\The [src] hunkers down over \the [target], tearing into their flesh.</span>")
+	src.visible_message(SPAN_DANGER("\The [src] hunkers down over \the [target], tearing into their flesh."))
 	if(do_after(src,target,100))
 		target.adjustBruteLoss(25)
 		if(target.health < -target.maxHealth)

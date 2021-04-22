@@ -161,7 +161,7 @@ proc/get_radio_key_from_channel(var/channel)
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, "<span class='warning'>You cannot speak in IC (Muted).</span>")
+			to_chat(src, SPAN_WARNING("You cannot speak in IC (Muted)."))
 			return
 
 	if(stat)
@@ -259,7 +259,7 @@ proc/get_radio_key_from_channel(var/channel)
 			message_range = speaking.get_talkinto_msg_range(message)
 		var/msg
 		if(!speaking || !(speaking.flags & NO_TALK_MSG))
-			msg = "<span class='notice'>\The [src] talks into \the [used_radios[1]]</span>"
+			msg = SPAN_NOTICE("\The [src] talks into \the [used_radios[1]]")
 		for(var/mob/living/M in hearers(5, src))
 			if((M != src) && msg)
 				M.show_message(msg)

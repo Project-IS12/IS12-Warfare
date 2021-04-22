@@ -31,7 +31,7 @@
 
 /obj/item/reagent_containers/hypospray/attack(mob/living/M as mob, mob/user as mob)
 	if(!reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty.</span>")
+		to_chat(user, SPAN_WARNING("[src] is empty."))
 		return
 	if (!istype(M))
 		return
@@ -40,23 +40,23 @@
 	if(istype(H))
 		var/obj/item/organ/external/affected = H.get_organ(user.zone_sel.selecting)
 		if(!affected)
-			to_chat(user, "<span class='danger'>\The [H] is missing that limb!</span>")
+			to_chat(user, SPAN_DANGER("\The [H] is missing that limb!"))
 			return
 		else if(affected.robotic >= ORGAN_ROBOT)
-			to_chat(user, "<span class='danger'>You cannot inject a robotic limb.</span>")
+			to_chat(user, SPAN_DANGER("You cannot inject a robotic limb."))
 			return
 
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	//user.do_attack_animation(M)
-	to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")
-	to_chat(M, "<span class='notice'>You feel a tiny prick!</span>")
-	user.visible_message("<span class='warning'>[user] injects [M] with [src].</span>")
+	to_chat(user, SPAN_NOTICE("You inject [M] with [src]."))
+	to_chat(M, SPAN_NOTICE("You feel a tiny prick!"))
+	user.visible_message(SPAN_WARNING("[user] injects [M] with [src]."))
 
 	if(M.reagents)
 		var/contained = reagentlist()
 		var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
 		admin_inject_log(user, M, src, contained, trans)
-		to_chat(user, "<span class='notice'>[trans] units injected. [reagents.total_volume] units remaining in \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
 
 	playsound(M, inject_sound, 100)
 	return
@@ -103,11 +103,11 @@
 			loaded_vial = W
 			reagents.maximum_volume = loaded_vial.reagents.maximum_volume
 			loaded_vial.reagents.trans_to_holder(reagents,volume)
-			user.visible_message("<span class='notice'>[user] has loaded [W] into \the [src].</span>","<span class='notice'>You load \the [W] into \the [src].</span>")
+			user.visible_message(SPAN_NOTICE("[user] has loaded [W] into \the [src]."),SPAN_NOTICE("You load \the [W] into \the [src]."))
 			update_icon()
 			playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
 		else
-			to_chat(user,"<span class='notice'>\The [src] already has a vial.</span>")
+			to_chat(user,SPAN_NOTICE("\The [src] already has a vial."))
 	else
 		..()
 
@@ -144,9 +144,9 @@
 /obj/item/reagent_containers/hypospray/autoinjector/examine(mob/user)
 	. = ..(user)
 	if(reagents && reagents.reagent_list.len)
-		to_chat(user, "<span class='notice'>It is currently loaded.</span>")
+		to_chat(user, SPAN_NOTICE("It is currently loaded."))
 	else
-		to_chat(user, "<span class='notice'>It is spent.</span>")
+		to_chat(user, SPAN_NOTICE("It is spent."))
 
 /obj/item/reagent_containers/hypospray/autoinjector/detox
 	name = "autoinjector (antitox)"
@@ -214,7 +214,7 @@
 /obj/item/reagent_containers/glass/ampule/attack_self()
 	..()
 	if(closed)
-		to_chat(usr, "<span class='notice'>You crack \the [src], opening it.</span>")
+		to_chat(usr, SPAN_NOTICE("You crack \the [src], opening it."))
 		playsound(src, 'sound/items/plastic_rip.ogg', 100)
 		atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 		icon_state = "[initial(icon_state)]_open"
@@ -234,5 +234,5 @@
 		var/obj/item/reagent_containers/hypospray/autoinjector/A = W
 		if(src.reagents)
 			var/trans = reagents.trans_to_obj(A, amount_per_transfer_from_this)
-			to_chat(user, "<span class='notice'>[trans] units refilled into \the [A]. [reagents.total_volume] units remaining in \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("[trans] units refilled into \the [A]. [reagents.total_volume] units remaining in \the [src]."))
 			A.update_icon()

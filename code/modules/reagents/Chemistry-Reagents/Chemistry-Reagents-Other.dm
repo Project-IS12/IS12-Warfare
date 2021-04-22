@@ -184,7 +184,7 @@
 				cult.offer_uncult(M)
 			if(prob(2))
 				var/obj/effect/spider/spiderling/S = new /obj/effect/spider/spiderling(M.loc)
-				M.visible_message("<span class='warning'>\The [M] coughs up \the [S]!</span>")
+				M.visible_message(SPAN_WARNING("\The [M] coughs up \the [S]!"))
 
 /datum/reagent/water/holywater/touch_turf(var/turf/T)
 	if(volume >= 5)

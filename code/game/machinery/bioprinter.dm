@@ -63,7 +63,7 @@
 
 /obj/machinery/organ_printer/examine(var/mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>It is loaded with [stored_matter]/[max_stored_matter] matter units.</span>")
+	to_chat(user, SPAN_NOTICE("It is loaded with [stored_matter]/[max_stored_matter] matter units."))
 
 /obj/machinery/organ_printer/RefreshParts()
 	print_delay = initial(print_delay)
@@ -107,7 +107,7 @@
 
 /obj/machinery/organ_printer/proc/can_print(var/choice)
 	if(stored_matter < products[choice][2])
-		visible_message("<span class='notice'>\The [src] displays a warning: 'Not enough matter. [stored_matter] stored and [products[choice][2]] needed.'</span>")
+		visible_message(SPAN_NOTICE("\The [src] displays a warning: 'Not enough matter. [stored_matter] stored and [products[choice][2]] needed.'"))
 		return 0
 	return 1
 
@@ -150,13 +150,13 @@
 /obj/machinery/organ_printer/robot/attackby(var/obj/item/W, var/mob/user)
 	if(istype(W, /obj/item/stack/material) && W.get_material_name() == matter_type)
 		if((max_stored_matter-stored_matter) < matter_amount_per_sheet)
-			to_chat(user, "<span class='warning'>\The [src] is too full.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is too full."))
 			return
 		var/obj/item/stack/S = W
 		var/space_left = max_stored_matter - stored_matter
 		var/sheets_to_take = min(S.amount, Floor(space_left/matter_amount_per_sheet))
 		if(sheets_to_take <= 0)
-			to_chat(user, "<span class='warning'>\The [src] is too full.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is too full."))
 			return
 		stored_matter = min(max_stored_matter, stored_matter + (sheets_to_take*matter_amount_per_sheet))
 		to_chat(user, "<span class='info'>\The [src] processes \the [W]. Levels of stored matter now: [stored_matter]</span>")
@@ -223,7 +223,7 @@
 	for(var/path in amount_list)
 		if(istype(W, path))
 			if((max_stored_matter - stored_matter) < amount_list[path])
-				to_chat(user, "<span class='warning'>\The [src] is too full.</span>")
+				to_chat(user, SPAN_WARNING("\The [src] is too full."))
 				return
 			stored_matter += amount_list[path]
 			user.drop_item()

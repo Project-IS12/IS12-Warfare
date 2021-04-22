@@ -138,7 +138,7 @@
 			overlays = 0
 			if(chained)
 				overlays = "chain_s1"
-			visible_message("<span class='notice'>The singularity has shrunk to a rather pitiful size.</span>")
+			visible_message(SPAN_NOTICE("The singularity has shrunk to a rather pitiful size."))
 		if (STAGE_TWO) //1 to 3 does not check for the turfs if you put the gens right next to a 1x1 then its going to eat them.
 			SetName("gravitational singularity")
 			desc = "A gravitational singularity."
@@ -156,9 +156,9 @@
 			if(chained)
 				overlays = "chain_s3"
 			if(growing)
-				visible_message("<span class='notice'>The singularity noticeably grows in size.</span>")
+				visible_message(SPAN_NOTICE("The singularity noticeably grows in size."))
 			else
-				visible_message("<span class='notice'>The singularity has shrunk to a less powerful size.</span>")
+				visible_message(SPAN_NOTICE("The singularity has shrunk to a less powerful size."))
 		if (STAGE_THREE)
 			if ((check_turfs_in(1, 2)) && (check_turfs_in(2, 2)) && (check_turfs_in(4, 2)) && (check_turfs_in(8, 2)))
 				SetName("gravitational singularity")
@@ -177,9 +177,9 @@
 				if(chained)
 					overlays = "chain_s5"
 				if(growing)
-					visible_message("<span class='notice'>The singularity expands to a reasonable size.</span>")
+					visible_message(SPAN_NOTICE("The singularity expands to a reasonable size."))
 				else
-					visible_message("<span class='notice'>The singularity has returned to a safe size.</span>")
+					visible_message(SPAN_NOTICE("The singularity has returned to a safe size."))
 		if(STAGE_FOUR)
 			if ((check_turfs_in(1, 3)) && (check_turfs_in(2, 3)) && (check_turfs_in(4, 3)) && (check_turfs_in(8, 3)))
 				SetName("gravitational singularity")
@@ -198,9 +198,9 @@
 				if(chained)
 					overlays = "chain_s7"
 				if(growing)
-					visible_message("<span class='warning'>The singularity expands to a dangerous size.</span>")
+					visible_message(SPAN_WARNING("The singularity expands to a dangerous size."))
 				else
-					visible_message("<span class='notice'>Miraculously, the singularity reduces in size, and can be contained.</span>")
+					visible_message(SPAN_NOTICE("Miraculously, the singularity reduces in size, and can be contained."))
 		if(STAGE_FIVE) //This one also lacks a check for gens because it eats everything.
 			SetName("gravitational singularity")
 			desc = "A gravitational singularity."
@@ -216,9 +216,9 @@
 			if(chained)
 				overlays = "chain_s9"
 			if(growing)
-				visible_message("<span class='danger'><font size='2'>The singularity has grown out of control!</font></span>")
+				visible_message(SPAN_DANGER("<font size='2'>The singularity has grown out of control!</font>"))
 			else
-				visible_message("<span class='warning'>The singularity miraculously reduces in size and loses its supermatter properties.</span>")
+				visible_message(SPAN_WARNING("The singularity miraculously reduces in size and loses its supermatter properties."))
 		if(STAGE_SUPER)//SUPERSINGULO
 			SetName("super gravitational singularity")
 			desc = "A gravitational singularity with the properties of supermatter. <b>It has the power to destroy worlds.</b>"

@@ -55,17 +55,17 @@
 				var/mob/living/carbon/C = usr
 				C.toggle_throw_mode()
 			else
-				to_chat(usr, "<span class='warning'>This mob type cannot throw items.</span>")
+				to_chat(usr, SPAN_WARNING("This mob type cannot throw items."))
 			return
 		if(NORTHWEST)
 			mob.hotkey_drop()
 
 /mob/proc/hotkey_drop()
-	to_chat(usr, "<span class='warning'>This mob type cannot drop items.</span>")
+	to_chat(usr, SPAN_WARNING("This mob type cannot drop items."))
 
 /mob/living/carbon/hotkey_drop()
 	if(!get_active_hand())
-		to_chat(usr, "<span class='warning'>You have nothing to drop in your hand.</span>")
+		to_chat(usr, SPAN_WARNING("You have nothing to drop in your hand."))
 	else
 		drop_item()
 
@@ -74,7 +74,7 @@
 	set hidden = 1
 
 	if(!usr.pulling)
-		to_chat(usr, "<span class='notice'>You are not pulling anything.</span>")
+		to_chat(usr, SPAN_NOTICE("You are not pulling anything."))
 		return
 	usr.stop_pulling()
 
@@ -249,13 +249,13 @@
 			for(var/mob/M in range(mob, 1))
 				if(M.pulling == mob)
 					if(!M.restrained() && M.stat == 0 && M.canmove && mob.Adjacent(M))
-						to_chat(src, "<span class='notice'>You're restrained! You can't move!</span>")
+						to_chat(src, SPAN_NOTICE("You're restrained! You can't move!"))
 						return 0
 					else
 						M.stop_pulling()
 
 		if(mob.pinned.len)
-			to_chat(src, "<span class='notice'>You're pinned to a wall by [mob.pinned[1]]!</span>")
+			to_chat(src, SPAN_NOTICE("You're pinned to a wall by [mob.pinned[1]]!"))
 			return 0
 
 		move_delay = world.time//set move delay
@@ -324,19 +324,19 @@
 			if(!H.lying && !H.buckled)
 				if(!istype(H.get_hands(), /obj/item/crutches))
 					if(!l_leg || l_leg.is_stump() || l_leg.is_broken())
-						to_chat(H, "<span class='warning'>You're crippled you can't walk.</span>")
+						to_chat(H, SPAN_WARNING("You're crippled you can't walk."))
 						H.Weaken(1)
 						return
 					if(!r_leg || r_leg.is_stump() || r_leg.is_broken())
-						to_chat(H, "<span class='warning'>You're crippled you can't walk.</span>")
+						to_chat(H, SPAN_WARNING("You're crippled you can't walk."))
 						H.Weaken(1)
 						return
 					if(!l_foot || l_foot.is_stump() || l_foot.is_broken())
-						to_chat(H, "<span class='warning'>You're crippled you can't walk.</span>")
+						to_chat(H, SPAN_WARNING("You're crippled you can't walk."))
 						H.Weaken(1)
 						return
 					if(!r_foot || r_foot.is_stump() || r_foot.is_broken())
-						to_chat(H, "<span class='warning'>You're crippled you can't walk.</span>")
+						to_chat(H, SPAN_WARNING("You're crippled you can't walk."))
 						H.Weaken(1)
 						return
 			/*
@@ -438,7 +438,7 @@
 
 	var/turf/T = get_step(mob, direct)
 	if(mob.check_is_holy_turf(T))
-		to_chat(mob, "<span class='warning'>You cannot enter holy grounds while you are in this plane of existence!</span>")
+		to_chat(mob, SPAN_WARNING("You cannot enter holy grounds while you are in this plane of existence!"))
 		return
 
 	if(T)
@@ -503,7 +503,7 @@
 //return 1 if slipped, 0 otherwise
 /mob/proc/handle_spaceslipping()
 	if(prob(slip_chance(5)) && !buckled)
-		to_chat(src, "<span class='warning'>You slipped!</span>")
+		to_chat(src, SPAN_WARNING("You slipped!"))
 		src.inertia_dir = src.last_move
 		step(src, src.inertia_dir)
 		return 1

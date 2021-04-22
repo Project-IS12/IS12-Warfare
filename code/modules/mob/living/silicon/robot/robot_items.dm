@@ -92,7 +92,7 @@
 		I.loc = src
 		loaded_item = I
 		for(var/mob/M in viewers())
-			M.show_message(text("<span class='notice'>[user] adds the [I] to the [src].</span>"), 1)
+			M.show_message(text(SPAN_NOTICE("[user] adds the [I] to the [src].")), 1)
 		desc = initial(desc) + "<br>It is holding \the [loaded_item]."
 		flick("portable_analyzer_load", src)
 		icon_state = "portable_analyzer_full"
@@ -160,7 +160,7 @@
 				overlays += image("icon" = I.icon, "icon_state" = I.icon_state, "layer" = 30 + I.layer)
 				addedSomething = 1
 		if ( addedSomething )
-			user.visible_message("<span class='notice'>\The [user] load some items onto their service tray.</span>")
+			user.visible_message(SPAN_NOTICE("\The [user] load some items onto their service tray."))
 
 		return
 
@@ -200,9 +200,9 @@
 							sleep(rand(2,4))
 		if ( droppedSomething )
 			if ( foundtable )
-				user.visible_message("<span class='notice'>[user] unloads their service tray.</span>")
+				user.visible_message(SPAN_NOTICE("[user] unloads their service tray."))
 			else
-				user.visible_message("<span class='notice'>[user] drops all the items on their tray.</span>")
+				user.visible_message(SPAN_NOTICE("[user] drops all the items on their tray."))
 
 	return ..()
 
@@ -278,7 +278,7 @@
 	deploy_paper(get_turf(src))
 
 /obj/item/form_printer/proc/deploy_paper(var/turf/T)
-	T.visible_message("<span class='notice'>\The [src.loc] dispenses a sheet of crisp white paper.</span>")
+	T.visible_message(SPAN_NOTICE("\The [src.loc] dispenses a sheet of crisp white paper."))
 	new /obj/item/paper(T)
 
 

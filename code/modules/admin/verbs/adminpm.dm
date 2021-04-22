@@ -3,7 +3,7 @@
 	set category = null
 	set name = "Admin PM Mob"
 	if(!holder)
-		to_chat(src, "<span class='warning'>Error: Admin-PM-Context: Only administrators may use this command.</span>")
+		to_chat(src, SPAN_WARNING("Error: Admin-PM-Context: Only administrators may use this command."))
 		return
 	if( !ismob(M) || !M.client )	return
 	cmd_admin_pm(M.client,null)
@@ -14,7 +14,7 @@
 	set category = "Admin"
 	set name = "Admin PM"
 	if(!holder)
-		to_chat(src, "<span class='warning'>Error: Admin-PM-Panel: Only administrators may use this command.</span>")
+		to_chat(src, SPAN_WARNING("Error: Admin-PM-Panel: Only administrators may use this command."))
 		return
 	var/list/client/targets[0]
 	for(var/client/T)
@@ -38,12 +38,12 @@
 
 /client/proc/cmd_admin_pm(var/client/C, var/msg = null, var/datum/ticket/ticket = null)
 	if(prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<span class='warning'>Error: Private-Message: You are unable to use PM-s (muted).</span>")
+		to_chat(src, SPAN_WARNING("Error: Private-Message: You are unable to use PM-s (muted)."))
 		return
 
 	if(!istype(C,/client))
-		if(holder)	to_chat(src, "<span class='warning'>Error: Private-Message: Client not found.</span>")
-		else		to_chat(src, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so please be patient!</span>")
+		if(holder)	to_chat(src, SPAN_WARNING("Error: Private-Message: Client not found."))
+		else		to_chat(src, SPAN_WARNING("Error: Private-Message: Client not found. They may have lost connection, so please be patient!"))
 		return
 
 	var/recieve_pm_type = "Player"
@@ -54,7 +54,7 @@
 			recieve_pm_type = holder.rank
 
 	else if(C && !C.holder)
-		to_chat(src, "<span class='warning'>Error: Admin-PM: Non-admin to non-admin PM communication is forbidden.</span>")
+		to_chat(src, SPAN_WARNING("Error: Admin-PM: Non-admin to non-admin PM communication is forbidden."))
 		return
 
 	msg = sanitize(msg)
@@ -65,8 +65,8 @@
 
 		if(!msg)	return
 		if(!C)
-			if(holder)	to_chat(src, "<span class='warning'>Error: Private-Message: Client not found.</span>")
-			else		to_chat(src, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!</span>")
+			if(holder)	to_chat(src, SPAN_WARNING("Error: Private-Message: Client not found."))
+			else		to_chat(src, SPAN_WARNING("Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!"))
 			return
 
 		msg = sanitize(msg)
@@ -90,10 +90,10 @@
 			ticket = new /datum/ticket(receiver_lite)
 			ticket.take(sender_lite)
 		else
-			to_chat(src, "<span class='notice'>You do not have an open ticket. Please use the adminhelp verb to open a ticket.</span>")
+			to_chat(src, SPAN_NOTICE("You do not have an open ticket. Please use the adminhelp verb to open a ticket."))
 			return
 	else if(ticket.status != TICKET_ASSIGNED && sender_lite.ckey == ticket.owner.ckey)
-		to_chat(src, "<span class='notice'>Your ticket is not open for conversation. Please wait for an administrator to receive your adminhelp.</span>")
+		to_chat(src, SPAN_NOTICE("Your ticket is not open for conversation. Please wait for an administrator to receive your adminhelp."))
 		return
 
 	// if the sender is an admin and they're not assigned to the ticket, ask them if they want to take/join it, unless the admin is responding to their own ticket
@@ -161,7 +161,7 @@
 
 /client/proc/cmd_admin_irc_pm(sender)
 	if(prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<span class='warning'>Error: Private-Message: You are unable to use PM-s (muted).</span>")
+		to_chat(src, SPAN_WARNING("Error: Private-Message: You are unable to use PM-s (muted)."))
 		return
 
 	var/msg = input(src,"Message:", "Reply private message to [sender] on IRC / 400 character limit") as text|null
@@ -171,8 +171,8 @@
 
 	// Handled on Bot32's end, unsure about other bots
 //	if(length(msg) > 400) // TODO: if message length is over 400, divide it up into seperate messages, the message length restriction is based on IRC limitations.  Probably easier to do this on the bots ends.
-//		to_chat(src, "<span class='warning'>Your message was not sent because it was more then 400 characters find your message below for ease of copy/pasting</span>")
-//		to_chat(src, "<span class='notice'>[msg]</span>")
+//		to_chat(src, SPAN_WARNING("Your message was not sent because it was more then 400 characters find your message below for ease of copy/pasting"))
+//		to_chat(src, SPAN_NOTICE("[msg]"))
 //		return
 
 	log_admin("PM: [key_name(src)]->IRC-[sender]: [msg]")

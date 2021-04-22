@@ -51,12 +51,12 @@
 /obj/item/device/soulstone/attackby(var/obj/item/I, var/mob/user)
 	..()
 	if(is_evil && istype(I, /obj/item/nullrod))
-		to_chat(user, "<span class='notice'>You cleanse \the [src] of taint, purging its shackles to its creator..</span>")
+		to_chat(user, SPAN_NOTICE("You cleanse \the [src] of taint, purging its shackles to its creator.."))
 		is_evil = 0
 		return
 	if(I.force > 10)
 		if(!smashing)
-			to_chat(user, "<span class='notice'>\The [src] looks fragile. Are you sure you want to smash it? If so, hit it again.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] looks fragile. Are you sure you want to smash it? If so, hit it again."))
 			smashing = 1
 			spawn(20)
 				smashing = 0
@@ -66,14 +66,14 @@
 
 /obj/item/device/soulstone/attack(var/mob/living/simple_animal/M, var/mob/user)
 	if(M == shade)
-		to_chat(user, "<span class='notice'>You recapture \the [M].</span>")
+		to_chat(user, SPAN_NOTICE("You recapture \the [M]."))
 		M.forceMove(src)
 		return
 	if(full == SOULSTONE_ESSENCE)
-		to_chat(user, "<span class='notice'>\The [src] is already full.</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] is already full."))
 		return
 	if(M.stat != DEAD && !M.is_asystole())
-		to_chat(user, "<span class='notice'>Kill or maim the victim first.</span>")
+		to_chat(user, SPAN_NOTICE("Kill or maim the victim first."))
 		return
 	for(var/obj/item/W in M)
 		M.drop_from_inventory(W)
@@ -82,22 +82,22 @@
 
 /obj/item/device/soulstone/attack_self(var/mob/user)
 	if(full != SOULSTONE_ESSENCE) // No essence - no shade
-		to_chat(user, "<span class='notice'>This [src] has no life essence.</span>")
+		to_chat(user, SPAN_NOTICE("This [src] has no life essence."))
 		return
 
 	if(!shade.key) // No key = hasn't been used
-		to_chat(user, "<span class='notice'>You cut your finger and let the blood drip on \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You cut your finger and let the blood drip on \the [src]."))
 		user.pay_for_rune(1)
 		var/datum/ghosttrap/cult/shade/S = get_ghost_trap("soul stone")
 		S.request_player(shade, "The soul stone shade summon ritual has been performed. ")
 	else if(!shade.client) // Has a key but no client - shade logged out
-		to_chat(user, "<span class='notice'>\The [shade] in \the [src] is dormant.</span>")
+		to_chat(user, SPAN_NOTICE("\The [shade] in \the [src] is dormant."))
 		return
 	else if(shade.loc == src)
 		var/choice = alert("Would you like to invoke the spirit within?",,"Yes","No")
 		if(choice == "Yes")
 			shade.forceMove(get_turf(src))
-			to_chat(user, "<span class='notice'>You summon \the [shade].</span>")
+			to_chat(user, SPAN_NOTICE("You summon \the [shade]."))
 		if(choice == "No")
 			return
 
@@ -119,10 +119,10 @@
 	if(istype(I, /obj/item/device/soulstone))
 		var/obj/item/device/soulstone/S = I
 		if(!S.shade.client)
-			to_chat(user, "<span class='notice'>\The [I] has essence, but no soul. Activate it in your hand to find a soul for it first.</span>")
+			to_chat(user, SPAN_NOTICE("\The [I] has essence, but no soul. Activate it in your hand to find a soul for it first."))
 			return
 		if(S.shade.loc != S)
-			to_chat(user, "<span class='notice'>Recapture the shade back into \the [I] first.</span>")
+			to_chat(user, SPAN_NOTICE("Recapture the shade back into \the [I] first."))
 			return
 		var/construct = alert(user, "Please choose which type of construct you wish to create.",,"Artificer", "Wraith", "Juggernaut")
 		var/ctype

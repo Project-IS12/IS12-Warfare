@@ -8,7 +8,7 @@
 
 /obj/machinery/computer/downloadconsole/attack_hand(mob/user) //later do file size check %_%
 	if(!can_record_tape)
-		to_chat(user, "<span class='warning'>Spess dial-up is so slow! I must to wait.</span>")
+		to_chat(user, SPAN_WARNING("Spess dial-up is so slow! I must to wait."))
 		return
 	var/sound/S = input("Pick music") as sound|null
 	if(S)
@@ -19,7 +19,7 @@
 		casseta.name = "\"[N]\" magn-o-tape "
 		casseta.loc = src.loc
 		casseta.uploader_idiot = user.name
-		to_chat(user, "<span class='notice'>Tape completed!</span>")
+		to_chat(user, SPAN_NOTICE("Tape completed!"))
 		log_and_message_admins("downloaded music with name [html_encode(N)]! if he loaded shit - just <b>ban</b>. Location = [get_area(user)]")
 		spawn(3 MINUTES)
 			can_record_tape = TRUE

@@ -102,9 +102,9 @@ var/list/possible_cable_coil_colours
 		user.examinate(src)
 		// following code taken from attackby (multitool)
 		if(powernet && (powernet.avail > 0))
-			to_chat(user, "<span class='warning'>[get_wattage()] in power network.</span>")
+			to_chat(user, SPAN_WARNING("[get_wattage()] in power network."))
 		else
-			to_chat(user, "<span class='warning'>The cable is not powered.</span>")
+			to_chat(user, SPAN_WARNING("The cable is not powered."))
 	return
 
 ///////////////////////////////////
@@ -153,11 +153,11 @@ var/list/possible_cable_coil_colours
 
 	if(isWirecutter(W))
 		if(d1 == UP || d2 == UP)
-			to_chat(user, "<span class='warning'>You must cut this cable from above.</span>")
+			to_chat(user, SPAN_WARNING("You must cut this cable from above."))
 			return
 
 		if(breaker_box)
-			to_chat(user, "<span class='warning'>This cable is connected to nearby breaker box. Use breaker box to interact with it.</span>")
+			to_chat(user, SPAN_WARNING("This cable is connected to nearby breaker box. Use breaker box to interact with it."))
 			return
 
 		if (shock(user, 50))
@@ -169,7 +169,7 @@ var/list/possible_cable_coil_colours
 			new/obj/item/stack/cable_coil(T, 1, color)
 
 		for(var/mob/O in viewers(src, null))
-			O.show_message("<span class='warning'>[user] cuts the cable.</span>", 1)
+			O.show_message(SPAN_WARNING("[user] cuts the cable."), 1)
 
 		if(d1 == DOWN || d2 == DOWN)
 			var/turf/turf = GetBelow(src)
@@ -194,10 +194,10 @@ var/list/possible_cable_coil_colours
 	else if(isMultitool(W))
 
 		if(powernet && (powernet.avail > 0))		// is it powered?
-			to_chat(user, "<span class='warning'>[get_wattage()] in power network.</span>")
+			to_chat(user, SPAN_WARNING("[get_wattage()] in power network."))
 
 		else
-			to_chat(user, "<span class='warning'>The cable is not powered.</span>")
+			to_chat(user, SPAN_WARNING("The cable is not powered."))
 
 		shock(user, 5, 0.2)
 
@@ -549,7 +549,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 		selected_color = "Red"
 		final_color = possible_cable_coil_colours[selected_color]
 	color = final_color
-	to_chat(user, "<span class='notice'>You change \the [src]'s color to [lowertext(selected_color)].</span>")
+	to_chat(user, SPAN_NOTICE("You change \the [src]'s color to [lowertext(selected_color)]."))
 
 /obj/item/stack/cable_coil/proc/update_wclass()
 	if(amount == 1)
@@ -578,14 +578,14 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	if(ishuman(M) && !M.incapacitated())
 		if(!istype(usr.loc,/turf)) return
 		if(src.amount <= 14)
-			to_chat(usr, "<span class='warning'>You need at least 15 lengths to make restraints!</span>")
+			to_chat(usr, SPAN_WARNING("You need at least 15 lengths to make restraints!"))
 			return
 		var/obj/item/handcuffs/cable/B = new /obj/item/handcuffs/cable(usr.loc)
 		B.color = color
-		to_chat(usr, "<span class='notice'>You wind some cable together to make some restraints.</span>")
+		to_chat(usr, SPAN_NOTICE("You wind some cable together to make some restraints."))
 		src.use(15)
 	else
-		to_chat(usr, "<span class='notice'>You cannot do that.</span>")
+		to_chat(usr, SPAN_NOTICE("You cannot do that."))
 	..()
 
 /obj/item/stack/cable_coil/cyborg/verb/set_colour()
@@ -658,7 +658,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 
 	for(var/obj/structure/cable/LC in F)
 		if((LC.d1 == dirn && LC.d2 == end_dir ) || ( LC.d2 == dirn && LC.d1 == end_dir))
-			to_chat(user, "<span class='warning'>There's already a cable at that position.</span>")
+			to_chat(user, SPAN_WARNING("There's already a cable at that position."))
 			return
 
 	put_cable(F, user, end_dir, dirn)

@@ -88,7 +88,7 @@
 
 	if(old_icon && old_icon != happiness_icon.icon_state)
 		if(old_happiness > happiness)
-			to_chat(src, "<span class='warning'>I have become more stressed.</span>")
+			to_chat(src, SPAN_WARNING("I have become more stressed."))
 		else
 			to_chat(src, "<span class='info'>I have become less stressed.</span>")
 

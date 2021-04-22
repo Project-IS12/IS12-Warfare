@@ -19,11 +19,11 @@
 					damaged = 0
 					usr.visible_message("[usr] repairs [src].", "You repair [src].")
 				else
-					to_chat(usr, "<span class='warning'>There is not enough fuel to repair [src].</span>")
+					to_chat(usr, SPAN_WARNING("There is not enough fuel to repair [src]."))
 				return
 	if(istype(W, /obj/item/nuclear_cylinder))
 		if(damaged)
-			to_chat(usr, "<span class='warning'>[src] is damaged, you cannot place the cylinder.</span>")
+			to_chat(usr, SPAN_WARNING("[src] is damaged, you cannot place the cylinder."))
 			return
 		if(cylinder)
 			to_chat(usr, "There is already a cylinder here.")
@@ -42,14 +42,14 @@
 	if(cylinder)
 		if(armed)
 			if(damaged)
-				to_chat(usr, "<span class='warning'>The inserter has been damaged, unable to disarm.</span>")
+				to_chat(usr, SPAN_WARNING("The inserter has been damaged, unable to disarm."))
 				return
 			var/obj/machinery/nuclearbomb/nuke = locate(/obj/machinery/nuclearbomb/station) in get_area(src)
 			if(!nuke)
-				to_chat(usr, "<span class='warning'>Unable to interface with the self destruct terminal, unable to disarm.</span>")
+				to_chat(usr, SPAN_WARNING("Unable to interface with the self destruct terminal, unable to disarm."))
 				return
 			if(nuke.timing)
-				to_chat(usr, "<span class='warning'>The self destruct sequence is in progress, unable to disarm.</span>")
+				to_chat(usr, SPAN_WARNING("The self destruct sequence is in progress, unable to disarm."))
 				return
 			usr.visible_message("[usr] begins extracting [cylinder].", "You begin extracting [cylinder].")
 			if(do_after(usr, 40, src))
@@ -99,13 +99,13 @@
 				set_damaged()
 
 /obj/machinery/self_destruct/proc/set_damaged()
-		src.visible_message("<span class='warning'>[src] dents and chars.</span>")
+		src.visible_message(SPAN_WARNING("[src] dents and chars."))
 		damaged = 1
 
 /obj/machinery/self_destruct/examine(mob/usr)
 	. = ..()
 	if(damaged)
-		to_chat(usr, "<span class='warning'>[src] is damaged, it needs repairs.</span>")
+		to_chat(usr, SPAN_WARNING("[src] is damaged, it needs repairs."))
 		return
 	if(armed)
 		to_chat(usr, "[src] is armed and ready.")

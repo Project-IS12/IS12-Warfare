@@ -65,7 +65,7 @@
 		return 1
 
 /obj/item/proc/disarm(mob/living/user)
-	user.visible_message("<span class='danger'>\The [src] flies out of \the [user]'s hand!</span>")
+	user.visible_message(SPAN_DANGER("\The [src] flies out of \the [user]'s hand!"))
 	user.drop_from_inventory(src)
 	throw_at(get_edge_target_turf(src, pick(GLOB.alldirs)), rand(1,3), throw_speed)//Throw that sheesh away
 

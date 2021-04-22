@@ -8,7 +8,7 @@
 			return
 		src << link(config.wikiurl)
 	else
-		to_chat(src, "<span class='warning'>The wiki URL is not set in the server configuration.</span>")
+		to_chat(src, SPAN_WARNING("The wiki URL is not set in the server configuration."))
 	return
 
 /client/verb/forum()
@@ -20,7 +20,7 @@
 			return
 		src << link(config.forumurl)
 	else
-		to_chat(src, "<span class='warning'>The forum URL is not set in the server configuration.</span>")
+		to_chat(src, SPAN_WARNING("The forum URL is not set in the server configuration."))
 	return
 
 #define RULES_FILE "config/rules.html"

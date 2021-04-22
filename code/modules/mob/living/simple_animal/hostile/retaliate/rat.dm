@@ -49,7 +49,7 @@
 	if(istype(L))
 		if(prob(1))
 			L.Weaken(1)
-			L.visible_message("<span class='danger'>\the [src] knocks down \the [L]!</span>")
+			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
 
 
 /mob/living/simple_animal/hostile/retaliate/rat/Life()

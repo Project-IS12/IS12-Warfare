@@ -115,7 +115,7 @@ The nutrient quick rundown:
 					return
 				var/obj/item/blocked = H.check_mouth_coverage()
 				if(blocked)
-					to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
+					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 		else
 			if(!M.can_force_feed(user, src))
@@ -132,14 +132,14 @@ The nutrient quick rundown:
 					return
 				var/obj/item/blocked = H.check_mouth_coverage()
 				if(blocked)
-					to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
+					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
 		/*
 		//uncomment if you think it's useful, I don't.
 			var/contained = reagentlist()
 			admin_attack_log(user, M, "Fed the victim with [name] (Reagents: [contained])", "Was fed [src] (Reagents: [contained])", "used [src] (Reagents: [contained]) to feed")
-			user.visible_message("<span class='danger'>[user] feeds [M] [src].</span>")
+			user.visible_message(SPAN_DANGER("[user] feeds [M] [src]."))
 		*/
 
 		var/mob/living/carbon/human/H = M
@@ -147,7 +147,7 @@ The nutrient quick rundown:
 		var/obj/item/storage/special/stomach/gutinventory = gut.inventory
 		//add a food chunk to the stomach
 		if(!gut.inventory.can_be_inserted(src, user, 1))
-			M.visible_message("<span class='notice'>[M] Can't eat anymore of \the [src].</span>","<span class='notice'>You feel too full to eat \the [src].</span>")
+			M.visible_message(SPAN_NOTICE("[M] Can't eat anymore of \the [src]."),SPAN_NOTICE("You feel too full to eat \the [src]."))
 			return
 		var/obj/item/reagent_containers/eatable/foodchunk/chunk = new /obj/item/reagent_containers/eatable/foodchunk(gutinventory)
 		if(reagents.total_volume < myreagent_amt/bitesize)
@@ -155,13 +155,13 @@ The nutrient quick rundown:
 		else
 			reagents.trans_to(chunk, myreagent_amt/bitesize)
 
-		M.visible_message("<span class='notice'>[M] [eat_message] the [name].</span>","<span class='notice'>You finish eating \the [src].</span>")
+		M.visible_message(SPAN_NOTICE("[M] [eat_message] the [name]."),SPAN_NOTICE("You finish eating \the [src]."))
 		//to_chat(user, "[chunk] was sent to the gut. it has [myreagent_amt/bitesize] worth of nutrients")
 
 		if(reagents.total_volume < 1) //sanity check?
 			//to_chat(user, "I'm dead because I only have [reagents.total_volume] left!")
 			user.drop_from_inventory(src)
-			M.visible_message("<span class='notice'>[M] finishes eating \the [src].</span>","<span class='notice'>You finish eating \the [src].</span>")
+			M.visible_message(SPAN_NOTICE("[M] finishes eating \the [src]."),SPAN_NOTICE("You finish eating \the [src]."))
 			qdel(src)
 	return 0
 

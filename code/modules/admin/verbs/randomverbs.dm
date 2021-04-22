@@ -38,7 +38,7 @@
 			prisoner.equip_to_slot_or_del(new /obj/item/clothing/under/color/orange(prisoner), slot_w_uniform)
 			prisoner.equip_to_slot_or_del(new /obj/item/clothing/shoes/orange(prisoner), slot_shoes)
 		spawn(50)
-			to_chat(M, "<span class='warning'>You have been sent to the prison station!</span>")
+			to_chat(M, SPAN_WARNING("You have been sent to the prison station!"))
 		log_and_message_admins("sent [key_name_admin(M)] to the prison station.")
 		feedback_add_details("admin_verb","PRISON") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -320,7 +320,7 @@ Ccomp's first proc.
 	var/list/ghosts = get_ghosts_by_key()
 	var/mob/observer/ghost/G = ghosts[selection]
 	if(!istype(G))
-		to_chat(src, "<span class='warning'>[selection] no longer has an associated ghost.</span>")
+		to_chat(src, SPAN_WARNING("[selection] no longer has an associated ghost."))
 		return
 
 	if(G.has_enabled_antagHUD == 1 && config.antag_hud_restricted)
@@ -355,19 +355,19 @@ Ccomp's first proc.
 			if(g.antagHUD)
 				g.antagHUD = 0						// Disable it on those that have it enabled
 				g.has_enabled_antagHUD = 2				// We'll allow them to respawn
-				to_chat(g, "<span class='danger'>The Administrator has disabled AntagHUD</span>")
+				to_chat(g, SPAN_DANGER("The Administrator has disabled AntagHUD"))
 		config.antag_hud_allowed = 0
-		to_chat(src, "<span class='danger'>AntagHUD usage has been disabled</span>")
+		to_chat(src, SPAN_DANGER("AntagHUD usage has been disabled"))
 		action = "disabled"
 	else
 		for(var/mob/observer/ghost/g in get_ghosts())
 			if(!g.client.holder)						// Add the verb back for all non-admin ghosts
 				g.verbs += /mob/observer/ghost/verb/toggle_antagHUD
-				to_chat(g, "<span class='notice'><B>The Administrator has enabled AntagHUD </B></span>")// Notify all observers they can now use AntagHUD
+				to_chat(g, SPAN_NOTICE("<B>The Administrator has enabled AntagHUD </B>"))// Notify all observers they can now use AntagHUD
 
 		config.antag_hud_allowed = 1
 		action = "enabled"
-		to_chat(src, "<span class='notice'><B>AntagHUD usage has been enabled</B></span>")
+		to_chat(src, SPAN_NOTICE("<B>AntagHUD usage has been enabled</B>"))
 
 
 	log_admin("[key_name(usr)] has [action] antagHUD usage for observers")
@@ -384,19 +384,19 @@ Ccomp's first proc.
 	var/action=""
 	if(config.antag_hud_restricted)
 		for(var/mob/observer/ghost/g in get_ghosts())
-			to_chat(g, "<span class='notice'><B>The administrator has lifted restrictions on joining the round if you use AntagHUD</B></span>")
+			to_chat(g, SPAN_NOTICE("<B>The administrator has lifted restrictions on joining the round if you use AntagHUD</B>"))
 		action = "lifted restrictions"
 		config.antag_hud_restricted = 0
-		to_chat(src, "<span class='notice'><B>AntagHUD restrictions have been lifted</B></span>")
+		to_chat(src, SPAN_NOTICE("<B>AntagHUD restrictions have been lifted</B>"))
 	else
 		for(var/mob/observer/ghost/g in get_ghosts())
-			to_chat(g, "<span class='danger'>The administrator has placed restrictions on joining the round if you use AntagHUD</span>")
-			to_chat(g, "<span class='danger'>Your AntagHUD has been disabled, you may choose to re-enabled it but will be under restrictions</span>")
+			to_chat(g, SPAN_DANGER("The administrator has placed restrictions on joining the round if you use AntagHUD"))
+			to_chat(g, SPAN_DANGER("Your AntagHUD has been disabled, you may choose to re-enabled it but will be under restrictions"))
 			g.antagHUD = 0
 			g.has_enabled_antagHUD = 0
 		action = "placed restrictions"
 		config.antag_hud_restricted = 1
-		to_chat(src, "<span class='danger'>AntagHUD restrictions have been enabled</span>")
+		to_chat(src, SPAN_DANGER("AntagHUD restrictions have been enabled"))
 
 	log_admin("[key_name(usr)] has [action] on joining the round if they use AntagHUD")
 	message_admins("Admin [key_name_admin(usr)] has [action] on joining the round if they use AntagHUD", 1)
@@ -830,7 +830,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	message_admins("Admin [key_name_admin(usr)] has forced the players to have random appearances.", 1)
 
 	if(notifyplayers == "Yes")
-		to_world("<span class='notice'><b>Admin [usr.key] has forced the players to have completely random identities!</b></span>")
+		to_world(SPAN_NOTICE("<b>Admin [usr.key] has forced the players to have completely random identities!</b>"))
 
 	to_chat(usr, "<i>Remember: you can always disable the randomness by using the verb again, assuming the round hasn't started yet</i>.")
 	ticker.random_players = 1

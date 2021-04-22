@@ -15,14 +15,14 @@
 		..()
 		return
 	if(user.nutrition < 20)
-		to_chat(user, "<span class='warning'>You need more energy to use the punching bag. Go eat something.</span>")
+		to_chat(user, SPAN_WARNING("You need more energy to use the punching bag. Go eat something."))
 	else
 		if(user.a_intent == I_HURT)
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			flick("[icon_state]_hit", src)
 			playsound(src.loc, 'sound/effects/woodhit.ogg', 25, 1, -1)
 			user.nutrition = user.nutrition - 5
-			to_chat(user, "<span class='warning'>You [pick(hit_message)] \the [src].</span>")
+			to_chat(user, SPAN_WARNING("You [pick(hit_message)] \the [src]."))
 
 /obj/structure/fitness/weightlifter
 	name = "weightlifting machine"
@@ -41,13 +41,13 @@
 	if(!istype(user))
 		return
 	if(user.loc != src.loc)
-		to_chat(user, "<span class='warning'>You must be on the weight machine to use it.</span>")
+		to_chat(user, SPAN_WARNING("You must be on the weight machine to use it."))
 		return
 	if(user.nutrition < 50)
-		to_chat(user, "<span class='warning'>You need more energy to lift weights. Go eat something.</span>")
+		to_chat(user, SPAN_WARNING("You need more energy to lift weights. Go eat something."))
 		return
 	if(being_used)
-		to_chat(user, "<span class='warning'>The weight machine is already in use by somebody else.</span>")
+		to_chat(user, SPAN_WARNING("The weight machine is already in use by somebody else."))
 		return
 	else
 		being_used = 1
@@ -57,8 +57,8 @@
 		if(do_after(user, 20 + (weights * 10)))
 			playsound(src.loc, 'sound/effects/weightdrop.ogg', 25, 1)
 			user.nutrition -= weights * 10
-			to_chat(user, "<span class='notice'>You lift the weights [qualifiers[weight]].</span>")
+			to_chat(user, SPAN_NOTICE("You lift the weights [qualifiers[weight]]."))
 			being_used = 0
 		else
-			to_chat(user, "<span class='notice'>Against your previous judgement, perhaps working out is not for you.</span>")
+			to_chat(user, SPAN_NOTICE("Against your previous judgement, perhaps working out is not for you."))
 			being_used = 0

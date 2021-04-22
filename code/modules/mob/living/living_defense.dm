@@ -24,9 +24,9 @@
 
 	if(fullblock >= 1 || prob(fullblock*100))
 		if(absorb_text)
-			show_message("<span class='warning'>[absorb_text]</span>")
+			show_message(SPAN_WARNING("[absorb_text]"))
 		else
-			show_message("<span class='warning'>Your armor blocks the blow!</span>")
+			show_message(SPAN_WARNING("Your armor blocks the blow!"))
 
 		playsound(src, "sound/weapons/armorblockheavy[rand(1,3)].ogg", 50, 1, 1)
 		return 100
@@ -41,9 +41,9 @@
 	if(blocked > 20)
 		//Should we show this every single time?
 		if(soften_text)
-			show_message("<span class='warning'>[soften_text]</span>")
+			show_message(SPAN_WARNING("[soften_text]"))
 		else
-			show_message("<span class='warning'>Your armor softens the blow!</span>")
+			show_message(SPAN_WARNING("Your armor softens the blow!"))
 
 		playsound(src, "sound/weapons/armorblock[rand(1,4)].ogg", 50, 1, 1)
 	return round(blocked, 1)
@@ -69,7 +69,7 @@
 	var/obj/item/device/assembly/signaler/signaler = get_active_hand()
 	if(istype(signaler) && signaler.deadman)
 		log_and_message_admins("has triggered a signaler deadman's switch")
-		src.visible_message("<span class='warning'>[src] triggers their deadman's switch!</span>")
+		src.visible_message(SPAN_WARNING("[src] triggers their deadman's switch!"))
 		signaler.signal()
 
 	//Armor
@@ -188,7 +188,7 @@
 			miss_chance = max(15*(distance-2), 0)
 
 		if (prob(miss_chance))
-			visible_message("<span class='notice'>\The [O] misses [src] narrowly!</span>")
+			visible_message(SPAN_NOTICE("\The [O] misses [src] narrowly!"))
 			return
 
 		src.visible_message("<span class='warning'>\The [src] has been hit by \the [O]</span>.")
@@ -217,7 +217,7 @@
 		if(O.throw_source && momentum >= THROWNOBJ_KNOCKBACK_SPEED)
 			var/dir = get_dir(O.throw_source, src)
 
-			visible_message("<span class='warning'>\The [src] staggers under the impact!</span>","<span class='warning'>You stagger under the impact!</span>")
+			visible_message(SPAN_WARNING("\The [src] staggers under the impact!"),SPAN_WARNING("You stagger under the impact!"))
 			src.throw_at(get_edge_target_turf(src,dir),1,momentum)
 
 			if(!O || !src) return
@@ -230,7 +230,7 @@
 
 				if(T)
 					src.loc = T
-					visible_message("<span class='warning'>[src] is pinned to the wall by [O]!</span>","<span class='warning'>You are pinned to the wall by [O]!</span>")
+					visible_message(SPAN_WARNING("[src] is pinned to the wall by [O]!"),SPAN_WARNING("You are pinned to the wall by [O]!"))
 					src.anchored = 1
 					src.pinned += O
 
@@ -241,7 +241,7 @@
 
 //This is called when the mob is thrown into a dense turf
 /mob/living/proc/turf_collision(var/turf/T, var/speed)
-	visible_message("<span class='danger'>[src] slams into \the [T]!</span>")
+	visible_message(SPAN_DANGER("[src] slams into \the [T]!"))
 	var/smashsound = pick("sound/effects/gore/smash[rand(1,3)].ogg", "sound/effects/gore/trauma1.ogg")
 	playsound(loc, smashsound, 50, 1, -1)
 	//playsound(loc, 'sound/effects/bangtaper.ogg', 50, 1, -1)
@@ -272,7 +272,7 @@
 	adjustBruteLoss(damage)
 	admin_attack_log(user, src, "Attacked", "Was attacked", "attacked")
 
-	src.visible_message("<span class='danger'>[user] has [attack_message] [src]!</span>")
+	src.visible_message(SPAN_DANGER("[user] has [attack_message] [src]!"))
 	spawn(1) updatehealth()
 	return 1
 

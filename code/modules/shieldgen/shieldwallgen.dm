@@ -81,13 +81,13 @@
 
 /obj/machinery/shieldwallgen/attack_hand(mob/user as mob)
 	if(anchored != 1)
-		to_chat(user, "<span class='warning'>The shield generator needs to be firmly secured to the floor first.</span>")
+		to_chat(user, SPAN_WARNING("The shield generator needs to be firmly secured to the floor first."))
 		return 1
 	if(src.locked && !istype(user, /mob/living/silicon))
-		to_chat(user, "<span class='warning'>The controls are locked!</span>")
+		to_chat(user, SPAN_WARNING("The controls are locked!"))
 		return 1
 	if(power != 1)
-		to_chat(user, "<span class='warning'>The shield generator needs to be powered by wire underneath.</span>")
+		to_chat(user, SPAN_WARNING("The shield generator needs to be powered by wire underneath."))
 		return 1
 
 	src.ui_interact(user)
@@ -143,7 +143,7 @@
 		src.active = 2
 	if(src.active >= 1)
 		if(src.power == 0)
-			src.visible_message("<span class='warning'>The [src.name] shuts down due to lack of power!</span>", \
+			src.visible_message(SPAN_WARNING("The [src.name] shuts down due to lack of power!"), \
 				"You hear heavy droning fade out")
 			src.active = 0
 			update_icon()
@@ -218,7 +218,7 @@
 			src.locked = !src.locked
 			to_chat(user, "Controls are now [src.locked ? "locked." : "unlocked."]")
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, SPAN_WARNING("Access denied."))
 		return
 
 	else
@@ -296,7 +296,7 @@
 /obj/machinery/shieldwall/attackby(var/obj/item/I, var/mob/user)
 	var/obj/machinery/shieldwallgen/G = prob(50) ? gen_primary : gen_secondary
 	G.storedpower -= I.force*2500
-	user.visible_message("<span class='danger'>\The [user] hits \the [src] with \the [I]!</span>")
+	user.visible_message(SPAN_DANGER("\The [user] hits \the [src] with \the [I]!"))
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	playsound(loc, 'sound/weapons/smash.ogg', 75, 1)
 

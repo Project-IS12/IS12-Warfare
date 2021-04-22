@@ -179,10 +179,10 @@
 			return
 		else
 			if(alert("Spawn that person a tome?",,"Yes","No")=="Yes")
-				to_chat(M, "<span class='warning'>You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of Nar-Sie. A tome, a message from your new master, appears on the ground.</span>")
+				to_chat(M, SPAN_WARNING("You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of Nar-Sie. A tome, a message from your new master, appears on the ground."))
 				new /obj/item/book/tome(M.loc)
 			else
-				to_chat(M, "<span class='warning'>You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of Nar-Sie.</span>")
+				to_chat(M, SPAN_WARNING("You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of Nar-Sie."))
 			var/glimpse=pick("1","2","3","4","5","6","7","8")
 			switch(glimpse)
 				if("1")

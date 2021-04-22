@@ -47,10 +47,10 @@ proc/print_aspect()
 	display_deactivation_text()
 
 /datum/aspect/proc/display_activation_text()
-	to_world("<span class='binfo'><FONT size=3>Praise the atomic bomb! [desc]</FONT></span>")
+	to_world(SPAN_BINFO(FONT_LARGE("Praise the atomic bomb! [desc]")))
 
 /datum/aspect/proc/display_deactivation_text()
-	to_world("<span class='binfo'><FONT size=3>Praise the atomic bomb! We will not battle under the curse of [name]</FONT></span>")
+	to_world(SPAN_BINFO(FONT_LARGE("Praise the atomic bomb! We will not battle under the curse of [name]")))
 
 
 //Test aspect

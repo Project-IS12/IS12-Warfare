@@ -55,23 +55,23 @@
 		if(prob(chance))
 			if(buckled_mob != user)
 				buckled_mob.visible_message(\
-					"<span class='notice'>\The [user] frees \the [buckled_mob] from \the [src].</span>",\
-					"<span class='notice'>\The [user] frees you from \the [src].</span>",\
-					"<span class='warning'>You hear shredding and ripping.</span>")
+					SPAN_NOTICE("\The [user] frees \the [buckled_mob] from \the [src]."),\
+					SPAN_NOTICE("\The [user] frees you from \the [src]."),\
+					SPAN_WARNING("You hear shredding and ripping."))
 			else
 				buckled_mob.visible_message(\
-					"<span class='notice'>\The [buckled_mob] struggles free of \the [src].</span>",\
-					"<span class='notice'>You untangle \the [src] from around yourself.</span>",\
-					"<span class='warning'>You hear shredding and ripping.</span>")
+					SPAN_NOTICE("\The [buckled_mob] struggles free of \the [src]."),\
+					SPAN_NOTICE("You untangle \the [src] from around yourself."),\
+					SPAN_WARNING("You hear shredding and ripping."))
 			unbuckle()
 		else
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			health -= rand(1,5)
 			var/text = pick("rip","tear","pull", "bite", "tug")
 			user.visible_message(\
-				"<span class='warning'>\The [user] [text]s at \the [src].</span>",\
-				"<span class='warning'>You [text] at \the [src].</span>",\
-				"<span class='warning'>You hear shredding and ripping.</span>")
+				SPAN_WARNING("\The [user] [text]s at \the [src]."),\
+				SPAN_WARNING("You [text] at \the [src]."),\
+				SPAN_WARNING("You hear shredding and ripping."))
 			check_health()
 	START_PROCESSING(SSvines, src)
 	return
@@ -91,10 +91,10 @@
 			var/mob/living/carbon/human/H = victim
 			if(((istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & ITEM_FLAG_NOSLIP)) || (H.species.species_flags & SPECIES_FLAG_NO_SLIP)) && victim.loc != src.loc)
 				if(prob(90))
-					src.visible_message("<span class='danger'>Tendrils lash to drag \the [victim] but \the [src] can't pull them across the ground!</span>")
+					src.visible_message(SPAN_DANGER("Tendrils lash to drag \the [victim] but \the [src] can't pull them across the ground!"))
 					can_grab = 0
 		if(can_grab)
-			src.visible_message("<span class='danger'>Tendrils lash out from \the [src] and drag \the [victim] in!</span>")
+			src.visible_message(SPAN_DANGER("Tendrils lash out from \the [src] and drag \the [victim] in!"))
 			victim.forceMove(src.loc)
 			sleep(1)
 			//entangling people

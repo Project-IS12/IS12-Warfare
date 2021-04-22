@@ -619,11 +619,11 @@
 	//JOBBAN'S INNARDS
 	else if(href_list["jobban3"])
 		if(!check_rights(R_MOD,0) && !check_rights(R_ADMIN,0))
-			to_chat(usr, "<span class='warning'>You do not have the appropriate permissions to add job bans!</span>")
+			to_chat(usr, SPAN_WARNING("You do not have the appropriate permissions to add job bans!"))
 			return
 
 		if(check_rights(R_MOD,0) && !check_rights(R_ADMIN,0) && !config.mods_can_job_tempban) // If mod and tempban disabled
-			to_chat(usr, "<span class='warning'>Mod jobbanning is disabled!</span>")
+			to_chat(usr, SPAN_WARNING("Mod jobbanning is disabled!"))
 			return
 
 		var/mob/M = locate(href_list["jobban4"])
@@ -727,16 +727,16 @@
 			switch(alert("Temporary Ban?",,"Yes","No", "Cancel"))
 				if("Yes")
 					if(!check_rights(R_MOD,0) && !check_rights(R_BAN, 0))
-						to_chat(usr, "<span class='warning'> You Cannot issue temporary job-bans!</span>")
+						to_chat(usr, SPAN_WARNING(" You Cannot issue temporary job-bans!"))
 						return
 					if(config.ban_legacy_system)
-						to_chat(usr, "<span class='warning'>Your server is using the legacy banning system, which does not support temporary job bans. Consider upgrading. Aborting ban.</span>")
+						to_chat(usr, SPAN_WARNING("Your server is using the legacy banning system, which does not support temporary job bans. Consider upgrading. Aborting ban."))
 						return
 					var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
 					if(!mins)
 						return
 					if(check_rights(R_MOD, 0) && !check_rights(R_BAN, 0) && mins > config.mod_job_tempban_max)
-						to_chat(usr, "<span class='warning'> Moderators can only job tempban up to [config.mod_job_tempban_max] minutes!</span>")
+						to_chat(usr, SPAN_WARNING(" Moderators can only job tempban up to [config.mod_job_tempban_max] minutes!"))
 						return
 					var/reason = sanitize(input(usr,"Reason?","Please State Reason","") as text|null)
 					if(!reason)
@@ -756,9 +756,9 @@
 							msg += ", [job]"
 					notes_add(M.ckey, "Banned  from [msg] - [reason]", usr)
 					message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes", 1)
-					to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
-					to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
-					to_chat(M, "<span class='warning'>This jobban will be lifted in [mins] minutes.</span>")
+					to_chat(M, SPAN_DANGER("You have been jobbanned by [usr.client.ckey] from: [msg]."))
+					to_chat(M, SPAN_WARNING("The reason is: [reason]"))
+					to_chat(M, SPAN_WARNING("This jobban will be lifted in [mins] minutes."))
 					href_list["jobban2"] = 1 // lets it fall through and refresh
 					return 1
 				if("No")
@@ -777,9 +777,9 @@
 							else		msg += ", [job]"
 						notes_add(M.ckey, "Banned  from [msg] - [reason]", usr)
 						message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
-						to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
-						to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
-						to_chat(M, "<span class='warning'>Jobban can be lifted only upon request.</span>")
+						to_chat(M, SPAN_DANGER("You have been jobbanned by [usr.client.ckey] from: [msg]."))
+						to_chat(M, SPAN_WARNING("The reason is: [reason]"))
+						to_chat(M, SPAN_WARNING("Jobban can be lifted only upon request."))
 						href_list["jobban2"] = 1 // lets it fall through and refresh
 						return 1
 				if("Cancel")
@@ -810,7 +810,7 @@
 						continue
 			if(msg)
 				message_admins("[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg]", 1)
-				to_chat(M, "<span class='danger'>You have been un-jobbanned by [usr.client.ckey] from [msg].</span>")
+				to_chat(M, SPAN_DANGER("You have been un-jobbanned by [usr.client.ckey] from [msg]."))
 				href_list["jobban2"] = 1 // lets it fall through and refresh
 			return 1
 		return 0 //we didn't do anything!
@@ -822,9 +822,9 @@
 				return
 			var/reason = sanitize(input("Please enter reason"))
 			if(!reason)
-				to_chat(M, "<span class='warning'>You have been kicked from the server</span>")
+				to_chat(M, SPAN_WARNING("You have been kicked from the server"))
 			else
-				to_chat(M, "<span class='warning'>You have been kicked from the server: [reason]</span>")
+				to_chat(M, SPAN_WARNING("You have been kicked from the server: [reason]"))
 			log_and_message_admins("booted [key_name_admin(M)].")
 			//M.client = null
 			qdel(M.client)
@@ -845,11 +845,11 @@
 
 	else if(href_list["newban"])
 		if(!check_rights(R_MOD,0) && !check_rights(R_BAN, 0))
-			to_chat(usr, "<span class='warning'>You do not have the appropriate permissions to add bans!</span>")
+			to_chat(usr, SPAN_WARNING("You do not have the appropriate permissions to add bans!"))
 			return
 
 		if(check_rights(R_MOD,0) && !check_rights(R_ADMIN, 0) && !config.mods_can_job_tempban) // If mod and tempban disabled
-			to_chat(usr, "<span class='warning'>Mod jobbanning is disabled!</span>")
+			to_chat(usr, SPAN_WARNING("Mod jobbanning is disabled!"))
 			return
 
 		var/mob/M = locate(href_list["newban"])
@@ -863,7 +863,7 @@
 				if(!mins)
 					return
 				if(check_rights(R_MOD, 0) && !check_rights(R_BAN, 0) && mins > config.mod_tempban_max)
-					to_chat(usr, "<span class='warning'>Moderators can only job tempban up to [config.mod_tempban_max] minutes!</span>")
+					to_chat(usr, SPAN_WARNING("Moderators can only job tempban up to [config.mod_tempban_max] minutes!"))
 					return
 				if(mins >= 525600) mins = 525599
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
@@ -872,15 +872,15 @@
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
 				ban_unban_log_save("[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
 				notes_add(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.",usr)
-				to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
-				to_chat(M, "<span class='warning'>This is a temporary ban, it will be removed in [mins] minutes.</span>")
+				to_chat(M, SPAN_DANGER("You have been banned by [usr.client.ckey].\nReason: [reason]."))
+				to_chat(M, SPAN_WARNING("This is a temporary ban, it will be removed in [mins] minutes."))
 				feedback_inc("ban_tmp",1)
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
 				feedback_inc("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, SPAN_WARNING("To try to resolve this matter head to [config.banappeals]"))
 				else
-					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
+					to_chat(M, SPAN_WARNING("No ban appeals URL has been set."))
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
 
 				qdel(M.client)
@@ -896,12 +896,12 @@
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
 					if("No")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
-				to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
-				to_chat(M, "<span class='warning'>This is a ban until appeal.</span>")
+				to_chat(M, SPAN_DANGER("You have been banned by [usr.client.ckey].\nReason: [reason]."))
+				to_chat(M, SPAN_WARNING("This is a ban until appeal."))
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, SPAN_WARNING("To try to resolve this matter head to [config.banappeals]"))
 				else
-					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
+					to_chat(M, SPAN_WARNING("No ban appeals URL has been set."))
 				ban_unban_log_save("[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a ban until appeal.")
 				notes_add(M.ckey,"[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a ban until appeal.",usr)
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis is a ban until appeal.")
@@ -960,7 +960,7 @@
 			return alert(usr, "The game has already started.", null, null, null, null)
 		master_mode = href_list["c_mode2"]
 		log_and_message_admins("set the mode as [master_mode].")
-		to_world("<span class='notice'><b>The mode is now: [master_mode]</b></span>")
+		to_world(SPAN_NOTICE("<b>The mode is now: [master_mode]</b>"))
 		Game() // updates the main game menu
 		world.save_mode(master_mode)
 		.(href, list("c_mode"=1))
@@ -1049,7 +1049,7 @@
 			prisoner.equip_to_slot_or_del(new /obj/item/clothing/under/color/orange(prisoner), slot_w_uniform)
 			prisoner.equip_to_slot_or_del(new /obj/item/clothing/shoes/orange(prisoner), slot_shoes)
 
-		to_chat(M, "<span class='warning'>You have been sent to the prison station!</span>")
+		to_chat(M, SPAN_WARNING("You have been sent to the prison station!"))
 		log_and_message_admins("sent [key_name_admin(M)] to the prison station.")
 
 	else if(href_list["tdome1"])
@@ -1073,7 +1073,7 @@
 		sleep(5)
 		M.forceMove(pick(GLOB.tdome1))
 		spawn(50)
-			to_chat(M, "<span class='notice'>You have been sent to the Thunderdome.</span>")
+			to_chat(M, SPAN_NOTICE("You have been sent to the Thunderdome."))
 		log_admin("[key_name(usr)] has sent [key_name(M)] to the thunderdome. (Team 1)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(M)] to the thunderdome. (Team 1)", 1)
 
@@ -1098,7 +1098,7 @@
 		sleep(5)
 		M.forceMove(pick(GLOB.tdome2))
 		spawn(50)
-			to_chat(M, "<span class='notice'>You have been sent to the Thunderdome.</span>")
+			to_chat(M, SPAN_NOTICE("You have been sent to the Thunderdome."))
 		log_admin("[key_name(usr)] has sent [key_name(M)] to the thunderdome. (Team 2)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(M)] to the thunderdome. (Team 2)", 1)
 
@@ -1120,7 +1120,7 @@
 		sleep(5)
 		M.forceMove(pick(GLOB.tdomeadmin))
 		spawn(50)
-			to_chat(M, "<span class='notice'>You have been sent to the Thunderdome.</span>")
+			to_chat(M, SPAN_NOTICE("You have been sent to the Thunderdome."))
 		log_admin("[key_name(usr)] has sent [key_name(M)] to the thunderdome. (Admin.)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(M)] to the thunderdome. (Admin.)", 1)
 
@@ -1149,7 +1149,7 @@
 		sleep(5)
 		M.forceMove(pick(GLOB.tdomeobserve))
 		spawn(50)
-			to_chat(M, "<span class='notice'>You have been sent to the Thunderdome.</span>")
+			to_chat(M, SPAN_NOTICE("You have been sent to the Thunderdome."))
 		log_admin("[key_name(usr)] has sent [key_name(M)] to the thunderdome. (Observer.)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(M)] to the thunderdome. (Observer.)", 1)
 
@@ -1231,7 +1231,7 @@
 		var/mob/M = locate(href_list["adminplayerobservejump"])
 		var/client/C = usr.client
 		if(!M)
-			to_chat(C, "<span class='warning'>Unable to locate mob.</span>")
+			to_chat(C, SPAN_WARNING("Unable to locate mob."))
 			return
 
 		if(!isghost(usr))	C.admin_ghost()
@@ -1245,7 +1245,7 @@
 		var/mob/M = locate(href_list["adminplayerobservefollow"])
 		var/client/C = usr.client
 		if(!M)
-			to_chat(C, "<span class='warning'>Unable to locate mob.</span>")
+			to_chat(C, SPAN_WARNING("Unable to locate mob."))
 			return
 
 		if(!isobserver(usr))	C.admin_ghost()
@@ -1262,13 +1262,13 @@
 
 		var/mob/M = locate(href_list["take_question"])
 		if(ismob(M))
-			var/take_msg = "<span class='notice'><b>[key_name(usr.client)]</b> is attending to <b>[key_name(M)]'s</b> message.</span>"
+			var/take_msg = SPAN_NOTICE("<b>[key_name(usr.client)]</b> is attending to <b>[key_name(M)]'s</b> message.")
 			for(var/client/X in GLOB.admins)
 				if((R_ADMIN|R_MOD|R_MENTOR) & X.holder.rights)
 					to_chat(X, take_msg)
-			to_chat(M, "<span class='notice'><b>Your message is being attended to by [usr.client]. Thanks for your patience!</b></span>")
+			to_chat(M, SPAN_NOTICE("<b>Your message is being attended to by [usr.client]. Thanks for your patience!</b>"))
 		else
-			to_chat(usr, "<span class='warning'>Unable to locate mob.</span>")
+			to_chat(usr, SPAN_WARNING("Unable to locate mob."))
 
 	else if(href_list["take_ticket"])
 		var/datum/ticket/ticket = locate(href_list["take_ticket"])
@@ -1365,7 +1365,7 @@
 		log_admin("[key_name(H)] got their cookie, spawned by [key_name(src.owner)]")
 		message_admins("[key_name(H)] got their cookie, spawned by [key_name(src.owner)]")
 		feedback_inc("admin_cookies_spawned",1)
-		to_chat(H, "<span class='notice'>Your prayers have been answered!! You received the <b>best cookie</b>!</span>")
+		to_chat(H, SPAN_NOTICE("Your prayers have been answered!! You received the <b>best cookie</b>!"))
 
 	else if(href_list["BlueSpaceArtillery"])
 		if(!check_rights(R_ADMIN|R_FUN))	return
@@ -1427,7 +1427,7 @@
 				to_chat(L, "<span class='info'>You hear something crackle in your headset for a moment before a voice speaks.</span>")
 			to_chat(L, "<span class='info'>Please stand by for a message from Central Command.</span>")
 			to_chat(L, "<span class='info'>Message as follows.</span>")
-			to_chat(L, "<span class='notice'>[input]</span>")
+			to_chat(L, SPAN_NOTICE("[input]"))
 			to_chat(L, "<span class='info'>Message ends.</span>")
 		else
 			to_chat(src.owner, "The person you are trying to contact does not have functional radio equipment.")
@@ -1469,7 +1469,7 @@
 
 			usr << browse(data, "window=[B.name]")
 		else
-			to_chat(usr, "<span class='warning'>The faxed item is not viewable. This is probably a bug, and should be reported on the tracker: [fax.type]</span>")
+			to_chat(usr, SPAN_WARNING("The faxed item is not viewable. This is probably a bug, and should be reported on the tracker: [fax.type]"))
 	else if (href_list["AdminFaxViewPage"])
 		var/page = text2num(href_list["AdminFaxViewPage"])
 		var/obj/item/paper_bundle/bundle = locate(href_list["paper_bundle"])

@@ -115,7 +115,7 @@
 		return 0
 	var/zone = user.zone_sel.selecting
 	if(zone in M.op_stage.in_progress) //Can't operate on someone repeatedly.
-		to_chat(user, "<span class='warning'>You can't operate on this area while surgery is already in progress.</span>")
+		to_chat(user, SPAN_WARNING("You can't operate on this area while surgery is already in progress."))
 		return 1
 	for(var/datum/surgery_step/S in surgery_steps)
 		//check if tool is right or close enough and if this step is possible
@@ -131,15 +131,15 @@
 					if(user.statscheck(user.STAT_LEVEL(int), user.SKILL_LEVEL(surgery), "6d6", 20) >= SUCCESS)
 						S.end_step(user, M, zone, src)		//finish successfully
 					else
-						visible_message("<span class='warning'>[user] messes up the surgery step. They must try again.</span>")
+						visible_message(SPAN_WARNING("[user] messes up the surgery step. They must try again."))
 						//S.fail_step(user, M, zone, src)
 						//user.my_skills[SKILL(surgery)].give_xp(25, user)//If they fail it then give them some XP for trying.
 				else if ((src in user.contents) && user.Adjacent(M))			//or
-					visible_message("<span class='warning'>[user] messes up the surgery step. They must try again.</span>")
+					visible_message(SPAN_WARNING("[user] messes up the surgery step. They must try again."))
 					//S.fail_step(user, M, zone, src)		//malpractice~
 					//user.my_skills[SKILL(surgery)].give_xp(25, user)//If they fail it then give them some XP for trying.
 				else // This failing silently was a pain.
-					to_chat(user, "<span class='warning'>You must remain close to your patient to conduct surgery.</span>")
+					to_chat(user, SPAN_WARNING("You must remain close to your patient to conduct surgery."))
 				if (M)
 					M.op_stage.in_progress -= zone 									// Clear the in-progress flag.
 				if (ishuman(M))

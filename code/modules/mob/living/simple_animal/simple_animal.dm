@@ -189,10 +189,10 @@
 
 		if(I_HELP)
 			if (health > 0)
-				M.visible_message("<span class='notice'>[M] [response_help] \the [src]</span>")
+				M.visible_message(SPAN_NOTICE("[M] [response_help] \the [src]"))
 
 		if(I_DISARM)
-			M.visible_message("<span class='notice'>[M] [response_disarm] \the [src]</span>")
+			M.visible_message(SPAN_NOTICE("[M] [response_disarm] \the [src]"))
 			//TODO: Push the mob away or something
 
 		if(I_HURT)
@@ -201,7 +201,7 @@
 					do_dodge()
 					return
 			adjustBruteLoss(harm_intent_damage)
-			M.visible_message("<span class='warning'>[M] [response_harm] \the [src]</span>")
+			M.visible_message(SPAN_WARNING("[M] [response_harm] \the [src]"))
 
 	return
 
@@ -210,7 +210,7 @@
 		if(stat != DEAD)
 			var/obj/item/stack/medical/MED = O
 			if(!MED.animal_heal)
-				to_chat(user, "<span class='notice'>That [MED] won't help \the [src] at all!</span>")
+				to_chat(user, SPAN_NOTICE("That [MED] won't help \the [src] at all!"))
 				return
 			if(health < maxHealth)
 				if(MED.amount >= 1)
@@ -220,9 +220,9 @@
 						qdel(MED)
 					for(var/mob/M in viewers(src, null))
 						if ((M.client && !( M.blinded )))
-							M.show_message("<span class='notice'>[user] applies the [MED] on [src].</span>")
+							M.show_message(SPAN_NOTICE("[user] applies the [MED] on [src]."))
 		else
-			to_chat(user, "<span class='notice'>\The [src] is dead, medical items won't bring \him back to life.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] is dead, medical items won't bring \him back to life."))
 		return
 	if(meat_type && (stat == DEAD))	//if the animal has a meat, and if it is dead.
 		if(istype(O, /obj/item/material/knife) || istype(O, /obj/item/material/knife/butch) || istype(O, /obj/item/material/sword))//Swords work too.
@@ -232,7 +232,7 @@
 					harvest(user)
 	else
 		if(!O.force)
-			visible_message("<span class='notice'>[user] gently taps [src] with \the [O].</span>")
+			visible_message(SPAN_NOTICE("[user] gently taps [src] with \the [O]."))
 		else
 			O.attack(src, user, user.zone_sel.selecting)
 
@@ -246,7 +246,7 @@
 	visible_message("<span class='danger'>[user] [O.attack_verb.len? pick(O.attack_verb) : "attacked"] \the [src] in [hit_zone] with \the [O].</span>")
 
 	if(O.force <= resistance)
-		to_chat(user, "<span class='danger'>This weapon is ineffective, it does no damage.</span>")
+		to_chat(user, SPAN_DANGER("This weapon is ineffective, it does no damage."))
 		return 2
 
 	var/damage = O.force
@@ -368,7 +368,7 @@
 			new meat_type(get_turf(src))//var/obj/item/meat =
 			//meat.SetName("[src.name] [meat.name]")
 
-		user.visible_message("<span class='danger'>[user] butchers \the [src]!</span>")
+		user.visible_message(SPAN_DANGER("[user] butchers \the [src]!"))
 		if(bloody)
 			new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
 		if(delete_after_harvest)
@@ -376,7 +376,7 @@
 		else
 			butchered = TRUE
 	else
-		user.visible_message("<span class='danger'>[user] butchers \the [src] messily!</span>")
+		user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
 		gib()
 
 /mob/living/simple_animal/handle_fire()

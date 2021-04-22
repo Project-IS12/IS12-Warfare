@@ -30,14 +30,14 @@
 				paper_result = shred_amounts[shred_type]
 		if(paper_result)
 			if(paperamount == max_paper)
-				to_chat(user, "<span class='warning'>\The [src] is full; please empty it before you continue.</span>")
+				to_chat(user, SPAN_WARNING("\The [src] is full; please empty it before you continue."))
 				return
 			paperamount += paper_result
 			user.drop_from_inventory(W)
 			qdel(W)
 			playsound(src.loc, 'sound/items/pshred.ogg', 75, 1)
 			if(paperamount > max_paper)
-				to_chat(user, "<span class='danger'>\The [src] was too full, and shredded paper goes everywhere!</span>")
+				to_chat(user, SPAN_DANGER("\The [src] was too full, and shredded paper goes everywhere!"))
 				for(var/i=(paperamount-max_paper);i>0;i--)
 					var/obj/item/shreddedp/SP = get_shredded_paper()
 					SP.loc = get_turf(src)
@@ -57,7 +57,7 @@
 		return
 
 	if(!paperamount)
-		to_chat(usr, "<span class='notice'>\The [src] is empty.</span>")
+		to_chat(usr, SPAN_NOTICE("\The [src] is empty."))
 		return
 
 	empty_bin(usr)
@@ -69,7 +69,7 @@
 		empty_into = null
 
 	if(empty_into && empty_into.contents.len >= empty_into.storage_slots)
-		to_chat(user, "<span class='notice'>\The [empty_into] is full.</span>")
+		to_chat(user, SPAN_NOTICE("\The [empty_into] is full."))
 		return
 
 	while(paperamount)
@@ -81,12 +81,12 @@
 				break
 	if(empty_into)
 		if(paperamount)
-			to_chat(user, "<span class='notice'>You fill \the [empty_into] with as much shredded paper as it will carry.</span>")
+			to_chat(user, SPAN_NOTICE("You fill \the [empty_into] with as much shredded paper as it will carry."))
 		else
-			to_chat(user, "<span class='notice'>You empty \the [src] into \the [empty_into].</span>")
+			to_chat(user, SPAN_NOTICE("You empty \the [src] into \the [empty_into]."))
 
 	else
-		to_chat(user, "<span class='notice'>You empty \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You empty \the [src]."))
 	update_icon()
 
 /obj/machinery/papershredder/proc/get_shredded_paper()
@@ -108,15 +108,15 @@
 	if(user.restrained())
 		return
 	if(!P.lit)
-		to_chat(user, "<span class='warning'>\The [P] is not lit.</span>")
+		to_chat(user, SPAN_WARNING("\The [P] is not lit."))
 		return
-	user.visible_message("<span class='warning'>\The [user] holds \the [P] up to \the [src]. It looks like \he's trying to burn it!</span>", \
-		"<span class='warning'>You hold \the [P] up to \the [src], burning it slowly.</span>")
+	user.visible_message(SPAN_WARNING("\The [user] holds \the [P] up to \the [src]. It looks like \he's trying to burn it!"), \
+		SPAN_WARNING("You hold \the [P] up to \the [src], burning it slowly."))
 	if(!do_after(user,20, src))
-		to_chat(user, "<span class='warning'>You must hold \the [P] steady to burn \the [src].</span>")
+		to_chat(user, SPAN_WARNING("You must hold \the [P] steady to burn \the [src]."))
 		return
-	user.visible_message("<span class='danger'>\The [user] burns right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap.</span>", \
-		"<span class='danger'>You burn right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap.</span>")
+	user.visible_message(SPAN_DANGER("\The [user] burns right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap."), \
+		SPAN_DANGER("You burn right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap."))
 	FireBurn()
 
 /obj/item/shreddedp/proc/FireBurn()

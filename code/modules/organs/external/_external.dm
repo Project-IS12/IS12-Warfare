@@ -172,7 +172,7 @@
 		if(istype(I))
 			if(!(user.l_hand && user.r_hand))
 				user.put_in_hands(I)
-		user.visible_message("<span class='danger'>\The [user] rips \the [I] out of \the [src]!</span>")
+		user.visible_message(SPAN_DANGER("\The [user] rips \the [I] out of \the [src]!"))
 		return //no eating the limb until everything's been removed
 	return ..()
 
@@ -182,7 +182,7 @@
 		for(var/obj/item/I in contents)
 			if(istype(I, /obj/item/organ))
 				continue
-			to_chat(usr, "<span class='danger'>There is \a [I] sticking out of it.</span>")
+			to_chat(usr, SPAN_DANGER("There is \a [I] sticking out of it."))
 	return
 
 /obj/item/organ/external/show_decay_status(mob/user)
@@ -194,12 +194,12 @@
 	switch(stage)
 		if(0)
 			if(W.sharp)
-				user.visible_message("<span class='danger'><b>[user]</b> cuts [src] open with [W]!</span>")
+				user.visible_message(SPAN_DANGER("<b>[user]</b> cuts [src] open with [W]!"))
 				stage++
 				return
 		if(1)
 			if(istype(W))
-				user.visible_message("<span class='danger'><b>[user]</b> cracks [src] open like an egg with [W]!</span>")
+				user.visible_message(SPAN_DANGER("<b>[user]</b> cracks [src] open like an egg with [W]!"))
 				stage++
 				return
 		if(2)
@@ -221,9 +221,9 @@
 
 					if(!(user.l_hand && user.r_hand))
 						user.put_in_hands(removing)
-					user.visible_message("<span class='danger'><b>[user]</b> extracts [removing] from [src] with [W]!</span>")
+					user.visible_message(SPAN_DANGER("<b>[user]</b> extracts [removing] from [src] with [W]!"))
 				else
-					user.visible_message("<span class='danger'><b>[user]</b> fishes around fruitlessly in [src] with [W].</span>")
+					user.visible_message(SPAN_DANGER("<b>[user]</b> fishes around fruitlessly in [src] with [W]."))
 				return
 	..()
 
@@ -334,11 +334,11 @@
 
 	if(!damage_amount)
 		if(src.hatch_state != HATCH_OPENED)
-			to_chat(user, "<span class='notice'>Nothing to fix!</span>")
+			to_chat(user, SPAN_NOTICE("Nothing to fix!"))
 		return 0
 
 	if(damage_amount >= ROBOLIMB_SELF_REPAIR_CAP)
-		to_chat(user, "<span class='danger'>The damage is far too severe to patch over externally.</span>")
+		to_chat(user, SPAN_DANGER("The damage is far too severe to patch over externally."))
 		return 0
 
 	if(user == src.owner)
@@ -349,21 +349,21 @@
 			grasp = BP_R_HAND
 
 		if(grasp)
-			to_chat(user, "<span class='warning'>You can't reach your [src.name] while holding [tool] in your [owner.get_bodypart_name(grasp)].</span>")
+			to_chat(user, SPAN_WARNING("You can't reach your [src.name] while holding [tool] in your [owner.get_bodypart_name(grasp)]."))
 			return 0
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!do_mob(user, owner, 10))
-		to_chat(user, "<span class='warning'>You must stand still to do that.</span>")
+		to_chat(user, SPAN_WARNING("You must stand still to do that."))
 		return 0
 
 	switch(damage_type)
 		if(BRUTE) src.heal_damage(repair_amount, 0, 0, 1)
 		if(BURN)  src.heal_damage(0, repair_amount, 0, 1)
 	if(user == src.owner)
-		user.visible_message("<span class='notice'>\The [user] patches [damage_desc] on \his [src.name] with [tool].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] patches [damage_desc] on \his [src.name] with [tool]."))
 	else
-		user.visible_message("<span class='notice'>\The [user] patches [damage_desc] on [owner]'s [src.name] with [tool].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] patches [damage_desc] on [owner]'s [src.name] with [tool]."))
 
 	return 1
 
@@ -465,13 +465,13 @@ This function completely restores a damaged organ to perfect condition.
 				/*//This is obnoxious chat spam.
 				if(prob(25))
 					if(robotic >= ORGAN_ROBOT)
-						owner.visible_message("<span class='danger'>The damage to [owner.name]'s [name] worsens.</span>",\
-						"<span class='danger'>The damage to your [name] worsens.</span>",\
-						"<span class='danger'>You hear the screech of abused metal.</span>")
+						owner.visible_message(SPAN_DANGER("The damage to [owner.name]'s [name] worsens."),\
+						SPAN_DANGER("The damage to your [name] worsens."),\
+						SPAN_DANGER("You hear the screech of abused metal."))
 					else
-						owner.visible_message("<span class='danger'>The wound on [owner.name]'s [name] widens with a nasty ripping noise.</span>",\
-						"<span class='danger'>The wound on your [name] widens with a nasty ripping noise.</span>",\
-						"<span class='danger'>You hear a nasty ripping noise, as if flesh is being torn apart.</span>")
+						owner.visible_message(SPAN_DANGER("The wound on [owner.name]'s [name] widens with a nasty ripping noise."),\
+						SPAN_DANGER("The wound on your [name] widens with a nasty ripping noise."),\
+						SPAN_DANGER("You hear a nasty ripping noise, as if flesh is being torn apart."))
 				*/
 
 
@@ -626,7 +626,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(germ_level >= INFECTION_LEVEL_THREE && antibiotics < 30)	//overdosing is necessary to stop severe infections
 		if (!(status & ORGAN_DEAD))
 			status |= ORGAN_DEAD
-			to_chat(owner, "<span class='notice'>You can't feel your [name] anymore...</span>")
+			to_chat(owner, SPAN_NOTICE("You can't feel your [name] anymore..."))
 			owner.update_body(1)
 
 		germ_level++
@@ -769,9 +769,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 			if(!clean)
 				var/gore_sound = "[(robotic >= ORGAN_ROBOT) ? "tortured metal" : "ripping tendons and flesh"]"
 				owner.visible_message(
-					"<span class='danger'><big>\The [owner]'s [src.name] flies off in a bloody arc!</big></span>",\
+					SPAN_DANGER("<big>\The [owner]'s [src.name] flies off in a bloody arc!</big>"),\
 					"<span class='moderate'><big><b>Your [src.name] goes flying off!</b></big></span>",\
-					"<span class='danger'>You hear a terrible sound of [gore_sound].</span>")
+					SPAN_DANGER("You hear a terrible sound of [gore_sound]."))
 				playsound(owner, severed_sound, 100, 0)
 
 			else
@@ -783,9 +783,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(DROPLIMB_BURN)
 			var/gore = "[(robotic >= ORGAN_ROBOT) ? "": " of burning flesh"]"
 			owner.visible_message(
-				"<span class='danger'><big>\The [owner]'s [src.name] flashes away into ashes!</big></span>",\
+				SPAN_DANGER("<big>\The [owner]'s [src.name] flashes away into ashes!</big>"),\
 				"<span class='moderate'><big><b>Your [src.name] flashes away into ashes!</b><</big></span>",\
-				"<span class='danger'>You hear a crackling sound[gore].</span>")
+				SPAN_DANGER("You hear a crackling sound[gore]."))
 			if(owner.can_feel_pain() && prob(50))
 				owner.agony_scream()
 
@@ -795,9 +795,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 			var/gore = "[(robotic >= ORGAN_ROBOT) ? "": " in shower of gore"]"
 			var/gore_sound = "[(robotic >= ORGAN_ROBOT) ? "rending sound of tortured metal" : "sickening splatter of gore"]"
 			owner.visible_message(
-				"<span class='danger'><big>\The [owner]'s [src.name] explodes[gore]!</big></span>",\
+				SPAN_DANGER("<big>\The [owner]'s [src.name] explodes[gore]!</big>"),\
 				"<span class='moderate'><big><b>Your [src.name] explodes[gore]!</b></big></span>",\
-				"<span class='danger'>You hear the [gore_sound].</span>")
+				SPAN_DANGER("You hear the [gore_sound]."))
 			playsound(owner, 'sound/effects/gore/chop6.ogg', 100 , 0)//Splat.
 
 			if(owner.can_feel_pain() && prob(50))
@@ -971,9 +971,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 	if(owner)
 		owner.visible_message(\
-			"<span class='danger'><big>[owner]'s [name] shatters!</big></span>",\
-			"<span class='danger'><big>Something feels like it shattered in your [name]!</big></span>",\
-			"<span class='danger'>You hear a sickening crack.</span>")
+			SPAN_DANGER("<big>[owner]'s [name] shatters!</big>"),\
+			SPAN_DANGER("<big>Something feels like it shattered in your [name]!</big>"),\
+			SPAN_DANGER("You hear a sickening crack."))
 		jostle_bone()
 		if(can_feel_pain())
 			if(prob(50))
@@ -1086,9 +1086,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(!silent)
 		/*
 		if(supplied_message)
-			owner.visible_message("<span class='danger'>[supplied_message]</span>")
+			owner.visible_message(SPAN_DANGER("[supplied_message]"))
 		else
-			owner.visible_message("<span class='danger'>\The [W] sticks in the wound!</span>")
+			owner.visible_message(SPAN_DANGER("\The [W] sticks in the wound!"))
 		*/
 		playsound(owner, "stab_sound", 100, 0)
 
@@ -1167,9 +1167,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 	//Robotic limbs explode if sabotaged.
 	if(is_robotic && sabotaged)
 		victim.visible_message(
-			"<span class='danger'>\The [victim]'s [src.name] explodes violently!</span>",\
-			"<span class='danger'>Your [src.name] explodes!</span>",\
-			"<span class='danger'>You hear an explosion!</span>")
+			SPAN_DANGER("\The [victim]'s [src.name] explodes violently!"),\
+			SPAN_DANGER("Your [src.name] explodes!"),\
+			SPAN_DANGER("You hear an explosion!"))
 		explosion(get_turf(owner),-1,-1,2,3)
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, victim)
@@ -1184,13 +1184,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 		return
 	if(owner)
 		if(type == "brute")
-			owner.visible_message("<span class='danger'>\the [owner]'s [name] becomes a mangled mess!</span>",	\
-			"<span class='danger'>Your [name] becomes a mangled mess!</span>",	\
-			"<span class='danger'>You hear a sickening crack.</span>")
+			owner.visible_message(SPAN_DANGER("\the [owner]'s [name] becomes a mangled mess!"),	\
+			SPAN_DANGER("Your [name] becomes a mangled mess!"),	\
+			SPAN_DANGER("You hear a sickening crack."))
 		else
-			owner.visible_message("<span class='danger'>\The [owner]'s [name] melts away, turning into mangled mess!</span>",	\
-			"<span class='danger'>Your [name] melts away!</span>",	\
-			"<span class='danger'>You hear a sickening sizzle.</span>")
+			owner.visible_message(SPAN_DANGER("\The [owner]'s [name] melts away, turning into mangled mess!"),	\
+			SPAN_DANGER("Your [name] melts away!"),	\
+			SPAN_DANGER("You hear a sickening sizzle."))
 	disfigured = 1
 
 /obj/item/organ/external/proc/get_incision(var/strict)
@@ -1340,24 +1340,24 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/proc/inspect(mob/user)
 	if(is_stump())
-		to_chat(user, "<span class='notice'>[owner] is missing that bodypart.</span>")
+		to_chat(user, SPAN_NOTICE("[owner] is missing that bodypart."))
 		return
 
-	user.visible_message("<span class='notice'>[user] starts inspecting [owner]'s [name] carefully.</span>")
+	user.visible_message(SPAN_NOTICE("[user] starts inspecting [owner]'s [name] carefully."))
 	if(wounds.len)
-		to_chat(user, "<span class='warning'>You find [get_wounds_desc()]</span>")
+		to_chat(user, SPAN_WARNING("You find [get_wounds_desc()]"))
 		var/list/stuff = list()
 		for(var/datum/wound/wound in wounds)
 			if(wound.embedded_objects)
 				stuff += wound.embedded_objects
 		if(stuff.len)
-			to_chat(user, "<span class='warning'>There's [english_list(stuff)] sticking out of [owner]'s [name].</span>")
+			to_chat(user, SPAN_WARNING("There's [english_list(stuff)] sticking out of [owner]'s [name]."))
 	else
-		to_chat(user, "<span class='notice'>You find no visible wounds.</span>")
+		to_chat(user, SPAN_NOTICE("You find no visible wounds."))
 
-	to_chat(user, "<span class='notice'>Checking skin now...</span>")
+	to_chat(user, SPAN_NOTICE("Checking skin now..."))
 	if(!do_mob(user, owner, 10))
-		to_chat(user, "<span class='notice'>You must stand still to check [owner]'s skin for abnormalities.</span>")
+		to_chat(user, SPAN_NOTICE("You must stand still to check [owner]'s skin for abnormalities."))
 		return
 
 	var/list/badness = list()
@@ -1372,13 +1372,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(status & ORGAN_DEAD)
 		badness += "rotting"
 	if(!badness.len)
-		to_chat(user, "<span class='notice'>[owner]'s skin is normal.</span>")
+		to_chat(user, SPAN_NOTICE("[owner]'s skin is normal."))
 	else
-		to_chat(user, "<span class='warning'>[owner]'s skin is [english_list(badness)].</span>")
+		to_chat(user, SPAN_WARNING("[owner]'s skin is [english_list(badness)]."))
 
-	to_chat(user, "<span class='notice'>Checking bones now...</span>")
+	to_chat(user, SPAN_NOTICE("Checking bones now..."))
 	if(!do_mob(user, owner, 10))
-		to_chat(user, "<span class='notice'>You must stand still to feel [src] for fractures.</span>")
+		to_chat(user, SPAN_NOTICE("You must stand still to feel [src] for fractures."))
 		return
 
 	if(status & ORGAN_BROKEN)
@@ -1388,9 +1388,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 		to_chat(user, "<span class='notice'>The [encased ? encased : "bones in the [name]"] seem to be fine.</span>")
 
 	if(status & ORGAN_TENDON_CUT)
-		to_chat(user, "<span class='warning'>The tendons in [name] are severed!</span>")
+		to_chat(user, SPAN_WARNING("The tendons in [name] are severed!"))
 	if(dislocated == 2)
-		to_chat(user, "<span class='warning'>The [joint] is dislocated!</span>")
+		to_chat(user, SPAN_WARNING("The [joint] is dislocated!"))
 	return 1
 
 /obj/item/organ/external/listen()
@@ -1410,7 +1410,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 	var/armor = owner.run_armor_check(owner, "melee")
 	if(armor < 100)
-		to_chat(owner, "<span class='danger'>You feel extreme pain!</span>")
+		to_chat(owner, SPAN_DANGER("You feel extreme pain!"))
 
 		var/max_halloss = round(owner.species.total_health * 0.8 * ((100 - armor) / 100)) //up to 80% of passing out, further reduced by armour
 		add_pain(Clamp(0, max_halloss - owner.getHalLoss(), 30))

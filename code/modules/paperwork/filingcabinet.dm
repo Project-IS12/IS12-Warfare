@@ -50,7 +50,7 @@
 /obj/structure/filingcabinet/attackby(obj/item/P as obj, mob/user as mob)
 	if(is_type_in_list(P, can_hold))
 		add_fingerprint(user)
-		to_chat(user, "<span class='notice'>You put [P] in [src].</span>")
+		to_chat(user, SPAN_NOTICE("You put [P] in [src]."))
 		user.drop_item()
 		P.loc = src
 		icon_state = "[initial(icon_state)]-open"
@@ -66,7 +66,7 @@ var
 
 /obj/structure/filingcabinet/attack_hand(mob/user as mob)
 	if(contents.len <= 0)
-		to_chat(user, "<span class='notice'>\The [src] is empty.</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] is empty."))
 		return
 
 	user.set_machine(src)
@@ -91,9 +91,9 @@ var
 			I.loc = loc
 			if(prob(25))
 				step_rand(I)
-			to_chat(user, "<span class='notice'>You pull \a [I] out of [src] at random.</span>")
+			to_chat(user, SPAN_NOTICE("You pull \a [I] out of [src] at random."))
 			return
-	to_chat(user, "<span class='notice'>You find nothing in [src].</span>")
+	to_chat(user, SPAN_NOTICE("You find nothing in [src]."))
 
 /obj/structure/filingcabinet/Topic(href, href_list)
 	if(href_list["retrieve"])

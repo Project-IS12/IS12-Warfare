@@ -83,8 +83,8 @@
 			user.visible_message("<span class='notice'>[user] begins to suture [H]'s arteries.")
 			playsound(src, 'sound/weapons/suture.ogg', 70, FALSE)
 			if(do_mob(user, H, (backwards_skill_scale(user.SKILL_LEVEL(medical)) * 5)))
-				user.visible_message("<span class='notice'>[user] has patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name].</span>", \
-				"<span class='notice'>You have patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name].</span>")
+				user.visible_message(SPAN_NOTICE("[user] has patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name]."), \
+				SPAN_NOTICE("You have patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name]."))
 				affected.status &= ~ORGAN_ARTERY_CUT
 
 		else//Then fix wounds if they do it again.
@@ -97,11 +97,11 @@
 						// Close it up to a point that it can be bandaged and heal naturally!
 						W.heal_damage(rand(5,20)+10)
 						if(W.damage >= W.autoheal_cutoff)
-							user.visible_message("<span class='notice'>\The [user] partially closes a wound on [H]'s [affected.name] with \the [src.name].</span>", \
-							"<span class='notice'>You partially close a wound on [H]'s [affected.name] with \the [src.name].</span>")
+							user.visible_message(SPAN_NOTICE("\The [user] partially closes a wound on [H]'s [affected.name] with \the [src.name]."), \
+							SPAN_NOTICE("You partially close a wound on [H]'s [affected.name] with \the [src.name]."))
 						else
-							user.visible_message("<span class='notice'>\The [user] closes a wound on [H]'s [affected.name] with \the [src.name].</span>", \
-							"<span class='notice'>You close a wound on [H]'s [affected.name] with \the [src.name].</span>")
+							user.visible_message(SPAN_NOTICE("\The [user] closes a wound on [H]'s [affected.name] with \the [src.name]."), \
+							SPAN_NOTICE("You close a wound on [H]'s [affected.name] with \the [src.name]."))
 							if(!W.damage)
 								affected.wounds -= W
 								qdel(W)

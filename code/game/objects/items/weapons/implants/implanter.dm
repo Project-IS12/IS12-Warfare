@@ -31,17 +31,17 @@
 
 	if(can_use(usr))
 		if(!imp)
-			to_chat(usr, "<span class='notice'>There is no implant to remove.</span>")
+			to_chat(usr, SPAN_NOTICE("There is no implant to remove."))
 			return
 		imp.forceMove(get_turf(src))
 		usr.put_in_hands(imp)
-		to_chat(usr, "<span class='notice'>You remove \the [imp] from \the [src].</span>")
+		to_chat(usr, SPAN_NOTICE("You remove \the [imp] from \the [src]."))
 		name = "implanter"
 		imp = null
 		update_icon()
 		return
 	else
-		to_chat(usr, "<span class='notice'>You cannot do this in your current condition.</span>")
+		to_chat(usr, SPAN_NOTICE("You cannot do this in your current condition."))
 
 /obj/item/implanter/proc/can_use()
 
@@ -58,7 +58,7 @@
 
 /obj/item/implanter/attackby(obj/item/I, mob/user)
 	if(!imp && istype(I, /obj/item/implant))
-		to_chat(usr, "<span class='notice'>You slide \the [I] into \the [src].</span>")
+		to_chat(usr, SPAN_NOTICE("You slide \the [I] into \the [src]."))
 		user.drop_from_inventory(I,src)
 		imp = I
 		update_icon()
@@ -69,7 +69,7 @@
 	if (!istype(M, /mob/living/carbon))
 		return
 	if (user && src.imp)
-		M.visible_message("<span class='warning'>[user] is attemping to implant [M].</span>")
+		M.visible_message(SPAN_WARNING("[user] is attemping to implant [M]."))
 
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 		user.do_attack_animation(M)
@@ -79,7 +79,7 @@
 			var/imp_name = imp.name
 
 			if(do_after(user, 50, M) && src.imp.implant_in_mob(M, target_zone))
-				M.visible_message("<span class='warning'>[M] has been implanted by [user].</span>")
+				M.visible_message(SPAN_WARNING("[M] has been implanted by [user]."))
 				admin_attack_log(user, M, "Implanted using \the [src] ([imp_name])", "Implanted with \the [src] ([imp_name])", "used an implanter, \the [src] ([imp_name]), on")
 
 				src.imp = null

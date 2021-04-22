@@ -23,6 +23,6 @@
 	if(!proximity)
 		return
 	user.say("Ta'gh fara[pick("'","`")]qha fel d'amar det!")
-	user.visible_message("<span class='danger'>\The [user] invokes \the [src] at [target].</span>", "<span class='danger'>You invoke \the [src] at [target].</span>")
+	user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [target]."), SPAN_DANGER("You invoke \the [src] at [target]."))
 	target.emp_act(1)
 	qdel(src)

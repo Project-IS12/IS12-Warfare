@@ -71,7 +71,7 @@
 	if(!emagged)
 		emagged = 1
 		if(user)
-			to_chat(user, "<span class='notice'>The [src] buzzes and beeps.</span>")
+			to_chat(user, SPAN_NOTICE("The [src] buzzes and beeps."))
 		return 1
 
 /mob/living/bot/floorbot/handleRegular()
@@ -133,12 +133,12 @@
 		busy = 1
 		update_icons()
 		if(F.flooring)
-			visible_message("<span class='warning'>[src] begins to tear the floor tile from the floor.</span>")
+			visible_message(SPAN_WARNING("[src] begins to tear the floor tile from the floor."))
 			if(do_after(src, 50, F))
 				F.break_tile_to_plating()
 				addTiles(1)
 		else
-			visible_message("<span class='danger'>[src] begins to tear through the floor!</span>")
+			visible_message(SPAN_DANGER("[src] begins to tear through the floor!"))
 			if(do_after(src, 150, F)) // Extra time because this can and will kill.
 				F.ReplaceWithLattice()
 				addTiles(1)
@@ -149,7 +149,7 @@
 		if(F.broken || F.burnt)
 			busy = 1
 			update_icons()
-			visible_message("<span class='notice'>[src] begins to remove the broken floor.</span>")
+			visible_message(SPAN_NOTICE("[src] begins to remove the broken floor."))
 			if(do_after(src, 50, F))
 				if(F.broken || F.burnt)
 					F.make_plating()
@@ -159,7 +159,7 @@
 		else if(!F.flooring && amount)
 			busy = 1
 			update_icons()
-			visible_message("<span class='notice'>[src] begins to improve the floor.</span>")
+			visible_message(SPAN_NOTICE("[src] begins to improve the floor."))
 			if(do_after(src, 50, F))
 				if(!F.flooring)
 					F.set_flooring(get_flooring_data(floor_build_type))
@@ -168,7 +168,7 @@
 			update_icons()
 	else if(istype(A, /obj/item/stack/tile/floor) && amount < maxAmount)
 		var/obj/item/stack/tile/floor/T = A
-		visible_message("<span class='notice'>\The [src] begins to collect tiles.</span>")
+		visible_message(SPAN_NOTICE("\The [src] begins to collect tiles."))
 		busy = 1
 		update_icons()
 		if(do_after(src, 20))
@@ -181,7 +181,7 @@
 	else if(istype(A, /obj/item/stack/material) && amount + 4 <= maxAmount)
 		var/obj/item/stack/material/M = A
 		if(M.get_material_name() == DEFAULT_WALL_MATERIAL)
-			visible_message("<span class='notice'>\The [src] begins to make tiles.</span>")
+			visible_message(SPAN_NOTICE("\The [src] begins to make tiles."))
 			busy = 1
 			update_icons()
 			if(do_after(src, 50))
@@ -191,7 +191,7 @@
 
 /mob/living/bot/floorbot/explode()
 	turn_off()
-	visible_message("<span class='danger'>[src] blows apart!</span>")
+	visible_message(SPAN_DANGER("[src] blows apart!"))
 	var/turf/Tsec = get_turf(src)
 
 	var/obj/item/storage/toolbox/mechanical/N = new /obj/item/storage/toolbox/mechanical(Tsec)
@@ -222,18 +222,18 @@
 		..()
 		return
 	if(contents.len >= 1)
-		to_chat(user, "<span class='notice'>They wont fit in as there is already stuff inside.</span>")
+		to_chat(user, SPAN_NOTICE("They wont fit in as there is already stuff inside."))
 		return
 	if(user.s_active)
 		user.s_active.close(user)
 	if(T.use(10))
 		var/obj/item/toolbox_tiles/B = new /obj/item/toolbox_tiles
 		user.put_in_hands(B)
-		to_chat(user, "<span class='notice'>You add the tiles into the empty toolbox. They protrude from the top.</span>")
+		to_chat(user, SPAN_NOTICE("You add the tiles into the empty toolbox. They protrude from the top."))
 		user.drop_from_inventory(src)
 		qdel(src)
 	else
-		to_chat(user, "<span class='warning'>You need 10 floor tiles for a floorbot.</span>")
+		to_chat(user, SPAN_WARNING("You need 10 floor tiles for a floorbot."))
 	return
 
 /obj/item/toolbox_tiles
@@ -255,7 +255,7 @@
 		var/obj/item/toolbox_tiles_sensor/B = new /obj/item/toolbox_tiles_sensor()
 		B.created_name = created_name
 		user.put_in_hands(B)
-		to_chat(user, "<span class='notice'>You add the sensor to the toolbox and tiles!</span>")
+		to_chat(user, SPAN_NOTICE("You add the sensor to the toolbox and tiles!"))
 		user.drop_from_inventory(src)
 		qdel(src)
 	else if (istype(W, /obj/item/pen))
@@ -285,7 +285,7 @@
 		var/turf/T = get_turf(user.loc)
 		var/mob/living/bot/floorbot/A = new /mob/living/bot/floorbot(T)
 		A.SetName(created_name)
-		to_chat(user, "<span class='notice'>You add the robot arm to the odd looking toolbox assembly! Boop beep!</span>")
+		to_chat(user, SPAN_NOTICE("You add the robot arm to the odd looking toolbox assembly! Boop beep!"))
 		user.drop_from_inventory(src)
 		qdel(src)
 	else if(istype(W, /obj/item/pen))

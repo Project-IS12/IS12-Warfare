@@ -51,16 +51,16 @@
 	if(..())
 		return
 	if(!anchored)
-		to_chat(usr, "<span class='warning'>The generator needs to be secured first.</span>")
+		to_chat(usr, SPAN_WARNING("The generator needs to be secured first."))
 		return
 
 /obj/machinery/power/port_gen/examine(mob/user)
 	if(!..(user,1 ))
 		return
 	if(active)
-		to_chat(usr, "<span class='notice'>The generator is on.</span>")
+		to_chat(usr, SPAN_NOTICE("The generator is on."))
 	else
-		to_chat(usr, "<span class='notice'>The generator is off.</span>")
+		to_chat(usr, SPAN_NOTICE("The generator is off."))
 /obj/machinery/power/port_gen/emp_act(severity)
 	if(!active)
 		return
@@ -151,8 +151,8 @@
 	. = ..(user)
 	to_chat(user, "\The [src] appears to be producing [power_gen*power_output] W.")
 	to_chat(user, "There [sheets == 1 ? "is" : "are"] [sheets] sheet\s left in the hopper.")
-	if(IsBroken()) to_chat(user, "<span class='warning'>\The [src] seems to have broken down.</span>")
-	if(overheating) to_chat(user, "<span class='danger'>\The [src] is overheating!</span>")
+	if(IsBroken()) to_chat(user, SPAN_WARNING("\The [src] seems to have broken down."))
+	if(overheating) to_chat(user, SPAN_DANGER("\The [src] is overheating!"))
 /obj/machinery/power/port_gen/pacman/HasFuel()
 	var/needed_sheets = power_output / time_per_sheet
 	if(sheets >= needed_sheets - sheet_left)
@@ -264,9 +264,9 @@
 		var/obj/item/stack/addstack = O
 		var/amount = min((max_sheets - sheets), addstack.amount)
 		if(amount < 1)
-			to_chat(user, "<span class='notice'>The [src.name] is full!</span>")
+			to_chat(user, SPAN_NOTICE("The [src.name] is full!"))
 			return
-		to_chat(user, "<span class='notice'>You add [amount] sheet\s to the [src.name].</span>")
+		to_chat(user, SPAN_NOTICE("You add [amount] sheet\s to the [src.name]."))
 		sheets += amount
 		addstack.use(amount)
 		updateUsrDialog()
@@ -276,10 +276,10 @@
 
 			if(!anchored)
 				connect_to_network()
-				to_chat(user, "<span class='notice'>You secure the generator to the floor.</span>")
+				to_chat(user, SPAN_NOTICE("You secure the generator to the floor."))
 			else
 				disconnect_from_network()
-				to_chat(user, "<span class='notice'>You unsecure the generator from the floor.</span>")
+				to_chat(user, SPAN_NOTICE("You unsecure the generator from the floor."))
 
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 			anchored = !anchored
@@ -288,9 +288,9 @@
 			open = !open
 			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 			if(open)
-				to_chat(user, "<span class='notice'>You open the access panel.</span>")
+				to_chat(user, SPAN_NOTICE("You open the access panel."))
 			else
-				to_chat(user, "<span class='notice'>You close the access panel.</span>")
+				to_chat(user, SPAN_NOTICE("You close the access panel."))
 		else if(isCrowbar(O) && open)
 			var/obj/machinery/constructable_frame/machine_frame/new_frame = new /obj/machinery/constructable_frame/machine_frame(src.loc)
 			for(var/obj/item/I in component_parts)
@@ -371,7 +371,7 @@
 	dat += text("Power current: [(powernet == null ? "Unconnected" : "[avail()]")]<br>")
 
 	var/tempstr = "Temperature: [temperature]&deg;C<br>"
-	dat += (overheating)? "<span class='danger'>[tempstr]</span>" : tempstr
+	dat += (overheating)? SPAN_DANGER("[tempstr]") : tempstr
 	dat += "<br><A href='?src=\ref[src];action=close'>Close</A>"
 	user << browse("[dat]", "window=port_gen")
 	onclose(user, "port_gen")
@@ -469,7 +469,7 @@
 		temperature_gain = 60
 		reagents.remove_any(1)
 		if(prob(2))
-			audible_message("<span class='notice'>[src] churns happily</span>")
+			audible_message(SPAN_NOTICE("[src] churns happily"))
 	else
 		rad_power = initial(rad_power)
 		temperature_gain = initial(temperature_gain)
@@ -486,10 +486,10 @@
 		var/obj/item/reagent_containers/R = O
 		if(R.standard_pour_into(src,user))
 			if(reagents.has_reagent("vodka"))
-				audible_message("<span class='notice'>[src] blips happily</span>")
+				audible_message(SPAN_NOTICE("[src] blips happily"))
 				playsound(get_turf(src),'sound/machines/synth_yes.ogg', 50, 0)
 			else
-				audible_message("<span class='warning'>[src] blips in disappointment</span>")
+				audible_message(SPAN_WARNING("[src] blips in disappointment"))
 				playsound(get_turf(src), 'sound/machines/synth_no.ogg', 50, 0)
 		return
 	..()

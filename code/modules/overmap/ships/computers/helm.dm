@@ -139,7 +139,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 			sec_name = "Sector #[known_sectors.len]"
 		R.fields["name"] = sec_name
 		if(sec_name in known_sectors)
-			to_chat(usr, "<span class='warning'>Sector with that name already exists, please input a different name.</span>")
+			to_chat(usr, SPAN_WARNING("Sector with that name already exists, please input a different name."))
 			return
 		switch(href_list["add"])
 			if("current")

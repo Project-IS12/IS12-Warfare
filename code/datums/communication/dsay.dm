@@ -36,7 +36,7 @@
 	if(!istype(communicator))
 		return FALSE
 	if(communicator.mob.stat != DEAD && !communicator.mob.communing_with_dead)
-		to_chat(communicator, "<span class='warning'>You're not sufficiently dead to use DSAY!</span>")
+		to_chat(communicator, SPAN_WARNING("You're not sufficiently dead to use DSAY!"))
 		return FALSE
 	return DSAY_ASK_BASE
 
@@ -113,7 +113,7 @@
 	if(!istype(communicator))
 		return FALSE
 	if(!communicator.holder)
-		to_chat(communicator, "<span class='warning'>You do not have sufficent permissions to use DSAY!</span>")
+		to_chat(communicator, SPAN_WARNING("You do not have sufficent permissions to use DSAY!"))
 		return FALSE
 	return DSAY_ASK_BASE
 

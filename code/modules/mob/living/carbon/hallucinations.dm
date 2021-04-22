@@ -293,7 +293,7 @@
 
 /datum/hallucination/fakeattack/start()
 	for(var/mob/living/M in oview(holder,1))
-		to_chat(holder, "<span class='danger'>[M] has punched [holder]!</span>")
+		to_chat(holder, SPAN_DANGER("[M] has punched [holder]!"))
 		holder.playsound_local(get_turf(holder),"punch",50)
 
 //Fake injection
@@ -301,4 +301,4 @@
 	min_power = 30
 
 /datum/hallucination/fakeattack/hypo/start()
-	to_chat(holder, "<span class='notice'>You feel a tiny prick!</span>")
+	to_chat(holder, SPAN_NOTICE("You feel a tiny prick!"))

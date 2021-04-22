@@ -5,7 +5,7 @@
 /datum/artifact_effect/teleport/DoEffectTouch(var/mob/user)
 	var/weakness = GetAnomalySusceptibility(user)
 	if(prob(100 * weakness))
-		to_chat(user, "<span class='warning'>You are suddenly zapped away elsewhere!</span>")
+		to_chat(user, SPAN_WARNING("You are suddenly zapped away elsewhere!"))
 		if (user.buckled)
 			user.buckled.unbuckle_mob()
 
@@ -25,7 +25,7 @@
 		for (var/mob/living/M in range(src.effectrange,T))
 			var/weakness = GetAnomalySusceptibility(M)
 			if(prob(100 * weakness))
-				to_chat(M, "<span class='warning'>You are displaced by a strange force!</span>")
+				to_chat(M, SPAN_WARNING("You are displaced by a strange force!"))
 				if(M.buckled)
 					M.buckled.unbuckle_mob()
 
@@ -44,7 +44,7 @@
 		for (var/mob/living/M in range(src.effectrange, T))
 			var/weakness = GetAnomalySusceptibility(M)
 			if(prob(100 * weakness))
-				to_chat(M, "<span class='warning'>You are displaced by a strange force!</span>")
+				to_chat(M, SPAN_WARNING("You are displaced by a strange force!"))
 				if(M.buckled)
 					M.buckled.unbuckle_mob()
 

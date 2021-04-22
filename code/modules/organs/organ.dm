@@ -141,7 +141,7 @@ var/list/organ_cache = list()
 
 /obj/item/organ/proc/show_decay_status(mob/user)
 	if(status & ORGAN_DEAD)
-		to_chat(user, "<span class='notice'>The decay has set into \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("The decay has set into \the [src]."))
 
 /obj/item/organ/proc/handle_germ_effects()
 	//** Handle the effects of infections
@@ -293,7 +293,7 @@ var/list/organ_cache = list()
 		return ..()
 
 	if(alert("Do you really want to use this organ as food? It will be useless for anything else afterwards.",,"Ew, no.","Bon appetit!") == "Ew, no.")
-		to_chat(user, "<span class='notice'>You successfully repress your cannibalistic tendencies.</span>")
+		to_chat(user, SPAN_NOTICE("You successfully repress your cannibalistic tendencies."))
 		return
 
 	user.drop_from_inventory(src)

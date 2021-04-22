@@ -3,52 +3,52 @@
 	set category = "IC"
 
 	if(zMove(UP))
-		to_chat(src, "<span class='notice'>You move upwards.</span>")
+		to_chat(src, SPAN_NOTICE("You move upwards."))
 
 /mob/verb/down()
 	set name = "Move Down"
 	set category = "IC"
 
 	if(zMove(DOWN))
-		to_chat(src, "<span class='notice'>You move down.</span>")
+		to_chat(src, SPAN_NOTICE("You move down."))
 
 
 /mob/proc/zMove(direction)
 	if(eyeobj)
 		return eyeobj.zMove(direction)
 	if(!can_ztravel())
-		to_chat(src, "<span class='warning'>You lack means of travel in that direction.</span>")
+		to_chat(src, SPAN_WARNING("You lack means of travel in that direction."))
 		return
 
 	var/turf/start = loc
 	if(!istype(start))
-		to_chat(src, "<span class='notice'>You are unable to move from here.</span>")
+		to_chat(src, SPAN_NOTICE("You are unable to move from here."))
 		return 0
 
 	var/turf/destination = (direction == UP) ? GetAbove(src) : GetBelow(src)
 	if(!destination)
-		to_chat(src, "<span class='notice'>There is nothing of interest in this direction.</span>")
+		to_chat(src, SPAN_NOTICE("There is nothing of interest in this direction."))
 		return 0
 
 	if(!start.CanZPass(src, direction))
-		to_chat(src, "<span class='warning'>\The [start] is in the way.</span>")
+		to_chat(src, SPAN_WARNING("\The [start] is in the way."))
 		return 0
 	if(!destination.CanZPass(src, direction))
-		to_chat(src, "<span class='warning'>You bump against \the [destination].</span>")
+		to_chat(src, SPAN_WARNING("You bump against \the [destination]."))
 		return 0
 
 	var/area/area = get_area(src)
 	if(direction == UP && area.has_gravity() && !can_overcome_gravity())
-		to_chat(src, "<span class='warning'>Gravity stops you from moving upward.</span>")
+		to_chat(src, SPAN_WARNING("Gravity stops you from moving upward."))
 		return 0
 
 	for(var/atom/A in destination)
 		if(!A.CanMoveOnto(src, start, 1.5, direction))
-			to_chat(src, "<span class='warning'>\The [A] blocks you.</span>")
+			to_chat(src, SPAN_WARNING("\The [A] blocks you."))
 			return 0
 
 	if(direction == UP && area.has_gravity() && can_fall(FALSE, destination))
-		to_chat(src, "<span class='warning'>You see nothing to hold on to.</span>")
+		to_chat(src, SPAN_WARNING("You see nothing to hold on to."))
 		return 0
 
 	forceMove(destination)
@@ -88,14 +88,14 @@
 	if(destination)
 		forceMove(destination)
 	else
-		to_chat(src, "<span class='notice'>There is nothing of interest in this direction.</span>")
+		to_chat(src, SPAN_NOTICE("There is nothing of interest in this direction."))
 
 /mob/observer/eye/zMove(direction)
 	var/turf/destination = (direction == UP) ? GetAbove(src) : GetBelow(src)
 	if(destination)
 		setLoc(destination)
 	else
-		to_chat(src, "<span class='notice'>There is nothing of interest in this direction.</span>")
+		to_chat(src, SPAN_NOTICE("There is nothing of interest in this direction."))
 
 /mob/proc/can_ztravel()
 	return 0

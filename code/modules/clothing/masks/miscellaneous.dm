@@ -178,11 +178,11 @@
 		return
 
 	eye.possess(user)
-	to_chat(eye.owner, "<span class='notice'>You feel disorented for a moment as your mind connects to the camera network.</span>")
+	to_chat(eye.owner, SPAN_NOTICE("You feel disorented for a moment as your mind connects to the camera network."))
 
 /obj/item/clothing/mask/ai/proc/disengage_mask(var/mob/user)
 	if(user == eye.owner)
-		to_chat(eye.owner, "<span class='notice'>You feel disorented for a moment as your mind disconnects from the camera network.</span>")
+		to_chat(eye.owner, SPAN_NOTICE("You feel disorented for a moment as your mind disconnects from the camera network."))
 		eye.release(eye.owner)
 		eye.forceMove(src)
 

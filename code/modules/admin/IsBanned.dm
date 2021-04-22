@@ -6,25 +6,25 @@ world/IsBanned(key,address,computer_id)
 	//Check if user is whitelisted
 	if(config.useckeywhitelist && !check_ckey_whitelisted(ckey(key)))
 		log_access("Failed Login: [key] [computer_id] [address] - Pool's Closed")
-		message_admins("<span class='notice'>Failed Login: [key] id:[computer_id] ip:[address] - Pool's Closed.</span>")
+		message_admins(SPAN_NOTICE("Failed Login: [key] id:[computer_id] ip:[address] - Pool's Closed."))
 		return list("reason"="private", "desc"="\nPrivate party. Pool's closed.")
 
 	if(config.private_party && !has_connected(ckey(key)) && !check_ckey_whitelisted(ckey(key)))
 		log_access("Failed Login: [key] [computer_id] [address] - Panic Bunker")
-		message_admins("<span class='notice'>Failed Login: [key] id:[computer_id] ip:[address] - Panic Bunker.</span>")
+		message_admins(SPAN_NOTICE("Failed Login: [key] id:[computer_id] ip:[address] - Panic Bunker."))
 		return list("reason"="private", "desc"="\nPrivate party. Pool's closed.")
 
 	//Guest Checking
 	if(!config.guests_allowed && IsGuestKey(key))
 		log_access("Failed Login: [key] - Guests not allowed")
-		message_admins("<span class='notice'>Failed Login: [key] - Guests not allowed</span>")
+		message_admins(SPAN_NOTICE("Failed Login: [key] - Guests not allowed"))
 		return list("reason"="guest", "desc"="\nReason: Guests not allowed. Please sign in with a byond account.")
 
 	if(config.usepopcap)
 		var/popcap_value = GLOB.clients.len
 		if(popcap_value >= config.popcap && !GLOB.player_list.Find(key))
 			log_access("Failed Login: [key] - Population cap reached")
-			message_admins("<span class='notice'>Failed Login: [key] - Server is full</span>")
+			message_admins(SPAN_NOTICE("Failed Login: [key] - Server is full"))
 			return list("reason"="popcap", "desc"= "\nReason: Server is full. Try again later.")
 
 	if(config.ban_legacy_system)

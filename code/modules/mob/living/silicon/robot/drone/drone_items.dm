@@ -156,7 +156,7 @@
 		wrapped = null
 		return
 
-	to_chat(src.loc, "<span class='warning'>You drop \the [wrapped].</span>")
+	to_chat(src.loc, SPAN_WARNING("You drop \the [wrapped]."))
 	wrapped.loc = get_turf(src)
 	wrapped = null
 	//update_icon()
@@ -213,12 +213,12 @@
 
 		//We can grab the item, finally.
 		if(grab)
-			to_chat(user, "<span class='notice'>You collect \the [I].</span>")
+			to_chat(user, SPAN_NOTICE("You collect \the [I]."))
 			I.loc = src
 			wrapped = I
 			return
 		else
-			to_chat(user, "<span class='danger'>Your gripper cannot hold \the [target].</span>")
+			to_chat(user, SPAN_DANGER("Your gripper cannot hold \the [target]."))
 
 	else if(istype(target,/obj/machinery/power/apc))
 		var/obj/machinery/power/apc/A = target
@@ -235,7 +235,7 @@
 				A.charging = 0
 				A.update_icon()
 
-				user.visible_message("<span class='danger'>[user] removes the power cell from [A]!</span>", "You remove the power cell.")
+				user.visible_message(SPAN_DANGER("[user] removes the power cell from [A]!"), "You remove the power cell.")
 
 	else if(istype(target,/mob/living/silicon/robot))
 		var/mob/living/silicon/robot/A = target
@@ -250,7 +250,7 @@
 				A.cell.loc = src
 				A.cell = null
 
-				user.visible_message("<span class='danger'>[user] removes the power cell from [A]!</span>", "You remove the power cell.")
+				user.visible_message(SPAN_DANGER("[user] removes the power cell from [A]!"), "You remove the power cell.")
 
 //TODO: Matter decompiler.
 /obj/item/matter_decompiler
@@ -283,7 +283,7 @@
 
 	for(var/mob/M in T)
 		if(istype(M,/mob/living/simple_animal/lizard) || istype(M,/mob/living/simple_animal/mouse))
-			src.loc.visible_message("<span class='danger'>[src.loc] sucks [M] into its decompiler. There's a horrible crunching noise.</span>","<span class='danger'>It's a bit of a struggle, but you manage to suck [M] into your decompiler. It makes a series of visceral crunching noises.</span>")
+			src.loc.visible_message(SPAN_DANGER("[src.loc] sucks [M] into its decompiler. There's a horrible crunching noise."),SPAN_DANGER("It's a bit of a struggle, but you manage to suck [M] into your decompiler. It makes a series of visceral crunching noises."))
 			new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
 			qdel(M)
 			if(wood)
@@ -299,15 +299,15 @@
 			if(!istype(D))
 				return
 
-			to_chat(D, "<span class='danger'>You begin decompiling [M].</span>")
+			to_chat(D, SPAN_DANGER("You begin decompiling [M]."))
 
 			if(!do_after(D,50,M))
-				to_chat(D, "<span class='danger'>You need to remain still while decompiling such a large object.</span>")
+				to_chat(D, SPAN_DANGER("You need to remain still while decompiling such a large object."))
 				return
 
 			if(!M || !D) return
 
-			to_chat(D, "<span class='danger'>You carefully and thoroughly decompile [M], storing as much of its resources as you can within yourself.</span>")
+			to_chat(D, SPAN_DANGER("You carefully and thoroughly decompile [M], storing as much of its resources as you can within yourself."))
 			qdel(M)
 			new/obj/effect/decal/cleanable/blood/oil(get_turf(src))
 
@@ -380,16 +380,16 @@
 		grabbed_something = 1
 
 	if(grabbed_something)
-		to_chat(user, "<span class='notice'>You deploy your decompiler and clear out the contents of \the [T].</span>")
+		to_chat(user, SPAN_NOTICE("You deploy your decompiler and clear out the contents of \the [T]."))
 	else
-		to_chat(user, "<span class='danger'>Nothing on \the [T] is useful to you.</span>")
+		to_chat(user, SPAN_DANGER("Nothing on \the [T] is useful to you."))
 	return
 
 //PRETTIER TOOL LIST.
 /mob/living/silicon/robot/drone/installed_modules()
 
 	if(weapon_lock)
-		to_chat(src, "<span class='danger'>Weapon lock active, unable to use modules! Count:[weaponlock_time]</span>")
+		to_chat(src, SPAN_DANGER("Weapon lock active, unable to use modules! Count:[weaponlock_time]"))
 		return
 
 	if(!module)

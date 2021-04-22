@@ -211,7 +211,7 @@
 		W.forceMove(src)
 		coin = W
 		categories |= VENDING_CATEGORY_PREMIUM
-		to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You insert \the [W] into \the [src]."))
 		SSnanoui.update_uis(src)
 		return
 	else if(attempt_to_stock(W, user))
@@ -413,14 +413,14 @@
 		coin.forceMove(src.loc)
 		if(!usr.get_active_hand())
 			usr.put_in_hands(coin)
-		to_chat(usr, "<span class='notice'>You remove \the [coin] from \the [src]</span>")
+		to_chat(usr, SPAN_NOTICE("You remove \the [coin] from \the [src]"))
 		coin = null
 		categories &= ~VENDING_CATEGORY_PREMIUM
 
 	if ((usr.contents.Find(src) || (in_range(src, usr) && istype(src.loc, /turf))))
 		if ((href_list["vend"]) && (src.vend_ready) && (!currently_vending))
 			if((!allowed(usr)) && !emagged && scan_id)	//For SECURE VENDING MACHINES YEAH
-				to_chat(usr, "<span class='warning'>Access denied.</span>")//Unless emagged of course
+				to_chat(usr, SPAN_WARNING("Access denied."))//Unless emagged of course
 				flick(icon_deny,src)
 				return
 
@@ -434,7 +434,7 @@
 			if(R.price <= 0)
 				src.vend(R, usr)
 			else if(istype(usr,/mob/living/silicon)) //If the item is not free, provide feedback if a synth is trying to buy something.
-				to_chat(usr, "<span class='danger'>Artificial unit recognized.  Artificial units cannot complete this transaction.  Purchase canceled.</span>")
+				to_chat(usr, SPAN_DANGER("Artificial unit recognized.  Artificial units cannot complete this transaction.  Purchase canceled."))
 				return
 			else
 				src.currently_vending = R
@@ -455,7 +455,7 @@
 
 /obj/machinery/vending/proc/vend(var/datum/stored_items/vending_products/R, mob/user)
 	if((!allowed(usr)) && !emagged && scan_id)	//For SECURE VENDING MACHINES YEAH
-		to_chat(usr, "<span class='warning'>Access denied.</span>")//Unless emagged of course
+		to_chat(usr, SPAN_WARNING("Access denied."))//Unless emagged of course
 		flick(src.icon_deny,src)
 		return
 	src.vend_ready = 0 //One thing at a time!!
@@ -465,13 +465,13 @@
 
 	if (R.category & VENDING_CATEGORY_PREMIUM)
 		if(!coin)
-			to_chat(user, "<span class='notice'>You need to insert a coin to get this item.</span>")
+			to_chat(user, SPAN_NOTICE("You need to insert a coin to get this item."))
 			return
 		if(coin.string_attached)
 			if(prob(50))
-				to_chat(user, "<span class='notice'>You successfully pull the coin out before \the [src] could swallow it.</span>")
+				to_chat(user, SPAN_NOTICE("You successfully pull the coin out before \the [src] could swallow it."))
 			else
-				to_chat(user, "<span class='notice'>You weren't able to pull the coin out fast enough, the machine ate it, string and all.</span>")
+				to_chat(user, SPAN_NOTICE("You weren't able to pull the coin out fast enough, the machine ate it, string and all."))
 				qdel(coin)
 				coin = null
 				categories &= ~VENDING_CATEGORY_PREMIUM
@@ -496,7 +496,7 @@
 		if(prob(1)) //The vending gods look favorably upon you
 			sleep(3)
 			if(R.get_product(get_turf(src)))
-				src.visible_message("<span class='notice'>\The [src] clunks as it vends an additional [R.item_name].</span>")
+				src.visible_message(SPAN_NOTICE("\The [src] clunks as it vends an additional [R.item_name]."))
 
 		src.status_message = ""
 		src.status_error = 0
@@ -515,7 +515,7 @@
 		return
 
 	if(R.add_product(W))
-		to_chat(user, "<span class='notice'>You insert \the [W] in the product receptor.</span>")
+		to_chat(user, SPAN_NOTICE("You insert \the [W] in the product receptor."))
 		SSnanoui.update_uis(src)
 		return 1
 
@@ -591,7 +591,7 @@
 		return 0
 	spawn(0)
 		throw_item.throw_at(target, rand(1,2), 3, src)
-	src.visible_message("<span class='warning'>\The [src] launches \a [throw_item] at \the [target]!</span>")
+	src.visible_message(SPAN_WARNING("\The [src] launches \a [throw_item] at \the [target]!"))
 	return 1
 
 /*

@@ -113,9 +113,9 @@
 				if(I.reagents.total_volume < 10)
 					I.reagents.add_reagent(/datum/reagent/sugar, 10 - I.reagents.total_volume)
 			else
-				to_chat(user, "<span class='warning'>There is not enough icecream left!</span>")
+				to_chat(user, SPAN_WARNING("There is not enough icecream left!"))
 		else
-			to_chat(user, "<span class='notice'>[O] already has icecream in it.</span>")
+			to_chat(user, SPAN_NOTICE("[O] already has icecream in it."))
 		return 1
 	else if(O.is_open_container())
 		return
@@ -138,7 +138,7 @@
 		else
 			src.visible_message("<span class='info'>[user] whips up some [flavour] icecream.</span>")
 	else
-		to_chat(user, "<span class='warning'>You don't have the ingredients to make this.</span>")
+		to_chat(user, SPAN_WARNING("You don't have the ingredients to make this."))
 
 /obj/machinery/icecream_vat/OnTopic(user, href_list)
 	if(href_list["close"])
@@ -148,7 +148,7 @@
 	if(href_list["select"])
 		dispense_flavour = text2num(href_list["select"])
 		flavour_name = get_flavour_name(dispense_flavour)
-		src.visible_message("<span class='notice'>[user] sets [src] to dispense [flavour_name] flavoured icecream.</span>")
+		src.visible_message(SPAN_NOTICE("[user] sets [src] to dispense [flavour_name] flavoured icecream."))
 		. = TOPIC_HANDLED
 
 	else if(href_list["cone"])
@@ -162,7 +162,7 @@
 			I.desc = "Delicious [cone_name] cone, but no ice cream."
 			src.visible_message("<span class='info'>[user] dispenses a crunchy [cone_name] cone from [src].</span>")
 		else
-			to_chat(user, "<span class='warning'>There are no [cone_name] cones left!</span>")
+			to_chat(user, SPAN_WARNING("There are no [cone_name] cones left!"))
 		. = TOPIC_REFRESH
 
 	else if(href_list["make"])

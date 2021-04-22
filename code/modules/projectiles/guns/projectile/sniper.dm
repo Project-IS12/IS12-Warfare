@@ -43,15 +43,15 @@
 	if(bolt_open)
 		playsound(src, 'sound/weapons/guns/interact/bolt_open.ogg', 50)
 		if(chambered)
-			to_chat(user, "<span class='notice'>You work the bolt open, ejecting [chambered]!</span>")
+			to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [chambered]!"))
 			playsound(src, casingsound, 100)
 			chambered.loc = get_turf(src)
 			loaded -= chambered
 			chambered = null
 		else
-			to_chat(user, "<span class='notice'>You work the bolt open.</span>")
+			to_chat(user, SPAN_NOTICE("You work the bolt open."))
 	else
-		to_chat(user, "<span class='notice'>You work the bolt closed.</span>")
+		to_chat(user, SPAN_NOTICE("You work the bolt closed."))
 		bolt_open = 0
 		playsound(src, 'sound/weapons/guns/interact/bolt_close.ogg', 50)
 	add_fingerprint(user)
@@ -59,10 +59,10 @@
 
 /obj/item/gun/projectile/heavysniper/special_check(mob/user)
 	if(bolt_open)
-		to_chat(user, "<span class='warning'>You can't fire [src] while the bolt is open!</span>")
+		to_chat(user, SPAN_WARNING("You can't fire [src] while the bolt is open!"))
 		return 0
 	if(!user.zoomed)
-		to_chat(user, "<span class='warning'>You can't get a clear shot to fire without looking down the scope!</span>")
+		to_chat(user, SPAN_WARNING("You can't get a clear shot to fire without looking down the scope!"))
 		return 0
 	return ..()
 

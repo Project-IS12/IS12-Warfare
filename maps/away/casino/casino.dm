@@ -92,7 +92,7 @@
 	if (busy)
 		to_chat(user,"<span class='notice'>You cannot spin now! \The [src] is already spinning.</span> ")
 		return
-	visible_message("<span class='notice'>\ [user]  spins the roulette and throws inside little ball.</span>")
+	visible_message(SPAN_NOTICE("\ [user]  spins the roulette and throws inside little ball."))
 	busy = 1
 	var/n = rand(0,36)
 	var/color = "green"
@@ -108,7 +108,7 @@
 	else
 		color="red"
 	spawn(5 SECONDS)
-		visible_message("<span class='notice'>\The [src] stops spinning, the ball landing on [n], [color].</span>")
+		visible_message(SPAN_NOTICE("\The [src] stops spinning, the ball landing on [n], [color]."))
 		busy=0
 
 /obj/structure/casino/roulette_chart

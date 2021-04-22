@@ -303,7 +303,7 @@
 	pestlevel = 0
 	sampled = 0
 	update_icon()
-	visible_message("<span class='notice'>[src] has been overtaken by [seed.display_name].</span>")
+	visible_message(SPAN_NOTICE("[src] has been overtaken by [seed.display_name]."))
 
 	return
 
@@ -374,7 +374,7 @@
 	weedlevel = 0
 
 	update_icon()
-	visible_message("<span class='danger'>The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly mutated into </span><span class='notice'>[seed.display_name]!</span>")
+	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly mutated into </span><span class='notice'>[seed.display_name]!"))
 
 	return
 
@@ -455,16 +455,16 @@
 			check_health()
 
 		else
-			to_chat(user, "<span class='danger'>\The [src] already has seeds in it!</span>")
+			to_chat(user, SPAN_DANGER("\The [src] already has seeds in it!"))
 
 	else if (istype(O, /obj/item/material/minihoe))  // The minihoe
 
 		if(weedlevel > 0)
-			user.visible_message("<span class='danger'>[user] starts uprooting the weeds.</span>", "<span class='danger'>You remove the weeds from the [src].</span>")
+			user.visible_message(SPAN_DANGER("[user] starts uprooting the weeds."), SPAN_DANGER("You remove the weeds from the [src]."))
 			weedlevel = 0
 			update_icon()
 		else
-			to_chat(user, "<span class='danger'>This plot is completely devoid of weeds. It doesn't need uprooting.</span>")
+			to_chat(user, SPAN_DANGER("This plot is completely devoid of weeds. It doesn't need uprooting."))
 
 	else if (istype(O, /obj/item/storage/plants))
 
@@ -500,7 +500,7 @@
 
 	else if(O.force && seed)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.visible_message("<span class='danger'>\The [seed.display_name] has been attacked by [user] with \the [O]!</span>")
+		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [O]!"))
 		playsound(get_turf(src), O.hitsound, 100, 1)
 		if(!dead)
 			health -= O.force
@@ -531,7 +531,7 @@
 		to_chat(usr, "[src] is empty.")
 		return
 
-	to_chat(usr, "<span class='notice'>[seed.display_name] are growing here.</span>")
+	to_chat(usr, SPAN_NOTICE("[seed.display_name] are growing here."))
 
 	if(!Adjacent(usr))
 		return
@@ -545,7 +545,7 @@
 		to_chat(usr, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
 
 	if(dead)
-		to_chat(usr, "<span class='danger'>The plant is dead.</span>")
+		to_chat(usr, SPAN_DANGER("The plant is dead."))
 	else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
 		to_chat(usr, "The plant looks <span class='danger'>unhealthy</span>.")
 

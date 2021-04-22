@@ -308,8 +308,8 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		if(FEMALE)
 			t_him = "her"
 
-	H.visible_message("<span class='notice'>[H] hugs [target] to make [t_him] feel better!</span>", \
-					"<span class='notice'>You hug [target] to make [t_him] feel better!</span>")
+	H.visible_message(SPAN_NOTICE("[H] hugs [target] to make [t_him] feel better!"), \
+					SPAN_NOTICE("You hug [target] to make [t_him] feel better!"))
 
 /datum/species/proc/remove_inherent_verbs(var/mob/living/carbon/human/H)
 	if(inherent_verbs)
@@ -500,7 +500,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 				turfs += T
 			if(turfs.len)
 				var/turf/shoot_to = pick(turfs)
-				target.visible_message("<span class='danger'>[target]'s [W] goes off during the struggle!</span>")
+				target.visible_message(SPAN_DANGER("[target]'s [W] goes off during the struggle!"))
 				return W.afterattack(shoot_to,target)
 
 
@@ -511,9 +511,9 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		target.apply_effect(3, WEAKEN, armor_check)
 		playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 		if(armor_check < 100)
-			target.visible_message("<span class='danger'>[attacker] has pushed [target]!</span>")
+			target.visible_message(SPAN_DANGER("[attacker] has pushed [target]!"))
 		else
-			target.visible_message("<span class='warning'>[attacker] attempted to push [target]!</span>")
+			target.visible_message(SPAN_WARNING("[attacker] attempted to push [target]!"))
 		return
 	*/
 
@@ -527,12 +527,12 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		for(var/obj/item/I in holding)
 			if(I)
 				target.drop_from_inventory(I)
-				target.visible_message("<span class='danger'>[attacker] has disarmed [target]!</span>")
+				target.visible_message(SPAN_DANGER("[attacker] has disarmed [target]!"))
 				playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				return
 
 	playsound(target.loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-	target.visible_message("<span class='danger'>[attacker] attempted to disarm \the [target]!</span>")
+	target.visible_message(SPAN_DANGER("[attacker] attempted to disarm \the [target]!"))
 
 /datum/species/proc/disfigure_msg(var/mob/living/carbon/human/H) //Used for determining the message a disfigured face has on examine. To add a unique message, just add this onto a specific species and change the "return" message.
 	var/datum/gender/T = gender_datums[H.get_gender()]

@@ -38,15 +38,15 @@
 	if(on)
 		to_chat(user, "<span class='good'>It seems to be online.</span>")
 	else
-		to_chat(user, "<span class='warning'>It seems to be offline.</span>")
+		to_chat(user, SPAN_WARNING("It seems to be offline."))
 
 /obj/machinery/power/breakerbox/attack_ai(mob/user)
 	if(update_locked)
-		to_chat(user, "<span class='warning'>System locked. Please try again later.</span>")
+		to_chat(user, SPAN_WARNING("System locked. Please try again later."))
 		return
 
 	if(busy)
-		to_chat(user, "<span class='warning'>System is busy. Please wait until current operation is finished before changing power settings.</span>")
+		to_chat(user, SPAN_WARNING("System is busy. Please wait until current operation is finished before changing power settings."))
 		return
 
 	busy = 1
@@ -62,16 +62,16 @@
 
 /obj/machinery/power/breakerbox/attack_hand(mob/user)
 	if(update_locked)
-		to_chat(user, "<span class='warning'>System locked. Please try again later.</span>")
+		to_chat(user, SPAN_WARNING("System locked. Please try again later."))
 		return
 
 	if(busy)
-		to_chat(user, "<span class='warning'>System is busy. Please wait until current operation is finished before changing power settings.</span>")
+		to_chat(user, SPAN_WARNING("System is busy. Please wait until current operation is finished before changing power settings."))
 		return
 
 	busy = 1
 	for(var/mob/O in viewers(user))
-		O.show_message(text("<span class='warning'>\The [user] started reprogramming \the [src]!</span>"), 1)
+		O.show_message(text(SPAN_WARNING("\The [user] started reprogramming \the [src]!")), 1)
 
 	if(do_after(user, 50,src))
 		set_state(!on)
@@ -88,7 +88,7 @@
 		var/newtag = input(user, "Enter new RCON tag. Use \"NO_TAG\" to disable RCON or leave empty to cancel.", "SMES RCON system") as text
 		if(newtag)
 			RCon_tag = newtag
-			to_chat(user, "<span class='notice'>You changed the RCON tag to: [newtag]</span>")
+			to_chat(user, SPAN_NOTICE("You changed the RCON tag to: [newtag]"))
 
 
 

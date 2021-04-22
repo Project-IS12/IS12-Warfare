@@ -206,7 +206,7 @@
 			continue
 
 		mob.Weaken(DETONATION_MOB_CONCUSSION)
-		to_chat(mob, "<span class='danger'>An invisible force slams you against the ground!</span>")
+		to_chat(mob, SPAN_DANGER("An invisible force slams you against the ground!"))
 
 	// Effect 2: Z-level wide electrical pulse
 	for(var/obj/machinery/power/apc/A in SSmachines.machinery)

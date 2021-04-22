@@ -173,7 +173,7 @@
 			if(user.l_hand != src && user.r_hand != src)
 				..()
 				return
-			to_chat(user, "<span class='notice'>You unscrew [silenced] from [src].</span>")
+			to_chat(user, SPAN_NOTICE("You unscrew [silenced] from [src]."))
 			user.put_in_hands(silenced)
 			silenced = initial(silenced)
 			w_class = initial(w_class)
@@ -184,10 +184,10 @@
 /obj/item/gun/projectile/pistol/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/silencer))
 		if(user.l_hand != src && user.r_hand != src)	//if we're not in his hands
-			to_chat(user, "<span class='notice'>You'll need [src] in your hands to do that.</span>")
+			to_chat(user, SPAN_NOTICE("You'll need [src] in your hands to do that."))
 			return
 		user.drop_item()
-		to_chat(user, "<span class='notice'>You screw [I] onto [src].</span>")
+		to_chat(user, SPAN_NOTICE("You screw [I] onto [src]."))
 		silenced = I	//dodgy?
 		w_class = ITEM_SIZE_NORMAL
 		I.forceMove(src)		//put the silencer into the gun
@@ -265,13 +265,13 @@
 	if(istype(thing,/obj/item/pipe) && buildstate == 0)
 		user.drop_from_inventory(thing)
 		qdel(thing)
-		user.visible_message("<span class='notice'>\The [user] fits \the [thing] to \the [src] as a crude barrel.</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] fits \the [thing] to \the [src] as a crude barrel."))
 		add_fingerprint(user)
 		buildstate++
 		update_icon()
 		return
 	else if(istype(thing,/obj/item/tape_roll) && buildstate == 1)
-		user.visible_message("<span class='notice'>\The [user] secures the assembly with \the [thing].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] secures the assembly with \the [thing]."))
 		add_fingerprint(user)
 		buildstate++
 		update_icon()
@@ -279,13 +279,13 @@
 	else if(istype(thing,/obj/item/device/assembly/mousetrap) && buildstate == 2)
 		user.drop_from_inventory(thing)
 		qdel(thing)
-		user.visible_message("<span class='notice'>\The [user] takes apart \the [thing] and uses the parts to construct a crude trigger and firing mechanism inside the assembly.</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] takes apart \the [thing] and uses the parts to construct a crude trigger and firing mechanism inside the assembly."))
 		add_fingerprint(user)
 		buildstate++
 		update_icon()
 		return
 	else if(isScrewdriver(thing) && buildstate == 3)
-		user.visible_message("<span class='notice'>\The [user] secures the trigger assembly with \the [thing].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] secures the trigger assembly with \the [thing]."))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
 		var/obj/item/gun/projectile/pirate/zipgun
 		zipgun = new/obj/item/gun/projectile/pirate { starts_loaded = 0 } (loc)

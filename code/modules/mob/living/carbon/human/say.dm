@@ -19,11 +19,11 @@
 		var/obj/item/organ/internal/lungs/L = internal_organs_by_name[species.breathing_organ]
 		if(L.breath_fail_ratio > 0.9)
 			if(world.time < L.last_failed_breath + 2 MINUTES) //if we're in grace suffocation period, give it up for last words
-				to_chat(src, "<span class='warning'>You use your remaining air to say something!</span>")
+				to_chat(src, SPAN_WARNING("You use your remaining air to say something!"))
 				L.last_failed_breath = world.time - 2 MINUTES
 				return ..(message, speaking = speaking)
 
-			to_chat(src, "<span class='warning'>You don't have enough air in [L] to make a sound!</span>")
+			to_chat(src, SPAN_WARNING("You don't have enough air in [L] to make a sound!"))
 			return
 		else if(L.breath_fail_ratio > 0.7)
 			whisper_say(length(message) > 5 ? stars(message) : message, speaking)

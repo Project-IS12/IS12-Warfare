@@ -98,7 +98,7 @@
 
 /obj/machinery/sleeper/CanUseTopic(user)
 	if(user == occupant)
-		to_chat(usr, "<span class='warning'>You can't reach the controls from the inside.</span>")
+		to_chat(usr, SPAN_WARNING("You can't reach the controls from the inside."))
 		return STATUS_CLOSE
 	return ..()
 
@@ -138,9 +138,9 @@
 			beaker = I
 			user.drop_item()
 			I.forceMove(src)
-			user.visible_message("<span class='notice'>\The [user] adds \a [I] to \the [src].</span>", "<span class='notice'>You add \a [I] to \the [src].</span>")
+			user.visible_message(SPAN_NOTICE("\The [user] adds \a [I] to \the [src]."), SPAN_NOTICE("You add \a [I] to \the [src]."))
 		else
-			to_chat(user, "<span class='warning'>\The [src] has a beaker already.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] has a beaker already."))
 		return
 	else
 		..()
@@ -151,7 +151,7 @@
 	if(!istype(target))
 		return
 	if(target.buckled)
-		to_chat(user, "<span class='warning'>Unbuckle the subject before attempting to move them.</span>")
+		to_chat(user, SPAN_WARNING("Unbuckle the subject before attempting to move them."))
 		return
 	go_in(target, user)
 
@@ -175,14 +175,14 @@
 	if(!occupant || !beaker)
 		filtering = 0
 		return
-	to_chat(occupant, "<span class='warning'>You feel like your blood is being sucked away.</span>")
+	to_chat(occupant, SPAN_WARNING("You feel like your blood is being sucked away."))
 	filtering = !filtering
 
 /obj/machinery/sleeper/proc/toggle_pump()
 	if(!occupant || !beaker)
 		pump = 0
 		return
-	to_chat(occupant, "<span class='warning'>You feel a tube jammed down your throat.</span>")
+	to_chat(occupant, SPAN_WARNING("You feel a tube jammed down your throat."))
 	pump = !pump
 
 /obj/machinery/sleeper/proc/go_in(var/mob/M, var/mob/user)
@@ -191,7 +191,7 @@
 	if(stat & (BROKEN|NOPOWER))
 		return
 	if(occupant)
-		to_chat(user, "<span class='warning'>\The [src] is already occupied.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is already occupied."))
 		return
 
 	if(M == user)
@@ -201,7 +201,7 @@
 
 	if(do_after(user, 20, src))
 		if(occupant)
-			to_chat(user, "<span class='warning'>\The [src] is already occupied.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is already occupied."))
 			return
 		M.stop_pulling()
 		if(M.client)
