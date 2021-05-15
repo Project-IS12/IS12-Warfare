@@ -40,11 +40,11 @@
 	..(user, slot)
 
 
-/obj/item/storage/backpack/attack_hand(mob/user)
+/obj/item/storage/backpack/open(mob/user)
 	if(src == user.back && !is_satchel)  // you have to hold backpacks, sorry my guys
 		to_chat(user, "You cannot reach into \the [src] while it's on your back.")
 		return
-	..()
+	. = ..()
 
 
 /*
