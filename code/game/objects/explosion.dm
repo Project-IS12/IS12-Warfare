@@ -37,12 +37,24 @@ proc/explosion(turf/epicenter, devastation_range, heavy_impact_range, light_impa
 				var/turf/M_turf = get_turf(M)
 				var/dist = get_dist(M_turf, epicenter)
 				// If inside the blast radius + world.view - 2
-				//if(dist <= round(max_range + world.view - 2, 1))
-				playsound(epicenter, get_sfx("explosion"), 100, 0) // get_sfx() is so that everyone gets the same sound
-				if(dist <= far_dist)
-					var/far_volume = Clamp(far_dist, 30, 50) // Volume is based on explosion size and dist
+				if(dist <= round(max_range + world.view - 2, 1))
+					if(devastation_range > 0)
+						M.playsound_local(epicenter, get_sfx("explosion"), 100, 1, frequency, falloff = 5) // get_sfx() is so that everyone gets the same sound
+						shake_camera(M, Clamp(devastation_range, 3, 10), 2)
+					else
+						M.playsound_local(epicenter, get_sfx("explosion_small"), 100, 1, frequency, falloff = 5)
+						shake_camera(M, 4, 1)
+
+					//You hear a far explosion if you're outside the blast radius. Small bombs shouldn't be heard all over the station.
+
+				else if(dist <= far_dist)
+					var/far_volume = Clamp(far_dist*3, 30, 50) // Volume is based on explosion size and dist
 					far_volume += (dist <= far_dist * 0.5 ? 50 : 0) // add 50 volume if the mob is pretty close to the explosion
-					M.playsound_local(epicenter, 'sound/effects/explosionfar.ogg', far_volume, 1, frequency, falloff = 5)
+					if(devastation_range > 0)
+						M.playsound_local(epicenter, 'sound/effects/explosionfarnew.ogg', far_volume * 2, 1, frequency, falloff = 5)
+						shake_camera(M, 5, 1)
+					else
+						M.playsound_local(epicenter, 'sound/effects/explosionsmallfarnew.ogg', far_volume * 2, 1, frequency, falloff = 5)
 
 		if(adminlog)
 			message_admins("Explosion with size ([devastation_range], [heavy_impact_range], [light_impact_range]) in area [epicenter.loc.name] ([epicenter.x],[epicenter.y],[epicenter.z]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[epicenter.x];Y=[epicenter.y];Z=[epicenter.z]'>JMP</a>)")
@@ -99,7 +111,7 @@ proc/secondaryexplosion(turf/epicenter, range)
 proc/drop_mortar(turf/dropped, mortar)
 	var/direction = pick(GLOB.cardinal)
 	var/turf/dropped_turf = get_step(dropped,direction)
-	playsound(dropped_turf, 'sound/effects/bomb.ogg', 100, FALSE)
+	playsound(dropped_turf, 'sound/effects/mortar_falling.ogg', 100, FALSE)
 	var/obj/effect/shadow/S = new(dropped_turf)//Create a cool shadow effect for the bomb.
 	spawn(40)
 		qdel(S)

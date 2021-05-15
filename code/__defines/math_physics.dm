@@ -31,3 +31,9 @@
 
 #define SIMPLE_SIGN(X) ((X) < 0 ? -1 : 1)
 #define SIGN(X)        ((X) ? SIMPLE_SIGN(X) : 0)
+
+#define MODULUS_FLOAT(X, Y) ( (X) - (Y) * round((X) / (Y)) )
+
+// Will filter out extra rotations and negative rotations
+// E.g: 540 becomes 180. -180 becomes 180.
+#define SIMPLIFY_DEGREES(degrees) (MODULUS_FLOAT((degrees), 360))
