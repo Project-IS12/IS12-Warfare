@@ -6,7 +6,7 @@
 	density =    FALSE
 	throwpass =  TRUE
 	anchored =   TRUE
-	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
+	atom_flags = ATOM_FLAG_CHECKS_BORDER
 	var/health = 300
 	var/maxhealth = 300
 	var/secured
