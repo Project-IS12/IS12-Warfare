@@ -284,3 +284,10 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("eat") soundin = pick(GLOB.eat_food)
 			if ("drink") soundin = pick(GLOB.drink_sound)
 	return soundin
+
+
+/client/verb/stop_client_sounds()
+	set name = "Stop Sounds"
+	set category = "OOC"
+	set desc = "Stop Current Sounds"
+	sound_to(src, sound(null, repeat = 0, wait = 0, volume = 100))
