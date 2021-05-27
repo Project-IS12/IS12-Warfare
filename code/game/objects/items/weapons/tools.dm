@@ -146,15 +146,20 @@
 	//Tearing out teeth
 	if(ishuman(C) && user.zone_sel.selecting == "mouth")
 		var/mob/living/carbon/human/H = C
+		var/mob/living/carbon/human/teeth_pulling_bitch = user //Fuck you scavs. You know what you did.
 		var/obj/item/organ/external/head/O = locate() in H.organs
 		if(!O || !O.get_teeth())
-			to_chat(user, "<span class='notice'>[H] doesn't have any teeth left!</span>")
+			to_chat(teeth_pulling_bitch, "<span class='notice'>[H] doesn't have any teeth left!</span>")
 			return
-		if(!user.doing_something)
-			user.doing_something = 1
-			H.visible_message("<span class='danger'>[user] tries to tear off [H]'s tooth with [src]!</span>",
-								"<span class='danger'>[user] tries to tear off your tooth with [src]!</span>")
-			if(do_after(user, 50, H))
+		if(!H.stat == DEAD)//If they're dead they're fair game. Otherwise don't pull out your teammates fucking teeth.
+			if(teeth_pulling_bitch.warfare_faction == H.warfare_faction)
+				to_chat(teeth_pulling_bitch, "<span class='notice'>[H] is on my side, it would be rude to pull out their teeth!</span>")
+				return
+		if(!teeth_pulling_bitch.doing_something)
+			teeth_pulling_bitch.doing_something = 1
+			H.visible_message("<span class='danger'>[teeth_pulling_bitch] tries to tear off [H]'s tooth with [src]!</span>",
+								"<span class='danger'>[teeth_pulling_bitch] tries to tear off your tooth with [src]!</span>")
+			if(do_after(teeth_pulling_bitch, 50, H))
 				if(!O || !O.get_teeth()) return
 				var/obj/item/stack/teeth/E = pick(O.teeth_list)
 				if(!E || E.zero_amount()) return
@@ -162,8 +167,8 @@
 				E.use(1)
 				T.add_blood(H)
 				E.zero_amount() //Try to delete the teeth
-				H.visible_message("<span class='danger'>[user] tears off [H]'s tooth with [src]!</span>",
-								"<span class='danger'>[user] tears off your tooth with [src]!</span>")
+				H.visible_message("<span class='danger'>[teeth_pulling_bitch] tears off [H]'s tooth with [src]!</span>",
+								"<span class='danger'>[teeth_pulling_bitch] tears off your tooth with [src]!</span>")
 
 				H.apply_damage(rand(1, 3), BRUTE, O)
 				H.custom_pain("[pick("OH GOD YOUR MOUTH HURTS SO BAD!", "OH GOD WHY!", "OH GOD YOUR MOUTH!")]", 100, affecting = O)
@@ -171,10 +176,10 @@
 				playsound(H, 'sound/effects/gore/trauma3.ogg', 40, 1, -1) //And out it goes.
 				GLOB.teeth_lost++
 
-				user.doing_something = 0
+				teeth_pulling_bitch.doing_something = 0
 			else
-				to_chat(user, "<span class='notice'>Your attempt to pull out a tooth fails...</span>")
-				user.doing_something = 0
+				to_chat(teeth_pulling_bitch, "<span class='notice'>Your attempt to pull out a tooth fails...</span>")
+				teeth_pulling_bitch.doing_something = 0
 				return
 		else
 			to_chat(user, "<span class='notice'>You are already trying to pull out a tooth!</span>")
