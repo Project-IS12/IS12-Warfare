@@ -5,15 +5,22 @@ For the main html chat area
 //Precaching a bunch of shit
 GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of icons for the browser output
 
+//Should match the value set in the browser js
+#define MAX_COOKIE_LENGTH 5
+#define SPAM_TRIGGER_AUTOMUTE 10
+
 //On client, created on login
 /datum/chatOutput
 	var/client/owner	 //client ref
+	// How many times client data has been checked
+	var/total_checks = 0
+	// When to next clear the client data checks counter
+	var/next_time_to_clear = 0
 	var/loaded       = FALSE // Has the client loaded the browser output area?
 	var/list/messageQueue //If they haven't loaded chat, this is where messages will go until they do
 	var/cookieSent   = FALSE // Has the client sent a cookie for analysis
 	var/broken       = FALSE
 	var/list/connectionHistory //Contains the connection history passed from chat cookie
-	var/adminMusicVolume = 25 //This is for the Play Global Sound verb
 
 /datum/chatOutput/New(client/C)
 	owner = C
@@ -49,7 +56,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat)
 	stuff.send(owner)
 
-	owner << browse(file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
+	show_browser(owner, file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
 
 /datum/chatOutput/Topic(href, list/href_list)
 	if(usr.client != owner)
@@ -79,8 +86,6 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		if("analyzeClientData")
 			data = analyzeClientData(arglist(params))
 
-		if("setMusicVolume")
-			data = setMusicVolume(arglist(params))
 	if(data)
 		ehjax_send(data = data)
 
@@ -90,7 +95,6 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	if(loaded)
 		return
 
-	//testing("Chat loaded for [owner.ckey]")
 	loaded = TRUE
 	showChat()
 
@@ -102,36 +106,41 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	messageQueue = null
 	sendClientData()
 
+	syncRegex()
+
 	//do not convert to to_chat()
-	owner << "<span class=\"userdanger\">Failed to load fancy chat, reverting to old chat. Certain features won't work.</span>"
+	legacy_chat(owner, "<span class=\"userdanger\">Failed to load fancy chat, reverting to old chat. Certain features won't work.</span>")
+
+	pingLoop()
 
 /datum/chatOutput/proc/showChat()
 	winset(owner, "output", "is-visible=false")
 	winset(owner, "browseroutput", "is-disabled=false;is-visible=true")
 
+/datum/chatOutput/proc/pingLoop()
+	set waitfor = FALSE
+
+	while (owner)
+		ehjax_send(data = owner.is_afk(29) ? "softPang" : "pang") // SoftPang isn't handled anywhere but it'll always reset the opts.lastPang.
+		sleep(30)
+
+/proc/syncChatRegexes()
+	for (var/user in GLOB.clients)
+		var/client/C = user
+		var/datum/chatOutput/Cchat = C.chatOutput
+		if (Cchat && !Cchat.broken && Cchat.loaded)
+			Cchat.syncRegex()
+
+/datum/chatOutput/proc/syncRegex()
+	var/list/regexes = list()
+
+	if (regexes.len)
+		ehjax_send(data = list("syncRegex" = regexes))
+
 /datum/chatOutput/proc/ehjax_send(client/C = owner, window = "browseroutput", data)
 	if(islist(data))
 		data = json_encode(data)
-	C << output("[data]", "[window]:ehjaxCallback")
-
-/datum/chatOutput/proc/sendMusic(music, list/extra_data)
-	if(!findtext(music, GLOB.is_http_protocol))
-		return
-	var/list/music_data = list("adminMusic" = url_encode(url_encode(music)))
-
-	if(extra_data?.len)
-		music_data["musicRate"] = extra_data["pitch"]
-		music_data["musicSeek"] = extra_data["start"]
-		music_data["musicHalt"] = extra_data["end"]
-
-	ehjax_send(data = music_data)
-
-/datum/chatOutput/proc/stopMusic()
-	ehjax_send(data = "stopMusic")
-
-/datum/chatOutput/proc/setMusicVolume(volume = "")
-	if(volume)
-		adminMusicVolume = CLAMP(text2num(volume), 0, 100)
+	send_output(C, "[data]", "[window]:ehjaxCallback")
 
 //Sends client connection details to the chat to handle and save
 /datum/chatOutput/proc/sendClientData()
@@ -145,6 +154,18 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 //Called by client, sent data to investigate (cookie history so far)
 /datum/chatOutput/proc/analyzeClientData(cookie = "")
+	//Spam check
+	if(world.time  >  next_time_to_clear)
+		next_time_to_clear = world.time + (3 SECONDS)
+		total_checks = 0
+
+	total_checks += 1
+
+	if(total_checks > SPAM_TRIGGER_AUTOMUTE)
+		message_admins("[key_name(owner)] kicked for goonchat topic spam")
+		qdel(owner)
+		return
+
 	if(!cookie)
 		return
 
@@ -153,23 +174,35 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		if(crashy_thingy.Find(cookie))
 			log_and_message_admins("[key_name(src.owner)] tried to crash the server using at least 5 \"\[\" in a row")
 			return
+
 		var/list/connData = json_decode(cookie)
 		if (connData && islist(connData) && connData.len > 0 && connData["connData"])
 			connectionHistory = connData["connData"] //lol fuck
 			var/list/found = new()
+
+			if(connectionHistory.len > MAX_COOKIE_LENGTH)
+				message_admins("[key_name(src.owner)] was kicked for an invalid ban cookie)")
+				qdel(owner)
+				return
+
 			for(var/i in connectionHistory.len to 1 step -1)
+				if(QDELETED(owner))
+					//he got cleaned up before we were done
+					return
 				var/list/row = src.connectionHistory[i]
 				if (!row || row.len < 3 || (!row["ckey"] || !row["compid"] || !row["ip"])) //Passed malformed history object
 					return
 				if (world.IsBanned(row["ckey"], row["ip"], row["compid"]))
 					found = row
 					break
+				CHECK_TICK
 
 			//Uh oh this fucker has a history of playing on a banned account!!
 			if (found.len > 0)
+				var/msg = "[key_name(src.owner)] has a cookie from a banned account! (Matched: [found["ckey"]], [found["ip"]], [found["compid"]])"
 				//TODO: add a new evasion ban for the CURRENT client details, using the matched row details
-				message_admins("[key_name(src.owner)] has a cookie from a banned account! (Matched: [found["ckey"]], [found["ip"]], [found["compid"]])")
-				//log_admin_private("[key_name(owner)] has a cookie from a banned account! (Matched: [found["ckey"]], [found["ip"]], [found["compid"]])")
+				message_admins(msg)
+				log_admin(msg)
 
 	cookieSent = TRUE
 
@@ -182,7 +215,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	log_world("\[[time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")]\] Client: [(src.owner.key ? src.owner.key : src.owner)] triggered JS error: [error]")
 
 //Global chat procs
-/proc/to_chat_immediate(target, message, handle_whitespace = TRUE)
+/proc/to_chat_immediate(target, message, handle_whitespace = TRUE, trailing_newline = TRUE)
 	if(!target || !message)
 		return
 
@@ -192,7 +225,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	var/original_message = message
 	if(handle_whitespace)
 		message = replacetext(message, "\n", "<br>")
-		message = replacetext(message, "\t", "[GLOB.TAB][GLOB.TAB]")
+		message = replacetext(message, "\t", "[FOURSPACES][FOURSPACES]")
 
 	//Replace expanded \icon macro with icon2html
 	//regex/Replace with a proc won't work here because icon2html takes target as an argument and there is no way to pass it to the replacement proc
@@ -200,21 +233,17 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	var/regex/i = new(@/<IMG CLASS=icon SRC=(\[[^]]+])(?: ICONSTATE='([^']+)')?>/, "g")
 	while(i.Find(message))
 		message = copytext(message,1,i.index)+icon2html(locate(i.group[1]), target, icon_state=i.group[2])+copytext(message,i.next)
-
-	message = symbols_to_unicode(strip_improper(color_macro_to_html(message)))
-
+	if(trailing_newline)
+		message += "<br>"
 	if(islist(target))
 		// Do the double-encoding outside the loop to save nanoseconds
 		var/twiceEncoded = url_encode(url_encode(message))
 		for(var/I in target)
 			var/client/C = CLIENT_FROM_VAR(I) //Grab us a client if possible
-
 			if (!C)
 				continue
-
 			//Send it to the old style output window.
-			C << original_message
-
+			legacy_chat(C, original_message)
 			if(!C.chatOutput || C.chatOutput.broken) // A player who hasn't updated his skin file.
 				continue
 
@@ -223,7 +252,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 				C.chatOutput.messageQueue += message
 				continue
 
-			C << output(twiceEncoded, "browseroutput:output")
+			send_output(C, twiceEncoded, "browseroutput:output")
 	else
 		var/client/C = CLIENT_FROM_VAR(target) //Grab us a client if possible
 
@@ -231,7 +260,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 			return
 
 		//Send it to the old style output window.
-		C << original_message
+		legacy_chat(C, original_message)
 
 		if(!C.chatOutput || C.chatOutput.broken) // A player who hasn't updated his skin file.
 			return
@@ -242,11 +271,93 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 			return
 
 		// url_encode it TWICE, this way any UTF-8 characters are able to be decoded by the Javascript.
-		C << output(url_encode(url_encode(message)), "browseroutput:output")
-
+		send_output(C, url_encode(url_encode(message)), "browseroutput:output")
 
 /proc/to_chat(target, message, handle_whitespace = TRUE)
 	if(Master.current_runlevel == RUNLEVEL_INIT || !SSchat?.initialized)
 		to_chat_immediate(target, message, handle_whitespace)
+		return	SSchat.queue(target, message, handle_whitespace)
+
+#undef MAX_COOKIE_LENGTH
+
+
+/client/verb/fix_chat()
+	set name = "Fix Chat"
+	set category = "OOC"
+	if (!chatOutput || !istype(chatOutput))
+		var/action = alert(src, "Invalid Chat Output data found!\nRecreate data?", "Wot?", "Recreate Chat Output data", "Cancel")
+		if (action != "Recreate Chat Output data")
+			return
+		chatOutput = new /datum/chatOutput(src)
+		chatOutput.start()
+		action = alert(src, "Goon chat reloading, wait a bit and tell me if it's fixed", "", "Fixed", "Nope")
+		if (action == "Fixed")
+			log_game("GOONCHAT: [key_name(src)] Had to fix their goonchat by re-creating the chatOutput datum")
+		else
+			chatOutput.load()
+			action = alert(src, "How about now? (give it a moment (it may also try to load twice))", "", "Yes", "No")
+			if (action == "Yes")
+				log_game("GOONCHAT: [key_name(src)] Had to fix their goonchat by re-creating the chatOutput datum and forcing a load()")
+			else
+				action = alert(src, "Welp, I'm all out of ideas. Try closing byond and reconnecting.\nWe could also disable fancy chat and re-enable oldchat", "", "Thanks anyways", "Switch to old chat")
+				if (action == "Switch to old chat")
+					winset(src, "output", "is-visible=true;is-disabled=false")
+					winset(src, "browseroutput", "is-visible=false")
+				log_game("GOONCHAT: [key_name(src)] Failed to fix their goonchat window after recreating the chatOutput and forcing a load()")
+
+	else if (chatOutput.loaded)
+		var/action = alert(src, "ChatOutput seems to be loaded\nDo you want me to force a reload, wiping the chat log or just refresh the chat window because it broke/went away?", "Hmmm", "Force Reload", "Refresh", "Cancel")
+		switch (action)
+			if ("Force Reload")
+				chatOutput.loaded = FALSE
+				chatOutput.start() //this is likely to fail since it asks , but we should try it anyways so we know.
+				action = alert(src, "Goon chat reloading, wait a bit and tell me if it's fixed", "", "Fixed", "Nope")
+				if (action == "Fixed")
+					log_game("GOONCHAT: [key_name(src)] Had to fix their goonchat by forcing a start()")
+				else
+					chatOutput.load()
+					action = alert(src, "How about now? (give it a moment (it may also try to load twice))", "", "Yes", "No")
+					if (action == "Yes")
+						log_game("GOONCHAT: [key_name(src)] Had to fix their goonchat by forcing a load()")
+					else
+						action = alert(src, "Welp, I'm all out of ideas. Try closing byond and reconnecting.\nWe could also disable fancy chat and re-enable oldchat", "", "Thanks anyways", "Switch to old chat")
+						if (action == "Switch to old chat")
+							winset(src, "output", "is-visible=true;is-disabled=false")
+							winset(src, "browseroutput", "is-visible=false")
+						log_game("GOONCHAT: [key_name(src)] Failed to fix their goonchat window forcing a start() and forcing a load()")
+
+			if ("Refresh")
+				chatOutput.showChat()
+				action = alert(src, "Goon chat refreshing, wait a bit and tell me if it's fixed", "", "Fixed", "Nope, force a reload")
+				if (action == "Fixed")
+					log_game("GOONCHAT: [key_name(src)] Had to fix their goonchat by forcing a show()")
+				else
+					chatOutput.loaded = FALSE
+					chatOutput.load()
+					action = alert(src, "How about now? (give it a moment)", "", "Yes", "No")
+					if (action == "Yes")
+						log_game("GOONCHAT: [key_name(src)] Had to fix their goonchat by forcing a load()")
+					else
+						action = alert(src, "Welp, I'm all out of ideas. Try closing byond and reconnecting.\nWe could also disable fancy chat and re-enable oldchat", "", "Thanks anyways", "Switch to old chat")
+						if (action == "Switch to old chat")
+							winset(src, "output", "is-visible=true;is-disabled=false")
+							winset(src, "browseroutput", "is-visible=false")
+						log_game("GOONCHAT: [key_name(src)] Failed to fix their goonchat window forcing a show() and forcing a load()")
 		return
-	SSchat.queue(target, message, handle_whitespace)
+
+	else
+		chatOutput.start()
+		var/action = alert(src, "Manually loading Chat, wait a bit and tell me if it's fixed", "", "Fixed", "Nope")
+		if (action == "Fixed")
+			log_game("GOONCHAT: [key_name(src)] Had to fix their goonchat by manually calling start()")
+		else
+			chatOutput.load()
+			alert(src, "How about now? (give it a moment (it may also try to load twice))", "", "Yes", "No")
+			if (action == "Yes")
+				log_game("GOONCHAT: [key_name(src)] Had to fix their goonchat by manually calling start() and forcing a load()")
+			else
+				action = alert(src, "Welp, I'm all out of ideas. Try closing byond and reconnecting.\nWe could also disable fancy chat and re-enable oldchat", "", "Thanks anyways", "Switch to old chat")
+				if (action == "Switch to old chat")
+					winset(src, "output", list2params(list("on-show" = "", "is-disabled" = "false", "is-visible" = "true")))
+					winset(src, "browseroutput", "is-disabled=true;is-visible=false")
+				log_game("GOONCHAT: [key_name(src)] Failed to fix their goonchat window after manually calling start() and forcing a load()")
