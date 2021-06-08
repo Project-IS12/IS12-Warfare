@@ -68,7 +68,7 @@
 	var/datum/lighting_corner/cb = T.corners[4] || dummy_lighting_corner
 	var/datum/lighting_corner/ca = T.corners[1] || dummy_lighting_corner
 
-	var/max = max(cr.cache_mx, cg.cache_mx, cb.cache_mx, ca.cache_mx)
+	//var/max = max(cr.cache_mx, cg.cache_mx, cb.cache_mx, ca.cache_mx)
 
 	var/rr = cr.cache_r
 	var/rg = cr.cache_g
