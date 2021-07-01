@@ -24,19 +24,14 @@
 	return
 
 
+/turf/simulated/floor/trenches/underground
+	is_underground = TRUE
+
+
 /turf/simulated/floor/trenches/Initialize()
 	. = ..()
 	relativewall_neighbours()
-/*	spawn(5)
-		update_icon()
 
-/turf/simulated/floor/trenches/update_icon()
-	overlays.Cut()
-	var/image/snow_overlay = image('icons/obj/warfare.dmi', "snow_1", dir = pick(GLOB.alldirs))
-	snow_overlay.plane = ABOVE_TURF_PLANE
-	overlays += snow_overlay
-	//snow_overlay.turf_decal_layerise()
-*/
 
 
 /turf/simulated/floor/trench
@@ -45,6 +40,14 @@
 	name = "trench"
 	movement_delay = 0.5
 	has_coldbreath = TRUE
+	var/can_be_dug = TRUE
+
+/turf/simulated/floor/trench/fake
+	atom_flags = null
+	can_be_dug = FALSE
+
+/turf/simulated/floor/trench/tough
+	can_be_dug = FALSE
 
 /turf/simulated/floor/trench/ex_act(severity)
 	return
@@ -59,11 +62,14 @@
 	dir = pick(GLOB.alldirs)
 	update_icon()
 
+
 /turf/simulated/floor/trench/RightClick(mob/living/user)
 	if(!CanPhysicallyInteract(user))
 		return
-	var/obj/item/weapon/shovel/S = user.get_active_hand()
+	var/obj/item/shovel/S = user.get_active_hand()
 	if(!istype(S))
+		return
+	if(!can_be_dug)//No escaping to mid early.
 		return
 	if(!user.doing_something)
 		user.doing_something = TRUE
@@ -94,17 +100,21 @@
 
 
 /turf/simulated/floor/proc/update_trench_layers()
-	overlays.Cut()
+	vis_contents.Cut()
 	for(var/direction in GLOB.cardinal)
 		var/turf/turf_to_check = get_step(src,direction)
 		if(istype(turf_to_check, /turf/simulated/floor/trench))
 			continue
 		if(istype(turf_to_check, /turf/space) || istype(turf_to_check, /turf/simulated/floor) || istype(turf_to_check, /turf/simulated/floor/exoplanet/water/shallow) || istype(turf_to_check, /turf/simulated/wall))
-			var/image/trench_side = image('icons/obj/warfare.dmi', "trench_side", dir = turn(direction, 180))
-			trench_side.turf_decal_layerise()
+			var/atom/movable/trench_side = new()
+			trench_side.icon = 'icons/obj/warfare.dmi'
+			trench_side.icon_state = "trench_side"
+			trench_side.dir = turn(direction, 180)
+			trench_side.mouse_opacity = 0
 			switch(direction)
 				if(NORTH)
 					trench_side.pixel_y += ((world.icon_size) - 22)
+					trench_side.layer = BELOW_OBJ_LAYER
 				if(SOUTH)
 					trench_side.pixel_y -= ((world.icon_size) - 16)
 					trench_side.plane = ABOVE_OBJ_PLANE
@@ -116,11 +126,10 @@
 					trench_side.pixel_x -= (world.icon_size)
 					trench_side.plane = ABOVE_OBJ_PLANE
 					trench_side.layer = BASE_MOB_LAYER
-			overlays += trench_side
+			vis_contents += trench_side
 
 /turf/simulated/floor/trench/update_icon()
 	update_trench_shit()
-
 
 /turf/simulated/floor/proc/update_trench_shit()
 	for(var/direction in GLOB.cardinal)

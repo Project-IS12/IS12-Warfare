@@ -47,7 +47,7 @@
 	return 1
 
 /obj/item/modular_computer/proc/install_default_programs_by_job(var/mob/living/carbon/human/H)
-	var/datum/job/jb = job_master.occupations_by_title[H.job]
+	var/datum/job/jb = SSjobs.occupations_by_title[H.job]
 	if(!jb) return
 	for(var/prog_type in jb.software_on_spawn)
 		var/datum/computer_file/program/prog_file = prog_type
@@ -67,7 +67,7 @@
 /obj/item/modular_computer/Destroy()
 	kill_program(1)
 	STOP_PROCESSING(SSobj, src)
-	for(var/obj/item/weapon/computer_hardware/CH in src.get_all_components())
+	for(var/obj/item/computer_hardware/CH in src.get_all_components())
 		uninstall_component(null, CH)
 		qdel(CH)
 	return ..()
@@ -176,7 +176,7 @@
 
 	idle_threads.Add(active_program)
 	active_program.program_state = PROGRAM_STATE_BACKGROUND // Should close any existing UIs
-	GLOB.nanomanager.close_uis(active_program.NM ? active_program.NM : active_program)
+	SSnanoui.close_uis(active_program.NM ? active_program.NM : active_program)
 	active_program = null
 	update_icon()
 	if(istype(user))
@@ -222,11 +222,11 @@
 
 /obj/item/modular_computer/proc/update_uis()
 	if(active_program) //Should we update program ui or computer ui?
-		GLOB.nanomanager.update_uis(active_program)
+		SSnanoui.update_uis(active_program)
 		if(active_program.NM)
-			GLOB.nanomanager.update_uis(active_program.NM)
+			SSnanoui.update_uis(active_program.NM)
 	else
-		GLOB.nanomanager.update_uis(src)
+		SSnanoui.update_uis(src)
 
 /obj/item/modular_computer/proc/check_update_ui_need()
 	var/ui_update_needed = 0

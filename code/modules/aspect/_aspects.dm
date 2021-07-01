@@ -66,6 +66,10 @@ proc/print_aspect()
 	lightsout(0,0)
 */
 
+/datum/aspect/trenchmas
+	name = "Trenchmas"
+	desc = "It's Trenchmas! We Will Not Battle This Day!"
+
 /datum/aspect/clean_guns
 	name = "Well Oiled Machine"
 	desc = "Due to proper gun maintenance, guns will not jam this battle!"

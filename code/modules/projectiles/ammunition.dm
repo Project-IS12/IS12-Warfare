@@ -38,6 +38,7 @@
 		pixel_y = rand(-randpixel, randpixel)
 
 	update_icon()
+	mouse_opacity = 0
 
 /obj/item/ammo_casing/proc/leave_residue()
 	var/mob/living/carbon/human/H
@@ -156,7 +157,7 @@
 			stored_ammo += new ammo_type(src)
 	update_icon()
 
-/obj/item/ammo_magazine/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/ammo_magazine/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = W
 		if(C.caliber != caliber)

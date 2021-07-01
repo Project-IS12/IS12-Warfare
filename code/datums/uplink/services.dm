@@ -194,7 +194,7 @@
 	service_label = "Crew Arrival Announcement and Records"
 
 /obj/item/device/uplink_service/fake_crew_announcement/enable(var/mob/user = usr)
-	var/obj/item/weapon/card/id/I = user.GetIdCard()
+	var/obj/item/card/id/I = user.GetIdCard()
 	var/datum/computer_file/crew_record/random_record
 
 	if(GLOB.all_crew_records.len)
@@ -228,7 +228,7 @@
 		for(var/field in to_copy)
 			new_record.set_field(field, random_record.get_field(field))
 
-	var/datum/job/job = job_master.GetJob(new_record.get_job())
+	var/datum/job/job = SSjobs.GetJob(new_record.get_job())
 	if(istype(job) && job.announced)
 		AnnounceArrivalSimple(new_record.get_name(), new_record.get_job(), get_announcement_frequency(job))
 	. = ..()

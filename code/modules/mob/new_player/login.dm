@@ -39,6 +39,10 @@
 	message_admins("<span class='notice'>Login: [key], id:[computer_id], ip:[client.address]</span>")
 
 	new_player_panel()
+	if(client)
+		for(var/x = 1, x < GLOB.background_music.len, x++)//Load in the songs ahead of time.
+			sound_to(src, sound(GLOB.background_music[x], repeat = 1, volume = 50, wait = 0, channel = 1))
+			sound_to(src, sound(null, repeat = 1, volume = 50, wait = 0, channel = 1))
 	spawn(40)
 		if(client)
 			client.playtitlemusic()
@@ -46,12 +50,21 @@
 			to_lobby( "[key] has joined.")
 			if(!client.warfare_faction)
 				//Autobalance them by client, not by mob. This does mean that whoever joins first will always be red team, but that shouldn't be an issue.
-				if(SSWarfare.blue.team_clients.len < SSWarfare.red.team_clients.len)
-					client.warfare_faction = BLUE_TEAM
-					SSWarfare.blue.team_clients += src.client
+				if(issiegefare())
+					if(SSwarfare.blue.team_clients.len*1.5 < SSwarfare.red.team_clients.len)
+						client.warfare_faction = BLUE_TEAM
+						SSwarfare.blue.team_clients += src.client
+					else
+						client.warfare_faction = RED_TEAM
+						SSwarfare.red.team_clients += src.client
 				else
-					client.warfare_faction = RED_TEAM
-					SSWarfare.red.team_clients += src.client
+					if(SSwarfare.blue.team_clients.len < SSwarfare.red.team_clients.len)
+						client.warfare_faction = BLUE_TEAM
+						SSwarfare.blue.team_clients += src.client
+					else
+						client.warfare_faction = RED_TEAM
+						SSwarfare.red.team_clients += src.client
+
 	if(!has_connected(ckey(client.key)))//If they've never played before show them the beginners guide.
 		show_new_information()
 

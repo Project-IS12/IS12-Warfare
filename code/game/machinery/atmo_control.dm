@@ -64,17 +64,16 @@
 
 
 /obj/machinery/air_sensor/proc/set_frequency(new_frequency)
-	radio_controller.remove_object(src, frequency)
+	SSradio.remove_object(src, frequency)
 	frequency = new_frequency
-	radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
+	radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
 
 /obj/machinery/air_sensor/Initialize()
 	set_frequency(frequency)
 	. = ..()
 
 obj/machinery/air_sensor/Destroy()
-	if(radio_controller)
-		radio_controller.remove_object(src,frequency)
+	SSradio.remove_object(src,frequency)
 	..()
 
 /obj/machinery/computer/general_air_control
@@ -89,11 +88,10 @@ obj/machinery/air_sensor/Destroy()
 
 	var/list/sensor_information = list()
 	var/datum/radio_frequency/radio_connection
-	circuit = /obj/item/weapon/circuitboard/air_management
+	circuit = /obj/item/circuitboard/air_management
 
 obj/machinery/computer/general_air_control/Destroy()
-	if(radio_controller)
-		radio_controller.remove_object(src, frequency)
+	SSradio.remove_object(src, frequency)
 	..()
 
 /obj/machinery/computer/general_air_control/attack_hand(mob/user)
@@ -156,9 +154,9 @@ obj/machinery/computer/general_air_control/Destroy()
 	return output
 
 /obj/machinery/computer/general_air_control/proc/set_frequency(new_frequency)
-	radio_controller.remove_object(src, frequency)
+	SSradio.remove_object(src, frequency)
 	frequency = new_frequency
-	radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
+	radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
 
 /obj/machinery/computer/general_air_control/Initialize()
 	set_frequency(frequency)
@@ -176,7 +174,7 @@ obj/machinery/computer/general_air_control/Destroy()
 
 	var/input_flow_setting = 200
 	var/pressure_setting = ONE_ATMOSPHERE * 45
-	circuit = /obj/item/weapon/circuitboard/air_management/tank_control
+	circuit = /obj/item/circuitboard/air_management/tank_control
 
 
 /obj/machinery/computer/general_air_control/large_tank_control/return_text()
@@ -295,7 +293,7 @@ Max Output Pressure: [output_pressure] kPa<BR>"}
 
 	var/input_flow_setting = 700
 	var/pressure_setting = 100
-	circuit = /obj/item/weapon/circuitboard/air_management/supermatter_core
+	circuit = /obj/item/circuitboard/air_management/supermatter_core
 
 
 /obj/machinery/computer/general_air_control/supermatter_core/return_text()
@@ -413,7 +411,7 @@ Min Core Pressure: [pressure_limit] kPa<BR>"}
 
 	var/cutoff_temperature = 2000
 	var/on_temperature = 1200
-	circuit = /obj/item/weapon/circuitboard/air_management/injector_control
+	circuit = /obj/item/circuitboard/air_management/injector_control
 
 /obj/machinery/computer/general_air_control/fuel_injection/Process()
 	if(automation)
@@ -528,7 +526,3 @@ Rate: [volume_rate] L/sec<BR>"}
 		)
 
 		radio_connection.post_signal(src, signal, filter = RADIO_ATMOSIA)
-
-
-
-

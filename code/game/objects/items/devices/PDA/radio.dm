@@ -17,7 +17,7 @@
 
 //		log_debug("Post: [freq]: [key]=[value], [key2]=[value2]")
 
-		var/datum/radio_frequency/frequency = radio_controller.return_frequency(freq)
+		var/datum/radio_frequency/frequency = SSradio.return_frequency(freq)
 
 		if(!frequency) return
 
@@ -47,8 +47,7 @@
 	New()
 		..()
 		spawn(5)
-			if(radio_controller)
-				radio_controller.add_object(src, control_freq, filter = RADIO_SECBOT)
+			SSradio.add_object(src, control_freq, filter = RADIO_SECBOT)
 
 	// receive radio signals
 	// can detect bot status signals
@@ -104,8 +103,7 @@
 
 
 /obj/item/radio/integrated/beepsky/Destroy()
-	if(radio_controller)
-		radio_controller.remove_object(src, control_freq)
+	SSradio.remove_object(src, control_freq)
 	return ..()
 
 /*
@@ -120,9 +118,6 @@
 	var/datum/radio_frequency/radio_connection
 
 	Initialize()
-		if(!radio_controller)
-			return
-
 		if (src.frequency < PUBLIC_LOW_FREQ || src.frequency > PUBLIC_HIGH_FREQ)
 			src.frequency = sanitize_frequency(src.frequency)
 
@@ -130,9 +125,9 @@
 		. = ..()
 
 	proc/set_frequency(new_frequency)
-		radio_controller.remove_object(src, frequency)
+		SSradio.remove_object(src, frequency)
 		frequency = new_frequency
-		radio_connection = radio_controller.add_object(src, frequency)
+		radio_connection = SSradio.add_object(src, frequency)
 
 	proc/send_signal(message="ACTIVATE")
 
@@ -154,6 +149,5 @@
 		return
 
 /obj/item/radio/integrated/signal/Destroy()
-	if(radio_controller)
-		radio_controller.remove_object(src, frequency)
+	SSradio.remove_object(src, frequency)
 	..()

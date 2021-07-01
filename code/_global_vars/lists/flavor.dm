@@ -29,6 +29,14 @@ GLOBAL_LIST_INIT(scarySounds, list(
 	'sound/effects/clownstep2.ogg'
 ))
 
+
+GLOBAL_LIST_INIT(background_music, list(
+	'sound/music/trench_bgm.ogg',
+	'sound/music/space_ambience.ogg',
+	'sound/music/station_ambience.ogg',
+
+))
+
 // Reference list for disposal sort junctions. Filled up by sorting junction's New()
 GLOBAL_LIST_EMPTY(tagger_locations)
 

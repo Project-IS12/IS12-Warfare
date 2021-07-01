@@ -74,7 +74,7 @@
 <br>f = toggle fixeye
 <br>shift+f = look up
 <br>shift+x = wield weapon
-<br>ctrl+z = toggle safety/unjam gun
+<br>shift+z = toggle safety/unjam gun
 <br>1 = help-intent
 <br>2 = disarm-intent
 <br>3 = grab-intent

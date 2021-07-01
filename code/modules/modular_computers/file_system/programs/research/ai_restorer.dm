@@ -73,7 +73,7 @@
 		A.switch_from_dead_to_living_mob_list()
 		A.add_ai_verbs()
 		A.update_icon()
-		var/obj/item/weapon/aicard/AC = A.loc
+		var/obj/item/aicard/AC = A.loc
 		if(AC)
 			AC.update_icon()
 	// Finished restoring
@@ -109,7 +109,7 @@
 
 		data["ai_laws"] = all_laws
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnanoui.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "aidiag.tmpl", "AI Maintenance Utility", 600, 400, state = state)
 		if(host.update_layout())

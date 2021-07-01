@@ -23,6 +23,12 @@
 
 	var/quench_amount = 5 //For thirst.
 
+	// New addiction code...
+	var/addiction_stage = 1
+	var/reagent_addiction_strength = 0 // Prob of 0% to 100% of geting addicted.
+	var/last_addiction_dose = null
+	var/time_addiction_update = 1000 // (1 minute)Time it takes to make a tick of addiction, a lower number means you will need more of the chemical faster.
+
 /datum/reagent/New(var/datum/reagents/holder)
 	if(!istype(holder))
 		CRASH("Invalid reagents holder: [log_info_line(holder)]")
@@ -51,6 +57,21 @@
 		var/overdose_threshold = overdose * (flags & IGNORE_MOB_SIZE? 1 : MOB_MEDIUM/M.mob_size)
 		if(volume > overdose_threshold)
 			overdose(M, alien)
+	if(prob(reagent_addiction_strength) && !is_type_in_list(src, M.reagents.addiction_list))
+		to_chat(M, "<span class='danger'>You like that feeling. You may want more of that later...</span>")
+		var/datum/reagent/new_reagent = new type()
+		new_reagent.last_addiction_dose = world.timeofday
+		M.reagents.addiction_list.Add(new_reagent)
+	else if(is_type_in_list(src, M.reagents.addiction_list))
+		var/message = pick("You feel better, but for how long?", "Ah.....")
+		if(prob(1))
+			to_chat(M, "<span class='notice'>[message]</span>")
+		for(var/A in M.reagents.addiction_list)
+			var/datum/reagent/AD = A
+			if(AD && istype(AD, src))
+				AD.last_addiction_dose = world.timeofday
+				AD.addiction_stage = 1
+				M.clear_event("addiction")
 
 	//determine the metabolism rate
 	var/removed = metabolism
@@ -124,3 +145,65 @@
 
 /datum/reagent/proc/reaction_mob(var/mob/target)
 	touch_mob(target)
+// Addiction code.... For events
+
+/datum/reagent/proc/addiction_act_stage1(var/mob/living/carbon/M, var/datum/reagent/R)
+	if(prob(5))
+		switch(R.name)
+			if("Nicotine")
+				var/message = pick("My mouth is a bit dry...", "A cigarette sure would go down well right now")
+				to_chat(M, "<span class='notice'>[message]</span>")
+	return
+
+/datum/reagent/proc/addiction_act_stage2(var/mob/living/carbon/M, var/datum/reagent/R)
+	var/name = check_name(R.name)
+	clear_events(R.name, M)
+	if(prob(10))
+		var/message = pick("I could use some [name] right now!","I am feeling a bit stressed, sure could use some [name]!","I could use some [name] right now!")
+		to_chat(M, "<span class='notice'>[message]</span>")
+	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_small)
+	return
+/datum/reagent/proc/addiction_act_stage3(var/mob/living/carbon/M, var/datum/reagent/R)
+	var/name = check_name(R.name)
+	clear_events(R.name, M)
+	if(prob(10))
+		var/message = pick("I really could use some [name] right now!","I am feeling a bit stressed, sure could use some [name]!","I should use some [name]")
+		to_chat(M, "<span class='notice'>[message]</span>")
+	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_medium)
+	return
+
+/datum/reagent/proc/addiction_act_stage4(var/mob/living/carbon/M, var/datum/reagent/R)
+	var/name = check_name(R.name)
+	clear_events(R.name, M)
+	if(prob(10))
+		var/message = pick("I really should use some [name] right now!","I am stressed, I need to use some [name]!","I should use some [name]")
+		to_chat(M, "<span class='notice'>[message]</span>")
+	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_large)
+	return
+/datum/reagent/proc/addiction_act_stage5(var/mob/living/carbon/M, var/datum/reagent/R)
+	var/name = check_name(R.name)
+	clear_events(R.name, M)
+	if(prob(10))
+		var/message = pick("I need to use some [name] right now!","I am stressed, I need to use some [name] RIGHT NOW!","I REALLY NEED SOME [name]")
+		to_chat(M, "<span class='notice'>[message]</span>")
+	M.add_event("addiction", /datum/happiness_event/addiction/withdrawal_extreme)
+	return
+
+/datum/reagent/proc/check_name(var/name)
+	switch(name)
+		if("Ethanol")
+			name = "Alcohol"
+	return name
+
+/datum/reagent/proc/clear_events(var/name, var/mob/living/carbon/M)
+	switch(name)
+		if("Nicotine")
+			M.clear_event("relaxed")
+		if("Trench drugs")
+			M.clear_event("high")
+		if("Impedrezene")
+			M.clear_event("high")
+		if("Psilocybin")
+			M.clear_event("high")
+		if("Ethanol")
+			M.clear_event("booze")

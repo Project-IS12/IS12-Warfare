@@ -64,6 +64,9 @@
 		var/mob/living/carbon/human/H = speaker
 		speaker_name = H.GetVoice()
 
+		if(H.warfare_faction != src.warfare_faction)
+			speaker_name = ageAndGender2Desc(H.age, H.gender)
+
 	if(italics)
 		message = "<i>[capitalize(message)]</i>"
 
@@ -147,19 +150,16 @@
 
 	if(istype(speaker, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = speaker
+
 		if(H.voice)
 			speaker_name = H.voice
 
+
 		if(H.age && H.gender && !H.is_anonymous)//If they have an age and gender, and they're not anonymous.
-			var/ageAndGender
-			jobname = H.get_assignment()
+			speaker_name += " \[[ageAndGender2Desc(H.age, H.gender)]\]"//Print it out.
 
-			if(H.get_assignment() == "No id")//If they don't have an ID then we don't know their job.
-				jobname = ""
-
-			ageAndGender = ageAndGender2Desc(H.age, H.gender)//Get their age and gender
-
-			speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]"//Print it out.
+		if(H.warfare_faction != src.warfare_faction)//So if they're not apart of the same warfare faction as us, then we don't know their name.
+			speaker_name = "[ageAndGender2Desc(H.age, H.gender)]"
 
 	if(hard_to_hear)
 		speaker_name = "unknown"
@@ -186,7 +186,7 @@
 
 				// If I's display name is currently different from the voice name and using an agent ID then don't impersonate
 				// as this would allow the AI to track I and realize the mismatch.
-				if(I && !(I.name != speaker_name && I.wear_id && istype(I.wear_id,/obj/item/weapon/card/id/syndicate)))
+				if(I && !(I.name != speaker_name && I.wear_id && istype(I.wear_id,/obj/item/card/id/syndicate)))
 					impersonating = I
 					jobname = impersonating.get_assignment()
 				else
@@ -278,7 +278,7 @@
 		message = "<B>[speaker]</B> [verb][adverb]."
 
 	if(src.status_flags & PASSEMOTES)
-		for(var/obj/item/weapon/holder/H in src.contents)
+		for(var/obj/item/holder/H in src.contents)
 			H.show_message(message)
 		for(var/mob/living/M in src.contents)
 			M.show_message(message)

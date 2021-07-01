@@ -140,12 +140,12 @@
 
 /mob/living/proc/change_current_ambience(var/ambience)
 	current_ambience = ambience
-	ambience_is_playing = 0
+	ambience_is_playing = FALSE
 
 /mob/living/proc/change_current_ambience_with_override(var/ambience)
 	current_ambience = ambience
-	ambience_override = 1
-	ambience_is_playing = 0
+	ambience_override = TRUE
+	ambience_is_playing = FALSE
 
 /mob/living/proc/handle_disabilities()
 	handle_impaired_vision()

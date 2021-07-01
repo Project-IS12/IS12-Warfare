@@ -130,7 +130,7 @@
 			switch(chosen)
 				if("iron")
 					while(amt_iron > 0 && coinsToProduce > 0)
-						new/obj/item/weapon/coin/iron(M)
+						new/obj/item/coin/iron(M)
 						amt_iron -= 20
 						coinsToProduce--
 						newCoins++
@@ -138,7 +138,7 @@
 						sleep(5);
 				if("gold")
 					while(amt_gold > 0 && coinsToProduce > 0)
-						new /obj/item/weapon/coin/gold(M)
+						new /obj/item/coin/gold(M)
 						amt_gold -= 20
 						coinsToProduce--
 						newCoins++
@@ -146,7 +146,7 @@
 						sleep(5);
 				if("silver")
 					while(amt_silver > 0 && coinsToProduce > 0)
-						new /obj/item/weapon/coin/silver(M)
+						new /obj/item/coin/silver(M)
 						amt_silver -= 20
 						coinsToProduce--
 						newCoins++
@@ -154,7 +154,7 @@
 						sleep(5);
 				if("diamond")
 					while(amt_diamond > 0 && coinsToProduce > 0)
-						new /obj/item/weapon/coin/diamond(M)
+						new /obj/item/coin/diamond(M)
 						amt_diamond -= 20
 						coinsToProduce--
 						newCoins++
@@ -162,7 +162,7 @@
 						sleep(5);
 				if("phoron")
 					while(amt_phoron > 0 && coinsToProduce > 0)
-						new /obj/item/weapon/coin/phoron(M)
+						new /obj/item/coin/phoron(M)
 						amt_phoron -= 20
 						coinsToProduce--
 						newCoins++
@@ -170,7 +170,7 @@
 						sleep(5);
 				if("uranium")
 					while(amt_uranium > 0 && coinsToProduce > 0)
-						new /obj/item/weapon/coin/uranium(M)
+						new /obj/item/coin/uranium(M)
 						amt_uranium -= 20
 						coinsToProduce--
 						newCoins++

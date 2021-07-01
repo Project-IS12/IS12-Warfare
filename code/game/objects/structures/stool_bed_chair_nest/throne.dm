@@ -11,7 +11,7 @@
 /obj/structure/bed/chair/throne/rotate()//Can't rotate it.
 	return
 
-/obj/structure/bed/chair/throne/attackby(obj/item/weapon/W as obj, mob/user as mob)//Can't deconstruct it.
+/obj/structure/bed/chair/throne/attackby(obj/item/W as obj, mob/user as mob)//Can't deconstruct it.
 	return
 
 //Like an announcement only exclusively for Magistrates.

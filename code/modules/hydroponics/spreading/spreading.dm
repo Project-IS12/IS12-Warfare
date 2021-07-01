@@ -217,12 +217,12 @@
 	floor = 1
 	return 1
 
-/obj/effect/vine/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/effect/vine/attackby(var/obj/item/W, var/mob/user)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	START_PROCESSING(SSvines, src)
 
-	if(isWirecutter(W) || istype(W, /obj/item/weapon/scalpel))
+	if(isWirecutter(W) || istype(W, /obj/item/scalpel))
 		if(sampled)
 			to_chat(user, "<span class='warning'>You cannot take another sample from \the [src].</span>")
 			return

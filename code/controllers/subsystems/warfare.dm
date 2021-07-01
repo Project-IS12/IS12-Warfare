@@ -1,14 +1,12 @@
 #define KOTH_VICTORY_POINTS 500
 
-/var/datum/controller/subsystem/warfare/SSWarfare
-
 /datum/team
 	var/list/team = list()  // members of the team
 	var/list/team_clients = list()
 	var/list/cooldown = list()  // captain verbs that are being cooled down and cant be used
-	var/points = 0
-	var/nuked = 0
-	var/left = 60
+	var/points = 0 //KOTH stuff, trench capping game mode doesn't use this.
+	var/nuked = FALSE //When set to true this side instantly loses. PONR uses it.
+	var/left = 60 //Number of reinforcements both sides have.
 	var/datum/squad/squadA
 	var/datum/squad/squadB
 	var/datum/squad/squadC
@@ -39,8 +37,6 @@
 /datum/squad/delta
 	name = "Delta"
 
-
-
 /datum/team/proc/startCooldown(var/thingToCoolDown, var/time = 1 MINUTE)
 	cooldown |= thingToCoolDown
 	spawn(time)
@@ -49,7 +45,7 @@
 /datum/team/proc/checkCooldown(var/thingToCheck)
 	return thingToCheck in cooldown
 
-/datum/controller/subsystem/warfare
+SUBSYSTEM_DEF(warfare)
 	name = "Warfare"
 	flags = SS_NO_FIRE
 	wait = 1
@@ -63,7 +59,7 @@
 /datum/controller/subsystem/warfare/Initialize()
 	blue = new /datum/team
 	red = new /datum/team
-	SSWarfare = src
+	SSwarfare = src
 	..()
 
 /datum/controller/subsystem/warfare/proc/end_warfare(var/loser)
@@ -73,7 +69,7 @@
 		blue.nuked = TRUE
 
 /datum/controller/subsystem/warfare/proc/begin_countDown()
-	spawn(config.warfare_start_time MINUTES)
+	spawn(config.warfare_start_time MINUTES)	// :disgust:
 		start_battle()
 
 /datum/controller/subsystem/warfare/proc/start_battle()
@@ -82,8 +78,10 @@
 	battle_time = TRUE
 	to_world("<big>I AM READY TO DIE NOW!</big>")
 	sound_to(world, 'sound/effects/ready_to_die.ogg')//Sound notifying them.
-	for(var/turf/simulated/floor/dirty/fake/F in world)
+	for(var/turf/simulated/floor/dirty/fake/F in world)//Make all the fake dirt into real dirt.
 		F.ChangeTurf(/turf/simulated/floor/dirty)
+	for(var/turf/simulated/floor/trench/fake/T in world)//Make all the fake trenches into real ones.
+		T.ChangeTurf(/turf/simulated/floor/trench)
 
 /datum/controller/subsystem/warfare/proc/check_completion()
 	if(red.left <= 0)

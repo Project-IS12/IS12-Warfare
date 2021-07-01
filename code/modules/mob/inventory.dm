@@ -89,14 +89,14 @@ var/list/slot_equipment_priority = list( \
 
 /mob/proc/equip_to_storage(obj/item/newitem)
 	// Try put it in their backpack
-	if(istype(src.back,/obj/item/weapon/storage))
-		var/obj/item/weapon/storage/backpack = src.back
+	if(istype(src.back,/obj/item/storage))
+		var/obj/item/storage/backpack = src.back
 		if(backpack.can_be_inserted(newitem, null, 1))
 			newitem.forceMove(src.back)
 			return backpack
 
 	// Try to place it in any item that can store stuff, on the mob.
-	for(var/obj/item/weapon/storage/S in src.contents)
+	for(var/obj/item/storage/S in src.contents)
 		if(S.can_be_inserted(newitem, null, 1))
 			newitem.forceMove(S)
 			return S
@@ -188,8 +188,8 @@ var/list/slot_equipment_priority = list( \
 			return
 		if(I.drop_sound)
 			playsound(I, I.drop_sound, 25, 0)
-		if(istype(I, /obj/item/weapon/gun))//Snowflake check yeah, but I'm tired of people getting fucking shot when they pull their gun out from their inventory.
-			var/obj/item/weapon/gun/G = I
+		if(istype(I, /obj/item/gun))//Snowflake check yeah, but I'm tired of people getting fucking shot when they pull their gun out from their inventory.
+			var/obj/item/gun/G = I
 			G.check_gun_safety(src)
 
 

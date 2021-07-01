@@ -5,7 +5,7 @@
 
 /obj/machinery/computer/shuttle_control/explore/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/data[0]
-	var/datum/shuttle/autodock/overmap/shuttle = shuttle_controller.shuttles[shuttle_tag]
+	var/datum/shuttle/autodock/overmap/shuttle = SSshuttles.shuttles[shuttle_tag]
 	if (!istype(shuttle))
 		to_chat(usr,"<span class='warning'>Unable to establish link with the shuttle.</span>")
 		return
@@ -38,7 +38,7 @@
 		if(shuttle.fuel_ports.len)
 			for(var/obj/structure/fuel_port/FP in shuttle.fuel_ports) //loop through fuel ports
 				if(FP.contents.len)
-					var/obj/item/weapon/tank/fuel_tank = FP.contents[1]
+					var/obj/item/tank/fuel_tank = FP.contents[1]
 					if(istype(fuel_tank))
 						fuel_pressure += fuel_tank.air_contents.return_pressure()
 						fuel_max_pressure += 1013
@@ -62,7 +62,7 @@
 		"fuel_pressure_status" = (fuel_pressure/fuel_max_pressure > 0.2)? "good" : "bad"
 	)
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnanoui.try_update_ui(user, src, ui_key, ui, data, force_open)
 
 	if (!ui)
 		ui = new(user, src, ui_key, "shuttle_control_console_exploration.tmpl", "[shuttle_tag] Shuttle Control", 510, 340)

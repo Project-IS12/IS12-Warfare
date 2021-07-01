@@ -120,16 +120,18 @@
 			if(ticker.current_state == GAME_STATE_FINISHED)
 				to_chat(M, "<span class='warning'>The battle is over! There is no need to fight!</span>")
 				return
+			if(aspect_chosen(/datum/aspect/trenchmas))
+				return
 			//All this shit is for surgery
 			/*
 			if(istype(H))
-				for(var/obj/item/weapon/storage/organ_sack/sack in contents)
+				for(var/obj/item/storage/organ_sack/sack in contents)
 					qdel(sack)//If there's a sack there delete it
 				var/obj/item/organ/external/affecting = get_organ(H.zone_sel.selecting)//Check if we're targeting an organ we can operate one
 				if(can_operate(src, H))
 					if(!isnull(affecting) && affecting.open())
 						var/has_organs = null
-						var/obj/item/weapon/storage/organ_sack/sack = new(src)////Make a new sack
+						var/obj/item/storage/organ_sack/sack = new(src)////Make a new sack
 						if(!has_organs)
 							for(var/obj/item/organ/internal/I in affecting.internal_organs)//Loop through the organs if we haven't already
 								to_chat(H, "This is firing1")
@@ -194,6 +196,9 @@
 		if(I_HURT)
 			if(ticker.current_state == GAME_STATE_FINISHED)
 				to_chat(M, "<span class='warning'>The battle is over! There is no need to fight!</span>")
+				return
+			if(aspect_chosen(/datum/aspect/trenchmas))
+				to_chat(M, "<span class='warning'>It's Trenchmas! It is not a time to fight!</span>")
 				return
 			if(H.warfare_faction)
 				if(H.warfare_faction == src.warfare_faction && src.stat != DEAD)

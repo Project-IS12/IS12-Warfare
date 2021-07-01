@@ -27,7 +27,7 @@
 /obj/machinery/button/attack_ai(mob/user as mob)
 	return attack_hand(user)
 
-/obj/machinery/button/attackby(obj/item/weapon/W, mob/user as mob)
+/obj/machinery/button/attackby(obj/item/W, mob/user as mob)
 	return attack_hand(user)
 
 /obj/machinery/button/attack_hand(mob/living/user)
@@ -213,7 +213,7 @@
 
 /obj/machinery/button/toggle/valve/Initialize()
 	. = ..()
-	radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
+	radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
 
 /obj/machinery/button/toggle/valve/update_icon()
 	if(!active)

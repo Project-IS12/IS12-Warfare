@@ -83,6 +83,8 @@
 		//Updates the number of stored chemicals for powers
 		handle_changeling()
 
+		update_aim_icon() //Update your aim icon first, because it's more important than that other dumb shit below it.
+
 		//Organs and blood
 		handle_organs()
 
@@ -95,8 +97,6 @@
 		handle_medical_side_effects()
 
 		handle_diagonostic_signs()
-
-		update_aim_icon()
 
 		handle_warfare_life()
 
@@ -912,23 +912,6 @@
 	if(stat != DEAD && vomit_score > 25 && prob(10))
 		spawn vomit(1, vomit_score, vomit_score/25)
 
-	//0% chance of playing a scary sound to someone who's in complete darkness
-	/*if(isturf(loc) && rand(1,1000) == 1)
-		var/turf/T = loc
-		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			playsound_local(src,pick(GLOB.scarySounds),50, 1, -1)
-
-
-	if(isturf(loc))
-		var/turf/T = loc
-		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			if(!has_trait(/datum/trait/hardcore))
-				add_event("dark", /datum/happiness_event/dark)
-		else
-			clear_event("dark")
-
-	*/
-
 	var/area/A = get_area(src)
 	if(client && world.time >= client.played + 600)
 		A.play_ambience(src)
@@ -1158,9 +1141,9 @@
 		var/image/holder = hud_list[ID_HUD]
 		holder.icon_state = "hudunknown"
 		if(wear_id)
-			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
+			var/obj/item/card/id/I = wear_id.GetIdCard()
 			if(I)
-				var/datum/job/J = job_master.GetJob(I.GetJobName())
+				var/datum/job/J = SSjobs.GetJob(I.GetJobName())
 				if(J)
 					holder.icon_state = J.hud_icon
 
@@ -1171,7 +1154,7 @@
 		holder.icon_state = "hudblank"
 		var/perpname = name
 		if(wear_id)
-			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
+			var/obj/item/card/id/I = wear_id.GetIdCard()
 			if(I)
 				perpname = I.registered_name
 
@@ -1200,13 +1183,13 @@
 		holder2.icon_state = "hudblank"
 		holder3.icon_state = "hudblank"
 
-		for(var/obj/item/weapon/implant/I in src)
+		for(var/obj/item/implant/I in src)
 			if(I.implanted)
-				if(istype(I,/obj/item/weapon/implant/tracking))
+				if(istype(I,/obj/item/implant/tracking))
 					holder1.icon_state = "hud_imp_tracking"
-				if(istype(I,/obj/item/weapon/implant/loyalty))
+				if(istype(I,/obj/item/implant/loyalty))
 					holder2.icon_state = "hud_imp_loyal"
-				if(istype(I,/obj/item/weapon/implant/chem))
+				if(istype(I,/obj/item/implant/chem))
 					holder3.icon_state = "hud_imp_chem"
 
 		hud_list[IMPTRACK_HUD] = holder1
@@ -1264,10 +1247,10 @@
 	restore_blood()
 	full_prosthetic = null
 	shock_stage = 0
-	if(job_master.GetJobByTitle(job)?.is_blue_team && !(src in SSWarfare.blue.team))
-		SSWarfare.blue.team.Add(src)
-	if(job_master.GetJobByTitle(job)?.is_red_team && !(src in SSWarfare.red.team))
-		SSWarfare.red.team.Add(src)
+	if(SSjobs.GetJobByTitle(job)?.is_blue_team && !(src in SSwarfare.blue.team))
+		SSwarfare.blue.team.Add(src)
+	if(SSjobs.GetJobByTitle(job)?.is_red_team && !(src in SSwarfare.red.team))
+		SSwarfare.red.team.Add(src)
 	..()
 
 /mob/living/carbon/human/reset_view(atom/A)
@@ -1363,8 +1346,8 @@
 			if(prob(50))
 				vomit()
 
-	for(var/obj/item/weapon/reagent_containers/food/snacks/poo/P in range(5, src))
-		if(istype(P.loc, /obj/machinery/disposal) || istype(P.loc, /obj/item/weapon/storage/bag))
+	for(var/obj/item/reagent_containers/food/snacks/poo/P in range(5, src))
+		if(istype(P.loc, /obj/machinery/disposal) || istype(P.loc, /obj/item/storage/bag))
 			return
 
 		if(prob(1))

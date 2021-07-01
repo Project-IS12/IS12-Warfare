@@ -225,7 +225,7 @@
 			to_chat(user, "<span class='notice'>\The [src] is dead, medical items won't bring \him back to life.</span>")
 		return
 	if(meat_type && (stat == DEAD))	//if the animal has a meat, and if it is dead.
-		if(istype(O, /obj/item/weapon/material/knife) || istype(O, /obj/item/weapon/material/knife/butch) || istype(O, /obj/item/weapon/material/sword))//Swords work too.
+		if(istype(O, /obj/item/material/knife) || istype(O, /obj/item/material/knife/butch) || istype(O, /obj/item/material/sword))//Swords work too.
 			if(!butchered)
 				playsound(src, 'sound/weapons/pierce.ogg', 100, FALSE)
 				if(do_after(user, 30, src))
@@ -252,7 +252,7 @@
 	var/damage = O.force
 	if (O.damtype == PAIN)
 		damage = 0
-	if(supernatural && istype(O,/obj/item/weapon/nullrod))
+	if(supernatural && istype(O,/obj/item/nullrod))
 		damage *= 2
 		purge = 3
 	adjustBruteLoss(damage)

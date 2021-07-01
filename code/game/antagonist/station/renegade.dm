@@ -25,22 +25,22 @@ var/datum/antagonist/renegade/renegades
 	antaghud_indicator = "hudrenegade"
 
 	var/list/spawn_guns = list(
-		/obj/item/weapon/gun/energy/laser,
-		/obj/item/weapon/gun/energy/gun,
-		/obj/item/weapon/gun/energy/crossbow,
-		/obj/item/weapon/gun/energy/crossbow/largecrossbow,
-		/obj/item/weapon/gun/projectile/automatic,
-		/obj/item/weapon/gun/projectile/automatic/mini_uzi,
-		/obj/item/weapon/gun/projectile/automatic/c20r,
-		/obj/item/weapon/gun/projectile/automatic/wt550,
-		/obj/item/weapon/gun/projectile/colt/detective,
-		/obj/item/weapon/gun/projectile/sec/wood,
-		/obj/item/weapon/gun/projectile/silenced,
-		/obj/item/weapon/gun/projectile/pistol,
-		/obj/item/weapon/gun/projectile/revolver,
-		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn,
-		/obj/item/weapon/gun/projectile/magnum_pistol,
-		list(/obj/item/weapon/gun/projectile/revolver/detective, /obj/item/weapon/gun/projectile/revolver/deckard)
+		/obj/item/gun/energy/laser,
+		/obj/item/gun/energy/gun,
+		/obj/item/gun/energy/crossbow,
+		/obj/item/gun/energy/crossbow/largecrossbow,
+		/obj/item/gun/projectile/automatic,
+		/obj/item/gun/projectile/automatic/mini_uzi,
+		/obj/item/gun/projectile/automatic/c20r,
+		/obj/item/gun/projectile/automatic/wt550,
+		/obj/item/gun/projectile/colt/detective,
+		/obj/item/gun/projectile/sec/wood,
+		/obj/item/gun/projectile/silenced,
+		/obj/item/gun/projectile/pistol,
+		/obj/item/gun/projectile/revolver,
+		/obj/item/gun/projectile/shotgun/doublebarrel/sawn,
+		/obj/item/gun/projectile/magnum_pistol,
+		list(/obj/item/gun/projectile/revolver/detective, /obj/item/gun/projectile/revolver/deckard)
 		)
 
 /datum/antagonist/renegade/New()

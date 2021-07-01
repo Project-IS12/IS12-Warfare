@@ -203,7 +203,7 @@
 	tooltip.screen_loc = "NORTH,WEST+25%"
 	tooltip.maptext_width = 256
 	tooltip.maptext_x = 0
-	tooltip.plane = FULLSCREEN_PLANE
+	tooltip.plane = HUD_PLANE
 
 	if (mob && mob.get_preference_value("TOOLTIP") == GLOB.PREF_NO)
 		tooltip.alpha = 0
@@ -220,13 +220,13 @@
 				var/mob/living/carbon/human/H = object
 				if(H.warfare_faction)
 					if(H.warfare_faction == RED_TEAM)
-						tooltip.maptext = "<center style=\"text-shadow: 1px 1px 2px black;\"><font color='#b27676'>[uppertext(object.name)]</font></center>"
+						tooltip.maptext = "<b><center style=\"text-shadow: 1px 1px 2px black;\"><span style=\"font-family: 'Small Fonts'\"><font color='#b27676'>[uppertext(object.name)]</font></span></center></b>"
 					else
-						tooltip.maptext = "<center style=\"text-shadow: 1px 1px 2px black;\"><font color='#76abb2'>[uppertext(object.name)]</font></center>"
+						tooltip.maptext = "<b><center style=\"text-shadow: 1px 1px 2px black;\"><span style=\"font-family: 'Small Fonts'\"><font color='#76abb2'>[uppertext(object.name)]</font></span></center></b>"
 				else
-					tooltip.maptext = "<center style=\"text-shadow: 1px 1px 2px black;\">[uppertext(object.name)]</center>"
+					tooltip.maptext = "<b><center style=\"text-shadow: 1px 1px 2px black;\"><span style=\"font-family: 'Small Fonts'\">[uppertext(object.name)]</span></center></b>"
 			else
-				tooltip.maptext = "<center style=\"text-shadow: 1px 1px 2px black;\">[uppertext(object.name)]</center>"
+				tooltip.maptext = "<b><center style=\"text-shadow: 1px 1px 2px black;\"><span style=\"font-family: 'Small Fonts'\">[uppertext(object.name)]</span></center></b>"
 
 
 //////////////
@@ -240,9 +240,9 @@
 	GLOB.ckey_directory -= ckey
 	GLOB.clients -= src
 	if(warfare_faction == BLUE_TEAM)//remove them from the list if they disconnect, so we don't fuck the list up.
-		SSWarfare.blue.team_clients -= src
+		SSwarfare.blue.team_clients -= src
 	else
-		SSWarfare.red.team_clients -= src
+		SSwarfare.red.team_clients -= src
 	return ..()
 
 /client/Destroy()

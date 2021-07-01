@@ -63,7 +63,8 @@
 #define SPACE UNDERWATER
 
 GLOBAL_LIST_INIT(shatter_sound,list('sound/effects/Glassbr1.ogg','sound/effects/Glassbr2.ogg','sound/effects/Glassbr3.ogg'))
-GLOBAL_LIST_INIT(explosion_sound,list('sound/effects/explosion1.ogg','sound/effects/explosion2.ogg'))
+GLOBAL_LIST_INIT(explosion_sound,list('sound/effects/explosion1.ogg','sound/effects/explosion2.ogg','sound/effects/explosion3.ogg','sound/effects/explosion4.ogg','sound/effects/explosion5.ogg','sound/effects/explosion6.ogg'))
+GLOBAL_LIST_INIT(explosion_small,list('sound/effects/explosion_small1.ogg', 'sound/effects/explosion_small2.ogg', 'sound/effects/explosion_small3.ogg'))
 GLOBAL_LIST_INIT(spark_sound,list('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg','sound/effects/sparks4.ogg'))
 GLOBAL_LIST_INIT(rustle_sound,list('sound/effects/rustle1.ogg','sound/effects/rustle2.ogg','sound/effects/rustle3.ogg','sound/effects/rustle4.ogg','sound/effects/rustle5.ogg'))
 GLOBAL_LIST_INIT(punch_sound,list('sound/weapons/punch_01.ogg','sound/weapons/punch_02.ogg','sound/weapons/punch_03.ogg','sound/weapons/punch_04.ogg','sound/weapons/punch_05.ogg','sound/weapons/punch_06.ogg','sound/weapons/punch_07.ogg','sound/weapons/punch_08.ogg','sound/weapons/punch_09.ogg','sound/weapons/punch_10.ogg'))
@@ -242,6 +243,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 		switch(soundin)
 			if ("shatter") soundin = pick(GLOB.shatter_sound)
 			if ("explosion") soundin = pick(GLOB.explosion_sound)
+			if ("explosion_small") soundin = pick(GLOB.explosion_small)
 			if ("sparks") soundin = pick(GLOB.spark_sound)
 			if ("rustle") soundin = pick(GLOB.rustle_sound)
 			if ("punch") soundin = pick(GLOB.punch_sound)
@@ -282,3 +284,10 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("eat") soundin = pick(GLOB.eat_food)
 			if ("drink") soundin = pick(GLOB.drink_sound)
 	return soundin
+
+
+/client/verb/stop_client_sounds()
+	set name = "Stop Sounds"
+	set category = "OOC"
+	set desc = "Stop Current Sounds"
+	sound_to(src, sound(null, repeat = 0, wait = 0, volume = 100))

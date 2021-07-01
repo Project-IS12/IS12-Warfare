@@ -133,7 +133,7 @@ var/list/organ_cache = list()
 		var/obj/item/organ/O = loc
 		return O.is_preserved()
 	else
-		return (istype(loc,/obj/item/device/mmi) || istype(loc,/obj/structure/closet/body_bag/cryobag) || istype(loc,/obj/structure/closet/crate/freezer) || istype(loc,/obj/item/weapon/storage/box/freezer))
+		return (istype(loc,/obj/item/device/mmi) || istype(loc,/obj/structure/closet/body_bag/cryobag) || istype(loc,/obj/structure/closet/crate/freezer) || istype(loc,/obj/item/storage/box/freezer))
 
 /obj/item/organ/examine(mob/user)
 	. = ..(user)
@@ -297,7 +297,7 @@ var/list/organ_cache = list()
 		return
 
 	user.drop_from_inventory(src)
-	var/obj/item/weapon/reagent_containers/food/snacks/organ/O = new(get_turf(src))
+	var/obj/item/reagent_containers/food/snacks/organ/O = new(get_turf(src))
 	O.SetName(name)
 	O.appearance = src
 	reagents.trans_to(O, reagents.total_volume)
@@ -362,7 +362,7 @@ var/list/organ_cache = list()
 
 
 //Organ sack stuff.
-/obj/item/weapon/storage/organ_sack
+/obj/item/storage/organ_sack
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	use_sound = null
@@ -372,7 +372,7 @@ var/list/organ_cache = list()
 	icon = 'icons/obj/surgery.dmi'
 	var/obj/item/organ/internal/reference
 
-/obj/item/facade/organ/on_exit_storage(obj/item/weapon/storage/S as obj)
+/obj/item/facade/organ/on_exit_storage(obj/item/storage/S as obj)
 	if(reference)
 		//var/obj/item/organ/internal/removed_organ
 		//removed_organ = reference

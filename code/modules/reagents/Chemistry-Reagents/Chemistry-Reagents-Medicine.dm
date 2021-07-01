@@ -609,6 +609,7 @@
 	overdose = 6
 	scannable = 1
 	data = 0
+	reagent_addiction_strength = 2
 
 /datum/reagent/nicotine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -618,7 +619,6 @@
 	if(volume <= 0.02 && M.chem_doses[type] >= 0.05 && world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY * 0.3)
 		data = world.time
 		to_chat(M, "<span class='warning'>You feel antsy, your concentration wavers...</span>")
-		M.add_event("relaxed", /datum/happiness_event/antsy)//It's relaxed so that it overrides the relaxed event.
 	else
 		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY * 0.3)
 			data = world.time

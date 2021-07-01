@@ -23,7 +23,13 @@
 	desc = "This dirt doesn't look diggable."
 	can_be_dug = FALSE
 
+/turf/simulated/floor/dirty/tough/lightless/
+	has_light = FALSE
+
 /turf/simulated/floor/dirty/tough/fake //Can't be click dragged on.
+	atom_flags = null
+
+/turf/simulated/floor/dirty/tough/lightless/fake
 	atom_flags = null
 
 /turf/simulated/floor/dirty/tough/ex_act(severity)//Can't be blown up.
@@ -55,8 +61,8 @@
 		if(locate(/obj/item/device/boombox) in user)//Locate the boombox.
 			to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")//No you fucking don't.
 			return //Keep that boombox at base asshole.
-		if(locate(/obj/item/weapon/storage) in user)//Gotta check storage as well.
-			var/obj/item/weapon/storage/S = locate() in user
+		if(locate(/obj/item/storage) in user)//Gotta check storage as well.
+			var/obj/item/storage/S = locate() in user
 			if(locate(/obj/item/device/boombox) in S)
 				to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 				return
@@ -97,10 +103,12 @@
 	temperature = T0C - 60
 	//icon_state = pick("snow[rand(1,12)]","snow0")
 	dir = pick(GLOB.alldirs)
-	if(!locate(/obj/effect/lighting_dummy/daylight) in src)
+	if(!(locate(/obj/effect/lighting_dummy/daylight) in src) && has_light)
 		new /obj/effect/lighting_dummy/daylight(src)
 	spawn(1)
 		overlays.Cut()
+		vis_contents.Cut()
+		update_icon()
 	if(loc.type != /area/warfare/battlefield/no_mans_land) // no base puddles
 		return
 	if(!can_generate_water)//This type can't generate water so don't bother.
@@ -123,7 +131,7 @@
 						waters += possible_water
 
 /turf/simulated/floor/dirty/attackby(obj/O as obj, mob/living/user as mob)
-	if(istype(O, /obj/item/weapon/shovel))
+	if(istype(O, /obj/item/shovel))
 		if(!user.doing_something)
 			user.doing_something = TRUE
 			if(src.density)
@@ -149,7 +157,7 @@
 /turf/simulated/floor/dirty/RightClick(mob/living/user)
 	if(!CanPhysicallyInteract(user))
 		return
-	var/obj/item/weapon/shovel/S = user.get_active_hand()
+	var/obj/item/shovel/S = user.get_active_hand()
 	if(!istype(S))
 		return
 	if(!can_be_dug)//No escaping to mid early.
@@ -210,6 +218,7 @@
 	movement_delay = 3
 	mudpit = 1
 	has_coldbreath = TRUE
+	var/has_light = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /turf/simulated/floor/exoplanet/water/shallow/update_dirt()
@@ -262,8 +271,8 @@
 			if(locate(/obj/item/device/boombox) in user)//Locate the boombox.
 				to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")//No you fucking don't.
 				return //Keep that boombox at base asshole.
-			if(locate(/obj/item/weapon/storage) in user)//Gotta check storage as well.
-				var/obj/item/weapon/storage/S = locate() in user
+			if(locate(/obj/item/storage) in user)//Gotta check storage as well.
+				var/obj/item/storage/S = locate() in user
 				if(locate(/obj/item/device/boombox) in S)
 					to_chat(user, "I can't bring this with me onto the battlefield. Wouldn't want to lose it.")
 					return
@@ -276,9 +285,12 @@
 		var/mob/living/L = A
 		L.ExtinguishMob()
 
+/turf/simulated/floor/exoplanet/water/shallow/lightless
+	has_light = FALSE
+
 /turf/simulated/floor/exoplanet/water/shallow/New()
 	..()
-	if(!locate(/obj/effect/lighting_dummy/daylight) in src)
+	if((!locate(/obj/effect/lighting_dummy/daylight) in src) && has_light)
 		new /obj/effect/lighting_dummy/daylight(src)
 	temperature = T0C - 80
 	for(var/obj/effect/water/bottom/B in src)
@@ -319,8 +331,8 @@
 		qdel(T)
 
 /turf/simulated/floor/exoplanet/water/shallow/attackby(obj/item/O, mob/user)
-	if(istype(O, /obj/item/weapon/reagent_containers))
-		var/obj/item/weapon/reagent_containers/RG = O
+	if(istype(O, /obj/item/reagent_containers))
+		var/obj/item/reagent_containers/RG = O
 		if (istype(RG) && RG.is_open_container())
 			RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 			user.visible_message("<span class='notice'>[user] fills \the [RG] using \the [src].</span>","<span class='notice'>You fill \the [RG] using \the [src].</span>")

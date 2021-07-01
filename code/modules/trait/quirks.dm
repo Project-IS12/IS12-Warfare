@@ -9,21 +9,21 @@
 /datum/quirk/hypersensitive //Doubles mood values.
 	name = "hypersensitive"
 	description = "I'm more sensitive to good and bad moods than normal."
-/*
+
 /datum/quirk/alcoholic //Starts out addicted to alcohol
 	name = "alcoholic"
 	description = "I need booze to be happy."
 
 /datum/quirk/cig_addict //Starts out addicted to nicotine.
-	name = "smoker"
+	name = "a smoker"
 	description = "I need a smoke every now and then."
-*/
+
 /datum/quirk/brave //Still gets moods, but is not bothered by them.
 	name = "brave"
 	description = "I'm not stressed by combat."
 
 /datum/quirk/no_bathroom //You'll never have to use the restroom.
-	name = "incontinent"
+	name = "bladderless"
 	description = "I don't have to use the restroom."
 
 /datum/quirk/tough //Still feel pain, just not bothered by it as often.

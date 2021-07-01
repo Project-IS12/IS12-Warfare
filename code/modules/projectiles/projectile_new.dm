@@ -178,7 +178,7 @@
 	return fire(angle_override, direct_target)
 
 //called to launch a projectile from a gun
-/obj/item/projectile/proc/launch_from_gun(atom/target, target_zone, mob/user, params, angle_override, forced_spread, var/obj/item/weapon/gun/launcher)
+/obj/item/projectile/proc/launch_from_gun(atom/target, target_zone, mob/user, params, angle_override, forced_spread, var/obj/item/gun/launcher)
 
 	shot_from = launcher.name
 	silenced = launcher.silenced
@@ -710,7 +710,7 @@
 /obj/item/projectile/proc/old_style_target(atom/target, atom/source)
 	if(!source)
 		source = get_turf(src)
-	setAngle(Get_Angle(source, target))
+	setAngle(get_projectile_angle(source, target))
 
 /obj/item/projectile/proc/fire(angle, atom/direct_target)
 	//If no angle needs to resolve it from xo/yo!
@@ -731,7 +731,7 @@
 			qdel(src)
 			return
 		var/turf/target = locate(Clamp(starting + xo, 1, world.maxx), Clamp(starting + yo, 1, world.maxy), starting.z)
-		setAngle(Get_Angle(src, target))
+		setAngle(get_projectile_angle(src, target))
 	if(dispersion)
 		setAngle(Angle + rand(-dispersion, dispersion))
 	original_angle = Angle
@@ -743,18 +743,12 @@
 		if(ispath(muzzle_type))
 			if(firer)
 				var/obj/effect/projectile/thing = 	new muzzle_type(get_turf(src))
-				thing.dir = firer.dir
 				if(firer.dir == NORTH)
-					thing.pixel_y = 16
-					thing.plane = ABOVE_OBJ_PLANE
-				else if(firer.dir == SOUTH)
-					thing.pixel_y = -16
-				else if(firer.dir == EAST)
-					thing.pixel_x = 16
-				else if(firer.dir == WEST)
-					thing.pixel_x = -16
-				spawn(3)
-					qdel(thing)
+					thing.plane = LYING_HUMAN_PLANE //Below the mob.
+				var/matrix/M = new
+				M.Turn(Angle)
+				thing.transform = M
+				QDEL_IN(thing, 2)
 	forceMove(starting)
 	trajectory = new(starting.x, starting.y, starting.z, 0, 0, Angle, pixel_speed)
 	last_projectile_move = world.time
@@ -783,7 +777,7 @@
 	else if(targloc && curloc)
 		yo = targloc.y - curloc.y
 		xo = targloc.x - curloc.x
-		setAngle(Get_Angle(src, targloc))
+		setAngle(get_projectile_angle(src, targloc))
 	else
 		crash_with("WARNING: Projectile [type] fired without either mouse parameters, or a target atom to aim at!")
 		qdel(src)
@@ -1018,4 +1012,21 @@
 		for(var/i in beam_segments)
 			qdel(i)
 		beam_segments = null
-		QDEL_NULL(beam_index)
+		QDEL_NULL(beam_index)		QDEL_NULL(beam_index)
+
+
+/proc/get_projectile_angle(atom/source, atom/target)
+	var/sx = source.x * world.icon_size
+	var/sy = source.y * world.icon_size
+	var/tx = target.x * world.icon_size
+	var/ty = target.y * world.icon_size
+	var/atom/movable/AM
+	if(ismovable(source))
+		AM = source
+		sx += AM.step_x
+		sy += AM.step_y
+	if(ismovable(target))
+		AM = target
+		tx += AM.step_x
+		ty += AM.step_y
+	return SIMPLIFY_DEGREES(arctan(ty - sy, tx - sx))

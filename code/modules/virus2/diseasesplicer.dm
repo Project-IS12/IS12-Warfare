@@ -7,7 +7,7 @@
 	var/datum/disease2/effect/memorybank = null
 	var/list/species_buffer = null
 	var/analysed = 0
-	var/obj/item/weapon/virusdish/dish = null
+	var/obj/item/virusdish/dish = null
 	var/burning = 0
 	var/splicing = 0
 	var/scanning = 0
@@ -16,7 +16,7 @@
 	if(isScrewdriver(I))
 		return ..(I,user)
 
-	if(istype(I,/obj/item/weapon/virusdish))
+	if(istype(I,/obj/item/virusdish))
 		var/mob/living/carbon/c = user
 		if (dish)
 			to_chat(user, "\The [src] is already loaded.")
@@ -26,9 +26,9 @@
 		c.drop_item()
 		I.loc = src
 
-	if(istype(I,/obj/item/weapon/diseasedisk))
+	if(istype(I,/obj/item/diseasedisk))
 		to_chat(user, "You upload the contents of the disk onto the buffer.")
-		var/obj/item/weapon/diseasedisk/disk = I
+		var/obj/item/diseasedisk/disk = I
 		memorybank = disk.effect
 		species_buffer = disk.species
 		analysed = disk.analysed
@@ -80,7 +80,7 @@
 	else
 		data["info"] = "No dish loaded."
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnanoui.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "disease_splicer.tmpl", src.name, 400, 600)
 		ui.set_initial_data(data)
@@ -94,16 +94,16 @@
 		scanning -= 1
 		if(!scanning)
 			ping("\The [src] pings, \"Analysis complete.\"")
-			GLOB.nanomanager.update_uis(src)
+			SSnanoui.update_uis(src)
 	if(splicing)
 		splicing -= 1
 		if(!splicing)
 			ping("\The [src] pings, \"Splicing operation complete.\"")
-			GLOB.nanomanager.update_uis(src)
+			SSnanoui.update_uis(src)
 	if(burning)
 		burning -= 1
 		if(!burning)
-			var/obj/item/weapon/diseasedisk/d = new /obj/item/weapon/diseasedisk(src.loc)
+			var/obj/item/diseasedisk/d = new /obj/item/diseasedisk(src.loc)
 			d.analysed = analysed
 			if(analysed)
 				if (memorybank)
@@ -121,11 +121,11 @@
 					d.species = species_buffer
 
 			ping("\The [src] pings, \"Backup disk saved.\"")
-			GLOB.nanomanager.update_uis(src)
+			SSnanoui.update_uis(src)
 
 /obj/machinery/computer/diseasesplicer/OnTopic(user, href_list)
 	if (href_list["close"])
-		GLOB.nanomanager.close_user_uis(user, src, "main")
+		SSnanoui.close_user_uis(user, src, "main")
 		return TOPIC_HANDLED
 
 	if (href_list["grab"])

@@ -34,7 +34,7 @@
 
 /turf/simulated/floor/plating/reinforced/attackby(obj/item/C as obj, mob/user as mob)
 	if(isWelder(C) && reinforced_stage == 1)
-		var/obj/item/weapon/weldingtool/welder = C
+		var/obj/item/weldingtool/welder = C
 		if(welder.isOn())
 			visible_message("<span class='notice'>[user] start to unweld lattice from [src]!</span>")
 			if(do_after(user, 15 SECONDS) && welder.isOn())
@@ -242,7 +242,10 @@
 	if(ishuman(A))
 		var/mob/living/carbon/human/L = A
 		var/turf/Above = GetAbove(src)
+		if(L.isChild())
+			return 1
 		if(!L.resting && !istype(Above, /turf/simulated/open))
+			to_chat(L, "This passage is too low. I need to lie down.")
 			return 0
 		return 1
 
@@ -299,7 +302,7 @@
 /turf/simulated/floor/snow/New()
 	icon_state = pick("snow[rand(1,12)]","snow0")
 	..()
-	
+
 
 /turf/simulated/floor/light
 /turf/simulated/floor/airless/ceiling

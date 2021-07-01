@@ -74,9 +74,6 @@
 	if(modifiers["ctrl"])
 		CtrlClickOn(A)
 		return 1
-	if(modifiers["right"])
-		RightClickOn(A)
-		return 1
 
 	if(!canClick()) // in the year 2000...
 		return
@@ -92,6 +89,10 @@
 
 	if(modifiers["middle"])//This goes below everything else because of how middle click is used.
 		MiddleClickOn(A)
+		return
+
+	if(modifiers["right"])
+		RightClickOn(A)
 		return
 
 	if(istype(loc, /obj/mecha))

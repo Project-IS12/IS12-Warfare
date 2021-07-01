@@ -2,7 +2,7 @@
 
 **Website:** http://is12wiki.xyz/index.php/Main_Page
 
-**Main source code:** https://github.com/mattroks101/IS12-Warfare
+**Main source code:** https://github.com/Project-IS12/IS12-Warfare
 
 **Discord:**  https://discord.gg/FVRctMD
 
@@ -23,7 +23,7 @@ If you wish to license under GPL v3 please make this clear in the commit message
 
 The major change here is that if you host a server using any code licensed under AGPLv3 you are required to provide full source code for your servers users as well including addons and modifications you have made.
 
-**All original art assets are © 2020 Interstation12.  All rights reserved. You may not rip the original art assets and use them in your project without consent.**
+**All original art assets are © 2021 Interstation12.  All rights reserved. You may not rip the original art assets and use them in your project without consent.**
 
 
 ## How do I get this to compile?

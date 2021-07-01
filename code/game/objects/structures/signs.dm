@@ -4,6 +4,7 @@
 	opacity = 0
 	density = 0
 	layer = ABOVE_WINDOW_LAYER
+	plane = ABOVE_HUMAN_PLANE
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/structure/sign/ex_act(severity)
@@ -39,7 +40,7 @@
 	var/sign_state = ""
 
 /obj/item/sign/attackby(obj/item/tool as obj, mob/user as mob)	//construction
-	if(istype(tool, /obj/item/weapon/screwdriver) && isturf(user.loc))
+	if(istype(tool, /obj/item/screwdriver) && isturf(user.loc))
 		var/direction = input("In which direction?", "Select direction.") in list("North", "East", "South", "West", "Cancel")
 		if(direction == "Cancel") return
 		var/obj/structure/sign/S = new(user.loc)

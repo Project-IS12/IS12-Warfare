@@ -201,3 +201,15 @@
 /obj/screen/fullscreen/pain
 	icon_state = "brutedamageoverlay6"
 	alpha = 0
+
+/obj/screen/fullscreen/siegestorm //!@!SIEGEFARE!@!
+	icon = 'icons/effects/weather.dmi'
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	icon_state = "siege_storm"
+	alpha = 40
+
+/obj/screen/fullscreen/siegefog //!@!SIEGEFARE!@!
+	icon = 'icons/effects/weather.dmi'
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	icon_state = "siege_fog"
+	alpha = 120

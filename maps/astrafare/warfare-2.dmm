@@ -1,0 +1,670 @@
+"aa" = (/turf/simulated/mineral,/area/warfare/homebase/blue)
+"ab" = (/obj/structure/toilet{dir = 4; icon_state = "toilet00"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"am" = (/obj/structure/curtain,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"aB" = (/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"aG" = (/turf/simulated/open,/area/warfare/battlefield/trench_section/underground)
+"aI" = (/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"aM" = (/obj/structure/toilet,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"aS" = (/obj/effect/floor_decal/turf/cafe2,/obj/effect/floor_decal/industrial/warning_red,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"aY" = (/obj/structure/sink{dir = 8; pixel_x = -8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"bp" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"bw" = (/obj/structure/table/steel,/obj/item/reagent_containers/food/condiment/small/peppermill,/obj/item/reagent_containers/food/condiment/small/saltshaker,/obj/item/reagent_containers/food/condiment/small/sugar,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"bG" = (/obj/structure/torchwall/service{dir = 1},/turf/simulated/open,/area/warfare/battlefield/trench_section/underground)
+"bQ" = (/obj/effect/floor_decal/turf/bar2{dir = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"bU" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"bX" = (/mob/living/simple_animal/hostile/retaliate/rat,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"bZ" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"cd" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/effect/floor_decal/turf/coldroom,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"ck" = (/turf/simulated/wall/concrete,/area/warfare/homebase/blue)
+"ct" = (/obj/structure/torchwall/service{dir = 8},/turf/simulated/open,/area/warfare/battlefield/trench_section/underground)
+"cv" = (/turf/simulated/floor/trench/fake,/area/warfare/battlefield/capture_point/red/one)
+"cF" = (/obj/effect/floor_decal/turf/plate,/obj/effect/floor_decal/turf/plate,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"cH" = (/obj/structure/sink{dir = 8; pixel_x = -8},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"cN" = (/obj/structure/table/steel,/obj/machinery/microwave,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"de" = (/obj/structure/closet/crate,/obj/item/crowbar,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"dk" = (/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"do" = (/obj/structure/table/woodentable,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"dt" = (/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8; icon_state = "rwindow"},/turf/simulated/open,/area/warfare/homebase/blue)
+"du" = (/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 4},/turf/simulated/open,/area/warfare/homebase/blue)
+"dB" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"dG" = (/obj/structure/table/steel,/obj/machinery/cooker/cereal,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"dL" = (/obj/effect/landmark/start{name = "Blue Scavenger"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"dO" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"dS" = (/obj/structure/toilet{dir = 4; icon_state = "toilet00"},/obj/effect/landmark/start{name = "Blue Scavenger"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"dU" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"dX" = (/turf/simulated/floor/tiled/ramp{dir = 4},/area/warfare/homebase/red)
+"ee" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"ei" = (/obj/structure/window/reinforced{dir = 8; icon_state = "rwindow"},/turf/simulated/open,/area/warfare/homebase/blue)
+"em" = (/obj/structure/window/reinforced{dir = 4},/turf/simulated/open,/area/warfare/homebase/blue)
+"ep" = (/obj/effect/floor_decal/turf/bar2,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"es" = (/turf/simulated/mineral,/area/space)
+"ev" = (/obj/structure/poster/yellow{pixel_x = 32},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
+"eI" = (/mob/living/simple_animal/hostile/retaliate/rat,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"eR" = (/obj/structure/curtain,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"fc" = (/obj/structure/poster/blue{pixel_y = 32},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"fd" = (/obj/structure/window/reinforced{dir = 8; icon_state = "rwindow"},/turf/simulated/floor/tiled/ramp{dir = 1},/area/warfare/homebase/blue)
+"fo" = (/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/tiled/ramp{dir = 1},/area/warfare/homebase/blue)
+"fz" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8; icon_state = "rwindow"},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"fX" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"gc" = (/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"gg" = (/obj/structure/poster/blue{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"gp" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"gB" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"gI" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"gM" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"gT" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/effect/floor_decal/turf/bar2,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"ha" = (/mob/living/simple_animal/hostile/retaliate/rat,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/red)
+"hb" = (/obj/effect/floor_decal/turf/cafe,/obj/effect/floor_decal/industrial/warning_red,/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"hj" = (/obj/structure/bed/chair,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"hu" = (/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"hG" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue)
+"hP" = (/turf/simulated/floor/trenches,/area/warfare/homebase/blue)
+"ie" = (/obj/effect/floor_decal/turf/plate,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"if" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"iG" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"iT" = (/obj/structure/table/woodentable,/obj/item/reagent_containers/food/drinks/canteen,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"iW" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ja" = (/obj/structure/closet/crate,/obj/item/crowbar,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"jd" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"jh" = (/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"jl" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"jn" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"jq" = (/obj/item/shovel,/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/trench_section)
+"ju" = (/obj/structure/table/woodentable,/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"jv" = (/obj/structure/table/steel,/obj/effect/floor_decal/newcorner/blue/solid,/obj/machinery/cooker/cereal,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"jy" = (/obj/structure/table/steel,/obj/effect/floor_decal/newcorner/blue/solid,/obj/machinery/cooker/candy,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"jN" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/blue/one)
+"jV" = (/obj/structure/torchwall{pixel_y = 30},/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"ku" = (/obj/machinery/cooker/fryer,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"kx" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"kF" = (/obj/structure/closet{anchored = 1},/obj/item/clothing/mask/gas,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"kZ" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Engineer"},/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ln" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"lu" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"lv" = (/obj/structure/torchwall/service{dir = 8},/turf/simulated/open,/area/warfare/battlefield/capture_point/blue/two)
+"ly" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"lB" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"lC" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"lI" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"lL" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"lO" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"lQ" = (/obj/machinery/cooker/grill,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"lU" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"lV" = (/obj/effect/floor_decal/turf/bar2{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"mn" = (/obj/effect/floor_decal/newcorner/blue/solid,/obj/structure/poster/blue{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"mr" = (/obj/structure/table/steel,/obj/effect/floor_decal/newcorner/blue/solid,/obj/item/reagent_containers/food/drinks/bottle/vermouth,/obj/item/reagent_containers/food/drinks/bottle/tequilla,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"mv" = (/obj/structure/torchwall/service{dir = 4},/turf/simulated/open,/area/warfare/battlefield/capture_point/blue/two)
+"mH" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/farawayhome)
+"mN" = (/obj/machinery/cooker/oven,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"mQ" = (/obj/structure/closet/crate,/obj/item/plastique,/obj/item/plastique,/obj/item/plastique,/obj/item/crowbar,/obj/item/crowbar,/obj/item/crowbar,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue)
+"mT" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"na" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/blue/one)
+"nc" = (/obj/structure/table/steel,/obj/item/shovel,/turf/simulated/floor/plating,/area/warfare/battlefield/capture_point/mid)
+"nf" = (/obj/structure/table/woodentable,/obj/item/reagent_containers/food/drinks/canteen,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"ng" = (/obj/structure/torchwall/service{dir = 4},/turf/simulated/open,/area/warfare/battlefield/trench_section/underground)
+"nl" = (/turf/simulated/open,/area/warfare/battlefield/capture_point/blue/one)
+"nC" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"nH" = (/obj/structure/grille/floorgrille,/turf/simulated/open,/area/warfare/homebase/blue)
+"nI" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"nK" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"nO" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"nV" = (/obj/structure/table/woodentable,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"nY" = (/obj/structure/table/steel,/obj/machinery/microwave,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"oo" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/red/two)
+"ou" = (/obj/effect/floor_decal/newcorner/blue/solid,/obj/structure/table/steel,/obj/item/reagent_containers/food/condiment/small/sugar,/obj/item/reagent_containers/food/condiment/small/saltshaker,/obj/item/reagent_containers/food/condiment/small/peppermill,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"oE" = (/obj/effect/floor_decal/turf/plate,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"oK" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"oP" = (/obj/machinery/cooker/oven,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"pf" = (/obj/structure/sink{pixel_y = 20},/obj/structure/table/steel,/obj/item/reagent_containers/food/drinks/bottle/gin,/obj/item/reagent_containers/food/drinks/bottle/cognac,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"pt" = (/obj/structure/defensive_barrier,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"pu" = (/obj/item/defensive_barrier,/obj/item/defensive_barrier,/turf/simulated/floor/plating/reinforced,/area/warfare/battlefield/capture_point/mid)
+"pI" = (/obj/machinery/cooker/fryer,/obj/effect/floor_decal/newcorner/red/solid,/obj/structure/poster/red{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"qE" = (/turf/simulated/wall/concrete,/area/warfare/battlefield/capture_point/blue/one)
+"qW" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/capture_point/mid)
+"qY" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/no_mans_land)
+"rf" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"ri" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"rk" = (/obj/machinery/vending/dinnerware,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"rs" = (/obj/structure/closet/chefcloset,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"rA" = (/obj/effect/floor_decal/turf/plate,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"rF" = (/turf/simulated/floor/tiled/ramp,/area/warfare/homebase/blue)
+"rI" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/structure/poster/yellow{pixel_x = -32},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"rK" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/plating/reinforced,/area/warfare/battlefield/capture_point/mid)
+"rV" = (/obj/structure/table/steel,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"sj" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"sl" = (/obj/effect/floor_decal/turf/plate,/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"ss" = (/obj/effect/landmark/start{name = "Red Scavenger"},/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"st" = (/obj/structure/anti_tank,/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield)
+"sy" = (/obj/structure/torchwall/service{dir = 1},/turf/simulated/open,/area/warfare/battlefield/capture_point/red/two)
+"sz" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"sG" = (/obj/effect/floor_decal/turf/cafe2,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"sO" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"sW" = (/obj/structure/bed/chair,/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"tb" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"tc" = (/obj/structure/closet/secure_closet/freezer/meat,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"ti" = (/obj/structure/table/steel,/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"tj" = (/obj/structure/closet/secure_closet/freezer/fridge,/obj/effect/floor_decal/newcorner/blue/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"tl" = (/turf/simulated/open,/area/warfare/homebase/blue)
+"tA" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"tB" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"tF" = (/obj/structure/table/woodentable,/obj/structure/poster/blue{pixel_y = -32},/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"tR" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"tW" = (/obj/effect/floor_decal/turf/bar2,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"uh" = (/obj/structure/table/steel,/obj/item/paper/astrafare_lore4,/obj/structure/poster/yellow{pixel_x = -32},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"uk" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"um" = (/mob/living/simple_animal/hostile/retaliate/rat,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue)
+"un" = (/turf/simulated/floor/tiled/ramp{dir = 8},/area/warfare/homebase/blue)
+"uw" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 1},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"uA" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"uE" = (/obj/effect/floor_decal/turf/plate,/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"uF" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"uV" = (/turf/simulated/mineral,/area/warfare/battlefield/trench_section)
+"vf" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"vj" = (/obj/structure/anti_tank,/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/trench_section)
+"vr" = (/obj/machinery/sleeper{dir = 1; icon_state = "sleeper_0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"vt" = (/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"vu" = (/obj/structure/torchwall/service{pixel_y = 32},/turf/simulated/open,/area/warfare/battlefield/trench_section/underground)
+"vE" = (/obj/structure/bed/chair,/obj/effect/landmark/start{name = "Red Soldier"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"vI" = (/obj/machinery/bodyscanner{dir = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"vO" = (/obj/structure/dirt_wall,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue)
+"vW" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/no_mans_land)
+"wa" = (/obj/structure/curtain,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"wd" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/no_mans_land)
+"wl" = (/obj/structure/table/rack,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"wA" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xc" = (/obj/structure/table/steel,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xd" = (/obj/structure/sink{dir = 4; pixel_x = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xf" = (/obj/structure/table/steel,/obj/item/melee/trench_axe,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"xk" = (/obj/structure/table/woodentable,/obj/structure/banner/blue/small{pixel_y = 32},/obj/item/paper/astrafare_lore1,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"xn" = (/obj/structure/closet/crate,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/random/canned_food,/obj/effect/floor_decal/turf/coldroom,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"xs" = (/turf/simulated/floor/trench/fake,/area/warfare/battlefield/capture_point/blue/one)
+"xG" = (/obj/machinery/kaos/cargo_machine/blue,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"xJ" = (/obj/structure/banner/blue/small{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"xL" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"xV" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/trench_section/underground)
+"xZ" = (/obj/structure/table/steel,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"yb" = (/obj/machinery/body_scanconsole{dir = 1},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"yf" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"yh" = (/obj/structure/table/rack,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"yj" = (/obj/effect/floor_decal/turf/plate,/obj/effect/floor_decal/turf/plate,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"yv" = (/obj/structure/table/woodentable,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"yx" = (/obj/effect/floor_decal/turf/plating,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/blue/two)
+"yy" = (/obj/structure/poster/yellow{pixel_x = 32},/obj/structure/bed/chair,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"yD" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Blue Scavenger"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"yF" = (/obj/structure/bed/roller,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"yJ" = (/obj/structure/table/rack,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"yP" = (/obj/structure/dirt_wall,/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/trench_section)
+"yQ" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"yT" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/obj/effect/floor_decal/turf/plate,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"yX" = (/obj/structure/table/woodentable,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"zf" = (/turf/simulated/floor/dirty/tough,/area/warfare/battlefield/trench_section/underground)
+"zk" = (/obj/machinery/button/remote/blast_door/lever{id = "blue"; pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"zs" = (/obj/structure/dirt_wall,/obj/structure/dirt_wall,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue)
+"zR" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"zV" = (/obj/structure/grille,/obj/structure/window_frame,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Al" = (/obj/structure/crematorium{dir = 8},/obj/structure/crematorium{dir = 8},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"Ao" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/mid)
+"AI" = (/obj/structure/torchwall{pixel_y = 30},/obj/effect/floor_decal/turf/plate,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Bt" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"By" = (/obj/machinery/vending/dinnerware,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"BD" = (/obj/machinery/door/blast/shutters/open{id = "red"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"BO" = (/obj/item/reagent_containers/food/drinks/bottle/premiumvodka,/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/trench_section)
+"BP" = (/obj/structure/banner/blue{pixel_x = 0; pixel_y = 32},/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue)
+"BY" = (/obj/effect/landmark/start{name = "Red Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Ci" = (/obj/structure/closet/crate/trashcart,/obj/structure/closet/crate/trashcart,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Cj" = (/obj/structure/bed/roller,/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"CC" = (/obj/machinery/computer/operating,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"CG" = (/obj/structure/table/steel,/obj/item/storage/firstaid/surgery,/obj/item/FixOVein,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"CL" = (/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"CP" = (/obj/structure/table/steel,/obj/item/crutches,/obj/item/crutches,/obj/item/crutches,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"CU" = (/obj/structure/closet/secure_closet/medical1/warfare,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"CZ" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Dh" = (/obj/structure/grille,/obj/structure/window_frame,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Dj" = (/obj/structure/closet/crate/trashcart,/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Do" = (/obj/structure/table/steel,/obj/item/crutches,/obj/item/crutches,/obj/item/crutches,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Dx" = (/obj/machinery/vending/medical{req_access = newlist()},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Ec" = (/obj/machinery/vending/medical{req_access = newlist()},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Eg" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/red)
+"Eo" = (/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Ez" = (/obj/structure/closet/secure_closet/freezer/fridge,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"ED" = (/obj/machinery/computer/operating,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"EG" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield/trench_section)
+"EO" = (/obj/machinery/optable,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"ER" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"ET" = (/obj/structure/closet/crate/freezer,/obj/item/organ/external/arm/robo_arm,/obj/item/organ/external/arm/robo_arm,/obj/item/organ/external/arm/right/robo_arm,/obj/item/organ/external/arm/right/robo_arm,/obj/item/organ/external/hand/robo_hand,/obj/item/organ/external/hand/robo_hand,/obj/item/organ/external/hand/right/robo_hand,/obj/item/organ/external/hand/right/robo_hand,/obj/item/organ/external/leg/robo_leg,/obj/item/organ/external/leg/right/robo_leg,/obj/item/organ/external/leg/right/robo_leg,/obj/item/organ/external/foot/robo_foot,/obj/item/organ/external/foot/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"EV" = (/obj/structure/closet,/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey,/obj/item/reagent_containers/food/drinks/canteen,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"EY" = (/obj/structure/table/steel,/obj/item/storage/firstaid/surgery,/obj/item/FixOVein,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"Fa" = (/obj/structure/table/rack,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Fn" = (/obj/structure/closet/crate,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Fp" = (/obj/effect/floor_decal/turf/bar2,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Fq" = (/obj/structure/table/woodentable,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Fy" = (/obj/structure/sign/medholo{plane = -6},/obj/structure/grille,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"FA" = (/obj/effect/floor_decal/turf/aesculapius/mem,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FB" = (/obj/structure/closet/secure_closet/medical1/warfare,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FF" = (/obj/effect/floor_decal/turf/aesculapius/mento,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FH" = (/obj/effect/floor_decal/turf/aesculapius/mori,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FI" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FK" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"FT" = (/obj/structure/torchwall{pixel_y = 30},/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FW" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/obj/item/storage/fancy/cigarettes/carcinomas,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"FX" = (/obj/item/defensive_barrier,/obj/item/defensive_barrier,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"FY" = (/turf/simulated/mineral,/area/warfare/battlefield/no_mans_land)
+"FZ" = (/obj/structure/sign/neon/exit,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"Gh" = (/obj/structure/bed/chair/wheelchair{dir = 4},/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Gm" = (/obj/structure/closet/medical_wall,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"Gp" = (/obj/structure/sink{dir = 4; pixel_x = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Gs" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Red Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Gt" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/upperleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"GE" = (/obj/structure/poster/blue,/turf/simulated/wall/concrete,/area/warfare/homebase/blue)
+"GH" = (/obj/effect/landmark/start{name = "Blue Practitioner"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"GR" = (/obj/effect/landmark/start{name = "Red Medic"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"GS" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"GT" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8; icon_state = "rwindow"},/obj/structure/window/reinforced{dir = 1},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"GZ" = (/obj/structure/table/steel,/obj/item/grenade_dud,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"Ha" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"Hb" = (/obj/structure/cargo_pad/bottom_middle,/obj/structure/window/reinforced{dir = 1},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Hd" = (/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"He" = (/obj/structure/window/reinforced{dir = 1},/turf/simulated/floor/tiled/ramp{dir = 4; icon_state = "ramptop"},/area/warfare/homebase/blue)
+"Hg" = (/obj/effect/landmark/start{name = "Blue Scavenger"},/turf/simulated/floor/trenches,/area/warfare/homebase/blue)
+"Hh" = (/obj/structure/cargo_pad/bottom_right,/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 1},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Hk" = (/obj/structure/poster/red,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"Hn" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/structure/sign/neon/exit{pixel_y = 32; plane = -6},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Hp" = (/turf/simulated/floor/tiled/ramp{dir = 8},/area/warfare/homebase/red)
+"Hr" = (/obj/structure/sign/medholo{plane = -6},/obj/structure/grille,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Ht" = (/obj/effect/floor_decal/turf/bar2{dir = 8},/obj/structure/telearray/upperright,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"Hu" = (/obj/structure/table/woodentable,/obj/structure/sign/neon/cargo{pixel_y = 32; plane = -6},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Hy" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"HB" = (/obj/structure/cargo_pad,/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"HD" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"HH" = (/obj/structure/cargo_pad/bottom_right,/obj/effect/landmark/red_cargo,/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"HK" = (/obj/structure/table/woodentable,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"HT" = (/obj/structure/window/reinforced{dir = 1},/turf/simulated/open,/area/warfare/homebase/blue)
+"HY" = (/obj/structure/poster/yellow{pixel_x = -32},/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
+"Ih" = (/obj/structure/banner/red/small{pixel_y = 32},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Ir" = (/obj/structure/poster/yellow{pixel_x = 32},/obj/structure/bed/chair{dir = 8; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"IB" = (/turf/simulated/wall/concrete,/area/warfare/battlefield/capture_point/mid)
+"IC" = (/obj/machinery/kaos/cargo_machine/red,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"IE" = (/obj/machinery/door/blast/shutters/open{id = "blue"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"II" = (/obj/structure/banner/red/small{pixel_y = 32},/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"IJ" = (/obj/structure/table/rack,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"IL" = (/obj/structure/cargo_pad/bottom_middle,/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"IO" = (/obj/machinery/sleeper,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"IT" = (/obj/structure/cargo_pad/bottom_right,/obj/structure/window/reinforced{dir = 4},/obj/effect/landmark/red_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"IY" = (/obj/structure/table/rack,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"IZ" = (/obj/structure/curtain/medical,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Je" = (/turf/simulated/floor/plating,/area/warfare/battlefield/capture_point/mid)
+"Jf" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"Jj" = (/obj/structure/closet/crate,/obj/item/reagent_containers/ivbag/blood/AMinus,/obj/item/reagent_containers/ivbag/blood/AMinus,/obj/item/reagent_containers/ivbag/blood/APlus,/obj/item/reagent_containers/ivbag/blood/APlus,/obj/item/reagent_containers/ivbag/blood/BMinus,/obj/item/reagent_containers/ivbag/blood/BMinus,/obj/item/reagent_containers/ivbag/blood/BPlus,/obj/item/reagent_containers/ivbag/blood/BPlus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OPlus,/obj/item/reagent_containers/ivbag/blood/OPlus,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Jn" = (/obj/structure/curtain/medical,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"Jo" = (/obj/effect/landmark/map_data{height = 2},/turf/simulated/mineral,/area/space)
+"Jr" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Js" = (/obj/structure/closet,/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey,/obj/item/reagent_containers/food/drinks/canteen,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"JE" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/blue/two)
+"JF" = (/obj/structure/grille/floorgrille,/turf/simulated/open,/area/warfare/homebase/red)
+"JH" = (/obj/structure/sink{dir = 8; pixel_x = -8},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"JL" = (/turf/simulated/open,/area/warfare/homebase/red)
+"JS" = (/obj/structure/window/reinforced,/turf/simulated/floor/tiled/ramp{dir = 4; icon_state = "ramptop"},/area/warfare/homebase/blue)
+"JV" = (/obj/structure/closet/crate,/obj/item/plastique,/obj/item/plastique,/obj/item/plastique,/obj/item/crowbar,/obj/item/crowbar,/obj/item/crowbar,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/red)
+"Kc" = (/obj/item/torch/self_lit,/turf/simulated/floor/dirty/tough,/area/warfare/battlefield/trench_section/underground)
+"Ko" = (/turf/simulated/open,/area/warfare/battlefield/capture_point/red/two)
+"Kr" = (/obj/machinery/cooker/candy,/obj/structure/table/steel,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"Kv" = (/turf/simulated/floor/tiled,/area/warfare/battlefield/trench_section/underground)
+"Kw" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 1; icon_state = "door_closed"; name = "Emergency Medical"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Kz" = (/obj/structure/table/woodentable,/obj/item/paper/astrafare_lore1,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"KD" = (/obj/machinery/button/remote/blast_door/lever{id = "red"; pixel_x = 32},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"KG" = (/obj/structure/window/reinforced,/turf/simulated/open,/area/warfare/homebase/blue)
+"KJ" = (/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 4},/turf/simulated/open,/area/warfare/homebase/blue)
+"KT" = (/obj/structure/crematorium,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"La" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 1},/obj/machinery/door/blast/shutters/open{id = "blue"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Lf" = (/obj/machinery/button/crematorium{id = 2; pixel_y = 32; plane = -6},/obj/effect/landmark/start{name = "Red Practitioner"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Lh" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/centreleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"Li" = (/obj/structure/bed/chair,/obj/effect/landmark/start{name = "Red Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Lp" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2; name = "Emergency Medical"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"LA" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/centreright,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"LL" = (/obj/item/grenade_dud,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"LM" = (/obj/structure/table/steel,/obj/item/reagent_containers/spray/cleaner/warfare,/obj/item/reagent_containers/spray/cleaner/warfare,/obj/item/reagent_containers/spray/cleaner/warfare,/obj/item/reagent_containers/spray/cleaner/warfare,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"LS" = (/obj/structure/poster/red,/obj/structure/poster/red,/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"LT" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2},/obj/machinery/door/blast/shutters/open{id = "red"},/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Mj" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2},/obj/effect/floor_decal/turf/plate,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Mk" = (/obj/structure/closet/secure_closet/freezer/meat,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Mn" = (/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Mq" = (/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/structure/table/rack,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Mu" = (/obj/effect/floor_decal/turf/bar2,/obj/effect/landmark/start{name = "Blue Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Mz" = (/obj/structure/iv_drip,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"MX" = (/obj/structure/sign/neon/armory{pixel_y = -32; plane = -6},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"Ng" = (/obj/structure/table/rack,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Nk" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"Nt" = (/obj/effect/landmark/start{name = "Red Scavenger"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"NB" = (/obj/structure/torchwall/service{pixel_y = 32},/turf/simulated/open,/area/warfare/battlefield/capture_point/red/two)
+"NV" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Of" = (/obj/structure/closet/crate,/obj/item/reagent_containers/ivbag/blood/AMinus,/obj/item/reagent_containers/ivbag/blood/AMinus,/obj/item/reagent_containers/ivbag/blood/APlus,/obj/item/reagent_containers/ivbag/blood/APlus,/obj/item/reagent_containers/ivbag/blood/BMinus,/obj/item/reagent_containers/ivbag/blood/BMinus,/obj/item/reagent_containers/ivbag/blood/BPlus,/obj/item/reagent_containers/ivbag/blood/BPlus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OPlus,/obj/item/reagent_containers/ivbag/blood/OPlus,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Om" = (/obj/structure/iv_drip,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"On" = (/obj/structure/curtain,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Oq" = (/obj/structure/closet/crate/freezer,/obj/item/organ/external/arm/robo_arm,/obj/item/organ/external/arm/robo_arm,/obj/item/organ/external/arm/right/robo_arm,/obj/item/organ/external/arm/right/robo_arm,/obj/item/organ/external/hand/robo_hand,/obj/item/organ/external/hand/robo_hand,/obj/item/organ/external/hand/right/robo_hand,/obj/item/organ/external/hand/right/robo_hand,/obj/item/organ/external/leg/robo_leg,/obj/item/organ/external/leg/right/robo_leg,/obj/item/organ/external/leg/right/robo_leg,/obj/item/organ/external/foot/robo_foot,/obj/item/organ/external/foot/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/obj/item/organ/external/foot/right/robo_foot,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"Ov" = (/obj/effect/floor_decal/turf/bar2{dir = 4},/obj/structure/telearray/lowleft,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"Oz" = (/obj/machinery/sleeper{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"OI" = (/obj/machinery/cooker/grill,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"OX" = (/obj/machinery/body_scanconsole{dir = 4; icon_state = "body_scannerconsole"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"OY" = (/obj/structure/table/steel,/obj/item/paper/astrafare_lore2,/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"Pa" = (/obj/machinery/bodyscanner{dir = 4; icon_state = "body_scanner_0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Pd" = (/obj/structure/table/rack,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Pg" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/red/one)
+"Ph" = (/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/structure/bed/chair{dir = 4; icon_state = "chair_preview"},/obj/effect/landmark/start{name = "Red Engineer"},/obj/effect/landmark/start{name = "Red Engineer"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Pp" = (/turf/simulated/floor/tiled/ramp,/area/warfare/homebase/red)
+"Pr" = (/obj/structure/table/rack,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Pt" = (/obj/structure/table/rack,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/obj/item/storage/firstaid/adv,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Pw" = (/obj/structure/bed/roller,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Pz" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/homebase/blue)
+"PK" = (/obj/structure/closet/crate,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"PL" = (/turf/simulated/mineral,/area/warfare/homebase/red)
+"PN" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"PR" = (/obj/structure/closet/crate,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"PT" = (/turf/simulated/floor/dirty/fake,/area/warfare/battlefield/no_mans_land)
+"Qa" = (/obj/structure/sign/neon/armory{pixel_x = -32; plane = -6},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Qo" = (/turf/simulated/mineral,/area/warfare/battlefield/capture_point/red/one)
+"Qr" = (/obj/structure/closet/crate/trashcart,/turf/simulated/floor/trenches,/area/warfare/homebase/blue)
+"Qy" = (/turf/simulated/mineral,/area/warfare/battlefield/trench_section/underground)
+"QF" = (/turf/simulated/wall/concrete,/area/warfare/battlefield/capture_point/red/one)
+"QQ" = (/obj/machinery/door/blast/shutters/open{id = "blue"},/turf/simulated/floor/trenches,/area/warfare/homebase/blue)
+"QT" = (/obj/structure/bed/chair/wheelchair{dir = 4},/obj/effect/landmark/start{name = "Blue Practitioner"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"QV" = (/turf/simulated/wall/concrete,/area/warfare/homebase/red)
+"Rh" = (/obj/effect/floor_decal/turf/aesculapius/mem,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"Rk" = (/obj/structure/crematorium{buckle_dir = 1; dir = 1},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Rl" = (/obj/structure/table/woodentable,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Ro" = (/obj/effect/landmark/start{name = "Red Practitioner"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Rq" = (/obj/structure/table/rack,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/fire,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Rr" = (/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/regular,/obj/structure/table/rack,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Rs" = (/obj/structure/table/rack,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Rt" = (/obj/structure/table/rack,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Ry" = (/obj/effect/floor_decal/turf/aesculapius/mento,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"RE" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"RJ" = (/obj/effect/floor_decal/turf/aesculapius/mori,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"RU" = (/obj/structure/crematorium{dir = 8},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"RW" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"Sk" = (/obj/effect/floor_decal/turf/cafe,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Sl" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Sp" = (/obj/structure/table/rack,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/obj/item/ammo_magazine/mc9mmt/machinepistol,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Sw" = (/obj/structure/table/rack,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/item/ammo_magazine/c45rifle/akarabiner,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"SG" = (/obj/effect/floor_decal/turf/bar2,/obj/structure/telearray/lowright,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"SH" = (/obj/structure/torchwall{dir = 8},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"SQ" = (/obj/structure/table/rack,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"SR" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Tb" = (/obj/structure/table/rack,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/item/ammo_box/rifle,/obj/structure/torchwall{dir = 8},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Th" = (/obj/effect/floor_decal/turf/cafe,/obj/effect/floor_decal/industrial/warning_red,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"To" = (/obj/structure/table/steel,/obj/item/grenade_dud,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"Tq" = (/obj/structure/table/rack,/obj/item/melee/classic_baton/trench_club,/obj/item/melee/classic_baton/trench_club,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"TC" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8},/obj/effect/landmark/blue_cargo,/turf/simulated/floor/plating/reinforced,/area/warfare/homebase/blue)
+"TL" = (/obj/structure/defensive_barrier{dir = 1},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"TQ" = (/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"Ud" = (/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"Ui" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/red/two)
+"Uv" = (/turf/simulated/wall/concrete/strong,/area/warfare/battlefield/capture_point/mid)
+"US" = (/obj/structure/cargo_pad/bottom_middle,/obj/effect/landmark/blue_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Va" = (/obj/structure/cargo_pad/bottom_right,/obj/structure/window/reinforced{dir = 4},/obj/effect/landmark/blue_cargo,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Vc" = (/obj/structure/table/woodentable,/obj/structure/sign/neon/cargo{pixel_y = -32; plane = -6},/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Vd" = (/obj/structure/bed/chair/wheelchair{dir = 1},/obj/effect/landmark/start{name = "Red Medic"},/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Ve" = (/obj/structure/table/woodentable,/obj/structure/poster/blue{pixel_y = -32},/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/obj/item/device/compass,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Vg" = (/obj/structure/sign/neon/exit{pixel_x = -32},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Vi" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"Vk" = (/obj/structure/curtain,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Vm" = (/obj/structure/bed/roller,/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Vr" = (/obj/structure/closet/secure_closet/medical1/warfare,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Vs" = (/obj/structure/table/steel,/obj/item/reagent_containers/spray/cleaner/warfare,/obj/item/reagent_containers/spray/cleaner/warfare,/obj/item/reagent_containers/spray/cleaner/warfare,/obj/item/reagent_containers/spray/cleaner/warfare,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Vx" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/battlefield)
+"VA" = (/obj/effect/landmark/start{name = "Red Practitioner"},/turf/simulated/floor/plating,/area/warfare/homebase/red)
+"VG" = (/turf/simulated/floor/trench,/area/warfare/battlefield/trench_section/underground)
+"VK" = (/obj/structure/dirt_wall,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/red)
+"Wi" = (/obj/structure/table/woodentable,/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Wj" = (/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/red)
+"Wr" = (/obj/structure/closet/medical_wall,/turf/simulated/wall/concrete,/area/warfare/homebase/blue)
+"Wt" = (/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"Ww" = (/obj/machinery/optable,/turf/simulated/floor/tiled/dark,/area/warfare/homebase/red)
+"WE" = (/obj/structure/table/woodentable,/obj/item/flame/candle,/obj/item/flame/lighter/random,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"WK" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/blue/one)
+"WL" = (/obj/structure/table/rack,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/obj/item/ammo_box/shotgun,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"WN" = (/obj/effect/floor_decal/turf/barnew,/obj/structure/curtain,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"WT" = (/turf/simulated/open,/area/warfare/battlefield/capture_point/blue/two)
+"WV" = (/obj/structure/crematorium{dir = 4; icon_state = "crema1"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"Xf" = (/obj/structure/closet/chefcloset,/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Xh" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"Xj" = (/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/obj/effect/landmark/start{name = "Blue Practitioner"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"XG" = (/turf/simulated/open,/area/warfare/battlefield/capture_point/red/one)
+"XN" = (/obj/structure/barbwire,/turf/simulated/floor/dirty/indestructable,/area/warfare/homebase/blue)
+"XS" = (/obj/structure/cargo_pad,/obj/effect/landmark/blue_cargo,/obj/effect/floor_decal/turf/bar2{dir = 4},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"XV" = (/turf/simulated/floor/tiled,/area/warfare/homebase/red)
+"Yc" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 1},/turf/simulated/floor/trenches,/area/warfare/battlefield/capture_point/red/one)
+"Yj" = (/turf/simulated/floor/plating/reinforced,/area/warfare/battlefield/capture_point/mid)
+"Yk" = (/turf/simulated/floor/trench,/area/warfare/battlefield/capture_point/mid)
+"Yn" = (/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Yp" = (/obj/structure/bed/chair{dir = 1; icon_state = "chair_preview"},/turf/simulated/floor/tiled,/area/warfare/battlefield/capture_point/mid)
+"Yr" = (/obj/structure/cargo_pad/bottom_left,/obj/structure/window/reinforced{dir = 8},/obj/effect/landmark/blue_cargo,/obj/structure/window/reinforced,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Ys" = (/turf/simulated/floor/trenches,/area/warfare/homebase/red)
+"Za" = (/obj/machinery/bodyscanner,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Zo" = (/obj/structure/cargo_pad/bottom_middle,/obj/effect/landmark/blue_cargo,/obj/structure/window/reinforced,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Zt" = (/obj/structure/cargo_pad/bottom_right,/obj/structure/window/reinforced{dir = 4},/obj/effect/landmark/blue_cargo,/obj/structure/window/reinforced,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"Zv" = (/obj/machinery/body_scanconsole,/turf/simulated/floor/tiled,/area/warfare/homebase/blue)
+"ZK" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance{dir = 2; name = "Emergency Medical"},/turf/simulated/floor/tiled/dark,/area/warfare/homebase/blue)
+"ZQ" = (/turf/simulated/floor/dirty/tough,/area/warfare/battlefield/capture_point/blue/two)
+
+(1,1,1) = {"
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaesesesesesesesesesesEGeseseseses
+esesesesesesesesesesesaaaaaaaaaaabamaBaBaIaBaaaMaaaaaaaabpaIbQbUaaaaaaaaaaaacdaIcdaBcdaaesesesesesesesesesesEGEGeseseses
+esesesesesesesesesesaaaaEGEGEGckaaaaaBaacHaBamaBaaaaaaaadkdtdudkaaaaaaaaaaaadBaBdLaIdOaaesesesesesesesesesEGEGEGeseseses
+esesesesesesesesaaaaaaEGEGEGEGckdSameeaaaadBaaaaaaaaaaaadkeiemdkaaaaaaaaaaaacdaBcdaBcdaaesesesesesesesesesEGEGEGeseseses
+esesesesesesesesaaEGEGEGEGEGEGckaaaaepaacHeIeRdkdkbpfcdkdkfdfodkfXggbUaIdkgpaBaIaIaBdOaaesesesesesesesesEGEGEGEGeseseses
+esesesesesesesesaaEGEGEGEGEGEGckabamaBaIaIaBeRgBdkdkdkdkdkdkdkdkaIaIdkdkgIaaaBaBcdaBcdaaesesesesesesesesEGEGEGEGEGeseses
+esesesesesesesesaaEGEGEGaaaaaaaaaaaaaaaaaaaaaaaaaackckckgTdkdkhjckckckhuckaaaackckckckaaaaesesesesesesesEGEGEGEGEGeseses
+esesesesesesesesaaEGEGEGaaaahGhGhGhGhGhGhGhPdkdkbUiGjdjlaIdkjnjuckjvjyhujVkuaaEGEGEGEGEGaaesesesesesesesEGEGEGEGEGeseses
+esesesesesesesesaaEGEGEGaaaahGhGhGhGhGhGhGhPkxdkdklulyludkdklBlLckhuhuhuhulQaaEGEGEGEGEGaaaaaaesesesesesEGEGEGEGeseseses
+esesesesesesesesaaEGEGEGaaaahGhGhGhPhPhPhPhPckdkdkdkaIaIdklVaIaImnhuhumrhumNaaEGEGEGEGEGEGaaaaaaesesesesEGEGEGEGeseseses
+esesesesesesesesaaEGEGEGaaaahGhGckckmTaBckckckcknfnCnHfXnKdklBnVcknYhuouhuaaaaaaaaaaEGEGEGEGaaaaesesesesEGEGEGEGeseseses
+esesesesesesesesaaEGEGEGaaaahGhGckoEaBaIoEaaaaaalLoKdkdkdkaIdkiGckrihurkrsaaaaaaaaaaaaEGEGEGaaaaesesesesEGEGEGEGeseseses
+esesesesesesesesaaEGEGEGaaaahGhGaarArFrFslaaaaaaaasOsWsWdkaItbjdaatctjaaaaaaaaaaaaaaaaaaEGEGaaaaesesesesEGEGEGEGeseseses
+esesesesesesesesaaEGEGEGaaaahGhGaaoEtltloEaaaaaaaaaatBtFtRtWdkjuaaaaaaaaaaaaaaaaaaaaaaaaEGEGaaaaesesesEGEGEGEGEGeseseses
+esesesesesesesesaaEGEGEGaaaahGhGaaoEtltloEaaaaaaaaaaaaaadkaIdkukaaaaaaaaaaaaaaaaaaaaaaaaEGEGaaaaesesesEGEGEGEGEGeseseses
+esesesesesesesesaaEGEGEGaaaahGhGaaaaaaaaaaaaaaaaaaaaaaaackmTaBckckaaaaaaaaaaaaaaaaaaaaEGEGEGaaaaesesesEGEGEGEGeseseseses
+esesesesesesesesaaEGEGEGaaaahGhGhGhGhGhGhGhGhGaaaaaaaaaaoEaBaBoEckckaaaaaaaaaaaaaaaaEGEGEGEGaaaaesesesEGEGEGEGeseseseses
+esesesesesesesesaaEGEGEGaaaahGhGhGumhGhGhGhGhGaaaatltlunaBaBaIaBaBhPhGhGhGhGEGEGEGEGEGEGEGaaaaaaesesesEGEGEGEGeseseseses
+esesesesesesesesaaEGEGEGaaaahGhGhGhGhGhGhGhGhGaaaatltlunaBaIaIaBuwhPhGhGhGhGEGEGEGEGEGEGaaaaaaaaesesesEGEGEGEGeseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaaaaaaaahGhGhGaaaaaaaaaauEoEoEuEckckaaumhGhGaaaaaaaaaaaaaaaaaaaaesEGesEGEGEGEGeseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaaaaaaaahGhGhGaaaaaaaaaaaaaaaaaaaaaaaahGhGhGaaaaaaaaaaaaaaaaaaaauVEGEGEGEGEGEGeseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaaaaaaaahGhGhGaaaaaaaaaaaaaaaahGhGhGhGhGhGhGaaaaEGEGEGEGaaaaaaaauVEGEGEGEGEGeseseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaaaaaaaackhPhPckaaaaaaaaaaaahGhGumhGhGhGhGhGaaaaEGEGEGEGEGaaaaaauVEGEGEGEGEGeseseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaaaaaaaackvfdkckaaaaaaaaaahGhGhGhGhGaaaaaaaaaaaaaaEGEGEGEGEGEGmHvjEGEGEGEGEGeseseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaaaaaackckaIdkckaaaaaaaahGhGhGhGhGckckaavrvtbpvIaaaaaaEGEGEGEGmHvjEGEGeseseseseseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaaaabUwlaatWdkxkxGxJaaaahPhPhPhPckckxLxZdkdktWybaaaaaaaaaaEGEGmHvjEGEGeseseseseseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaayffXyhaagBdkyvyDgIaaaaaavfdkckckyFdkxZdkdkdkgIckaaaaaackEGEGeseseseseseseseseseseseses
+esesesesesesesesaaEGEGEGaaaaaayJdkyQaIyhckaIdkyXdkdkzkzRaaaIdkzVCjdkdkdkdkCUDoDxckEDEOEYckEGEGeseseseseseseseseseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaxLFaaIFnckdkdkbQaIaIdkgIaaFpdkFyGhdkaIaIaIfXdkGpGEaBGHHackEGEGEGEGEGEGEGeseseseseseseses
+esesesesesesesesaaEGEGEGaatltlundkdkaIdkdkdkdkHeHTdudkfXIEaIdkdkdkdkIJtWIYJjdkdkJnaBaBJsckEGEGEGEGEGEGEGeseseseseseseses
+esesesesesesesesaaEGEGEGaatltlunlVaIaIaIkxdktWJSKGKJaIaILaaIdkLpdkdkMqMuNgOmdkdkJnaBaBOqaaaaaaaaaaEGEGEGeseseseseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaxLPddkPKckQaaIdkdkdkdkgIaagBlVFyQTdkaIaIaIlVdkGpckRhRyRJckdLaIRUaaEGEGEGeseseseseseseses
+esesesesesesesesaaEGEGEGaaaaaadkdkyQaISpckaIaITCUSVaVcVeaaVgdkzVVmdkdkdkdkVrVsDxWrckaaaackWVaIXjaaEGEGEGeseseseseseseses
+esesesesesesesesaaEGEGEGaaaaaaaaaayQtWSpaaxLaITCXSVaaaaaaavfdkckaayFdkxZdkdkdkdkdkdkbUdkaBaBepaBaaEGEGEGeseseseseseseses
+esesesesesesesesaaEGEGEGEGEGEGEGaaaaYnSpaadkdkYrZoZtaaaahPhPhPhPaaaaxLxZdktWdkZvdkdkdkdkZKaBaIAlaaEGEGEGeseseseseseseses
+esesesesesesesesaaaaEGEGEGEGEGEGEGaaaaaaaadkdkaaaaaaaaBPhGhGumhGBPaaaaaaIOvtlnZaaarFrFaackWVaIXjaaEGEGEGeseseseseseseses
+esesesesesesesesesaaaaaaaaaaEGEGEGEGhGaaaaQQQQaaaamQhGhGhGhGhGhGhGzsXNaaaaaaaaaaaatltlaaaackckckaaEGEGEGeseseseseseseses
+esesesesesesesesesesesesesaaEGEGEGEGhGaaHghPhPhPaahGhGhGhGhGhGhGhGzsXNEGEGEGEGEGaatltlaaEGEGEGEGEGEGEGEGeseseseseseseses
+esesesesesesesesesesesesesaahGhGEGEGhGaaQrhPhPQraavOhGhGhGhGhGhGhGvOXNEGEGEGEGEGaaaaaaaaEGEGEGEGEGEGEGEGeseseseseseseses
+esesesesesesesesesesesesesaahGhGhGhGhGaaPzhPhPhPaaXNvOhGhGhGhGhGvOXNhGhGhGhGEGEGEGEGEGEGEGEGEGEGEGEGEGEGeseseseseseseses
+esesesesesesesesesesesesesaahGhGhGhGhGhGhGhGhGhGhGhGXNvOvOhGhGvOXNhGhGhGhGhGEGEGEGEGEGEGEGEGhGhGhGhGeseseseseseseseseses
+esesesesesesesesesesesesesaahGhGhGhGhGhGhGhGhGhGhGhGhGXNXNhGhGXNhGhGhGhGhGhGhGhGhGhGhGhGhGhGhGhGhGeseseseseseseseseseses
+esesesesesesesesesesesesesesesEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGeseseseseseseseseseseses
+esesesesesesesesesesesesesesesEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesEGEGEGEGEGEGEGEGJEJEJEJEesesesesesJEJEJEJEEGEGEGEGEGEGEGeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesEGEGEGEGEGEGEGJEJEJEJEesesesesJEJEJEJEJEEGEGEGEGEGeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesJEJEJEJEJEJEJEJEJEWTJEesesesesWTWTWTZQJEJEJEJEJEJEeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesJEJEJEJEJEJEJEJEWTWTesesesesmvWTWTZQZQJEJEJEJEJEeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesZQZQZQZQZQZQWTWTWTlvesesesesesWTWTWTZQZQZQZQZQZQeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesWTWTWTyxyxWTWTWTWTWTesesesesesesesmvWTWTWTyxyxWTWTWTeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesWTWTWTyxyxWTWTWTWTlvesesesesesesesWTWTWTWTyxyxWTWTlveseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesmvWTyxyxWTWTWTWTWTesesesesesesesWTWTWTWTyxyxWTWTWTWTeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesWTWTWTWTyxyxWTWTWTWTWTesesesesesesesWTWTWTWTyxyxWTWTlveseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesZQZQZQZQZQZQZQWTWTlvesesesesesesesmvWTWTZQZQZQZQZQZQeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesVGVGVGVGVGVGVGZQWTWTWTesesesesesesWTWTWTWTZQVGVGVGVGeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesVGVGVGVGVGVGZQWTWTWTlvesesesesmvWTWTWTVGVGVGVGVGeseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesesesVGVGVGVGWTWTWTesesesesesWTWTWTVGVGVGVGVGeseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesesesVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGeseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesesesesVGxVxVVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGVGeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesqYqEqEqEnaGSnInanananananananananananananajNjNjNjNeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesqYqYqEnInIWKnInInInInlnlqEqEnlnlnInInInIWKnInIjNjNjNeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqEnInInInInInInInlnlqEqEnlnlnInInInInIRWnIjNjNjNeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesqYqYqYqYqEqEqEqEnIdenIqEqEqEqEqEqEqEqEnIdenIqEqEjNjNjNjNeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesqYqYqYesesesesqEsznISHqEnanananananaqEsznISHqEnajNjNjNjNjNeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesqYqYqYesesesesqEnInInIqEnanananananaqEnInInIqEnajNjNjNjNjNeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesqYqYqYqYesesesesqEptqEptqEnanananananaqEptqEptqEnaxsxsjNjNjNeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesqYqYqYesesesesPTvWPTvWPTvWnanaPTPTnanavWPTvWPTvWPTPTxsxsxsxseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesqYqYqYesesPTPTPTqYqYqYqYPTPTPTPTPTPTPTPTqYqYqYqYqYPTPTxsxsjNeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesqYqYqYesesqYqYwdqYwdqYwdqYwdqYPTPTPTvWqYwdqYwdqYwdqYPTPTxsxseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesqYqYqYesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesQyzfzfQyqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesQyaGaGQyqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesQybGaGQyqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesQyQyQyQyqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYesQyQyQyQyeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYKcaGaGQyeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYKcaGctQyeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYKcaGaGQyeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYesQyQyQyQyeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesQyQyQyQyqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesQyzfzfzfqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesQyzfzfzfqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYxVxVeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesQyzfzfQyqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYUvUvNkCLUvUvUvUveseseseseseseseseseseseses
+esesesesesesesesesesesesQyaGaGQyqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYUvUvkFCLCLCLbZncUveseseseseseseseseseseseses
+esesesesesesesesesesesesQyngaGQyqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYUvGZCLpuJeCLCLCLUveseseseseseseseseseseseses
+esesesesesesesesesesesesQyQyQyQyesesQyQyQyQyqWqWqWqWIBqWqWqWqWqWqWIBqWIBqWUvUvrIuFUvUvrKCLrVUveseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesQyvuaGQyqWqWqWYkYkYkYkYkYkYkYkYkYkYkAoCLCLJeCLrVGZCLbZtiUveseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesQyaGaGQyqWqWqWYkYkYkYkYkYkYkYkYkYkYkAoHDCLCLYjCLYpJeJeYpUveseseseseseseseseseseseses
+esesesesesesesesesesesesesesesUvUvUvQyHYKvQyqWqWqWqWIBqWqWYkYkqWqWIBqWIBqWUvUvuhdUCLCLYjCLYjUveseseseseseseseseseseseses
+esesesesesesesesesesesesesesesUvOYYjCLCLJeUvqWqWqWqWqWqWqWqWqWqWqWqWqWqWqWqWUvUvUvUvuACLUvUvUveseseseseseseseseseseseses
+esesesesesesesesesesesUvUvUvUvUvYpCLYjFXuFUvqWqWqWqWIBqWqWqWqWqWqWIBqWqWqWqWUvuAFXYjJeCLUveseseseseseseseseseseseseseses
+esesesesesesesesesesesUvuAYjYjCLCLuFUvUvUvUvqWqWqWqWqWqWqWqWqWqWqWqWqWqWqWqWUvJeJeCLCLCLUveseseseseseseseseseseseseseses
+esesesesesesesesesesesUvCLGtHtCLJeCLbZrVIrUvUvqWIBqWIBqWqWYkYkqWqWIBqWqWqWqWQyKvevQyUvUvUveseseseseseseseseseseseseseses
+esesesesesesesesesesesUvCLLhLALLJeCLYjYjCLCLCLAoYkYkYkYkYkYkYkYkYkYkYkqWqWqWQyaGaGQyeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesUvJeOvSGCLCLTodUCLYjCLHDAoYkYkYkYkYkYkYkYkYkYkYkqWqWqWQybGaGQyeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesUvuACLJeCLYjUvUvuAyyUvIBqWIBqWIBqWqWqWqWqWqWIBqWqWqWqWQyQyQyQyesesQyQyQyQyeseseseseseseseseseseses
+esesesesesesesesesesesUvUvUvUvUvCLpuYjCLxfUvqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYQyaGctQyeseseseseseseseseseseses
+esesesesesesesesesesesesesesesUvkFCLCLCLUvUvqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYQyaGaGQyeseseseseseseseseseseses
+esesesesesesesesesesesesesesesUvUvNkCLUvUvqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYQyzfzfQyeseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYxVxVqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYzfzfzfQyeseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYzfzfzfQyeseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYesQyQyQyQyeseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesQyQyQyQyesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesQyaGaGKcqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesQyngaGKcqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesQyaGaGKcqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesQyQyQyQyesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYQyQyQyQyeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYQyvuaGQyeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYQyaGaGQyeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYQyzfzfQyeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTqYqYeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTqYqYqYeseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTPTqYqYqYqYeseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTPTqYqYqYqYeseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTqYqYqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTesqYqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesesqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYPTesesqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesPTPTqYqYqYqYwdqYwdqYwdqYwdPTPTqYwdqYwdqYwdqYwdqYesesqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesescvcvPTPTPTPTPTPTPTPTqYqYqYPTPTPTPTPTPTqYqYqYqYqYqYesesqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesPgcvcvcvPTQoQoQovWPTvWPTvWPTQoQoFYFYvWPTvWPTvWPTPTesesqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesPgPgPgcvcvQoQoQoQFTLQFTLQFQFQoQoQoQoQFTLQFTLQFQFesesesqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesPgPgPgPgPgQoViWtWtWtWtWtWtQFQoQoQoQoQFWtWtWtXhQFesesesqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesPgPgPgPgPgQFjaWtWtWtWtWtWtQFQoQoQoQoQFWtWtWtjaQFesesesqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesPgPgPgPgQFQFQFQFWtXhQFQFQFQFQFQFQFQFViWtQFQFQFQFqYqYqYqYqYeseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesPgPgPgWtWtWtWtWtWtWtXGXGQFQFXGXGWtWtWtWtWtWtWtQFqYqYqYqYeseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesPgPgPgWtYcWtifWtWtWtXGXGQFQFXGXGWtWtWtWtWtifWtQFqYqYqYqYeseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesPgPgPgQoQFQFQFQFQFQFQFQFQFQFQFQFQFQFQFJfWtQFQFQFqYqYqYeseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesVGVGVGesesesesesesesesesesesesesesesesxVxVeseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesVGVGVGesesesUiUiesesesesesesesesesesesVGVGeseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesVGVGVGesesUiUiUiUiUiUiUiesesUiUiUiUiUiUiUiUiUiUiUiUieseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUiUieseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesesUiUiUiUiooUiUiooUiUiUiUiUiUiUiUiUiUiUiooUiUiooUiUiUieseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesUiUiUiUiooooKoKoooooooooUiUiUiUiooooooooooKoKoooUiUiUieseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesUiUiUiooooooKosyooooooooUiUioooooooooooooosyKoooUiUieseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesUiUiUiooooooooooooooUiUiUiUiooooooooooooooooooooUiUieseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesUiUiUiooooooooooooUiUiUiUiooooooooooooooooooooUiUiUieseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesUiUiUiUiooKoNBooUiUiUiUiUiooooooooKoNBooooooUiUiUiUiUieseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesEGEGEGUiooKoKoooUiUiEGEGUiUiUiUiooKoKoooooUiUiUiUiUiUieseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesesEGEGEGUiUiUiUiUiUiEGEGEGEGEGEGUiUiUiUiUiUiUiUiUiUieseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesesEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesesesEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGEGeseseseseseseseseseseseseseseseses
+esesesesesesesesesesesesesWjWjWjWjWjWjWjWjWjWjWjWjWjWjEgEgWjWjEgEgWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjPLeseseseseseseseseseses
+esesesesesesesesesesesesesesWjWjWjWjWjEGWjWjWjWjWjWjEgVKVKWjWjVKVKEgWjWjWjWjWjWjWjWjWjWjWjWjWjWjPLeseseseseseseseseseses
+esesesesesesesesesesesesesEGEGWjWjWjEGEGEGEGEGEGEGEgVKWjWjWjWjWjWjVKEgWjWjWjWjWjWjWjEGEGEGEGWjWjPLPLeseseseseseseseseses
+esesesesesesesesesesesesEGEGEGEGEGEGEGEGEGEGEGEGEGEgVKWjhaWjWjWjWjWjVKEgWjWjWjWjWjWjEGEGEGEGEGEGEGPLeseseseseseseseseses
+esesesesesesesesesesEGEGEGEGEGEGEGEGEGEGPLPLPLPLPLPLPLJVWjWjWjWjhaWjVKEgWjPLPLBDBDPLPLPLPLPLEGEGEGPLPLeseseseseseseseses
+esesesesesesesesesEGEGEGPLPLPLPLQVQVQVQVQVQVQVPLPLPLPLPLPLWjWjWjPLPLPLPLPLPLPLYsYsYsCiPLPLPLPLEGEGEGPLeseseseseseseseses
+esesesesesesesesesEGEGPLPLPLPLPLQVUdCCWwCGUdPLPLPLPLQVQVQVWjWjWjPLPLPLPLPLPLPLCZYsYsDjPLPLPLPLPLEGEGPLPLeseseseseseseses
+esesesesesesesesesEGEGPLPLPLPLPLPLlCTQVAUdUdPLEcxcxcxcEcQVYsYsYsPLPLPLPLPLQVQVYsYsYsEoPLPLPLPLPLEGEGEGPLeseseseseseseses
+esesesesesesesesesEGEGPLPLPLPLPLPLETUdUdUdEVPLXVFAFFFHXVQVFIXVFZPLQVQVQVQVQVQVQVFIXVQVPLPLPLPLPLEGEGEGPLeseseseseseseses
+esesesesesesesesesEGEGPLQVQVPLPLPLQVQVIZGmQVQVXVBYGsGRXVDhXVXVQVPLQVQVGTHbHhHkHnXVXVQVPLPLQVQVPLPLEGEGEGeseseseseseseses
+esesesesesesesesesEGEGPLQVJLJLHpXVXVXVXVXVFBFBXVxdQVaYXVHrTQXVQVPLQVHuHyHBHHHKXVXVXVRlIhICIIQVPLPLEGEGEGeseseseseseseses
+esesesesesesesesesEGEGPLPLJLJLHpTQnOTQTQXVXVXVXVTQVAXVXVXVXVPNQVPLPLSlfzILITRlXVXVTQRlXVJrXVQVPLEGEGEGEGeseseseseseseses
+esesesesesesesesesEGEGPLPLQVQVQVQVPLPLCPXVXVXVTQTQnOXVXVKwXVTQYsYsBDXVXVTQXVXVXVXVTQKzXVXVKDPLPLEGEGEGEGeseseseseseseses
+esesesesesesesesesEGEGPLPLPLQVKTLfKTPLLMXVVdVdXVXVLSXVXVHrXVTQYsYsLTXVXVXVTQnOXVTQXVXVnOXVXVPLPLPLEGEGEGeseseseseseseses
+esesesesesesesstmHEGEGEGEGEGQVTQTQUdPLPLXVQVQVXVXVMzXVXVDhXVXVPLPLPLQVXVMXTQQVXVXVXVXVQVTQTQQVPLPLEGEGEGeseseseseseseses
+esesesesesesVxstmHEGEGEGEGEGQVlCNtUdNVXVXVOfQVOzXVTQOXPaQVFIXVPLPLQVQVNVQVNVQVQVFIXVQVQVPpPpQVPLPLPLEGEGeseseseseseseses
+esesesesVxVxVxstmHEGEGEGEGEGQVUdUdUdQVPrTQPtPLSlBYPwBYPNQVYsYsPLPLQVPRXVXVXVPRPLYsYsPLQVJLJLQVPLPLPLEGEGeseseseseseseses
+esesesVxVxVxVxstmHEGEGEGEGPLQVRkRoRkQVRqGRRrPLOzXVPwOXPaQVWjWjPLPLQVRsXVRtTQREQVWjWjPLPLJLJLQVPLPLEGEGEGeseseseseseseses
+esVxVxVxVxVxVxstesesesEGEGPLPLPLQVQVQVPwnOPwPLPLQVQVPLPLQVWjWjPLPLPLSwTQSQXVTbQVWjWjPLPLQVQVPLPLPLPLEGEGeseseseseseseses
+esVxVxVxVxVxVxesesesesEGEGPLPLPLPLPLQVQVQVQVPLPLPLPLPLPLPLWjWjPLPLQVRtTQTqXVREPLWjWjPLPLPLPLPLPLPLPLEGEGeseseseseseseses
+esesVxVxVxVxesesesesesEGEGEGEGPLPLPLPLPLEGEGPLPLWjWjPLWjWjWjWjPLPLPLRtTQTqXVREPLWjWjWjWjPLPLPLPLPLPLEGEGeseseseseseseses
+esesVxVxVxesesesesesesPLEGEGPLPLPLPLPLEGEGEGWjWjWjWjWjhaWjWjWjPLPLPLXVXVXVXVWLPLPLWjWjWjWjPLPLPLPLEGEGEGeseseseseseseses
+esVxVxVxVxesesesesesesPLPLPLPLPLPLPLEGEGEGEGWjhaWjWjWjWjWjWjPLPLPLQVQVPpQVPpQVQVPLPLWjWjWjPLPLPLEGEGEGEGeseseseseseseses
+esesVxVxVxesesesesesEGEGEGEGEGEGEGEGEGEGPLPLWjWjWjPLPLPLPLPLPLPLPLPLQVJLQVJLQVPLPLPLPLWjWjPLPLPLEGEGEGeseseseseseseseses
+esesVxVxVxVxesesesEGEGEGEGEGEGEGEGEGEGPLPLQVYsYsQVPLPLPLPLPLPLPLPLPLQVJLQVJLPLPLPLPLWjWjWjPLPLPLEGEGEGeseseseseseseseses
+esesVxVxVxVxesesEGEGEGEGEGPLPLPLQVQVQVPLPLQVFIXVQVPLPLPLQVQVPLPLPLPLPLPLQVQVPLPLPLPLWjWjPLPLPLEGEGEGeseseseseseseseseses
+esesVxVxVxVxesesEGEGEGPLPLPLPLcNFToPOIpIpfQVXVXVAIdXJLJLJLQVPLPLPLPLPLPLPLPLPLPLPLPLWjWjPLPLPLEGEGEGeseseseseseseseseses
+esesVxVxVxVxesesEGEGPLPLPLPLQVEzgcgcssgcgcQVXVXVieieieieieieYsWjWjWjWjWjWjWjWjhaWjWjWjWjPLPLPLPLEGEGeseseseseseseseseses
+esesVxVxVxVxesesEGEGPLPLPLPLQVMkgcKrXfjhbwQVXVTQieieyjcFieMjYsWjWjWjWjWjWjWjWjWjWjWjWjWjWjPLPLPLEGEGeseseseseseseseseses
+esesVxVxVxVxesesEGEGPLPLPLPLQVBygcjhdGgcgcQVXVTQyTdXJLJLJLQVPLPLPLPLWjWjPLPLPLPLPLPLPLPLPLPLPLPLEGEGeseseseseseseseseses
+esesVxVxVxVxesesEGEGPLPLPLPLQVQVQVWNQVFqFqQVFIXVQVPLPLPLQVQVQVQVQVQVQVQVPLPLPLPLPLPLPLPLPLPLPLEGEGEGeseseseseseseseseses
+esVxVxVxVxVxesesEGEGPLPLxnUdxnQVSksGThaSaShbXVXVXVXVlOXVXVdXJLJLQVUdOnERQVPLPLPLPLPLPLPLPLEGEGEGEGeseseseseseseseseseses
+esesVxVxVxesesesEGEGPLPLlCUdUdNVXVXVTQXVXVTQXVXVTQXVXVXVTQdXJLJLQVlCQVQVQVPLPLPLPLPLPLPLEGEGEGEGeseseseseseseseseseseses
+esesesVxVxesesesEGEGPLPLxnUdxnQVSlXVvEvEvEXVXVTQLiLiLiXVlIQVQVQVQVUdwarfPLPLPLPLPLPLPLEGEGEGeseseseseseseseseseseseseses
+esesesesesesesesEGEGPLPLUdUdUdPLXViWwAiTWEHdJFPhFWWisjkZXVQVBtTQUdUdQVQVQVEGEGEGEGEGEGEGEGeseseseseseseseseseseseseseses
+esesesesesesesesEGEGEGQVxnUdxnPLXViWWiFKsjHdXVtAdowAwAHdXVOnUdQVJHbXVklUQVEGyPjqEGEGEGEGeseseseseseseseseseseseseseseses
+esesesesesesesesesEGEGQVlCUdMnQVTQXVgMgMgMXVXVXVgMgMgMXVXVOnUdQVJHTQQVQVQVEGBOEGEGEGeseseseseseseseseseseseseseseseseses
+esesesesesesesesesesEGQVxnUdxnQVXVXVnOXVTQXVSRXVXVTQnOXVXVQVlCUdUdTQOnERQVEGEGeseseseseseseseseseseseseseseseseseseseses
+esesesesesesesesesesesQVQVQVQVQVQVHkQVPLPLQVQVQVPLQVQVHkQVPLPLPLPLQVQVQVPLeseseseseseseseseseseseseseseseseseseseseseses
+eseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+esJoeseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseseses
+"}

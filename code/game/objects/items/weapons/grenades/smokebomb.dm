@@ -1,4 +1,4 @@
-/obj/item/weapon/grenade/smokebomb
+/obj/item/grenade/smokebomb
 	desc = "Use this to stop both you, and the enemy from seeing anything."
 	name = "smoke bomb"
 	icon = 'icons/obj/grenade.dmi'
@@ -9,17 +9,17 @@
 	slot_flags = SLOT_BELT
 	var/datum/effect/effect/system/smoke_spread/smoke
 
-/obj/item/weapon/grenade/smokebomb/New()
+/obj/item/grenade/smokebomb/New()
 	..()
 	src.smoke = new /datum/effect/effect/system/smoke_spread()
 	src.smoke.attach(src)
 
-/obj/item/weapon/grenade/smokebomb/Destroy()
+/obj/item/grenade/smokebomb/Destroy()
 	qdel(smoke)
 	smoke = null
 	return ..()
 
-/obj/item/weapon/grenade/smokebomb/detonate()
+/obj/item/grenade/smokebomb/detonate()
 	playsound(src.loc, 'sound/effects/smoke.ogg', 50)
 	src.smoke.set_up(10, 0, usr.loc)
 	spawn(0)
@@ -35,16 +35,16 @@
 
 
 //These are debug items and are not used in game.
-/obj/item/weapon/grenade/smokebomb/mortar
+/obj/item/grenade/smokebomb/mortar
 	name = "mortar marker"
 	desc = "Throw it at the spot you want mortar fire at. MAKE SURE YOU'RE NOT THERE!"
 	det_time = 50
 	var/mortar_type = "shrapnel"
 
-/obj/item/weapon/grenade/smokebomb/mortar/detonate()
+/obj/item/grenade/smokebomb/mortar/detonate()
 	drop_mortar(get_turf(src), mortar_type)
 	qdel(src)
 
 
-/obj/item/weapon/grenade/smokebomb/mortar/gas
+/obj/item/grenade/smokebomb/mortar/gas
 	mortar_type = "gas"

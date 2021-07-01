@@ -50,7 +50,7 @@ meteor_act
 
 	//Embed or sever artery
 	if(P.can_embed() && !(species.species_flags & SPECIES_FLAG_NO_EMBED) && prob(22.5 + max(penetrating_damage, -10)) && !(prob(50) && (organ.sever_artery())))
-		var/obj/item/weapon/material/shard/shrapnel/SP = new()
+		var/obj/item/material/shard/shrapnel/SP = new()
 		SP.SetName((P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel")
 		SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
 		SP.loc = organ
@@ -192,7 +192,7 @@ meteor_act
 		to_chat(user, "<span class='danger'>They are missing that limb!</span>")
 		return null
 
-	if(user.statscheck(skills = user.SKILL_LEVEL(melee)) == CRIT_FAILURE || (prob(25) && is_hellbanned()))
+	if(user.statscheck(skills = user.SKILL_LEVEL(melee)) == CRIT_FAILURE || (prob(50) && is_hellbanned()))
 		user.resolve_critical_miss(I)
 		return null
 
@@ -252,7 +252,7 @@ meteor_act
 
 	if(special)
 		switch(user.atk_intent)
-			if(I_OFFENSE)//Offensive attacks do even more damage.
+			if(I_STRONG)//Offensive attacks do even more damage.
 				effective_force += I.force
 			if(I_WEAK)
 				effective_force = (effective_force/2) //Half the amount of force.
@@ -599,6 +599,9 @@ meteor_act
 
 	if(ticker.current_state == GAME_STATE_FINISHED)
 		to_chat(user, "<span class='warning'>The battle is over! There is no need to fight!</span>")
+		return
+
+	if(aspect_chosen(/datum/aspect/trenchmas))
 		return
 
 	var/hit_zone = user.zone_sel.selecting

@@ -9,7 +9,7 @@
 	var/propelled = 0 // Check for fire-extinguisher-driven chairs
 	material_alteration = MATERIAL_ALTERATION_NONE
 
-/obj/structure/bed/chair/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	if(!padding_material && istype(W, /obj/item/assembly/shock_kit))
 		var/obj/item/assembly/shock_kit/SK = W
@@ -169,7 +169,7 @@
 	set category = "Throne"
 
 	crew_announcement.Announce(var/message as text, var/new_title = "", var/new_sound = null, var/do_newscast = newscast, var/msg_sanitized = 0)
-	
+
 	CanInteract(user, state)
 */
 
@@ -181,7 +181,7 @@
 	buckle_movable = 1
 	material_alteration = MATERIAL_ALTERATION_NONE
 
-/obj/structure/bed/chair/office/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/office/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/stack) || isWirecutter(W))
 		return
 	..()
@@ -241,8 +241,8 @@
 	icon_state = "wooden_chair_preview"
 	material_alteration = MATERIAL_ALTERATION_NAME
 
-/obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/stack) || istype(W, /obj/item/weapon/wirecutters))
+/obj/structure/bed/chair/wood/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/stack) || istype(W, /obj/item/wirecutters))
 		return
 	..()
 

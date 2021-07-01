@@ -21,6 +21,7 @@
 	var/level = 0//What the value is, used in skill checks
 	var/xp = 0//What the level is, used for leveling up the skill to the next rank.
 	var/level_up_req = 100
+	var/category = "General Skills"
 
 //Stat defines
 /datum/stat
@@ -64,21 +65,27 @@
 
 //Gun skills.
 /datum/skill/auto_rifle
+	category = "Gun Skills"
 	name = "automatic rifles"
 
 /datum/skill/semi_rifle
+	category = "Gun Skills"
 	name = "semi auto rifles"
 
 /datum/skill/sniper
+	category = "Gun Skills"
 	name = "sniper rifles"
 
 /datum/skill/shotgun
+	category = "Gun Skills"
 	name = "shotguns"
 
 /datum/skill/lmg
+	category = "Gun Skills"
 	name = "machine guns"
 
 /datum/skill/smg
+	category = "Gun Skills"
 	name = "SMGs"
 
 
@@ -139,18 +146,32 @@
 		to_chat(user,"<span class='notice'>My level of knowledge about [src.name] has increased!</span>")
 
 
+/proc/cmp_skill_level(datum/skill/A, datum/skill/B)
+    return cmp_numeric_asc(B.level, A.level)
+
 //Checking skills
 /mob/living/carbon/human/proc/check_skills()
 	set name = "Check Skills"
 	set category = "IC"
-	var/message = "<big><b>Skills:</b></big>\n"
-	for(var/type in my_skills)
-		var/datum/skill/S = my_skills[type]
-		if(S.level)
-			message += "I am <b>[skillnumtodesc(S.level)]</b> at [S.name].\n"
-		else
-			message += "<small>I have no knowledge of [S.name].</small>\n"
-	to_chat(src, message)
+	var/message = "<div class='examinebox'><big><b>General Skills:</b></big>\n"
+	var/list/skill_copy = my_skills.Copy()
+	sortTim(skill_copy, /proc/cmp_skill_level, associative = TRUE)
+	for(var/type in skill_copy)
+		var/datum/skill/S = skill_copy[type]
+		if(S.category == "General Skills")
+			if(S.level)
+				message += "I am <b>[skillnumtodesc(S.level)]</b> at [S.name].\n"
+			else
+				message += "<small>I have no knowledge of [S.name].</small>\n"
+	message += "<big><b>Gun Skills:</b></big>\n"
+	for(var/type in skill_copy)
+		var/datum/skill/S = skill_copy[type]
+		if(S.category == "Gun Skills")
+			if(S.level)
+				message += "I am <b>[skillnumtodesc(S.level)]</b> at [S.name].\n"
+			else
+				message += "<small>I have no knowledge of [S.name].</small>\n"
+	to_chat(src, "[message]</div>")
 
 //Use this proc to add stats to the jobs, it will add up on default values, keep that in mind
 /mob/living/carbon/human/proc/add_stats(var/strength, var/dexterity, var/endurance, var/intelligence)//TODO: Make this more atomic.
@@ -231,10 +252,10 @@
 	var/sum = stats + skills * 2 + modifier
 
 	if(chem_effects[CE_PAINKILLER] > 100)//Being high on pain pills will fuck up your rolls.
-		sum += 5
+		sum -= 5
 
 	if(is_hellbanned())//Being hellbanned fucks with you.
-		sum += 5
+		sum -= 5
 
 	if(dice <= sum)
 		if(dice <= sum - crit || dice <= 4)

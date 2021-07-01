@@ -264,7 +264,7 @@
 		if (!istype(occupant,/mob/living/carbon/human))
 			to_chat(user, "\icon[src]<span class='warning'>The body scanner cannot scan that lifeform.</span>")
 			return TOPIC_REFRESH
-		new/obj/item/weapon/paper/(loc, "<tt>[connected.occupant.get_medical_data()]</tt>", "Body scan report - [occupant]")
+		new/obj/item/paper/(loc, "<tt>[connected.occupant.get_medical_data()]</tt>", "Body scan report - [occupant]")
 		return TOPIC_REFRESH
 
 /proc/get_severity(amount)

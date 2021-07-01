@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_SMALL
 	var/active = FALSE
 	var/range = 2 // This is a radius, thus a range of 7 covers the entire visible screen
-	var/obj/item/weapon/cell/bcell = /obj/item/weapon/cell/high
+	var/obj/item/cell/bcell = /obj/item/cell/high
 	var/suit_sensor_jammer_method/jammer_method
 	var/list/suit_sensor_jammer_methods_by_type
 	var/list/suit_sensor_jammer_methods
@@ -49,7 +49,7 @@
 			bcell = null
 		else
 			to_chat(user, "<span class='warning'>There is no cell to remove.</span>")
-	else if(istype(I, /obj/item/weapon/cell))
+	else if(istype(I, /obj/item/cell))
 		if(bcell)
 			to_chat(user, "<span class='warning'>There's already a cell in \the [src].</span>")
 		else if(user.unEquip(I))
@@ -116,7 +116,7 @@ obj/item/device/suit_sensor_jammer/ui_status(mob/user, datum/ui_state/state)
 	return ..()
 
 obj/item/device/suit_sensor_jammer/tg_ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = tg_default_state)
-	ui = tgui_process.try_update_ui(user, src, ui_key, ui, force_open)
+	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "suit_sensor_jammer", "Sensor Jammer", 350, 610, master_ui, state)
 		ui.open()
@@ -146,16 +146,16 @@ obj/item/device/suit_sensor_jammer/ui_act(action, params)
 	switch(action)
 		if("enable_jammer")
 			enable()
-			. TRUE
+			. = TRUE
 		if("disable_jammer")
 			disable()
-			. FALSE
+			. = TRUE
 		if("increase_range")
 			set_range(range + 1)
-			. = 1
+			. = TRUE
 		if("decrease_range")
 			set_range(range - 1)
-			. = 1
+			. = TRUE
 		if("select_method")
 			var/method = locate(params["method"]) in suit_sensor_jammer_methods
 			if(method)

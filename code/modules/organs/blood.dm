@@ -106,7 +106,7 @@
 ****************************************************/
 
 //Gets blood from mob to the container, preserving all data in it.
-/mob/living/carbon/proc/take_blood(obj/item/weapon/reagent_containers/container, var/amount)
+/mob/living/carbon/proc/take_blood(obj/item/reagent_containers/container, var/amount)
 	var/datum/reagent/blood/B = get_blood(container.reagents)
 	if(!B)
 		B = new /datum/reagent/blood
@@ -118,7 +118,7 @@
 	return 1
 
 //For humans, blood does not appear from blue, it comes from vessels.
-/mob/living/carbon/human/take_blood(obj/item/weapon/reagent_containers/container, var/amount)
+/mob/living/carbon/human/take_blood(obj/item/reagent_containers/container, var/amount)
 
 	if(!should_have_organ(BP_HEART))
 		reagents.trans_to_obj(container, amount)
@@ -229,6 +229,10 @@ proc/blood_splatter(var/target,var/datum/reagent/blood/source,var/large,var/spra
 	B = locate(decal_type) in T
 	if(!B)
 		B = new decal_type(T)
+
+	if(istype(T, /turf/simulated/wall))
+		B.plane = ABOVE_HUMAN_PLANE
+		B.layer = DECAL_LAYER
 
 	var/obj/effect/decal/cleanable/blood/drip/drop = B
 	if(istype(drop) && drips && drips.len && !large)

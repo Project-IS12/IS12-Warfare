@@ -38,8 +38,8 @@
 
 /obj/screen/close/Click()
 	if(master)
-		if(istype(master, /obj/item/weapon/storage))
-			var/obj/item/weapon/storage/S = master
+		if(istype(master, /obj/item/storage))
+			var/obj/item/storage/S = master
 			S.close(usr)
 	return 1
 
@@ -121,7 +121,7 @@
 					if(54 to 60)
 						current_intent = I_DEFENSE
 					if(61 to 67)
-						current_intent = I_OFFENSE
+						current_intent = I_STRONG
 					if(68 to 74)
 						current_intent = I_QUICK
 					if(75 to 81)
@@ -148,8 +148,8 @@
 			usr.atk_intent = I_DUAL
 			icon_state = "dual"
 			to_chat(usr, "<span class='combat_success'>Right click to melee attack with the item in your offhand. You will be less accurate though.</span>")
-		if(I_OFFENSE)
-			usr.atk_intent = I_OFFENSE
+		if(I_STRONG)
+			usr.atk_intent = I_STRONG
 			icon_state = "strong"
 			to_chat(usr, "<span class='combat_success'>Right click to perform a strong attack. You will hit for maximum damage, but the attack is slow, and costs stamina.</span>")
 		if(I_QUICK)
@@ -375,8 +375,8 @@
 								tankcheck = list(C.r_hand, C.l_hand, C.back)
 
 							for(var/i=1, i<tankcheck.len+1, ++i)
-								if(istype(tankcheck[i], /obj/item/weapon/tank))
-									var/obj/item/weapon/tank/t = tankcheck[i]
+								if(istype(tankcheck[i], /obj/item/tank))
+									var/obj/item/tank/t = tankcheck[i]
 									if (!isnull(t.manipulated_by) && t.manipulated_by != C.real_name && findtext(t.desc,breathes))
 										contents.Add(t.air_contents.total_moles)	//Someone messed with the tank and put unknown gasses
 										continue					//in it, so we're going to believe the tank is what it says it is
@@ -479,24 +479,6 @@
 				else
 					E.defense_intent = I_PARRY
 					E.combat_intent_icon.icon_state = "parry"
-		/*
-		//atk_intents here:
-		if("quick")
-			usr.atk_intent = I_QUICK
-			usr.hud_used.atk_intent.icon_state = "quick"
-
-		if("aimed")
-			usr.atk_intent = I_AIMED
-			usr.hud_used.atk_intent.icon_state = "aimed"
-
-		if("defense")
-			usr.atk_intent = I_DEFENSE
-			usr.hud_used.atk_intent.icon_state = "defense"
-
-		if("offense")
-			usr.atk_intent = I_OFFENSE
-			usr.hud_used.atk_intent.icon_state = "offense"
-		*/
 
 		if("fixeye")
 			usr.face_direction()

@@ -46,15 +46,15 @@ Missing:	Missing bowels will cause the stomach to return its send code. This mea
 	var/food_to_stool_ratio = 4 //takes this many food chunks to make 1 stool
 	var/food_count = 0
 	var/stool_count = 0 //might not need this but whatever.
-	var/obj/item/weapon/storage/special/inventory
+	var/obj/item/storage/special/inventory
 
-/obj/item/weapon/storage/special/bowels
+/obj/item/storage/special/bowels
 	max_w_class = ITEM_SIZE_SMALL
 	storage_slots = 12 //default for a human. Max stool will be 4-5 the rest of the space is for food chunk processing.
 
 
 /obj/item/organ/internal/bowels/New()
-	inventory = new /obj/item/weapon/storage/special/bowels()
+	inventory = new /obj/item/storage/special/bowels()
 	inventory.loc = src
 	inventory.name = name
 
@@ -69,8 +69,8 @@ Missing:	Missing bowels will cause the stomach to return its send code. This mea
 
 
 /obj/item/organ/internal/bowels/proc/process_contents()
-	for(var/obj/item/weapon/reagent_containers/eatable/F in inventory)
-		if(istype(F, /obj/item/weapon/reagent_containers/eatable/poo))
+	for(var/obj/item/reagent_containers/eatable/F in inventory)
+		if(istype(F, /obj/item/reagent_containers/eatable/poo))
 			continue
 		food_count += 1
 		to_chat(owner, "food count is [food_count]")
@@ -80,11 +80,11 @@ Missing:	Missing bowels will cause the stomach to return its send code. This mea
 				food_count -=1
 				if(food_count <=0)
 					to_chat(owner, "I make a poo poo")
-					new /obj/item/weapon/reagent_containers/eatable/poo(inventory)
+					new /obj/item/reagent_containers/eatable/poo(inventory)
 					//make poo
 					break
 
 	food_count = 0
-	for(var/obj/item/weapon/W in inventory)
+	for(var/obj/item/W in inventory)
 		if(W)
 			to_chat(owner, "bowels contains [W]")

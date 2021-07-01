@@ -53,7 +53,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 		data["searchwarrants"] = searchwarrants.len ? searchwarrants : null
 		data["archivedwarrants"] = archivedwarrants.len? archivedwarrants :null
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnanoui.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "digitalwarrant.tmpl", name, 700, 450, state = state)
 		ui.auto_update_layout = 1
@@ -81,7 +81,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	var/mob/user = usr
 	if(!istype(user))
 		return
-	var/obj/item/weapon/card/id/I = user.GetIdCard()
+	var/obj/item/card/id/I = user.GetIdCard()
 	if(!istype(I) || !I.registered_name || !(access_security in I.access))
 		to_chat(user, "Authentication error: Unable to locate ID with apropriate access to allow this operation.")
 		return

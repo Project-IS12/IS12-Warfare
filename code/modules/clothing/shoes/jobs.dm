@@ -22,7 +22,7 @@
 	can_hold_knife = 1
 	cold_protection = FEET
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
-	var/obj/item/weapon/material/sword/combat_knife/knife = null
+	var/obj/item/material/sword/combat_knife/knife = null
 
 /obj/item/clothing/shoes/jackboots/New()
 	..()
@@ -31,7 +31,7 @@
 
 /obj/item/clothing/shoes/jackboots/attackby(obj/item/I, mob/user)
 	. = ..()
-	if(istype(I, /obj/item/weapon/material/sword/combat_knife))
+	if(istype(I, /obj/item/material/sword/combat_knife))
 		if(knife)//We've already got a knife in there, no need for another.
 			return
 		user.drop_from_inventory(I)

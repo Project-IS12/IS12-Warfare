@@ -87,7 +87,7 @@
 	if(!casseta.sound_inside)
 		return
 
-	sound_token = sound_player.PlayLoopingSound(src, sound_id, casseta.sound_inside, volume = 40, range = 10, falloff = 3, prefer_mute = TRUE, ignore_vis = TRUE)
+	sound_token = sound_player.PlayLoopingSound(src, sound_id, casseta.sound_inside, volume = 50, range = 9, falloff = 3, prefer_mute = TRUE, ignore_vis = TRUE)
 	playing = 1
 
 /obj/item/device/cassette
@@ -136,3 +136,8 @@
 	a_side = pick('sound/music/boombox7.ogg', 'sound/music/boombox8.ogg')
 	b_side = pick('sound/music/boombox9.ogg', 'sound/music/boombox10.ogg')
 	sound_inside = a_side
+
+/obj/item/device/cassette/tape/rare
+	name = "rare trenchmas tape"
+	a_side = 'sound/music/drip.ogg'
+	b_side = 'sound/music/drip.ogg'

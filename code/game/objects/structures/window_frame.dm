@@ -50,7 +50,7 @@
 	if(display_message)
 		visible_message("[src] shatters!")
 
-	cast_new(/obj/item/weapon/material/shard, 1, loc)
+	cast_new(/obj/item/material/shard, 1, loc)
 	cast_new(/obj/item/stack/rods, 1, loc)
 	glass = FALSE
 	shattered = TRUE
@@ -104,7 +104,7 @@
 	if(!glass)
 		if(shattered)
 			to_chat(usr,"<span class='notice'>You clear broken glass from the frame.</span>")
-			var/obj/item/weapon/material/shard/S = new
+			var/obj/item/material/shard/S = new
 			usr.put_in_hands(S)
 			shattered = 0
 			update_icon()

@@ -25,7 +25,7 @@
 	icon_dead = "shark_dead"
 	icon_gib = "shark_dead"
 	turns_per_move = 8
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/sharkmeat
+	meat_type = /obj/item/reagent_containers/food/snacks/sharkmeat
 	speed = 8
 	maxHealth = 75
 	health = 75
@@ -61,14 +61,14 @@
 				L.forceMove(T)
 			visible_message("<span class='danger'>\The [src] releases [L].</span>")
 
-/obj/item/weapon/reagent_containers/food/snacks/sharkmeat
+/obj/item/reagent_containers/food/snacks/sharkmeat
 	name = "cosmoshark fillet"
 	desc = "A fillet of cosmoshark meat."
 	icon_state = "fishfillet"
 	filling_color = "#cecece"
 	center_of_mass = "x=17;y=13"
 
-/obj/item/weapon/reagent_containers/food/snacks/sharkmeat/New()
+/obj/item/reagent_containers/food/snacks/sharkmeat/New()
 	..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 5)
 	reagents.add_reagent(/datum/reagent/space_drugs, 1)
@@ -106,9 +106,9 @@ obj/structure/net/Initialize(var/mapload)
 	else if (health < 90)
 		to_chat(usr, "Few ribbons of \the [src] are cut away.")
 
-/obj/structure/net/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/weapon/material)) //sharp objects can cut thorugh
-		var/obj/item/weapon/material/SH = W
+/obj/structure/net/attackby(obj/item/W as obj, mob/user as mob)
+	if (istype(W, /obj/item/material)) //sharp objects can cut thorugh
+		var/obj/item/material/SH = W
 		if (!(SH.sharp) || (SH.sharp && SH.force < 10))//is not sharp enough or at all
 			to_chat(user,"<span class='warning'>You can't cut throught \the [src] with \the [W], it's too dull.</span>")
 			return
@@ -239,6 +239,6 @@ obj/structure/net/Initialize(var/mapload)
 	name = "Dead carp fisher"
 	uniform = /obj/item/clothing/under/color/green
 	suit = /obj/item/clothing/suit/apron/overalls
-	belt = /obj/item/weapon/material/hatchet/tacknife
+	belt = /obj/item/material/hatchet/tacknife
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/hardhat/dblue

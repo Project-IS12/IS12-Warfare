@@ -13,7 +13,7 @@
 	var/state = HOME
 	var/datum/disease2/disease/virus2 = null
 	var/datum/computer_file/data/virus_record/entry = null
-	var/obj/item/weapon/reagent_containers/syringe/sample = null
+	var/obj/item/reagent_containers/syringe/sample = null
 
 /obj/machinery/disease2/isolator/update_icon()
 	if (stat & (BROKEN|NOPOWER))
@@ -28,8 +28,8 @@
 		icon_state = "isolator"
 
 /obj/machinery/disease2/isolator/attackby(var/obj/O as obj, var/mob/user)
-	if(!istype(O,/obj/item/weapon/reagent_containers/syringe)) return
-	var/obj/item/weapon/reagent_containers/syringe/S = O
+	if(!istype(O,/obj/item/reagent_containers/syringe)) return
+	var/obj/item/reagent_containers/syringe/S = O
 
 	if(sample)
 		to_chat(user, "\The [src] is already loaded.")
@@ -40,7 +40,7 @@
 	S.loc = src
 
 	user.visible_message("[user] adds \a [O] to \the [src]!", "You add \a [O] to \the [src]!")
-	GLOB.nanomanager.update_uis(src)
+	SSnanoui.update_uis(src)
 	update_icon()
 
 	src.attack_hand(user)
@@ -101,7 +101,7 @@
 					"name" = entry.fields["name"], \
 					"description" = replacetext(desc, "\n", ""))
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnanoui.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "pathogenic_isolator.tmpl", src.name, 400, 500)
 		ui.set_initial_data(data)
@@ -112,17 +112,17 @@
 		isolating -= 1
 		if (isolating == 0)
 			if (virus2)
-				var/obj/item/weapon/virusdish/d = new /obj/item/weapon/virusdish(src.loc)
+				var/obj/item/virusdish/d = new /obj/item/virusdish(src.loc)
 				d.virus2 = virus2.getcopy()
 				virus2 = null
 				ping("\The [src] pings, \"Viral strain isolated.\"")
 
-			GLOB.nanomanager.update_uis(src)
+			SSnanoui.update_uis(src)
 			update_icon()
 
 /obj/machinery/disease2/isolator/OnTopic(user, href_list)
 	if (href_list["close"])
-		GLOB.nanomanager.close_user_uis(user, src, "main")
+		SSnanoui.close_user_uis(user, src, "main")
 		return TOPIC_HANDLED
 
 	if (href_list[HOME])
@@ -161,7 +161,7 @@
 		return TOPIC_REFRESH
 
 /obj/machinery/disease2/isolator/proc/print(var/mob/user)
-	var/obj/item/weapon/paper/P = new /obj/item/weapon/paper(loc)
+	var/obj/item/paper/P = new /obj/item/paper(loc)
 
 	switch (state)
 		if (HOME)
