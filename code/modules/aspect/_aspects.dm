@@ -90,6 +90,10 @@ proc/print_aspect()
 	name = "Nightfare"
 	desc = "Our worst fears have come true! The sun has gone out! There is no natural light on the battlefield!"
 
+/datum/aspect/normal_pills
+	name = "YOU ARE NOT NORMAL!!!"
+	desc = "Our worst fears have come true! Everyone forgot to take their normal pills!"
+
 datum/aspect/nightfare/activate()
 	//Change lobby to a moon or something. Adjust lobby music?
 	..()
