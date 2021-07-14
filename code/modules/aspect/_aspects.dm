@@ -106,3 +106,10 @@ datum/aspect/nightfare/deactivate()
 	for(var/obj/effect/lighting_dummy/daylight/A in GLOB.lighting_dummies)
 		A.set_light(3, 3, "#28284f")
 
+/datum/aspect/madness
+	name = "Somewhere in Blusnia..."
+	desc = "They say, somewhere in Blusnia, guns can never jam or be reloaded. That must make for some mad combat."
+
+/datum/aspect/quake
+	name = "Parallel Dimensions"
+	desc = "is12wiki.xyz | instagib ctf,instagib,clanarena"

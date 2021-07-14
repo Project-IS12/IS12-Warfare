@@ -120,6 +120,8 @@
 	if(isanimal(target))
 		return FALSE
 	var/mob/living/L = target
+	if(aspect_chosen(/datum/aspect/quake))
+		L.gib()
 	if(damage && damage_type == BRUTE)
 		var/turf/target_loca = get_turf(target)
 		var/splatter_dir = dir
