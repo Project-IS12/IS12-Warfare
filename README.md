@@ -28,7 +28,7 @@ The major change here is that if you host a server using any code licensed under
 
 ## How do I get this to compile?
 
-You can do this one of two ways. First way is to go into your DME, and find the line that contains `#include "__non-agpl-warfare/__secret.dme"`, comment this out. Your code will now compile.
+Go into your DME, and find the line that contains `#include "__non-agpl-warfare/__secret.dme"`, comment this out. Your code will now compile.
 
 
 ## Why do I have to do that?
