@@ -160,9 +160,13 @@
 			H.visible_message("<span class='danger'>[teeth_pulling_bitch] tries to tear off [H]'s tooth with [src]!</span>",
 								"<span class='danger'>[teeth_pulling_bitch] tries to tear off your tooth with [src]!</span>")
 			if(do_after(teeth_pulling_bitch, 50, H))
-				if(!O || !O.get_teeth()) return
+				if(!O || !O.get_teeth())
+					teeth_pulling_bitch.doing_something = 0 // Teeth puller is not doing something anymore
+					return
 				var/obj/item/stack/teeth/E = pick(O.teeth_list)
-				if(!E || E.zero_amount()) return
+				if(!E || E.zero_amount())
+					teeth_pulling_bitch.doing_something = 0 // Teeth puller is not doing something anymore
+					return
 				var/obj/item/stack/teeth/T = new E.type(H.loc, 1)
 				E.use(1)
 				T.add_blood(H)
