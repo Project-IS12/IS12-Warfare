@@ -113,3 +113,7 @@ datum/aspect/nightfare/deactivate()
 /datum/aspect/quake
 	name = "Parallel Dimensions"
 	desc = "is12wiki.xyz | instagib ctf,instagib,clanarena"
+
+/datum/aspect/somme
+	name = "It's a long, long way to Tiperary"
+	desc = "It's a long way to go."
