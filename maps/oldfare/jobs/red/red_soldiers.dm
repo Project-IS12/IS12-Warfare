@@ -266,6 +266,8 @@
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
 		belt = null
 
+	if(aspect_chosen(/datum/aspect/somme))
+		belt = /obj/item/shovel
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/torch/self_lit = 1, /obj/item/ammo_box/flares = 1)
 	if(aspect_chosen(/datum/aspect/trenchmas))
@@ -320,6 +322,11 @@
 		belt = /obj/item/storage/belt/warfare
 		backpack_contents = list(/obj/item/stack/barbwire = 1, /obj/item/defensive_barrier = 3, /obj/item/storage/box/ifak = 1, /obj/item/grenade/smokebomb = 1)
 
+	if(aspect_chosen(/datum/aspect/somme))
+		suit_store = /obj/item/gun/projectile/shotgun/pump/shitty
+		r_pocket = /obj/item/ammo_box/shotgun
+		belt = /obj/item/shovel
+		backpack_contents = list(/obj/item/stack/barbwire = 1, /obj/item/defensive_barrier = 3, /obj/item/storage/box/ifak = 1, /obj/item/grenade/smokebomb = 1)
 	if(aspect_chosen(/datum/aspect/nightfare))
 		backpack_contents += list(/obj/item/ammo_box/flares = 1, /obj/item/torch/self_lit = 1)
 	if(aspect_chosen(/datum/aspect/trenchmas))

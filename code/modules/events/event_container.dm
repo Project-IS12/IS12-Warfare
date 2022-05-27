@@ -113,6 +113,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	log_debug("Next event of severity [severity_to_string[severity]] in [(next_event_time - world.time)/600] minutes.")
 
 	if(aspect_chosen(/datum/aspect/somme))
+		spawn(config.warfare_start_time MINUTES)
 		next_event_time = 15 SECONDS
 
 /datum/event_container/proc/SelectEvent()
