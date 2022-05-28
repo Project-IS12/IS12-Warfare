@@ -113,8 +113,16 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	log_debug("Next event of severity [severity_to_string[severity]] in [(next_event_time - world.time)/600] minutes.")
 
 	if(aspect_chosen(/datum/aspect/somme))
-		spawn(config.warfare_start_time MINUTES)
-		next_event_time = 15 SECONDS
+		var/fired = 0
+		if(!fired)
+			fired = 1
+			spawn(config.warfare_start_time MINUTES)
+			next_event_time = 15 SECONDS
+			to_world("<font size=5><b><span class='danger'>it fired</span></b></font>")
+		else
+			next_event_time = 15 SECONDS
+			to_world("<font size=5><b><span class='danger'>NO FIRE</span></b></font>")
+
 
 /datum/event_container/proc/SelectEvent()
 	var/datum/event_meta/EM = input("Select an event to queue up.", "Event Selection", null) as null|anything in available_events
