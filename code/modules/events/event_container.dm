@@ -118,11 +118,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 			fired = 1
 			spawn(config.warfare_start_time MINUTES)
 			next_event_time = 15 SECONDS
-			to_world("<font size=5><b><span class='danger'>it fired</span></b></font>")
 		else
 			next_event_time = 15 SECONDS
-			to_world("<font size=5><b><span class='danger'>NO FIRE</span></b></font>")
-
 
 /datum/event_container/proc/SelectEvent()
 	var/datum/event_meta/EM = input("Select an event to queue up.", "Event Selection", null) as null|anything in available_events
