@@ -100,6 +100,8 @@ var/list/mining_floors = list()
 		overlays += archaeo_overlay
 
 /turf/simulated/mineral/ex_act(severity)
+	if(aspect_chosen(/datum/aspect/somme))
+		return // so many bombs hit the walls for some reason
 	switch(severity)
 		if(2.0)
 			if (prob(70))
