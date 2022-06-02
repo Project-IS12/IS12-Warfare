@@ -24,7 +24,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 /datum/event_container/proc/process()
 	if(!next_event_time)
 		set_event_delay()
-
+	if(aspect_chosen(/datum/aspect/somme) && SSwarfare.battle_time == TRUE)
+		next_event_time = 15 SECONDS // ~30 seconds
 	if(delayed || !config.allow_random_events)
 		next_event_time += (world.time - last_world_time)
 	else if(world.time > next_event_time)
@@ -111,15 +112,6 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		next_event_time = world.time + event_delay
 
 	log_debug("Next event of severity [severity_to_string[severity]] in [(next_event_time - world.time)/600] minutes.")
-
-	if(aspect_chosen(/datum/aspect/somme))
-		var/fired = 0
-		if(!fired)
-			fired = 1
-			spawn(config.warfare_start_time MINUTES)
-			next_event_time = 15 SECONDS
-		else
-			next_event_time = 15 SECONDS
 
 /datum/event_container/proc/SelectEvent()
 	var/datum/event_meta/EM = input("Select an event to queue up.", "Event Selection", null) as null|anything in available_events
