@@ -136,7 +136,7 @@
 
 /datum/job/soldier/blue_soldier/sentry
 	title = "Blue Sentry"
-	total_positions = 1
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/sentry
 	auto_rifle_skill = 5
 	semi_rifle_skill = 5
@@ -314,17 +314,18 @@
 		r_pocket = /obj/item/shovel
 		belt = /obj/item/storage/belt/autoshotty
 		backpack_contents = list(/obj/item/stack/barbwire = 1, /obj/item/defensive_barrier = 3, /obj/item/storage/box/ifak = 1, /obj/item/grenade/smokebomb = 1)
-	else if(prob(50))
+	else //if(prob(50))
 		suit_store = /obj/item/gun/projectile/shotgun/pump/shitty
 		r_pocket = /obj/item/ammo_box/shotgun
 		belt = /obj/item/shovel
 		backpack_contents = list(/obj/item/stack/barbwire = 1, /obj/item/defensive_barrier = 3, /obj/item/storage/box/ifak = 1, /obj/item/grenade/smokebomb = 1)
+	/*
 	else
 		suit_store = /obj/item/gun/projectile/automatic/machinepistol
 		r_pocket = /obj/item/shovel
 		belt = /obj/item/storage/belt/warfare
 		backpack_contents = list(/obj/item/stack/barbwire = 1, /obj/item/defensive_barrier = 3, /obj/item/storage/box/ifak = 1, /obj/item/grenade/smokebomb = 1)
-
+	*/
 	if(aspect_chosen(/datum/aspect/somme))
 		suit_store = /obj/item/gun/projectile/shotgun/pump/shitty
 		r_pocket = /obj/item/ammo_box/shotgun
