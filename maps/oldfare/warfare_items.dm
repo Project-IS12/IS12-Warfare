@@ -689,3 +689,24 @@
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "stick0"
 	force = 10
+
+/obj/item/weapon/banner
+	name = "Blue Banner"
+	desc = "The proud banner of the Blue Army."
+	icon = 'icons/obj/banners.dmi'
+	item_icons = list(
+		slot_l_hand_str = 'icons/obj/bannersleft.dmi',
+		slot_r_hand_str = 'icons/obj/banners.dmi',
+		)
+	icon_state = "blue_banner_icon"
+	item_state = "blue_banner"
+	slot_flags = null
+	block_chance = 20
+	w_class = ITEM_SIZE_HUGE
+
+/obj/item/weapon/banner/red
+	name = "Red Banner"
+	desc = "The proud banner of the Red Army."
+	icon = 'icons/obj/banners.dmi'
+	icon_state = "red_banner_icon"
+	item_state = "red_banner"
