@@ -109,6 +109,7 @@ GLOBAL_LIST_EMPTY(family_blacklist)
 	H.SKILL_LEVEL(shotgun) = rand((shotgun_skill - 3), shotgun_skill)
 	H.SKILL_LEVEL(lmg) = rand((lmg_skill - 3), lmg_skill)
 	H.SKILL_LEVEL(smg) = rand((smg_skill - 3), smg_skill)
+	H.SKILL_LEVEL(boltie) = rand((boltie_skill - 3), boltie_skill)
 
 /datum/job/proc/equip(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
 	if(child_role)
