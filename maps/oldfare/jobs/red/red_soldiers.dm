@@ -4,10 +4,11 @@
 	is_red_team = TRUE
 	selection_color = "#b27676"
 
-	auto_rifle_skill = 10 //This is leftover from coldfare, but we could go back to that one day so better not to mess with it.
+	//auto_rifle_skill = 10 //This is leftover from coldfare, but we could go back to that one day so better not to mess with it. //Fuck you we're not going back to it.
 	semi_rifle_skill = 10
+	boltie_skill = 10
 	sniper_skill = 3
-	shotgun_skill = 6
+	shotgun_skill = 5
 	lmg_skill = 3
 	smg_skill = 3
 
@@ -74,8 +75,9 @@
 	engineering_skill = 10
 	auto_rifle_skill = 5
 	semi_rifle_skill = 5
-	smg_skill = 10
+	smg_skill = 3
 	shotgun_skill = 10
+	boltie_skill = 5
 
 	announced = FALSE
 
@@ -119,6 +121,7 @@
 	shotgun_skill = 3
 	lmg_skill = 10
 	smg_skill = 3
+	boltie_skill = 3
 	can_be_in_squad = FALSE
 	open_when_dead = TRUE
 
@@ -141,6 +144,7 @@
 	shotgun_skill = 3
 	lmg_skill = 3
 	smg_skill = 3
+	boltie_skill = 3
 	can_be_in_squad = FALSE
 	open_when_dead = FALSE
 
@@ -194,17 +198,18 @@
 	can_be_in_squad = FALSE
 	//Kids suck at everything.
 	specific_skill = TRUE
-	medical_skill = 0
-	surgery_skill = 0
-	ranged_skill = 0
-	engineering_skill = 0
-	melee_skill = 0
-	auto_rifle_skill = 0
-	semi_rifle_skill = 0
-	sniper_skill = 0
-	shotgun_skill = 0
-	lmg_skill = 0
-	smg_skill = 0
+	medical_skill = 1
+	surgery_skill = 1
+	ranged_skill = 1
+	engineering_skill = 1
+	melee_skill = 1
+	auto_rifle_skill = 1
+	semi_rifle_skill = 1
+	sniper_skill = 1
+	shotgun_skill = 1
+	lmg_skill = 1
+	smg_skill = 1
+	boltie_skill = 1
 
 	announced = FALSE
 

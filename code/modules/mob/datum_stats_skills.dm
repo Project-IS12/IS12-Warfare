@@ -68,6 +68,10 @@
 	category = "Gun Skills"
 	name = "automatic rifles"
 
+/datum/skill/boltie
+	category = "Gun Skills"
+	name = "bolt action rifles"
+
 /datum/skill/semi_rifle
 	category = "Gun Skills"
 	name = "semi auto rifles"
@@ -251,8 +255,8 @@
 	var/modifier = mood() + fatigue() + mod
 	var/sum = stats + skills * 2 + modifier
 
-	if(chem_effects[CE_PAINKILLER] > 100)//Being high on pain pills will fuck up your rolls.
-		sum -= 5
+	if(chem_effects[CE_PAINKILLER] > 80)//Being high on pain pills will fuck up your rolls.
+		sum -= 6
 
 	if(is_hellbanned())//Being hellbanned fucks with you.
 		sum -= 5

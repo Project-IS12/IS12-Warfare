@@ -64,6 +64,7 @@ GLOBAL_LIST_EMPTY(family_blacklist)
 	var/shotgun_skill = 5
 	var/lmg_skill = 5
 	var/smg_skill = 5
+	var/boltie_skill = 5
 
 
 /datum/job/New()
@@ -94,6 +95,7 @@ GLOBAL_LIST_EMPTY(family_blacklist)
 		H.SKILL_LEVEL(shotgun) = shotgun_skill
 		H.SKILL_LEVEL(lmg) = lmg_skill
 		H.SKILL_LEVEL(smg) = smg_skill
+		H.SKILL_LEVEL(boltie) = boltie_skill
 		return
 	H.SKILL_LEVEL(medical) = rand((medical_skill - 3), medical_skill)
 	H.SKILL_LEVEL(surgery) = rand((surgery_skill - 3), surgery_skill)

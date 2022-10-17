@@ -12,6 +12,7 @@
 	one_hand_penalty = 20 //FIRE THIS THING WITH BOTH FUCKING HANDS.
 	empty_icon = "boltaction-e"
 	far_fire_sound = "sniper_fire"
+	gun_type = GUN_BOLTIE //So engineers can't shoot this shit.
 
 /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/bayonet
 	name = "\improper Mark I Stormrider"

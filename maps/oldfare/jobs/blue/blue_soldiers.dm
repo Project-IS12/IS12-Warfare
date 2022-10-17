@@ -4,10 +4,11 @@
 	is_blue_team = TRUE
 	selection_color = "#76abb2"
 
-	auto_rifle_skill = 10 //This is leftover from coldfare, but we could go back to that one day so better not to mess with it.
+	//auto_rifle_skill = 10 //This is leftover from coldfare, but we could go back to that one day so better not to mess with it. //Fuck you we're not going back to it.
 	semi_rifle_skill = 10
+	boltie_skill = 10
 	sniper_skill = 3
-	shotgun_skill = 6
+	shotgun_skill = 5
 	lmg_skill = 3
 	smg_skill = 3
 
@@ -76,8 +77,9 @@
 	engineering_skill = 10
 	auto_rifle_skill = 5
 	semi_rifle_skill = 5
-	smg_skill = 10
+	smg_skill = 3
 	shotgun_skill = 10
+	boltie_skill = 5
 
 	announced = FALSE
 
@@ -119,6 +121,7 @@
 	semi_rifle_skill = 8
 	sniper_skill = 3
 	shotgun_skill = 3
+	boltie_skill = 3
 	lmg_skill = 3
 	smg_skill = 3
 	can_be_in_squad = FALSE
@@ -144,6 +147,7 @@
 	shotgun_skill = 3
 	lmg_skill = 10
 	smg_skill = 3
+	boltie_skill = 3
 	can_be_in_squad = FALSE
 	open_when_dead = TRUE
 
