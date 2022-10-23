@@ -336,6 +336,10 @@
 	gun_type = GUN_LMG
 	condition = 150 //Enough for one clean mag.
 
+/obj/item/gun/projectile/automatic/mg08/special_check(var/mob/user)
+	to_chat(user, "It just doesn't seem to work.")
+	handle_click_empty(user)
+	return 0
 
 /obj/item/gun/projectile/automatic/gpmg
 	name = "GPMG Requiem"
@@ -412,6 +416,11 @@
 	unloaded_icon = "schmeiser-e"
 	unwielded_unloaded_icon = "schmeiser-e"
 	wielded_unloaded_icon = "schmeiser-e"
+
+/obj/item/gun/projectile/automatic/machinepistol/special_check(var/mob/user)
+	to_chat(user, "It just doesn't seem to work.")
+	handle_click_empty(user)
+	return 0
 
 /obj/item/gun/projectile/automatic/flamer
 	name = "Mk.1 Scorcher"
