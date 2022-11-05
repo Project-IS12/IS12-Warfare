@@ -33,7 +33,7 @@
 	if(T.density)
 		return
 
-	if(istype(T, /turf/simulated/floor/trench)  || istype(T, /turf/simulated/floor/exoplanet/water/shallow))
+	if(istype(T, /turf/simulated/floor/trench)  || istype(T, /turf/simulated/floor/exoplanet/water/shallow) || istype(T, /turf/simulated/open))
 		return
 
 	if(prob(1))
@@ -62,7 +62,7 @@
 	if(T.density)
 		return
 
-	if(istype(T, /turf/simulated/floor/trench)  || istype(T, /turf/simulated/floor/exoplanet/water/shallow))
+	if(istype(T, /turf/simulated/floor/trench)  || istype(T, /turf/simulated/floor/exoplanet/water/shallow) || istype(T, /turf/simulated/open))
 		return
 
 	//if(prob(1)) //Rats are lagging I'm pretty sure.
