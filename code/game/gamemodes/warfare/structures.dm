@@ -31,8 +31,11 @@
 
 /obj/structure/dirt_wall/attackby(obj/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/shovel))
-		if(do_after(user, 50))
-			qdel(src)
+		if(!do_after(user, 50, src)) //we want to change mob pixel_y and fov after we finish do_after, not before it
+			return
+		for(var/mob/living/M in src.loc) // if someone standing on dirt wall - they will be shifted back to normal position
+			Uncrossed(M)
+		qdel(src)
 
 /obj/structure/dirt_wall/RightClick(mob/user)
 	if(!CanPhysicallyInteract(user))
