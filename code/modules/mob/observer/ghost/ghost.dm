@@ -175,6 +175,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		announce_ghost_joinleave(ghostize(1))
 	else
 		succumb()
+
 	/*
 	else
 		var/response
@@ -485,13 +486,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if(admin_ghosted)//aghosts can always respawn if they like
 		return TRUE
-	
+
 	if(issiegefare() && client.warfare_faction == RED_TEAM)
 		return TRUE
-		
+
 	if(issiegefare())
 		respawn_time = 0.5
-	
+
 	/*
 	if(mind && mind.current && mind.current.stat != DEAD && can_reenter_corpse == CORPSE_CAN_REENTER)
 		if(feedback)
@@ -579,3 +580,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/mob/new_player/M = new /mob/new_player()
 	M.key = key
 	log_and_message_admins("has respawned.", M)
+	for(var/datum/sound_token/ST) // Removing from listeners list in sound_player.dm so music won't bother new_player in lobby after respawn
+		ST.PrivRemoveListener(src) // Better safe than sorry
+		ST.PrivRemoveListener(M)

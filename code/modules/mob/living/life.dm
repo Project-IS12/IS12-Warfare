@@ -133,9 +133,15 @@
 	if(deaf_loop)
 		sound_to(src, sound(null, repeat = 1, volume = 50, wait = 0, channel = 1))
 		ambience_is_playing = FALSE
+		for(var/datum/sound_token/ST)
+			ST.listener_status[src] |= SOUND_MUTE
+			ST.PrivUpdateListener(src)
 	else if(!deaf_loop && !ambience_is_playing)
 		ambience_is_playing = TRUE
 		sound_to(src, sound(current_ambience, repeat = 1, volume = 50, wait = 0, channel = 1))
+		for(var/datum/sound_token/ST)
+			ST.listener_status[src] &= ~SOUND_MUTE
+			ST.PrivUpdateListener(src)
 
 
 /mob/living/proc/change_current_ambience(var/ambience)
