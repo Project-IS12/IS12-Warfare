@@ -148,13 +148,11 @@ datum/sound_token/proc/Mute()
 /datum/sound_token/proc/PrivLocateListeners(var/list/prior_turfs, var/list/current_turfs)
 	if(status & SOUND_STOPPED)
 		return
-
 	can_be_heard_from = current_turfs
 	var/current_listeners = all_hearers(source, range, ignore_vis)
 
 	var/former_listeners = listeners - current_listeners
 	var/new_listeners = current_listeners - listeners
-
 	for(var/listener in former_listeners)
 		PrivRemoveListener(listener)
 
@@ -179,6 +177,10 @@ datum/sound_token/proc/PrivAddListener(var/atom/listener)
 		if(!(v.abilities & VIRTUAL_ABILITY_HEAR))
 			return
 		listener = v.host
+	var/mob/living/M = listener
+	if(istype(M))
+		if(M.sdisabilities & DEAF || M.ear_deaf || M.deaf_loop)
+			return
 	if(listener in listeners)
 		return
 
@@ -203,6 +205,8 @@ datum/sound_token/proc/PrivAddListener(var/atom/listener)
 /datum/sound_token/proc/PrivUpdateListenerLoc(var/atom/listener, var/update_sound = TRUE)
 	var/sound/S = listeners[listener]
 
+	var/mob/living/M = listener
+
 	var/turf/source_turf = get_turf(source)
 	var/turf/listener_turf = get_turf(listener)
 
@@ -211,11 +215,15 @@ datum/sound_token/proc/PrivAddListener(var/atom/listener)
 	if(!listener_turf || (distance > range) || (!(listener_turf in can_be_heard_from) && !ignore_vis) )
 		if(prefer_mute)
 			listener_status[listener] |= SOUND_MUTE
+			PrivUpdateListener(listener)
 		else
 			PrivRemoveListener(listener)
 			return
 	else if(prefer_mute)
 		listener_status[listener] &= ~SOUND_MUTE
+	if(istype(M))
+		if(M.sdisabilities & DEAF || M.ear_deaf || M.deaf_loop) // Preventing from hearing while moving near sound source when mob is deaf
+			return
 
 	S.x = source_turf.x - listener_turf.x
 	S.y = source_turf.y - listener_turf.y
