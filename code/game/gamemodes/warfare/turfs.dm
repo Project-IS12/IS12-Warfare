@@ -163,6 +163,27 @@
 
 		else
 			to_chat(user, "You're already digging.")
+	else if(istype(O, /obj/item/landmine))
+		if(isopenspace(src))
+			return
+		if(turf_contains_dense_objects(src) || iswall(src)) //no 20 structures of barbed wire in one tile/in walls
+			to_chat(user, "There's already something there!")
+			return
+		for(var/obj/structure/object in src)
+			to_chat(user, "There's already something there!")
+			return
+		user.visible_message("<span class='danger'>[user] begins to place the landmine...</span>")
+		playsound(user, 'sound/items/Screwdriver.ogg', 40, FALSE)
+		if(do_after(user,50))
+			if(O.loc == user)
+				user.drop_from_inventory(O)
+			qdel(O)
+			var/obj/structure/landmine/L = new /obj/structure/landmine(src)
+			L.can_be_armed = FALSE
+			L.update_icon()
+			user.visible_message("<span class='danger'>[user] finishes placing the landmine...</span>")
+			playsound(src, 'sound/items/Screwdriver2.ogg', 100, FALSE)
+	return
 
 /turf/simulated/floor/dirty/RightClick(mob/living/user)
 	if(!CanPhysicallyInteract(user))

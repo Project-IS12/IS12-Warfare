@@ -617,6 +617,11 @@
 		return
 	open(user)//If it's in your pocket then open it.
 
+/obj/item/storage/box/ifak/etk
+	name = "ETK"
+	desc = "An Engineer Tools Kit, have all tools that engineer need."
+	icon_state = "etk"
+	startswith = list(/obj/item/wirecutters, /obj/item/screwdriver)
 
 /obj/item/bandage_pack
 	name = "Bandage Pack"

@@ -438,7 +438,7 @@
 	base_spread = 0 //causes it to be treated as a shrapnel explosion instead of cone
 	spread_step = 20
 	range =  3 //dont kill everyone on the screen
-
+/*
 /obj/item/landmine
 	name = "landmine"
 	desc = "Use it to place a landmine in front of you. Beee careful..."
@@ -455,7 +455,7 @@
 		if(do_after(user, 20))
 			qdel(src)
 			new /obj/structure/landmine(T)
-
+*/
 
 /obj/structure/landmine
 	name = "landmine"
@@ -482,6 +482,8 @@
 /obj/structure/landmine/update_icon()
 	if(!can_be_armed)
 		icon_state = "mine_disarmed"
+	else
+		icon_state = "mine"
 
 
 /obj/structure/landmine/attackby(obj/item/W as obj, mob/user as mob)
@@ -502,13 +504,25 @@
 				update_icon()
 				return
 			blow()
-	if(istype(W, /obj/item/shovel))
-		if(!can_be_armed)
+	if(!can_be_armed && istype(W))
+		if(istype(W, /obj/item/shovel))
 			H.visible_message("<span class='danger'>[H] begins to dig up the landmine...</span>")
 			playsound(src, 'sound/effects/dig_shovel.ogg', 40, FALSE)
 			if(do_after(user,50))
 				to_chat(H, "You successfully dig up the [src]")
+				new /obj/item/landmine(src.loc)
 				qdel(src)
+		else if(isScrewdriver(W))
+			H.visible_message("<span class='danger'>[H] begins to arm the landmine...</span>")
+			playsound(src, 'sound/items/Screwdriver.ogg', 40, FALSE)
+			if(do_after(user,50))
+				if(H.statscheck(skills = H.SKILL_LEVEL(engineering)) >= SUCCESS)
+					to_chat(H, "You successfully arm the [src]")
+					can_be_armed = TRUE
+					playsound(src, 'sound/items/Screwdriver2.ogg', 100, FALSE)
+					update_icon()
+					return
+				blow()
 		return
 
 /obj/structure/landmine/Crossed(var/mob/living/M as mob)
@@ -526,7 +540,12 @@
 		if(armed)
 			blow()
 
-
+/obj/item/landmine
+	name = "disarmed landmine"
+	desc = "Be carefull where you place this."
+	icon = 'icons/obj/warfare.dmi'
+	icon_state = "mine_disarmed"
+	w_class = ITEM_SIZE_LARGE
 
 //Activate this to win!
 /obj/structure/destruction_computer
