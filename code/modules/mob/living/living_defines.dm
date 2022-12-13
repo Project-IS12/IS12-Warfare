@@ -63,7 +63,10 @@
 	var/datum/trait/trait = null
 	var/fast_stripper = FALSE //whether or not you can turbostrip
 
+	/*
 	//This is for the screen. Yes I hate this. Yes I know it needs a refactor. No I don't care at the moment.
+	//
+	//Comment this out until better times.
 	var/obj/screen/plane_master/blur/human_blur/HB = new
 	var/obj/screen/plane_master/blur/turf_blur/TB = new
 	var/obj/screen/plane_master/blur/wall_blur/WB = new
@@ -75,3 +78,4 @@
 	var/obj/screen/plane_master/blur/effects_blur/EB = new
 	var/obj/screen/plane_master/blur/plating_blur/plating_blur = new
 	var/obj/screen/plane_master/blur/above_obj_blur/AOB = new
+	*/

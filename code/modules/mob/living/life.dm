@@ -185,7 +185,13 @@
 
 	return 1
 
-//I hate this with a burning passion.
+/*
+	I hate this with a burning passion.
+
+
+	If you want this cool blur effect you can uncomment this, but be aware of the weird glitch - blured icons of mobs will not be masked by vision_cone.
+	Blur filter(or any other filter) somehow interferes alpha mask filter on the same plane.
+
 /mob/living/proc/set_all_blur()
 	if(!client)
 		return
@@ -215,6 +221,7 @@
 	client.screen -= plating_blur
 	client.screen -= AT
 	client.screen -= AOB
+*/
 
 /mob/living/proc/handle_vision()
 	update_sight()
