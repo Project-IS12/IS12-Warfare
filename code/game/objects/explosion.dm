@@ -124,6 +124,15 @@ proc/drop_mortar(turf/dropped, mortar)
 		explosion(dropped_turf, 1, 1, 1, 1)
 		if(mortar == "shrapnel")
 			new /obj/mortar/frag(dropped_turf)
+			if(aspect_chosen(/datum/aspect/somme))
+				if(istype(dropped_turf, /turf/simulated/floor/exoplanet/water/shallow)||istype(dropped_turf,/turf/simulated/mineral)) // no trenches in water or on the rock walls
+					return //otherwise it was still landing in the water some how
+				else
+					spawn(3) //otherwise it eats all the shrapnel
+						for(var/obj/structure/object in dropped_turf.contents)
+							if(object)
+								qdel(object)
+						new /turf/simulated/floor/trench(dropped_turf)
 		if(mortar == "gas")
 			new /obj/mortar/gas(dropped_turf)
 		if(mortar == "fire")

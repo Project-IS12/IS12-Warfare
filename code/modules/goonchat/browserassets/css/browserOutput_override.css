@@ -13,7 +13,7 @@ body {
 	background: #171717;
     font-family: Verdana, sans-serif;
     font-size: 9pt;
-	font-color: #a4bad6;
+	color: #a4bad6;
     line-height: 1.2;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -205,12 +205,11 @@ a.popt {text-decoration: none;}
 .changeFont {padding: 10px;}
 .changeFont a {display: block; text-decoration: none; padding: 3px; color: #333;}
 .changeFont a:hover {background: #ccc;}
-/*
+
 .highlightPopup {padding: 10px; text-align: center;}
 .highlightPopup input[type=text] {display: block; width: 215px; text-align: left; margin-top: 5px;}
 .highlightPopup input.highlightColor {background-color: #FFFF00;}
 .highlightPopup input.highlightTermSubmit {margin-top: 5px;}
-*/
 
 /* ADMIN CONTEXT MENU */
 .contextMenu {
@@ -313,17 +312,18 @@ h1.alert, h2.alert		{color: #ffffff;}
 
 /* Game Messages */
 
-.attack					{color: #c51e1e;}
+.attack					{color: #c51e1e; font-weight: bold; text-shadow: 0 0 7px #c51e1e;}
 .moderate				{color: #cc0000;}
 .disarm					{color: #990000;}
 .passive				{color: #660000;}
 
-.danger					{color: #c51e1e; font-weight: bold;}
+.danger					{color: #c51e1e; font-weight: bold; text-shadow: 0 0 7px #c51e1e;}
+.combat_success			{color: #008081; font-weight: bold; text-shadow: 0px 0px 3px #008081;}
 .warning				{color: #c51e1e; font-style: italic;}
 .boldannounce			{color: #c51e1e; font-weight: bold;}
 .rose					{color: #ff5050;}
 .info					{color: #0077cc;}
-.binfo					{color: #0077cc; font-weight: bold;}
+.binfo					{color: #0077cc; font-weight: bold; text-shadow: 0px 0px 3px #0077cc;}
 .notice					{color: #0059ea;}
 .bnotice				{color: #0059ea; font-weight: bold;}
 .alium					{color: #00ff00;}
@@ -383,3 +383,11 @@ h1.alert, h2.alert		{color: #ffffff;}
 /* HELPER CLASSES */
 .text-normal {font-weight: normal; font-style: normal;}
 .hidden {display: none; visibility: hidden;}
+
+.examinebox {
+    border: 1px ridge #151319;
+	background: rgba(40, 40, 40, 0.5);
+	margin: 2px 8px;
+	padding: 8px 12px;
+	max-width: 550px;
+}

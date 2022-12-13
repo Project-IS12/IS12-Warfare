@@ -251,9 +251,7 @@
 
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
-	damage = 85
-	stun = 3
-	weaken = 3
+	damage = 100
 	armor_penetration = 80
 	//hitscan = 1 //so the PTR isn't useless as a sniper weapon
 	penetration_modifier = 1.25

@@ -12,6 +12,7 @@
 	one_hand_penalty = 20 //FIRE THIS THING WITH BOTH FUCKING HANDS.
 	empty_icon = "boltaction-e"
 	far_fire_sound = "sniper_fire"
+	gun_type = GUN_BOLTIE //So engineers can't shoot this shit.
 
 /obj/item/gun/projectile/shotgun/pump/boltaction/shitty/bayonet
 	name = "\improper Mark I Stormrider"
@@ -78,7 +79,7 @@
 	icon_state = "winchester"
 	item_state = "winchester"
 	wielded_item_state = "winchester-wielded"
-	condition = 65
+	condition = 75
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 	one_hand_penalty = 20 //FIRE THIS THING WITH BOTH FUCKING HANDS AS WELL
 	empty_icon = "winchester-e"
@@ -335,6 +336,10 @@
 	gun_type = GUN_LMG
 	condition = 150 //Enough for one clean mag.
 
+/obj/item/gun/projectile/automatic/mg08/special_check(var/mob/user)
+	to_chat(user, "It just doesn't seem to work.")
+	handle_click_empty(user)
+	return 0
 
 /obj/item/gun/projectile/automatic/gpmg
 	name = "GPMG Requiem"
@@ -411,6 +416,11 @@
 	unloaded_icon = "schmeiser-e"
 	unwielded_unloaded_icon = "schmeiser-e"
 	wielded_unloaded_icon = "schmeiser-e"
+
+/obj/item/gun/projectile/automatic/machinepistol/special_check(var/mob/user)
+	to_chat(user, "It just doesn't seem to work.")
+	handle_click_empty(user)
+	return 0
 
 /obj/item/gun/projectile/automatic/flamer
 	name = "Mk.1 Scorcher"

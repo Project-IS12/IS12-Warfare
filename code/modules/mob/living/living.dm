@@ -861,10 +861,12 @@ default behaviour is:
 	update_vision_cone()
 
 /atom/movable/proc/receive_damage(atom/A)
+	var/initial_x = pixel_x
+	var/initial_y = pixel_y
 	var/pixel_x_diff = rand(-2,2)
 	var/pixel_y_diff = rand(-2,2)
 	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, time = 2)
-	animate(pixel_x = initial(pixel_x), pixel_y = initial(pixel_y), time = 2)
+	animate(pixel_x = initial_x, pixel_y = initial_y, time = 2)
 
 /mob/living/update_icons()
 	if(auras)
@@ -942,14 +944,14 @@ default behaviour is:
 		return
 	crouching = !crouching
 	if(crouching)
-		to_chat(src, "<span class='binfo'>You crouch low.")
+		to_chat(src, "<span class='binfo'>You crouch low.</span>")
 		if(istype(loc, /turf/simulated/floor/trench))
 			pixel_y = -12
 		if(zoomed)//Can't zoom in if you're crouching behind cover.
 			do_zoom()
 
 	else
-		to_chat(src, "<span class='binfo'>You stand up.")
+		to_chat(src, "<span class='binfo'>You stand up.</span>")
 		if(istype(loc, /turf/simulated/floor/trench))
 			pixel_y = -8
 

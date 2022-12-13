@@ -23,16 +23,14 @@ If you wish to license under GPL v3 please make this clear in the commit message
 
 The major change here is that if you host a server using any code licensed under AGPLv3 you are required to provide full source code for your servers users as well including addons and modifications you have made.
 
-**All original art assets are © 2021 Interstation12.  All rights reserved. You may not rip the original art assets and use them in your project without consent.**
+**All original art assets are © 2022 Interstation12.  All rights reserved. You may not rip the original art assets and use them in your project without consent.**
 
 
 ## How do I get this to compile?
 
-You can do this one of two ways. First way is to go into your DME, and find the line that contains `#include "__non-agpl-warfare/__secret.dme"`, comment this out. Your code will now compile, but it may not be compatible with the main repo anymore, only do this if you have simply downloaded the codebase, and do not plan to contribute or keep up to date with it's changes.
-
-The proper method is to go into the folder called `__non-agpl-warfare` and create a DME called `__secret.dme`. Make sure it is titled exactly that, in exactly that folder, and that the DME is completely blank with no files included. Now go back to the IS12Warfare.dme and compile again. It will compile correctly.
+Go into your DME, and find the line that contains `#include "__non-agpl-warfare/__secret.dme"`, comment this out. Your code will now compile.
 
 
 ## Why do I have to do that?
 
-Due to license restrictions on certain independent systems referenced in this code, certain parts of the codebase were not able to be released to the public. A dummy file system has been created to account for this. The codebase will still compile and run without the independent systems.
+Because I haven't bothered restructuring the codebase now that the secret module is gone.

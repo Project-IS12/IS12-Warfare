@@ -82,7 +82,7 @@
 /obj/item/gun/projectile/proc/check_for_jam()
 	if(!can_jam)//If the gun can't jam then always return true.
 		return FALSE
-	if(aspect_chosen(/datum/aspect/clean_guns))
+	if(aspect_chosen(/datum/aspect/clean_guns) || aspect_chosen(/datum/aspect/madness))
 		return FALSE
 	if((!is_jammed && prob(GetConditionProb())) || aspect_chosen(/datum/aspect/no_guns) || aspect_chosen(/datum/aspect/trenchmas))
 		playsound(src.loc, 'sound/effects/jam.ogg', 50, 1)
@@ -409,7 +409,10 @@
 	update_icon()
 
 /obj/item/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
-	load_ammo(A, user)
+	if(aspect_chosen(/datum/aspect/madness))
+		return
+	else
+		load_ammo(A, user)
 
 /obj/item/gun/projectile/attack_self(mob/user as mob)
 	if(firemodes.len > 1)

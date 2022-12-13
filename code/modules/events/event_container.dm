@@ -24,7 +24,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 /datum/event_container/proc/process()
 	if(!next_event_time)
 		set_event_delay()
-
+	if(aspect_chosen(/datum/aspect/somme) && SSwarfare.battle_time == TRUE)
+		next_event_time = 15 SECONDS // ~30 seconds
 	if(delayed || !config.allow_random_events)
 		next_event_time += (world.time - last_world_time)
 	else if(world.time > next_event_time)

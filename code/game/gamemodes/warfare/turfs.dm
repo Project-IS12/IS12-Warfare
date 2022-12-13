@@ -1,3 +1,6 @@
+// List those floors that can appear next to trenches to make them climable
+/turf/simulated/floor/plating
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 //Dirt!
 /turf/simulated/floor/dirty
@@ -35,15 +38,20 @@
 /turf/simulated/floor/dirty/tough/ex_act(severity)//Can't be blown up.
 	return
 
-/turf/simulated/floor/dirty/CanPass(atom/movable/mover, turf/target)
+// Make so you can't get out of the trench on warfare specificaly by any other mean than climbing or being pulled
+/turf/simulated/floor/CanPass(atom/movable/mover, turf/target)
 	if(ishuman(mover))
+		// If we're in trench
 		if(istype(get_turf(mover), /turf/simulated/floor/trench))
+			// If we're moving to the other trench - pass
+			if(istype(target, /turf/simulated/floor/trench))
+				return TRUE
+			// If we're not getting pulled - don't pass
 			if(!mover.pulledby)
 				return FALSE
-
 	return TRUE
 
-/turf/simulated/floor/dirty/can_climb(var/mob/living/user, post_climb_check=0)
+/turf/simulated/floor/can_climb(var/mob/living/user, post_climb_check=0)
 	if (!(atom_flags & ATOM_FLAG_CLIMBABLE) || !can_touch(user))
 		return FALSE
 
@@ -53,7 +61,7 @@
 
 	return TRUE
 
-/turf/simulated/floor/dirty/do_climb(var/mob/living/user)
+/turf/simulated/floor/do_climb(var/mob/living/user)
 	if(!can_climb(user))
 		return
 
@@ -82,7 +90,7 @@
 	user.visible_message("<span class='warning'>[user] climbed onto \the [src]!</span>")
 	climbers -= user
 
-/turf/simulated/floor/dirty/MouseDrop_T(mob/target, mob/user)
+/turf/simulated/floor/MouseDrop_T(mob/target, mob/user)
 	var/mob/living/H = user
 	if(istype(H) && can_climb(H) && target == user)
 		do_climb(target)
@@ -145,7 +153,9 @@
 			playsound(src, 'sound/effects/dig_shovel.ogg', 50, 0)
 			visible_message("[user] begins to dig some dirt cover!")
 			if(do_after(user, (backwards_skill_scale(user.SKILL_LEVEL(engineering)) * 5)))
-				new /obj/structure/dirt_wall(src)
+				var/obj/structure/dirt_wall/DW = new(src)
+				for(var/mob/living/M in contents)
+					DW.Crossed(M)  // if dirt wall was dug on the same tile with the mob - the mob will rise
 				visible_message("[user] finishes digging the dirt cover.")
 				playsound(src, 'sound/effects/empty_shovel.ogg', 50, 0)
 

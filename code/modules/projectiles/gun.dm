@@ -5,6 +5,7 @@
 #define GUN_LMG "lmg"
 #define GUN_SMG "smg"
 #define GUN_PISTOL "pistol"
+#define GUN_BOLTIE "boltie"
 
 /*
 	Defines a firing mode for a gun.
@@ -406,6 +407,11 @@
 				if(user.statscheck(skills = user.SKILL_LEVEL(semi_rifle) <= FAILURE))
 					P.dispersion += wrong_gun_class_mod
 
+		if(GUN_BOLTIE)
+			if(user.SKILL_LEVEL(boltie) < 6) //Less than over half, make them do a statcheck.
+				if(user.statscheck(skills = user.SKILL_LEVEL(boltie) <= FAILURE))
+					P.dispersion += wrong_gun_class_mod
+
 		if(GUN_SNIPER)
 			if(user.SKILL_LEVEL(sniper) < 6) //Less than over half, make them do a statcheck.
 				if(user.statscheck(skills = user.SKILL_LEVEL(sniper) <= FAILURE))
@@ -567,6 +573,35 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
+	switch(gun_type)//PLEASE SOMEONE REFACTOR THIS TO NOT BE AWFUL! THE CODE IS OPEN SOURCE PLEASE SOMEONE DO THIS BETTER I BEG YOU
+		if(GUN_AUTOMATIC)
+			if(user.SKILL_LEVEL(auto_rifle) < 6)
+				to_chat(user, "<span class='danger'>I cannot use this gun effectively.</span>")
+
+		if(GUN_SEMIAUTO)
+			if(user.SKILL_LEVEL(semi_rifle) < 6)
+				to_chat(user, "<span class='danger'>I cannot use this gun effectively.</span>")
+
+		if(GUN_BOLTIE)
+			if(user.SKILL_LEVEL(boltie) < 6)
+				to_chat(user, "<span class='danger'>I cannot use this gun effectively.</span>")
+
+		if(GUN_SNIPER)
+			if(user.SKILL_LEVEL(sniper) < 6)
+				to_chat(user, "<span class='danger'>I cannot use this gun effectively.</span>")
+
+		if(GUN_SHOTGUN)
+			if(user.SKILL_LEVEL(shotgun) < 6)
+				to_chat(user, "<span class='danger'>I cannot use this gun effectively.</span>")
+
+		if(GUN_LMG)
+			if(user.SKILL_LEVEL(lmg) < 6)
+				to_chat(user, "<span class='danger'>I cannot use this gun effectively.</span>")
+
+		if(GUN_SMG)
+			if(user.SKILL_LEVEL(smg) < 6)
+				to_chat(user, "<span class='danger'>I cannot use this gun effectively.</span>")
+
 	if(firemodes.len > 1)
 		var/datum/firemode/current_mode = firemodes[sel_mode]
 		to_chat(user, "The fire selector is set to [current_mode.name].")

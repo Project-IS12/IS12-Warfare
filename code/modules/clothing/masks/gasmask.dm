@@ -28,6 +28,16 @@
 	filtered.update_values()
 
 	return filtered
+
+/obj/item/clothing/mask/gas/Initialize()
+	if(aspect_chosen(/datum/aspect/normal_pills))
+		icon_state = "mask"
+		item_state = "mask"
+		name = "mask"
+		desc = "That's what the mask is."
+	..()
+
+
 /obj/item/clothing/mask/gas/ancient
 	icon_state = "fullgas"
 	item_state = "fullgas"
