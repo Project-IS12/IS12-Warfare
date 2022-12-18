@@ -1873,8 +1873,6 @@
 			H.unlock_achievement(new/datum/achievement/trench_kiss())
 		if(src.tkiss_handle_happiness(H))
 			src.unlock_achievement(new/datum/achievement/trench_kiss())
-		if(H.warfare_faction != src.warfare_faction && ticker.current_state == GAME_STATE_FINISHED)
-
 	else
 		to_chat(H, "<span class='notice'>You stop leaning towards [src].</span>")
 
