@@ -1880,6 +1880,7 @@
 
 	H.commiting_trench_kiss = 0
 	H.tkiss_return_to_initial_now(initial_pixel_x, initial_pixel_y)
+	return 1
 
 /mob/living/carbon/human/proc/tkiss_handle_happiness(var/mob/living/carbon/human/H, var/instigator = FALSE)
 	var/turf/T = get_turf(src)
