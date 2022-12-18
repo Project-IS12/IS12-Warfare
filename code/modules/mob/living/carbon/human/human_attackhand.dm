@@ -61,6 +61,9 @@
 
 	switch(M.a_intent)
 		if(I_HELP)
+			if(tkiss_check_able(H))
+				return tkiss_try(H)
+			// CPR
 			if(istype(H) && (is_asystole() || (status_flags & FAKEDEATH)))
 				if (!cpr_time)
 					return 0

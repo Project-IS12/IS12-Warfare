@@ -1834,3 +1834,79 @@
 
 /mob/living/carbon/human/proc/has_low_circulation()
 	return (get_blood_circulation() <= 60)
+
+// trench kiss
+/mob/living/carbon/human/proc/tkiss_try(var/mob/living/carbon/human/H)
+	var/turf/T = get_turf(H)
+
+	// Some bullshit to make it look right
+	if(tkiss_is_wrong_trench_adjacency(H) && istype(T, /turf/simulated/floor/trench))
+		to_chat(H, "<span class='warning'>In the trench, we kiss sideways</span>")
+		return 0
+	if(tkiss_is_wrong_adjacency(H))
+		to_chat(H, "<span class='warning'>Oh! Can't trench kiss people from behind! I feel silly now.</span>")
+		H.add_event("tkiss_silly", /datum/happiness_event/tkiss_silly)
+		return 0
+	if(tkiss_is_north_adjacency(H))
+		to_chat(H, "<span class='warning'>Trench kissing from the north is a bad luck. I won't do this.</span>")
+		return 0
+
+	// Alright, do it
+	H.commiting_trench_kiss = 1
+
+	// Because of the trench offsets and such, we're remembering our initial pixel offsets
+	var/initial_pixel_x = H.pixel_x
+	var/initial_pixel_y = H.pixel_y
+	H.tkiss_lean_towards(src)
+
+	T.visible_message("<span class='notice'>[H] leans towards [src]...</span>")
+
+	// It's safe to do this here because conditions were checked earlier
+	var/obj/item/clothing/mask/smokable/source = H.wear_mask
+	var/obj/item/clothing/mask/smokable/target = src.wear_mask
+	var/obj/item/clothing/mask/smokable/toLight = source.lit ? target : source
+
+	if(do_mob(H, src, 20))
+		toLight.light("<span class='notice'>[H] presses their \the [source] against \the [target] in [src]'s mouth.</span>")
+		H.tkiss_handle_happiness(src, TRUE)
+		src.tkiss_handle_happiness(H)
+	else
+		to_chat(H, "<span class='notice'>You stop leaning towards [src].</span>")
+
+	H.commiting_trench_kiss = 0
+	H.tkiss_return_to_initial_now(initial_pixel_x, initial_pixel_y)
+	return 1
+
+/mob/living/carbon/human/proc/tkiss_handle_happiness(var/mob/living/carbon/human/H, var/instigator = FALSE)
+	var/turf/T = get_turf(src)
+	if(istype(T,/turf/simulated/floor/trench))
+		to_chat(src, "<span class='hypnophrase'>O-oh... awesome!</span>")
+		src.add_event("tkiss_feeling", /datum/happiness_event/tkiss_felt_right)
+	else if(instigator)
+		to_chat(src, "<span class='phobia'>THAT WAS WRONG.</span>")
+		src.add_event("tkiss_feeling", /datum/happiness_event/tkiss_felt_wrong)
+	else
+		to_chat(src, "<span class='notice'>I was trench kissed, but I felt nothing.</span>")
+
+/mob/living/carbon/human/proc/tkiss_check_able(var/mob/living/carbon/human/H)
+	var/smoke = /obj/item/clothing/mask/smokable
+	var/mouth_selected = H.zone_sel.selecting == BP_MOUTH
+	if(istype(H) && istype(H.wear_mask,smoke) && istype(src.wear_mask,smoke) && mouth_selected)
+		var/obj/item/clothing/mask/smokable/source = H.wear_mask
+		var/obj/item/clothing/mask/smokable/target = src.wear_mask
+		if(source.lit && !target.lit || !source.lit && target.lit)
+			return TRUE
+	return FALSE
+
+/mob/living/carbon/human/proc/tkiss_is_wrong_trench_adjacency(var/mob/living/carbon/human/H)
+	return H.y == src.y + 1 || H.y == src.y - 1
+
+/mob/living/carbon/human/proc/tkiss_is_north_adjacency(var/mob/living/carbon/human/H)
+	return H.y == src.y + 1
+
+/mob/living/carbon/human/proc/tkiss_is_wrong_adjacency(var/mob/living/carbon/human/H)
+	var/fromBackSouth = H.y == src.y + 1 && src.dir == SOUTH
+	var/fromBackNorth = H.y == src.y - 1 && src.dir == NORTH
+	var/fromBackEast = H.x == src.x - 1 && src.dir == EAST
+	var/fromBackWest = H.x == src.x + 1 && src.dir == WEST
+	return fromBackSouth || fromBackNorth || fromBackEast || fromBackWest
