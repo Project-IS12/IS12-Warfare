@@ -181,11 +181,39 @@
 
 /obj/item/stack/teeth/New()
 	..()
+	update_icon()
 	icon_state = "tooth[rand(1,3)]"
 
 /obj/item/stack/teeth/human
 	name = "human teeth"
 	singular_name = "human tooth"
+	var/list/image_list = list() // List of generated teeth icons for object overlay.
+	icon = null // We want to use the new generated overlay from update_icon.
+	icon_state = null
+
+/obj/item/stack/teeth/human/split()
+	. = ..()
+	update_icon()
+
+/obj/item/stack/teeth/human/add()
+	. = ..()
+	update_icon()
+
+/obj/item/stack/teeth/human/update_icon()
+	overlays.Cut()
+	image_list.Cut()
+	for(var/i = 1 to src.amount)
+		var/image/I = image('icons/obj/surgery.dmi',"tooth[rand(1,3)]")
+		I.appearance_flags = PIXEL_SCALE
+		I.pixel_x = rand(-8,8)
+		I.pixel_y = rand(-8,8)
+		var/matrix/M = matrix()
+		M.Turn(rand(0,360))
+		I.transform = M
+		image_list += I
+
+	src.overlays = image_list
+	return
 
 /obj/item/stack/teeth/generic //Used for species without unique teeth defined yet
 	name = "teeth"
