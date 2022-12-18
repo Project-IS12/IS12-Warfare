@@ -211,3 +211,19 @@
 	description = "<span class='binfo'>Alcohol makes the pain go away.</span>\n"
 	happiness = 10
 	timeout = 2400
+
+// Trench kiss
+/datum/happiness_event/tkiss_silly
+	description = "<span class='danger'>I'm so silly!</span>\n"
+	happiness = -4
+	timeout = 5 MINUTES
+
+/datum/happiness_event/tkiss_felt_right
+	description = "<span class='binfo'>I've been kissed by a trenchman!</span>\n"
+	happiness = 10
+	timeout = 10 MINUTES
+
+/datum/happiness_event/tkiss_felt_wrong
+	description = "<span class='danger'>That trench kiss just felt horrible! I can't shake off this feeling, I need to do it RIGHT!</span>\n"
+	happiness = -25
+	timeout = FALSE

@@ -208,6 +208,9 @@
 	if(mob.eyeobj)
 		return mob.EyeMove(n,direct)
 
+	if(mob.commiting_trench_kiss)
+		return
+
 	if(mob.transforming)	return//This is sota the goto stop mobs from moving var
 
 	if(Process_Grab())	return
