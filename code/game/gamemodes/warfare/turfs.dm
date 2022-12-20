@@ -2,6 +2,12 @@
 /turf/simulated/floor/plating
 	atom_flags = ATOM_FLAG_CLIMBABLE
 
+/turf/simulated/floor/trenches
+	atom_flags = ATOM_FLAG_CLIMBABLE
+
+/turf/simulated/floor/sludge
+	atom_flags = ATOM_FLAG_CLIMBABLE
+
 //Dirt!
 /turf/simulated/floor/dirty
 	name = "dirt" //"snowy dirt"
@@ -46,7 +52,8 @@
 			// If we're moving to the other trench - pass
 			if(istype(target, /turf/simulated/floor/trench))
 				return TRUE
-			// If we're not getting pulled - don't pass
+			if(mover.plane != LYING_HUMAN_PLANE) // Now we can jump above trenches!
+				return TRUE
 			if(!mover.pulledby)
 				return FALSE
 	return TRUE
@@ -354,16 +361,20 @@
 			return
 		playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 		S.use(1)
-		ChangeTurf(/turf/simulated/floor/trenches)
+		ChangeTurf(/turf/simulated/floor/sludge)
 		return
 
 /turf/simulated/floor/exoplanet/water/shallow/ChangeTurf(turf/N, tell_universe, force_lighting_update)
-	var/obj/effect/water/top/T = locate() in loc
+	for(var/obj/effect/water/W in src.contents)
+		qdel(W)
+
+/*	var/obj/effect/water/top/T = locate() in loc
 	if(T)
 		qdel(T)
 	var/obj/effect/water/bottom/B = locate() in loc
 	if(B)
-		qdel(B)
+		qdel(B)*/
+
 	. = ..()
 	for(var/turf/simulated/floor/exoplanet/water/shallow/S in range(1))
 		S.update_icon()
@@ -391,8 +402,6 @@
 
 /turf/simulated/floor/exoplanet/water/update_dirt()
 	return	// Water doesn't become dirty
-
-
 
 /obj/item/stack/duckboard
 	name = "duckboards"
