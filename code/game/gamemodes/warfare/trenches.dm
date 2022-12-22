@@ -247,15 +247,6 @@
 		else return 0
 	else return 1
 
-
-/turf/simulated/floor/trench/proc/handle_bridge(var/mob/living/carbon/human/M)
-	if(locate(/obj/structure/bridge) in get_turf(src))
-		to_chat(M, "Located bridge - returning. Mob plane = [M.plane]")
-		return
-	else
-		to_chat(M, "Unable to locate bridge - returning. Mob plane = [M.plane]")
-		return
-
 /turf/simulated/floor/trench/Crossed(var/mob/living/carbon/human/M)
 //	else if(locate(/obj/structure/bridge, get_turf(src)) && M.plane == LYING_HUMAN_PLANE && M.crouching)
 	if(istype(M))
