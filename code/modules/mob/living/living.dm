@@ -105,6 +105,11 @@ default behaviour is:
 				now_pushing = 0
 				return
 
+			if(tmob.in_trench && plane == HUMAN_PLANE) // If we bump into mob in trench - we moving in. This means that we don't swap our location with trench-mob loc.
+				forceMove(tmob.loc)
+				now_pushing = 0
+				return
+
 			if(can_swap_with(tmob)) // mutual brohugs all around!
 				var/turf/oldloc = loc
 				forceMove(tmob.loc)

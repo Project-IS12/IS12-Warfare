@@ -144,7 +144,7 @@
 /obj/structure/bridge
 	name = "wooden bridge"
 	icon = 'icons/obj/warfare.dmi'
-	icon_state = "trench_bridge"
+	icon_state = "trench_bridge1"
 	plane = ABOVE_OBJ_PLANE
 	density = FALSE
 	anchored = TRUE
@@ -152,8 +152,10 @@
 /obj/item/bridge
 	name = "wooden bridge"
 	desc = "Place it above the trench"
-	icon = 'icons/obj/warfare.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "trench_bridge"
+	item_state = "trench_bridge"
+	w_class = ITEM_SIZE_LARGE
 
 /obj/structure/bridge/Initialize()
 	. = ..()
@@ -237,11 +239,14 @@
 
 /obj/structure/bridge/CanPass(atom/movable/mover, turf/target)
 	var/mob/living/carbon/human/M = mover
-	if(M.plane == LYING_HUMAN_PLANE && M.crouching)
-		return 1
-	if(M.plane == HUMAN_PLANE)
-		return 1
-	else return 0
+	if(istype(M))
+		if(M.plane == LYING_HUMAN_PLANE && M.crouching)
+			return 1
+		if(M.plane == HUMAN_PLANE)
+			return 1
+		else return 0
+	else return 1
+
 
 /turf/simulated/floor/trench/proc/handle_bridge(var/mob/living/carbon/human/M)
 	if(locate(/obj/structure/bridge) in get_turf(src))
@@ -267,7 +272,7 @@
 
 			M.reset_layer() // At least it works though.
 	//		M.plane = LYING_HUMAN_PLANE
-
+			M.in_trench = 1 // Yes, we in trench now.
 			var/trench_check = 0 //If we're not up against a trench wall, we don't want to stay zoomed in.
 			for(var/direction in GLOB.cardinal)
 				var/turf/turf_to_check = get_step(M.loc,direction)//So get all of the turfs around us.
@@ -283,6 +288,7 @@
 		if(M.client)
 			M.fov_mask.screen_loc = "1,1"
 			M.fov.screen_loc = "1,1"
+		M.in_trench = 0 // We leave the trench.
 		M.pixel_y = 0
 		M.reset_layer() // And horrific code ends here.
 	//	M.plane = HUMAN_PLANE
