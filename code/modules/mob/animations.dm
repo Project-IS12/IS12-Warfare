@@ -241,4 +241,19 @@ note dizziness decrements automatically in the mob's Life() proc.
 		return
 	animate(L, pixel_z = 4, time = 0)
 	animate(pixel_z = 0, transform = turn(matrix(), pick(-12, 0, 12)), time=2)
-	animate(pixel_z = 0, transform = matrix(), time = 0) 
+	animate(pixel_z = 0, transform = matrix(), time = 0)
+
+// Trench kiss
+/atom/movable/proc/tkiss_lean_towards(atom/A)
+	var/to_x = (A.x - x) * 16
+	var/to_y = (A.y - y) * 16
+	animate(src, pixel_x = pixel_x + to_x, pixel_y = pixel_y + to_y, time = 15)
+
+/mob/living/tkiss_lean_towards(atom/A)
+	..()
+
+/atom/movable/proc/tkiss_return_to_initial_now(var/x, var/y)
+	animate(src, pixel_x = x, pixel_y = y, time = 3)
+
+/mob/living/tkiss_return_to_initial_now(atom/A)
+	..()

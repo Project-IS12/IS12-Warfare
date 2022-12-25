@@ -143,14 +143,14 @@
 	if(silent || (sdisabilities & MUTE))
 		message_data[1] = ""
 		. = 1
-
 	else if(istype(wear_mask, /obj/item/clothing/mask))
 		var/obj/item/clothing/mask/M = wear_mask
 		if(M.voicechange)
 			message_data[1] = pick(M.say_messages)
 			message_data[2] = pick(M.say_verbs)
 			. = 1
-
+		else
+			. = ..(message_data)
 	else
 		. = ..(message_data)
 

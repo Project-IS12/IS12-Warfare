@@ -72,7 +72,6 @@
 	if(!affected)
 		return ..()
 
-
 	if(!(affected.status & ORGAN_ARTERY_CUT) && !affected.wounds.len)//There is nothing to fix don't fix anything.
 		return
 
@@ -88,8 +87,11 @@
 				affected.status &= ~ORGAN_ARTERY_CUT
 
 		else//Then fix wounds if they do it again.
+			// Checking for each wound before bailing. Sanity check if 0 damage wounds can actually appear
+			var/found_wound = FALSE
 			for(var/datum/wound/W in affected.wounds)
 				if(W.damage)
+					found_wound = TRUE
 					user.visible_message("<span class='notice'>[user] begins to suture up [H]'s wounds.")
 					playsound(src, 'sound/weapons/suture.ogg', 40, FALSE)
 					H.custom_pain("The pain in your [affected.name] is unbearable!",rand(50, 65),affecting = affected)
@@ -107,9 +109,9 @@
 								qdel(W)
 							else if(W.damage <= 10)
 								W.clamped = 1
-				else
-					to_chat(user, "There are no wounds to patch up.")
-				break
+					break
+			if(!found_wound)
+				to_chat(user, "There are no wounds to patch up.")
 
 		affected.update_damages()
 		user.doing_something = FALSE

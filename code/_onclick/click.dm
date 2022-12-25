@@ -85,7 +85,8 @@
 	if(stat || paralysis || stunned) //|| weakened)
 		return
 
-	face_atom(A) // change direction to face what you clicked on
+	if(!commiting_trench_kiss)
+		face_atom(A) // change direction to face what you clicked on
 
 	if(modifiers["middle"])//This goes below everything else because of how middle click is used.
 		MiddleClickOn(A)
