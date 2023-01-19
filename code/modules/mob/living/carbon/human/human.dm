@@ -1839,6 +1839,8 @@
 /mob/living/carbon/human/proc/tkiss_try(var/mob/living/carbon/human/H)
 	var/turf/T = get_turf(H)
 
+	if(H.commiting_trench_kiss)
+		return 0
 	// Some bullshit to make it look right
 	if(tkiss_is_wrong_trench_adjacency(H) && istype(T, /turf/simulated/floor/trench))
 		to_chat(H, "<span class='warning'>In the trench, we kiss sideways</span>")
@@ -1867,9 +1869,11 @@
 	var/obj/item/clothing/mask/smokable/toLight = source.lit ? target : source
 
 	if(do_mob(H, src, 20))
-		toLight.light("<span class='notice'>[H] presses their \the [source] against \the [target] in [src]'s mouth.</span>")
-		H.tkiss_handle_happiness(src, TRUE)
-		src.tkiss_handle_happiness(H)
+		toLight.light("<span class='notice'>[H] presses their [source] against [target] in [src]'s mouth.</span>")
+		if(H.tkiss_handle_happiness(src, TRUE))
+			H.unlock_achievement(new/datum/achievement/trench_kiss())
+		if(src.tkiss_handle_happiness(H))
+			src.unlock_achievement(new/datum/achievement/trench_kiss())
 	else
 		to_chat(H, "<span class='notice'>You stop leaning towards [src].</span>")
 
@@ -1882,11 +1886,13 @@
 	if(istype(T,/turf/simulated/floor/trench))
 		to_chat(src, "<span class='hypnophrase'>O-oh... awesome!</span>")
 		src.add_event("tkiss_feeling", /datum/happiness_event/tkiss_felt_right)
+		return 1
 	else if(instigator)
 		to_chat(src, "<span class='phobia'>THAT WAS WRONG.</span>")
 		src.add_event("tkiss_feeling", /datum/happiness_event/tkiss_felt_wrong)
 	else
 		to_chat(src, "<span class='notice'>I was trench kissed, but I felt nothing.</span>")
+	return 0
 
 /mob/living/carbon/human/proc/tkiss_check_able(var/mob/living/carbon/human/H)
 	var/smoke = /obj/item/clothing/mask/smokable
