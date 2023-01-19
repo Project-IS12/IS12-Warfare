@@ -105,3 +105,7 @@
 	name = "BOOM HEADSHOT"
 	difficulty = DIFF_MEDIUM
 	description = "In all likelyhood, they had a helmet, and you accomplished pretty much nothing."
+
+/datum/achievement/trench_kiss
+	name = "Trenchship Is Magic"
+	description = "A kiss is just a kiss, unless it's a trench kiss."
