@@ -162,6 +162,16 @@
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
+/obj/structure/bridge/RightClick(mob/user)
+	if(!CanPhysicallyInteract(user))
+		return
+
+	visible_message("[user] begins to dismantle the bridge!")
+	if(do_after(user, 50))
+		new /obj/item/bridge(src.loc)
+		qdel(src)
+		return
+
 /obj/structure/bridge/bullet_act(var/obj/item/projectile/Proj)
 	..()
 	for(var/mob/living/carbon/human/H in loc)
@@ -173,20 +183,10 @@
 		qdel(src)
 
 /obj/structure/bridge/ex_act(severity)
-	switch(severity)
-		if(1.0)
-			playsound(src, 'sound/effects/wood_break1.ogg', 100)
-			qdel(src)
-			return
-		if(2.0)
-			playsound(src, 'sound/effects/wood_break1.ogg', 100)
-			qdel(src)
-			return
-		if(3.0)
-			if(prob(50))
-				playsound(src, 'sound/effects/wood_break1.ogg', 100)
-				qdel(src)
-				return
+	if(prob(85))
+		playsound(src, 'sound/effects/wood_break1.ogg', 100)
+		qdel(src)
+		return
 
 
 /obj/structure/bridge/Process() // If turfs near bridge change - drop bridge
@@ -260,7 +260,7 @@
 					qdel(O)
 					playsound(src, 'sound/effects/extout.ogg', 100, 1)
 
-				user.doing_something = FALSE
+			user.doing_something = FALSE
 		else
 			to_chat(user, "You're already placing bridge.")
 
@@ -271,6 +271,8 @@
 		if(M.plane == LYING_HUMAN_PLANE && M.crouching)
 			return 1
 		if(M.plane == HUMAN_PLANE)
+			return 1
+		if(M.lying)
 			return 1
 		else return 0
 	else return 1

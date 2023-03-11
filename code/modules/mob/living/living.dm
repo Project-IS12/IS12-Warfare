@@ -948,11 +948,6 @@ default behaviour is:
 	var/mob/living/carbon/human/H = src
 	if(lying)//No crouching while you're lying down please.
 		return
-	if(H.plane == LYING_HUMAN_PLANE && locate(/obj/structure/bridge, get_turf(src))) // Please do not stand up while you under bridge thank you.
-		var/obj/item/organ/external/head/head = H.get_organ("head")
-		playsound(src,pick(GLOB.swing_hit_sound), 100, 1)
-		H.custom_pain("[pick("OW!!", "OUCH!!", "DANG!!")]! You hit your head on the bridge!",rand(5, 15),affecting = head)
-		return
 
 	crouching = !crouching
 	if(crouching)
@@ -963,6 +958,11 @@ default behaviour is:
 			do_zoom()
 
 	else
+		if(H.plane == LYING_HUMAN_PLANE && locate(/obj/structure/bridge, get_turf(src))) // Please do not stand up while you under bridge thank you.
+			var/obj/item/organ/external/head/head = H.get_organ("head")
+			playsound(src,pick(GLOB.swing_hit_sound), 100, 1)
+			H.custom_pain("[pick("OW", "OUCH", "DANG")]!!! You hit your head on the bridge!",rand(5, 15),affecting = head)
+			return
 		to_chat(src, "<span class='binfo'>You stand up.</span>")
 		if(istype(loc, /turf/simulated/floor/trench))
 			pixel_y = -8
