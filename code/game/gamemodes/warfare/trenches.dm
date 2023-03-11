@@ -148,6 +148,7 @@
 	plane = ABOVE_OBJ_PLANE
 	density = FALSE
 	anchored = TRUE
+	var/health = 100
 
 /obj/item/bridge
 	name = "wooden bridge"
@@ -160,6 +161,33 @@
 /obj/structure/bridge/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
+
+/obj/structure/bridge/bullet_act(var/obj/item/projectile/Proj)
+	..()
+	for(var/mob/living/carbon/human/H in loc)
+		H.bullet_act(Proj)
+	health -= rand(10, 25)
+	if(health <= 0)
+		visible_message("<span class='danger'>The [src] crumbles!</span>")
+		playsound(src, 'sound/effects/wood_break1.ogg', 100)
+		qdel(src)
+
+/obj/structure/bridge/ex_act(severity)
+	switch(severity)
+		if(1.0)
+			playsound(src, 'sound/effects/wood_break1.ogg', 100)
+			qdel(src)
+			return
+		if(2.0)
+			playsound(src, 'sound/effects/wood_break1.ogg', 100)
+			qdel(src)
+			return
+		if(3.0)
+			if(prob(50))
+				playsound(src, 'sound/effects/wood_break1.ogg', 100)
+				qdel(src)
+				return
+
 
 /obj/structure/bridge/Process() // If turfs near bridge change - drop bridge
 	//  Horrific code begins
