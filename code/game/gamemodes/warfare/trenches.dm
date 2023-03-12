@@ -264,7 +264,6 @@
 		else
 			to_chat(user, "You're already placing bridge.")
 
-
 /obj/structure/bridge/CanPass(atom/movable/mover, turf/target)
 	var/mob/living/carbon/human/M = mover
 	if(istype(M))
@@ -274,7 +273,9 @@
 			return 1
 		if(M.lying)
 			return 1
-		else return 0
+		else
+			to_chat(M, "You need to crouch low to pass.")
+			return 0
 	else return 1
 
 /turf/simulated/floor/trench/Crossed(var/mob/living/carbon/human/M)
