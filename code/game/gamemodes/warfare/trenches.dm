@@ -141,8 +141,148 @@
 
 	update_trench_layers()
 
-/turf/simulated/floor/trench/Crossed(var/mob/living/carbon/human/M)
+/obj/structure/bridge
+	name = "wooden bridge"
+	icon = 'icons/obj/warfare.dmi'
+	icon_state = "trench_bridge1"
+	plane = ABOVE_OBJ_PLANE
+	density = FALSE
+	anchored = TRUE
+	var/health = 100
+
+/obj/item/bridge
+	name = "wooden bridge"
+	desc = "Place it above the trench"
+	icon = 'icons/obj/items.dmi'
+	icon_state = "trench_bridge"
+	item_state = "trench_bridge"
+	w_class = ITEM_SIZE_LARGE
+
+/obj/structure/bridge/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/obj/structure/bridge/RightClick(mob/user)
+	if(!CanPhysicallyInteract(user))
+		return
+
+	visible_message("[user] begins to dismantle the bridge!")
+	if(do_after(user, 50))
+		new /obj/item/bridge(src.loc)
+		qdel(src)
+		return
+
+/obj/structure/bridge/bullet_act(var/obj/item/projectile/Proj)
+	..()
+	for(var/mob/living/carbon/human/H in loc)
+		H.bullet_act(Proj)
+	health -= rand(10, 25)
+	if(health <= 0)
+		visible_message("<span class='danger'>The [src] crumbles!</span>")
+		playsound(src, 'sound/effects/wood_break1.ogg', 100)
+		qdel(src)
+
+/obj/structure/bridge/ex_act(severity)
+	if(prob(85))
+		playsound(src, 'sound/effects/wood_break1.ogg', 100)
+		qdel(src)
+		return
+
+
+/obj/structure/bridge/Process() // If turfs near bridge change - drop bridge
+	//  Horrific code begins
+	if(src.dir == NORTH || src.dir == SOUTH)
+		var/turf/NORTH_dirt = get_step(src,NORTH)
+		var/turf/SOUTH_dirt = get_step(src,SOUTH)
+		if(!istype(NORTH_dirt, /turf/simulated/floor/dirty) || !istype(SOUTH_dirt, /turf/simulated/floor/dirty))
+			new /obj/item/bridge(src.loc)
+			qdel(src)
+			return
+
+	else if(src.dir == WEST || src.dir == EAST)
+		var/turf/WEST_dirt = get_step(src,WEST)
+		var/turf/EAST_dirt = get_step(src,EAST)
+		if(!istype(WEST_dirt, /turf/simulated/floor/dirty) || !istype(EAST_dirt, /turf/simulated/floor/dirty))
+			new /obj/item/bridge(src.loc)
+			qdel(src)
+			return
+
+/obj/structure/bridge/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/turf/simulated/floor/trench/attackby(obj/O as obj, mob/living/user as mob)
+	if(istype(O, /obj/item/bridge))
+		if(!user.doing_something)
+			user.doing_something = TRUE
+			for(var/obj/structure/object in contents)
+				if(object)
+					to_chat(user, "There are things in the way.")
+					user.doing_something = FALSE
+					return
+			visible_message("[user] begins to place bridge!")
+
+
+			//  Horrific code continues
+			if(do_after(user, (backwards_skill_scale(user.SKILL_LEVEL(engineering)) * 5)))
+
+
+				// Avoiding duplication
+				var/turf_check = 0
+				for(var/direction in GLOB.cardinal)
+					var/turf/turf_to_check = get_step(src,direction)
+					if(istype(turf_to_check, /turf/simulated/floor/dirty))
+						turf_check++
+
+				if(turf_check >= 4) // But still spawn only one bridge
+					var/obj/structure/bridge/B = new(src)
+					B.dir = pick(dir)
+					playsound(src, 'sound/effects/extout.ogg', 100, 1)
+					user.doing_something = FALSE
+					qdel(O)
+					return
+
+
+				var/turf/NORTH_dirt = get_step(src,NORTH)
+				var/turf/SOUTH_dirt = get_step(src,SOUTH)
+
+				if(istype(NORTH_dirt, /turf/simulated/floor/dirty) && istype(SOUTH_dirt, /turf/simulated/floor/dirty))
+					var/obj/structure/bridge/B = new(src)
+					B.dir = pick(NORTH, SOUTH)
+					qdel(O)
+					playsound(src, 'sound/effects/extout.ogg', 100, 1)
+				var/turf/WEST_dirt = get_step(src,WEST)
+				var/turf/EAST_dirt = get_step(src,EAST)
+
+				if(istype(WEST_dirt, /turf/simulated/floor/dirty) && istype(EAST_dirt, /turf/simulated/floor/dirty))
+					var/obj/structure/bridge/B = new(src)
+					B.dir = pick(WEST, EAST)
+					qdel(O)
+					playsound(src, 'sound/effects/extout.ogg', 100, 1)
+
+			user.doing_something = FALSE
+		else
+			to_chat(user, "You're already placing bridge.")
+
+/obj/structure/bridge/CanPass(atom/movable/mover, turf/target)
+	var/mob/living/carbon/human/M = mover
 	if(istype(M))
+		if(M.plane == LYING_HUMAN_PLANE && M.crouching)
+			return 1
+		if(M.plane == HUMAN_PLANE)
+			return 1
+		if(M.lying)
+			return 1
+		else
+			to_chat(M, "You need to crouch low to pass.")
+			return 0
+	else return 1
+
+/turf/simulated/floor/trench/Crossed(var/mob/living/carbon/human/M)
+//	else if(locate(/obj/structure/bridge, get_turf(src)) && M.plane == LYING_HUMAN_PLANE && M.crouching)
+	if(istype(M))
+		if(M.plane == HUMAN_PLANE && locate(/obj/structure/bridge, get_turf(src)))
+			return
 		if(!M.throwing)
 			if(M.client)
 				M.fov_mask.screen_loc = "1,0.8"
@@ -152,8 +292,9 @@
 			else
 				M.pixel_y = -8
 
-			M.plane = LYING_HUMAN_PLANE
-
+			M.reset_layer() // At least it works though.
+	//		M.plane = LYING_HUMAN_PLANE
+			M.in_trench = 1 // Yes, we in trench now.
 			var/trench_check = 0 //If we're not up against a trench wall, we don't want to stay zoomed in.
 			for(var/direction in GLOB.cardinal)
 				var/turf/turf_to_check = get_step(M.loc,direction)//So get all of the turfs around us.
@@ -163,10 +304,13 @@
 				if(M.zoomed)//If we're zoomed that is.
 					M.do_zoom()
 
+
 /turf/simulated/floor/trench/Uncrossed(var/mob/living/carbon/human/M)
 	if(istype(M))
 		if(M.client)
 			M.fov_mask.screen_loc = "1,1"
 			M.fov.screen_loc = "1,1"
+		M.in_trench = 0 // We leave the trench.
 		M.pixel_y = 0
-		M.plane = HUMAN_PLANE
+		M.reset_layer() // And horrific code ends here.
+	//	M.plane = HUMAN_PLANE

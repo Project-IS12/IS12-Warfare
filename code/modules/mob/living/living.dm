@@ -105,6 +105,16 @@ default behaviour is:
 				now_pushing = 0
 				return
 
+			if(tmob.in_trench && plane == HUMAN_PLANE) // If we bump into mob in trench - we moving in. This means that we don't swap our location with trench-mob loc.
+				forceMove(tmob.loc)
+				now_pushing = 0
+				return
+
+			if(src.in_trench && tmob.plane == HUMAN_PLANE) // But if we are in a trench and we want to move under the bridge when someone standing on it - we still don't swap our locations.
+				forceMove(tmob.loc)
+				now_pushing = 0
+				return
+
 			if(can_swap_with(tmob)) // mutual brohugs all around!
 				var/turf/oldloc = loc
 				forceMove(tmob.loc)
@@ -940,8 +950,10 @@ default behaviour is:
 		. += 30
 
 /mob/living/proc/toggle_crouch()
+	var/mob/living/carbon/human/H = src
 	if(lying)//No crouching while you're lying down please.
 		return
+
 	crouching = !crouching
 	if(crouching)
 		to_chat(src, "<span class='binfo'>You crouch low.</span>")
@@ -951,6 +963,11 @@ default behaviour is:
 			do_zoom()
 
 	else
+		if(H.plane == LYING_HUMAN_PLANE && locate(/obj/structure/bridge, get_turf(src))) // Please do not stand up while you under bridge thank you.
+			var/obj/item/organ/external/head/head = H.get_organ("head")
+			playsound(src,pick(GLOB.swing_hit_sound), 100, 1)
+			H.custom_pain("[pick("OW", "OUCH", "DANG")]!!! You hit your head on the bridge!",rand(5, 15),affecting = head)
+			return
 		to_chat(src, "<span class='binfo'>You stand up.</span>")
 		if(istype(loc, /turf/simulated/floor/trench))
 			pixel_y = -8

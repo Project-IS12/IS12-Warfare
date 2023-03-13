@@ -237,7 +237,10 @@
 	else if(lying)
 		plane = LYING_HUMAN_PLANE
 		layer = LYING_MOB_LAYER //Put lying humans in trenches below standing humans.
-	else if(istype(src.loc, /turf/simulated/floor/trench))//WHen in the trench, you are on the lying plane, so that people outside of the trench can loom over you threatenly.
+	else if(!locate(/obj/structure/bridge, src.loc) && istype(src.loc, /turf/simulated/floor/trench))//WHen in the trench, you are on the lying plane, so that people outside of the trench can loom over you threatenly.
+		plane = LYING_HUMAN_PLANE
+		layer = LYING_HUMAN_LAYER
+	else if(locate(/obj/structure/bridge, src.loc) && src.plane == LYING_HUMAN_PLANE)
 		plane = LYING_HUMAN_PLANE
 		layer = LYING_HUMAN_LAYER
 	else
