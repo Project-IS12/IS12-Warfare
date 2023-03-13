@@ -110,6 +110,11 @@ default behaviour is:
 				now_pushing = 0
 				return
 
+			if(src.in_trench && tmob.plane == HUMAN_PLANE) // But if we are in a trench and we want to move under the bridge when someone standing on it - we still don't swap our locations.
+				forceMove(tmob.loc)
+				now_pushing = 0
+				return
+
 			if(can_swap_with(tmob)) // mutual brohugs all around!
 				var/turf/oldloc = loc
 				forceMove(tmob.loc)
