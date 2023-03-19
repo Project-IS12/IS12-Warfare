@@ -143,12 +143,13 @@
 
 /obj/structure/bridge
 	name = "wooden bridge"
-	icon = 'icons/obj/warfare.dmi'
+	icon = 'icons/obj/trench_bridge.dmi'
 	icon_state = "trench_bridge1"
-	plane = ABOVE_OBJ_PLANE
+	plane = -11 // trenches are on -10 and humans are on -12 so this needs to be -11 to accomodate the longer sprite
 	density = FALSE
 	anchored = TRUE
 	var/health = 100
+	pixel_x = -6
 
 /obj/item/bridge
 	name = "wooden bridge"
