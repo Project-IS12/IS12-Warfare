@@ -230,6 +230,22 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 
 	return TRUE
 
+/area/warfare/battlefield/no_mans_land/Entered(atom/movable/mover, atom/A)
+	. = ..() //You should not be able to enter this in the first place. But that doesn't stop exploits. People are doing it anyway. So let's just kill whoever does.
+	if(!SSwarfare.battle_time)//You so know what you did.
+		if(ishuman(mover))
+			var/mob/living/carbon/human/H = mover
+			H.gib()
+
+		if(istype(mover, /obj/structure/closet))//You so fucking know what you did.
+			var/obj/structure/closet/C = mover
+			for(var/mob/living/L in C.contents)
+				L.gib()
+				if(L)
+					qdel(L)
+			qdel(C)
+
+
 /area/warfare/homebase
 	name = "\improper Base"
 	icon_state = "start"

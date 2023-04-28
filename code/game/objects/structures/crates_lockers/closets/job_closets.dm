@@ -37,6 +37,7 @@
 	desc = "It's a storage unit for foodservice garments."
 	icon_state = "black"
 	icon_closed = "black"
+	anchored = TRUE
 
 /obj/structure/closet/chefcloset/WillContain()
 	return list(

@@ -4,6 +4,7 @@
 	icon_state = "guncloset"
 	icon_closed = "guncloset"
 	icon_opened = "gunclosetopen"
+	anchored = TRUE
 
 /obj/structure/closet/cabinet/update_icon()
 	if(!opened)

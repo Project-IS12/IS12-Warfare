@@ -20,6 +20,7 @@
 	icon_opened = "medicalopen"
 	icon_off = "medicaloff"
 	req_access = list(access_medical_equip)
+	anchored = TRUE
 
 /obj/structure/closet/secure_closet/medical1/WillContain()
 	return list(
@@ -53,6 +54,7 @@
 	icon_opened = "medicalopen"
 	icon_off = "medicaloff"
 	req_access = list(access_surgery)
+	anchored = TRUE
 
 /obj/structure/closet/secure_closet/medical2/WillContain()
 	return list(

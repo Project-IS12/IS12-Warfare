@@ -18,6 +18,7 @@
 	icon_locked = "fridge1"
 	icon_opened = "fridgeopen"
 	icon_off = "fridgebroken"
+	anchored = TRUE
 
 /obj/structure/closet/secure_closet/freezer/meat/WillContain()
 	return list(
