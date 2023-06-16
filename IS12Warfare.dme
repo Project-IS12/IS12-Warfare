@@ -2436,8 +2436,8 @@
 #include "maps\_map_include.dm"
 #include "maps\away\away_sites.dm"
 #include "maps\away\mining\mining_areas.dm"
-#include "maps\oldfare\warfare.dm"
-#include "maps\oldfare\warfare_define.dm"
+#include "maps\siegefare\warfare.dm"
+#include "maps\siegefare\warfare_define.dm"
 #include "maps\overmap_example\overmap_example_define.dm"
 #include "maps\random_ruins\exoplanet_ruins\exoplanet_ruins.dm"
 #include "maps\random_ruins\exoplanet_ruins\hut\hut.dm"
@@ -2453,5 +2453,3 @@
 #include "maps\~unit_tests\unit_testing.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE
-
-#include "__non-agpl-warfare/__secret.dme"
