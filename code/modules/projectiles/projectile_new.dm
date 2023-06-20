@@ -539,14 +539,7 @@
 						if(istargetloc(target_mob) == 0)
 							def_zone = pick(BP_R_ARM, BP_L_ARM, BP_CHEST, BP_HEAD)
 						//head
-
-			if(firer)
-				if(istype(firer.loc, /turf/simulated/floor/trench))
-					if(firer.lying)
-						do_normal_check = FALSE
-						result = PROJECTILE_FORCE_MISS
-						to_chat(firer, "I'm lying down I can't hit shit.")
-
+						
 			if(istype(target_mob.loc, /turf/simulated/floor/trench))//Shooting at someone in a trench.
 				if(non_trench_counter > 1)//Bullet was shot from open terrain.
 					if(original != target_mob)//We weren't shooting at them, so whizz past.

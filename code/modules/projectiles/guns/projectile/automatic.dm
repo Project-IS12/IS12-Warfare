@@ -15,12 +15,12 @@
 	unload_sound = 'sound/weapons/guns/interact/smg_magout.ogg'
 	reload_sound = 'sound/weapons/guns/interact/smg_magin.ogg'
 	cock_sound 	 = 'sound/weapons/guns/interact/smg_cock.ogg'
+	fire_delay=0
 
 	//machine pistol, easier to one-hand with
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=list(0), automatic = 0),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 3, 5), automatic = 0),
-		list(mode_name="automatic",   	 burst=1, fire_delay=0,  move_delay=0, one_hand_penalty=2, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 3, 5), automatic = 1)
+		list(mode_name="automatic",   	 burst=1, fire_delay=0,  move_delay=0, one_hand_penalty=2, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 3, 5), automatic = 2)
 		//list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
 

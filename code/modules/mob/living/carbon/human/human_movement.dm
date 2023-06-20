@@ -103,6 +103,9 @@
 	if(mRun in mutations)
 		tally = 0
 
+	if(combat_mode)
+		tally += 1
+
 	return (tally+config.human_delay)
 
 /mob/living/carbon/human/Allow_Spacemove(var/check_drift = 0)
