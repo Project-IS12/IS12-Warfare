@@ -58,16 +58,6 @@ var/global/list/pipe_colors = list("grey" = PIPE_COLOR_GREY, "red" = PIPE_COLOR_
 			return omni_icons[state]
 		if("underlay")
 			return underlays[state + dir + color]
-	//  if("underlay_intact")
-	//	return underlays_intact[state + dir + color]
-	//	if("underlay_exposed")
-	//		return underlays_exposed[state + dir + color]
-	//	if("underlay_down")
-	//		return underlays_down[state + dir + color]
-	//	if("pipe_underlay_exposed")
-	//		return pipe_underlays_exposed[state + dir + color]
-	//	if("pipe_underlay_intact")
-	//		return pipe_underlays_intact[state + dir + color]
 
 /datum/pipe_icon_manager/proc/check_icons()
 	if(!pipe_icons)
