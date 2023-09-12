@@ -316,20 +316,6 @@
 
 	verbs -= /mob/living/silicon/pai/proc/choose_verbs
 
-/mob/living/silicon/pai/lay_down()
-	set name = "Rest"
-	set category = "IC"
-
-	// Pass lying down or getting up to our pet human, if we're in a rig.
-	if(istype(src.loc,/obj/item/device/paicard))
-		resting = 0
-	else
-		resting = !resting
-		icon_state = resting ? "[chassis]_rest" : "[chassis]"
-		to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")
-
-	canmove = !resting
-
 //Overriding this will stop a number of headaches down the track.
 /mob/living/silicon/pai/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.force)

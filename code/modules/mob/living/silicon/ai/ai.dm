@@ -713,12 +713,5 @@ var/list/ai_verbs_default = list(
 		icon_state = selected_sprite.alive_icon
 		set_light(1, 1, selected_sprite.alive_light)
 
-// Pass lying down or getting up to our pet human, if we're in a rig.
-/mob/living/silicon/ai/lay_down()
-	set name = "Rest"
-	set category = "IC"
-
-	resting = 0
-
 #undef AI_CHECK_WIRELESS
 #undef AI_CHECK_RADIO
