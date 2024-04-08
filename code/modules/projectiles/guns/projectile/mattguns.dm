@@ -335,12 +335,97 @@
 	firemodes = list()
 	gun_type = GUN_LMG
 	condition = 150 //Enough for one clean mag.
+	var/deployed = FALSE
 
+/obj/item/gun/projectile/automatic/mg08/special_check(var/mob/user)
+	if(!deployed)//Can't fire.
+		to_chat(user, "<span class='danger'>I can't fire it if it's not deployed.</span>")
+		return 0
+	return ..()
+
+
+/obj/item/gun/projectile/automatic/mg08/attack_self(mob/user)
+	. = ..()
+	if(deployed)//If there's an mg deployed, then pack it up again.
+		pack_up_mortar(user)
+	else
+		deploy_mortar(user)//Otherwise, deploy that motherfucker.
+
+/obj/item/gun/projectile/automatic/mg08/proc/deploy_mortar(mob/user)
+	for(var/obj/structure/mg08_structure/M in user.loc)//If there's already an mg there then don't deploy it. Dunno how that's possible but stranger things have happened.
+		if(M)
+			to_chat(user, "There is already a mortar here.")
+			return
+	user.visible_message("[user] starts to deploy the [src]")
+	if(!do_after(user,30))
+		return
+	var/obj/structure/mg08_structure/M = new(get_turf(user)) //Make a new one here.
+	M.dir = user.dir
+	switch(M.dir)
+		if(EAST)
+			user.pixel_x -= 5
+		if(WEST)
+			user.pixel_x += 5
+		if(NORTH)
+			user.pixel_y -= 5
+		if(SOUTH)
+			user.pixel_y += 5
+			M.plane = ABOVE_HUMAN_PLANE
+	deployed = TRUE
+	playsound(src, 'sound/weapons/mortar_deploy.ogg', 100, FALSE)
+	update_icon(user)
+
+/obj/item/gun/projectile/automatic/mg08/proc/pack_up_mortar(mob/user)
+	user.visible_message("[user] packs up the [src]")
+	for(var/obj/structure/mg08_structure/M in user.loc)
+		switch(M.dir)//Set our offset back to normal.
+			if(EAST)
+				user.pixel_x += 5
+			if(WEST)
+				user.pixel_x -= 5
+			if(NORTH)
+				user.pixel_y += 5
+			if(SOUTH)
+				user.pixel_y -= 5
+		qdel(M) //Delete the mortar structure.
+	deployed = FALSE
+	update_icon(user)
+
+/obj/item/gun/projectile/automatic/mg08/dropped(mob/user)
+	. = ..()
+	if(deployed)
+		pack_up_mortar(user)
+
+/obj/structure/mg08_structure //That thing that's created when you place down your mortar, purely for looks.
+	name = "Deployed HE Trench Ender"
+/*
+	icon = 'icons/obj/items/mg08.dmi'
+	icon_state = "mg08_structure"
+	*/
+	anchored = TRUE //No moving this around please.
+
+/obj/structure/mg08/CanPass(atom/movable/mover, turf/target, height, air_group)//Humans cannot pass cross this thing in any way shape or form.
+	if(ishuman(mover))
+		return FALSE
+	else
+		return TRUE
+
+
+/obj/structure/mg08_structure/CheckExit(atom/movable/O, turf/target)//Humans can't leave this thing either.
+	if(ishuman(O))
+		return FALSE
+	else
+		return TRUE
+
+/obj/structure/mg08_structure/rotate/proc/rotate()//Can't rotate it.
+	return
+//Tried removing above two, did nothing.
+/*
 /obj/item/gun/projectile/automatic/mg08/special_check(var/mob/user)
 	to_chat(user, "It just doesn't seem to work.")
 	handle_click_empty(user)
 	return 0
-
+*/
 /obj/item/gun/projectile/automatic/gpmg
 	name = "GPMG Requiem"
 	desc = "A coveted LMG. Lighter than the Harbingers of the old war, but still just as deadly!"
