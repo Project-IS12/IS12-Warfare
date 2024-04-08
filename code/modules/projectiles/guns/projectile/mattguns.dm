@@ -387,7 +387,7 @@
 				user.pixel_y += 5
 			if(SOUTH)
 				user.pixel_y -= 5
-		qdel(M) //Delete the mortar structure.
+		qdel(M) //Delete the mg structure.
 	deployed = FALSE
 	update_icon(user)
 
@@ -396,11 +396,12 @@
 	if(deployed)
 		pack_up_mortar(user)
 
-/obj/structure/mg08_structure //That thing that's created when you place down your mortar, purely for looks.
+/obj/structure/mg08_structure //That thing that's created when you place down your mg, purely for looks.
 	name = "Deployed HE Trench Ender"
 /*
 	icon = 'icons/obj/items/mg08.dmi'
 	icon_state = "mg08_structure"
+//invisible but hopefully that don't cause no problems
 	*/
 	anchored = TRUE //No moving this around please.
 
