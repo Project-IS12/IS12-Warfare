@@ -59,10 +59,16 @@ var/global/photo_count = 0
 
 /obj/item/photo/attackby(obj/item/P as obj, mob/user as mob)
 	if(istype(P, /obj/item/pen))
-		var/txt = sanitize(user, "What would you like to write on the back?", "Photo Writing", null)
 		if(loc == user && user.stat == 0)
-			scribble = txt
+			var/txt = sanitize(input(user, "What would you like to write on the back?", "Photo Writing", null))
+			if(loc == user && user.stat == 0)
+				scribble = txt
+				return
+			to_chat(usr,"<span class='notice'>I need to hold the photo in my hands to write on the back!</span>")
+			return
+		to_chat(usr,"<span class='notice'>I need to hold the photo in my hands to write on the back!</span>")
 	..()
+
 
 /obj/item/photo/examine(mob/user)
 	if(in_range(user, src))
