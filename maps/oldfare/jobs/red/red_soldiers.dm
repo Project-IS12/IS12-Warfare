@@ -113,7 +113,7 @@
 
 /datum/job/soldier/red_soldier/sentry
 	title = "Red Sentry"
-	total_positions = 1
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sentry
 	auto_rifle_skill = 5
 	semi_rifle_skill = 5
