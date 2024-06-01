@@ -347,14 +347,14 @@
 /obj/item/gun/projectile/automatic/mg08/attack_self(mob/user)
 	. = ..()
 	if(deployed)//If there's an mg deployed, then pack it up again.
-		pack_up_mortar(user)
+		pack_up_mg(user)
 	else
-		deploy_mortar(user)//Otherwise, deploy that motherfucker.
+		deploy_mg(user)//Otherwise, deploy that motherfucker.
 
-/obj/item/gun/projectile/automatic/mg08/proc/deploy_mortar(mob/user)
+/obj/item/gun/projectile/automatic/mg08/proc/deploy_mg(mob/user)
 	for(var/obj/structure/mg08_structure/M in user.loc)//If there's already an mg there then don't deploy it. Dunno how that's possible but stranger things have happened.
 		if(M)
-			to_chat(user, "There is already a mortar here.")
+			to_chat(user, "There is already an LMG here.")
 			return
 	user.visible_message("[user] starts to deploy the [src]")
 	if(!do_after(user,30))
@@ -372,10 +372,11 @@
 			user.pixel_y += 5
 			M.plane = ABOVE_HUMAN_PLANE
 	deployed = TRUE
-	playsound(src, 'sound/weapons/mortar_deploy.ogg', 100, FALSE)
+	playsound(src, 'sound/weapons/mg_deploy.ogg', 100, FALSE)
+//	can_climb(user) = FALSE
 	update_icon(user)
 
-/obj/item/gun/projectile/automatic/mg08/proc/pack_up_mortar(mob/user)
+/obj/item/gun/projectile/automatic/mg08/proc/pack_up_mg(mob/user)
 	user.visible_message("[user] packs up the [src]")
 	for(var/obj/structure/mg08_structure/M in user.loc)
 		switch(M.dir)//Set our offset back to normal.
@@ -389,19 +390,26 @@
 				user.pixel_y -= 5
 		qdel(M) //Delete the mg structure.
 	deployed = FALSE
+	//can_climb(user) = TRUE
 	update_icon(user)
 
 /obj/item/gun/projectile/automatic/mg08/dropped(mob/user)
 	. = ..()
 	if(deployed)
-		pack_up_mortar(user)
+		pack_up_mg(user)
+
+/obj/item/gun/projectile/automatic/mg08/equipped(var/mob/user, var/slot)
+	..()
+	if((slot == slot_back) || (slot == slot_s_store))
+		. = ..()
+		if(deployed)
+			pack_up_mg(user)
 
 /obj/structure/mg08_structure //That thing that's created when you place down your mg, purely for looks.
-	name = "Deployed HE Trench Ender"
+	name = "Deployed LMG Harbinger"
 /*
 	icon = 'icons/obj/items/mg08.dmi'
 	icon_state = "mg08_structure"
-//invisible but hopefully that don't cause no problems
 	*/
 	anchored = TRUE //No moving this around please.
 
