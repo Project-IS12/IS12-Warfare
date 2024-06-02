@@ -373,7 +373,6 @@
 			M.plane = ABOVE_HUMAN_PLANE
 	deployed = TRUE
 	playsound(src, 'sound/weapons/mg_deploy.ogg', 100, FALSE)
-//	can_climb(user) = FALSE
 	update_icon(user)
 
 /obj/item/gun/projectile/automatic/mg08/proc/pack_up_mg(mob/user)
@@ -406,10 +405,6 @@
 
 /obj/structure/mg08_structure //That thing that's created when you place down your mg, purely for looks.
 	name = "Deployed LMG Harbinger"
-/*
-	icon = 'icons/obj/items/mg08.dmi'
-	icon_state = "mg08_structure"
-	*/
 	anchored = TRUE //No moving this around please.
 
 /obj/structure/mg08/CanPass(atom/movable/mover, turf/target, height, air_group)//Humans cannot pass cross this thing in any way shape or form.
@@ -427,13 +422,7 @@
 
 /obj/structure/mg08_structure/rotate/proc/rotate()//Can't rotate it.
 	return
-//Tried removing above two, did nothing.
-/*
-/obj/item/gun/projectile/automatic/mg08/special_check(var/mob/user)
-	to_chat(user, "It just doesn't seem to work.")
-	handle_click_empty(user)
-	return 0
-*/
+
 /obj/item/gun/projectile/automatic/gpmg
 	name = "GPMG Requiem"
 	desc = "A coveted LMG. Lighter than the Harbingers of the old war, but still just as deadly!"
