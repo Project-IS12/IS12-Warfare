@@ -390,7 +390,6 @@
 				user.pixel_y -= 5
 		qdel(M) //Delete the mg structure.
 	deployed = FALSE
-	//can_climb(user) = TRUE
 	update_icon(user)
 
 /obj/item/gun/projectile/automatic/mg08/dropped(mob/user)
