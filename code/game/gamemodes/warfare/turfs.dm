@@ -106,11 +106,6 @@
 			if(istype(usr.l_hand, /obj/item/gun/projectile/automatic/mg08) || istype(usr.r_hand, /obj/item/gun/projectile/automatic/mg08))
 				to_chat(user, "I can't climb with this in my hands!")//No you fucking don't.
 				return //Keep that mg stowed asshole.
-		//if(locate(/obj/item/storage) in user)//Gotta check storage as well.
-		//	var/obj/item/storage/S = locate() in user
-		//	if(locate(/obj/item/gun/projectile/automatic/mg08) in S)
-		//		to_chat(user, "I can't bring this with me onto the battlefield, it's too expensive!")
-		//		return
 
 	user.visible_message("<span class='warning'>[user] starts climbing onto \the [src]!</span>")
 	climbers |= user
