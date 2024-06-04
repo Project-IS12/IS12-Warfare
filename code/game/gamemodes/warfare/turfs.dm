@@ -97,6 +97,32 @@
 	user.visible_message("<span class='warning'>[user] climbed onto \the [src]!</span>")
 	climbers -= user
 
+/turf/simulated/floor/do_climb(var/mob/living/user)
+	if(!can_climb(user))
+		return
+
+	if(istype(get_area(src), /area/warfare))//We're trying to go?
+		if(locate(/obj/item/gun/projectile/automatic/mg08) in user)//Locate the mg.
+			if(istype(usr.l_hand, /obj/item/gun/projectile/automatic/mg08) || istype(usr.r_hand, /obj/item/gun/projectile/automatic/mg08))
+				to_chat(user, "I can't climb with this in my hands!")//No you fucking don't.
+				return //Keep that mg stowed asshole.
+
+	user.visible_message("<span class='warning'>[user] starts climbing onto \the [src]!</span>")
+	climbers |= user
+
+	if(!can_climb(user))
+		climbers -= user
+		return
+
+	if(!do_after(user,15))
+		climbers -= user
+		return
+
+	user.forceMove(get_turf(src))
+	user.visible_message("<span class='warning'>[user] climbed onto \the [src]!</span>")
+	climbers -= user
+
+
 /turf/simulated/floor/MouseDrop_T(mob/target, mob/user)
 	var/mob/living/H = user
 	if(istype(H) && can_climb(H) && target == user)
