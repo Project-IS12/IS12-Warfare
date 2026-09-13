@@ -193,7 +193,7 @@
 	for(var/i = 0, i < range, i++) //calculate positions for smoke coverage - then spawn smoke
 		var/radius = i * 1.5
 		if(!radius)
-			addtimer(CALLBACK(src, .proc/spawnSmoke,location, I, 1, 1), 0)
+			addtimer(CALLBACK(src, PROC_REF(spawnSmoke),location, I, 1, 1), 0)
 			continue
 
 		var/offset = 0
@@ -211,7 +211,7 @@
 			if(!T)
 				continue
 			if(T in targetTurfs)
-				addtimer(CALLBACK(src, .proc/spawnSmoke,T, I, range), 0)
+				addtimer(CALLBACK(src, PROC_REF(spawnSmoke),T, I, range), 0)
 					
 
 //------------------------------------------

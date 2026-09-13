@@ -8,7 +8,7 @@ SUBSYSTEM_DEF(processing)
 
 	var/list/processing = list()
 	var/list/current_run = list()
-	var/process_proc = /datum/proc/Process
+	var/process_proc = PROC_BY_TYPE(/datum, Process)
 
 	var/debug_last_thing
 	var/debug_original_process_proc // initial() does not work with procs
@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(processing)
 	while(current_run.len)
 		var/datum/thing = current_run[current_run.len]
 		current_run.len--
-		if(QDELETED(thing) || (call(thing, process_proc)(wait, times_fired, src) == PROCESS_KILL))
+		if(QDELETED(thing) || (DYNAMIC_CALL(thing, process_proc)(wait, times_fired, src) == PROCESS_KILL))
 			if(thing)
 				thing.is_processing = null
 			processing -= thing
@@ -43,7 +43,7 @@ SUBSYSTEM_DEF(processing)
 		debug_original_process_proc = null
 	else
 		debug_original_process_proc	= process_proc
-		process_proc = /datum/proc/DebugSubsystemProcess
+		process_proc = PROC_BY_TYPE(/datum, DebugSubsystemProcess)
 
 	to_chat(usr, "[name] - Debug mode [debug_original_process_proc ? "en" : "dis"]abled")
 
@@ -54,7 +54,7 @@ SUBSYSTEM_DEF(processing)
 	subsystem.debug_last_thing = src
 	var/start_tick = world.time
 	var/start_tick_usage = world.tick_usage
-	. = call(src, subsystem.debug_original_process_proc)(wait, times_fired)
+	. = DYNAMIC_CALL(src, subsystem.debug_original_process_proc)(wait, times_fired)
 
 	var/tick_time = world.time - start_tick
 	var/tick_use_limit = world.tick_usage - start_tick_usage - 100 // Current tick use - starting tick use - 100% (a full tick excess)

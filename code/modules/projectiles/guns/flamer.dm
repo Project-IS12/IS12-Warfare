@@ -189,7 +189,7 @@
 					if(!O.CanPass(src, loc))
 						new_spread_amt = 0
 						break
-			addtimer(CALLBACK(src, .proc/make_more_fire,T, fire_lvl, burn_lvl, f_color, new_spread_amt), 0) //Do not put spawns in recursive things.
+			addtimer(CALLBACK(src, PROC_REF(make_more_fire),T, fire_lvl, burn_lvl, f_color, new_spread_amt), 0) //Do not put spawns in recursive things.
 
 obj/flamer_fire/proc/make_more_fire(var/T, var/f_level, var/b_level, var/fcolor, var/new_spread)
 	new /obj/flamer_fire(T, f_level, b_level, fcolor, new_spread)

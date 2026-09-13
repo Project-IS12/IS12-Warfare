@@ -69,13 +69,13 @@ proc/AStar(var/start, var/end, var/proc/adjacent, var/proc/dist, var/max_nodes, 
 	if(!start)
 		return 0
 
-	open.Enqueue(new /PathNode(start, null, 0, call(start, dist)(end), 0))
+	open.Enqueue(new /PathNode(start, null, 0, DYNAMIC_CALL(start, dist)(end), 0))
 
 	while(!open.IsEmpty() && !path)
 		var/PathNode/current = open.Dequeue()
 		closed.Add(current.position)
 
-		if(current.position == end || call(current.position, dist)(end) <= min_target_dist)
+		if(current.position == end || DYNAMIC_CALL(current.position, dist)(end) <= min_target_dist)
 			path = new /list(current.nodes_traversed + 1)
 			path[path.len] = current.position
 			var/index = path.len - 1
@@ -86,29 +86,29 @@ proc/AStar(var/start, var/end, var/proc/adjacent, var/proc/dist, var/max_nodes, 
 			break
 
 		if(min_node_dist && max_node_depth)
-			if(call(current.position, min_node_dist)(end) + current.nodes_traversed >= max_node_depth)
+			if(DYNAMIC_CALL(current.position, min_node_dist)(end) + current.nodes_traversed >= max_node_depth)
 				continue
 
 		if(max_node_depth)
 			if(current.nodes_traversed >= max_node_depth)
 				continue
 
-		for(var/datum/datum in call(current.position, adjacent)(id))
+		for(var/datum/datum in DYNAMIC_CALL(current.position, adjacent)(id))
 			if(datum == exclude)
 				continue
 
-			var/best_estimated_cost = current.estimated_cost + call(current.position, dist)(datum)
+			var/best_estimated_cost = current.estimated_cost + DYNAMIC_CALL(current.position, dist)(datum)
 
 			//handle removal of sub-par positions
 			if(datum in path_node_by_position)
 				var/PathNode/target = path_node_by_position[datum]
 				if(target.best_estimated_cost)
-					if(best_estimated_cost + call(datum, dist)(end) < target.best_estimated_cost)
+					if(best_estimated_cost + DYNAMIC_CALL(datum, dist)(end) < target.best_estimated_cost)
 						open.Remove(target)
 					else
 						continue
 
-			var/PathNode/next_node = new (datum, current, best_estimated_cost, call(datum, dist)(end), current.nodes_traversed + 1)
+			var/PathNode/next_node = new (datum, current, best_estimated_cost, DYNAMIC_CALL(datum, dist)(end), current.nodes_traversed + 1)
 			path_node_by_position[datum] = next_node
 			open.Enqueue(next_node)
 

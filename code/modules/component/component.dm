@@ -47,13 +47,13 @@
 	if(!override)
 		. = procs[sig_type]
 	spawn(0)
-		procs[sig_type] = call(src, proc_on_self)()
+		procs[sig_type] = DYNAMIC_CALL(src, proc_on_self)()
 
 /datum/component/proc/ReceiveSignal(sigtype, ...)
 	var/list/sps = signal_procs
 	var/list/arguments = args.Copy()
 	arguments.Cut(1, 2)
-	return call(src, sps[sigtype])(arglist(arguments))
+	return DYNAMIC_CALL(src, sps[sigtype])(arglist(arguments))
 
 /datum/component/proc/InheritComponent(datum/component/C, i_am_original)
 	return

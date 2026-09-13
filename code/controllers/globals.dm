@@ -13,7 +13,11 @@ GLOBAL_REAL(GLOB, /datum/controller/global_vars)
 	GLOB = src
 
 	var/datum/controller/exclude_these = new
-	gvars_datum_in_built_vars = exclude_these.vars + list("gvars_datum_protected_varlist", "gvars_datum_in_built_vars", "gvars_datum_init_order")
+	// Only names are needed here. Copying the associated built-in values can
+	// retain invalid internal references on BYOND 516.
+	gvars_datum_in_built_vars = list("gvars_datum_protected_varlist", "gvars_datum_in_built_vars", "gvars_datum_init_order")
+	for(var/var_name in exclude_these.vars)
+		gvars_datum_in_built_vars += var_name
 	qdel(exclude_these)
 
 	var/global_vars = vars.len - gvars_datum_in_built_vars.len
@@ -62,6 +66,6 @@ GLOBAL_REAL(GLOB, /datum/controller/global_vars)
 	//See https://github.com/tgstation/tgstation/issues/26954
 	for(var/I in typesof(/datum/controller/global_vars/proc))
 		var/start_tick = world.time
-		call(src, I)()
+		DYNAMIC_CALL(src, I)()
 		if(world.time - start_tick)
 			warning("[I] slept during initialization!")

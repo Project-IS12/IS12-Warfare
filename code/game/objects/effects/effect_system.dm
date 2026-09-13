@@ -338,7 +338,7 @@ steam.start() -- spawns the effect
 	for(i=0, i<src.number, i++)
 		if(src.total_smoke > 20)
 			return
-		addtimer(CALLBACK(src, .proc/make_smokes, i), 0)
+		addtimer(CALLBACK(src, PROC_REF(make_smokes), i), 0)
 			
 
 //Hi, this isn't bay. Please don't think too hard about how ugly these are. It's better than a billion spawns.
@@ -356,7 +356,7 @@ steam.start() -- spawns the effect
 	for(i=0, i<pick(0,1,1,1,2,2,2,3), i++)
 		sleep(10)
 		step(smoke,direction)
-	addtimer(CALLBACK(src, .proc/delete_smoke, smoke), smoke.time_to_live*0.75+rand(10,30))
+	addtimer(CALLBACK(src, PROC_REF(delete_smoke), smoke), smoke.time_to_live*0.75+rand(10,30))
 
 /datum/effect/effect/system/smoke_spread/proc/delete_smoke(var/obj/effect/effect/smoke/smoke)
 	if (smoke) qdel(smoke)

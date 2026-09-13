@@ -443,7 +443,7 @@
 		procname = "/proc/[procname]"
 		return call(procname)(arglist(new_args))
 
-	return call(object, procname)(arglist(new_args)) // Spawn in case the function sleeps.
+	return DYNAMIC_CALL(object, procname)(arglist(new_args)) // Spawn in case the function sleeps.
 
 
 /proc/SDQL2_tokenize(query_text)

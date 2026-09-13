@@ -71,7 +71,7 @@
 				Deactivate()
 		if(AB_GENERIC)
 			if(target && procname)
-				call(target,procname)(usr)
+				DYNAMIC_CALL(target,procname)(usr)
 	return
 
 /datum/action/proc/Activate()

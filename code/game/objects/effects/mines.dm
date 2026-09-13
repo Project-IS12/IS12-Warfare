@@ -24,7 +24,7 @@
 		for(var/mob/O in viewers(world.view, src.loc))
 			to_chat(O, "<span class='warning'>\The [M] triggered the \icon[src] [src]</span>")
 		triggered = 1
-		call(src,triggerproc)(M)
+		DYNAMIC_CALL(src,triggerproc)(M)
 
 /obj/effect/mine/proc/triggerrad(obj)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()

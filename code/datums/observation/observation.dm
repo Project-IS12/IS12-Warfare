@@ -213,7 +213,7 @@
 
 			// If the callback crashes, record the error and remove it.
 			try
-				call(listener, proc_call)(arglist(args))
+				DYNAMIC_CALL(listener, proc_call)(arglist(args))
 			catch (var/exception/e)
 				error("[e.name] - [e.file] - [e.line]")
 				error(e.desc)
@@ -229,7 +229,7 @@
 
 				// If the callback crashes, record the error and remove it.
 				try
-					call(listener, proc_call)(arglist(args))
+					DYNAMIC_CALL(listener, proc_call)(arglist(args))
 				catch (var/exception/e)
 					error("[e.name] - [e.file] - [e.line]")
 					error(e.desc)

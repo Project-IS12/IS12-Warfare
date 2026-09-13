@@ -114,4 +114,4 @@
 
 /datum/alarm_handler/proc/notify_listeners(var/alarm, var/was_raised)
 	for(var/listener in listeners)
-		call(listener, listeners[listener])(src, alarm, was_raised)
+		DYNAMIC_CALL(listener, listeners[listener])(src, alarm, was_raised)

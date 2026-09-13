@@ -222,9 +222,9 @@
 			return
 		log_admin("[key_name(src)] called [target]'s [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
 		if(arguments.len)
-			returnval = call(target, procname)(arglist(arguments))
+			returnval = DYNAMIC_CALL(target, procname)(arglist(arguments))
 		else
-			returnval = call(target, procname)()
+			returnval = DYNAMIC_CALL(target, procname)()
 	else
 		log_admin("[key_name(src)] called [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
 		returnval = call(procname)(arglist(arguments))

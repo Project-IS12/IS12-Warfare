@@ -478,7 +478,7 @@ var/list/datum/power/changeling/powerinstances = list()
 	purchasedpowers += Thepower
 
 	if(!Thepower.isVerb && Thepower.verbpath)
-		call(M.current, Thepower.verbpath)()
+		DYNAMIC_CALL(M.current, Thepower.verbpath)()
 	else if(remake_verbs)
 		M.current.make_changeling()
 

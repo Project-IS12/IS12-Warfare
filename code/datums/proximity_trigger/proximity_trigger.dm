@@ -100,7 +100,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 	for(var/t in seen_turfs_)
 		GLOB.entered_event.unregister(t, src, /datum/proximity_trigger/proc/on_turf_entered)
 
-	call(proc_owner, on_turfs_changed)(seen_turfs_.Copy(), list())
+	DYNAMIC_CALL(proc_owner, on_turfs_changed)(seen_turfs_.Copy(), list())
 
 	turfs_in_range.Cut()
 	seen_turfs_.Cut()
@@ -110,7 +110,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 	if(listequal(seen_turfs_, new_seen_turfs_))
 		return
 
-	call(proc_owner, on_turfs_changed)(seen_turfs_.Copy(), new_seen_turfs_.Copy())
+	DYNAMIC_CALL(proc_owner, on_turfs_changed)(seen_turfs_.Copy(), new_seen_turfs_.Copy())
 
 	for(var/t in (seen_turfs_ - new_seen_turfs_))
 		GLOB.entered_event.unregister(t, src, /datum/proximity_trigger/proc/on_turf_entered)
@@ -124,7 +124,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 	var/new_turf = get_turf(new_loc)
 	if(old_turf == new_turf)
 		return
-	call(proc_owner, on_turf_entered)(holder)
+	DYNAMIC_CALL(proc_owner, on_turf_entered)(holder)
 	register_turfs()
 
 /datum/proximity_trigger/proc/on_turf_entered(var/turf/T, var/atom/enterer)
@@ -132,7 +132,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 		return
 	if(enterer.opacity)
 		on_turf_visibility_changed()
-	call(proc_owner, on_turf_entered)(enterer)
+	DYNAMIC_CALL(proc_owner, on_turf_entered)(enterer)
 
 /datum/proximity_trigger/proc/get_seen_turfs()
 	. = list()

@@ -72,8 +72,6 @@
 			dismantle_wall()
 			return 1
 
-	if(..()) return 1
-
 	if(can_open)
 		toggle_open(user)
 	return 0

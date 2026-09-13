@@ -64,6 +64,6 @@
 //		log_debug("Event fired")
 
 		if(listener)
-			call(listener,proc_name)(arglist(args))
+			DYNAMIC_CALL(listener,proc_name)(arglist(args))
 			return 1
 		return

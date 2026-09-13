@@ -163,7 +163,7 @@
 		for(var/y = y1; y <= y2; y += 16)
 			if(is_chunk_generated(x, y, T.z))
 				var/datum/chunk/c = get_chunk(x, y, T.z)
-				call(c, proc_call)(arglist(proc_args))
+				DYNAMIC_CALL(c, proc_call)(arglist(proc_args))
 
 // Debug verb for VVing the chunk that the turf is in.
 /turf/proc/view_chunk()

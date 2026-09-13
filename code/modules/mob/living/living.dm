@@ -40,7 +40,7 @@
 		var/pointglow = filter(type = "drop_shadow", x = 0, y = -1, offset = 2, size = 1, color = point_color)
 		remove_filter(A, pointglow)
 		LAZYADD(A.filters, pointglow)
-		addtimer(CALLBACK(src, .proc/remove_filter, A, pointglow), 20)
+		addtimer(CALLBACK(src, PROC_REF(remove_filter), A, pointglow), 20)
 
 	usr.visible_message("<b>[src]</b> points to [A]")
 	return 1

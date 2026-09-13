@@ -20,7 +20,7 @@
 /decl/vv_set_handler/proc/handle_set_var(var/datum/O, variable, var_value, client)
 	var/proc_to_call = handled_vars[variable]
 	if(proc_to_call)
-		call(O, proc_to_call)(var_value)
+		DYNAMIC_CALL(O, proc_to_call)(var_value)
 	else
 		O.vars[variable] = var_value
 

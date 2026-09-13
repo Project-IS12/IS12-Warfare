@@ -73,14 +73,14 @@ var/list/limb_icon_cache = list()
 		gender = "_f"
 
 	icon_state = "[icon_name][gender]"
-	if(species.base_skin_colours && !isnull(species.base_skin_colours[s_base]))
+	if(species && species.base_skin_colours && !isnull(species.base_skin_colours[s_base]))
 		icon_state += species.base_skin_colours[s_base]
 
 	icon_cache_key = "[icon_state]_[species ? species.name : SPECIES_HUMAN]"
 
 	if(force_icon)
 		icon = force_icon
-	else if (!dna)
+	else if (!dna || !species)
 		icon = 'icons/mob/human_races/r_human.dmi'
 	else if (robotic >= ORGAN_ROBOT)
 		icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_main.dmi'
@@ -102,7 +102,7 @@ var/list/limb_icon_cache = list()
 		mob_icon.Blend(mark_s, ICON_OVERLAY) //So when it's on your body, it has icons
 		icon_cache_key += "[M][markings[M]["color"]]"
 
-	if(body_hair && islist(h_col) && h_col.len >= 3)
+	if(species && body_hair && islist(h_col) && h_col.len >= 3)
 		var/cache_key = "[body_hair]-[icon_name]-[h_col[1]][h_col[2]][h_col[3]]"
 		if(!limb_icon_cache[cache_key])
 			var/icon/I = icon(species.get_icobase(owner), "[icon_name]_[body_hair]")
@@ -178,7 +178,7 @@ var/list/robot_hud_colours = list("#ffffff","#cccccc","#aaaaaa","#888888","#6666
 		else
 			applying.Blend(rgb(-s_tone,  -s_tone,  -s_tone), ICON_SUBTRACT)
 		icon_cache_key += "_tone_[s_tone]"
-	if(species.appearance_flags & HAS_SKIN_COLOR)
+	if(species && (species.appearance_flags & HAS_SKIN_COLOR))
 		if(s_col && s_col.len >= 3)
 			applying.Blend(rgb(s_col[1], s_col[2], s_col[3]), s_col_blend)
 			icon_cache_key += "_color_[s_col[1]]_[s_col[2]]_[s_col[3]]_[s_col_blend]"

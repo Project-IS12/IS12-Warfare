@@ -24,7 +24,7 @@
 	if (thingtocall == GLOBAL_PROC)
 		call(proctocall)(arglist(calling_arguments))
 	else
-		call(thingtocall, proctocall)(arglist(calling_arguments))
+		DYNAMIC_CALL(thingtocall, proctocall)(arglist(calling_arguments))
 
 /datum/callback/proc/Invoke(...)
 	if (!object)
@@ -37,7 +37,7 @@
 			calling_arguments = args
 	if (object == GLOBAL_PROC)
 		return call(delegate)(arglist(calling_arguments))
-	return call(object, delegate)(arglist(calling_arguments))
+	return DYNAMIC_CALL(object, delegate)(arglist(calling_arguments))
 
 //copy and pasted because fuck proc overhead
 /datum/callback/proc/InvokeAsync(...)
@@ -52,4 +52,4 @@
 			calling_arguments = args
 	if (object == GLOBAL_PROC)
 		return call(delegate)(arglist(calling_arguments))
-	return call(object, delegate)(arglist(calling_arguments))
+	return DYNAMIC_CALL(object, delegate)(arglist(calling_arguments))

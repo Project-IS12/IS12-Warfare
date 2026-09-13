@@ -60,7 +60,7 @@ proc/explosion_rec(turf/epicenter, power, shaped)
 			if(AM && AM.simulated && !T.protects_atom(AM))
 				AM.ex_act(severity)
 				if(!AM.anchored)
-					addtimer(CALLBACK(AM, /atom/movable/.proc/throw_at, throw_target, 9/severity, 9/severity), 0)
+					addtimer(CALLBACK(AM, PROC_BY_TYPE(/atom/movable, throw_at), throw_target, 9/severity, 9/severity), 0)
 
 	explosion_turfs.Cut()
 	explosion_in_progress = 0

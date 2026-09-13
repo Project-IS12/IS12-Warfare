@@ -72,9 +72,12 @@ obj/machinery/atmospherics/mains_pipe
 		update_icon()
 
 	proc/burst()
-		..()
+		// Store each pipeline's gas before deleting its components.
 		for(var/obj/machinery/atmospherics/pipe/mains_component/pipe in contents)
-			burst()
+			if(pipe.parent)
+				pipe.parent.temporarily_store_air()
+			qdel(pipe)
+		qdel(src)
 
 	proc/check_pressure(pressure)
 		var/datum/gas_mixture/environment = loc.return_air()

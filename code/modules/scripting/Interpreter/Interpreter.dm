@@ -212,7 +212,7 @@
 					if( !hascall(def, stmt.func_name) )
 						RaiseError(new/runtimeError/UndefinedFunction("[stmt.object.id_name].[stmt.func_name]"))
 						return
-					return call(def, stmt.func_name)(arglist(params))
+					return DYNAMIC_CALL(def, stmt.func_name)(arglist(params))
 				else										//def is a path to a global proc
 					return call(def)(arglist(params))
 			//else
